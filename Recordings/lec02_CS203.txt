@@ -1,0 +1,1081 @@
+And I was about to go into this, so why people do this, all these things.
+Actually, first, any questions?
+Is there anything related to this course?
+Okay.
+So why do people do it? Because there's a lot of money in it.
+Not everybody does it for money.
+People do all kinds of things for ideology.
+Or just, as I said earlier, destructive tendencies.
+Let the world burn, kind of philosophy.
+Anarchy, people do all kinds of things, not for money.
+But, let's do it again.
+Money is a big deal, and there's a lot of money to be made doing things like selling bug bottles.
+That is, finding unknown exploits, bugs, backdoors, and selling them.
+Officially, this is perfectly fine, right?
+Selling them to the hardware manufacturers that develop the hardware or software where the bugs are.
+Some serious money can be made.
+There are companies out there that do this, there are individuals that specialize in this.
+And that's perfectly legitimate.
+There are also brokers that will buy a bug from you, or a vulnerability.
+If you find one, they will buy it from you, and they will market it.
+So, they act as intermediaries between those who find vulnerabilities and the companies that will, in whose software hardware vulnerabilities are found.
+Then there is the shady part, right?
+The shady part is here.
+Yeah, there's kind of gray market, black market entities that will buy this, and often will pay more than, let's say, your Google's and Meta's, et cetera.
+Especially, you know, some serious zero-day exploits.
+Serious buying can be made, but that's most likely, in most jurisdictions, illegal.
+Like I said, there are companies, there are other individuals, there are companies that do this, and there are other buyers.
+There are nation states that buy.
+The United States is definitely one of them, but the typical players are Israel, Britain, Russia, India, Brazil.
+And there are many others that will buy these things.
+Why? Because, well, a lot of nation states are involved in offensive cyber warfare.
+Okay?
+Not surprising.
+Then there's also stolen data.
+So, let's separate very clearly the bugs, exploits, backdoors, vulnerabilities, from stolen data.
+What I thought before was sort of the white zone, the gray zone, the black zone.
+Here, everything is black.
+Here is all illegal.
+This is strictly crime.
+Okay?
+So, there's a big marketplace for stolen data, starting with valid credit card numbers,
+actual credit card numbers, accompanied by, you know, the cards that still have magnetic stripe, right?
+Typically, the chips cannot be cloned, except maybe by some nation states.
+But the magnetic stripe can be.
+Okay?
+So, if you have both the credit card number and the magnetic stripe information, that's a bit more,
+because that can be cloned, right?
+So, with the credit card number, and the three-digit code in exploration, you can buy stuff over the web.
+So, there's a card note present.
+It's called card note present.
+But if you do something, if you don't buy something with a card present,
+then you need to have the magnetic stripe, a card with magnetic stripe.
+You have to have a merchant that still allows you to use the magnetic stripe, which is easy to find.
+So, what it means is you need to manufacture it hard.
+Now, machines that manufacture plastic credit cards, trivial.
+You can buy one.
+It's not illegal.
+And then, they will imprint, emboss the magnetic stripe here.
+So, that's all.
+You will actually have a physical credit card.
+You won't have the chip, clearly.
+But you'll still have the magnetic stripe.
+Fools is like a dossier.
+A whole dossier on a given person.
+A real person, right?
+So, that includes things like name, address, phone, email, date of birth, social security number, bank account, routing numbers, online credentials, credit cards.
+That is not very expensive, right?
+It wasn't a couple of years ago.
+This data is a couple of years old.
+Today is probably cheaper.
+Now, you want online credentials with bank account with money.
+That's going to cost you.
+Now, why doesn't it cost you this much?
+If the bank account has this much money, why sell it for $300?
+It's risky to get it out.
+Right.
+Money is there.
+How do you get it out?
+Right?
+So, that's not easy.
+Let's feel sorry for the bad guys for a second.
+Their job is not always easy.
+They have, let's say, they have access to my bank account.
+They have the right credentials.
+They have everything.
+But, what they don't know is how to transfer that money, how to cash out.
+Because, chances are, the first time they do something like that, they will be caught.
+Or, some flag will go on.
+Right?
+So, what can they do?
+Well, if they have a debit card, they could try to use an ATM.
+But, ATMs have limits.
+Usually, close to this.
+You see why?
+ATMs have limits.
+But, they have to have an ATM debit card.
+That's also not that easy.
+Because, debit cards, ATM debit cards, these days, also have chips.
+Right?
+And, cannot use a magnetic strap.
+They can go to a supermarket.
+Right?
+I think the supermarket will give you like $50 cash.
+Eight.
+Eight.
+Oh, excuse me.
+Eight.
+Still.
+Well.
+Right?
+Same ballpark.
+So, they have to find a place where they can wire the money.
+Right?
+Somewhere.
+Some bank in some Krapistan, Slabonia, somewhere.
+Some place where it is difficult for the US government or the banks to reach.
+But, it's going to be once.
+And, there are limits.
+Most banks, if you know, have limits on the amount of money you can transfer in a single wire,
+in a single day, in a single transaction.
+That's why.
+It's not that.
+Right?
+Typically, there would be, this is sort of my experience, credit card thieves that are
+the most successful are not the ones who go and like, do a shopping spree in Walmart
+or in Amazon.
+The most successful overall credit card theft occurs when it's used by, it's called a death
+by a thousand cuts.
+When you steal a massive number of credit cards and you charge a little bit.
+Now, the idea is that many people, first, don't pay attention to credit card, you know.
+Like, they'll look at the bill at the end of the month because they're lazy.
+Right?
+Most, let me talk, most people like us, how many of you really look at your credit card,
+like, line by line?
+So, if there's a small charge that occurs somewhere, for like, ten bucks or five bucks,
+chances are, one, you might not notice even if you look.
+And, if you don't look, your total monthly amount is going to be about what you'd expect.
+As opposed to going and buying $3,000 refrigerator, which immediately, like, you know, makes you
+want to cancel the cut.
+Right?
+But, it's fair for them, for the adversaries, for the thieves, to just do small amount of
+transactions every month, so they go under readout.
+That could last for a while.
+Eventually, they'll get discovered, and the credit card will get cancelled.
+But, how many people are going to get on the phone with a credit card company and spend an
+hour discussing a $5 charge?
+A lot of people just say, okay.
+So, anyway, there's all kinds of marketplace for everything.
+Not surprisingly, there's also marketplace for botnets and malware.
+You can rent a malware just like you can rent a vehicle.
+Right?
+So, if you use, if any of you have used any kind of darknets, I'm going to hold it against
+you, but if you use Tor hidden services, for example, if you do browse the directory of
+Tor hidden services, you see things like that.
+Basically, you can rent zombies, right?
+So, what are botnets?
+Botnets are networks of zombies.
+That is, computers just like the ones in front of you, and maybe even smartphones, and
+definitely desktops that have been zombified by some malware.
+The owners are generally not aware, but the botnets is controlled by some command and control
+center, and the operator of that command and control center, of course, can make the
+zombies do whatever.
+Lying cryptocurrency, denial of service attacks, right?
+Send spam.
+Why not?
+And anything else you can imagine.
+And there's some bad news.
+The bad news is that no matter what we do, security is almost never a primary consideration,
+in any product.
+That is the sad reality.
+and it's not going to change anytime soon because manufacturers in any sphere
+right whether it's smart cars right these you know super automated vehicles
+or IOT devices or laptops or smartphones the priority of the manufacturer is to
+give you new and better features shinier stuff glossier shinier stuff so
+you'll buy it and because you want to be that person with the shiny glossy stuff
+like the next person right you want to have that latest iPhone latest Samsung
+latest whatever because you want to be a keep up with the Joneses and there's
+these newer features and those exciting new technologies and are wonderful but
+security always takes the backseat because it doesn't sell why have you
+seen an advertisement that says buy I don't know why our phone it will be you
+will be twice as slow as the next one because we're so secure how many people
+are going to go for that so it's not going to be the consideration because it
+sort of impedes progress the other problem is that whether you're dealing
+with smartphones or IMG devices or you know super computer style servers most
+systems that are feature-rich that is that like applications that we use today
+they are rich with features they are complex there's complex software in the
+online and complex software well has bugs and vulnerabilities the bigger the
+software the more likely there are bugs and vulnerabilities and so the more
+programmers you write contribute to a given piece of software the more
+vulnerabilities you're gonna have and examples of course I will buffer overflows you
+probably heard about right people know what buffer overflows are it's okay not to
+know or cross-site scripting another very popular attack methodology also
+networks are open you know we essentially look at you walk into UCI you can use
+connect to a public Wi-Fi here no problem maybe it will go away so but there are many
+places where connecting to the internet and connecting to an open network it's
+just easy doesn't it's not an attack last bullet is also important most
+successful attacks it's a spectacular attack aren't purely electronic digital in
+nature they involve humans yeah us meaning as big and they involves
+attackers so so they may cause damage in the digital world but tremendous damage but
+they often start with a human like like fishing attacks they will start start with
+like social engineering
+the better news is that there are defense mechanisms there are some mitigation techniques or as we discussed last time to some to prevent some to detect some to recover from attacks but we need to understand their limitations some people naively believe that cryptography
+some people naively believe that cryptography
+what's a wonderful thing cryptography and of course everybody should know some but
+cryptography will solve all your problems all you need to do is to have good
+crypto and with good crypto you can build everything possible to defend yourself
+this is absolutely not true this is a quote from one of the top
+photographers in the world basically says I mean verbatim if you think your
+cryptography will solve your problems then you don't understand cryptography and you
+don't understand your problem so it will solve some small problems here and
+there and it needs to be managed very well and well we'll talk about this yeah many
+security problems are based on misunderstanding of cryptography or misuse of
+cryptography it also helps to have user awareness so at the end of the day most
+security methods involve some exposure to human users people like us and even
+people that are even less tech savvy than us right think about don't have to go as
+far as your your grandpa or some kind of a you know idiot uncle you know somewhere but
+you know just think about regular people doing regular every day job in regular
+jobs out there in industry
+so education helps education helps and unfortunately so this is one of those
+grants that I have for the last I've got no so many years you know most of you went to
+high school right you probably went to high school and middle school and in some
+form you probably have health education right this really difficult course that
+everybody loves it sometimes it's called health sometimes called hygiene you know
+some yeah even sex education it's all related right that something in most
+countries they have some kind of course for middle or high school students wouldn't it
+be nice if we have internet hygiene education or internet or computer hygiene it's
+just as important just as important for you to brush your teeth and floss every
+morning and to take showers once in a while it is just important to change your
+passwords once in a while and to select your passwords appropriately to know how to
+log in and if somebody's breathing down your neck as you're logging in you probably
+are not in the same space are you and these simple things that we could teach
+people from early age would certainly help alleviate a lot of problems that involve
+humans but we're not there yet of course usability and this is not just user acceptance
+usability of security techniques is important so did any of you present here today take Habib
+Farouk's usable security course good so now you you're probably better off than the rest you know
+that usable security is important right because security that isn't usable is useless
+doesn't do anything right people avoid it people subverted people people come up with all kinds of
+tricks not to not to participate right so usability is very important economics economics is important
+and there is a whole branch of research I don't do it but I know people who do to study the economics of
+security sometimes security that makes no sense because the cost of introducing security outweighs the protection that it gives you so if attack occurs it might be easier to accept the attack than to introduce the security
+I know it probably sounds funny coming from somebody like me but there are situations like that they need to understand when they have
+sometimes security measures a pure overkill right that maybe for example I in order to vote in a faculty on faculty minutiae like I don't know who gets promoted who or who gets some award whatever
+in my department I have to log in to using VPN why what's the point who is going to cheat on that what's the
+incentive. Zero. But yet, I have to use the VM, use Duo to log in. Makes no sense at all.
+No economic sense. But there are cases where it does. This guy, he looks like a hardened
+criminal. Probably somebody you don't want to meet. Or at least somebody who sits in a
+basement and writes horrible code, right, that's going to steal your credit card. This
+guy is actually a Turing Award winner. His name is Ken Thompson. He doesn't look like
+this anymore. I think he's very old. Actually, I think he's still alive, but he's very old.
+But now that I've told you, he does look like a very committed geek, doesn't he? T-shirt,
+shirt over it, you know. So he is the co-author of C, co-inventor of C language. And also
+Unix, one of the sort of principal designers of the original Unix. Well, he had something
+to say about trust. He's not fundamentally a security person, but he does know something
+about trust. And he had this famous lecture, ACM Award lecture that he gave, and a paper
+actually called Reflections on Trusting Trust. And it's just a cute set of observations that
+you can get to it, free, at the article. And the main question he was asking, what code,
+right, or what software can we trust? Right? And his example was that consider, you know, people
+build Linux, right? Anybody else? Anybody who does not know what Linux is? Okay, so you know,
+there's a login program, there's a super-user program. I mean, today it's called something
+else, or something like that. Traditionally, there's an SU, super-user program, to run
+privileged commands using that instead of logging in as root. Right? So these programs,
+a part of the Unix of Linux distribution, is the binary containing those programs reliable? Right?
+Android is also based somehow loosely on Unix, right? When you log in, does the login program
+by any chance, like, send your password somewhere outside? Or does it store it in a special place
+when you type in your password? You do type in your password, right? When you log in. Do you ever wonder,
+where do those letters go? Do you know what happens when you type in your password? Does anybody know?
+What happens? It gets hashed with the salt and then compared against the... Pepper? No?
+No? Pepper? No, just salt? I don't know what happens. Okay, so we'll come back to that.
+And so there's salt and it's hashed, and that's what you think is happening, right? What should happen.
+Right, we type in those letters. Presumably the letters are not logged as we're typing, right?
+That's what he said, what he said, supposed to happen. That whatever sequence of letters,
+numbers letters, that is supposed to be your password, gets hashed, well, salt and hashed,
+into some fixed value, and then? Compare it against the one in your shadow file.
+You know, that's the whatever, right, shadow file. We think, we hope that's what happens,
+but do we know? Do we know? Or when you use su, right, or sudo, right? And it asks you to write
+your root password. Do you know what really happens? Do you know what's supposed to happen?
+Or do we know really? Is there a back door there? We have no idea. Did you, like, manually
+inspect every single machine instruction in a binary? Do you know anybody who has ever done that?
+I don't. So, okay, so the binary you cannot trust, right? So the next thing, again, according
+to Ken Thompson, you could check the source code. Because Unix, unlike all the other crap we
+ran, right, you know, like iOS or Microsoft Windows, is open source. You could get whatever, Red Hat,
+Ubuntu, Linux, embedded Linux, whatever. All these operating systems are open source. You can get all
+the entirety of the open source, of the source code for them. You could manually inspect in
+C, right? Usually in C. The code, not difficult. Take us some time to say, oh, this is the login
+program, right? So there's login.c and login.h. Look for that and say, okay, is it like sending
+anything? Is it opening a socket to some God knows where? Or is it like storing opening
+a file? No? Good. Okay, so you, you kind of assured yourself that there's nothing wrong
+with the source code. All right. Well, then you recompile. Because you don't trust the binary
+that's already there. Now you recompile, say, aha, I know the source code. I just compiled it.
+This is the compiled version. I can trust it. Hmm. Who wrote the compiler? The compiler is part
+of the, your, your, your ecosystem. Hmm. Okay. What if the compiler looks for a pattern in the
+login program? That's like, say, reads the password. Just, ah, login program. Normally I compile
+faithfully. But for this program, I'm going to insert a back door. Right? Could do it.
+All right. So now we say, okay, let's get a little more paranoid than realistic. Let's inspect
+the source of the compiler. That's going to take us a while. Compilers are not. You think that,
+some of you are thinking that Michael Francis compiler course. Yes? Probably sweated through it,
+right? Not easy. Compilers are rough. Not for the faint of heart. Okay. Well, let's say you did your
+homework. You went through the compiler. You checked. Okay. Looks good. Recompile the compiler.
+Before recompiling the login. Okay? With what exactly? With what are you going to recompile the compiler?
+Which you did not expect. So, the compiler that you used to compile the compiler is going to have
+these nice couple of things. So, oh, if it matches the login pattern, compile back door. If it matches the
+compiler pattern, compile back door. What can I say? At the end of the day, we are royally screwed.
+At least that's what he said. And that's, again, a quote from Ken Thompson. The world is obvious.
+You can't trust code that you did not totally create yourself. Especially a quote from companies that
+employ people like me. And he had the time to work for AT&T research. Yeah. So, that's a nice lesson.
+So, what we've looked at so far. Basic security definitions. I barrage you with a lot of, like,
+terminology, right? Don't worry about that. Look at the services, make it the tax. All right.
+I already said this last time, I think, right? Or did I? No, I think I didn't. We didn't cover the slide.
+So, there's a directory. You don't have to do this. Okay? If you already feel comfortable with, like,
+elementary, if you took an elementary security course somewhere, someplace, don't bother.
+If you haven't, you feel like you need a little bit of, like, a background, go there. Google Drive.
+I mean, I'll post this. Oh, actually, I already posted it. So, and you can look at, like, CS-134,
+which is the undergrad course that both I and Alfred Chen teach at various times.
+And then I want you to watch this video. That's kind of entertaining.
+And this lady, which is a very, very competent technical journalist, has this nice book, which I'm trying to recommend the book.
+The book is fun to read, but the video is, it was actually her interview with someone at UCF a couple of years ago.
+And then, of course, with the projects, right? So, team up whenever possible.
+Come up with project topics. I did cover this, I think, last time. So, but let's go over it quickly.
+So, you can do any of that. If what you have in mind does not fall into any of these categories, talk to me.
+The sooner the better. It's okay. I mean, this is not an exhaustive list.
+If you have some great idea, you want to do it as a project, talk to me.
+What I want to make sure you don't do is don't double-dip. Okay?
+So, what does double-dip mean? It means that you are doing research with your advisor.
+Say you're a PhD student, doing research with your advisor on the, I don't know, security for underwater basket weaving.
+And you say, oh, you know, that's my topic, research topic, I'm going to do part of it in the project discourse.
+No. You're already doing that research, that's great, fine, whatever. Leave it alone.
+Oh, you're doing research in, I don't know, some other, sorry, you're doing a project in another course.
+I don't know, machine learning. That requires a project, or database.
+Let's say you take a database course, they have a project in climate.
+You can't commingle them. Okay? So, no double-dipping.
+Now, if you have a project that you've done somewhere, or you're doing somewhere, and you say,
+well, that project has nothing to do with security, and I'm going to introduce some cool security features to my project,
+as long as both instructors know it, me and the other person, and we're okay with it, that may be possible.
+Does that make sense?
+It gives you a pretty wide playing field.
+Any questions?
+Okay.
+We're ready.
+We're going to go breeze through this pretty quickly.
+Yeah, this is like, often I just like, in the past I sometimes let students kind of go through it themselves,
+but I found it useful, at least go through part of it, in class.
+So, this is kind of a blitzkrieg, a tour of network security from this book by Computer Networking by Kuroza Ross.
+Has any of you seen this book?
+Or used it in your networking course?
+It's quite popular.
+Anyway, you may or may not have seen this chapter, or at least covered that chapter,
+because a lot of times networking courses, especially in UC, which is only 10 weeks, they don't cover security.
+Alright, so just a quick roadmap, right?
+So the idea behind this chapter, very dense chapter, is to give you kind of very, very quick overview of network security
+before we get into more interesting topics, which is what this class is supposed to be about.
+So, you need to be conversant in some very basic photography.
+Now, if you look at the slide, the pointer I gave earlier about this 134 course, you get more than basic stuff there.
+There's like a third of the course is crypto.
+But you don't need to absolutely go there.
+You know, if you understand these slides that I'm presenting today, you should be okay.
+So, remember the networking there, or the network hierarchy, right?
+The layer hierarchy of, well, seven layers, roughly.
+The question is, well, where do we reduce security?
+And the answer is very obvious.
+You can't introduce security in just one layer.
+You have to pretty much introduce them in every layer.
+Right?
+So here, a physical layer, right?
+Physical layer is radio, right?
+Today, it's pretty much radio.
+Sometimes it's optical, right?
+Just to the optical network.
+Sometimes it's some other kind of quantum, right?
+These days, quantum is, you know, becoming popular.
+So there's, of course, quantum communication.
+And that's what they're up.
+But most of today's communication, right?
+Data link, right?
+That would be something like Ethernet, right?
+Some form of Ethernet, whether it's wired Ethernet or wireless Ethernet.
+Network layer, we have IP, right?
+IP is the lingua franca of the Internet, right?
+It's the only thing that makes the Internet, not the web.
+IP is what makes the Internet.
+We have the transport layer, TCP, UDP, RTP.
+And then the session layer, like all the socket stuff.
+TLS sort of lives up there, too.
+Then you have applications.
+And then above that, you have the presentation software, essentially,
+that faces us, the user-facing software.
+So what are we looking at?
+Well, a physical layer, which is essentially the layer that,
+like if you are using, oh, a bunch of you are using your smartphones
+and your laptops.
+Well, I don't know, let's forget smartphones.
+A lot of people here who are using your tablets and laptops,
+probably you're not communicating via cellular,
+although you could, in principle.
+The chances are you are communicating to the access point, right?
+And you are sending wirelessly, of course, the packets,
+and receiving packets from the access point.
+Some of you are supposed to be talking to each other directly,
+using Wi-Fi directly, but that's unlikely.
+Most of you probably don't know each other at that point.
+So what could be done at that level, right?
+At that level, you are susceptible to jamming.
+So if I say, you know what?
+I'm going to be a hardest about this class.
+None of you are going to be browsing the internet.
+While I lecture, I will bring a jammer here
+and jam this class, right?
+So that y'all won't be able to, you can still use your computers,
+but you won't be able to use your Wi-Fi.
+There are even cellular jammers.
+Though they are illegal.
+I think they are illegal.
+Unless you have, like, some more enforcement permission.
+But definitely Wi-Fi jammers I could bring.
+And say, okay, no Wi-Fi for you.
+Not sure if that...
+There are probably also Bluetooth jammers.
+But anyway, so what is a jammer?
+It's a noise jammer, right?
+It generates noise, large amounts of noise
+on a particular radio frequency.
+It prevents you from communicating.
+Now, you will all know that I'm jamming you, right?
+Because your interface will realize that it's being jammed.
+Or I could just jam this.
+And prevent you from essentially accessing the exit.
+You will know.
+Jamming is what's called an active attack.
+It's not subtle.
+Okay?
+What other things happen in the physical area?
+RF fingerprinting.
+You might say, what is RF?
+Well, radio frequency fingerprinting allows me,
+after observing, then sniffing on the traffic going on here.
+To essentially come up,
+and I might have to use some machine learning a little bit,
+to come up with a set of features that describe uniquely your Wi-Fi interface.
+As opposed to his, as opposed to his.
+Your interface.
+And then, of course, I have a profile for his, and for his, and for his.
+So, why is that an attack?
+Why is that something to be concerned about?
+Well, it allows me to then identify your interface,
+in some other place in the world.
+At some other time.
+It allows me to track you.
+Right?
+And link you.
+Right?
+Even if you paint your laptop black,
+and put a paper bag over your head,
+and I don't know who you are,
+but I'll know it's the same interface.
+Does that make sense?
+So, you might think this is a bit of exotic,
+why is this an attack?
+Trust me, it is.
+It is a problem.
+Yeah.
+Is that for the same class of devices,
+or specific?
+My last problem?
+Uh, I think it's,
+okay, depending on,
+I didn't say anything about what kind of fingerprinting software I would use,
+but, yeah, there are some simple things that will basically, you know,
+from your MAC address,
+I'll be able to tell, like, if it's a, what devices,
+like, it would be an Apple.
+I might not be able to tell that it's a particular model,
+but I'll know this is an Apple.
+Right?
+The MAC addresses and Wi-Fi,
+in general, the Ethernet MAC addresses,
+they have some structure.
+So, I should be able to tell the manufacturer,
+and maybe sometimes the model, depending,
+because they are globally administered, the Ethernet MAC address.
+Or at 40 AM.
+All right.
+So, and then can I,
+but that just tells me broadly what kind of device this is,
+but it doesn't tell me,
+for example, if two of you have the same model of the MacBook,
+maybe I won't be able to tell the difference with that simple approach
+by just examining the MAC address,
+but if I actually listen to the features,
+because no matter how much the manufacturers try,
+there are imperfections in manufacturing.
+Right?
+So, the two identical laptops,
+their interfaces will not have the same characteristics.
+Yeah?
+Is it illegal to use a MAC address?
+Is that illegal or, yeah?
+What do you mean?
+Well, it's not illegal to modify a MAC address.
+Can I just use other people's MAC address or something?
+Well, to use other people's MAC address,
+you have to modify yours.
+Is that illegal?
+I don't think so.
+Don't vote me on it, but I believe it's not.
+In fact, some laptops,
+some phones allow you to change a MAC address.
+In part, I think for the same reason,
+that it's to prevent tracking.
+A lot of devices just like randomize your MAC address.
+They do randomize.
+For every connection you use.
+Yeah.
+That's right.
+But they have to do it within reason.
+They cannot like,
+I think there are some rules that they have to abide by when they randomize a MAC address.
+Yes.
+Yeah.
+But to be fair, I don't know the details.
+But I'm pretty sure there are rules.
+Like there are some things you cannot do when you just pick,
+you cannot just pick a completely random MAC address.
+There are some things you cannot do.
+But yes, there are devices that do it on purpose to prevent tracking.
+Which might be okay.
+So for example, if you have an LG smartphone and every time it turns on,
+it generates a different LG phone MAC address.
+That might be okay.
+Yeah.
+For a popular phone.
+Okay.
+Yes.
+I will know it's an LG phone.
+But is it the same?
+I have no idea.
+I'm pretty sure they do it for every connection you have too.
+And then just use the same one for that connection forever.
+Do you remember which models tend to do that?
+I swear I had a phone.
+I think it's more popular with smartphones than with laptops.
+I think it was my phone.
+I don't know.
+The new MacBooks they ran the way they were connected.
+Which one?
+The new MacBooks they ran the way they were connected.
+They do?
+But I think it's still a Mac and Apple.
+Probably.
+Yeah.
+Or you could check it out.
+That's potentially a subject for a project type study.
+The investigation of MAC address usage in popular devices.
+That would be interesting to know.
+Okay.
+So that's the physical layer.
+The data layer, you have a tax on the wireless protocols.
+Right?
+So you have all these WPA, WAP, WAP.
+I don't know.
+All these three letter protocols.
+Right?
+That one can configure to use with the access.
+Right?
+So when you configure it.
+It's like at home.
+When you set up your home router.
+Right?
+You get all these choices.
+Right?
+What kind of security protocols are you configured?
+Some of them are more secure than others.
+But they can be attacked.
+Also, here at the data link layer, you see the MAC addresses.
+So another reason is like knowing who is communicating with whom.
+Right?
+So the metadata is available.
+Meaning that you learn, assuming for example MAC addresses don't change.
+You learn which MAC addresses are appropriate to which other MAC address.
+Now typically in this environment, most of you would be talking to the access point and
+receiving from the access.
+Right?
+Sending and receiving from the access point.
+The other thing you can do with, by the way, with the physical layer is use some very simple property called RSSI.
+Received signal strength indicator.
+Which allows you to essentially tell how far, within reason, how far a particular interface is.
+Right?
+So as I'm standing close to his laptop, the RSSI is going to be high.
+I'm stepping away and it's going to lower and lower and lower.
+So you might be able to triangulate devices like that.
+Okay.
+And the network layer, well, there's tons of attack.
+This is the IP.
+Right?
+The IP layer.
+Whether it's V4 or V6, it doesn't really matter.
+There are tons of attack.
+Address spoofing, of course, is a very easy attack.
+There's something called smurfing.
+We'll talk about it.
+Transport layer has sin flooding, RIPs, and sequence number prediction attacks on TCP specifically.
+Then there are like UDP attacks, but they're less interesting.
+A session layer, well, also the zone.
+I think that's outdated.
+And then in the application layer, well, you have all these bugs and exploits.
+Because application layer is very rich with features, right?
+You have tons of software there.
+So the attack surface clearly grows.
+And then the human layer, right?
+The presentation.
+Well, then here we have essentially phishing and social engineering and all kinds of catfishing.
+So it gives you an idea that you probably know the answer to the question, where do you put your security?
+And which layer?
+The answer is, you've got to put it in each layer, because each layer demands its own attention.
+Right?
+So what do we do?
+Well, this isn't the seven layer hierarchy, right?
+Anymore.
+But we start with the security building blocks.
+So a lot of times, not always.
+Definitely not always.
+But a lot of times, the building blocks, the most primitive blocks are cryptography.
+And then using those, we build protocols and various techniques and then policies.
+And then we implement them.
+And then we pass one on to end users.
+And the end users are typically, what are they exposed to?
+Well, they're exposed to some policy configuration.
+Like for example, you at home configuring your home router, right?
+Or installing some IoT device.
+You are kind of like your own manager.
+But you're generally also exposed to things like password managers and captchas and multi-factor authentication, etc.
+And company security policies also that require physical.
+Like carrying a badge.
+Having a smart card.
+Having some kind of a key fob, right?
+Dongle.
+It opens doors.
+All compliance with biometrics, right?
+So, roughly speaking, what is network security?
+Well, it has all these buzzwords, right?
+It's all about things like antigenciality, right?
+Because in a network, you usually have a sender and a receiver.
+Sometimes, of course, you have more than one sender and more than one receiver.
+Right?
+But in the most basic case, you have like Alice and Bob talking to each other in some way.
+Who should see messages, right?
+Who should see that communication?
+So, we use crypto for the most part where sender encrypts, receiver decrypts.
+Authentication.
+Authentication is we want to make sure that the origin of the message is the one that we believe it is.
+Right?
+And the sender here wants to confirm that the receiver is the one that is going to receive it.
+And the receiver wants to confirm that the sender is the one who sent it.
+Integrity is tightly coupled with authentication, right?
+But not exactly the same.
+Don't make a mistake of like thinking it's the same thing.
+Integrity is about making sure that the data arrives intact and any modification is detected.
+Right?
+But typically they are conjoined.
+They are put together.
+Meaning that you want to have both origin authentication and data integrity.
+And that access control, right?
+Who has access to what resources?
+Meaning, yes, network resources, for example.
+And availability.
+So availability is just making sure that something is available that is not being, say, subject to
+denial of service attack.
+Right?
+Let's say you're trying to log in to a particular site, but it's being hosed down as a victim
+to denial of service.
+That is an attack on availability.
+It's not an attack on access control.
+But if somebody, you know, walks into a door that you have a badge, you open the door and
+somebody tailgates you, that's an access attack.
+So we all, right?
+You've seen these characters before, right?
+Alice, Bob, Eve.
+No gender associations.
+We just use two pictures sometimes.
+These are just communicating parties.
+In most cases, not always, Alice and Bob are, well, the communicating parties, the benign characters.
+And Eve, as you can see, is not a benign character.
+That's Nenders.
+That's Nenders.
+So, but Alice and Bob, don't fall into this trap of thinking, oh, Alice and Bob are always
+people, right?
+They're not necessarily people.
+They could be, users.
+But they could be web browser, web server, or let's see if they can be able to access
+to their own.
+And in most cases, not always, Alice and Bob are, well, the communicating parties, the
+benign characters.
+And Eve, as you can see, is not a benign character.
+That's Nenders.
+So, but Alice and Bob, don't fall into this trap of thinking, oh, Alice and Bob are always
+people, right?
+They're not necessarily people.
+They could be.
+Users.
+users, but it could be web browser, web server, right, there could be client-server and online
+banking, there could be a smartphone and a base station that it connects to, it could
+be a laptop and an access point, it could be a ground station and a satellite, that
+could be your Alice and Bob, clients and DNS, right, everybody knows DNS, okay, routers exchanging
+like BGP routers exchanging, border routers are adjacent, exchanging information, game
+players and multi-user games, distributed multi-user games, wireless, okay, tons of examples, so
+just remember, they're not people, they don't have to be. So, what can the adversary do?
+Many things, at the very least, the adversary, the most sort of benign adversary, if such
+a thing exists, is an eavesdropper. An eavesdropper, well, that's what the name suggests, eavesdrops.
+Intercepts, communication, analyzes, whatever they can see, even if communication is encrypted,
+as I mentioned last time, even encrypted communication leaks a lot of interesting information.
+Insertion, well, that means of fabrication, introducing fake or fabricated messages into communication.
+Impersonation, spoofing addresses, hijacking, taking over a connection, existing connection,
+denial of service, etc. This is not an exhaustive list, okay, this is just examples of what an
+adversary could do, could try to. Any questions? None of this is very difficult. Crypto! Right, very quick
+tool for crypto. Hmm, language, first language, right? Encryption, decryption, right? Encrypt, decrypt.
+One reverses the other. Sometimes people use the word enciphered, deciphered. It's not common that people use that.
+It does the same thing. Alice, Bob, want to communicate, make sure that Eve does not attack that communication.
+Alice must have an encryption algorithm. Bob must have a decryption algorithm, okay?
+Now, this picture is misleading. I mean, I took a lot of these slides from, of course, Kuro's, Ross book,
+but this picture, because these people are, after all, networking people, they're not security people.
+So, why is this picture misleading? Because sometimes, sometimes, secrecy is not important.
+Sometimes Alice and Bob want to communicate, a little bit, a lot, doesn't matter. But they don't care if anybody hears them.
+Can you think about real-world scenarios? It might not be important to keep communication secret.
+What could be more important is to keep communication authentic and maintain integrity.
+That means messages sent should not be modified by anybody. Messages cannot be fabricated by somebody.
+So, somebody cannot just, like, insert a message saying this comes from Alice to Bob, or this comes from Bob to Alice, right?
+That will be, like, fakery. So, sometimes the biggest concern isn't secrecy.
+Sometimes the biggest concern is authenticity and integrity.
+And, in fact, if you look at something like some of the mechanisms we will talk about later in the course, like TLS and IPsec,
+they all, you may not know this, but they all have no encryption option.
+For situations where encryption is not important, but authentication and integrity are, right?
+Sometimes it's called null encryption. In TLS, I think it's called null encryption.
+Anyway, back to this picture. In this picture, if you believe Coroz and Ross,
+I mean, they're really talking about encrypting communication, right?
+Saving it from being learned by the adversary.
+So, here we have a key that Alice has and Bob has, and ideally, they should be the same.
+Right? The KAB and KBA should be the same. Otherwise, well, things don't work so well,
+because you want to encrypt a plain text, a message with a key, and decrypt it with the same key
+in order to get the message back on the box side.
+And that black arrow between the green boxes, that's like a wireless hop like this, or it could be, I don't know, 20 hops on the internet.
+I make no assumption about this distance here.
+Right? It doesn't matter. It could be very close, or it could be very far.
+Now, this picture again is very simplistic, because in the real world, there are two types of cryptography.
+Symmetric, or asymmetric, or public key. So, asymmetric, public key are synonymous.
+Symmetric. So, in the symmetric cryptography world, Alice and Bob must have the same key.
+The same key that encrypts must be the key that decrypts. And that's how it works.
+In the public key world, and this is where it gets tricky if you've never seen public key crypto,
+the encryption key and decryption key are different. And Alice and Bob do not need to share a secret.
+In order to communicate. And that's what confuses a lot of people, and this is where they see it for the first time.
+So, let's look at, quickly, symmetric. Well, symmetric is easier. It's been around since, I don't know, ancient Rome, or ancient Sparta, anyway.
+The oldest, I think, encryption method was used by the Spartans.
+They would tie a leather belt around the upper arm of a messenger.
+Leather belt.
+They would write a messenger.
+And then unwrap the belt.
+So, the belt was unwrapped.
+The letters would make no sense.
+You have to put them back on the bicep of the messenger in order for them to make sense again.
+And a cue.
+Now, if the messenger lost a lot of weight in transit, maybe a problem.
+Then there was the Caesar cipher, right? Everybody know Caesar cipher?
+Encrypt letters by shifting them by three positions or something like that.
+Anyway, so, ancient ciphers were like this. They're typically mono-alphabetic.
+I mean, mono-alphabetic means you encrypt one letter at a time.
+Because, remember, in the past, people didn't have cubes.
+So, nobody cared about encrypting bits.
+Right? People wanted to encrypt words or letters.
+Usually letters.
+So, you had a plain text, and you had a ciphertext.
+Right?
+And then, you substitute one letter for another.
+Now, in this case, look at the plain text there.
+That's an alphabet.
+That's the 26-letter alphabet.
+If you permute the alphabet, like shuffle, shuffle, shuffle, shuffle, shuffle.
+Stop at some point.
+You have a random permutation.
+Right?
+That's a random permutation.
+So, if you have the regular alphabet, and you have the permutation right underneath,
+you can now encrypt.
+Yes?
+Sure.
+It's like a code book, right?
+You encrypt.
+Every time you see an A, it becomes an M.
+Every time you see a J, it becomes a D.
+Blah, blah, blah, blah, blah, blah.
+So, Bob, I love you.
+Alice becomes blah, blah, blah, blah, blah.
+It looks like a strange language.
+Right?
+That's the encryption.
+Side of the case.
+How many permutations of alphabets are there?
+46 factorial?
+Close enough.
+Exactly 46 factorial.
+Not a small number.
+And if you use some other alphabet, I don't know, like Hungarian or Russian, you get more
+because they are more letters.
+Scary number.
+So, seems like, why are we using this cipher?
+Have you seen this cipher being used?
+Probably not.
+And for good reason.
+The problem is nobody cares about the key.
+This cipher can be broken without knowing the key.
+Well, not exactly, but close enough.
+If you try to break it by brute force, you will indeed have to try up to 26 factorial combinations.
+Not quite as bad because on average, you know, asymptotically, it should be 46 factorial over 2.
+Big deal, right?
+Take a huge number divided by 2, you still have a huge number.
+But to be precise, it's 26 factorial over 2.
+But, rest assured, you don't need to do this much work.
+Because if you know the message is written in English, right?
+And we do usually know what language the message is written in.
+All you need to do is, hmm, I can't find a slide on this.
+No, I don't.
+Well, the letter frequency of the English language is public and well-known.
+What are the two most frequent letters in English language?
+Take a wild guess.
+E.
+E, what's the second?
+T.
+By far, they tower above, you see a bar chart, they tower above.
+E is like way up.
+Then T is like the second.
+And H is very close, okay?
+So, anybody seen The Game of Jeopardy?
+The stupid TV show.
+At least you might know.
+Well, they do something like this.
+You might have guessed like a phrase or something by guessing letters, right?
+Well, it's a very similar idea to cryptanalyze this cypher.
+First, you look for the most frequent letter.
+That should be an E.
+So, whatever that is, if it's a Z, you say, ah, Z is the most frequent letter in the encryption?
+That's an E.
+What's the second most frequent letter?
+Oh, that's a T.
+Well, that gives you already a lot, because then you can start deducing others without really
+knowing about that.
+So, you see, the whole thing will fall like a house of cards.
+So, you don't need to actually, that's called a shortcut, right?
+There's an example of a shortcut where you don't need to brute force the key space, you'll
+just figure it out some other way.
+All right, so, but we don't use such stupid cyphers anymore, clearly.
+So, back to symmetric key.
+Symmetric key world, we assume that Alice and Bob have the same key, KAB.
+Don't ask me how they know it.
+Okay?
+Just let's believe in the fairy tale that there's a book that at some point in life, both Alice
+and Bob, a little bird sat on their shoulder and gave them KAB.
+Okay?
+So, now they are the only ones in the world who know KAB.
+So, if Alice has a message, she puts it through an encryption algorithm together with a key.
+You see the key coming from the top.
+Message M becomes a cypher text.
+In other words, the annotation KAB over M, right, is encryption.
+And when Bob receives the message, he knows the same key, he inputs it into this green box,
+and out comes the plain text, right?
+Because encryption reverses encryption.
+Yay!
+Okay.
+How do they agree on the key?
+Like I said, so far we don't ask hard questions.
+DES was a historic cypher.
+In fact, well, when I was in grad school, that's what was being used.
+That was a long time ago, but I can only give you an example because it's a great example
+of a symmetric cypher.
+In fact, the variation of DES is still used.
+In fact, you will see it in CLS, but it's called triple decimal, three decimal.
+This was standardized in 1993.
+It's a laughably insecure cypher today, but not insecure because the design is bad.
+It's insecure because its key is short.
+So DES, or the data encryption standard, has a 56-bit symmetric key.
+Actually, it's 64 bits, but 8 bits are what's called parity bits, so they're guessable.
+They're not relevant.
+So with 56-bit key, you have 2 to the 56 of possible combinations.
+Now, up to about mid-1990s, that was a very scary number.
+Because if you had the space of 2 to the 56, that was essentially meant that you had to
+try, on average, 2 to the 55 possibilities before you could break the key, brute force.
+And there were no real shotguns.
+But as time progressed, Moore's law, right?
+Everybody knows Moore's law.
+Right about mid-1990s, people started saying, hmm, this ain't comfortable anymore.
+Breaking DES, that is trying doing, designing a specialized ASIC, right?
+A specialized computer, specialized hardware, to do 2 to the 55 trials of DES, is no longer
+not viable.
+A nation-state would, in principle, do it.
+So that's why the government started looking for new standards.
+And today, of course, we don't use this.
+There are other standards, like AES.
+But it's harder to show, because it's a more complicated cipher.
+So, alright.
+DES is not used today because its key is short.
+Not because it's insecure, fundamentally.
+There are no backdoors to it.
+This is the version that is still used today, occasionally.
+Which is essentially a triple application of DES.
+So it's like triple encryption, if you will.
+But it's with two keys, and I might show you later on how it's done.
+But anyway.
+Here's this diagram.
+DES, you don't need to remember this, because it's just a quick tour.
+DES is an interesting beast.
+Essentially, the plain text, remember it's all about encryption, right?
+So it treats plain text message as a sequence of 64-bit blocks.
+So DES operates on one 64-bit block at a time.
+Okay?
+So for DES, there's nothing more than 64 bits.
+Just one 64-bit input, one 64-bit output.
+If you ever hear of a cipher that outputs fewer bits than it takes on, run away.
+Right?
+It cannot possibly be.
+Something cannot encrypt and produce fewer bits than it takes on.
+If it produces more bits, that's believable.
+But fewer bits, no.
+Because you obviously lose information.
+Alright, so 64-bit input, 64-bit output.
+Well, in the beginning, there's something called the initial permutation.
+And at the end, there's something called the final permutation.
+And in the middle, there are 16 rounds of torture.
+Like, pure, sheer torture that the bits in that 64-bit block.
+They, like in an ancient, like medieval torture machine,
+they get expanded and contracted, and expanded and contracted,
+and swapped around, and at the end, the 64-bit input comes out.
+I could tell you in more gruesome details how this happens,
+but if you look at them in more detail,
+you will see that actually no information gets lost,
+but a lot of information gets permuted and moved around.
+And the only operations that Des uses are essentially shifts and XORs.
+Sort of like bit shifts, yeah?
+Everybody knows what a bit shift is, like left shift, right shift, XOR.
+So the operations are super primitive.
+There's no, like, exponentiation, multiplication, nothing like that.
+Right?
+Just like a super primitive thing.
+And that's why it was designed to be fast and hardware.
+And hardware does not like complicated operations.
+And there are 16 rounds of torture.
+And in every round, a different...
+You see there, on that side, you have a 56-bit key?
+That's one of the inputs, right?
+Of course, there has to be a key.
+And that key gets mangled into 16 different variations.
+And every variation corresponds to a round, of which there are 16.
+And it's in case 16.
+Right?
+So there's from one key, 16 subkeys are derived.
+And each one is used in its own round.
+So, it's like a horror movie for that, of some sort.
+But, unlike a horror movie, you can get your data back by encrypting.
+So, there is actually...
+I'm not showing you in here, but there is a similar algorithm that is inversed,
+that is performing decryption.
+So, in DES, like in many block ciphers, encryption and decryption are not identical.
+But they are inverses of each other.
+Okay?
+Now, in 2001, NIST, National Institute of Standards and Technology,
+which is the US government agency, which I think still exists, despite current administration,
+for now, it regulates all kinds of standards, including like, I don't know,
+what qualifies as purified water, all the way to encryption.
+So, they do all kinds of standardization.
+And they had a call, right?
+So, they don't themselves come up with standards.
+They actually, like, announced a competition.
+And so, there was a competition that was won by this, what we call today, AES,
+Advanced Encryption Standard.
+And, unlike DES, which operates on 64-bit blocks and uses a 56-bit key,
+AES gives you a lot of flexibility.
+It uses 128, 192, or 256-bit keys.
+Allows you this.
+And you can also use, as far as input blocks, you can use 128 input, 192 to 56.
+You can mix and match.
+It means you can take a version of AES and use 256-bit blocks with 128 input keys.
+So, any combination is fine.
+So, brute force on the smaller, or sort of the weakest version of AES would be 128, 128.
+And the brute force attacks will take you something about this amount of time.
+Which most of us do not have, sadly.
+But on DES, the same attack will take one second.
+Because the key is so short.
+Not so much because block size is small, but, like, the key is short.
+So, as you all probably know, right?
+As you increase the bit size of something, the complexity grows exponential, right?
+And the increase.
+So, you might seem like, well, what's the difference between, let's say, a 56-bit key and an 80-bit key?
+Astronomical.
+The difference is astronomical.
+A 56-bit key today is blatantly, plainly insecure.
+So, if you use 56-bit encryption, it can be broken in seconds.
+If you use 80-bit encryption, which is the minimum you should be using today,
+well, it will take years.
+Not trillions, a dozen years, which, again, most of us don't have.
+So, just keep that in mind.
+Anyway, just another sort of picture of how the block cipher works.
+Right?
+This is a general structure.
+It's not about how DES or ES.
+They're all sort of block ciphers, and the name for this whole family is called phi-stone ciphers.
+Don't ask me why.
+But, essentially, they all look like this.
+The 64-bit, of course, changes, right?
+It's not only 64 or 8.
+Now, what is important to understand is the way that I described DES, right,
+and the way that I talked about DES, is it's called a block cipher.
+Block ciphers process input, plain text, one block at a time, right?
+There's a key, and there's one block of input.
+And there's the next block of input, same key.
+Third block of input, same key.
+Right?
+And so on and so on, until the end, until the plain text is exhausted, and we have the second.
+So, that is called electronic codebook mode, ECB.
+Right?
+Because, essentially, if you have the same input block appearing twice in the message, and you use the same key to encrypt that input block, well done.
+The output will be the same.
+Does it make sense?
+Right?
+Same key.
+Right?
+But you have repeated inputs.
+Then, the ciphertext will be repeated as well.
+Right?
+So, if you encrypt the word hello twice, if it appears twice in the plain text, and you encrypt it separately, the word hello, whatever the key is, it doesn't matter.
+The ciphertext will be the same.
+Does that make sense?
+Holler if it doesn't make sense.
+In other words, if you encrypt like this, like I just described, the ciphertext will display patterns.
+Like, whenever you have repeated plain text, you have repeated ciphertext.
+Think about it.
+If the message is always, if the message from Alice to Bob always says, hi dear, then that first block will always be, hi dear.
+Right?
+But the encryption of that will always be the same.
+Right?
+If they use the same key.
+Yes?
+That's not good in the real world.
+In the real world, that leaks information.
+Right?
+Leaks information.
+It says, this is the same block as here.
+Or, it was the same block as we saw in the previous message.
+So, that's why we use something called cipher block chaining.
+CBC.
+Okay?
+CBC is, you can use it with any cipher.
+It doesn't matter if it's DES, ES, whatever.
+But here, you chain the blocks.
+That is, you take the message, and before you encrypt it using a block cipher, you XOR it.
+Everybody knows XOR, right?
+You XOR it with the encryption of the previous block.
+Anybody see a problem?
+Any problem with that?
+No?
+No problem?
+What about the first block?
+What's the previous block for the first block?
+No?
+No problem?
+No problem?
+No problem?
+What about the first block?
+What's the previous block for the first block?
+No, I have one.
+That's why usually there's something called IV.
+This.
+Initialization vector.
+And that better be picked unique every time.
+Because if you don't pick it unique, what happens?
+If the message starts with Hi, Bob, and the initial selection is always the same, the beginning
+of the message is always going to be the same.
+So, think paranoid.
+This is a security class.
+Alright.
+Enough for today?
+Enough for today.
+So, most of this, I will post this lecture today.
+There's more stuff there.
+I will try to cover about 15, 20 more minutes of it, and I'll leave the rest of it to you.
+Because it's not really, like, truly this course material.
+It's kind of background stuff.
+Okay, see you next Tuesday.

@@ -1,0 +1,1673 @@
+WEBVTT
+
+00:00.000 --> 00:06.640
+mean, what is it that you want to protect? Things on the inside. To be strictly strict
+
+00:06.640 --> 00:13.320
+about it, I mean, this is sort of an old-fashioned intranet, but really it's like the private
+
+00:13.320 --> 00:18.900
+network. And it has all this trust, the posts and other stuff and other networks and equipment
+
+00:18.900 --> 00:26.740
+and printers and, I don't know, IoT devices and whatever you have. I think there's a big
+
+00:26.740 --> 00:33.740
+bad world outside. If the world wasn't bad, we wouldn't need firewall. So the world is
+
+00:33.740 --> 00:40.680
+big and the world is bad. And the typical thing here is that you have a router that connects
+
+00:40.680 --> 00:47.120
+you to the, like ISP, right? Or if you are, if the organization itself is already its own
+
+00:47.120 --> 00:52.160
+ISP, connects you to the long haul. Remember autonomous systems? Yeah, I'm talking about
+
+00:52.160 --> 00:57.380
+autonomous domain, autonomous systems that provide like long distance services. So anyway,
+
+00:57.380 --> 01:02.300
+this connects you to the rest of the world. And then here you have this firewall. And the
+
+01:02.300 --> 01:08.600
+firewall is your sort of first line of defense, right? Router is not a firewall. Sometimes
+
+01:08.600 --> 01:13.160
+they can live in the same platform, but logically a router and a firewall are two very different
+
+01:13.160 --> 01:20.160
+things. Router's job, main job, is to route packets and to maintain a routing table and
+
+01:20.160 --> 01:26.160
+to exchange information with other routers about reachability and congestion and all things
+
+01:26.160 --> 01:35.160
+like that. It does not generally perform security tasks. Its main job is not security. Firewall's
+
+01:35.160 --> 01:42.160
+main job, the only job is security. There's no other job that a firewall has, just security.
+
+01:42.160 --> 01:52.160
+Now here, this is again a bit old fashioned terminology, but often referred to as DMZ or demilitarized
+
+01:52.160 --> 02:00.160
+zones. Okay? So this is where you put your publicly accessible servers, like your web server,
+
+02:00.160 --> 02:09.160
+right? Or your VPN server, or some other server, or customer support, whatever. So things that
+
+02:09.160 --> 02:15.160
+you want to be accessible from the outside with less scrutiny, anybody should be able to access
+
+02:15.160 --> 02:22.160
+at least the company web server, right? Every company that, you know, unless they're super secretive,
+
+02:22.160 --> 02:31.160
+right? 99% and more probably of the entities, right? Commercial entities have web presence. What
+
+02:31.160 --> 02:35.160
+that means is they have a web server. Now some of them do it like this. Some of them host a
+
+02:35.160 --> 02:45.160
+web server out on a third party provider. Okay? But many do this. They just put it in a DMZ. And
+
+02:45.160 --> 02:54.160
+the firewall will make sure that traffic can go to the DMZ with no scrutiny. But the DMZ itself
+
+02:54.160 --> 03:00.160
+is separate, physically disconnected from the rest. So there's no line. If there is a line
+
+03:00.160 --> 03:07.160
+here, that's a recipe for a disaster. Okay? So if there's anything you remember, or one of
+
+03:07.160 --> 03:12.160
+the few things you should remember about this lecture, that if you have a DMZ, its only connection
+
+03:12.160 --> 03:26.160
+should be to the firewall. Okay? And there should be zero connection here. Okay? So I already
+
+03:26.160 --> 03:32.160
+mentioned the moat. But, important thing, before you start thinking and have your mindset
+
+03:32.160 --> 03:39.160
+that O is a big bad world and we ought to protect our precious resources from the big bad world.
+
+03:39.160 --> 03:46.160
+It is true, but it's not the entire truth. In addition to that, you want to protect yourself from
+
+03:46.160 --> 03:59.160
+things coming out. Why do you care about things coming out? Not just going in. Anybody?
+
+03:59.160 --> 04:06.160
+We are a military or some company with some security technology. Okay? Let's develop this. Let's go
+
+04:06.160 --> 04:13.160
+further. What is the general thing we are looking for here? To prevent?
+
+04:13.160 --> 04:21.160
+Yeah, yeah, yeah. But what kind of attacks?
+
+04:21.160 --> 04:26.160
+Perfect shovel. Okay? Perfect shovel.
+
+04:26.160 --> 04:36.160
+Okay? But there's a term for this. We used that term before. Insider attacks. Insider attack.
+
+04:36.160 --> 04:43.160
+Rogue employees, right? They happen, right? Rogue employees. Somebody knows they are going
+
+04:43.160 --> 04:49.160
+to be axed on a day tomorrow. They can cause damage. They can put a bomb, a logic bomb somewhere.
+
+04:49.160 --> 04:56.160
+They can exfiltrate the information. What about malware? Joe Schmo comes to work.
+
+04:56.160 --> 05:04.160
+Total doofus. Not a malicious person. Sticks a USB that he brought from home to watch some movies
+
+05:04.160 --> 05:11.160
+during lunch break into his work computer. And damn! Malware jumps from USB over to the laptop
+
+05:11.160 --> 05:18.160
+or desktop and starts exfiltrating sensitive information. You have an unwitting insider.
+
+05:18.160 --> 05:24.160
+But essentially what you have is malware. Okay? That sits on the inside and exfiltrates information.
+
+05:24.160 --> 05:29.160
+That is why it is very important to control who goes in and who goes out. Just like in a castle
+
+05:29.160 --> 05:34.160
+with a moat. It's not there just to control who comes in. It's also to see what comes out.
+
+05:34.160 --> 05:47.160
+So make sure you remember that. The firewall is two-way. So location of course as you saw
+
+05:47.160 --> 05:53.160
+in the picture is typically between the external and internal network, right? It could also be
+
+05:53.160 --> 06:02.160
+inside your private network separating various parts, various departments. That makes sense.
+
+06:02.160 --> 06:09.160
+It makes sense. It makes sense in certain government agencies like three-letter agencies. It makes sense
+
+06:09.160 --> 06:16.160
+in military settings, right? Where you have strict compartmentalization of information. That there
+
+06:16.160 --> 06:21.160
+would be a firewall even within the internal network, right? But that means that the internal network
+
+06:21.160 --> 06:31.160
+is sort of naturally subdivided into smaller networks. Okay? You could also have it on your own machine.
+
+06:31.160 --> 06:38.160
+On your own machine. So if you are running Windows, you might be running a personal firewall, right?
+
+06:38.160 --> 06:44.160
+Microsoft personal firewall. I think on Linux, there is also like at least several packages
+
+06:44.160 --> 06:50.160
+that will install a local firewall for you. Anybody configured their own firewall?
+
+06:50.160 --> 07:01.160
+You and I? Nobody else? Nobody uses Windows? Nobody uses Linux? Okay. It's so fine. Most people
+
+07:01.160 --> 07:09.160
+don't come across this. Okay, so important thing. That firewall is a nice concept, but it essentially
+
+07:09.160 --> 07:16.160
+leaves a lot of room for deciding where to put it. Which layer? Remember the session, sorry, remember the
+
+07:16.160 --> 07:23.160
+sort of rough seven layer hierarchy, right? Network particles, right? Network particles stack. Why?
+
+07:23.160 --> 07:33.160
+You don't put it in the physical layer. Okay? That's like silly. You don't put it in the MAC layer because
+
+07:33.160 --> 07:39.160
+the MAC or data layer because that's one hump, right? And it's like, what's the point of a firewall?
+
+07:39.160 --> 07:50.160
+It's at the MAC layer. So the lowest layer where you can place the firewall is the network layer.
+
+07:50.160 --> 07:59.160
+Because remember the network layer is hopping around the internet. It's the common layer of the entire internet.
+
+07:59.160 --> 08:06.160
+So you cannot put it lower than the network layer. How high can you put it? Well, you can put it all the way
+
+08:06.160 --> 08:17.160
+up to the application layer. And that leaves a lot of choice. Okay? So the simplest one is the packet
+
+08:17.160 --> 08:24.160
+possession filtering router that is placed at roughly the network layer. Roughly, I say kind of, let's say
+
+08:24.160 --> 08:32.160
+you're doing the network energy. Another approach is called proxy gateway. But proxy gateway means
+
+08:32.160 --> 08:40.160
+that actually traffic terminates. So instead of just examining packets one by one, this proxy gateway
+
+08:40.160 --> 08:47.160
+will actually like terminate the connection. And we start a new one. So it will be like stitching out
+
+08:47.160 --> 08:57.160
+two connections. Does that make sense? Right? And this can be done at circuit level, which is application
+
+08:57.160 --> 09:10.160
+independent, using sockets, right? Socket layer. And then it can also be done at application level layer. And that
+
+09:10.160 --> 09:20.160
+requires designing kind of a custom application gateway. Right? And maybe, I suspect some of you have
+
+09:20.160 --> 09:26.160
+already seen this in the real world. If you weren't like in the real world, you may have seen this. Okay?
+
+09:26.160 --> 09:32.160
+These types of things. And then of course the personal firewall, you set up your own rules and this could
+
+09:32.160 --> 09:38.160
+work at almost any layer, but generally it's a network layer. So we're not going to talk much about this. We're going to
+
+09:38.160 --> 09:53.160
+focus on the first two, the packet and proxy gateway. Questions so far? Okay. So just a pictorial representation of
+
+09:53.160 --> 10:02.160
+what I just mentioned. Internet and then you have this security perimeter, right? Which is a network security perimeter
+
+10:02.160 --> 10:12.160
+where your private network is located. And this packet filtering router, which is the firewall, located there. And
+
+10:12.160 --> 10:19.160
+all it does, it does it fast. Because it looks at a packet at a time, and it doesn't keep state about anything.
+
+10:19.160 --> 10:29.160
+It just looks at one packet and says, source, destination, protocol, maybe what's the next protocol, maybe
+
+10:29.160 --> 10:36.160
+port number, and like length and things like that. It says, what is this? What is this? Do I let it go or do I not?
+
+10:36.160 --> 10:45.160
+So it just makes a decision. Let it go or drop. Very quickly. Okay? It does not consult much except maybe some
+
+10:45.160 --> 10:56.160
+kind of a table. Okay? You'll see an example. Then you have a circuit level gateway, which basically splices connections.
+
+10:56.160 --> 11:05.160
+So here you have an outside connection, let's say, that terminates here. And if you took a networking course, you've seen
+
+11:05.160 --> 11:13.160
+the concept of virtual circuits, right? So essentially, this is a virtual circuit. Right? So there's one that goes
+
+11:13.160 --> 11:24.160
+in here, in, and then it's translated into this. So this allows, you know, circuit level filtering. Right? Because it's all
+
+11:24.160 --> 11:33.160
+socket based. Okay? But port based, if you will. And here you have application level gateway, where what happens
+
+11:33.160 --> 11:39.160
+is you want to, let's say, telnet, right? Remote telnet, like a remote login, right? You want a remote login
+
+11:39.160 --> 11:48.160
+from the outside to the inside. But what you first do is you actually log in to this application level gateway.
+
+11:48.160 --> 11:56.160
+That's like a first line. And then from there you go to the actual place inside you want to go. So it's
+
+11:56.160 --> 12:03.160
+really like translating to telnet session, to telnet session. One to here and one to here. And the same
+
+12:03.160 --> 12:17.160
+would go for file transfer, SMTP, HTTP, etc. It's a real like proxy. Okay? And so this has the most information
+
+12:17.160 --> 12:24.160
+about traffic, right? Because this looks at the actual application. So if an application
+
+12:24.160 --> 12:31.160
+is not allowed, there's no proxy, the traffic is discarded by this gateway. So for example,
+
+12:31.160 --> 12:36.160
+if you try to use, I don't know, some strange protocol that is not supported, right? Some kind
+
+12:36.160 --> 12:41.160
+of a, some kind of a new app or something that's not supported. It says, oh, I only support telnet
+
+12:41.160 --> 12:48.160
+TPS and TPS to be by. Okay? Whereas a certain level admin might not, might not notice that,
+
+12:48.160 --> 12:58.160
+right? Because it doesn't see the application context. Yeah. So starting with, let's start
+
+12:58.160 --> 13:06.160
+with packet filtering. So as I said, the decision is done per packet, without any other context
+
+13:06.160 --> 13:12.160
+of whether this packet is part of a connection or not. Just look at individual packets. Okay?
+
+13:12.160 --> 13:19.160
+What does it look for? Mainly IP source destination address and port numbers.
+
+13:19.160 --> 13:26.160
+Protocol identifier, remember the IP header has protocol identifier. And when I say port
+
+13:26.160 --> 13:32.160
+numbers, of course port numbers are not inside the IP header. That's inside TCP header or UDP header.
+
+13:32.160 --> 13:41.160
+So look at both network layer and transport layer. There are some super simple firewalls,
+
+13:41.160 --> 13:47.160
+also packet level filters that only look at the IP header. It's faster that way. Okay?
+
+13:47.160 --> 13:57.160
+And I'll tell you why it's faster. Because remember IP has fragmentation. Remember I talked about
+
+13:57.160 --> 14:11.160
+how IPv4 has fragmentation. So when the TCP segment is given to IP on the sending side, it could be large. Yeah?
+
+14:11.160 --> 14:20.160
+And so the IP then will, if it's too large to be fit in one IP packet, it will chop it in fragments.
+
+14:20.160 --> 14:31.160
+Well, only the first fragment will have the TCP header. Right? The other fragments could be like in the middle, right?
+
+14:31.160 --> 14:39.160
+Or somewhere. So they won't have a TCP header. So you can't check the port numbers. Not good. Right?
+
+14:39.160 --> 14:44.160
+If you want to filter by port numbers, you can't. Although the IP header won't tell you is the next
+
+14:44.160 --> 14:48.160
+protocol is TCP. But it won't tell you what the port numbers are because the header isn't present in the
+
+14:48.160 --> 14:55.160
+fragment. So that presents a problem. Also, you will, so one way to do so is to disallow fragments.
+
+14:55.160 --> 15:00.160
+So some of these packet filters, right? These packet filtering gateway, they will discard
+
+15:00.160 --> 15:05.160
+fragmented packets. They simply like return an ICMP. What's called an ICMP? They say no
+
+15:05.160 --> 15:13.160
+fragmentation. Don't fragment. But I want to ask, like, when fragmentation is
+
+15:13.160 --> 15:18.160
+usually because the router cannot send a large package. So...
+
+15:18.160 --> 15:25.160
+Well, a router can only send a packet as large as what's called MTU of the next link. MTU is
+
+15:25.160 --> 15:31.160
+the maximum transmission unit. So that's hard-coded in a given link. So for a given
+
+15:31.160 --> 15:35.160
+router, you know, it has this interface. It's more than, at least two, right? That's why
+
+15:35.160 --> 15:43.160
+it's a router. So for each interface, it has an MTU. So when it receives a packet, obviously
+
+15:43.160 --> 15:49.160
+it's big enough to fit, right? But when it sends a packet, it has to look, is that packet
+
+15:49.160 --> 15:57.160
+it's going to fit in the MTU on the next link. Okay? That's how IP works. Does that make sense?
+
+15:57.160 --> 16:03.160
+But all I mean is that, like, between the routers in a network, you cannot, like, control the
+
+16:03.160 --> 16:09.160
+router MTU between the routers. You cannot. You cannot. But there's something called MTU discovery.
+
+16:09.160 --> 16:15.160
+I mean, generally today, so there's, like, the protocol, the way to describe the spec IP, the
+
+16:15.160 --> 16:19.160
+way it's described, and the way it's implemented. So the way it's implemented today is more routers
+
+16:19.160 --> 16:25.160
+do not fragment packets. And I tell you what. So theoretically, it should, it can be supported,
+
+16:25.160 --> 16:30.160
+it should be supported, but it's not done because internet routers, and this has nothing to do with
+
+16:30.160 --> 16:40.160
+security. Internet routers are supposed to process packets fast. Fast. Okay? And there's something
+
+16:40.160 --> 16:47.160
+called a fast path. Fast path is take a packet, look at the destination, points to the next
+
+16:47.160 --> 16:56.160
+hop, send it. If anything deviates from that, today's most routers will drop the packet. Okay?
+
+16:56.160 --> 17:02.160
+Because technically they are supposed to, oh, well, the next MTU is too small, I have to split
+
+17:02.160 --> 17:10.160
+this packet into two parts. That's a lot of work for a router. It deviates very much from this fast path.
+
+17:10.160 --> 17:18.160
+So that's why many of them don't do it. Okay? But, so that's assumed for the, for the rest of this
+
+17:18.160 --> 17:22.160
+discussion, right? You understood what I, I hope that what I mentioned before, the problem with
+
+17:22.160 --> 17:30.160
+fragmentation. But assume there's no fragmentation. Assume that the source of the IP packet sends in a small
+
+17:30.160 --> 17:37.160
+enough packet that it will not be fragmented. Okay? Which means that every IP packet has a
+
+17:37.160 --> 17:42.160
+TCP header. Let's just assume. It may not always be the case. Then what you can do is, of course,
+
+17:42.160 --> 17:48.160
+you can look in a TCP header and say, oh, there's a port number, and look at TCP flags. Remember,
+
+17:48.160 --> 17:53.160
+TCP flags indicate what kind of packet this is, right? Is it the beginning of the handshake cover
+
+17:53.160 --> 17:59.160
+connection? Is it the end of the connection? Etc. And if it's not TCP, for example, above IP,
+
+17:59.160 --> 18:04.160
+there could also be UDP, which presents a bit of a problem, or ICMP, which is control,
+
+18:04.160 --> 18:10.160
+internet control message protocol, which I mentioned earlier. It's like a maintenance protocol.
+
+18:10.160 --> 18:15.160
+Anyway, so filtering rules are based on pattern matching, and you'll see some examples.
+
+18:15.160 --> 18:21.160
+Different gateways or different firewalls that are different vendors for different languages.
+
+18:21.160 --> 18:28.160
+It's not like a unified language for describing rules. So if you work for a company that implements
+
+18:28.160 --> 18:33.160
+a certain, or buys a certain product, a firewall product, you need to learn the language,
+
+18:33.160 --> 18:36.160
+their policy language, if you're going to configure a firewall. You better learn it well,
+
+18:36.160 --> 18:49.160
+because misconfigurations can cost nera. Now, at this point, remember SSL TLS. Right? Remember?
+
+18:49.160 --> 18:59.160
+SSL TLS, you might think, presents a problem. Doesn't it? Well, not for this kind of firewall.
+
+18:59.160 --> 19:08.160
+Because if you recall, SSL TLS starts encrypting things above TCP. Right? And not even that.
+
+19:08.160 --> 19:12.160
+Some things are not even encrypted, right? Depending on which version it is, but it leaves some
+
+19:12.160 --> 19:22.160
+of the things. But TCP here is available, because it's below SSL TLS. So that's not a problem here.
+
+19:22.160 --> 19:32.160
+Okay? What about IPsec? Ooh, IPsec is a problem. IPsec could be a problem for firewalls that want
+
+19:32.160 --> 19:41.160
+to look at the TCP header, because they can't. Right? They can't. But what a firewall could do
+
+19:41.160 --> 19:48.160
+is say, you know what? You want to come for me? Build the first IPsec tunnel to me. Are you
+
+19:48.160 --> 19:59.160
+following what I'm saying? So, there's my favorite marker. What's going on today? Well, okay.
+
+19:59.160 --> 20:05.160
+I think you all remember IPsec, right? So the firewall would say, hey, you want to come from
+
+20:05.160 --> 20:11.160
+the outside, and you want to use IPsec. No, no. First build an IPsec through me.
+
+20:11.160 --> 20:16.160
+Right? And then it means the firewall will actually be the endpoint of IPsec tunnel. You will see
+
+20:16.160 --> 20:27.160
+the actual IP packet when it decapsulates it, right? So here's one example. Yeah?
+
+20:27.160 --> 20:33.160
+I mean, I'm assuming you want an IPsec tunnel elsewhere outside of the router, but using that,
+
+20:33.160 --> 20:38.160
+they wouldn't guarantee the router would actually re-IPsec it to the next .
+
+20:38.160 --> 20:45.160
+It may not need to. Remember that, David? We're talking generally IPsec tunnel from the outside
+
+20:45.160 --> 20:51.160
+to the firewall. That's what I meant. From the outside to the firewall. Then the firewall
+
+20:51.160 --> 20:56.160
+decapsulates, and then it may re-IPsec it again, right? Or not. That depends.
+
+20:56.160 --> 21:02.160
+Let's look at the fact of filtering examples. This looks at the TCP, right? It includes the
+
+21:02.160 --> 21:11.160
+TCP header. These are blocks of rules, right? And this is just kind of one very simple language.
+
+21:11.160 --> 21:17.160
+And what it says is basically a table. It says action, our host, port, their host, port,
+
+21:17.160 --> 21:22.160
+coming. A coming is usually not present, but it's just for an explanation. So the block A
+
+21:22.160 --> 21:31.160
+over there says that, okay, the action is to block. So anything that has source destination,
+
+21:31.160 --> 21:40.160
+our host, their host, but their host is named spigot, okay? Like the name of the host is spigot.
+
+21:40.160 --> 21:52.160
+We don't allow it, okay? That's it. Don't allow it. The next rule says allow from our gateway,
+
+21:52.160 --> 22:01.160
+right? Connection on port 25. Well that means port 25, TCP port 25 is SMTP email, right?
+
+22:01.160 --> 22:08.160
+Fail. So we allow connections to, from any port, you see that says port any on the second port.
+
+22:08.160 --> 22:17.160
+It says any, it says asterisk. Their host is asterisk means any. So any foreign host can connect
+
+22:17.160 --> 22:27.160
+to our gateway on port 25, right? Connections to our SMTP port are okay.
+
+22:27.160 --> 22:37.160
+Block B says do not allow anything. That's a default rule. So if something falls through all these
+
+22:37.160 --> 22:44.160
+and it's not, does not trigger any of those rules, block B is an effect, right? Everything
+
+22:44.160 --> 22:52.160
+that's not explicitly allowed is denied or blocked. That's all it says. That's a default rule.
+
+22:52.160 --> 23:02.160
+Block C says allow us, right, us to connect to them on port 25. That is an internal host can
+
+23:02.160 --> 23:08.160
+go outside and connect to port 25 anywhere. Just for email purposes, right? Because email
+
+23:08.160 --> 23:18.160
+is considered safe. Block B says explicitly a set of our host. This is just like a short
+
+23:18.160 --> 23:23.160
+handle. You actually like list all the explicit hosts, you know? Like it's different from an
+
+23:23.160 --> 23:30.160
+asterisk, right? Asterisk means anything. Our host means a fixed set of our hosts.
+
+23:30.160 --> 23:40.160
+It says that our packets to their SMTP port are okay. Again, port 25. And it also says that
+
+23:40.160 --> 23:48.160
+anything coming back to our port 25 with an ACK set, flags, that's DCP flags. When it says
+
+23:48.160 --> 23:56.160
+flags, you see that flag? That's DCP. It means that it's an acknowledgement, right? What it means
+
+23:56.160 --> 24:06.160
+is an acknowledgement of something we said. So we allow ACKs to come back. And finally,
+
+24:06.160 --> 24:15.160
+block E says allow our hosts to go out. Anything going out from our host is okay. Initiating from
+
+24:15.160 --> 24:22.160
+our host is okay. Anything with an ACK flag is okay. Meaning anything coming back with an ACK flag
+
+24:22.160 --> 24:30.160
+an ACK flag is fine. And finally, traffic to non-servers is okay. That is, if you're going outside to
+
+24:30.160 --> 24:38.160
+any client, right? To anything that port greater than 1024, that is reserved for non-servers. So
+
+24:38.160 --> 24:50.160
+TCP ports 1024 and below are reserved. There are like specific things. Like 25 is email. 80 is HTTP,
+
+24:50.160 --> 24:56.160
+right? 443, I think it's SSL, TLS, right? Things like that. But they're all less than 1024.
+
+24:56.160 --> 25:08.160
+So here's kind of a deeper dive. So let's look at FTP. Everybody knows FTP, right? File transfer
+
+25:08.160 --> 25:16.160
+port. Did you all know that it actually works with your browser? They don't try it like if you use FTP
+
+25:16.160 --> 25:26.160
+instead of HTTP in your URL. It still works, right? Your browser understands it.
+
+25:26.160 --> 25:34.160
+So what you have here is a client and a server, right? So a client that wants to transfer a file,
+
+25:34.160 --> 25:44.160
+one or more files. So the client starts by opening a connection on port. And its own port is 5151, right?
+
+25:44.160 --> 25:54.160
+Says my port is 5151, but actually what the HTTP has is it reserves two special ports, right? It has
+
+25:54.160 --> 26:00.160
+24 data. This is where, remember how SSL, TLS works? It has like a record layer and it has other. So
+
+26:00.160 --> 26:08.160
+this is like a record layer. It's for bulk data. And this one is for commands. So it's like a control channel
+
+26:08.160 --> 26:16.160
+and a data channel and a data channel. And they have different port numbers. Okay? So like FTP, if you remember
+
+26:16.160 --> 26:26.160
+FTP syntax, get file, file name, is a command. It's transmitted on the command port. The actual file transfer
+
+26:26.160 --> 26:36.160
+will happen on that port will happen on that port. Does that make sense? Commands as opposed to bulk data.
+
+26:36.160 --> 26:42.160
+So the first thing is a connection request comes in on a random, with a random port number, right?
+
+26:42.160 --> 26:50.160
+5151. You don't know what it is. And it's some client. And then it's okay, right? So that connection opens.
+
+26:50.160 --> 26:57.160
+Then the next thing is the data channel. The server, the FTP server opens the data channel. And these are two,
+
+26:57.160 --> 27:04.160
+these, these and this are two different TCP connections. Different port numbers, different TCP connections.
+
+27:04.160 --> 27:13.160
+Alright? And so at the end, you have the final TCP connection acknowledgement. At the end of the
+
+27:13.160 --> 27:21.160
+handshake, a TCP act from the client, and then the connection is over. This is just a refresher.
+
+27:21.160 --> 27:27.160
+So what would the packet filter rule say? This is a different syntax from the one. The one I showed you
+
+27:27.160 --> 27:33.160
+before was kind of very verbal, right? Very, very easy to parse. This one is a bit obscure.
+
+27:33.160 --> 27:43.160
+But once you get used to it, it makes sense. So what does this actually say? It says access list 100.
+
+27:43.160 --> 27:56.160
+That's which set of rules? It refers to a set of rules. 100. Permit TCP, okay? Allow TCP traffic
+
+27:56.160 --> 28:03.160
+So what does that mean? Outsiders, outsiders coming in on any port on any port greater than 1,023. I misspoke before I said 1,024.
+
+28:03.160 --> 28:11.160
+Well, actually it's 1,023. Greater than 1,023. So which needs client, okay?
+
+28:11.160 --> 28:13.160
+For host. 178.168.178.14.37x.18x behavioshiven, oke?
+
+28:13.160 --> 28:20.540
+For host. 178.168.10x.18x.18x.18x equals 21. noticeable
+
+28:20.540 --> 28:29.160
+So what does that mean? Outsiders, outsiders coming in on any port greater than 1,0244.15. It's not a server. It's a client.
+
+28:30.040 --> 28:37.160
+connecting to our host explicitly named for the IP address see that IP address that's our FTP
+
+28:37.160 --> 28:47.560
+server internally on port 21 is okay that's permit second line says permit blah blah blah
+
+28:47.560 --> 28:57.320
+same thing with a port 20 just says it's okay to have traffic to our FTP server our file server
+
+28:59.160 --> 29:10.200
+from any client the second list or the second set of rules 101 says permit TCP host this is our host
+
+29:10.200 --> 29:18.680
+right again it's that same FTP server to talk to on port 21 to any port that is greater than 1000.3
+
+29:18.680 --> 29:25.080
+that is responding to the client okay and the same thing for 20 right so that's the second line here
+
+29:25.080 --> 29:32.120
+just a lot so it's a it's a bi-directional right making it uni-directional wouldn't make any sense
+
+29:32.120 --> 29:40.120
+right has to be bi-directional and then finally it says here this is interface ethernet zero that's
+
+29:40.120 --> 29:45.080
+every every firewall will have to have at least two interfaces right one to the outside one to the
+
+29:45.080 --> 29:51.160
+inside can have more than two but generally at least two so which interface does this apply well
+
+29:51.160 --> 30:01.880
+this interface is within zero access list 100 is for inbound traffic access list 101 to outbound traffic
+
+30:05.240 --> 30:10.360
+i know since everything's obscure but i mean that's not it's not a canonical language just an example of a
+
+30:10.360 --> 30:18.360
+specific firewall language for a given file file provider but they all essentially communicate the same
+
+30:18.360 --> 30:21.720
+information what is allowed what is not allowed
+
+30:25.240 --> 30:33.720
+but despite the fact that they are fast right they have problems right the packet filter or the packet
+
+30:33.720 --> 30:39.400
+filtering firewall is the fastest firewall you can have because it keeps no state or almost no state
+
+30:40.040 --> 30:45.480
+it just basically looks at this the static rules that are encoded like a previous slide it says
+
+30:45.480 --> 30:49.800
+do i let it in do i let it out do i drop it let it in drop let it in drop it that's it packet at the
+
+30:49.800 --> 30:58.200
+time that's it now the problems uh if the attacks are application specific right somebody's trying to
+
+30:58.200 --> 31:06.040
+exploit uh something it's a vulnerability in an application the packet filtering firewall will not catch
+
+31:07.480 --> 31:13.480
+okay like buffer overflow uh it doesn't do user authentication obviously
+
+31:14.040 --> 31:20.040
+right because of the network layer or even a transport layer you cannot authenticate the user that
+
+31:20.040 --> 31:26.760
+might be at the other hand externally because the user does not sit at the network or transport
+
+31:26.760 --> 31:33.400
+layer so you cannot authenticate authentication based on ip addresses is useless because anybody can spoof
+
+31:33.400 --> 31:41.240
+like okay and so this type of firewalls they don't have upper or higher or higher layer functionality
+
+31:41.240 --> 31:49.160
+because they're supposed to be fast so there are other things that uh they are susceptible to for
+
+31:49.160 --> 31:57.160
+for example fermentation attacks uh that i'll talk about next then there's this configuration there's this whole
+
+31:57.160 --> 32:05.160
+area of research of how to take a set of rules and decide whether they make sense because if you
+
+32:05.960 --> 32:10.920
+understood my example both with the simple one with the table and the more complicated one
+
+32:11.720 --> 32:19.800
+one the previous slide configuring those rules is not all that easy and it's also but it is easy to
+
+32:19.800 --> 32:25.960
+to make mistakes so there's like a whole area of research and security on how to automatically
+
+32:27.320 --> 32:33.400
+detect uh contradictions or nonsensical rules or redundant rules
+
+32:33.400 --> 32:39.320
+i mean right and so these days a lot of of course ml is being used by that
+
+32:45.960 --> 32:52.520
+so i'll tell you i'll give you an example of kind of a clever pupelet fragmentation attack
+
+32:53.640 --> 32:56.200
+that typical packet filters will not catch
+
+32:56.200 --> 33:03.160
+so this is a reminder to you of what ip header looks like right we saw this slide before
+
+33:04.120 --> 33:13.880
+right just remember that options are well optional so typical ip packet ends here at the destination
+
+33:17.640 --> 33:23.160
+right so typically it's like this right after source destination address there's a tcp header
+
+33:23.160 --> 33:34.680
+i mean assuming we're using dc okay so what is a fragmentation attack well generally a fragmentation
+
+33:34.680 --> 33:44.120
+attack uh it requires an adversary to craft fragments on ip back there they overlap
+
+33:46.520 --> 33:52.840
+does that make sense overlapping yeah so normally again because i don't have a marker i can't draw
+
+33:52.840 --> 33:56.680
+anything for you but normally you expect them to do oh all right
+
+34:00.280 --> 34:07.320
+yeah normally you want to you have a packet that was long packet that was fragmented
+
+34:08.840 --> 34:15.960
+like one two three four and you want to make sure when it's reassembled it's really like one and then
+
+34:15.960 --> 34:27.480
+two three and then four and how do you know remember the fragment offset in the previous slide showed
+
+34:27.480 --> 34:36.360
+you right fragment offset told you how far for example this packet starts at i don't know uh 513
+
+34:36.360 --> 34:42.920
+which means that this is 512 bytes and the fragment offset for this packet will be 513
+
+34:43.800 --> 34:51.800
+and if this packet is 100 bytes then the fragment offset here will be 613 okay and this this packet
+
+34:51.800 --> 34:57.960
+is 100 bytes that will be 713 here so they all fit neatly one after the other right
+
+34:57.960 --> 35:12.280
+but what if you screw around with a fragment offset and instead of 613 put 313 well the reassembling ip
+
+35:13.240 --> 35:23.880
+destination will say oh well 313 i am going to stick to this packet here
+
+35:23.880 --> 35:33.640
+right because it says that now if you know of such attacks you would of course look you would change
+
+35:33.640 --> 35:41.800
+your ip right smart programmers who know how to code will say oh i should always check that
+
+35:42.840 --> 35:49.560
+a new fragment does not overlap with the already assembled fragments right because this is incremental
+
+35:49.560 --> 35:55.800
+you're receiving fragments you're potentially out of board ah but you know checking for boundaries and
+
+35:55.800 --> 36:05.160
+overlap that's extra code ip was designed where the world was denied so that is if you receive a fragment
+
+36:05.160 --> 36:11.560
+with the fragment offset it must make sense it must never overlap so a lot of ip implementations maybe
+
+36:11.560 --> 36:18.840
+not today today people are cognizant of this but they would just blindly reassemble and what that means
+
+36:20.360 --> 36:26.520
+is that if you just overlap real data it's it's a it's a problem already because god knows what
+
+36:26.520 --> 36:32.680
+happens in the application layer but a bigger problem is this if
+
+36:32.680 --> 36:43.000
+if you have just two fragments
+
+36:47.080 --> 36:58.120
+this is ib this is tcb and this is whatever okay and then you have now normally
+
+36:58.920 --> 37:08.440
+this there should be another fragment here right that should go in here right it should come after
+
+37:09.000 --> 37:21.480
+right it has its own ip header but if the adversary change the offset or crafted the offset to start
+
+37:21.480 --> 37:35.480
+here you see what i'm saying so here the offset in this packet fragment offset
+
+37:35.480 --> 37:48.280
+zero it's always like this first fragment fragment offset zero because it's it's a first but in the second what if it says fragment offset here
+
+37:48.280 --> 37:59.080
+i don't know 12
+
+37:59.080 --> 37:59.160
+i don't know 12
+
+37:59.160 --> 38:09.960
+well they will think that okay this thing this thing starts 12 bytes after
+
+38:09.960 --> 38:24.760
+so what can happen is that the adversary can override the ip header and control which flags are for
+
+38:24.760 --> 38:33.720
+example set in the dcp sorry in this dcp header and so remember the rules that said oh you can
+
+38:33.720 --> 38:41.560
+always let in act packets packets with an act flag well if you have two overlapping fragments
+
+38:41.560 --> 38:46.520
+and this reassembly reassembly results in the act flag being set the packet will be left
+
+38:49.080 --> 38:50.840
+so that's a gist of the attack
+
+38:55.720 --> 39:02.680
+so as you i don't know if you can see in red so if the act bit is set in both fragments an act bit is okay
+
+39:02.680 --> 39:08.600
+right both fragments have an act bit set but the fragment offset is messed up
+
+39:10.760 --> 39:20.200
+when you reassemble you can have a sin bit set remember sin not the original sin s y n
+
+39:21.880 --> 39:27.560
+s y n the s y n flag should be set in the very first packet in a connection
+
+39:27.560 --> 39:36.600
+so what does it mean it that if you only allow acts which means only connections from the inside out
+
+39:36.600 --> 39:44.120
+were allowed right you would only allow act packets coming back in but connections must always emanate
+
+39:44.120 --> 39:49.560
+from the out from the inside this allows essentially the connection to come from the outside
+
+39:49.560 --> 40:00.120
+that by this clever reassembly and we will see the different in another lecture uh probably next week
+
+40:00.760 --> 40:08.120
+we will see uh what is the what is the danger not only in principle like allowing connections
+
+40:08.120 --> 40:13.160
+disallow connections from the inside in but actually mounting was called sin floods or denial of service
+
+40:13.160 --> 40:21.000
+attacks on the inside of the servers and by the way if you ever wanted to know what dcp state diagram
+
+40:21.000 --> 40:25.080
+is well if you haven't been exposed to this in the networking course you should have been
+
+40:25.880 --> 40:33.800
+because that would make a grown person cry instead of staring at it for a bit don't worry you won't be
+
+40:33.800 --> 40:40.680
+on the exam this is networking not security but dcp is a is a complicated beast
+
+40:40.680 --> 40:48.760
+okay it's not at all like ip or even ibsec it's a complicated beast and this diagram by the way
+
+40:48.760 --> 40:56.760
+this state diagram captures both client and server behavior dcp so the dashed lines are for the client
+
+40:56.760 --> 41:03.720
+and the solid lines are for the server so if you recall the state guide the state well the actual dcp
+
+41:03.720 --> 41:09.080
+connection is established after a handshake right you first have to have this three-way handshake
+
+41:09.080 --> 41:13.560
+connection then the connection is established but the connection when it's alive it's it's not like
+
+41:14.760 --> 41:19.320
+constant because there's something called window size that changes right in the dcp connection and
+
+41:19.320 --> 41:25.320
+then there's an actual end right meaning when a normal dcp connection is over there is actually a
+
+41:25.320 --> 41:33.000
+tear down okay and then it's like that's why you have these things so i'll just give you an idea don't
+
+41:33.000 --> 41:43.400
+worry about remember everything here uh so this is a sort of a better illustration of the fragmentation
+
+41:43.400 --> 41:54.280
+of that you're sending two packets okay from the client sorry with uh from the client they're here
+
+41:54.280 --> 42:06.520
+one and two both packets like in my example here have acbit set we allow packets with acbit set come back
+
+42:06.520 --> 42:11.960
+because they're acknowledging something right remember this is a packet filter in gateway it doesn't know
+
+42:11.960 --> 42:17.720
+the state of a dcp connection it just looks it just looks it doesn't know if the connection has been
+
+42:17.720 --> 42:25.560
+open torn down never existed it just looks we allow active set the dcp here if the active is not set we
+
+42:25.560 --> 42:36.040
+don't allow right make sense so when they tell that client this is a evil evil client right since these
+
+42:36.040 --> 42:42.360
+two fragments one after the other kind of like like i illustrated here they each have the active set
+
+42:43.320 --> 42:51.960
+but when we reassembled they result in a synbit set and when passed through tcp they say open a new
+
+42:51.960 --> 43:04.360
+connection which is not allowed but it just happened okay so this results in a synpack here on this stupid telnet server
+
+43:04.360 --> 43:17.880
+so what it says is that essentially packet filters they have they have a place under the sun but by
+
+43:17.880 --> 43:24.600
+themselves they are not very good and you cannot they do offer one thing which is speed they offer you
+
+43:24.600 --> 43:31.880
+very fast processing but or even meaningful security at a high level and they are not useful so recall
+
+43:32.680 --> 43:41.560
+less than 1024 are permanently assigned they are reserved uh port numbers above 1024 above is all clients so
+
+43:41.560 --> 43:48.440
+when client on your browser or whatever your telnet client command uh connects to a server it can use an
+
+43:48.440 --> 44:00.840
+arbitrary number above 1023 well up to 65 number uh so if a firewall sees an outgoing request
+
+44:02.280 --> 44:11.480
+to a client 5151 it doesn't know right what to do with it i mean it sees that 5151 and that is not a well-known
+
+44:11.480 --> 44:17.800
+port it's not assigned to any specific service it's like some client that came up with it so you must allow it
+
+44:17.800 --> 44:22.680
+because internal service could be just responding to a previously established connection right
+
+44:23.880 --> 44:33.000
+or this could be an attack so the main problem is again that a packet a packet filtering firewall does
+
+44:33.000 --> 44:34.440
+not know the state of the connection
+
+44:38.360 --> 44:43.960
+well this is just already talked about so yeah what's what's what's the alternative the alternative
+
+44:43.960 --> 44:49.320
+is to do a bit more intelligence right to slow down the firewall a little bit
+
+44:49.960 --> 44:57.800
+and to have it looped and maintain some state okay maintaining information about open connections
+
+44:57.800 --> 45:06.760
+okay or state of ongoing connections not always open so you still make a decision for every packet but
+
+45:06.760 --> 45:12.360
+you make sure that the packet is somehow associated with the connection if a spurious packet arrives and
+
+45:12.360 --> 45:16.520
+there is no record for it right then you throw away
+
+45:16.520 --> 45:27.240
+you only the important thing here if this is a new connection right whether it's from the outside in or
+
+45:27.240 --> 45:34.280
+from the inside out you check your policy right before do we allow this if it's a current connection
+
+45:34.280 --> 45:41.720
+then you look it up in the table and update the table because you need to take understanding is this
+
+45:41.720 --> 45:49.000
+connection being established for example is the handshaking process or is it already established
+
+45:50.280 --> 45:55.800
+is it ending right because there's also a tear down phase right and reset
+
+45:56.760 --> 46:00.840
+at the very end of the dcp connection so you need to know or is it gone there's no such connection
+
+46:02.040 --> 46:09.720
+so that requires maintaining a dynamic table this is so keep in mind this is very different from rules
+
+46:09.720 --> 46:14.520
+rules are more or less permanent or semi-permanent right for what we allow in what we allow
+
+46:15.960 --> 46:19.640
+that's configured by the fire by security administrator firewall administrator
+
+46:20.680 --> 46:25.240
+but the table of connections is fully dynamic it's what happening right now in real time
+
+46:27.960 --> 46:34.680
+so that that's better certainly better okay because you now know that a given packet whether it
+
+46:34.680 --> 46:39.960
+comes in or out or trying to come in or out or trying to come in or out is a part of some connection
+
+46:41.000 --> 46:48.280
+it's not some spurious packet but it is a problem for non-tcp traffic for example
+
+46:48.840 --> 46:57.160
+stateless protocols like utp right the unreliable data data protocol and icmp internet control message
+
+46:57.160 --> 47:02.760
+protocol that i said before used for maintenance they're stateless they don't have a notion of a connection
+
+47:02.760 --> 47:12.440
+so that's harder so if you filter out if you don't disallow icmp then you lose certain network
+
+47:12.440 --> 47:20.840
+functionality so that's a trade-off also you can try to use ip tunneling right so that's the ipsec tunneling
+
+47:20.840 --> 47:27.880
+and then remember what i said about the firewall has to then be a terminal uh terminus of an ipsec tunnel
+
+47:28.680 --> 47:37.240
+so whoever is coming in or out must first establish a tunnel to the firewall so this is a typical or
+
+47:37.240 --> 47:44.600
+this is an example of a connection table a session filtering uh firewall will maintain right it says
+
+47:44.600 --> 47:51.640
+source address port number destination address port number and then connection state in all of those
+
+47:51.640 --> 48:01.160
+cases that is established i mean the other possible state could be starting or ending and that would
+
+48:01.160 --> 48:04.520
+starting would indicate that it's in the middle of doing the three-way handshake
+
+48:05.720 --> 48:12.440
+and ending will be in the middle of like tearing it down thin that's not for call thin wave reset okay but
+
+48:12.440 --> 48:18.360
+in this case all of them are established what are these well the port 80s you see source ports are all clients
+
+48:18.360 --> 48:22.520
+right right they're all over 1023 their clients
+
+48:25.640 --> 48:34.680
+the destination ports are web servers except for one within 25 25 is male and 79 is finger
+
+48:36.120 --> 48:44.040
+it's a bit obsolete finger is a it's a also a program that's used for fingering users right just you
+
+48:44.040 --> 48:51.080
+you can do finger and username and host and it basically will tell you it's like a 1980s style
+
+48:51.080 --> 48:56.360
+thing it'll tell you information about who this user is you have to actually configure your little finger
+
+48:56.360 --> 49:04.040
+profile it predates the web uh a lot of a lot of the installations have it turned off because it has
+
+49:04.040 --> 49:10.760
+its own problem right so if you run a linux machine for example and you see a finger d running god forbid kill
+
+49:10.760 --> 49:14.920
+kill kill immediately finger demon okay
+
+49:19.400 --> 49:22.440
+so next thing circuit level gateway
+
+49:23.400 --> 49:31.080
+so here i mentioned it earlier this is a splicing and re uh and realigning of tcp connections
+
+49:31.080 --> 49:35.080
+so one tcp connection ends at the gateway and another begins
+
+49:35.080 --> 49:43.480
+and there is like a a line between them and what it allows the circuit leveling gateway to do is examine
+
+49:44.040 --> 49:50.440
+these packets but in the context of a connection like what is actually going on in this connection
+
+49:50.440 --> 49:53.560
+we do what's called deeper packet inspection
+
+49:55.640 --> 50:02.120
+that is strictly more secure strictly more secure but as immediate is obvious from this picture
+
+50:02.920 --> 50:11.240
+strictly less efficient because establishing a separate tcp connection from the outside host to the out
+
+50:11.240 --> 50:16.920
+to the circuit level gateway and another tcp connection between the circuit level gateway and inside host
+
+50:16.920 --> 50:24.200
+costs double yes right so
+
+50:24.200 --> 50:38.680
+let me say no not necessarily because ssl tls could actually be might actually be unaware of this
+
+50:39.560 --> 50:49.320
+because this is tcp so all you care at the end is that you get the let's say the inside host is some kind
+
+50:49.320 --> 50:56.840
+of web server right um i don't think you should cause a problem
+
+50:59.240 --> 51:06.440
+i don't think you should cause a problem as long as the certificate for that host includes the name
+
+51:06.440 --> 51:12.280
+of this you know both the inside of the circuit level gateway because the certificate could have more
+
+51:12.280 --> 51:17.480
+than one name they could share they could be hosts within the same domain right so their actual name
+
+51:17.480 --> 51:27.800
+could be like firewall firewall firewall.abc.com and then www.abc.com and as long as the certificate is
+
+51:27.800 --> 51:30.840
+issued for abc.com that should be okay
+
+51:30.840 --> 51:42.200
+okay so again uh is faster uh than the application level gate that we'll talk about next but strictly
+
+51:42.200 --> 51:48.200
+slower than the packet level gate um in order to use it you generally need to adapt the application so
+
+51:48.920 --> 51:55.880
+in in the previous example packet level uh firewalls the applications were uh unchanged right you don't
+
+51:55.880 --> 52:03.880
+need to do anything you just do your business as usual the firewall is transparent in this case it's not
+
+52:03.880 --> 52:15.160
+transparent okay oh i'm sorry so in in both examples earlier in session filtering or packet filtering it
+
+52:15.160 --> 52:16.680
+was application transparent
+
+52:16.680 --> 52:27.000
+here it's not transparent you need to use something like socks which is a a library for socket secure
+
+52:27.000 --> 52:39.560
+socket layer and that's a rfc that's a kind of standard how to do it um but it's a kind of a compromise
+
+52:39.560 --> 52:44.600
+between something that is fast but not very secure and something that is much slower which is the next
+
+52:44.600 --> 52:51.000
+thing we'll talk about an application level gateway as i already mentioned requires you to adapt to
+
+52:51.000 --> 52:58.520
+write a proxy for each application so you explicitly have to terminate the outside connection at the
+
+52:58.520 --> 53:03.320
+application level gateway that examines the actual context like it looks in case of telling it would
+
+53:03.320 --> 53:10.440
+look at the actual characters you type right in the case of uh http will actually inspect the urls
+
+53:11.160 --> 53:17.480
+all the inputs and gets and all you know all the other http commands so you'll actually see the clear text
+
+53:18.040 --> 53:26.200
+on those connect so if you're using ssl uh tls there that makes it a little harder because yeah you have
+
+53:26.200 --> 53:28.280
+to you have to modify all your applications
+
+53:32.520 --> 53:38.760
+other filtering rules are simpler because there's a lot more intelligence in these in these proxies there's a
+
+53:38.760 --> 53:44.840
+separate proxy for each application and you can make them quite intelligent but and to understand
+
+53:44.840 --> 53:50.440
+the context of what is being sent and what is being received you can look for malicious commands like
+
+53:50.440 --> 53:56.760
+you know actual command line unix commands you can look for particular patterns like jpeg files etc
+
+53:56.760 --> 54:03.240
+so there's a much richer functionality but this is slow right so this is not for example the way you want
+
+54:03.240 --> 54:14.840
+to do streaming videos so to compare these approaches this is again should be by now fairly obvious if
+
+54:14.840 --> 54:20.920
+you're awake as far as performance package filter being in the network layer dealing with one packet at
+
+54:20.920 --> 54:26.680
+a time gives us the best performance and the worst performance of the application everything the best
+
+54:26.680 --> 54:32.840
+the best to the worst as far as modifying client or client applications or actually server applications
+
+54:32.840 --> 54:39.240
+the first two do not require modification the second requires basically slight modifications you have
+
+54:39.240 --> 54:47.240
+to essentially recompile everything with socks with this socket secure there for application level gateway
+
+54:47.240 --> 54:55.560
+you need to modify client applications to work with these proxies okay now things like fermentation attacks
+
+54:55.560 --> 55:01.320
+well only the last two really protect against fermentation attacks because if those attacks are attempted
+
+55:01.320 --> 55:08.760
+they will be detected at the firewall okay and they will not propagate to the actual
+
+55:09.640 --> 55:14.520
+host on the inside so the danger can be contained on the firewall
+
+55:19.080 --> 55:29.080
+now remember i told you earlier about filtering outbound connections this is a real example from um early 2000 like 2007 2008
+
+55:29.080 --> 55:42.920
+uh this was uh uh white house right actually the white house website that uh blocked all kinds of connections
+
+55:42.920 --> 55:51.560
+right by the firewall but it had the web server right the public uh web server that uh allowed you to look at the
+
+55:51.560 --> 55:58.040
+uh directory directory right and a phone book script sorry phone book script which is like a directory
+
+55:58.760 --> 56:03.640
+but what it didn't do it didn't sanitize the irs right so you're not sanitization it's right it's looking
+
+56:03.640 --> 56:10.200
+at the like a input whatever the program is and sanitizing that input like removing suspicious characters
+
+56:11.000 --> 56:16.360
+a lot of times you'll see this in the in web forms you fill out they won't allow you for example when you
+
+56:16.360 --> 56:20.840
+fill out a web form to use certain characters right that are on the keyboard some special characters you're
+
+56:20.840 --> 56:27.560
+not allowed that's called sanitization uh this is explicit right the explicit is that you cannot use
+
+56:27.560 --> 56:32.680
+this oh sometimes they won't let you even type them and sometimes you type them you press return and say no
+
+56:33.400 --> 56:39.720
+okay you cannot use this character uh in url that means that you know you parse the url and you look for
+
+56:39.720 --> 56:43.400
+these kind of suspicious characters and truncate them and get rid of them completely
+
+56:43.400 --> 56:50.120
+okay well there was no sanitization done in the phone book script and so you could actually submit
+
+56:50.120 --> 57:01.080
+a command now notice the magento pink color that's a relatively denied url right it's coming in from the
+
+57:01.080 --> 57:11.800
+outside right outside to the white house and it's doing invoking this uh cgi directory fphf is a phone book
+
+57:11.800 --> 57:20.600
+okay okay okay and there's some gravity i don't know what qa this x is but following it you have a percent
+
+57:20.600 --> 57:32.120
+sign followed by oa x sorry uh qlsx and then away right and what it is is that it's ox away is a new line
+
+57:32.120 --> 57:39.560
+so when it interprets when the phone book script looks at it it actually says oh
+
+57:40.920 --> 57:45.240
+all i say is a new line so it splits it right here
+
+57:47.000 --> 57:53.320
+right here it puts a new line and then this starting with this character right here it becomes
+
+57:53.320 --> 58:03.960
+a new a separate line right let's look what it means it says bin cat bin cat is a program to title
+
+58:05.000 --> 58:11.800
+right okay on the screen right here is cat which is in the bin directory bin cat
+
+58:11.800 --> 58:26.040
+percent 20 is space space character that's the password so and then not only executes the cgi script
+
+58:26.040 --> 58:32.200
+but after doing that it says cat the password type it and what happens is it appears on the screen on the
+
+58:32.200 --> 58:43.400
+client okay but the interesting part is this is coming from the inside out right the command came from the
+
+58:43.400 --> 58:51.000
+outside in but what is being displayed on the client on the outside of the screen is coming from the out
+
+58:51.000 --> 58:57.720
+from the inside right so this is what you should do inside sanitization or checking what comes out
+
+58:57.720 --> 59:05.960
+from the whitehouse.gov right so why filter outcome that's why all right so this will display a password
+
+59:05.960 --> 59:13.160
+file that of course we know opens the door for you know the password attacks uh this is even worse
+
+59:14.280 --> 59:24.440
+example this one also using the new line executes an x-window server essentially opens a window an x-window
+
+59:24.440 --> 59:31.240
+that x is a window system right you've probably heard about it um but it opens an outbound connection
+
+59:31.240 --> 59:40.040
+on the outsider's web server so essentially the outsider gets an x-window inside the white house network
+
+59:42.760 --> 59:50.680
+so one big problem is that the cgi dynamic right did not sanitize the input but the bigger problem
+
+59:50.680 --> 59:56.360
+that so ideally that should have been done right the input should be sanitized but sometimes there
+
+59:56.360 --> 01:00:02.680
+are so many of these cgi's there right you can't possibly like maybe maybe it's you know not viable
+
+01:00:02.680 --> 01:00:08.920
+to like fix them all but at the very least the last line of defense should have been not allowing things
+
+01:00:08.920 --> 01:00:17.720
+from the inside to come outside which is executing this x command external x terminal command or
+
+01:00:17.720 --> 01:00:29.720
+concatenating or typing the password file so that's kind of a silly example uh so in practice a lot of
+
+01:00:29.720 --> 01:00:34.040
+people use or a lot of companies use what's called the bastion coast which is kind of it's kind of a
+
+01:00:34.040 --> 01:00:42.120
+glorified firewall but the idea is that it's not just a firewall but it's like a fully blown uh you know
+
+01:00:42.120 --> 01:00:48.040
+computer not just like a network layer device but a fully blown computer it has a packet level application
+
+01:00:48.040 --> 01:00:57.080
+level gateway but it sits behind a packet level filter okay and so in that in that bastion host all
+
+01:00:57.080 --> 01:01:04.200
+services are turned off there's no usb ports are sealed you know can't stick anything in no no uh what's
+
+01:01:04.200 --> 01:01:10.440
+called air gap jumping uh and he prevents all these application specific proxies like what i said before
+
+01:01:10.440 --> 01:01:18.840
+and applications gateway um supports direct user authentication so you actually first authenticate
+
+01:01:18.840 --> 01:01:23.880
+when you when you log in you authenticate to the bastion host and then only you are allowed to proceed
+
+01:01:24.840 --> 01:01:33.240
+and all traffic flows to that host it it it it does not make things fast but it makes things reasonably
+
+01:01:33.240 --> 01:01:40.280
+secure typically like that so this is called a single home bastion host you have the back the
+
+01:01:40.280 --> 01:01:46.040
+big bad internet you have the this is the firewall of the packet the packet level firewall then that's
+
+01:01:46.040 --> 01:01:54.760
+the fast for packet filtering here you have the dmz like information web server and the bastion host sits
+
+01:01:54.760 --> 01:02:01.080
+kind of between the that and the rest of the network now it says single home because you see it assumes
+
+01:02:01.080 --> 01:02:10.040
+that there's like the bastion host only has one network interface right so it's certainly faster that
+
+01:02:10.040 --> 01:02:15.960
+way but the problem is that if the packet filtering router is compromised right so that that thing is
+
+01:02:15.960 --> 01:02:26.680
+compromised then bad traffic can flow in so if you want that not to happen you do a dual home bastion
+
+01:02:26.680 --> 01:02:33.000
+host which actually means it has two separate interfaces that all the traffic even from the packet
+
+01:02:33.000 --> 01:02:39.800
+filtering router must come into the bastion host be scrutinized and let out so in case a
+
+01:02:39.800 --> 01:02:45.560
+packet filtering router fails the bastion host still remains in the last line of defense
+
+01:02:47.880 --> 01:02:53.160
+and there's no physical connection right so the internal and external network no longer have a
+
+01:02:53.160 --> 01:02:55.720
+physical connection everything goes through the bastion host
+
+01:02:55.720 --> 01:03:03.720
+that's what's called this is called the screen subnet there's also this approach the screen subnet
+
+01:03:03.720 --> 01:03:11.480
+where you only have this is really kind of for more for very secure environments where you have
+
+01:03:11.480 --> 01:03:15.960
+this kind of a firewall in fact a little firewall here another finite level firewall here
+
+01:03:16.520 --> 01:03:22.280
+this is in case the bastion host fails so you really separate this what's called this is called the
+
+01:03:22.280 --> 01:03:28.440
+screen subnet where you only have these kind of dmz machines the bastion host maybe a dial-in module
+
+01:03:28.440 --> 01:03:35.800
+not nobody uses those anymore but then some years ago they did and then the private network is fully separate
+
+01:03:35.800 --> 01:03:50.520
+so what should firewalls do besides filtering and deciding what's allowed not allowed among the other
+
+01:03:50.520 --> 01:03:56.680
+thing they should do is should not propagate ip addresses or any kind of network structure of
+
+01:03:56.680 --> 01:04:03.800
+internal network to the outside that is super important right because knowledge of your internal
+
+01:04:03.800 --> 01:04:14.440
+network topology right geography of your internal network is sensitive information and only those
+
+01:04:14.440 --> 01:04:19.720
+services like a web server or some other kind of directory server only those that are absolutely
+
+01:04:19.720 --> 01:04:24.200
+necessary for outside access should be made available meaning their ip addresses should be known
+
+01:04:25.080 --> 01:04:32.200
+to the outside but the rest of the inside network does not need to expose its structure or its ip
+
+01:04:32.200 --> 01:04:41.720
+addresses okay and for that if you've taken a networking course you probably have heard of a network address translator or nat
+
+01:04:43.240 --> 01:04:52.760
+that will essentially translate uh in the packet the the source path the source ip address of a packet is going out
+
+01:04:54.600 --> 01:05:01.560
+right to something that does not expose them for example a bastion host will typically push its own
+
+01:05:01.560 --> 01:05:13.080
+ip address in the source instead of the internal ip address uh and it will similarly translate things coming back
+
+01:05:13.080 --> 01:05:19.240
+right with it we'll have the destination bastion host it will have the exam says oh this yes this is for me
+
+01:05:19.240 --> 01:05:25.640
+but really it's for this other open connection that i have okay so this translation uh and there are many
+
+01:05:25.640 --> 01:05:32.600
+uh options you can map there's one-to-one end-to-one mapping and all kinds of variations another important
+
+01:05:32.600 --> 01:05:37.720
+thing is routing announcement so uh i don't know how much you all know about routing protocols
+
+01:05:39.080 --> 01:05:46.120
+usually assume not a lot uh but you definitely don't want a protocol whatever routing protocol you run
+
+01:05:46.120 --> 01:05:51.880
+inside your network you don't want the routing announcements and routing changes on the inside to propagate
+
+01:05:51.880 --> 01:05:58.680
+outside right right the only thing that on the outside should know about routing is whether your
+
+01:05:59.240 --> 01:06:05.960
+network is accessible right meaning it's is it down is it up right they're gonna everything else
+
+01:06:05.960 --> 01:06:09.720
+should be screened or not announced okay
+
+01:06:12.600 --> 01:06:12.760
+uh
+
+01:06:14.760 --> 01:06:20.680
+okay so what are the general problems with files this is all all types of firewalls well they like everything
+
+01:06:20.680 --> 01:06:27.480
+else in security they eat cycles they slow things down nothing that is secure makes things faster
+
+01:06:29.320 --> 01:06:34.520
+they don't solve some real world problems bugging software insider attacks with malware they don't
+
+01:06:34.520 --> 01:06:40.280
+prevent malware from coming in from the inside they may prevent malware from exfiltrating information
+
+01:06:41.080 --> 01:06:45.320
+through the firewall but they don't prevent things from just like happening on the inside
+
+01:06:45.960 --> 01:06:53.320
+um they don't prevent bugs i mean protocol design if you have a badly designed firewall software yeah
+
+01:06:53.960 --> 01:07:00.600
+that's of course a problem uh they don't prevent denial of service attacks if somebody knows the rules
+
+01:07:01.880 --> 01:07:07.480
+of the firewall meaning that they allow traffic to an smtp server right so internal
+
+01:07:07.480 --> 01:07:16.280
+external traffic to smtp mail server inside is allowed fine that is a safe rule no problem you can
+
+01:07:16.280 --> 01:07:23.160
+armor your smtp server and protect but the problem is that if you allow any amount of traffic to smtp server
+
+01:07:24.280 --> 01:07:29.400
+that allows anybody from the outside to essentially mount the denial of service attack by just sending a
+
+01:07:29.400 --> 01:07:36.840
+very large volume of traffic to the smtp server by the time the smtp server just just discards their
+
+01:07:36.840 --> 01:07:44.360
+traffic the internal network resources are consumed so that's something a firewall won't solve for you
+
+01:07:45.720 --> 01:07:52.920
+and of course don't let's not forget this uh some sometimes some certain types of insider attacks won't
+
+01:07:52.920 --> 01:07:58.680
+be prevented because an ambassador you can always uh if it's a real insider not a doofus who brought
+
+01:07:58.680 --> 01:08:05.480
+the uh infected usb stick to work but rather an insider who but even a doofus by the way that
+
+01:08:05.480 --> 01:08:09.880
+might work but an insider who brought something malicious and copied let's say all the personnel
+
+01:08:09.880 --> 01:08:15.960
+files to usb stick how is the firewall going to prevent this only i don't know frisking him physically
+
+01:08:16.680 --> 01:08:22.840
+might detect this uh even uh let's take the doofus example somebody brings that uh usb stick
+
+01:08:22.840 --> 01:08:32.200
+with movies to watch during lunchtime the malware um jumps to the device to the laptop or desktop
+
+01:08:32.200 --> 01:08:36.920
+steals information copies it back to the usb stick the doofus at the end of the day removes the stick
+
+01:08:36.920 --> 01:08:43.960
+goes home plugs the usb sticks in his home computer malware accepts it hello world let me export all this
+
+01:08:43.960 --> 01:08:51.960
+stuff now there's no firewall in doofus's home are you with me so won't prevent that
+
+01:08:51.960 --> 01:08:59.480
+there's more complexity firewall configuration is not easy okay not easy and it's not static things
+
+01:08:59.480 --> 01:09:05.080
+change in the real business world so it's and they're more static than let's say dcp connection but not
+
+01:09:05.080 --> 01:09:13.000
+static and last but not least this few people know how to do it and even fewer have the expertise knowing
+
+01:09:13.000 --> 01:09:18.440
+how to do it and actually having expertise do different things so firewall administrative security
+
+01:09:18.440 --> 01:09:23.320
+in these states they get paid a lot especially in bigger companies like banks
+
+01:09:25.960 --> 01:09:33.560
+and that's it thank you any questions by the way i hope you were here and uh like the our like a little
+
+01:09:33.560 --> 01:09:38.520
+detour last lecture into automotive world maybe a bit boring for those already taking that class
+
+01:09:38.520 --> 01:09:48.760
+reinforcement learning yeah how can we prevent the fragmentation attack if we don't feel all the
+
+01:09:48.760 --> 01:09:55.720
+maybe the fragmentation flat how can we well one way to do it is so if you're using ipv6 that doesn't
+
+01:09:55.720 --> 01:10:01.400
+happen because ipv6 does not allow fragmentation if you're using ipv4 one way to prevent it is to
+
+01:10:01.400 --> 01:10:08.280
+simply throw away fragmented back and just have to say no fragmentation allowed uh icfp the protocol
+
+01:10:08.280 --> 01:10:14.600
+i mentioned earlier for you that used for maintenance i uh allows you to generate that error message to
+
+01:10:14.600 --> 01:10:20.440
+the source by says fragmentation not allowed so the source continues fragmented you just discard
+
+01:10:20.440 --> 01:10:32.120
+not always but but these days it is extremely unusual for routers to fragment typically today fragmentation
+
+01:10:32.120 --> 01:10:39.640
+happens actually it's even today what happens is mostly like this if it's a tcp packet tcp implementation
+
+01:10:39.640 --> 01:10:46.680
+on your whatever device i'm going back will be aware of the empty and it will actually not generate
+
+01:10:46.680 --> 01:10:55.160
+not pass to ip segments greater than the empty so it might not even happen i would be very surprised
+
+01:10:55.160 --> 01:11:00.680
+that in the modern implementation on a modern operating operating system you will still have fragmentation
+
+01:11:00.680 --> 01:11:14.680
+even inside the source i mean it might happen but it'd be very important okay see you next tuesday
+

@@ -1,0 +1,3809 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+I don't want to share your screen before you have the flag.
+
+00:05.000 --> 00:07.000
+Oh, I don't know what this is.
+
+00:30.000 --> 00:40.000
+Okay, so we went through face recognition, I think, right, on fingerprints, fingerprints of issues.
+
+00:40.000 --> 00:43.000
+We'll talk about a couple of examples where fingerprints fail.
+
+00:43.000 --> 00:48.000
+If you know anybody who works in the medical profession, especially surgeons,
+
+00:48.000 --> 00:55.000
+there were only attempts to install fingerprint recognition in hospitals that failed miserably
+
+00:55.000 --> 01:01.000
+because surgeons, if you know any, wash their hands extremely frequently for good reasons,
+
+01:01.000 --> 01:06.000
+and their fingers tend to be, you know, like when you keep your fingers in water for an hour,
+
+01:06.000 --> 01:08.000
+they wrinkle, the fingertips wrinkle.
+
+01:08.000 --> 01:12.000
+So, totally not good for fingerprint recognition.
+
+01:12.000 --> 01:14.000
+Not to mention all the other stuff.
+
+01:14.000 --> 01:23.000
+Iris scans. Iris scans are a relatively accurate way of biometric authentication.
+
+01:23.000 --> 01:26.000
+No two irises are the same.
+
+01:26.000 --> 01:28.000
+It's random.
+
+01:28.000 --> 01:37.000
+Knowing anything about a person, even knowing a person's DNA, you cannot recreate the irises.
+
+01:37.000 --> 01:39.000
+Stable.
+
+01:39.000 --> 01:44.000
+As you grow, as you get old, they remain the same.
+
+01:44.000 --> 01:47.000
+Even with cataracts or some other issues.
+
+01:47.000 --> 01:50.000
+Now, if you gouge out an eye, there's no more iris.
+
+01:50.000 --> 01:54.000
+You have an injury, obviously, but that's rare, right?
+
+01:54.000 --> 01:56.000
+Works in with the blind people.
+
+01:56.000 --> 01:59.000
+That's because they're still in irises.
+
+01:59.000 --> 02:00.000
+They're different.
+
+02:00.000 --> 02:02.000
+If you wonder, they're different for both of your eyes.
+
+02:02.000 --> 02:04.000
+There's like a set of concentric rings.
+
+02:04.000 --> 02:07.000
+So, it's actually not too different from the fingerprints.
+
+02:07.000 --> 02:10.000
+There's, except the fingerprints are not exactly rings, right?
+
+02:10.000 --> 02:13.000
+They're more like parabolas or something like that.
+
+02:13.000 --> 02:19.000
+So, error rates are pretty low.
+
+02:19.000 --> 02:26.000
+It's not the best, but I think it's one of the best biometric applications you think is currently known.
+
+02:26.000 --> 02:28.000
+It is expensive, right?
+
+02:28.000 --> 02:34.000
+To get accurate iris scans, you have to be very close to the device that's going to scan the iris.
+
+02:34.000 --> 02:37.000
+There has to be stable lighting.
+
+02:37.000 --> 02:39.000
+It's not instantaneous.
+
+02:39.000 --> 02:42.000
+It takes a couple of seconds.
+
+02:42.000 --> 02:50.000
+Not quite light because people generally do not like sticking their eyes and their faces into things.
+
+02:50.000 --> 02:55.000
+The early ones had like a kind of a mask almost like the device where you have to stick your eyes.
+
+02:55.000 --> 03:06.000
+Or something a little more evil looking where you're like goggles where you stick your eyes and go bzzzzz and scan your irises.
+
+03:06.000 --> 03:07.000
+It can be done on a smartphone.
+
+03:07.000 --> 03:12.000
+I believe there are apps that will do it for you.
+
+03:12.000 --> 03:13.000
+I checked a year ago.
+
+03:13.000 --> 03:14.000
+There were a couple of apps.
+
+03:14.000 --> 03:15.000
+At least on Android.
+
+03:15.000 --> 03:16.000
+I'm not sure about iPhone.
+
+03:16.000 --> 03:24.000
+There are apps you can download that will essentially use your camera to do an iris scan.
+
+03:24.000 --> 03:25.000
+Not as precise.
+
+03:25.000 --> 03:26.000
+Not as precise.
+
+03:26.000 --> 03:27.000
+Not as precise.
+
+03:27.000 --> 03:28.000
+Slower.
+
+03:28.000 --> 03:29.000
+Other methods.
+
+03:29.000 --> 03:30.000
+Hand geometry.
+
+03:30.000 --> 03:33.000
+So hand geometry is in this.
+
+03:33.000 --> 03:36.000
+Your hand print.
+
+03:36.000 --> 03:39.000
+All these things that fortune tellers like to use.
+
+03:39.000 --> 03:40.000
+Right?
+
+03:40.000 --> 03:43.000
+Life line, love line, death line, whatever.
+
+03:43.000 --> 03:44.000
+Sickness line.
+
+03:44.000 --> 03:45.000
+All these lines.
+
+03:45.000 --> 03:47.000
+The geometry of your hand.
+
+03:47.000 --> 03:52.000
+Not just the relative things but also the size of your fingers.
+
+03:52.000 --> 03:57.000
+What we call phalanges are.
+
+03:57.000 --> 04:00.000
+Now calluses won't matter because they're generally okay.
+
+04:00.000 --> 04:04.000
+If you have severe cuts or injuries clearly it wouldn't work very well.
+
+04:04.000 --> 04:06.000
+But hand geometry.
+
+04:06.000 --> 04:08.000
+Relatively stable.
+
+04:08.000 --> 04:12.000
+Of course as you grow, as a child grows, the hand gets larger.
+
+04:12.000 --> 04:15.000
+But the actual lines remain.
+
+04:15.000 --> 04:18.000
+But the size of course changes.
+
+04:18.000 --> 04:25.000
+Let's see if you have some hand conditions like eczema also doesn't work well.
+
+04:25.000 --> 04:30.000
+It has been used in nuclear premise control like for entering say national labs, nuclear
+
+04:30.000 --> 04:33.000
+reactors, that kind of thing, nuclear plants.
+
+04:33.000 --> 04:37.000
+You would just place your hand on a tablet.
+
+04:37.000 --> 04:40.000
+And it would be like a surface that will do a scan.
+
+04:40.000 --> 04:44.000
+Kind of like you do a document scan.
+
+04:44.000 --> 04:46.000
+This continued because it was expensive.
+
+04:46.000 --> 04:53.000
+And at the time did not really check for liveness.
+
+04:53.000 --> 04:56.000
+Now this may sound a little morbid.
+
+04:56.000 --> 05:01.000
+But liveness is important.
+
+05:01.000 --> 05:02.000
+Okay.
+
+05:02.000 --> 05:03.000
+Ear shape.
+
+05:03.000 --> 05:04.000
+Also.
+
+05:04.000 --> 05:05.000
+Ear scan.
+
+05:05.000 --> 05:07.000
+Can you imagine?
+
+05:07.000 --> 05:09.000
+It has some of the same issues as iris can.
+
+05:09.000 --> 05:12.000
+Ears are not something you'd like to stick in places.
+
+05:12.000 --> 05:13.000
+Right?
+
+05:13.000 --> 05:17.000
+There in our head, next to our brain.
+
+05:17.000 --> 05:20.000
+But it has been used.
+
+05:20.000 --> 05:27.000
+At the bottom of the ICS2 building, the red building next to Brent Hall, across the ring,
+
+05:27.000 --> 05:31.000
+there was a lab which is called K-some-day lab downstairs.
+
+05:31.000 --> 05:33.000
+I think it's still there.
+
+05:33.000 --> 05:34.000
+I don't know what it has.
+
+05:34.000 --> 05:35.000
+It's useful.
+
+05:35.000 --> 05:41.000
+But for many years, not anymore, it had a biometric scanner at the door.
+
+05:41.000 --> 05:43.000
+And it was vein patterns.
+
+05:43.000 --> 05:46.000
+So you would just place your wrist on the scanner.
+
+05:46.000 --> 05:47.000
+Not your hand.
+
+05:47.000 --> 05:48.000
+Your wrist.
+
+05:48.000 --> 05:50.000
+You would scan the veins.
+
+05:50.000 --> 05:52.000
+That's another method.
+
+05:52.000 --> 05:55.000
+A little better than irises.
+
+05:55.000 --> 06:00.000
+Generally better than hand because you don't get calluses here.
+
+06:00.000 --> 06:01.000
+You don't get eczema here.
+
+06:01.000 --> 06:03.000
+It's usually a little more stable.
+
+06:03.000 --> 06:04.000
+One other thing.
+
+06:04.000 --> 06:05.000
+Voice prints.
+
+06:05.000 --> 06:07.000
+How many of you have ever seen voice prints?
+
+06:07.000 --> 06:13.000
+My sibling company, I think one of my banks uses voice prints.
+
+06:13.000 --> 06:17.000
+When I call them, they're like, would you answer these questions for us?
+
+06:17.000 --> 06:18.000
+But they're not really looking for the answers.
+
+06:18.000 --> 06:20.000
+They're looking for my voice.
+
+06:20.000 --> 06:23.000
+And the questions actually aren't the same every time.
+
+06:23.000 --> 06:28.000
+So it's kind of a challenge response, if you will, kind of voice prints.
+
+06:28.000 --> 06:35.000
+Now to enroll, at some point, they have to ask me to stay on the phone and enroll.
+
+06:35.000 --> 06:36.000
+Okay.
+
+06:36.000 --> 06:37.000
+Yes?
+
+06:37.000 --> 06:42.000
+Would the phone be using matter a lot for the voice prints?
+
+06:42.000 --> 06:50.000
+Speech processing has seen very important advances in the last ten years.
+
+06:50.000 --> 06:53.000
+So they can pretty much filter the noise.
+
+06:53.000 --> 06:54.000
+Ambient noise.
+
+06:54.000 --> 06:56.000
+They can filter ambient noise.
+
+06:56.000 --> 07:01.000
+I mean, if somebody's screaming down your ear at the same time, they can filter out the road noise,
+
+07:01.000 --> 07:03.000
+classroom noise, that kind of thing.
+
+07:03.000 --> 07:07.000
+The artifacts of a metallic voice on the phone, sort of that.
+
+07:07.000 --> 07:09.000
+I think there may be some issues.
+
+07:09.000 --> 07:10.000
+It's not super robust.
+
+07:10.000 --> 07:12.000
+I would not use it myself.
+
+07:12.000 --> 07:18.000
+Because voice-based authentication is, well, fundamentally very fragile.
+
+07:18.000 --> 07:19.000
+Okay?
+
+07:19.000 --> 07:24.000
+And easily, it turns out, there have been studies that show that it's fakeable.
+
+07:24.000 --> 07:25.000
+Okay.
+
+07:25.000 --> 07:26.000
+DNA.
+
+07:26.000 --> 07:27.000
+Yes, DNA.
+
+07:27.000 --> 07:29.000
+So I used to have this slide.
+
+07:29.000 --> 07:31.000
+I don't know why I removed it.
+
+07:31.000 --> 07:36.000
+But it was sort of, you can imagine, it showed iPhone 55.
+
+07:36.000 --> 07:43.000
+In 2039, Apple comes out with iPhone 55.
+
+07:43.000 --> 07:48.000
+And it has this feature called Lipton Lock.
+
+07:48.000 --> 07:55.000
+Immediately sequence your saliva and DNA and says, ah, it's you, I'm unlocking myself.
+
+07:55.000 --> 07:57.000
+I've used it in a few talks.
+
+07:57.000 --> 07:59.000
+And people actually, some people come up to me and just say, really?
+
+07:59.000 --> 08:00.000
+Really?
+
+08:00.000 --> 08:01.000
+I couldn't do that.
+
+08:01.000 --> 08:02.000
+No, I didn't mean.
+
+08:02.000 --> 08:07.000
+Now, I don't think that's coming to the store here, you, anytime soon.
+
+08:07.000 --> 08:13.000
+But, in principle, DNA can be used for identification because, for identification, excuse me.
+
+08:13.000 --> 08:16.000
+Because it is unique to you.
+
+08:16.000 --> 08:18.000
+There's no probability of match.
+
+08:18.000 --> 08:22.000
+They say, you know, if there is, it's so astronomical, it's not even worth mentioning.
+
+08:22.000 --> 08:24.000
+Now, the problem is, DNA is like fingerprints.
+
+08:24.000 --> 08:29.000
+If you leave them at the scene of a crime, right, that's one thing.
+
+08:29.000 --> 08:31.000
+But how do you test the liveness, right?
+
+08:31.000 --> 08:37.000
+So, in order to test the liveness, you have to make sure it comes from a live person right now.
+
+08:37.000 --> 08:39.000
+And that's a problem.
+
+08:39.000 --> 08:42.000
+Also, if you're wondering, well, can you sequence DNA?
+
+08:42.000 --> 08:45.000
+Well, today, it takes minutes.
+
+08:45.000 --> 08:47.000
+Even in a faster hardware.
+
+08:47.000 --> 08:49.000
+So, your smartphone can do a sequencing.
+
+08:49.000 --> 08:51.000
+There are attachments to the smartphone.
+
+08:51.000 --> 08:53.000
+You can buy today a peripheral.
+
+08:53.000 --> 08:56.000
+That will cost you probably more than the phone.
+
+08:56.000 --> 08:58.000
+But it plugs into your phone.
+
+08:58.000 --> 09:06.000
+And, I forget, it's not actually licking it, but you can insert like a sample of saliva or something like that.
+
+09:06.000 --> 09:12.000
+It will sequence and digitize your genome on your phone, right?
+
+09:12.000 --> 09:17.000
+It can be done, but it's okay.
+
+09:17.000 --> 09:20.000
+And, okay, keystroke dynamics.
+
+09:20.000 --> 09:26.000
+So, keystroke dynamics are, remember we talked about how attacking keyboards, right, listening to these?
+
+09:26.000 --> 09:29.000
+Well, remember about keystrokes, right?
+
+09:29.000 --> 09:32.000
+The way you type is fairly unique.
+
+09:32.000 --> 09:39.000
+Unless you are particularly like, I don't know, tired or injured or somehow sick.
+
+09:39.000 --> 09:41.000
+You know, you generally type in the same way.
+
+09:41.000 --> 09:46.000
+So, imagine the system and it has, it is being deployed.
+
+09:46.000 --> 09:51.000
+It is deployed in many industrial and government organizations, usually larger organizations,
+
+09:51.000 --> 09:59.000
+where you enroll by essentially typing stuff, maybe for training the model for a few days.
+
+09:59.000 --> 10:03.000
+Then sort of a profile is created, right?
+
+10:03.000 --> 10:04.000
+Features are extracted.
+
+10:04.000 --> 10:08.000
+Machine learning, obviously, is used to extract the features from your typing model.
+
+10:08.000 --> 10:12.000
+And that becomes your biometric keystroke profile.
+
+10:12.000 --> 10:13.000
+What is the idea?
+
+10:13.000 --> 10:20.000
+The idea is that you don't come to the building and start typing for a few minutes on a keyboard in order for the door to open.
+
+10:20.000 --> 10:23.000
+That's not what this biometric is for.
+
+10:23.000 --> 10:29.000
+It's really for monitoring dynamically whether you are the same person who authenticated to begin with.
+
+10:29.000 --> 10:39.000
+So, the idea is you came to work, okay, typical scenario, you came to work, you logged into your terminal, desktop, whatever, okay?
+
+10:39.000 --> 10:42.000
+And then you walked away.
+
+10:42.000 --> 10:44.000
+Never happens to you?
+
+10:44.000 --> 10:48.000
+Please tell me it does, because I know it happens.
+
+10:48.000 --> 10:49.000
+Right?
+
+10:49.000 --> 10:51.000
+You log in and you walk away.
+
+10:51.000 --> 10:54.000
+Now, at home, maybe your cat will walk on the keyboard.
+
+10:54.000 --> 11:00.000
+Or your roommate will, you know, type an obscene message, because they prank you or something like that.
+
+11:00.000 --> 11:08.000
+But, at work, there could be an insider colleague who may not be so humorous, may actually want to cause harm.
+
+11:08.000 --> 11:09.000
+Right?
+
+11:09.000 --> 11:13.000
+So, they will come and start typing, but they cannot replicate your typing pattern.
+
+11:13.000 --> 11:18.000
+So, the idea is that the system will recognize, oh, that's not the same person who was here before.
+
+11:18.000 --> 11:22.000
+So, that's the form of biometric.
+
+11:22.000 --> 11:27.000
+The best biometric, hands down, that I've ever seen in my life, was done by IBM.
+
+11:27.000 --> 11:31.000
+And it was done actually as early as, like, late 80s or early 90s.
+
+11:31.000 --> 11:33.000
+And I believe it still exists.
+
+11:33.000 --> 11:35.000
+Like, just two years ago, it still existed.
+
+11:35.000 --> 11:37.000
+It was extremely expensive.
+
+11:37.000 --> 11:40.000
+But it was based on writing.
+
+11:40.000 --> 11:43.000
+Not typing, writing.
+
+11:43.000 --> 11:44.000
+The idea was very simple.
+
+11:44.000 --> 11:47.000
+You have a pad, right?
+
+11:47.000 --> 11:48.000
+Dedicated like a hardware device.
+
+11:48.000 --> 11:49.000
+It's like a pad.
+
+11:49.000 --> 11:50.000
+You write on.
+
+11:50.000 --> 11:55.000
+Kind of like the one, you know, when you sign your signature in a grocery store, when you
+
+11:55.000 --> 11:57.000
+buy something, you know, and ask it to sign here.
+
+11:57.000 --> 11:59.000
+But nobody cares what you actually sign.
+
+11:59.000 --> 12:02.000
+You can just, like, put a dot there and nobody verifies.
+
+12:02.000 --> 12:08.000
+Well, but imagine something much more sophisticated, which is the size of a laptop screen.
+
+12:08.000 --> 12:09.000
+But it's, like, horizontal.
+
+12:09.000 --> 12:10.000
+You come to it, it has a stylus, right?
+
+12:10.000 --> 12:11.000
+Everybody knows what a stylus is.
+
+12:11.000 --> 12:12.000
+And it says, write something.
+
+12:12.000 --> 12:13.000
+Right?
+
+12:13.000 --> 12:14.000
+It challenges you to write, like, a sentence.
+
+12:14.000 --> 12:15.000
+Right?
+
+12:15.000 --> 12:16.000
+Today I went to work.
+
+12:16.000 --> 12:17.000
+So you write the sentence using your handwriting.
+
+12:17.000 --> 12:18.000
+Remember handwriting?
+
+12:18.000 --> 12:19.000
+It's still a thing.
+
+12:19.000 --> 12:20.000
+Right?
+
+12:20.000 --> 12:23.000
+And what it does, it's not just measuring the shape of the legs.
+
+12:23.000 --> 12:24.000
+Because if you just do that, that's easily spoolable.
+
+12:24.000 --> 12:25.000
+Right?
+
+12:25.000 --> 12:34.000
+It's just the shape of the letters because I can probably, I'm pretty decent in calligraphy.
+
+12:34.000 --> 12:36.000
+I can probably imitate your writing style.
+
+12:36.000 --> 12:41.000
+If I see how you write, I will write a sentence, but it's not a sentence.
+
+12:41.000 --> 12:45.000
+But what I'm really going to do is, you know, I will write a sentence.
+
+12:45.000 --> 12:46.000
+Today I went to work.
+
+12:46.000 --> 12:48.000
+So you write the sentence using your handwriting, remember handwriting, still a thing.
+
+12:48.000 --> 12:49.000
+Right?
+
+12:49.000 --> 12:52.000
+And what it does, is not just measuring the shape of the legs.
+
+12:52.000 --> 12:58.000
+And so many people are able to do this, algorithms are even better at this, right?
+
+12:58.000 --> 13:03.000
+In fact, algorithms are better than people today, so if you can train an algorithm on somebody's writing style,
+
+13:03.000 --> 13:09.000
+give them a few scanned, you know, letters, handwritten letters, et cetera, notes,
+
+13:09.000 --> 13:13.000
+it will generate excellent quality fakes.
+
+13:13.000 --> 13:19.000
+So shape is important, but it's not negligible, but it's not what's being used.
+
+13:19.000 --> 13:23.000
+What is being used to other things? Pressure, you put on the stylus,
+
+13:23.000 --> 13:27.000
+because when you write with a pen or pencil or anything that is a writing implement,
+
+13:27.000 --> 13:29.000
+you're putting a certain amount of pressure.
+
+13:29.000 --> 13:33.000
+And that pressure varies depending on what it is you're writing.
+
+13:33.000 --> 13:40.000
+As you're circling the letter O, you're putting a different pressure than when you're completing the letter R.
+
+13:40.000 --> 13:43.000
+Okay, that turns out to be unique for you.
+
+13:43.000 --> 13:47.000
+The other thing that is unique to you is acceleration.
+
+13:47.000 --> 13:54.000
+The acceleration of the stylus as you write those letters is very important and it is unique.
+
+13:54.000 --> 14:04.000
+The combination of shape, acceleration, and pressure are a winning combination that makes this an amazing biometric technology,
+
+14:04.000 --> 14:07.000
+but it is incredibly expensive.
+
+14:07.000 --> 14:12.000
+So how would you attack it?
+
+14:12.000 --> 14:14.000
+Well, shapes can be attacked, as I just told you, right?
+
+14:14.000 --> 14:19.000
+You can train an algorithm to generate shapes the same as anybody is.
+
+14:19.000 --> 14:30.000
+Acceleration might be, might be attackable if you carefully and very precisely film somebody, right?
+
+14:30.000 --> 14:33.000
+Film somebody, write it.
+
+14:33.000 --> 14:35.000
+Because you can measure the speed, right?
+
+14:35.000 --> 14:39.000
+If you have a camera, like a hidden camera place somewhere,
+
+14:39.000 --> 14:43.000
+and it's recording how somebody is writing, you will know the acceleration.
+
+14:43.000 --> 14:46.000
+And you might be able to design, not a human,
+
+14:46.000 --> 14:50.000
+you might be able to train a robot to do this.
+
+14:50.000 --> 14:57.000
+But what you cannot replicate is at least the pressure because that's not something you can film.
+
+14:57.000 --> 15:05.000
+So the only way to attack a system like that is to actually get the user to use a fake entry device.
+
+15:05.000 --> 15:11.000
+To present the user with a tablet that is fake and record both pressure and acceleration over time,
+
+15:11.000 --> 15:12.000
+then maybe.
+
+15:12.000 --> 15:15.000
+But the barrier to this attack is high.
+
+15:15.000 --> 15:16.000
+Now.
+
+15:16.000 --> 15:20.000
+My question would be, is handwriting considered stable enough though?
+
+15:20.000 --> 15:25.000
+Because a lot of people, like, even on a day-to-day basis, if you're angry, you write more aggressive.
+
+15:25.000 --> 15:26.000
+Exactly, exactly.
+
+15:26.000 --> 15:27.000
+Yes.
+
+15:27.000 --> 15:29.000
+Handwriting, generally there is some stability.
+
+15:29.000 --> 15:31.000
+The way you're shaped.
+
+15:31.000 --> 15:37.000
+You might shape your A's differently, but there's a finite shape of A that you use when you're angry,
+
+15:37.000 --> 15:39.000
+when you're relaxed, etc.
+
+15:39.000 --> 15:40.000
+Okay?
+
+15:40.000 --> 15:44.000
+So your jerkiness, right, might be different, right?
+
+15:44.000 --> 15:49.000
+Sometimes you write smoothly, slowly, and sometimes you write quickly because you're under pressure.
+
+15:49.000 --> 15:53.000
+But generally the shapes stay more or less the same.
+
+15:53.000 --> 15:55.000
+But again, shape is just one.
+
+15:55.000 --> 15:59.000
+The pressure and the acceleration.
+
+15:59.000 --> 16:02.000
+You might fail.
+
+16:02.000 --> 16:08.000
+I mean, I don't know actually, to be fair, what is the insult rate of this.
+
+16:08.000 --> 16:13.000
+But I know it has been used specifically in insurance companies and banks.
+
+16:13.000 --> 16:17.000
+So when they came up with it, they had this huge number of customers, all these big banks.
+
+16:17.000 --> 16:25.000
+And they wanted to make sure that all the, you know, high level officers of the banks and insurance companies were authenticated using that.
+
+16:25.000 --> 16:27.000
+Because they dealt with, obviously, a lot of money.
+
+16:27.000 --> 16:29.000
+Would it be stable over time though?
+
+16:29.000 --> 16:30.000
+They claim it was.
+
+16:30.000 --> 16:32.000
+I've used it myself.
+
+16:32.000 --> 16:34.000
+It seemed very natural.
+
+16:34.000 --> 16:35.000
+Not very burdensome.
+
+16:35.000 --> 16:40.000
+I mean, again, not something you want to use instead of badges, right?
+
+16:40.000 --> 16:44.000
+But it's something you want to use if somebody wants to access a highly secure facility.
+
+16:44.000 --> 16:45.000
+Or there's a terminal, right?
+
+16:45.000 --> 16:48.000
+You want to log in instead of typing username and password.
+
+16:48.000 --> 16:49.000
+Just do this.
+
+16:49.000 --> 16:50.000
+That's reasonable.
+
+16:50.000 --> 16:55.000
+If you're interested, there's an article about that.
+
+16:55.000 --> 17:02.000
+Okay, so there are a couple of biometrics that we've played around here at UCI in my research group.
+
+17:02.000 --> 17:06.000
+And one of them, well, one of them is not on the slides because it's just too hilarious.
+
+17:06.000 --> 17:12.000
+It's called, so I won't bother you with showing you anything because you could probably imagine the picture.
+
+17:12.000 --> 17:14.000
+It's called ascentication.
+
+17:14.000 --> 17:21.000
+Basically, the idea is to instrument a chair, an office chair, with pressure sensors.
+
+17:21.000 --> 17:23.000
+And if you think it's a joke, it's not.
+
+17:23.000 --> 17:25.000
+There was actually a paper published about it.
+
+17:25.000 --> 17:28.000
+And it was part of a student's PhD thesis.
+
+17:28.000 --> 17:29.000
+So imagine an office chair.
+
+17:29.000 --> 17:30.000
+Not this crap you're sitting on.
+
+17:30.000 --> 17:34.000
+This looks like kindergarten or old folks home or something.
+
+17:34.000 --> 17:35.000
+I don't know if it came up with this stuff.
+
+17:35.000 --> 17:39.000
+But like a regular nice comfy office chair with a cushion, right, or something.
+
+17:39.000 --> 17:42.000
+So underneath, in the cushion, there are pressure sensors.
+
+17:42.000 --> 17:47.000
+Now geometrically, you kind of like arrange around where a person would sit.
+
+17:47.000 --> 17:50.000
+And if you're wanting to know, it is not measuring your ass size.
+
+17:50.000 --> 17:53.000
+And it's actually not even measuring your weight.
+
+17:53.000 --> 17:56.000
+Well, it just measures pressure distribution.
+
+17:56.000 --> 17:59.000
+Because most people tend to sit the same way.
+
+17:59.000 --> 18:02.000
+So the idea was the same as keystrokes.
+
+18:02.000 --> 18:09.000
+So when a person sits down and logs in, the system takes measurements of their pressure points, right?
+
+18:09.000 --> 18:13.000
+Or they sit in the chair and creates a profile.
+
+18:13.000 --> 18:19.000
+And so when a person walks away to get a coffee or use the bathroom or go to a meeting and forgets to log out,
+
+18:19.000 --> 18:24.000
+and somebody else sits in the chair, well, their thought is going to be different.
+
+18:24.000 --> 18:26.000
+It's just different, right?
+
+18:26.000 --> 18:27.000
+Trust me.
+
+18:27.000 --> 18:28.000
+Trust me.
+
+18:28.000 --> 18:29.000
+We've done experiments.
+
+18:29.000 --> 18:32.000
+And people enjoyed those.
+
+18:32.000 --> 18:33.000
+Generally.
+
+18:33.000 --> 18:48.000
+And so the only way to subvert that biometric was essentially to create a very careful fake butt with just the right distribution of pressure.
+
+18:48.000 --> 18:50.000
+Quite a high barrier of pressure.
+
+18:50.000 --> 18:52.000
+The other method we experimented here is this.
+
+18:52.000 --> 18:56.000
+And that also is a little strange, but it was pretty effective.
+
+18:56.000 --> 19:03.000
+It is electricity and human body impedance or resistance, right?
+
+19:03.000 --> 19:06.000
+So as you're familiar with static electricity, right?
+
+19:06.000 --> 19:11.000
+You're familiar with maybe lamps that you have to touch in order to turn them on.
+
+19:11.000 --> 19:13.000
+So you've seen those?
+
+19:13.000 --> 19:14.000
+Yeah?
+
+19:14.000 --> 19:15.000
+Well, they work kind of the same.
+
+19:15.000 --> 19:17.000
+So essentially you're closing a circuit, right?
+
+19:17.000 --> 19:21.000
+When you're touching a lamp like that.
+
+19:21.000 --> 19:27.000
+So the idea here is to essentially measure human body's conductivity, right?
+
+19:27.000 --> 19:34.000
+By sending an electric pulse from one hand and measuring that same electric pulse in the other hand.
+
+19:34.000 --> 19:38.000
+Now clearly not, you know, we don't want to electrocute anybody.
+
+19:38.000 --> 19:41.000
+That would be one and only way to measure, right?
+
+19:41.000 --> 19:43.000
+And that's it.
+
+19:43.000 --> 19:44.000
+No.
+
+19:44.000 --> 19:46.000
+Sending a very weak electric signal, one volt.
+
+19:46.000 --> 19:47.000
+That's the idea.
+
+19:47.000 --> 19:48.000
+Okay?
+
+19:48.000 --> 20:02.000
+And so one volt signal, maximum current, 0.1 milliampere, exposure about 100 nanoseconds.
+
+20:02.000 --> 20:05.000
+Now this is opposed to, say, a regular battery.
+
+20:05.000 --> 20:06.000
+You know if you lick a battery?
+
+20:06.000 --> 20:09.000
+You know if you lick the battery as a kid?
+
+20:09.000 --> 20:10.000
+I know a lot of kids did.
+
+20:10.000 --> 20:11.000
+I did.
+
+20:11.000 --> 20:13.000
+You know the ones with two terminals?
+
+20:13.000 --> 20:15.000
+You get the sour taste?
+
+20:15.000 --> 20:17.000
+Well, you know, you actually get electricity to pass through.
+
+20:17.000 --> 20:20.000
+But it's much higher than what we would do.
+
+20:20.000 --> 20:25.000
+So humans don't feel this amount of electricity.
+
+20:25.000 --> 20:32.000
+And we had to, of course, obtain authorizations because the university would not allow us to do something that's dangerous.
+
+20:32.000 --> 20:34.000
+So we had an authorization for this.
+
+20:34.000 --> 20:36.000
+And the idea was, what was the use case?
+
+20:36.000 --> 20:39.000
+The use case, suppose you have an ATM machine, right?
+
+20:39.000 --> 20:40.000
+And you want to have your own money.
+
+20:40.000 --> 20:44.000
+So you enter, today you have a metallic pin pad, right?
+
+20:44.000 --> 20:46.000
+On the ATM machines.
+
+20:46.000 --> 20:50.000
+And then imagine, in addition to that, you had a little metallic surface, right?
+
+20:50.000 --> 20:51.000
+Like some kind of circle.
+
+20:51.000 --> 20:54.000
+When you put one hand here and you type with the other hand, your pin.
+
+20:54.000 --> 20:56.000
+You don't need two hands to type a pin, right?
+
+20:56.000 --> 20:58.000
+Most people do not use two hands.
+
+20:58.000 --> 20:59.000
+Pin is one hand.
+
+20:59.000 --> 21:05.000
+So while you're typing the pin, it's sending this signal and measures your body connectivity.
+
+21:05.000 --> 21:06.000
+That's one scenario.
+
+21:06.000 --> 21:09.000
+The other scenario is just a metallic keyboard, right?
+
+21:09.000 --> 21:14.000
+So today, most consumer keyboards, cheap ones, right?
+
+21:14.000 --> 21:15.000
+Are plastic.
+
+21:15.000 --> 21:16.000
+They have the other issue.
+
+21:16.000 --> 21:18.000
+We might talk about something at some point.
+
+21:18.000 --> 21:24.000
+But there are some more expensive, more fancy keyboards that are metallic.
+
+21:24.000 --> 21:25.000
+Okay?
+
+21:25.000 --> 21:29.000
+And if you're typing on a metallic keyboard, while you're typing, you can send this.
+
+21:29.000 --> 21:32.000
+Especially if you're not a, like, you're a hundred-pack type.
+
+21:32.000 --> 21:34.000
+So this is more.
+
+21:34.000 --> 21:35.000
+Right?
+
+21:35.000 --> 21:37.000
+So that's the idea, continuous authentication.
+
+21:37.000 --> 21:42.000
+Yeah, so we actually had a setup with a scope, a oscilloscope, waveform generator.
+
+21:42.000 --> 21:45.000
+And you see these brass handles.
+
+21:45.000 --> 21:46.000
+Big brass handles.
+
+21:46.000 --> 21:48.000
+So the idea was that the human would sit.
+
+21:48.000 --> 21:53.000
+The participant in our study would sit there and we would vary a little bit like the timing
+
+21:53.000 --> 21:58.000
+and send this very weak signal and measure the response in the other hand.
+
+21:58.000 --> 22:05.000
+And it actually turned out, we didn't have a lot of people, but we had 30 subjects for snapshot measurements
+
+22:05.000 --> 22:08.000
+and 16 for long-term measurements, just stability.
+
+22:08.000 --> 22:14.000
+As you can imagine, unfortunately, the male to female ratio is difficult in computer science
+
+22:14.000 --> 22:16.000
+or in this part of campus.
+
+22:16.000 --> 22:18.000
+So they weren't, it wasn't always very well split.
+
+22:18.000 --> 22:23.000
+But there was no difference between male and female subjects.
+
+22:23.000 --> 22:28.000
+The snapshot data sample basically misidentification was very low.
+
+22:28.000 --> 22:33.000
+So most of the, most of the measurements were quite encouraging.
+
+22:33.000 --> 22:36.000
+Well, it didn't work as well as over time.
+
+22:36.000 --> 22:39.000
+It was measured over days or weeks.
+
+22:39.000 --> 22:41.000
+The accuracy went down.
+
+22:41.000 --> 22:47.000
+And one of the reasons it does is that if you are dehydrated, right, as opposed to well hydrated,
+
+22:47.000 --> 22:49.000
+the connectivity changes a little bit.
+
+22:49.000 --> 22:54.000
+If you drink alcohol, which by the way also dehydrates you, but if you're just buying things alcohol,
+
+22:54.000 --> 22:55.000
+that also changes.
+
+22:55.000 --> 23:02.000
+Not that we didn't measure people after going to alcohol or anything like that, but we noticed that alcohol does change it.
+
+23:02.000 --> 23:09.000
+And, but otherwise, it doesn't matter what mood you're in, how much sleep you got, their connectivity stays the same.
+
+23:09.000 --> 23:14.000
+Yeah, so the only way to subvert it, yes, there is a way to subvert it, but it's not easy.
+
+23:14.000 --> 23:19.000
+What you have to do is measure the victim's false response yourself, right, get the measurement from them,
+
+23:19.000 --> 23:28.000
+and then strap essentially a contraption like this that provides exactly the same impedance or resistance,
+
+23:28.000 --> 23:32.000
+and then use kind of like insulated gloves.
+
+23:32.000 --> 23:36.000
+So then you might be able to pull this by metric.
+
+23:36.000 --> 23:38.000
+Alright, so what are risks?
+
+23:38.000 --> 23:41.000
+Of course, there are a lot of risks of using biometrics.
+
+23:41.000 --> 23:48.000
+If you're using fingerprints in a wrong way, like for example, this was a trick that was quite common before,
+
+23:48.000 --> 23:51.000
+it has nothing to do with digitization.
+
+23:51.000 --> 23:58.000
+It was in the analog gaze that if a criminal managed to distract a law enforcement officer
+
+23:58.000 --> 24:03.000
+and give the fingerprints in the wrong order, that they essentially will not be identified.
+
+24:03.000 --> 24:04.000
+Okay?
+
+24:04.000 --> 24:14.000
+Today, it's impossible to do that because every finger is identifiable as where it is, its location on your hand.
+
+24:14.000 --> 24:16.000
+So it's not possible to do that.
+
+24:16.000 --> 24:23.000
+Voice prints are easy to attack with recordings and also with advanced machine learning techniques
+
+24:23.000 --> 24:28.000
+and bots that can generate based on training data.
+
+24:28.000 --> 24:32.000
+If I record enough of your voice, you talk enough in class, I record enough of your voice,
+
+24:32.000 --> 24:39.000
+I will be able to generate pretty accurate on-demand utterances by you.
+
+24:39.000 --> 24:49.000
+So, if you wind up in the real world working with biometrics or choosing what kind of biometrics to use for your company,
+
+24:49.000 --> 24:51.000
+stay the hell away from voice, okay?
+
+24:51.000 --> 24:53.000
+Or anything audio.
+
+24:53.000 --> 24:54.000
+Terrible.
+
+24:54.000 --> 24:59.000
+Then there is the grainings fingers in a jar.
+
+24:59.000 --> 25:04.000
+This was actually a case, at least not in this country, in the UK, where the pensioners, right?
+
+25:04.000 --> 25:08.000
+They retired people were paid social security based on physical prints.
+
+25:08.000 --> 25:11.000
+They had to authenticate using a fingerprint.
+
+25:11.000 --> 25:21.000
+And so, you know, there was this case, I'm sure you can still find it, like 2003, where the grandma was dead for like five years,
+
+25:21.000 --> 25:33.000
+but the family used the finger in the jar of Vaseline they preserved, you know, to essentially obtain payments every month.
+
+25:33.000 --> 25:34.000
+Let's see.
+
+25:34.000 --> 25:46.000
+Now, there is also the false negatives that accept rates of one in a million, and this was back like 20 years ago,
+
+25:46.000 --> 25:51.000
+that there would be one in a million error, which means that if you know anything about the,
+
+25:51.000 --> 25:53.000
+everybody here knows the birthday paradox.
+
+25:53.000 --> 25:54.000
+Yes?
+
+25:54.000 --> 25:55.000
+Okay.
+
+25:55.000 --> 25:58.000
+The birthday paradox goes like this.
+
+25:58.000 --> 26:12.000
+How many people does it take, at random, for them to have at least two, well, how many people should we select off the street, at random,
+
+26:12.000 --> 26:21.000
+in order to have at least 50% probability of at least two of them having the same birth?
+
+26:21.000 --> 26:24.000
+And the answer is, what do you think?
+
+26:24.000 --> 26:27.000
+For like 6-0 million.
+
+26:27.000 --> 26:30.000
+Well, no, that's for a million.
+
+26:30.000 --> 26:32.000
+No, no, no.
+
+26:32.000 --> 26:33.000
+No, no.
+
+26:33.000 --> 26:34.000
+Hang on.
+
+26:34.000 --> 26:35.000
+Just listen to my words.
+
+26:35.000 --> 26:37.000
+People and birthdays.
+
+26:37.000 --> 26:39.000
+Maybe birthdays?
+
+26:39.000 --> 26:40.000
+You're close.
+
+26:40.000 --> 26:44.000
+So most people will say, well, you know, if you want to make sure you have to have, like,
+
+26:44.000 --> 26:48.000
+the easiest answer is, oh, I've got 365 people, right?
+
+26:48.000 --> 26:50.000
+And then you'll have a duplicate, right?
+
+26:50.000 --> 26:52.000
+That's, of course, guaranteed.
+
+26:52.000 --> 26:55.000
+But what if you pick, I don't know, 180 people?
+
+26:55.000 --> 26:57.000
+Will there be, what will be the chance?
+
+26:57.000 --> 27:00.000
+It turns out it takes 23 people.
+
+27:00.000 --> 27:05.000
+23, or square root, roughly square root of 365.
+
+27:05.000 --> 27:22.000
+So if you have a million acceptance rate of one in a million, that means with only a square root of a million, like a 1609 or so, you get a 50% probability of a mismatch in a fingerprint.
+
+27:22.000 --> 27:25.000
+Then there's Play-Doh fingers, right?
+
+27:25.000 --> 27:30.000
+Where people, because you see the fingerprints are liftable, right?
+
+27:30.000 --> 27:32.000
+You leave a fingerprint, right?
+
+27:32.000 --> 27:38.000
+And once I get your fingerprint, or I lift your fingerprint, I'd say, right?
+
+27:38.000 --> 27:40.000
+Exactly how the police does it, right?
+
+27:40.000 --> 27:45.000
+I can build a 3D object with that fingerprint on it.
+
+27:45.000 --> 27:48.000
+And so think about Play-Doh.
+
+27:48.000 --> 27:52.000
+Play-Doh has this nice characteristic, right?
+
+27:52.000 --> 27:57.000
+That it's malleable, and it's soft, right?
+
+27:57.000 --> 28:07.000
+That if you imagine you impress the fingerprint that you lifted onto a Play-Doh, it will look just like a fingertip.
+
+28:07.000 --> 28:11.000
+Also, it's easy to warm up Play-Doh, right?
+
+28:11.000 --> 28:20.000
+So if the fingerprint reader takes temperature, just to make sure it's a live, warm finger, not a cold, dead finger, it's also easy to do with Play-Doh.
+
+28:20.000 --> 28:22.000
+And there were stories about this.
+
+28:22.000 --> 28:29.000
+And so there was a study in the 90s, I think, at this Clarkson University of New York event, how you can make it.
+
+28:29.000 --> 28:34.000
+And they actually succeeded in pulling some, at the time, fingerprint authentication systems.
+
+28:34.000 --> 28:41.000
+And what they suggested is they should do like a perspiration test, because even if you think your fingertips are dry, actually they're not completely dry.
+
+28:41.000 --> 28:44.000
+There's like some kind of moisture there.
+
+28:44.000 --> 28:46.000
+But it's also easy.
+
+28:46.000 --> 28:50.000
+So fingerprints are yesterday's news, right?
+
+28:50.000 --> 29:01.000
+Then there was this case also like 20-something years ago when Mercedes, high-end Mercedes, started using the fingerprints to unlock cars, right?
+
+29:01.000 --> 29:04.000
+There are still some cars out there that use them, by the way.
+
+29:04.000 --> 29:06.000
+Maybe you've seen them.
+
+29:06.000 --> 29:14.000
+So, yeah, some business consumer was cut off just to steal his Mercedes.
+
+29:14.000 --> 29:15.000
+Handwriting.
+
+29:15.000 --> 29:27.000
+Again, I mentioned this earlier, but you can use, you can trade, this was already 20 years ago, you could trade a machine learning model to generate very believable looking,
+
+29:27.000 --> 29:33.000
+or very, very authentic looking duplicates or fakes of somebody's handwriting.
+
+29:33.000 --> 29:48.000
+And stare at it as all you want is very difficult to recognize without me showing you this, which one is, you know, without labels, which one is fake.
+
+29:48.000 --> 30:02.000
+So, in summary, biometrics are, can be helpful, they are nice because they put no load on you generally, on us humans.
+
+30:02.000 --> 30:06.000
+You sit in a chair, you sit anyway.
+
+30:06.000 --> 30:08.000
+You put a fingerprint and what's the load, right?
+
+30:08.000 --> 30:13.000
+Even with iris scans, typing on a keyboard to type anyway, right?
+
+30:13.000 --> 30:19.000
+So, if you're being authenticated as you type, that's no longer new.
+
+30:19.000 --> 30:23.000
+But, they're tricky to use on a large scale.
+
+30:23.000 --> 30:28.000
+They require in-person enrollment.
+
+30:28.000 --> 30:37.000
+In order to have secure enrollment, and you will see this if you haven't yet, when you work in the real world and you have a biometric system that is in place,
+
+30:37.000 --> 30:42.000
+you will be required to have an in-person enrollment, even if you are a remote worker.
+
+30:42.000 --> 30:46.000
+So, they are hard to re-block.
+
+30:46.000 --> 30:49.000
+And they require this pervasive infrastructure, right?
+
+30:49.000 --> 30:53.000
+So, if you're using iris scans, they have to be iris cameras everywhere you want to protect.
+
+30:53.000 --> 31:02.000
+Every computer, every secure office, everything has to be protected with that equipment.
+
+31:02.000 --> 31:04.000
+So, let's see.
+
+31:04.000 --> 31:11.000
+So, biometrics are about what you are, inherently what you are, but now, remember, the other factor is what you have, right?
+
+31:11.000 --> 31:12.000
+What you have.
+
+31:12.000 --> 31:17.000
+So, what you know, what you are, and now what you have.
+
+31:17.000 --> 31:23.000
+So, imagine you have something like a dongle of some sort, right?
+
+31:23.000 --> 31:29.000
+You know, something like a little tag, a phone, some object, right?
+
+31:29.000 --> 31:34.000
+So, it's not part of your body anymore, and it's not inside your brain.
+
+31:34.000 --> 31:37.000
+It's rather an object that you have in your possession.
+
+31:37.000 --> 31:42.000
+So, now, imagine that you, user, and the system share a secret.
+
+31:42.000 --> 31:47.000
+Now, not password, not password, okay?
+
+31:47.000 --> 31:53.000
+Long, strong secret, okay?
+
+31:53.000 --> 31:57.000
+So, very simple.
+
+31:57.000 --> 32:01.000
+You want to log in, the system says, here's a challenge.
+
+32:01.000 --> 32:10.000
+It generates a random, unpredictable challenge, and tells it, prove to me that based on this challenge, you know the secret.
+
+32:10.000 --> 32:13.000
+That you and I share.
+
+32:13.000 --> 32:24.000
+And you reply, with some function, cryptographic, obviously, of the key that you have, and the challenge that was just sent to you.
+
+32:24.000 --> 32:26.000
+The system verifies, right?
+
+32:26.000 --> 32:28.000
+Because it can recompute the same function.
+
+32:28.000 --> 32:36.000
+It knows the challenge, it sent it, it knows the key, it shares it with you, compares the two values, success or failure.
+
+32:36.000 --> 32:42.000
+This is strictly better, right?
+
+32:42.000 --> 32:48.000
+If someone eavesdrops on this communication, what can they do?
+
+32:48.000 --> 32:51.000
+Good force, right?
+
+32:51.000 --> 32:56.000
+Same as put password, except with password, the adversary was in luck.
+
+32:56.000 --> 33:01.000
+The passwords came from a very small, pathetic space.
+
+33:01.000 --> 33:05.000
+But here, the key comes from a truly random space, right?
+
+33:05.000 --> 33:11.000
+So, if the key is 160 bits long or 256 bits long, good luck to the adversary doing brute force.
+
+33:11.000 --> 33:15.000
+Not possible, not viable, right?
+
+33:15.000 --> 33:20.000
+Now, that's a big question.
+
+33:20.000 --> 33:31.000
+If we could get the user to compute the f, that would be nice, but the users aren't good at computing functions, right?
+
+33:31.000 --> 33:34.000
+So, it has to be done by something else.
+
+33:34.000 --> 33:35.000
+Okay?
+
+33:35.000 --> 33:38.000
+By some other object.
+
+33:38.000 --> 33:47.000
+So, this is what's called challenge and response certification.
+
+33:47.000 --> 33:51.000
+And here, like I said, user and system share a key, right?
+
+33:51.000 --> 33:53.000
+Challenge, response.
+
+33:53.000 --> 33:59.000
+The idea is, the key stays secret because it's random, strong, and nobody leaks it, right?
+
+33:59.000 --> 34:04.000
+And the adversary only sees that function of the key and the random challenge.
+
+34:04.000 --> 34:07.000
+And it's fresh.
+
+34:07.000 --> 34:18.000
+Fresh means, if a challenge is short, let's say we were stupid, or we didn't take a security course,
+
+34:18.000 --> 34:23.000
+and we said, let's make challenge 16 bits.
+
+34:23.000 --> 34:28.000
+What happened?
+
+34:30.000 --> 34:35.000
+Remember, challenge is random.
+
+34:35.000 --> 34:39.000
+What will happen over time?
+
+34:39.000 --> 34:43.000
+In fact, we will see every challenge and we will answer everything.
+
+34:43.000 --> 34:44.000
+Uh-huh.
+
+34:44.000 --> 34:45.000
+But it's worse than that.
+
+34:45.000 --> 34:47.000
+The birthday.
+
+34:47.000 --> 34:50.000
+It's worse than that.
+
+34:50.000 --> 34:51.000
+Right?
+
+34:51.000 --> 34:57.000
+The adversary will see, will record all the challenges and responses, and will just wait
+
+34:57.000 --> 34:58.000
+for a repeat.
+
+34:58.000 --> 35:06.000
+And when the repeat comes, or the adversary will record enough challenge responses that
+
+35:06.000 --> 35:11.000
+when it wants to impersonate the user, user isn't there, but the adversary wants to log
+
+35:11.000 --> 35:12.000
+in as the user.
+
+35:12.000 --> 35:18.000
+The adversary will say, log in, and the system will say, there's a challenge.
+
+35:18.000 --> 35:22.000
+The adversary quickly looks at a database of challenges that recorded, says, do I have it?
+
+35:22.000 --> 35:23.000
+No.
+
+35:23.000 --> 35:24.000
+Okay.
+
+35:24.000 --> 35:25.000
+Abandoned login.
+
+35:25.000 --> 35:28.000
+A little time later, not right away, because that will arise.
+
+35:28.000 --> 35:29.000
+There's no suspicion.
+
+35:29.000 --> 35:30.000
+The adversary will wait.
+
+35:30.000 --> 35:31.000
+They're patient.
+
+35:31.000 --> 35:33.000
+Another login.
+
+35:33.000 --> 35:36.000
+The system generates another challenge.
+
+35:36.000 --> 35:41.000
+The adversary looks in this table of reported challenges and responses.
+
+35:41.000 --> 35:42.000
+Oh.
+
+35:42.000 --> 35:43.000
+Got it.
+
+35:43.000 --> 35:44.000
+He can respond.
+
+35:44.000 --> 35:46.000
+Does that make sense?
+
+35:46.000 --> 35:56.000
+With a sufficiently long challenge, like 160 bits, 256 bits, the probability of challenge
+
+35:56.000 --> 36:00.000
+repeating, astronomically small.
+
+36:00.000 --> 36:01.000
+Okay?
+
+36:01.000 --> 36:04.000
+So the challenges need to be long enough.
+
+36:04.000 --> 36:10.000
+Indeed, the birthday paradox tells us, right, that they should be, today, you want to have
+
+36:10.000 --> 36:15.000
+at least 160 bits of challenge for decent security.
+
+36:15.000 --> 36:23.000
+So, which means that the system needs to be assured that when the response comes back,
+
+36:23.000 --> 36:26.000
+it is fresh.
+
+36:26.000 --> 36:27.000
+Right?
+
+36:27.000 --> 36:34.000
+Because the user here isn't going to remember if they have seen the challenge before or not.
+
+36:34.000 --> 36:36.000
+This is just the user.
+
+36:36.000 --> 36:40.000
+Maybe with some dumb device or token of some sort.
+
+36:40.000 --> 36:45.000
+It's not going to remember or cache all the previous challenges and say, ooh, I've seen
+
+36:45.000 --> 36:46.000
+this one before.
+
+36:46.000 --> 36:47.000
+I'm not answering it.
+
+36:47.000 --> 36:48.000
+No.
+
+36:48.000 --> 36:52.000
+It is the system's responsibility to make sure the challenges don't repeat.
+
+36:52.000 --> 36:57.000
+Because it, when it receives back the reply, it wants to make sure, the guarantee that
+
+36:57.000 --> 37:00.000
+this reply is here and now.
+
+37:00.000 --> 37:03.000
+Not from yesterday or a year ago.
+
+37:05.000 --> 37:06.000
+Okay.
+
+37:06.000 --> 37:08.000
+So this works.
+
+37:08.000 --> 37:12.000
+And you probably use this kind of system without even knowing it.
+
+37:12.000 --> 37:15.000
+It's used in badge-based identification.
+
+37:15.000 --> 37:18.000
+So, you know, people use badges ever?
+
+37:18.000 --> 37:19.000
+Here?
+
+37:19.000 --> 37:21.000
+Anybody work in the real world?
+
+37:21.000 --> 37:22.000
+Yay.
+
+37:22.000 --> 37:23.000
+Okay.
+
+37:23.000 --> 37:24.000
+Badges?
+
+37:24.000 --> 37:25.000
+NFC?
+
+37:25.000 --> 37:26.000
+Yeah?
+
+37:26.000 --> 37:28.000
+Or insert badges?
+
+37:28.000 --> 37:29.000
+TAC.
+
+37:29.000 --> 37:30.000
+NFC.
+
+37:30.000 --> 37:31.000
+Okay.
+
+37:31.000 --> 37:35.000
+A lot of those systems use this kind of challenge response.
+
+37:35.000 --> 37:36.000
+Cars.
+
+37:36.000 --> 37:37.000
+Key fob.
+
+37:37.000 --> 37:38.000
+Car.
+
+37:38.000 --> 37:39.000
+Key fob.
+
+37:39.000 --> 37:40.000
+Car.
+
+37:40.000 --> 37:41.000
+Key fob.
+
+37:41.000 --> 37:42.000
+Car.
+
+37:42.000 --> 37:43.000
+Challenge.
+
+37:43.000 --> 37:44.000
+Key fob is the user.
+
+37:44.000 --> 37:46.000
+You are the user with the key fob.
+
+37:46.000 --> 37:48.000
+Key fob has the key.
+
+37:48.000 --> 37:49.000
+Car.
+
+37:49.000 --> 37:50.000
+You want to unlock the car.
+
+37:50.000 --> 37:51.000
+You press.
+
+37:51.000 --> 37:53.000
+The car goes, challenge.
+
+37:53.000 --> 37:55.000
+The fob goes, response.
+
+37:55.000 --> 38:06.000
+The car says, oh, correct response, unlock.
+
+38:06.000 --> 38:10.000
+Here's an example where these things don't work well.
+
+38:10.000 --> 38:13.000
+So far everything seemed good.
+
+38:13.000 --> 38:16.000
+This example dates back to a long time ago.
+
+38:16.000 --> 38:23.000
+Back in the 1980s, before you were all born, there was a war.
+
+38:23.000 --> 38:26.000
+There were many wars, but this war took a long time.
+
+38:26.000 --> 38:33.000
+It was kind of a slow war in Africa between a country called Namibia, which still exists,
+
+38:33.000 --> 38:38.000
+and a country called Angola, which still exists.
+
+38:38.000 --> 38:48.000
+And so Angola was allied with the Soviets, with all these countries behind the Iron Curtain,
+
+38:48.000 --> 38:49.000
+and Cuba.
+
+38:49.000 --> 38:54.000
+So, essentially, Angola was aided by the Soviet Union, Cuba, and all the Eastern Bloc countries.
+
+38:54.000 --> 39:00.000
+And not surprisingly, Namibia was aided, well, not directly by the United States, but by South Africa,
+
+39:00.000 --> 39:04.000
+which at the time was a very different South Africa issue today.
+
+39:04.000 --> 39:10.000
+It was an apartheid regime, very right-wing, very conservative, blah, blah, blah.
+
+39:10.000 --> 39:14.000
+So I'm not here to teach you politics, but just to illustrate a problem.
+
+39:14.000 --> 39:20.000
+So they've used, already then, challenge response-based authentication.
+
+39:20.000 --> 39:23.000
+And this system is called Friend or Foe.
+
+39:23.000 --> 39:26.000
+F-O-F, Friend or Foe.
+
+39:26.000 --> 39:30.000
+This is how, like, planes identify each other in the air.
+
+39:30.000 --> 39:35.000
+This is how ground stations know that it's their planes and not enemy planes flying overhead.
+
+39:35.000 --> 39:36.000
+Okay?
+
+39:36.000 --> 39:39.000
+So the idea here, these people were at war.
+
+39:39.000 --> 39:40.000
+Okay?
+
+39:40.000 --> 39:42.000
+They used aircraft.
+
+39:42.000 --> 39:43.000
+Right?
+
+39:43.000 --> 39:44.000
+Aircraft.
+
+39:44.000 --> 39:47.000
+Bombers, et cetera.
+
+39:47.000 --> 39:49.000
+Cause damage.
+
+39:49.000 --> 39:52.000
+So, you have a following situation.
+
+39:52.000 --> 39:55.000
+South Africa, remember, was supporting Namibia, right?
+
+39:55.000 --> 39:56.000
+In this war.
+
+39:56.000 --> 40:02.000
+So South Africans would launch a bomber, this is a ground station, to bomb Angola.
+
+40:06.000 --> 40:09.000
+The ground station is the system.
+
+40:09.000 --> 40:12.000
+The bomber is the user, right?
+
+40:12.000 --> 40:14.000
+In this picture, the analogy, right?
+
+40:14.000 --> 40:18.000
+They share a long-term secret key K, unique to that bomber.
+
+40:18.000 --> 40:19.000
+Right?
+
+40:19.000 --> 40:24.000
+So for every such bomber, you know, the ground station knows a separate key.
+
+40:28.000 --> 40:32.000
+Meanwhile, Angola launches a Cuban MiG.
+
+40:32.000 --> 40:35.000
+MiG is back then a Soviet airplane.
+
+40:35.000 --> 40:36.000
+A Soviet bomber.
+
+40:40.000 --> 40:41.000
+Okay.
+
+40:41.000 --> 40:44.000
+It's flying over Namibian.
+
+40:47.000 --> 40:50.000
+Namibians detect a plane, a radar.
+
+40:52.000 --> 40:53.000
+Right?
+
+40:53.000 --> 40:54.000
+Radar.
+
+40:54.000 --> 40:55.000
+Anybody knows?
+
+40:55.000 --> 40:56.000
+See a blip.
+
+40:56.000 --> 40:57.000
+You don't know what it is.
+
+40:57.000 --> 40:59.000
+That's why you need this kind of identification.
+
+40:59.000 --> 41:02.000
+Are you one of us, or are you one of them?
+
+41:02.000 --> 41:03.000
+Friend or foe?
+
+41:06.000 --> 41:08.000
+So he says, here's a challenge.
+
+41:08.000 --> 41:14.000
+Whoever you are, you better answer, or I'll shoot.
+
+41:15.000 --> 41:16.000
+Right?
+
+41:16.000 --> 41:17.000
+Air defense.
+
+41:17.000 --> 41:20.000
+This has to be done super fast, right?
+
+41:21.000 --> 41:22.000
+What?
+
+41:23.000 --> 41:28.000
+Normally, Cuban MiG would be like, uh, I got nothing.
+
+41:28.000 --> 41:32.000
+So it would hope that it won't get shot down.
+
+41:34.000 --> 41:43.000
+But now, Cuban MiG would take that challenge and quickly retransmit it to the ground station in Mangola.
+
+41:43.000 --> 41:46.000
+You've been following me so far.
+
+41:48.000 --> 41:53.000
+Which will then transmit it up to whatever plane is flying there.
+
+41:54.000 --> 41:56.000
+Turns out, oh, South African bomber.
+
+41:56.000 --> 42:03.000
+Well, when South African bomber receives a challenge, it is programmed to reply with a function of a challenge and a secret key.
+
+42:03.000 --> 42:06.000
+Everybody here awake?
+
+42:06.000 --> 42:07.000
+Following?
+
+42:07.000 --> 42:08.000
+Nope.
+
+42:08.000 --> 42:09.000
+No rocket science here.
+
+42:12.000 --> 42:13.000
+Pun intended.
+
+42:13.000 --> 42:14.000
+Response.
+
+42:15.000 --> 42:16.000
+Some function of the key, right?
+
+42:16.000 --> 42:20.000
+I use a different notation here, but some function of the key and the random number, right?
+
+42:21.000 --> 42:26.000
+Which the ground station in Mangola quickly retransmits back to the MiG, which is, you can see where this is going, right?
+
+42:26.000 --> 42:33.000
+The MiG transmits it back to the ground station, and the ground station says, yay, one of us.
+
+42:34.000 --> 42:35.000
+One of us.
+
+42:40.000 --> 42:41.000
+Perfect.
+
+42:42.000 --> 42:43.000
+And drops the bomb.
+
+42:46.000 --> 42:51.000
+Now, you don't have to feel sorry for Namibians or South Africans or whatever, but do you see the problem?
+
+42:51.000 --> 42:52.000
+Right?
+
+42:52.000 --> 42:58.000
+If you design this system, you'll be court-martialed, probably, right?
+
+42:59.000 --> 43:01.000
+So how do we fix this?
+
+43:05.000 --> 43:06.000
+Do you see the problem?
+
+43:06.000 --> 43:07.000
+Right?
+
+43:07.000 --> 43:10.000
+And the problem should be obvious, that there is a problem.
+
+43:12.000 --> 43:13.000
+Well, how do we fix it?
+
+43:13.000 --> 43:23.000
+Well, back then, well, actually, I'm not 100% sure.
+
+43:24.000 --> 43:27.000
+I'm pretty sure they didn't have GPS.
+
+43:28.000 --> 43:30.000
+Or the military equivalent of GPS.
+
+43:34.000 --> 43:35.000
+Right?
+
+43:36.000 --> 43:38.000
+If they had GPS, would it help?
+
+43:38.000 --> 43:39.000
+Come on, exercise your noodles.
+
+43:48.000 --> 43:51.000
+Maybe limit the response time, because it takes time to...
+
+43:52.000 --> 43:53.000
+Right.
+
+43:53.000 --> 43:54.000
+Okay.
+
+43:54.000 --> 43:55.000
+Good.
+
+43:55.000 --> 43:56.000
+That's one.
+
+43:56.000 --> 43:57.000
+That's one.
+
+43:57.000 --> 44:03.000
+You could say, look, if there is a plane over here, right, it can be only, I don't know,
+
+44:03.000 --> 44:05.000
+10 miles away or something like that.
+
+44:05.000 --> 44:06.000
+Whatever.
+
+44:06.000 --> 44:13.000
+However the height, whatever the height of the flying altitude of the airplane is, right?
+
+44:13.000 --> 44:14.000
+Some miles.
+
+44:14.000 --> 44:15.000
+10 miles.
+
+44:16.000 --> 44:17.000
+Whatever.
+
+44:17.000 --> 44:20.000
+You know what the round trip is for a 10-mile radius.
+
+44:21.000 --> 44:23.000
+This is obviously more, right?
+
+44:23.000 --> 44:24.000
+You see how many packages are?
+
+44:24.000 --> 44:27.000
+Well, normally it should be challenge, response.
+
+44:27.000 --> 44:32.000
+Now it's challenge, relay, challenge, response, relay.
+
+44:33.000 --> 44:37.000
+So we have four extra transmissions.
+
+44:38.000 --> 44:41.000
+One of them, or two of them potentially longer distance.
+
+44:42.000 --> 44:46.000
+So timing is of value, isn't it?
+
+44:48.000 --> 44:50.000
+But GPS makes it even easier.
+
+44:50.000 --> 45:00.000
+All you need to do is to make sure that this American bomber includes in that function of the challenge, right,
+
+45:00.000 --> 45:02.000
+that it replies with, its coordinates.
+
+45:03.000 --> 45:07.000
+And then the station says, ah, ah, it's not here.
+
+45:08.000 --> 45:13.000
+Whatever this replies comes from, it's not from a plane flying overhead.
+
+45:13.000 --> 45:16.000
+It's a plane somewhere, or he knows exactly where he's flying.
+
+45:17.000 --> 45:18.000
+Does that make sense?
+
+45:20.000 --> 45:22.000
+Now, in reality, you probably want to use both.
+
+45:22.000 --> 45:25.000
+You want to use the time and the geographic coordinates.
+
+45:28.000 --> 45:31.000
+So, just by itself, this is a problem, right?
+
+45:31.000 --> 45:32.000
+It's called a relay attack.
+
+45:37.000 --> 45:46.000
+Right, so, let's forget the war and then look at it again as a general problem.
+
+45:46.000 --> 45:54.000
+We have Alice and Bob, or user and system, they share a secret, and they want to authenticate each other and identify each other over a network.
+
+45:54.000 --> 45:57.000
+They do not see each other physically, so they are far away.
+
+45:58.000 --> 46:01.000
+How do they authenticate and identify each other, right?
+
+46:01.000 --> 46:03.000
+So, that's the main problem.
+
+46:04.000 --> 46:06.000
+The adversary here is not just eavesdropping.
+
+46:06.000 --> 46:10.000
+I may refer to the adversary as eave, but that's not just the limits of the adversary.
+
+46:10.000 --> 46:17.000
+The adversary can eavesdrop, delete messages, modify messages, retard messages, right?
+
+46:17.000 --> 46:18.000
+Maybe slow them down.
+
+46:18.000 --> 46:22.000
+It can, yeah, insert messages, right?
+
+46:22.000 --> 46:27.000
+So, the adversary is pretty capable.
+
+46:31.000 --> 46:36.000
+And, what you have seen, essentially, is an example of this attack.
+
+46:37.000 --> 46:38.000
+Right?
+
+46:38.000 --> 46:40.000
+Which is called, sometimes it's called man in the middle.
+
+46:40.000 --> 46:44.000
+They'll probably come around to changing it to some general neutral form one day.
+
+46:44.000 --> 46:50.000
+But, the way it's still in the books is MIT and we're man in the middle of that.
+
+46:50.000 --> 46:52.000
+Here's the adversary is in the middle, right?
+
+46:52.000 --> 46:55.000
+So, the idea is, again, Alice and Bob know the secret.
+
+46:56.000 --> 47:01.000
+When Bob challenges Alice and says, hey, here's a random number.
+
+47:01.000 --> 47:05.000
+Prove to me that you know the secret based on this random number.
+
+47:05.000 --> 47:06.000
+Right?
+
+47:06.000 --> 47:08.000
+And Alice replies with a function.
+
+47:08.000 --> 47:09.000
+Now, here we use a hash, right?
+
+47:09.000 --> 47:10.000
+Like a crypto hash.
+
+47:10.000 --> 47:13.000
+That's an example of a function you would want to use.
+
+47:13.000 --> 47:15.000
+Because it's non-invertible, right?
+
+47:15.000 --> 47:16.000
+No collisions.
+
+47:16.000 --> 47:18.000
+Remember these properties we talked about?
+
+47:18.000 --> 47:19.000
+Right?
+
+47:19.000 --> 47:23.000
+You want to have all the good, both types of collision resistance, right?
+
+47:23.000 --> 47:26.000
+So, Alice replies and that's a correct reply.
+
+47:26.000 --> 47:27.000
+There's nothing wrong with the reply.
+
+47:27.000 --> 47:32.000
+Except the adversary can be in the middle and he can essentially impersonate Alice.
+
+47:32.000 --> 47:33.000
+Okay?
+
+47:33.000 --> 47:37.000
+Now, there's a subtlety here.
+
+47:37.000 --> 47:39.000
+The subtlety is this.
+
+47:39.000 --> 47:44.000
+The adversary does not actually learn the secret in this attack, right?
+
+47:44.000 --> 47:49.000
+The adversary is just a relay, right?
+
+47:49.000 --> 47:57.000
+He's sitting in the middle and he's basically handing messages from Bob to Alice and handing messages from Alice to Bob.
+
+47:57.000 --> 48:00.000
+So, he could be like a hostile router, right?
+
+48:00.000 --> 48:05.000
+Or like an access point, a malicious access point.
+
+48:05.000 --> 48:07.000
+So, what does it gain?
+
+48:07.000 --> 48:19.000
+Well, it gains only the fact that if the system is configured so that when authentication succeeds, Alice gets access to something immediately.
+
+48:19.000 --> 48:20.000
+Right?
+
+48:20.000 --> 48:21.000
+That becomes an attack.
+
+48:21.000 --> 48:22.000
+That becomes an attack.
+
+48:22.000 --> 48:32.000
+However, if this is followed by encrypted communication using the key K, the adversary gains that.
+
+48:32.000 --> 48:34.000
+Do you see that?
+
+48:34.000 --> 48:38.000
+Because the adversary does not know the secret.
+
+48:38.000 --> 48:43.000
+So, it's attack on authentication.
+
+48:43.000 --> 48:45.000
+It's not an attack on secrecy.
+
+48:45.000 --> 48:51.000
+Now, if the key itself, remember, I assume the key is a strong key, right?
+
+48:51.000 --> 49:07.000
+A binary, sorry, bitwise is long enough, at least 160 bits or so, and not a dictionary, not a big from a dictionary like a password.
+
+49:07.000 --> 49:09.000
+There is another way to do this.
+
+49:09.000 --> 49:18.000
+And the other way to do this, and this is actually also used in practice for something called one-time password, OTP.
+
+49:18.000 --> 49:23.000
+It's based on a data structure called the Lamport's hash.
+
+49:23.000 --> 49:26.000
+Has anybody ever seen this before?
+
+49:26.000 --> 49:27.000
+No?
+
+49:27.000 --> 49:29.000
+Lamport's hash.
+
+49:29.000 --> 49:37.000
+Basically, Lamport's hash is the following.
+
+49:37.000 --> 49:47.000
+So, you start with the random value, generate the random number, and then you repeatedly hash that random number, like over and over and over and over and over and over.
+
+49:47.000 --> 49:49.000
+Remember how we did encryption?
+
+49:49.000 --> 49:52.000
+So, imagine you just hash it.
+
+49:52.000 --> 49:57.000
+Take X, hash of X, hash of X, hash of X, et cetera, hash, hash, hash, hash, hash, hash.
+
+49:57.000 --> 49:58.000
+How many times?
+
+49:58.000 --> 49:59.000
+As long as you want.
+
+49:59.000 --> 50:01.000
+That's a parameter.
+
+50:01.000 --> 50:02.000
+Okay?
+
+50:02.000 --> 50:17.000
+So, the idea is you do this and Bob, who will be modeled here as a system, knows what's called the root of the chain.
+
+50:17.000 --> 50:19.000
+That is the last hash value.
+
+50:19.000 --> 50:21.000
+Okay?
+
+50:21.000 --> 50:26.000
+Alice is the one that computed the chain to begin with.
+
+50:26.000 --> 50:27.000
+Started with some secret.
+
+50:27.000 --> 50:29.000
+You see that secret in quotes?
+
+50:29.000 --> 50:30.000
+Okay?
+
+50:30.000 --> 50:39.000
+So, she started with some secret value, and she computed a repeated hash over that secret value, n times.
+
+50:39.000 --> 50:40.000
+Okay?
+
+50:40.000 --> 50:41.000
+Then, she gave the result.
+
+50:41.000 --> 50:46.000
+You see that Y over there in the green cloud?
+
+50:46.000 --> 50:55.000
+She gave the result to Bob, and she also gave him the index n, which is, at that time, the length of the hash chain.
+
+50:55.000 --> 50:56.000
+Why do we call it the chain?
+
+50:56.000 --> 50:58.000
+Because they are linked, right?
+
+50:58.000 --> 51:00.000
+Hash, hash, hash, hash, hash, hash, hash.
+
+51:00.000 --> 51:01.000
+Okay?
+
+51:01.000 --> 51:12.000
+So, in the beginning, Bob knows that Y is the root of Alice's chain, and n is the length of the chain.
+
+51:12.000 --> 51:15.000
+In other words, the chain has n links in it.
+
+51:15.000 --> 51:26.000
+So, the first time Alice wants to authenticate to Bob, okay, she says, hi, I'm Alice.
+
+51:26.000 --> 51:30.000
+Don't show that message, because it's a clear text message, nothing in it.
+
+51:30.000 --> 51:39.000
+And Bob challenges her with the current index, int, which, at the beginning, is n.
+
+51:39.000 --> 51:40.000
+Okay?
+
+51:40.000 --> 51:51.000
+And Alice replies with something that hashes into n.
+
+51:51.000 --> 52:04.000
+So, you start with a secret, hash once.
+
+52:04.000 --> 52:10.000
+Then you arrive at hash of secret, then you hash again.
+
+52:10.000 --> 52:12.000
+Then you hash again, et cetera, et cetera.
+
+52:12.000 --> 52:23.000
+And eventually, you wind up with this Y, which is hash n of secret.
+
+52:23.000 --> 52:24.000
+Okay?
+
+52:24.000 --> 52:25.000
+And this is why it's called the chain.
+
+52:25.000 --> 52:40.000
+So, in the end, here, at the very end, there's this hash n minus 1 of secret.
+
+52:40.000 --> 52:41.000
+Right?
+
+52:41.000 --> 52:45.000
+We computed n minus 1 hashes, all of the same, repeatedly.
+
+52:45.000 --> 52:48.000
+And so, the last link is a hash.
+
+52:48.000 --> 52:49.000
+Right?
+
+52:49.000 --> 52:52.000
+And it becomes this.
+
+52:52.000 --> 52:58.000
+Well, consider this value, this value here.
+
+52:58.000 --> 53:03.000
+This is what Alice will give Bob.
+
+53:03.000 --> 53:06.000
+And the idea is, if Bob hashes this, he should get that.
+
+53:06.000 --> 53:09.000
+But he knows this already.
+
+53:09.000 --> 53:16.000
+So, Bob is thinking, okay, who could have given me this value?
+
+53:16.000 --> 53:21.000
+Only Alice, because only Alice knows the input to the hash function.
+
+53:21.000 --> 53:24.000
+Because only Alice computed the entire chain.
+
+53:24.000 --> 53:25.000
+Right?
+
+53:25.000 --> 53:29.000
+And because of the cryptographic properties of the hash function, it's not invertible.
+
+53:29.000 --> 53:31.000
+So, nobody could have inverted the hash function.
+
+53:31.000 --> 53:40.000
+Or found a collision, because that's supposed to be, right, computationally hard.
+
+53:40.000 --> 53:41.000
+Ask questions.
+
+53:41.000 --> 53:46.000
+Don't hesitate if you haven't seen this before, which I think none of you have.
+
+53:46.000 --> 53:48.000
+Do you see how this works?
+
+53:48.000 --> 53:52.000
+And then, what Bob does, this is called one-time authentication.
+
+53:52.000 --> 53:56.000
+Because this same value, h n minus 1, cannot be reused.
+
+53:56.000 --> 54:01.000
+So, once Alice released it here, in this message in the reply,
+
+54:01.000 --> 54:06.000
+Bob has to adjust it in his index to n minus 1.
+
+54:06.000 --> 54:21.000
+So, the next time to authenticate Alice, he expects, Bob will expect this.
+
+54:21.000 --> 54:32.000
+Because when he hashes this, once hash, you should get that, right?
+
+54:32.000 --> 54:35.000
+Some of you look very puzzled.
+
+54:39.000 --> 54:41.000
+It's okay to ask questions.
+
+54:41.000 --> 54:42.000
+Yeah?
+
+54:42.000 --> 54:45.000
+I'm kind of wondering what happens when they get all the way back.
+
+54:45.000 --> 54:47.000
+Ah, good question.
+
+54:47.000 --> 54:50.000
+What happens when you deplete the change?
+
+54:50.000 --> 54:51.000
+When you are...
+
+54:55.000 --> 55:00.000
+Now, the truth is, you have to either budget on never depleting it completely,
+
+55:00.000 --> 55:03.000
+and then manually resetting with a new change.
+
+55:03.000 --> 55:06.000
+Manually mean offline, offline resetting.
+
+55:06.000 --> 55:09.000
+Generating, Alice generates a brand new change.
+
+55:09.000 --> 55:14.000
+Or, there are some clumsy techniques to use digital signatures to...
+
+55:14.000 --> 55:16.000
+I won't bore you with it.
+
+55:16.000 --> 55:17.000
+But there are...
+
+55:17.000 --> 55:19.000
+That's the problem with this space here.
+
+55:19.000 --> 55:20.000
+Now, so this...
+
+55:20.000 --> 55:23.000
+The change has to be long enough that it lasts for like a lifetime.
+
+55:23.000 --> 55:25.000
+So, let me give you an example.
+
+55:25.000 --> 55:26.000
+You have a...
+
+55:26.000 --> 55:28.000
+It's like a small IoT device you bought.
+
+55:28.000 --> 55:29.000
+Like some kind of a...
+
+55:29.000 --> 55:31.000
+I don't know, smart clock or something like that.
+
+55:31.000 --> 55:32.000
+And it typically...
+
+55:32.000 --> 55:33.000
+The lifetime is like, I don't know...
+
+55:33.000 --> 55:34.000
+A year.
+
+55:34.000 --> 55:39.000
+So, you can provision it with a hash chain that is good enough for...
+
+55:39.000 --> 55:40.000
+I don't know...
+
+55:40.000 --> 55:44.000
+One authentication every hour for a year.
+
+55:44.000 --> 55:47.000
+So, that's 365 times 24.
+
+55:47.000 --> 55:49.000
+That will be the length of your change.
+
+55:49.000 --> 55:50.000
+Right?
+
+55:50.000 --> 55:52.000
+And then you know you're not unlikely to be depleted.
+
+55:52.000 --> 55:54.000
+Because you're not going to authenticate the device every hour.
+
+55:54.000 --> 55:55.000
+Right?
+
+55:55.000 --> 55:58.000
+So, it is a useful technique.
+
+55:58.000 --> 56:00.000
+But it's...
+
+56:00.000 --> 56:03.000
+And it has been used in...
+
+56:03.000 --> 56:04.000
+In...
+
+56:04.000 --> 56:06.000
+What's something called one-time passwords.
+
+56:06.000 --> 56:07.000
+Right?
+
+56:07.000 --> 56:08.000
+It is a useful technique.
+
+56:08.000 --> 56:09.000
+But it has this limitation.
+
+56:09.000 --> 56:11.000
+And eventually you will run out.
+
+56:11.000 --> 56:16.000
+And in a way, it's a kind of a public key scheme.
+
+56:16.000 --> 56:17.000
+And it is...
+
+56:17.000 --> 56:18.000
+Why is it...
+
+56:18.000 --> 56:19.000
+Why do I say that?
+
+56:19.000 --> 56:20.000
+Because...
+
+56:20.000 --> 56:21.000
+That root...
+
+56:21.000 --> 56:22.000
+That y...
+
+56:22.000 --> 56:23.000
+That Bob keeps...
+
+56:23.000 --> 56:24.000
+Is like a public key.
+
+56:24.000 --> 56:25.000
+For Alice.
+
+56:25.000 --> 56:29.000
+And every link is like a one-time authentication.
+
+56:29.000 --> 56:30.000
+Using...
+
+56:30.000 --> 56:32.000
+Only Alice can come up with the next authentication.
+
+56:32.000 --> 56:34.000
+Bob cannot impersonate Alice here.
+
+56:34.000 --> 56:35.000
+Okay?
+
+56:35.000 --> 56:38.000
+Well, this is an attack.
+
+56:38.000 --> 56:39.000
+But you know what?
+
+56:39.000 --> 56:40.000
+I'm not going to...
+
+56:40.000 --> 56:41.000
+Oof.
+
+56:41.000 --> 56:42.000
+We're out of time.
+
+56:42.000 --> 56:45.000
+I'm not going to bother you with this attack.
+
+56:45.000 --> 56:46.000
+There is...
+
+56:46.000 --> 56:47.000
+So, there is...
+
+56:47.000 --> 56:51.000
+Finally, in this lecture, there is one thing that you will see out in the real world.
+
+56:51.000 --> 56:52.000
+And you may have seen it already.
+
+56:52.000 --> 56:53.000
+In some...
+
+56:53.000 --> 56:57.000
+In some ways, the dual that we use is kind of an example of this.
+
+56:57.000 --> 56:58.000
+A weird example of this.
+
+56:58.000 --> 56:59.000
+But...
+
+56:59.000 --> 57:00.000
+Anybody ever seen this?
+
+57:00.000 --> 57:01.000
+Use your security ID?
+
+57:01.000 --> 57:02.000
+Yeah?
+
+57:02.000 --> 57:04.000
+They've been very popular.
+
+57:04.000 --> 57:05.000
+And they're still around.
+
+57:05.000 --> 57:07.000
+They may not look like that.
+
+57:07.000 --> 57:09.000
+That was maybe like five to ten years ago.
+
+57:09.000 --> 57:10.000
+It's still...
+
+57:10.000 --> 57:11.000
+Essentially like a...
+
+57:11.000 --> 57:12.000
+Like a fog.
+
+57:12.000 --> 57:13.000
+Right?
+
+57:13.000 --> 57:14.000
+Think of it as a fog.
+
+57:14.000 --> 57:15.000
+But...
+
+57:15.000 --> 57:16.000
+It doesn't have NFC.
+
+57:16.000 --> 57:18.000
+Or any communication at all.
+
+57:18.000 --> 57:20.000
+There's no radio anything.
+
+57:20.000 --> 57:24.000
+What it is, is just a little display.
+
+57:24.000 --> 57:25.000
+And...
+
+57:25.000 --> 57:27.000
+The idea is that every user...
+
+57:27.000 --> 57:29.000
+Let's say you work for an organization.
+
+57:29.000 --> 57:32.000
+Every Alice gets her own fog.
+
+57:32.000 --> 57:33.000
+Okay?
+
+57:33.000 --> 57:34.000
+And...
+
+57:34.000 --> 57:36.000
+Inside the fog is a master key.
+
+57:36.000 --> 57:37.000
+Well...
+
+57:37.000 --> 57:38.000
+For that fog.
+
+57:38.000 --> 57:40.000
+That it shares with the system.
+
+57:40.000 --> 57:41.000
+With the central system.
+
+57:41.000 --> 57:43.000
+Bob here.
+
+57:43.000 --> 57:44.000
+And...
+
+57:44.000 --> 57:45.000
+So...
+
+57:45.000 --> 57:46.000
+At setup time.
+
+57:46.000 --> 57:47.000
+In...
+
+57:47.000 --> 57:48.000
+In the factory.
+
+57:48.000 --> 57:49.000
+Or whatever.
+
+57:49.000 --> 57:50.000
+This thing is produced.
+
+57:50.000 --> 57:51.000
+It's seated with a key.
+
+57:51.000 --> 57:52.000
+And Alice and Bob share a key.
+
+57:52.000 --> 57:53.000
+Okay?
+
+57:53.000 --> 57:54.000
+So Bob is like...
+
+57:54.000 --> 57:55.000
+You know...
+
+57:55.000 --> 57:56.000
+A security administrator.
+
+57:56.000 --> 57:57.000
+There's a database of all these devices.
+
+57:57.000 --> 57:58.000
+All these bobs.
+
+57:58.000 --> 57:59.000
+For every user.
+
+57:59.000 --> 58:00.000
+Etc.
+
+58:00.000 --> 58:01.000
+So...
+
+58:01.000 --> 58:03.000
+In the beginning...
+
+58:03.000 --> 58:05.000
+They go by counters.
+
+58:05.000 --> 58:06.000
+So...
+
+58:06.000 --> 58:07.000
+There's a counter.
+
+58:07.000 --> 58:08.000
+Usually based on time.
+
+58:08.000 --> 58:09.000
+So...
+
+58:09.000 --> 58:12.000
+The way that Alice authenticates to Bob.
+
+58:12.000 --> 58:13.000
+Is not using challenges.
+
+58:13.000 --> 58:16.000
+There's no actual challenge coming in.
+
+58:16.000 --> 58:17.000
+Rather...
+
+58:17.000 --> 58:19.000
+Alice just reads the current value.
+
+58:19.000 --> 58:22.000
+That she sees displayed.
+
+58:22.000 --> 58:24.000
+And enters it.
+
+58:24.000 --> 58:26.000
+Kind of like we do with the dual.
+
+58:26.000 --> 58:27.000
+When it challenges us with the code.
+
+58:27.000 --> 58:28.000
+Right?
+
+58:28.000 --> 58:29.000
+You may always use dual.
+
+58:29.000 --> 58:30.000
+Right?
+
+58:30.000 --> 58:31.000
+With the code.
+
+58:31.000 --> 58:32.000
+I know.
+
+58:32.000 --> 58:33.000
+Most of the time it's approved this.
+
+58:33.000 --> 58:34.000
+And...
+
+58:34.000 --> 58:35.000
+Soon it's gonna change.
+
+58:35.000 --> 58:36.000
+You know.
+
+58:36.000 --> 58:37.000
+It's gonna be code based.
+
+58:37.000 --> 58:38.000
+There.
+
+58:38.000 --> 58:39.000
+The OID.
+
+58:39.000 --> 58:44.000
+As your best interest in mind.
+
+58:44.000 --> 58:45.000
+So...
+
+58:45.000 --> 58:48.000
+Soon you'll say goodbye to just approve.
+
+58:48.000 --> 58:50.000
+Well that looks the best part.
+
+58:50.000 --> 58:51.000
+I know.
+
+58:51.000 --> 58:52.000
+I know.
+
+58:52.000 --> 58:53.000
+But that's all.
+
+58:53.000 --> 58:56.000
+The idea here is very similar to the code based dual.
+
+58:56.000 --> 58:57.000
+So...
+
+58:57.000 --> 58:59.000
+You just enter a code.
+
+58:59.000 --> 59:00.000
+And that code...
+
+59:00.000 --> 59:04.000
+You see the little bar next to the number one there?
+
+59:04.000 --> 59:05.000
+Like...
+
+59:05.000 --> 59:06.000
+It has a little...
+
+59:06.000 --> 59:07.000
+Like a stack of bars.
+
+59:07.000 --> 59:09.000
+And it tells you how close...
+
+59:09.000 --> 59:11.000
+As the bars go down.
+
+59:11.000 --> 59:12.000
+They disappear.
+
+59:12.000 --> 59:13.000
+Like...
+
+59:13.000 --> 59:14.000
+It has...
+
+59:14.000 --> 59:15.000
+How close is the code to be changing.
+
+59:15.000 --> 59:16.000
+So...
+
+59:16.000 --> 59:17.000
+When these bars...
+
+59:17.000 --> 59:18.000
+Right now...
+
+59:18.000 --> 59:19.000
+It's like...
+
+59:19.000 --> 59:20.000
+It shows what?
+
+59:20.000 --> 59:21.000
+Five?
+
+59:21.000 --> 59:22.000
+Five bars?
+
+59:22.000 --> 59:23.000
+I think it starts with six.
+
+59:23.000 --> 59:24.000
+And then it goes down, down, down.
+
+59:24.000 --> 59:25.000
+Because there's a clock inside.
+
+59:25.000 --> 59:28.000
+And eventually it will show you a new code.
+
+59:28.000 --> 59:29.000
+Based on time.
+
+59:29.000 --> 59:32.000
+Here I just use the counter for simplicity.
+
+59:32.000 --> 59:34.000
+But in fact it's based on time.
+
+59:34.000 --> 59:36.000
+So what are you proving, right?
+
+59:36.000 --> 59:38.000
+When you enter this code?
+
+59:38.000 --> 59:39.000
+Okay?
+
+59:39.000 --> 59:40.000
+What is the code?
+
+59:40.000 --> 59:43.000
+So the code is generated from the key.
+
+59:43.000 --> 59:46.000
+From the master key that the device shares with the system.
+
+59:46.000 --> 59:47.000
+And the current time.
+
+59:47.000 --> 59:48.000
+Never mind.
+
+59:48.000 --> 59:49.000
+I use the counter here.
+
+59:49.000 --> 59:52.000
+But that counter is not really appropriate.
+
+59:52.000 --> 59:57.000
+It's more like a clock.
+
+59:57.000 --> 01:00:05.000
+And because the clocks are reasonably synchronized between this fob and the central system.
+
+01:00:05.000 --> 01:00:10.000
+The central system will know what to expect from Alice at this time.
+
+01:00:10.000 --> 01:00:11.000
+Right?
+
+01:00:11.000 --> 01:00:15.000
+Because she knows exactly what the serial number of the fob registered through Alice.
+
+01:00:15.000 --> 01:00:17.000
+And she knows what to expect.
+
+01:00:17.000 --> 01:00:18.000
+Or...
+
+01:00:18.000 --> 01:00:21.000
+Bob knows what to expect.
+
+01:00:21.000 --> 01:00:27.000
+Now, the original RSA ID was a bit...
+
+01:00:27.000 --> 01:00:30.000
+Well, it's aged, right?
+
+01:00:30.000 --> 01:00:31.000
+It wouldn't be used today.
+
+01:00:31.000 --> 01:00:34.000
+But, you know, it had only 64-bit key, 44-bit counter.
+
+01:00:34.000 --> 01:00:38.000
+But the idea was that the six-digit value, like for us we do...
+
+01:00:38.000 --> 01:00:41.000
+I mean, it's more burdensome than just clicking approve.
+
+01:00:41.000 --> 01:00:43.000
+But it's not too bad, right?
+
+01:00:43.000 --> 01:00:47.000
+Just copying six-digit numbers is not a huge amount of burden.
+
+01:00:47.000 --> 01:00:50.000
+So, that was the idea.
+
+01:00:50.000 --> 01:00:52.000
+It was kind of user-friendly.
+
+01:00:52.000 --> 01:00:53.000
+Right?
+
+01:00:53.000 --> 01:00:55.000
+And then, it's verified on this end.
+
+01:00:55.000 --> 01:00:56.000
+Counter increases, right?
+
+01:00:56.000 --> 01:00:58.000
+But basically, time it takes, right?
+
+01:00:58.000 --> 01:00:59.000
+Which is not really counting.
+
+01:00:59.000 --> 01:01:00.000
+It's time.
+
+01:01:00.000 --> 01:01:02.000
+Et cetera, et cetera.
+
+01:01:02.000 --> 01:01:03.000
+Right?
+
+01:01:03.000 --> 01:01:08.000
+So, the counter is usually based on this sort of 60 seconds.
+
+01:01:08.000 --> 01:01:09.000
+That's customizable.
+
+01:01:09.000 --> 01:01:12.000
+You can make it from 15 seconds to several minutes.
+
+01:01:12.000 --> 01:01:16.000
+Also, it deals with clock skews because clocks are not perfectly synchronized.
+
+01:01:16.000 --> 01:01:21.000
+So, the system here will allow you to enter a code that it does not expect as long as it's
+
+01:01:21.000 --> 01:01:27.000
+a code from like the previous epoch or maybe the future epoch because sometimes clocks run
+
+01:01:27.000 --> 01:01:30.000
+too fast, too slow, so it has some tolerance.
+
+01:01:30.000 --> 01:01:32.000
+Anyway, that's it.
+
+01:01:32.000 --> 01:01:33.000
+Let's quickly...
+
+01:01:33.000 --> 01:01:38.000
+I was hoping to cover more, but let's try at least another...
+
+01:01:38.000 --> 01:01:39.000
+Oops.
+
+01:01:39.000 --> 01:01:42.000
+Let's see.
+
+01:01:42.000 --> 01:01:47.000
+Here we go.
+
+01:01:47.000 --> 01:01:48.000
+Alright.
+
+01:01:48.000 --> 01:02:10.000
+So, this type of thing is the last batch of slides that have to do with passwords,
+
+01:02:10.000 --> 01:02:12.000
+and then we want a much bigger and better thing.
+
+01:02:12.000 --> 01:02:13.000
+So, remember passwords.
+
+01:02:13.000 --> 01:02:17.000
+Now, forget all these fobs, forget the biometrics, remember passwords.
+
+01:02:17.000 --> 01:02:23.000
+This is kind of a research direction, an idea that has taken hold also partially in industry.
+
+01:02:23.000 --> 01:02:25.000
+That's why I'm covering it here.
+
+01:02:25.000 --> 01:02:28.000
+And it's about something called honey passwords.
+
+01:02:28.000 --> 01:02:32.000
+Now, the only of you know the term decoy.
+
+01:02:32.000 --> 01:02:33.000
+Right?
+
+01:02:33.000 --> 01:02:38.000
+Decoy is a fake object that pretend to look normal like a real thing.
+
+01:02:38.000 --> 01:02:39.000
+Right?
+
+01:02:39.000 --> 01:02:45.000
+Actually, the word decoy comes from Dutch language, from Dutch language, where decoy means a cage.
+
+01:02:45.000 --> 01:02:51.000
+This is what the duck hunters would use to put a cage over their head and go into the bogs
+
+01:02:51.000 --> 01:02:56.000
+and swamps and try to hunt ducks without being noticed as humans.
+
+01:02:56.000 --> 01:02:58.000
+So, that's where we didn't get that word.
+
+01:02:58.000 --> 01:03:01.000
+And I see fake objects that make you look real.
+
+01:03:01.000 --> 01:03:09.000
+It's also a long-term tool in security and intelligence and counter-intelligence.
+
+01:03:09.000 --> 01:03:13.000
+In computer security, decoys are used quite a lot.
+
+01:03:13.000 --> 01:03:19.000
+If you know anything about intrusion detection, in the real world, something called honeypots
+
+01:03:19.000 --> 01:03:20.000
+are often used.
+
+01:03:20.000 --> 01:03:28.000
+Honeypots are fake resources, like fake web servers, et cetera, fake databases, fake portals,
+
+01:03:28.000 --> 01:03:32.000
+that are used to entrap adversaries.
+
+01:03:32.000 --> 01:03:33.000
+Okay?
+
+01:03:33.000 --> 01:03:35.000
+The military is not very good at doing this.
+
+01:03:35.000 --> 01:03:37.000
+Banks often do it.
+
+01:03:37.000 --> 01:03:39.000
+Some larger companies do it, too.
+
+01:03:39.000 --> 01:03:45.000
+They set up these fake sites, fake resources to attract adversaries and to entrap them.
+
+01:03:45.000 --> 01:03:50.000
+Sometimes we feed them false information, make them believe that they broke into a system
+
+01:03:50.000 --> 01:03:57.000
+where they actually have it, to observe the adversaries in the wild, to record their behavior.
+
+01:03:57.000 --> 01:03:58.000
+Okay?
+
+01:03:58.000 --> 01:04:01.000
+So, honey tokens, honey accounts.
+
+01:04:01.000 --> 01:04:06.000
+Honey accounts are basically fake accounts for users that don't exist.
+
+01:04:06.000 --> 01:04:07.000
+Right?
+
+01:04:07.000 --> 01:04:11.000
+And let's say that user never logs in, doesn't exist, but there's an account.
+
+01:04:11.000 --> 01:04:16.000
+And so when somebody logs into that account, you know, it's like a tripwire, right?
+
+01:04:16.000 --> 01:04:18.000
+You know that something bad happened, right?
+
+01:04:18.000 --> 01:04:22.000
+Because if that account does not correspond to a real user, when a login to that account
+
+01:04:22.000 --> 01:04:24.000
+occurs, you know you had a problem.
+
+01:04:24.000 --> 01:04:25.000
+Right?
+
+01:04:25.000 --> 01:04:32.000
+You had also decoy documents, or honey documents, that is like, you set up a web server and you
+
+01:04:32.000 --> 01:04:37.000
+put some like a, or a Google Drive, or you put some sensitive company documents that are
+
+01:04:37.000 --> 01:04:38.000
+completely fake.
+
+01:04:38.000 --> 01:04:44.000
+And then you wait for any news of these documents leaking to the real world.
+
+01:04:44.000 --> 01:04:45.000
+Right?
+
+01:04:45.000 --> 01:04:50.000
+So that tells you somebody broke in, but what they are releasing to the real world is complete
+
+01:04:50.000 --> 01:04:51.000
+chock.
+
+01:04:51.000 --> 01:04:52.000
+Right.
+
+01:04:52.000 --> 01:04:58.000
+So these kind of undervalued things, I mean, they're not used as much as they should be,
+
+01:04:58.000 --> 01:05:05.000
+so the key question we're going to try to answer, what kind of decoys do we use for security
+
+01:05:05.000 --> 01:05:06.000
+problems?
+
+01:05:06.000 --> 01:05:10.000
+Like password breaches, compromise of device data, etc.
+
+01:05:10.000 --> 01:05:14.000
+And how to use them in a sort of a principled way?
+
+01:05:14.000 --> 01:05:19.000
+And more, a bigger question is really how to deal with powerful adversaries that will sooner
+
+01:05:19.000 --> 01:05:22.000
+or later compromise our systems.
+
+01:05:22.000 --> 01:05:23.000
+Right?
+
+01:05:23.000 --> 01:05:27.000
+So, the particular topic here is passwords.
+
+01:05:27.000 --> 01:05:33.000
+And this work is not my work, it's a work by, by a fairly well-known researchers.
+
+01:05:33.000 --> 01:05:34.000
+One of them is Rivest.
+
+01:05:34.000 --> 01:05:39.000
+The guy, Rivest is the R in RSA.
+
+01:05:39.000 --> 01:05:45.000
+The other guy, Ari Jules, is a cryptocurrency, actually no, sorry, he's a professor Cornell
+
+01:05:45.000 --> 01:05:46.000
+these days.
+
+01:05:46.000 --> 01:05:49.000
+So, here's the good news and bad news.
+
+01:05:49.000 --> 01:05:54.000
+The good news is when you give talks about passwords, there's always news.
+
+01:05:54.000 --> 01:05:55.000
+Right?
+
+01:05:55.000 --> 01:06:00.000
+So, for example, this type of news.
+
+01:06:00.000 --> 01:06:06.000
+And I know this is dated, but I'm just too lazy to update it because there's always treasure
+
+01:06:06.000 --> 01:06:08.000
+trove of stuff in the news.
+
+01:06:08.000 --> 01:06:13.000
+In the last six months I've seen at least three or four, you know, giant password breaches.
+
+01:06:13.000 --> 01:06:14.000
+Okay?
+
+01:06:14.000 --> 01:06:17.000
+So this was a while ago, but nothing changed.
+
+01:06:17.000 --> 01:06:22.000
+Password breaches occur all the time in enormous quantities.
+
+01:06:22.000 --> 01:06:25.000
+The bad news is that it's all bad news, of course.
+
+01:06:25.000 --> 01:06:29.000
+Now, remember we talked about how passwords are protected?
+
+01:06:29.000 --> 01:06:30.000
+Hashing, right?
+
+01:06:30.000 --> 01:06:33.000
+Hashing, shadow files, salt, yeah?
+
+01:06:33.000 --> 01:06:36.000
+That is still how things are done today.
+
+01:06:36.000 --> 01:06:45.000
+Now we have Alice, has a password, she logs in, it gets hashed, the system compares the
+
+01:06:45.000 --> 01:06:50.000
+hash, salt and hash, and lets Alice in if she typed in the right password, and if she
+
+01:06:50.000 --> 01:06:51.000
+doesn't.
+
+01:06:51.000 --> 01:06:52.000
+Right?
+
+01:06:52.000 --> 01:06:53.000
+So, that's how we do things.
+
+01:06:53.000 --> 01:06:54.000
+Just recall.
+
+01:06:54.000 --> 01:06:55.000
+Right?
+
+01:06:55.000 --> 01:06:59.000
+So, the password is hashed, but we're not compared.
+
+01:06:59.000 --> 01:07:00.000
+Okay.
+
+01:07:00.000 --> 01:07:05.000
+Hashing and salting is good because the adversary, remember, cannot mount a completely offline attack.
+
+01:07:05.000 --> 01:07:14.000
+It forces the adversary to first compromise a password file, which contains salted caches,
+
+01:07:14.000 --> 01:07:16.000
+and then break it.
+
+01:07:16.000 --> 01:07:25.000
+But, salts are not that long, and that means the adversary will eventually win.
+
+01:07:25.000 --> 01:07:26.000
+It doesn't change anything.
+
+01:07:26.000 --> 01:07:27.000
+Right?
+
+01:07:27.000 --> 01:07:30.000
+You can harden this by slowing down encryption and using very expensive encryption functions,
+
+01:07:30.000 --> 01:07:33.000
+but in the end, real passwords are weak.
+
+01:07:33.000 --> 01:07:34.000
+Right?
+
+01:07:34.000 --> 01:07:35.000
+That doesn't change anything.
+
+01:07:35.000 --> 01:07:38.000
+Real passwords are weak.
+
+01:07:38.000 --> 01:07:45.000
+So, the problem is, remember, the salts, you can have to make the salts sufficiently long,
+
+01:07:45.000 --> 01:07:52.000
+but once the adversary breaks in, right, and learns the password file, the salts for every
+
+01:07:52.000 --> 01:07:55.000
+user, they're in clear text.
+
+01:07:55.000 --> 01:07:57.000
+So, they are no longer secret.
+
+01:07:57.000 --> 01:07:59.000
+Before the adversary breaks in, they're secret, right?
+
+01:07:59.000 --> 01:08:01.000
+That's why the adversary can't mount an offline attack.
+
+01:08:01.000 --> 01:08:08.000
+But, once the adversary breaks in and copies the password file, he doesn't know the passwords,
+
+01:08:08.000 --> 01:08:10.000
+but he learns all the salts.
+
+01:08:10.000 --> 01:08:11.000
+Okay?
+
+01:08:11.000 --> 01:08:16.000
+So, the problem, then, for the adversary is just dictionary attacking passwords.
+
+01:08:16.000 --> 01:08:17.000
+Okay.
+
+01:08:17.000 --> 01:08:20.000
+So, forget this.
+
+01:08:20.000 --> 01:08:24.000
+Anyway, there are plenty of good password hacking tools.
+
+01:08:24.000 --> 01:08:30.000
+There's all this stuff, even from the RockU database that I use today to create dictionaries
+
+01:08:30.000 --> 01:08:31.000
+of plausible passwords.
+
+01:08:31.000 --> 01:08:32.000
+Not important.
+
+01:08:32.000 --> 01:08:33.000
+Right?
+
+01:08:33.000 --> 01:08:38.000
+The problem is, no matter what you do, no matter what you do, no matter how big your
+
+01:08:38.000 --> 01:08:43.000
+salt is, no matter what rules you enforce, like, you know, must be 8 characters, 12 characters,
+
+01:08:43.000 --> 01:08:48.000
+at least one special character, one capital letter, one number, blah, blah, blah.
+
+01:08:48.000 --> 01:08:50.000
+Those passwords are still weak.
+
+01:08:50.000 --> 01:08:51.000
+Okay?
+
+01:08:51.000 --> 01:08:54.000
+And you might as well assume that you can be cracked.
+
+01:08:54.000 --> 01:08:55.000
+Okay?
+
+01:08:55.000 --> 01:09:02.000
+So, the point of the matter is, preventing adversary from learning passwords is a losing
+
+01:09:02.000 --> 01:09:03.000
+battle.
+
+01:09:03.000 --> 01:09:05.000
+Let's accept this as an axiom.
+
+01:09:05.000 --> 01:09:07.000
+It's a losing battle.
+
+01:09:07.000 --> 01:09:08.000
+We can't win.
+
+01:09:08.000 --> 01:09:09.000
+Right?
+
+01:09:09.000 --> 01:09:14.000
+And, basically, the adversary will get that copy of a password file.
+
+01:09:14.000 --> 01:09:15.000
+Somehow.
+
+01:09:15.000 --> 01:09:16.000
+Okay?
+
+01:09:16.000 --> 01:09:21.000
+And, once he gets the copy of a password file, he might as well assume the passwords
+
+01:09:21.000 --> 01:09:22.000
+are in the clear.
+
+01:09:22.000 --> 01:09:25.000
+Because it's only the barrier is this high.
+
+01:09:25.000 --> 01:09:27.000
+So, that's bad.
+
+01:09:27.000 --> 01:09:30.000
+But, not all is lost.
+
+01:09:30.000 --> 01:09:36.000
+What can we do if we cannot protect our passwords?
+
+01:09:36.000 --> 01:09:39.000
+I say, at the very least, we can detect.
+
+01:09:39.000 --> 01:09:40.000
+Right?
+
+01:09:40.000 --> 01:09:45.000
+If you cannot prevent an attack, at least detect.
+
+01:09:45.000 --> 01:09:49.000
+Because the biggest problem is not detecting an attack.
+
+01:09:49.000 --> 01:09:54.000
+If you cannot detect an attack, the adversary will stealthily get in.
+
+01:09:54.000 --> 01:10:01.000
+The adversary will slow, smart adversary, will not do anything grandiose or, like, anything
+
+01:10:01.000 --> 01:10:06.000
+large, anything big, like, start exfiltrating terabytes of data.
+
+01:10:06.000 --> 01:10:07.000
+Right?
+
+01:10:07.000 --> 01:10:12.000
+Because most organizations, they have, like, routers and all kinds of other logging things.
+
+01:10:12.000 --> 01:10:13.000
+Right?
+
+01:10:13.000 --> 01:10:18.000
+Logging facilities where doing something at scale will, like, raise a flag.
+
+01:10:18.000 --> 01:10:22.000
+Like, for example, if you have a router that says, all of a sudden, gee, there was a spike.
+
+01:10:22.000 --> 01:10:28.000
+Suddenly, you know, the rate was, I don't know, 200 megabytes per hour in the middle of the night,
+
+01:10:28.000 --> 01:10:32.000
+and then suddenly I see a gigabyte of data in packets passing through.
+
+01:10:32.000 --> 01:10:33.000
+What's wrong?
+
+01:10:33.000 --> 01:10:35.000
+Why is there a gigabyte of data?
+
+01:10:35.000 --> 01:10:36.000
+Right?
+
+01:10:36.000 --> 01:10:37.000
+That will raise an alarm.
+
+01:10:37.000 --> 01:10:39.000
+Smart adversaries will not let that happen.
+
+01:10:39.000 --> 01:10:44.000
+They will try to shake their traffic not to exceed the normal traffic.
+
+01:10:44.000 --> 01:10:46.000
+Think smart, right?
+
+01:10:46.000 --> 01:10:50.000
+At least, assume this, obviously, is at least as smart as you are.
+
+01:10:50.000 --> 01:10:52.000
+So you will get this.
+
+01:10:52.000 --> 01:10:54.000
+And now you can impersonate users.
+
+01:10:54.000 --> 01:10:57.000
+Now, eh, given the time to stop, I'll try to improve.
+
+01:10:57.000 --> 01:11:03.000
+I really wanted to finish this today, but we'll do it in the first 20 minutes, half an hour, all the next time.
+
+01:11:03.000 --> 01:11:04.000
+See you Tuesday.
+

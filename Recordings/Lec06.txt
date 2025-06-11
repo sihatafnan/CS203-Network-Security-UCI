@@ -1,0 +1,1269 @@
+I don't want to share your screen before you have the flag.
+Oh, I don't know what this is.
+Okay, so we went through face recognition, I think, right, on fingerprints, fingerprints of issues.
+We'll talk about a couple of examples where fingerprints fail.
+If you know anybody who works in the medical profession, especially surgeons,
+there were only attempts to install fingerprint recognition in hospitals that failed miserably
+because surgeons, if you know any, wash their hands extremely frequently for good reasons,
+and their fingers tend to be, you know, like when you keep your fingers in water for an hour,
+they wrinkle, the fingertips wrinkle.
+So, totally not good for fingerprint recognition.
+Not to mention all the other stuff.
+Iris scans. Iris scans are a relatively accurate way of biometric authentication.
+No two irises are the same.
+It's random.
+Knowing anything about a person, even knowing a person's DNA, you cannot recreate the irises.
+Stable.
+As you grow, as you get old, they remain the same.
+Even with cataracts or some other issues.
+Now, if you gouge out an eye, there's no more iris.
+You have an injury, obviously, but that's rare, right?
+Works in with the blind people.
+That's because they're still in irises.
+They're different.
+If you wonder, they're different for both of your eyes.
+There's like a set of concentric rings.
+So, it's actually not too different from the fingerprints.
+There's, except the fingerprints are not exactly rings, right?
+They're more like parabolas or something like that.
+So, error rates are pretty low.
+It's not the best, but I think it's one of the best biometric applications you think is currently known.
+It is expensive, right?
+To get accurate iris scans, you have to be very close to the device that's going to scan the iris.
+There has to be stable lighting.
+It's not instantaneous.
+It takes a couple of seconds.
+Not quite light because people generally do not like sticking their eyes and their faces into things.
+The early ones had like a kind of a mask almost like the device where you have to stick your eyes.
+Or something a little more evil looking where you're like goggles where you stick your eyes and go bzzzzz and scan your irises.
+It can be done on a smartphone.
+I believe there are apps that will do it for you.
+I checked a year ago.
+There were a couple of apps.
+At least on Android.
+I'm not sure about iPhone.
+There are apps you can download that will essentially use your camera to do an iris scan.
+Not as precise.
+Not as precise.
+Not as precise.
+Slower.
+Other methods.
+Hand geometry.
+So hand geometry is in this.
+Your hand print.
+All these things that fortune tellers like to use.
+Right?
+Life line, love line, death line, whatever.
+Sickness line.
+All these lines.
+The geometry of your hand.
+Not just the relative things but also the size of your fingers.
+What we call phalanges are.
+Now calluses won't matter because they're generally okay.
+If you have severe cuts or injuries clearly it wouldn't work very well.
+But hand geometry.
+Relatively stable.
+Of course as you grow, as a child grows, the hand gets larger.
+But the actual lines remain.
+But the size of course changes.
+Let's see if you have some hand conditions like eczema also doesn't work well.
+It has been used in nuclear premise control like for entering say national labs, nuclear
+reactors, that kind of thing, nuclear plants.
+You would just place your hand on a tablet.
+And it would be like a surface that will do a scan.
+Kind of like you do a document scan.
+This continued because it was expensive.
+And at the time did not really check for liveness.
+Now this may sound a little morbid.
+But liveness is important.
+Okay.
+Ear shape.
+Also.
+Ear scan.
+Can you imagine?
+It has some of the same issues as iris can.
+Ears are not something you'd like to stick in places.
+Right?
+There in our head, next to our brain.
+But it has been used.
+At the bottom of the ICS2 building, the red building next to Brent Hall, across the ring,
+there was a lab which is called K-some-day lab downstairs.
+I think it's still there.
+I don't know what it has.
+It's useful.
+But for many years, not anymore, it had a biometric scanner at the door.
+And it was vein patterns.
+So you would just place your wrist on the scanner.
+Not your hand.
+Your wrist.
+You would scan the veins.
+That's another method.
+A little better than irises.
+Generally better than hand because you don't get calluses here.
+You don't get eczema here.
+It's usually a little more stable.
+One other thing.
+Voice prints.
+How many of you have ever seen voice prints?
+My sibling company, I think one of my banks uses voice prints.
+When I call them, they're like, would you answer these questions for us?
+But they're not really looking for the answers.
+They're looking for my voice.
+And the questions actually aren't the same every time.
+So it's kind of a challenge response, if you will, kind of voice prints.
+Now to enroll, at some point, they have to ask me to stay on the phone and enroll.
+Okay.
+Yes?
+Would the phone be using matter a lot for the voice prints?
+Speech processing has seen very important advances in the last ten years.
+So they can pretty much filter the noise.
+Ambient noise.
+They can filter ambient noise.
+I mean, if somebody's screaming down your ear at the same time, they can filter out the road noise,
+classroom noise, that kind of thing.
+The artifacts of a metallic voice on the phone, sort of that.
+I think there may be some issues.
+It's not super robust.
+I would not use it myself.
+Because voice-based authentication is, well, fundamentally very fragile.
+Okay?
+And easily, it turns out, there have been studies that show that it's fakeable.
+Okay.
+DNA.
+Yes, DNA.
+So I used to have this slide.
+I don't know why I removed it.
+But it was sort of, you can imagine, it showed iPhone 55.
+In 2039, Apple comes out with iPhone 55.
+And it has this feature called Lipton Lock.
+Immediately sequence your saliva and DNA and says, ah, it's you, I'm unlocking myself.
+I've used it in a few talks.
+And people actually, some people come up to me and just say, really?
+Really?
+I couldn't do that.
+No, I didn't mean.
+Now, I don't think that's coming to the store here, you, anytime soon.
+But, in principle, DNA can be used for identification because, for identification, excuse me.
+Because it is unique to you.
+There's no probability of match.
+They say, you know, if there is, it's so astronomical, it's not even worth mentioning.
+Now, the problem is, DNA is like fingerprints.
+If you leave them at the scene of a crime, right, that's one thing.
+But how do you test the liveness, right?
+So, in order to test the liveness, you have to make sure it comes from a live person right now.
+And that's a problem.
+Also, if you're wondering, well, can you sequence DNA?
+Well, today, it takes minutes.
+Even in a faster hardware.
+So, your smartphone can do a sequencing.
+There are attachments to the smartphone.
+You can buy today a peripheral.
+That will cost you probably more than the phone.
+But it plugs into your phone.
+And, I forget, it's not actually licking it, but you can insert like a sample of saliva or something like that.
+It will sequence and digitize your genome on your phone, right?
+It can be done, but it's okay.
+And, okay, keystroke dynamics.
+So, keystroke dynamics are, remember we talked about how attacking keyboards, right, listening to these?
+Well, remember about keystrokes, right?
+The way you type is fairly unique.
+Unless you are particularly like, I don't know, tired or injured or somehow sick.
+You know, you generally type in the same way.
+So, imagine the system and it has, it is being deployed.
+It is deployed in many industrial and government organizations, usually larger organizations,
+where you enroll by essentially typing stuff, maybe for training the model for a few days.
+Then sort of a profile is created, right?
+Features are extracted.
+Machine learning, obviously, is used to extract the features from your typing model.
+And that becomes your biometric keystroke profile.
+What is the idea?
+The idea is that you don't come to the building and start typing for a few minutes on a keyboard in order for the door to open.
+That's not what this biometric is for.
+It's really for monitoring dynamically whether you are the same person who authenticated to begin with.
+So, the idea is you came to work, okay, typical scenario, you came to work, you logged into your terminal, desktop, whatever, okay?
+And then you walked away.
+Never happens to you?
+Please tell me it does, because I know it happens.
+Right?
+You log in and you walk away.
+Now, at home, maybe your cat will walk on the keyboard.
+Or your roommate will, you know, type an obscene message, because they prank you or something like that.
+But, at work, there could be an insider colleague who may not be so humorous, may actually want to cause harm.
+Right?
+So, they will come and start typing, but they cannot replicate your typing pattern.
+So, the idea is that the system will recognize, oh, that's not the same person who was here before.
+So, that's the form of biometric.
+The best biometric, hands down, that I've ever seen in my life, was done by IBM.
+And it was done actually as early as, like, late 80s or early 90s.
+And I believe it still exists.
+Like, just two years ago, it still existed.
+It was extremely expensive.
+But it was based on writing.
+Not typing, writing.
+The idea was very simple.
+You have a pad, right?
+Dedicated like a hardware device.
+It's like a pad.
+You write on.
+Kind of like the one, you know, when you sign your signature in a grocery store, when you
+buy something, you know, and ask it to sign here.
+But nobody cares what you actually sign.
+You can just, like, put a dot there and nobody verifies.
+Well, but imagine something much more sophisticated, which is the size of a laptop screen.
+But it's, like, horizontal.
+You come to it, it has a stylus, right?
+Everybody knows what a stylus is.
+And it says, write something.
+Right?
+It challenges you to write, like, a sentence.
+Right?
+Today I went to work.
+So you write the sentence using your handwriting.
+Remember handwriting?
+It's still a thing.
+Right?
+And what it does, it's not just measuring the shape of the legs.
+Because if you just do that, that's easily spoolable.
+Right?
+It's just the shape of the letters because I can probably, I'm pretty decent in calligraphy.
+I can probably imitate your writing style.
+If I see how you write, I will write a sentence, but it's not a sentence.
+But what I'm really going to do is, you know, I will write a sentence.
+Today I went to work.
+So you write the sentence using your handwriting, remember handwriting, still a thing.
+Right?
+And what it does, is not just measuring the shape of the legs.
+And so many people are able to do this, algorithms are even better at this, right?
+In fact, algorithms are better than people today, so if you can train an algorithm on somebody's writing style,
+give them a few scanned, you know, letters, handwritten letters, et cetera, notes,
+it will generate excellent quality fakes.
+So shape is important, but it's not negligible, but it's not what's being used.
+What is being used to other things? Pressure, you put on the stylus,
+because when you write with a pen or pencil or anything that is a writing implement,
+you're putting a certain amount of pressure.
+And that pressure varies depending on what it is you're writing.
+As you're circling the letter O, you're putting a different pressure than when you're completing the letter R.
+Okay, that turns out to be unique for you.
+The other thing that is unique to you is acceleration.
+The acceleration of the stylus as you write those letters is very important and it is unique.
+The combination of shape, acceleration, and pressure are a winning combination that makes this an amazing biometric technology,
+but it is incredibly expensive.
+So how would you attack it?
+Well, shapes can be attacked, as I just told you, right?
+You can train an algorithm to generate shapes the same as anybody is.
+Acceleration might be, might be attackable if you carefully and very precisely film somebody, right?
+Film somebody, write it.
+Because you can measure the speed, right?
+If you have a camera, like a hidden camera place somewhere,
+and it's recording how somebody is writing, you will know the acceleration.
+And you might be able to design, not a human,
+you might be able to train a robot to do this.
+But what you cannot replicate is at least the pressure because that's not something you can film.
+So the only way to attack a system like that is to actually get the user to use a fake entry device.
+To present the user with a tablet that is fake and record both pressure and acceleration over time,
+then maybe.
+But the barrier to this attack is high.
+Now.
+My question would be, is handwriting considered stable enough though?
+Because a lot of people, like, even on a day-to-day basis, if you're angry, you write more aggressive.
+Exactly, exactly.
+Yes.
+Handwriting, generally there is some stability.
+The way you're shaped.
+You might shape your A's differently, but there's a finite shape of A that you use when you're angry,
+when you're relaxed, etc.
+Okay?
+So your jerkiness, right, might be different, right?
+Sometimes you write smoothly, slowly, and sometimes you write quickly because you're under pressure.
+But generally the shapes stay more or less the same.
+But again, shape is just one.
+The pressure and the acceleration.
+You might fail.
+I mean, I don't know actually, to be fair, what is the insult rate of this.
+But I know it has been used specifically in insurance companies and banks.
+So when they came up with it, they had this huge number of customers, all these big banks.
+And they wanted to make sure that all the, you know, high level officers of the banks and insurance companies were authenticated using that.
+Because they dealt with, obviously, a lot of money.
+Would it be stable over time though?
+They claim it was.
+I've used it myself.
+It seemed very natural.
+Not very burdensome.
+I mean, again, not something you want to use instead of badges, right?
+But it's something you want to use if somebody wants to access a highly secure facility.
+Or there's a terminal, right?
+You want to log in instead of typing username and password.
+Just do this.
+That's reasonable.
+If you're interested, there's an article about that.
+Okay, so there are a couple of biometrics that we've played around here at UCI in my research group.
+And one of them, well, one of them is not on the slides because it's just too hilarious.
+It's called, so I won't bother you with showing you anything because you could probably imagine the picture.
+It's called ascentication.
+Basically, the idea is to instrument a chair, an office chair, with pressure sensors.
+And if you think it's a joke, it's not.
+There was actually a paper published about it.
+And it was part of a student's PhD thesis.
+So imagine an office chair.
+Not this crap you're sitting on.
+This looks like kindergarten or old folks home or something.
+I don't know if it came up with this stuff.
+But like a regular nice comfy office chair with a cushion, right, or something.
+So underneath, in the cushion, there are pressure sensors.
+Now geometrically, you kind of like arrange around where a person would sit.
+And if you're wanting to know, it is not measuring your ass size.
+And it's actually not even measuring your weight.
+Well, it just measures pressure distribution.
+Because most people tend to sit the same way.
+So the idea was the same as keystrokes.
+So when a person sits down and logs in, the system takes measurements of their pressure points, right?
+Or they sit in the chair and creates a profile.
+And so when a person walks away to get a coffee or use the bathroom or go to a meeting and forgets to log out,
+and somebody else sits in the chair, well, their thought is going to be different.
+It's just different, right?
+Trust me.
+Trust me.
+We've done experiments.
+And people enjoyed those.
+Generally.
+And so the only way to subvert that biometric was essentially to create a very careful fake butt with just the right distribution of pressure.
+Quite a high barrier of pressure.
+The other method we experimented here is this.
+And that also is a little strange, but it was pretty effective.
+It is electricity and human body impedance or resistance, right?
+So as you're familiar with static electricity, right?
+You're familiar with maybe lamps that you have to touch in order to turn them on.
+So you've seen those?
+Yeah?
+Well, they work kind of the same.
+So essentially you're closing a circuit, right?
+When you're touching a lamp like that.
+So the idea here is to essentially measure human body's conductivity, right?
+By sending an electric pulse from one hand and measuring that same electric pulse in the other hand.
+Now clearly not, you know, we don't want to electrocute anybody.
+That would be one and only way to measure, right?
+And that's it.
+No.
+Sending a very weak electric signal, one volt.
+That's the idea.
+Okay?
+And so one volt signal, maximum current, 0.1 milliampere, exposure about 100 nanoseconds.
+Now this is opposed to, say, a regular battery.
+You know if you lick a battery?
+You know if you lick the battery as a kid?
+I know a lot of kids did.
+I did.
+You know the ones with two terminals?
+You get the sour taste?
+Well, you know, you actually get electricity to pass through.
+But it's much higher than what we would do.
+So humans don't feel this amount of electricity.
+And we had to, of course, obtain authorizations because the university would not allow us to do something that's dangerous.
+So we had an authorization for this.
+And the idea was, what was the use case?
+The use case, suppose you have an ATM machine, right?
+And you want to have your own money.
+So you enter, today you have a metallic pin pad, right?
+On the ATM machines.
+And then imagine, in addition to that, you had a little metallic surface, right?
+Like some kind of circle.
+When you put one hand here and you type with the other hand, your pin.
+You don't need two hands to type a pin, right?
+Most people do not use two hands.
+Pin is one hand.
+So while you're typing the pin, it's sending this signal and measures your body connectivity.
+That's one scenario.
+The other scenario is just a metallic keyboard, right?
+So today, most consumer keyboards, cheap ones, right?
+Are plastic.
+They have the other issue.
+We might talk about something at some point.
+But there are some more expensive, more fancy keyboards that are metallic.
+Okay?
+And if you're typing on a metallic keyboard, while you're typing, you can send this.
+Especially if you're not a, like, you're a hundred-pack type.
+So this is more.
+Right?
+So that's the idea, continuous authentication.
+Yeah, so we actually had a setup with a scope, a oscilloscope, waveform generator.
+And you see these brass handles.
+Big brass handles.
+So the idea was that the human would sit.
+The participant in our study would sit there and we would vary a little bit like the timing
+and send this very weak signal and measure the response in the other hand.
+And it actually turned out, we didn't have a lot of people, but we had 30 subjects for snapshot measurements
+and 16 for long-term measurements, just stability.
+As you can imagine, unfortunately, the male to female ratio is difficult in computer science
+or in this part of campus.
+So they weren't, it wasn't always very well split.
+But there was no difference between male and female subjects.
+The snapshot data sample basically misidentification was very low.
+So most of the, most of the measurements were quite encouraging.
+Well, it didn't work as well as over time.
+It was measured over days or weeks.
+The accuracy went down.
+And one of the reasons it does is that if you are dehydrated, right, as opposed to well hydrated,
+the connectivity changes a little bit.
+If you drink alcohol, which by the way also dehydrates you, but if you're just buying things alcohol,
+that also changes.
+Not that we didn't measure people after going to alcohol or anything like that, but we noticed that alcohol does change it.
+And, but otherwise, it doesn't matter what mood you're in, how much sleep you got, their connectivity stays the same.
+Yeah, so the only way to subvert it, yes, there is a way to subvert it, but it's not easy.
+What you have to do is measure the victim's false response yourself, right, get the measurement from them,
+and then strap essentially a contraption like this that provides exactly the same impedance or resistance,
+and then use kind of like insulated gloves.
+So then you might be able to pull this by metric.
+Alright, so what are risks?
+Of course, there are a lot of risks of using biometrics.
+If you're using fingerprints in a wrong way, like for example, this was a trick that was quite common before,
+it has nothing to do with digitization.
+It was in the analog gaze that if a criminal managed to distract a law enforcement officer
+and give the fingerprints in the wrong order, that they essentially will not be identified.
+Okay?
+Today, it's impossible to do that because every finger is identifiable as where it is, its location on your hand.
+So it's not possible to do that.
+Voice prints are easy to attack with recordings and also with advanced machine learning techniques
+and bots that can generate based on training data.
+If I record enough of your voice, you talk enough in class, I record enough of your voice,
+I will be able to generate pretty accurate on-demand utterances by you.
+So, if you wind up in the real world working with biometrics or choosing what kind of biometrics to use for your company,
+stay the hell away from voice, okay?
+Or anything audio.
+Terrible.
+Then there is the grainings fingers in a jar.
+This was actually a case, at least not in this country, in the UK, where the pensioners, right?
+They retired people were paid social security based on physical prints.
+They had to authenticate using a fingerprint.
+And so, you know, there was this case, I'm sure you can still find it, like 2003, where the grandma was dead for like five years,
+but the family used the finger in the jar of Vaseline they preserved, you know, to essentially obtain payments every month.
+Let's see.
+Now, there is also the false negatives that accept rates of one in a million, and this was back like 20 years ago,
+that there would be one in a million error, which means that if you know anything about the,
+everybody here knows the birthday paradox.
+Yes?
+Okay.
+The birthday paradox goes like this.
+How many people does it take, at random, for them to have at least two, well, how many people should we select off the street, at random,
+in order to have at least 50% probability of at least two of them having the same birth?
+And the answer is, what do you think?
+For like 6-0 million.
+Well, no, that's for a million.
+No, no, no.
+No, no.
+Hang on.
+Just listen to my words.
+People and birthdays.
+Maybe birthdays?
+You're close.
+So most people will say, well, you know, if you want to make sure you have to have, like,
+the easiest answer is, oh, I've got 365 people, right?
+And then you'll have a duplicate, right?
+That's, of course, guaranteed.
+But what if you pick, I don't know, 180 people?
+Will there be, what will be the chance?
+It turns out it takes 23 people.
+23, or square root, roughly square root of 365.
+So if you have a million acceptance rate of one in a million, that means with only a square root of a million, like a 1609 or so, you get a 50% probability of a mismatch in a fingerprint.
+Then there's Play-Doh fingers, right?
+Where people, because you see the fingerprints are liftable, right?
+You leave a fingerprint, right?
+And once I get your fingerprint, or I lift your fingerprint, I'd say, right?
+Exactly how the police does it, right?
+I can build a 3D object with that fingerprint on it.
+And so think about Play-Doh.
+Play-Doh has this nice characteristic, right?
+That it's malleable, and it's soft, right?
+That if you imagine you impress the fingerprint that you lifted onto a Play-Doh, it will look just like a fingertip.
+Also, it's easy to warm up Play-Doh, right?
+So if the fingerprint reader takes temperature, just to make sure it's a live, warm finger, not a cold, dead finger, it's also easy to do with Play-Doh.
+And there were stories about this.
+And so there was a study in the 90s, I think, at this Clarkson University of New York event, how you can make it.
+And they actually succeeded in pulling some, at the time, fingerprint authentication systems.
+And what they suggested is they should do like a perspiration test, because even if you think your fingertips are dry, actually they're not completely dry.
+There's like some kind of moisture there.
+But it's also easy.
+So fingerprints are yesterday's news, right?
+Then there was this case also like 20-something years ago when Mercedes, high-end Mercedes, started using the fingerprints to unlock cars, right?
+There are still some cars out there that use them, by the way.
+Maybe you've seen them.
+So, yeah, some business consumer was cut off just to steal his Mercedes.
+Handwriting.
+Again, I mentioned this earlier, but you can use, you can trade, this was already 20 years ago, you could trade a machine learning model to generate very believable looking,
+or very, very authentic looking duplicates or fakes of somebody's handwriting.
+And stare at it as all you want is very difficult to recognize without me showing you this, which one is, you know, without labels, which one is fake.
+So, in summary, biometrics are, can be helpful, they are nice because they put no load on you generally, on us humans.
+You sit in a chair, you sit anyway.
+You put a fingerprint and what's the load, right?
+Even with iris scans, typing on a keyboard to type anyway, right?
+So, if you're being authenticated as you type, that's no longer new.
+But, they're tricky to use on a large scale.
+They require in-person enrollment.
+In order to have secure enrollment, and you will see this if you haven't yet, when you work in the real world and you have a biometric system that is in place,
+you will be required to have an in-person enrollment, even if you are a remote worker.
+So, they are hard to re-block.
+And they require this pervasive infrastructure, right?
+So, if you're using iris scans, they have to be iris cameras everywhere you want to protect.
+Every computer, every secure office, everything has to be protected with that equipment.
+So, let's see.
+So, biometrics are about what you are, inherently what you are, but now, remember, the other factor is what you have, right?
+What you have.
+So, what you know, what you are, and now what you have.
+So, imagine you have something like a dongle of some sort, right?
+You know, something like a little tag, a phone, some object, right?
+So, it's not part of your body anymore, and it's not inside your brain.
+It's rather an object that you have in your possession.
+So, now, imagine that you, user, and the system share a secret.
+Now, not password, not password, okay?
+Long, strong secret, okay?
+So, very simple.
+You want to log in, the system says, here's a challenge.
+It generates a random, unpredictable challenge, and tells it, prove to me that based on this challenge, you know the secret.
+That you and I share.
+And you reply, with some function, cryptographic, obviously, of the key that you have, and the challenge that was just sent to you.
+The system verifies, right?
+Because it can recompute the same function.
+It knows the challenge, it sent it, it knows the key, it shares it with you, compares the two values, success or failure.
+This is strictly better, right?
+If someone eavesdrops on this communication, what can they do?
+Good force, right?
+Same as put password, except with password, the adversary was in luck.
+The passwords came from a very small, pathetic space.
+But here, the key comes from a truly random space, right?
+So, if the key is 160 bits long or 256 bits long, good luck to the adversary doing brute force.
+Not possible, not viable, right?
+Now, that's a big question.
+If we could get the user to compute the f, that would be nice, but the users aren't good at computing functions, right?
+So, it has to be done by something else.
+Okay?
+By some other object.
+So, this is what's called challenge and response certification.
+And here, like I said, user and system share a key, right?
+Challenge, response.
+The idea is, the key stays secret because it's random, strong, and nobody leaks it, right?
+And the adversary only sees that function of the key and the random challenge.
+And it's fresh.
+Fresh means, if a challenge is short, let's say we were stupid, or we didn't take a security course,
+and we said, let's make challenge 16 bits.
+What happened?
+Remember, challenge is random.
+What will happen over time?
+In fact, we will see every challenge and we will answer everything.
+Uh-huh.
+But it's worse than that.
+The birthday.
+It's worse than that.
+Right?
+The adversary will see, will record all the challenges and responses, and will just wait
+for a repeat.
+And when the repeat comes, or the adversary will record enough challenge responses that
+when it wants to impersonate the user, user isn't there, but the adversary wants to log
+in as the user.
+The adversary will say, log in, and the system will say, there's a challenge.
+The adversary quickly looks at a database of challenges that recorded, says, do I have it?
+No.
+Okay.
+Abandoned login.
+A little time later, not right away, because that will arise.
+There's no suspicion.
+The adversary will wait.
+They're patient.
+Another login.
+The system generates another challenge.
+The adversary looks in this table of reported challenges and responses.
+Oh.
+Got it.
+He can respond.
+Does that make sense?
+With a sufficiently long challenge, like 160 bits, 256 bits, the probability of challenge
+repeating, astronomically small.
+Okay?
+So the challenges need to be long enough.
+Indeed, the birthday paradox tells us, right, that they should be, today, you want to have
+at least 160 bits of challenge for decent security.
+So, which means that the system needs to be assured that when the response comes back,
+it is fresh.
+Right?
+Because the user here isn't going to remember if they have seen the challenge before or not.
+This is just the user.
+Maybe with some dumb device or token of some sort.
+It's not going to remember or cache all the previous challenges and say, ooh, I've seen
+this one before.
+I'm not answering it.
+No.
+It is the system's responsibility to make sure the challenges don't repeat.
+Because it, when it receives back the reply, it wants to make sure, the guarantee that
+this reply is here and now.
+Not from yesterday or a year ago.
+Okay.
+So this works.
+And you probably use this kind of system without even knowing it.
+It's used in badge-based identification.
+So, you know, people use badges ever?
+Here?
+Anybody work in the real world?
+Yay.
+Okay.
+Badges?
+NFC?
+Yeah?
+Or insert badges?
+TAC.
+NFC.
+Okay.
+A lot of those systems use this kind of challenge response.
+Cars.
+Key fob.
+Car.
+Key fob.
+Car.
+Key fob.
+Car.
+Challenge.
+Key fob is the user.
+You are the user with the key fob.
+Key fob has the key.
+Car.
+You want to unlock the car.
+You press.
+The car goes, challenge.
+The fob goes, response.
+The car says, oh, correct response, unlock.
+Here's an example where these things don't work well.
+So far everything seemed good.
+This example dates back to a long time ago.
+Back in the 1980s, before you were all born, there was a war.
+There were many wars, but this war took a long time.
+It was kind of a slow war in Africa between a country called Namibia, which still exists,
+and a country called Angola, which still exists.
+And so Angola was allied with the Soviets, with all these countries behind the Iron Curtain,
+and Cuba.
+So, essentially, Angola was aided by the Soviet Union, Cuba, and all the Eastern Bloc countries.
+And not surprisingly, Namibia was aided, well, not directly by the United States, but by South Africa,
+which at the time was a very different South Africa issue today.
+It was an apartheid regime, very right-wing, very conservative, blah, blah, blah.
+So I'm not here to teach you politics, but just to illustrate a problem.
+So they've used, already then, challenge response-based authentication.
+And this system is called Friend or Foe.
+F-O-F, Friend or Foe.
+This is how, like, planes identify each other in the air.
+This is how ground stations know that it's their planes and not enemy planes flying overhead.
+Okay?
+So the idea here, these people were at war.
+Okay?
+They used aircraft.
+Right?
+Aircraft.
+Bombers, et cetera.
+Cause damage.
+So, you have a following situation.
+South Africa, remember, was supporting Namibia, right?
+In this war.
+So South Africans would launch a bomber, this is a ground station, to bomb Angola.
+The ground station is the system.
+The bomber is the user, right?
+In this picture, the analogy, right?
+They share a long-term secret key K, unique to that bomber.
+Right?
+So for every such bomber, you know, the ground station knows a separate key.
+Meanwhile, Angola launches a Cuban MiG.
+MiG is back then a Soviet airplane.
+A Soviet bomber.
+Okay.
+It's flying over Namibian.
+Namibians detect a plane, a radar.
+Right?
+Radar.
+Anybody knows?
+See a blip.
+You don't know what it is.
+That's why you need this kind of identification.
+Are you one of us, or are you one of them?
+Friend or foe?
+So he says, here's a challenge.
+Whoever you are, you better answer, or I'll shoot.
+Right?
+Air defense.
+This has to be done super fast, right?
+What?
+Normally, Cuban MiG would be like, uh, I got nothing.
+So it would hope that it won't get shot down.
+But now, Cuban MiG would take that challenge and quickly retransmit it to the ground station in Mangola.
+You've been following me so far.
+Which will then transmit it up to whatever plane is flying there.
+Turns out, oh, South African bomber.
+Well, when South African bomber receives a challenge, it is programmed to reply with a function of a challenge and a secret key.
+Everybody here awake?
+Following?
+Nope.
+No rocket science here.
+Pun intended.
+Response.
+Some function of the key, right?
+I use a different notation here, but some function of the key and the random number, right?
+Which the ground station in Mangola quickly retransmits back to the MiG, which is, you can see where this is going, right?
+The MiG transmits it back to the ground station, and the ground station says, yay, one of us.
+One of us.
+Perfect.
+And drops the bomb.
+Now, you don't have to feel sorry for Namibians or South Africans or whatever, but do you see the problem?
+Right?
+If you design this system, you'll be court-martialed, probably, right?
+So how do we fix this?
+Do you see the problem?
+Right?
+And the problem should be obvious, that there is a problem.
+Well, how do we fix it?
+Well, back then, well, actually, I'm not 100% sure.
+I'm pretty sure they didn't have GPS.
+Or the military equivalent of GPS.
+Right?
+If they had GPS, would it help?
+Come on, exercise your noodles.
+Maybe limit the response time, because it takes time to...
+Right.
+Okay.
+Good.
+That's one.
+That's one.
+You could say, look, if there is a plane over here, right, it can be only, I don't know,
+10 miles away or something like that.
+Whatever.
+However the height, whatever the height of the flying altitude of the airplane is, right?
+Some miles.
+10 miles.
+Whatever.
+You know what the round trip is for a 10-mile radius.
+This is obviously more, right?
+You see how many packages are?
+Well, normally it should be challenge, response.
+Now it's challenge, relay, challenge, response, relay.
+So we have four extra transmissions.
+One of them, or two of them potentially longer distance.
+So timing is of value, isn't it?
+But GPS makes it even easier.
+All you need to do is to make sure that this American bomber includes in that function of the challenge, right,
+that it replies with, its coordinates.
+And then the station says, ah, ah, it's not here.
+Whatever this replies comes from, it's not from a plane flying overhead.
+It's a plane somewhere, or he knows exactly where he's flying.
+Does that make sense?
+Now, in reality, you probably want to use both.
+You want to use the time and the geographic coordinates.
+So, just by itself, this is a problem, right?
+It's called a relay attack.
+Right, so, let's forget the war and then look at it again as a general problem.
+We have Alice and Bob, or user and system, they share a secret, and they want to authenticate each other and identify each other over a network.
+They do not see each other physically, so they are far away.
+How do they authenticate and identify each other, right?
+So, that's the main problem.
+The adversary here is not just eavesdropping.
+I may refer to the adversary as eave, but that's not just the limits of the adversary.
+The adversary can eavesdrop, delete messages, modify messages, retard messages, right?
+Maybe slow them down.
+It can, yeah, insert messages, right?
+So, the adversary is pretty capable.
+And, what you have seen, essentially, is an example of this attack.
+Right?
+Which is called, sometimes it's called man in the middle.
+They'll probably come around to changing it to some general neutral form one day.
+But, the way it's still in the books is MIT and we're man in the middle of that.
+Here's the adversary is in the middle, right?
+So, the idea is, again, Alice and Bob know the secret.
+When Bob challenges Alice and says, hey, here's a random number.
+Prove to me that you know the secret based on this random number.
+Right?
+And Alice replies with a function.
+Now, here we use a hash, right?
+Like a crypto hash.
+That's an example of a function you would want to use.
+Because it's non-invertible, right?
+No collisions.
+Remember these properties we talked about?
+Right?
+You want to have all the good, both types of collision resistance, right?
+So, Alice replies and that's a correct reply.
+There's nothing wrong with the reply.
+Except the adversary can be in the middle and he can essentially impersonate Alice.
+Okay?
+Now, there's a subtlety here.
+The subtlety is this.
+The adversary does not actually learn the secret in this attack, right?
+The adversary is just a relay, right?
+He's sitting in the middle and he's basically handing messages from Bob to Alice and handing messages from Alice to Bob.
+So, he could be like a hostile router, right?
+Or like an access point, a malicious access point.
+So, what does it gain?
+Well, it gains only the fact that if the system is configured so that when authentication succeeds, Alice gets access to something immediately.
+Right?
+That becomes an attack.
+That becomes an attack.
+However, if this is followed by encrypted communication using the key K, the adversary gains that.
+Do you see that?
+Because the adversary does not know the secret.
+So, it's attack on authentication.
+It's not an attack on secrecy.
+Now, if the key itself, remember, I assume the key is a strong key, right?
+A binary, sorry, bitwise is long enough, at least 160 bits or so, and not a dictionary, not a big from a dictionary like a password.
+There is another way to do this.
+And the other way to do this, and this is actually also used in practice for something called one-time password, OTP.
+It's based on a data structure called the Lamport's hash.
+Has anybody ever seen this before?
+No?
+Lamport's hash.
+Basically, Lamport's hash is the following.
+So, you start with the random value, generate the random number, and then you repeatedly hash that random number, like over and over and over and over and over and over.
+Remember how we did encryption?
+So, imagine you just hash it.
+Take X, hash of X, hash of X, hash of X, et cetera, hash, hash, hash, hash, hash, hash.
+How many times?
+As long as you want.
+That's a parameter.
+Okay?
+So, the idea is you do this and Bob, who will be modeled here as a system, knows what's called the root of the chain.
+That is the last hash value.
+Okay?
+Alice is the one that computed the chain to begin with.
+Started with some secret.
+You see that secret in quotes?
+Okay?
+So, she started with some secret value, and she computed a repeated hash over that secret value, n times.
+Okay?
+Then, she gave the result.
+You see that Y over there in the green cloud?
+She gave the result to Bob, and she also gave him the index n, which is, at that time, the length of the hash chain.
+Why do we call it the chain?
+Because they are linked, right?
+Hash, hash, hash, hash, hash, hash, hash.
+Okay?
+So, in the beginning, Bob knows that Y is the root of Alice's chain, and n is the length of the chain.
+In other words, the chain has n links in it.
+So, the first time Alice wants to authenticate to Bob, okay, she says, hi, I'm Alice.
+Don't show that message, because it's a clear text message, nothing in it.
+And Bob challenges her with the current index, int, which, at the beginning, is n.
+Okay?
+And Alice replies with something that hashes into n.
+So, you start with a secret, hash once.
+Then you arrive at hash of secret, then you hash again.
+Then you hash again, et cetera, et cetera.
+And eventually, you wind up with this Y, which is hash n of secret.
+Okay?
+And this is why it's called the chain.
+So, in the end, here, at the very end, there's this hash n minus 1 of secret.
+Right?
+We computed n minus 1 hashes, all of the same, repeatedly.
+And so, the last link is a hash.
+Right?
+And it becomes this.
+Well, consider this value, this value here.
+This is what Alice will give Bob.
+And the idea is, if Bob hashes this, he should get that.
+But he knows this already.
+So, Bob is thinking, okay, who could have given me this value?
+Only Alice, because only Alice knows the input to the hash function.
+Because only Alice computed the entire chain.
+Right?
+And because of the cryptographic properties of the hash function, it's not invertible.
+So, nobody could have inverted the hash function.
+Or found a collision, because that's supposed to be, right, computationally hard.
+Ask questions.
+Don't hesitate if you haven't seen this before, which I think none of you have.
+Do you see how this works?
+And then, what Bob does, this is called one-time authentication.
+Because this same value, h n minus 1, cannot be reused.
+So, once Alice released it here, in this message in the reply,
+Bob has to adjust it in his index to n minus 1.
+So, the next time to authenticate Alice, he expects, Bob will expect this.
+Because when he hashes this, once hash, you should get that, right?
+Some of you look very puzzled.
+It's okay to ask questions.
+Yeah?
+I'm kind of wondering what happens when they get all the way back.
+Ah, good question.
+What happens when you deplete the change?
+When you are...
+Now, the truth is, you have to either budget on never depleting it completely,
+and then manually resetting with a new change.
+Manually mean offline, offline resetting.
+Generating, Alice generates a brand new change.
+Or, there are some clumsy techniques to use digital signatures to...
+I won't bore you with it.
+But there are...
+That's the problem with this space here.
+Now, so this...
+The change has to be long enough that it lasts for like a lifetime.
+So, let me give you an example.
+You have a...
+It's like a small IoT device you bought.
+Like some kind of a...
+I don't know, smart clock or something like that.
+And it typically...
+The lifetime is like, I don't know...
+A year.
+So, you can provision it with a hash chain that is good enough for...
+I don't know...
+One authentication every hour for a year.
+So, that's 365 times 24.
+That will be the length of your change.
+Right?
+And then you know you're not unlikely to be depleted.
+Because you're not going to authenticate the device every hour.
+Right?
+So, it is a useful technique.
+But it's...
+And it has been used in...
+In...
+What's something called one-time passwords.
+Right?
+It is a useful technique.
+But it has this limitation.
+And eventually you will run out.
+And in a way, it's a kind of a public key scheme.
+And it is...
+Why is it...
+Why do I say that?
+Because...
+That root...
+That y...
+That Bob keeps...
+Is like a public key.
+For Alice.
+And every link is like a one-time authentication.
+Using...
+Only Alice can come up with the next authentication.
+Bob cannot impersonate Alice here.
+Okay?
+Well, this is an attack.
+But you know what?
+I'm not going to...
+Oof.
+We're out of time.
+I'm not going to bother you with this attack.
+There is...
+So, there is...
+Finally, in this lecture, there is one thing that you will see out in the real world.
+And you may have seen it already.
+In some...
+In some ways, the dual that we use is kind of an example of this.
+A weird example of this.
+But...
+Anybody ever seen this?
+Use your security ID?
+Yeah?
+They've been very popular.
+And they're still around.
+They may not look like that.
+That was maybe like five to ten years ago.
+It's still...
+Essentially like a...
+Like a fog.
+Right?
+Think of it as a fog.
+But...
+It doesn't have NFC.
+Or any communication at all.
+There's no radio anything.
+What it is, is just a little display.
+And...
+The idea is that every user...
+Let's say you work for an organization.
+Every Alice gets her own fog.
+Okay?
+And...
+Inside the fog is a master key.
+Well...
+For that fog.
+That it shares with the system.
+With the central system.
+Bob here.
+And...
+So...
+At setup time.
+In...
+In the factory.
+Or whatever.
+This thing is produced.
+It's seated with a key.
+And Alice and Bob share a key.
+Okay?
+So Bob is like...
+You know...
+A security administrator.
+There's a database of all these devices.
+All these bobs.
+For every user.
+Etc.
+So...
+In the beginning...
+They go by counters.
+So...
+There's a counter.
+Usually based on time.
+So...
+The way that Alice authenticates to Bob.
+Is not using challenges.
+There's no actual challenge coming in.
+Rather...
+Alice just reads the current value.
+That she sees displayed.
+And enters it.
+Kind of like we do with the dual.
+When it challenges us with the code.
+Right?
+You may always use dual.
+Right?
+With the code.
+I know.
+Most of the time it's approved this.
+And...
+Soon it's gonna change.
+You know.
+It's gonna be code based.
+There.
+The OID.
+As your best interest in mind.
+So...
+Soon you'll say goodbye to just approve.
+Well that looks the best part.
+I know.
+I know.
+But that's all.
+The idea here is very similar to the code based dual.
+So...
+You just enter a code.
+And that code...
+You see the little bar next to the number one there?
+Like...
+It has a little...
+Like a stack of bars.
+And it tells you how close...
+As the bars go down.
+They disappear.
+Like...
+It has...
+How close is the code to be changing.
+So...
+When these bars...
+Right now...
+It's like...
+It shows what?
+Five?
+Five bars?
+I think it starts with six.
+And then it goes down, down, down.
+Because there's a clock inside.
+And eventually it will show you a new code.
+Based on time.
+Here I just use the counter for simplicity.
+But in fact it's based on time.
+So what are you proving, right?
+When you enter this code?
+Okay?
+What is the code?
+So the code is generated from the key.
+From the master key that the device shares with the system.
+And the current time.
+Never mind.
+I use the counter here.
+But that counter is not really appropriate.
+It's more like a clock.
+And because the clocks are reasonably synchronized between this fob and the central system.
+The central system will know what to expect from Alice at this time.
+Right?
+Because she knows exactly what the serial number of the fob registered through Alice.
+And she knows what to expect.
+Or...
+Bob knows what to expect.
+Now, the original RSA ID was a bit...
+Well, it's aged, right?
+It wouldn't be used today.
+But, you know, it had only 64-bit key, 44-bit counter.
+But the idea was that the six-digit value, like for us we do...
+I mean, it's more burdensome than just clicking approve.
+But it's not too bad, right?
+Just copying six-digit numbers is not a huge amount of burden.
+So, that was the idea.
+It was kind of user-friendly.
+Right?
+And then, it's verified on this end.
+Counter increases, right?
+But basically, time it takes, right?
+Which is not really counting.
+It's time.
+Et cetera, et cetera.
+Right?
+So, the counter is usually based on this sort of 60 seconds.
+That's customizable.
+You can make it from 15 seconds to several minutes.
+Also, it deals with clock skews because clocks are not perfectly synchronized.
+So, the system here will allow you to enter a code that it does not expect as long as it's
+a code from like the previous epoch or maybe the future epoch because sometimes clocks run
+too fast, too slow, so it has some tolerance.
+Anyway, that's it.
+Let's quickly...
+I was hoping to cover more, but let's try at least another...
+Oops.
+Let's see.
+Here we go.
+Alright.
+So, this type of thing is the last batch of slides that have to do with passwords,
+and then we want a much bigger and better thing.
+So, remember passwords.
+Now, forget all these fobs, forget the biometrics, remember passwords.
+This is kind of a research direction, an idea that has taken hold also partially in industry.
+That's why I'm covering it here.
+And it's about something called honey passwords.
+Now, the only of you know the term decoy.
+Right?
+Decoy is a fake object that pretend to look normal like a real thing.
+Right?
+Actually, the word decoy comes from Dutch language, from Dutch language, where decoy means a cage.
+This is what the duck hunters would use to put a cage over their head and go into the bogs
+and swamps and try to hunt ducks without being noticed as humans.
+So, that's where we didn't get that word.
+And I see fake objects that make you look real.
+It's also a long-term tool in security and intelligence and counter-intelligence.
+In computer security, decoys are used quite a lot.
+If you know anything about intrusion detection, in the real world, something called honeypots
+are often used.
+Honeypots are fake resources, like fake web servers, et cetera, fake databases, fake portals,
+that are used to entrap adversaries.
+Okay?
+The military is not very good at doing this.
+Banks often do it.
+Some larger companies do it, too.
+They set up these fake sites, fake resources to attract adversaries and to entrap them.
+Sometimes we feed them false information, make them believe that they broke into a system
+where they actually have it, to observe the adversaries in the wild, to record their behavior.
+Okay?
+So, honey tokens, honey accounts.
+Honey accounts are basically fake accounts for users that don't exist.
+Right?
+And let's say that user never logs in, doesn't exist, but there's an account.
+And so when somebody logs into that account, you know, it's like a tripwire, right?
+You know that something bad happened, right?
+Because if that account does not correspond to a real user, when a login to that account
+occurs, you know you had a problem.
+Right?
+You had also decoy documents, or honey documents, that is like, you set up a web server and you
+put some like a, or a Google Drive, or you put some sensitive company documents that are
+completely fake.
+And then you wait for any news of these documents leaking to the real world.
+Right?
+So that tells you somebody broke in, but what they are releasing to the real world is complete
+chock.
+Right.
+So these kind of undervalued things, I mean, they're not used as much as they should be,
+so the key question we're going to try to answer, what kind of decoys do we use for security
+problems?
+Like password breaches, compromise of device data, etc.
+And how to use them in a sort of a principled way?
+And more, a bigger question is really how to deal with powerful adversaries that will sooner
+or later compromise our systems.
+Right?
+So, the particular topic here is passwords.
+And this work is not my work, it's a work by, by a fairly well-known researchers.
+One of them is Rivest.
+The guy, Rivest is the R in RSA.
+The other guy, Ari Jules, is a cryptocurrency, actually no, sorry, he's a professor Cornell
+these days.
+So, here's the good news and bad news.
+The good news is when you give talks about passwords, there's always news.
+Right?
+So, for example, this type of news.
+And I know this is dated, but I'm just too lazy to update it because there's always treasure
+trove of stuff in the news.
+In the last six months I've seen at least three or four, you know, giant password breaches.
+Okay?
+So this was a while ago, but nothing changed.
+Password breaches occur all the time in enormous quantities.
+The bad news is that it's all bad news, of course.
+Now, remember we talked about how passwords are protected?
+Hashing, right?
+Hashing, shadow files, salt, yeah?
+That is still how things are done today.
+Now we have Alice, has a password, she logs in, it gets hashed, the system compares the
+hash, salt and hash, and lets Alice in if she typed in the right password, and if she
+doesn't.
+Right?
+So, that's how we do things.
+Just recall.
+Right?
+So, the password is hashed, but we're not compared.
+Okay.
+Hashing and salting is good because the adversary, remember, cannot mount a completely offline attack.
+It forces the adversary to first compromise a password file, which contains salted caches,
+and then break it.
+But, salts are not that long, and that means the adversary will eventually win.
+It doesn't change anything.
+Right?
+You can harden this by slowing down encryption and using very expensive encryption functions,
+but in the end, real passwords are weak.
+Right?
+That doesn't change anything.
+Real passwords are weak.
+So, the problem is, remember, the salts, you can have to make the salts sufficiently long,
+but once the adversary breaks in, right, and learns the password file, the salts for every
+user, they're in clear text.
+So, they are no longer secret.
+Before the adversary breaks in, they're secret, right?
+That's why the adversary can't mount an offline attack.
+But, once the adversary breaks in and copies the password file, he doesn't know the passwords,
+but he learns all the salts.
+Okay?
+So, the problem, then, for the adversary is just dictionary attacking passwords.
+Okay.
+So, forget this.
+Anyway, there are plenty of good password hacking tools.
+There's all this stuff, even from the RockU database that I use today to create dictionaries
+of plausible passwords.
+Not important.
+Right?
+The problem is, no matter what you do, no matter what you do, no matter how big your
+salt is, no matter what rules you enforce, like, you know, must be 8 characters, 12 characters,
+at least one special character, one capital letter, one number, blah, blah, blah.
+Those passwords are still weak.
+Okay?
+And you might as well assume that you can be cracked.
+Okay?
+So, the point of the matter is, preventing adversary from learning passwords is a losing
+battle.
+Let's accept this as an axiom.
+It's a losing battle.
+We can't win.
+Right?
+And, basically, the adversary will get that copy of a password file.
+Somehow.
+Okay?
+And, once he gets the copy of a password file, he might as well assume the passwords
+are in the clear.
+Because it's only the barrier is this high.
+So, that's bad.
+But, not all is lost.
+What can we do if we cannot protect our passwords?
+I say, at the very least, we can detect.
+Right?
+If you cannot prevent an attack, at least detect.
+Because the biggest problem is not detecting an attack.
+If you cannot detect an attack, the adversary will stealthily get in.
+The adversary will slow, smart adversary, will not do anything grandiose or, like, anything
+large, anything big, like, start exfiltrating terabytes of data.
+Right?
+Because most organizations, they have, like, routers and all kinds of other logging things.
+Right?
+Logging facilities where doing something at scale will, like, raise a flag.
+Like, for example, if you have a router that says, all of a sudden, gee, there was a spike.
+Suddenly, you know, the rate was, I don't know, 200 megabytes per hour in the middle of the night,
+and then suddenly I see a gigabyte of data in packets passing through.
+What's wrong?
+Why is there a gigabyte of data?
+Right?
+That will raise an alarm.
+Smart adversaries will not let that happen.
+They will try to shake their traffic not to exceed the normal traffic.
+Think smart, right?
+At least, assume this, obviously, is at least as smart as you are.
+So you will get this.
+And now you can impersonate users.
+Now, eh, given the time to stop, I'll try to improve.
+I really wanted to finish this today, but we'll do it in the first 20 minutes, half an hour, all the next time.
+See you Tuesday.

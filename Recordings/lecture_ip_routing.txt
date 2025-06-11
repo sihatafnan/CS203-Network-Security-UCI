@@ -1,0 +1,845 @@
+Routing protocols came back to the late 50s, early 60s and they predate the internet because
+there were other networks out there in the world besides the internet.
+In fact, even today there are other networks, we just don't study them as much, they don't
+impact us very much. There were other architectures that were used for private networking and even
+internet but different types of internet. Anyway, there are two, okay, how many people have heard
+of Dijkstra's algorithm? Oh, that's better. So what does Dijkstra's algorithm do? Shortest
+path. So, right, given a network or a graph, and a graph and a network are kind of the same,
+right, given a connected, not fully connected, but just a connected graph, Dijkstra's algorithm
+will find you a route, i.e. path between A and B. Okay, and it does it depth first.
+How many people heard of Bellman Ford? Oh, good, so you heard it in the same context probably in an
+algorithms course or some other kind of elementary course. Usually they're covered also, re-covered,
+in networks course, as a prelude to route. Bellman Ford is also an algorithm for graphs,
+which are networks, connected, right? If you have a disconnected graph, it doesn't work.
+And it is breadth first, okay? Not depth first, breadth first. And so for the last 70 years,
+there's been a lot of debate about which one is better, right? They're not compatible. They're sort
+of mutually exclusive. You either do breadth first or you do depth first. And so today's internet started
+out, okay, by using a depth first, right? Something called OSPF, okay? And today it's using,
+sorry, it was started out using depth first, now it's using kind of a breadth first. Something called distance vectors.
+Okay, I'll explain quickly how distance vector link state works because they don't have slides
+on it thinking that you already know. Link state works like this. It basically dice this.
+Every node in the network, okay? And imagine we are a graph. So every adjacent person to you is a link, right?
+Everybody broadcasts the state of their links. For example, I'm connected to this guy and this guy.
+And I'm going to broadcast to anybody who hears that these are my connections. Let's go. Alice, Bob.
+Everybody else does the same thing. He broadcasts that he connected just to one person, him. He broadcasts that
+he's connected to, I don't know, two people. Everybody broadcasts that the state of their connection,
+who they are adjacent to. And that broadcast is flooded. Does everybody know what flooded means?
+It means when you receive a packet, you forward it out on all other interfaces, right? Which means on all other
+connections. You following me? So this generalizes into following. Everyone receives the state
+state of every other node in the network. Yeah? You following me? If everything is flooded and broadcast,
+and let's say at roughly the same time, then everyone learns who is connected to whom directly. Yes?
+Okay, that allows you to construct a graph. And do the shortest path, for example, the extra set.
+Okay? Explicitly knowing what the path is. Right? You actually learn the path.
+Right? So for example, to get to you over there, I will learn the path I have to go from him and him.
+That's my shortest path. I could also go around, but the shortest path is like this. Okay?
+This Daxter's algorithm tells me that.
+So that's link state. Why it's called link state? Because everybody broadcasts the state of their links.
+Links means immediate connections. Immediate, right? Who am I connected to?
+So if my connection to him is down, well, I obviously don't broadcast the fact that I'm connected to him.
+I only broadcast the fact that I'm connected to him. And in fact, he's the only one who hears my broadcast.
+But then he rebroadcasts my broadcast, and everybody knows that, oh, well, he attends his name, right?
+But everybody knows that, oh, let's see, this guy has a path of length one to me.
+You learn this. You learn this. Later you rebroadcast. He learns that, he learns that you have a path of length three to me.
+And he knows exactly the path. Okay. That's link state. Distance vector is very different. Distance vector says
+everybody in the beginning has a table of all other nodes. So we know the population.
+Okay. But I tell, I essentially tell my neighbor, my direct neighbor, let's say I'm here.
+My direct neighbor is these two. I tell them my routing table.
+In the beginning, my routing table is very simple. It lists all of you all with a distance infinity.
+Except for them. It says, I can get, I'm connected to him with one half. I'm connected to him with one half.
+If I'm telling you that I'm connected to you with one half, it's useless. You already know this.
+But what you don't know is I have one half to him. Okay. So all of a sudden, now you, instead of having distance infinity to him, say,
+oh, the distance is two and I am the next half. Does everybody understand this example?
+And then he broadcasts his own table, which has infinity for everybody except for me, him, and the two people here.
+This converges. Everybody does the same thing in the distributed fashion. This converges.
+This converges. And at the end, every node has a table with every possible destination, but not the path.
+They don't know the graph at all. What you do know is that to get to Isita over there,
+I, it costs one, two, three, four hops, and the next hop is him. But I don't know how it goes after that.
+Totally ignorant. To get to that guy in the white hat, it will be one, two, three, four. Again, next hop is him.
+To get to that guy over there, next hop is him, and the distance is three. One, two, three.
+One, two, three. That's what we learned in the end in distance vector. Why? Distance vector.
+Because the table shows the distance. And the stuff we exchange out is called distance vectors.
+That is a crash course for free.
+Well, today's internet, okay, does not use either, truly speaking. It uses a hybrid. It's called path vector.
+So, and it does not use actual IP addresses as a destination, or it does not even, in fact,
+you can think of it as using autonomous systems. Remember ASs, ADs, as destinations. So, it does it
+at a coarser granularity, right? Now, there's some details here, the IP prefixes included, but I'm
+going to abstract it all the way. So, think about it that today's internet operates on the granularity
+of autonomous domains or autonomous systems, right? Because they're just these blocks, right? What happens
+within each autonomous system, which could be small or large, is of no concern to BGP, which is the
+protocol that runs it. Inside, you can run whatever routing protocol you want. You could run the same
+BGP, border gateway, inside, or you can run OSPF, which is open shortest path first, or you can run RIP,
+which is a reliable internet, routing internet protocol. There are a number of other options
+you can do. You can do static routing inside also, like manually configured static routing,
+and check out, from the andres of the era that I described here, okay? So, what you do inside it,
+inside it, AS or AD is up to you, but the main thing is, if you want to connect to the internet,
+right, your border routers, right, must run BGP, which is how ASs do routing, okay? So, today,
+routing is done, and then it's BGP level done on the basis of ASs or IDs, but they are still using IP
+addresses for routing, right? The actual routers use IP addresses, and that's because for each AS or AD,
+there is a bunch of IP prefixes associated. So, when you know a route to a particular AS,
+you can associate a bunch of IP prefixes with it, okay? And that allows us to route IP back.
+Right. So, as I said before, and you know, routing, mechanical actually, routing can be by explicit
+IP addresses, but usually it's done by longest prefix match. Remember I discussed that? Longest prefix.
+When the router looks in its table, it looks for the longest prefix. The longest prefix may actually
+be an explicit address, the full address, or it may be some part of the address, like the preface,
+but it looks for the longest prefix, because that's likely to be the best route.
+Right. So, this is basically what I told you.
+So, we're going to forget link state for now, and we're going to forget the dyke strap. I'm going to
+look at Bellman Ford, right? And this is essentially what is at the heart of BGP today.
+There are some pitfalls here, and some of the problems with routing aren't necessarily security
+problems. They are sometimes reliability and fault tolerance problems, except often we cannot tell
+what causes it, right? Is it like accidental malfunction, stupid operators,
+just making mistakes, or is it, or implementation errors in the routing protocol implementation,
+or an attack? So, one of the problems that occurs in distance vector protocol is what's called a
+split horizon update. I don't should just understand how that works. So, I'm going to, this picture shows
+you a kind of a very silly network, which is called a line network, where it's not very interesting,
+right? But it happens in the real world, where you have essentially, well, these entities. You can
+think of them as domains, or you can think of them as just routers or hosts. It doesn't really matter.
+But the thick white lines represent direct connections, okay? So, the idea is, like in distance
+vectors, I just tried to explain, that you see here, G1, it is directly connected to A.
+So, what it does in a normal distance vector protocol, it says, look, it advertises. It tells everybody,
+hey, hey, I have a hop one distance to A. Okay? So, it informs G2. It cannot inform anybody else,
+right? It just, well, it can inform A, but A already knows. So, it informs G2. And so, they quickly,
+and then G2 says, oh, and good news, wonderful. And now I have a two hop route to A. So, it advertises to G3.
+And G3 says, yay, I have a three hop route to A. Oh, why? And G2, right? And then, so on. And G4 lands it
+with a distance four. Finally, G5 lands it. After a bit, it says, I have a five hop route to A. Okay.
+But suppose the link here goes down. Maybe an accident, maybe a hack, we don't care.
+Something bad happens. And this G1 and A get disconnected. So, what the protocol does,
+naively, G2 says, I have a route of length two to A. Remember that? From the previous slide.
+So, G1 says, I have a route with a length infinity. I cannot reach A. The link is down.
+Right? That's a fact. So, when the link is down, you're supposed to mark something with infinity.
+Because you cannot destination unreachable. But, G2 remembers good news from the previous slide.
+And it says, I can get to G1. Sorry, I can get to A in two hops. Remember, distance vector does not
+remember routes. It remembers distances and next hop. That's how it's specified.
+So, basically, what will happen is, G1 will say, all right, two is better than infinity.
+Strictly less. So, now I have a route of length three to eight. That's what G1 thinks.
+And then it starts sending packets. Right? To G1. Sorry, if G1 has packets to A,
+we'll send it to G2. G2 will send it back to G1. G1 will then send it to two. And there's a loop.
+Okay? So, there you have it. And then, what's called is, they're counting to infinity. Because
+as they realize, oh, well, you know, there's no path of length two, they're going to increment it. Right?
+One by one. And it keeps going. It's called counting to infinity problem. Okay?
+Now, once you understand the problem, the solution is easy. Okay? The solution is easy. It says,
+you know, do not advertise on the same interface that your receipts are. That is, do not re-advertise.
+Do not tell me that I can reach things in. Do you follow?
+So, as they exchange routing tables, they both start incrementing, right, by one, the cost to get to A.
+A is completely unreachable. There's no way to reach A. But they both think that there is a way to reach.
+Just the cost goes up. And this can take for a very long time. Infinity is a large number.
+Or whatever the number of bits reserved for the hop count, right, eventually will overrun. So,
+if you start, if you stop doing that, right, so you don't, you don't advertise, re-advertise a route
+on the interface you received it from. That solves the problem. But it only solves the problem if you
+have these kind of very small loops. Does that make sense?
+Now, link state does not have this problem. Remember how I described link state? In a link state
+protocol, every node in the network receives an entire map of the network. So, loops are impossible.
+And so, that's why BGP, one of the reasons, BGP today is what's called path vector. So, it works like a
+distance vector, but with a, with a twist, with a, with a, with a, like a, a little bit extra feature.
+That, in addition to every table, it's actually every node.
+So, normally, a distance vector table would be like this. You will have three columns,
+and here will be destination, uh, cost,
+next hop. Right, that's a distance vector table. And here it will say something like, I don't know,
+uci.edu. I'm just, I'm not putting it, it could be numeric, okay, but I'm just putting, let's say,
+some prefix corresponding to uci.edu. And, uh, this could be, I don't know, 12, meaning 12 hops away.
+And the next hop is, uh, well, depending, if this is, I don't know, uh, uci.davis,
+that, that's the table at uci.davis, and this would be the next hop is, uh, ucla.
+Okay, that's how a distance vector table sort of looks like. But, in BGP,
+this is not next hop, but that, entire path. So, this will be like uci.edu, uh, I don't know,
+SoCal, uh, blah, blah, blah, com, cox.net, et cetera, et cetera. Right? So, it will be a sequence of,
+uh, of hops, of actual hops that you have to take, like, a full rep.
+One of the reasons this is done is to avoid loops. Right? If you know the actual path, right?
+You can see when there are loops, right? You will see that, for example, something is,
+you are about to add yourself to the path, and you're already there. That's a loop. Right?
+So, this allows you to avoid loops. The other reason BGP is like this,
+anybody want to guess why? Remember, this is for the internet, right? Worldwide.
+Any idea?
+It's not a, it's not a trivial question. If you're not familiar with internet,
+individually, it has to do with politics.
+The internet covers the world. Right? Pretty much every country has access to the internet.
+Every country has at least one AS. At least one.
+Countries provide transit services, right?
+This explicit remuneration of the path is there so that countries can decide,
+oh, I don't want to take this path. I prefer this other path.
+Okay? So, for example, if you're sending packets, if you're sending traffic from here to India,
+maybe you don't want to transit Iran, even though they offer attractive transit service.
+Right? Or maybe if you're in South Korea and you want to go, you know, connect to Mongolia,
+you don't want to go through North Korea, even though they'll promise you amazing transit service.
+Okay? That's why.
+So, if this, if you have just distance vector that shows you the distance and the next path,
+you don't know the route, right? But when you, with path vector, which is what the GP is,
+you actually not only know the distance, but you also know the cost, but you also know the actual path.
+But the path is not at the level of ID routers. The path is at the level of domain.
+Does that make sense? Because you don't really care, and it's too much, it's really TMI to know which hops you'll take.
+What's important is which domains you will cross. In other words, who is going to look at your traffic?
+So, fundamentally, it works just like distance vector, right? The adjacent routers exchange
+their routing tables, but the routing tables also contain, you know, in addition to the distance,
+these paths, right? So, and you can have multiple paths, and there's another thing. You can, in fact,
+should have multiple paths for each destination, because you may prefer one path over another.
+Like, for example, if you have only one path to get to, I don't know, Mongolia, and it goes to North Korea,
+you don't have a choice. If you don't like North Korea, you don't communicate with Mongolia.
+But, you know, there is internet, it's very unlikely there is only one path, right? Maybe you can go
+through Russia. Could be a little safe, or not? I mean, you can go through, you know, Leos,
+low Earth orbit satellites. I gotta do that. Everybody's favorite, Elon Musk.
+That's a domain, by the way, right? The Starlink system is a domain, is an internet domain. It's just
+not on, it's not on this Earth, but it's still a domain, right? So, you communicate via the internet,
+you go, you go to the satellite, for the satellite, then you, you're transiting a satellite domain.
+It's barely.
+So, here's a BGP example, just that makes it a little bit, perhaps a little more. So, here we have a very
+small toy network, right? These are, these are domain, or ASs, right? Autonomic systems. So,
+not individual hosts. So, here we have, these are strangely connected networks, but the main thing
+is that, for example, AS2, right? The one in the middle, provides transit service for 7. It's
+a kind of a transit domain. So, basically, traffic to and from 7 goes through 2, except for 8, right?
+8 can reach 7. So, what does 2 advertise? 2 says, well, sorry, 7 says, hello, to its neighbors, right?
+I don't know how to reach anybody, but I'm 7, and I'm one hop away from you.
+And 2 says, to its neighbors, hello, I'm 2, and if you want to reach 7, you got to go for me,
+and the path is to 7. So, like, 1, the main 1 says, oh, if I want to go to 7, I have to,
+the path is first 2, then 7, and that's it, right? That's the path.
+The vector, right? And they, let's see, 3 and 6, in turn, also advertise to their neighbors,
+that if you want to go to 7, you got to go for them, right? So, 3 says to 4. You want to go to 7?
+That's me, right? And the path is 3, 2, 7. And 5 learns that the path to 7 is 6, 2, 7.
+You see the fundamental difference here. Sometimes it's not, it's not, it's a little subtle, right?
+So, in development 4, or the distance vector, path vector protocols, nobody computes the routes,
+like, from a graph. You follow? In link state, everybody actually gets a graph,
+information about the complete graph, and computes, cranks the, you know, the Dijkstra's protocol,
+and computes the route to every destination. Here, you don't compute the route. You kind of,
+like, adjust your tables. So, computationally, that's the claim, it's an argument going on for
+50 years among networking people and theory people, so which particle is better?
+Nobody knows, but one claim is that, oh, well, this one is computationally less costly, yeah?
+And so, finally, like, again, I'm not going to go through the whole example, but, you know,
+and then 5 says, oh, I'm 5, and sends to his neighbors, and then 6 re-advertises that,
+and then the 2 learns to get to 5, you have to go for 6, and then, et cetera, et cetera, right? Okay?
+Enough, right?
+So, everybody learns like that. So, this slide is, unfortunately, woefully outdated.
+I don't know, it's like 8 years old, at least. Sorry about that. But nothing is lower than what you see.
+Numbers are higher. So, BGP routing tables, 125,000 address prefixes, right? Typical BGP routing tables.
+That's not ASs. I mean, although routing is done at AS level, it's still prefixes, right?
+And these prefixes map to about 70,000 to 80,000. Map the paths. Why such disparity?
+Why there are, like, about a magnitude more prefix or IP prefixes than there are paths?
+Many prefixes live in the same AS, right? So, right, the IP prefixes, you know, at endpoints,
+right? We don't route to transit domains, right? Why would you, you know, normally, right? You don't
+communicate. There's no web server in a giant, fast, 500,000 dollar router in the middle of the internet.
+Right? You don't go to it. You go to the endpoints, yeah? Or CDNs, right? Sort of endpoints.
+Okay? So, that's one. There are way more destination prefixes than there are paths. So,
+many of them live in the same place. Like, UCI probably has a bunch of IP prefixes.
+But anybody who wants to route packets to UCI still uses the same path to get to them.
+I think that figure is about double. So, there are probably, like, 20,000 BGP routers.
+But mind you, when I say BGP routers, I mean border routers are all autonomous systems.
+And every autonomous system, right here, must have at least one if it's a stub autonomous system,
+meaning it's like the endpoint, right? And at least two if it provides transit services.
+But usually, if it provides transit services, like NISP is kind of a transit service, like COX
+or AT&T, they'll have hundreds of BGP routers.
+Okay. Again, there's probably about 3,000 ASs today. Don't know. You can probably look this up
+very quickly. Somebody should look up on Google and tell me how many ASs there are today.
+Definitely more than 2,000. But this information should be available.
+Some 6,000 or so. That probably did not change very much. But 6,000 organizations own prefixes,
+meaning they have registered prefixes that are assigned to them. There's parts of the IP address space
+that is fixed for them. And this is still the case, I believe. I think I recently saw a paper
+where they confirm that this is still the case. So what does that mean? It means on the internet,
+things are not as far as you think, in terms of like how many ASs you transit on the way to the
+destination. So think about it. This says an average route length for internet traffic is less than four.
+And this is length in terms of AS hops, not in terms of like IP router hops.
+IP router hops is my favorite number, but in terms of AS hops is less than four. And what it tells you is that
+there's the AS where the packet starts and AS where the packet ends. That's two.
+And there's at least one transit usually, right? Unless the two ASs are connected, which is usually
+not the case. But so there's like three is kind of a given. But then think about the real world,
+right? You could be connecting to like, I don't know, Solomon Islands, or Madagascar, or somewhere
+in the North Pole to a US Arctic station. And still, there may be AS paths that are longer, like six or
+seven, but the average is less than four, which means the average is like source domain, destination
+domain, and two transits in the middle. Yeah?
+But that happens to average most of my requests. I'm not going to the North Pole. I'm going probably
+somewhere within America. Okay, you are within the US. So you're going to
+Google, right?
+The route length is probably three.
+That's my guess. But you can do a tracer route, and from tracer route, not always, but you can often
+deduce how many AS hubs. Because tracer route might give you a reverse DNS lookup,
+which might actually give you that, not this VIP address of what hubs your packets are taking,
+but the actual host name. And so by the host name, you can tell the domain. And the domain often tells
+you that that's a different AS. Does that make sense? So it has to be that at least three, maybe four,
+you know? I mean, let's say you go to, I don't know, state of Florida government website, maybe it will
+be four in that case, you know? Or some small department in the University of Lower East South Dakota
+somewhere. Yeah. But that's my guess. But it has to be at least three.
+So, I don't know if it's surprising, most people get surprised by this, that it's such a small number
+of AS hubs. And 50% of the routes are less than four, and that's, tells you like that's the typical
+thing, right? Source domain, source AS, one transit, and the destination. 95 of them are less than five,
+five. Which means you really have to try hard to get, to hop through more than five domains.
+And mind you, internet includes, I think it also includes like cellular, for example,
+you're using your phone, right? And you don't have Wi-Fi access, or you're just not using Wi-Fi.
+But you're still using IP, right? And so you do IP over cellular. So you're still kind of,
+in fact, a part of the internet.
+Alright, so,
+a lot of problems in BGP, not just BGP, but other routing protocols, but BGP has been susceptible to it,
+is something called black-holing. Black-holing is when a router
+advertises routes that are too good. Right? And it's like, I have a distance one route to everyone.
+Okay? And so, what happens? Like bees and honey, right? To use a more polite analogy,
+everybody starts sending traffic to me. Okay? Which is problematic in two cases, right? First,
+if this happens accidentally, I get swamped. Clearly, right? Because everybody says, oh,
+forget all the other routes I have. This guy has route one distance to everybody. Must be amazing.
+So everybody starts sending traffic to me. There's congestion near me. I get totally, you know,
+strangled. Nobody can communicate to anybody, right? Because everybody's sending traffic to me
+that I can't handle. Right? So, big problem. Black-holing, right? But it can also be done
+maliciously. So it has happened accidentally. It has happened maliciously. When somebody says,
+I don't like this company over here. This, I don't know, this whistleblower.com. I don't like them.
+So I'm going to advertise a very low dislike. I'm one hop from whistleblower.com.
+So essentially, she's like, send me their traffic. Send me their traffic. So I can just discard it.
+Okay? This has happened as well. Back in prehistory, before you all were born, 97,
+was already after the birth of the web. That was the day the internet died. I remember it.
+This Florida ISP de-aggregated its BGP routing tables and basically re-agnetized it. It basically
+said what I just described. It said, I'm neighbors with everybody. Bam! The internet just crawled
+first like slow down like within seconds. Okay? So it has best route to everywhere on the internet.
+And of course, it has to happen in Florida. Right? The most intellectual state in the nation.
+Also, today, this is not the case, but the original BGP protocol or sort of the virgin BGP protocol,
+the vanilla one, has no security. Again, designed for a friendly internet, right? So no authentication,
+no integrity. Right? Today, it still doesn't, but there's something called BGP sec, which is the,
+like IP sec for BGP basically, kind of like. And it establishes secure tunnels
+between adjacent BGP routers. So it sends that updates over those secure tunnels.
+Now, that prevents somebody from injecting packets, right? Or modifying packets between two adjacent
+routers. But it does not prevent the malicious router from advertising, uh, from advertising valid,
+uh, sort of, uh, malicious routes because, you know, it's, it's, it has a secure connection.
+So this, this has happened a number of paths. So this is, uh, just for you to read.
+This is back in 2003, I think. So YouTube has been around for a long time, right? YouTube actually
+predates Google, even though Google owns it, uh, today. But, uh, so YouTube was popular already in
+early 2000. So YouTube advertises, see, this is IP prefix. You know, everyone knows this notation,
+you know, 22 bits, okay? Um, so it says here on YouTube, you know, and, uh, it's as an AS, right?
+It's called, you see there it says AS three, three, six, five, six, one, three, six, five, six, one,
+is the autonomous system ID assigned to YouTube. I think it's still in case today. Yeah.
+What do you mean by YouTube for names?
+Google. Well, I think YouTube was there. YouTube was a company.
+I think it came, like, seven years later. Like 2005, it was YouTube.
+Wait. 2008. Okay. Do a quick Wikipedia from here.
+I did. And? Google was 98. YouTube was 2005.
+Google was 98? Nobody heard of it until, like, 2003 or something.
+Sure. But even then, YouTube stole them.
+So it's later? Yeah, a little bit later.
+But it wasn't part of Google. No, it wasn't right now.
+Okay. So at least I got one thing right.
+Okay. Uh, so there's your YouTube advertising to the rest of the of the world that here I am.
+And here the Pakistani government decided that it doesn't like YouTube.
+And so a Pakistani ISP, right, telecom, telecom, that is 7557,
+advertising, see that 24?
+Right? 2865 and 52.
+So it basically says, I subsume.
+This is a, this is, this is saying, I subsume YouTube.
+So all worldwide YouTube traffic went to Pakistan.
+For a little bit.
+They had to manually intervene.
+And it was a two hour outage.
+People were incensed.
+Valuable videos were not watched.
+There were other incidents that one interesting one was the spammers.
+So we have a, if we get to it, because we're moving very slow in this class, but steady.
+If we get to it, there's a lecture on spam.
+But, you know, spammers hijacked a bunch of, a bunch of, kind of a segment of IP prefixes,
+allocated to Northrop Grumman, a company you might have heard of, defense company, very large,
+located here in Southern California, among other places.
+So it was an unused block of addresses that was allocated to Northrop Grumman since like 20 years
+before that, okay?
+They were, God knows what they were supposed to use it for, but it was allocated to them.
+Now, a bunch of spammers hijacked that.
+They just used those addresses to send spam.
+But guess what happened?
+I don't know if they intended it or not, but one, one important consequence is
+that because of their, there were already anti-spam measures, the entire block wound up on the, on the, on the, on the, basically blacklist.
+Okay?
+So, took two months to actually manually reclaim ownership of those addresses and remove them from the blacklist.
+Then there was this Malaysian ISP, also that hijacked the prefix of Yahoo.
+Nobody knows if it was accidental or political, not sure what Malaysia has against Yahoo, I don't think, probably it was accidental.
+This was more like, more likely to have been political, the Turkish ISP did this in 2004.
+But similar thing to what the Pakistan ISP did in a previous slide.
+This is a much more recent, this is only four years ago.
+Maybe you remember, there was a Facebook outage.
+And this was, this was accidental, but could have been malicious, but in this case, actually, no, Facebook, basically, itself, didn't do itself.
+It withdrew routes of, of, of its prefixes from the DNS servers.
+And basically, nobody could resolve Facebook addresses anymore.
+Which means, what, like, it's not that Facebook couldn't be accessed.
+Facebook was up and running.
+But if you type facebook.com, the DNS would not be able to tell you the IP address.
+Okay?
+So if you had cached, and some people did this, I remember there was a discussion on the forums.
+It's like, if you had actually cached the IP address of Facebook, that you could actually type the IP address in the URL, right?
+You do know that you can actually substitute the domain name with the IP address.
+In your, like, type it in, in your URL.
+Well, if you did that, it would work.
+But if you type in facebook.com, it wouldn't.
+Because, basically, Facebook shot itself in the book.
+But it happened, not because of DNS, it did happen because of BGP.
+Right?
+Because BGP, right, withdrew address prefixes for Facebook's DNS servers.
+And when you resolve facebook.com, you can sell Facebook DNS servers.
+Okay.
+Switch over.
+Domain name service.
+Nice transition.
+Designed by a guy from here.
+Got a PhD around 82, 83.
+In ICS.
+And I met him a bunch of times.
+In fact, I worked in the same organization that he, that he was for a few years.
+So a guy's name is Paul Macapetrius.
+He's kind of a serial entrepreneur these days.
+Not much of a researcher or a scientist.
+But back in the early 80s, he worked in a place up in Marina del Rey.
+Called Information Sciences Institute.
+Which is part of USC School of Engineering.
+And basically like a research used to be.
+Today it's just a development shop.
+But back then it was a research think tank.
+They did a lot of AI research.
+They did a lot of like defense optics and electronics research.
+And they did intern research.
+So some of the like IP for example.
+TCP IP were partly developed there.
+At this USC ISI.
+So this guy, Paul Macapetrius, he was a staff researcher there.
+And he, people say he invented DNS.
+There's no such thing as invented DNS.
+DNS is a architecture.
+What he did is that he realized that there was, the internet was growing.
+Even already then, like in the early 80s.
+And there needs to be a way to map the human readable host names.
+Like foob.bar.com into IP addresses like 128, 195, 2.3.
+Which nobody can remember.
+Right?
+Even back then it was a pain.
+So he's the one that sort of realized it first.
+And then came up with the first kind of cut implementation.
+Of what we today call DNS.
+Now DNS has evolved a lot.
+It's not like IP.
+IP kind of remained, IPv4 remained static since 1980 till what?
+Early 40, 45 years.
+But DNS evolved.
+But the idea behind it is the same.
+It's supposed to resolve, right?
+IP domain names or host names.
+And give you back IP addresses.
+It's a hierarchical system.
+Okay?
+And without it the internet would grind to a halt.
+Right?
+In the domain name service today, the domain name system is as important as a routing protocol.
+Right?
+So without routing, the internet dies.
+Without DNS, the internet dies.
+Not right away necessarily, right?
+Because if you cache some DNS addresses, you might not be able to.
+You might be able to use the internet for a little bit.
+So after a while, I'll be back.
+And there are a bunch of these.
+What's the root servers?
+Anyway, so root servers are like the gods of DNS.
+Like they know, they know stuff.
+And they are replicated, right?
+So they are replicated for fault tolerance and load distribution, load balancing, okay?
+Around the world.
+And they're not like, there's no like DI there.
+They're not trying to be equitable, right?
+Or fair.
+The reason they are where they are is because of like heavy internet communication.
+So they're not trying to say, oh, we should put one in Australia.
+Because Australia is a continent.
+We should put one in Africa.
+We should put one in, I don't know, Siberia.
+No.
+The idea is, where is the like heaviest communication?
+Right?
+So it's not driven by so much geopolitical or fairness doctrine, but rather practical stuff.
+But where is the traffic?
+Most of the traffic, right?
+So that's why you see nothing in South America.
+South America, as far as the internet goes, is not a powerhouse.
+Not a health.
+I mean, people obviously use the internet here.
+But not as heavily as other places.
+Africa, nothing.
+Australia, nothing.
+This whole chunk of Asia, right?
+Or Eurasia, nothing.
+But there is something in Japan.
+Okay?
+And that one must have been more historic, because Japan was one of the first to adopt the internet.
+Back in the 70s, or early 80s.
+So we have nearby this USCISI, the Marine and Array, that has two root services.
+One is actually operated by them, and then is operated by ICANN.
+Internet something authority.
+It's the organization, non-profit organization that manages essentially the gaming and all kinds of high-level issues for the internet.
+And then here, Northern California is a bunch, and then on the East Coast.
+Some of these are companies, Verisign and Cogent are companies.
+Verisign has been bought, I think.
+Then there is another very exciting.
+Okay?
+Then there is ARL Army Research Lab, US Department of Defense, University of Maryland, Grand One, etc.
+Okay?
+So you get to see.
+Then London has, and then Stockholm has something.
+So these are giant, I mean giant in terms of power, not in size, machines.
+They get a lot of traffic.
+They are super well connected.
+Okay?
+They have very high bandwidth wires, essentially, or lines connected to them.
+Multiple ones.
+Okay?
+So they should be able to withstand a lot of traffic.
+Simultaneously.
+Okay?
+And so there is this whole architecture for the root that I won't get into that essentially makes
+them fault tolerant.
+So there have been a number of attacks trying to take down, because if you take down the root service,
+you bring down DNS.
+But they're very hard to take down.
+So what is the root, right?
+So remember I showed you a bunch of them, right?
+But every root is essentially the same.
+There is a root DNS server that is responsible for what's called the dot domain.
+The dot.
+And then below the dot, you have the top level domains.
+Like .com, .net, .org, .iju, etc., .tw for Taiwan, .jp for Japan, .au for Australia.
+There are others, there are others like that, okay?
+National level domains.
+But these are top.
+And then .com will be like here, right?
+Google.com, etc., etc.
+These are authoritative domains for like organizations.
+WordPress, Wikipedia, Harvard, etc., right?
+So UCI would be under HTML, of course.
+And then, yeah, I'm not showing you all the levels that were the hierarchy, because obviously,
+actually, UC.edu would be here.
+Maybe UCI would be under UC.
+Not sure about that.
+Don't quote me.
+How does a DNS actually work?
+Well, when you type in a human readable post name, okay?
+Whether it's facebook.com, google.com, you know, dailymail.com.uk, whatever the heck.
+Whatever it is you type it in, you have in your device, not in your browser.
+It's not part of your browser.
+It's in your device.
+You have the network configuration.
+How many of you have to look at network configuration?
+Oh, nobody's still curious?
+They do.
+Okay.
+Well, you know, when you look in your Mac or your Windows machine, it will tell you like,
+okay, here's your ID address, right?
+Okay?
+Here's your router.
+It's all there.
+It will also tell you, here's your DNS server.
+It's usually configured, like, when you connect to the wireless, it's configured dynamically.
+You can also configure it manually.
+Like, you can put, I don't know, 8888, I think that's the Google DNS, right?
+You can configure it manually or you can do it, you can just get it from the network,
+from the local network that you are connected to.
+Anyway, so this is your, what's called, local DNS recursive resolver.
+This is the DNS agent essentially you go to for all your queries.
+You don't go to the root.
+Okay?
+Because you don't know its address and even if you did, you wouldn't talk to it.
+So you come to the DNS resolver and it says, oh, I want to resolve WWICS UCIEDU.
+I don't know.
+I don't know what that is.
+Not always.
+Sometimes it does already, if it's cached.
+But it says, generally it says, I don't know what this is.
+But let me ask the root.
+The root is God.
+So God should know.
+So he goes, WWICS UCIEDU, can you tell me?
+And he says, no, but I give you a nameserver record.
+This is what NSD is.
+So here's a record for UCIEDU, which I've heard of.
+Okay?
+Then, I'm a bit abstracting it here, because actually at the top there, there might be like
+root and root will give you a pointer to EDU server.
+Okay?
+But then I'm abstracting it away.
+Then it says, okay, here is a, and nameserver record to UCIEDU.
+So you go here, you get this back, and then you quickly say, okay, now I can contact UCIEDU.
+So I tell it, hey, I'm trying to resolve ICS UCIEDU.
+And it returns to you the nameserver record.
+It says, yeah, I'm UCIEDU.
+I know about ICS UCIEDU.
+Here is its address.
+So you go here, and you say, I want to resolve WWICS UCIEDU.
+And he says, oh, well, I do know WWS, the web server for ICS.
+And it returns to you the actual IP address.
+So this, as you see, is not an easy, like, ask a query, get back a reply.
+It's a set of recursive queries.
+How many?
+Depends.
+There are some hierarchies that are quite deep.
+So it may go on for more than three handshakes like this.
+That's why sometimes when you type, and the internet is not down, but you can see that there's a delay.
+Right?
+Have you seen that?
+You're connected, the internet is working fine, but there's this delay.
+And the delay is typically not because of your loading pages.
+It's, I mean, it can be, but more often than not, the delays become DNS.
+Okay.
+Now, to reduce the load on DNS servers, which, as you can imagine, are very busy bees, right?
+Because they're popular.
+Everybody goes to the DNS servers.
+So to reduce the load, the responses are cached.
+So your local resolver here, this local DNS recursive resolver, will keep a cache of recent responses.
+Okay?
+How this cache is maintained depends on something called TTL, time to live.
+It could be, it could be your ISP.
+Because, like, when you go home, right, and you connect, I don't know if you, there's a wire,
+wire also connecting in a dorm or, let's say you go to your parents' home, okay?
+You have an, they have an ISP probably, right?
+I mean, they're, they're buying internet from somebody, right?
+And when you, when you open your laptop, the DNS resolver's name will be, will be in the configuration.
+I usually there.
+It is possible to run the DNS resolver locally.
+You can run, install a DNS resolver on your local machine.
+I don't recommend it necessarily, because you need to know what you're doing.
+Yeah?
+Yeah.
+Because we can choose our DNS resolver by ourselves, can we choose the AS for the BGP routing path?
+No.
+No, you may not.
+Because you don't route at the ASL, you don't run BGP.
+The, if you are, let's say, customer of Cox.net, of Cox, internet, right?
+Or AT&T, they pick it around.
+Right?
+Which AS, so you don't have, if they decide to send packets through North Korea, you have no control.
+They have control.
+They can say, I want to, I want to send packets through, I don't know, New Zealand instead of North Korea.
+They can prefer one or the other, but you have no control.
+Okay, so, as I said, the responses are cached.
+And this is like sometimes, you know how you mistype something?
+Mistype an address and it goes, name not, host not found or something.
+And you keep clicking return and it just like, it doesn't, it very quickly does host not found, host not found.
+Because it cached.
+It doesn't want to bother the DNS server just to find out that host not found.
+So that's one reason.
+The other reason is if you are going to, you know, communicate to the same host.
+Like if you're going to Facebook multiple times, it doesn't need to resolve it every single time.
+Right?
+You can just like, cache it in the local resolver and tell you.
+It's faster that way.
+All right.
+So that's called negative queries, right?
+They're cached.
+Cached records are timed out periodically.
+The time to live is subject to what the DNS tells you.
+Okay, so DNS server that returns a particular record tells you.
+Okay, here's the IP or here's the IP address for this host name.
+You can cache this for whatever, 200 seconds.
+Okay?
+Or here's an IP address for something else and you can cache it for 10 seconds.
+So it has a TTL field, every cache.
+And so here it will say, it's just another example of a query.
+It will tell you that here the TTL might be already there, right?
+And ICS.
+You might not need to go to the root, right?
+And the reason is before, remember the previous example where we're looking at WWICSUCID?
+Well, the local resolver, after that, having done that,
+already knows that you don't need to go to the root.
+You don't need to go to the ICSUCID.
+You can just go to ICS-CCID that will resolve everything that ends with ICS-CCID.
+So because we already resolved WWW, we can just resolve FTP ICS-CCID by going directly here.
+Right?
+Because we cached.
+So this slide connects to one of the previous slides, right?
+Where I showed how to resolve WWW.
+All right.
+So DNS by itself has no security.
+It, how does it know, like, when a local resolver issues a query, right?
+It says to the root review server, it says here, here's WWICSUCID.
+You give me the idea, guys.
+How does it know that the reply is to that query?
+Because it might actually, the local resolver might issue many queries.
+So, the way it's done, the sort of primitive authentication, there is a 16-bit transaction ID
+that every query contains, okay?
+So local resolver issues a query includes a 16-bit transaction ID.
+When it comes back, it should have the same transaction ID that allows it to associate.
+Request with reply.
+Make sense?
+Kind of a primitive authentication.
+Now, it's obviously insecure, because if you have an adversary, it can do the following.
+Again, this is like the classical example of DNS proofing.
+So, I want you to consider an adversary that has a specific victim in mind.
+Now, let's say him.
+So, this guy's going to be the victim.
+Yeah, you, sorry.
+I know his name.
+Let's say his name is Joe, right?
+Joe is my victim.
+I know Joe's email address.
+I'm going to send him an, or maybe a phone phone, even better, a cell phone.
+Either or, but cell phone is better.
+I can send him either a text with a link, or an email with a link, right?
+You know, I am the widow of the prince of Nigeria.
+You know, I'm about to transfer you $5 million, but just send me your bank account,
+and if you want details, I'm going to share my fortune with you.
+So, basically, the idea is that he is to get him to click on a link.
+Okay?
+And the link will have some innocuous looking address, like host1 at foo.com,
+where foo.com could be a totally benign domain, okay?
+Benign, not necessarily adversarial domain, right?
+It could be a bank, for example.
+So, he clicks.
+The clicking on that link will cause a DNS lookup, right?
+Extract the name, the host name, the domain name, and do a DNS lookup.
+So, that's him, Joe.
+Client.
+Whether he clicks on an SMS, a link, an SMS, right?
+Or, iMessage, or WhatsApp, doesn't matter, right?
+Or, an email.
+But the interesting part here is that I know about the time that he does that.
+That's why I say SMS is preferred, or text is preferred, because if I know he's a curious
+George, he's going to like, I'm going to send him, and very quickly, he's going to click.
+And, fishers know how to do this.
+So, now what I do, as an adversary, I know that he's going to issue a DNS query to a local resolver,
+so resolve host1 foo.com, right?
+The local resolver says, oh, let me go to the name server for foo.com, okay?
+There's some, I'm skipping the root and the .com, et cetera, right?
+I'm just going to the root, to the last bit, et cetera.
+Okay.
+Now, at this point, or at that time, roughly that time,
+the adversary makes a guess of their transaction ID.
+Remember, each DNS query has a transaction ID, 16 bits.
+2 to the 16, not a small number, right?
+How big is this, 32,000?
+Something like that.
+So, your probability of guessing the correct transaction ID is low, right?
+So, what the adversary does, he doesn't know the transaction ID, because we're not assuming
+the adversary is actually nearby and listening, right?
+In this example, this is why this attack is interesting.
+The adversary could be very far away.
+Like, Joe would be working for a defense counter or a government agency before.
+I'm not anywhere near him.
+I cannot snoop on this.
+If I snoop, I wouldn't need to guess, right?
+But I don't snoop, which makes the attack more interesting.
+So, what I do is I guess a transaction ID, and I generate a fake reply.
+See that first one?
+Guess transaction ID.
+HostFood.com is at 6666.
+Make another guess.
+Okay?
+Another transaction ID.
+HostFood.com is at 6666.
+Okay?
+So, I can generate a very large number of these kind of guessed transaction ID replies.
+Not infinite, right?
+I mean, I cannot generate maybe 32,000.
+Maybe I can generate a couple of hundred in close proximity and send them to the victim, to Joe.
+Bam.
+Now, eventually, this DNS server will reply with a correct IP address for Foo.com, as it's supposed to.
+This is not malicious.
+This is a good reply, appropriate for that query.
+But do you see what the problem happens?
+If the adversary, in one of these guesses, guesses correctly, and beats the reply from the actual DNS server,
+he wins the game.
+Very important that you see that.
+Do you?
+Not ask.
+All the adversary needs to do.
+Now, I know, the bar is high, but the adversary needs to do this.
+Guess the correct, so the transaction ID guessed by the adversary must match this.
+And the, one of the red replies from the adversary, right, must come before this one.
+Before the legitimate reply.
+It's a probabilistic game.
+Okay?
+The adversary may lose.
+There is.
+But if he wins one of a hundred, the rewards are interesting.
+He can try to guess as fast as possible.
+He can pre-compute the guesses, right?
+He doesn't need to, right?
+He just, like, can pre-compute random replies, right?
+And send them all at the same time.
+Or roughly at the same time.
+Bam, bam, bam, bam, bam.
+As fast as possible.
+Now, he doesn't know exactly when the client generates this query.
+But he can guess, right?
+Like, I send him an SMS, and I know the kind of person he is.
+Like, maybe I know something about you.
+Like, I know you replied to SMS quickly, right?
+I know you're going to click it for the next five seconds, right?
+Like this.
+So, in those five seconds, I start generating those replies.
+You, if you don't expect those replies, you'll just throw them away.
+Your laptop, your phone will just ignore them.
+You, as a user, will not know.
+Right?
+Because whenever unsolicited DNS replies arrive at your computer or your phone,
+you, as a user, are not notified.
+They're just thrown away.
+Because nobody's expecting them.
+So they're thrown out.
+But if one of them comes back and matches the transaction ID, bam,
+the real one will be ignored because it will arrive later.
+So, if the attacker loses the game, he has to wait until the TTL, the time to live,
+and this legitimate reply expires.
+But the attacker is a patient.
+You can try again.
+HostFoo.com, Host3Foo.com, et cetera.
+But why do that, right?
+Right?
+What's the point of hijacking that?
+What's the point of getting somebody to click on HostFoo.com?
+Or Foo.com at all?
+And that is actually pretty easy.
+So, the idea is that Foo.com could be a legitimate entity, like a bank or insurance company,
+a university, or so on.
+So, if you trick and succeed, right?
+If you trick the client and actually guess the correct transaction ID, you can put a very long time to live.
+Very long, maximum possible.
+And now you know that whenever the client goes to anything, Foo.com, he's going to reuse the cash entry.
+Aha.
+So, now, the reply actually could be, I don't know where Host1Foo.com is, but I know the authoritative nameset report.
+So, this is like raising the bar a little bit.
+Instead of telling the, no, no, here's the host one, Foo.com, it says the authoritative nameserver lives at NS2Foo.com,
+and its address is 6666.
+Okay, so this is slightly different from what I showed in the previous slide.
+The previous slide, what you saw is the tricking once, right, for one host.
+Basically saying, oh, host1Foo.com lives at 6666.
+This is a much broader scope.
+This attack, which is very similar, but it's broader scope.
+It says, if you guess the correct transaction ID, you can make sure that this client, from now on,
+when it resolves anything, Foo.com, will go to adversarially controlled nameserver,
+which is run by the adversarially.
+Which is run by the adversarially there.
+So now, if you win the race, this reply, legitimate reply, will be ignored, discarded.
+And the attacker essentially will make sure that all subsequent, all future DNS requests for anything,
+anything.foo.com, will go to 6666.
+A malicious DNS server, fully controlled by the adversary, no need to win any future races.
+Okay?
+So much better investment of time for the adversary.
+All right.
+By the way, what can cause a DNS lookup?
+Maybe you already know this, but just about anything.
+A small ad in a webpage.
+Okay?
+Tiny.
+You don't need JavaScript.
+If JavaScript is enabled, it's easy, much easier, but you don't even need JavaScript.
+But, like, a DNS hello, mail, oh, mail servers.
+Mail servers are a pain in the ass, because, you know, if your mail servers will look up a lot of,
+do a lot of DNS queries, right?
+Telnet does a lot of DNS queries.
+Spam checks do DNS queries.
+Files, deliveries, all kinds of stuff.
+So, triggering the DNS query is easy, but the best example I can think of is just sending him,
+let's say, the victim a text message of some sort, right?
+Because, and the nice thing about text messages is they're generally fast, right?
+And users pay more attention somehow to them, especially in our more phone-centric culture.
+Also, links are easier to hide, right?
+Somehow, when you see something on a big screen, you might see something suspicious about the link,
+or is it a text message is less like?
+Okay, well, we're out of time.
+See you next Tuesday.
+Oh, because someone asked, if you are a PhD student who wants to include this course in the comprehensive exam,
+in order not to have the exam, the actual exam, which is separate, you need to get an A to A plus, right?
+So you get an A, at least an A in the course.
+A plus is on the other thing.
+But if you get an A in the course, you don't need to take the exam.
+Let's remember the Karamel amp PP those who is per sorrichten.
+Let's see you next time.
+Bye.
+Bye bye.
+We had a great idea.
+So these is a followup of the following plan.
+Have a good time.
+We're always having about a copy.
+So we're not making an A a plus.
+We're just walking the walk.
+We hope we don't know how to add along.

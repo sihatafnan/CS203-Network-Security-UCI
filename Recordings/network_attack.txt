@@ -1,0 +1,1204 @@
+which mail, as you'll know, has a mail from field, right, or all the emails that you receive have a from field, and that usually contains user ID, right, where is it coming from, and some domain name, that will result in the DNS lookup as well, and all kinds of spam checks and other ancillary encountered links will cause, even if bounce, like when an email bounces, even that requires that.
+DNS lookup. Also, we'll talk separately about phishing, but many anti-phishing defenses rely on DNS, right, so they try to resolve a particular name and see if it's a legitimate record or if it's something iffy, right, so that's a problem, and that's the, so spoofing phishing with DNS
+lookups, with poison DNS lookups, it's called farming, ph there, or phishing, from phishing. Let's see. There is also some nifty ways of what's called doing dynamic farming, which is essentially works like this. You provide
+a bogus, like a fake DNS mapping, or a trusted server, and trick a victim, a user, into downloading a malicious script from some attackers controlled evil server. And then the idea is that, what, what, what, what, what, what a phishers or attackers are generally after, they're after obtaining some sensitive information. So, the idea is that you download a malicious script from some evil attacker controlled
+server server, and then force the user to also download some restricted internal content. Think about not your home, think about working for a company, right, organization, where you have sensitive content hosted internally, okay? Like some maybe scripted salary lookups, or personnel record management, or some proprietary product designs, okay?
+So, if you have sensitive information, and so the idea, the attacker's goal is to get access to that sensitive information, right?
+So, if you manage to do that, right, and if you manage to fool JavaScript into, or the browser to realizing that, oh, the evil, the evil script, right, if you download it, and the sensitive content that that evil script tries to access,
+have the same origin, then access will be granted. Java, I mean, your browsers usually have this policy, I mean, all browsers have this policy called same origin policy, which means that, and that's why, for example, cookies tend to be, unless they are third party cookies, tend to be proprietary, right?
+The cookie from let's say, Microsoft cannot be read by cookie from IBM, right? So they are separate. And that has to do with that same, fundamental same origin policy, right? So if HTML, if a page comes from IBM, and it wants to access a Microsoft cookie, it cannot, because they have different origins.
+Okay? Because cookie by Microsoft was put there by MSN.com, or MS.com, or Microsoft.com, and cookie from IBM has an origin of IBM.com. Two different origins. But, if you have, let's say, WW, MSN, MS.com, it can access a cookie placed by MS.com, because the origin is the same.
+So that's the idea. So that's the idea. So let's consider an example. Okay, I'll give you an example. We have a web server, okay? And it sits at this address, intergood.net, okay, inside the organization, okay? And it has a private IP address.
+If everybody know this, okay, private IP addresses are different from public IP addresses, so it's like an internal network, a mail, and the address, let's say, is 10-0-0-7, and this server cannot be accessed from outside, okay?
+So if you try to connect from the outside, the firewall will not match, okay? And anyway, you cannot, there's no routing to that address, right?
+If you try to send a packet from the outside to 10-0-0-7, you'll get a destination and reach it even without firewall, because that's called a private IP address.
+And IP routing or internet routing does not route to such addresses.
+Okay, so this web server hosts, stores sensitive data and sensitive applications, okay?
+So what the attacker does is that the attacker sits at evil.org, gets a user who is an inside, Alice, to browse www.evil.org, okay?
+And you might think, well, how does he do that? But by now you should probably realize that there are many ways to do this with a, let's say, poison SMS message, iMessage, WhatsApp message, signal message, whatever.
+You can come on any messaging service, you can also come via email. Messaging is better because it's usually very quick, right?
+And if somebody falls for the phishing, they will do it very quickly, right?
+So the idea is that to get Alice to browse this, I mean, basically click on a link with www.evil.org, and the attackers placed a malicious JavaScript code on that evil.org, okay?
+And that code, right, as Alice enters www.evil.org, slash whatever, or slash nothing, and she automatically downloads, right, this JavaScript.
+Totally fine to download JavaScript. You can turn off JavaScript, but then a lot of websites won't work, right?
+So, okay, and so now this JavaScript says, okay, now I am inside, I can access something on this interhood.net, which is the internal server, like some CGI app or something like that.
+But it can't do that. It can't do that because that would be a violation of, say, origin policy, right?
+Because the origin of malicious JavaScript is exactly www, is actually evil.org.
+Evil.org, not equal to good.net, okay?
+Different origin, goodbye. So, no way.
+But, if the attacker also controls DNS, that becomes a real problem.
+So, here's the scenario. Go for it step by step.
+So, we have ZDAT 10.0.0.21, Alice's computer device.
+So, Alice has been tricked into looking up some way, right?
+www.evil.org.
+So, this goes to evil.org DNS.
+There's a DNS server, right?
+Authoritative DNS server that's set up by the adversary.
+And I'm showing you not all interactions.
+Actually, when you look up DNS, remember, you go to the root, right?
+And the root says, oh, it's going to the .org, and then .org says, oh, okay, here's the evil.org DNS server.
+Remember that?
+There's a multiple step.
+I'm omitting that.
+I'm just saying.
+I'm basically abstracting it away.
+So, eventually, good.net, the power goes to this evil.org DNS server, and gets back an address, a real address,
+an external address, 222334455, with a pretty short TTL, right?
+So, it's not going to sit in the cache for too long, right?
+And then, right, as she actually does a get, right?
+Because when you do a click on the URL, the first thing is the DNS looked up, and then you actually do an HTTP get.
+So, she gets something.
+I put the slash there, but whatever.
+It doesn't really matter.
+Some URL from there, okay?
+On this evil.org, and the response is a malicious JavaScript, right?
+Some kind of a page that contains a malicious JavaScript code.
+Okay?
+You're with me so far?
+Okay.
+That comes from an evil.org website.
+Okay?
+Not from the DNS server, from evil DNS server, but the evil.org actual website.
+And that's the correct, that 222 address is actually correct for that.
+Now, because that TTL expires very quickly, right?
+Some here, here, it expires, the TTL.
+So, the next time, or actually the next time, when as Alice loads the web page, okay?
+There can be some delay, right?
+That can be inserted there.
+And the JavaScript will again force a lookup of www.evil.org.
+Now, that will not be found in the cache because the TTL already expired, right?
+So, this record there that says 222, that's gone.
+It expired.
+That's why it's very short.
+It's a short TTL.
+And what's going to come back from evil.org DNS, this evil.org DNS, the same one as ever
+on top, is now a different address, 1007.
+See the trick?
+Very, very clever, right?
+And that 1007 points not to evil.org web, but points to an internal sensitive content server.
+That should only be accessed from the inside, by the insiders.
+Okay.
+Now, again, this is Alice, right?
+Alice's device, but it's executing malicious code, right?
+It says post CGI app, some kind of invoking some sensitive CGI app on the evil.org.
+But now evil.org is at 1007.
+Okay?
+So, the post command, the HTTP post command, goes through the intragut net.
+And the response is, that's it.
+That's the compromise, right?
+Now, this CGI is critical.
+What about database query?
+Okay?
+Whatever.
+It could be an embedded SQL query.
+Okay?
+It comes back here with the results, and it will be sent outside.
+Okay?
+I don't show you that.
+But the reason this attack works is because now the JavaScript, the same origin policy that
+it uses, is now satisfying, because the original, sorry, because the evil.org provided this address,
+and intergoodnet is associated with this address now.
+And therefore, the malicious JavaScript can access 1007 because they have the same origin.
+Okay?
+The origin is now evil.org, the same origin.
+So, the attack succeeds.
+Now, how do you solve this problem?
+If you know of the attack, and you wanted just a knee-jerk solution, you can say, well,
+the problem is due to the short TTL.
+Does that really help?
+I mean, it solves that attack problem, right?
+But what if the attacker just does it over and over?
+The same thing just until the attacker might know where the TTL is, right?
+Because the attacker can always, so the idea is that not accepting short TTLs, right?
+And sort of overriding them with long TTLs, long times, so that this entry with 2, 2, 2, 3, 3, 4, 4, 5 does not expire.
+But eventually, it will, right?
+So, it's just sort of hedging the attack a little bit.
+It's not really solving the problem.
+One possibility is to randomize the client port.
+This is a general solution, right?
+So, you know, when the DNS servers, the DNS lives in a very specific reserved port.
+But remember, the clients pick a random port number.
+Well, they're supposed to.
+So, if you randomize the port number, instead of using always sort of the same,
+then that might help the attack, because the attacker has to guess that and transaction ID to reply.
+But this doesn't solve this problem.
+This solves other attacks we discussed in the last class.
+It doesn't solve this problem.
+The other possibility is to introduce some kind of a cryptographic or some more fundamental changes to DNS
+and add something.
+Kind of like with IP, there's IPsec.
+With HTTP, there is SSLTLS.
+So, there is something called DNSsec that can help with some of this.
+Okay, so what is DNSsec?
+Basically, it's extensions to the DNS operation and it works in two ways.
+There is the public key version and a secret key version.
+Or a symmetric key version, excuse me.
+And so the goal is to authenticate and check integrity of DNS requests.
+Okay, so the idea is that the client issues a query.
+Most of the problems occur not on the server side, right?
+It's on the client side.
+So the client receives a query, sorry, receives a query response that is not corresponding to what he asked.
+So, if you have a secure channel between the client and the DNS server, that should presumably solve the problem.
+Yes?
+Are we assuming the DNS server isn't doing the attack itself?
+Right.
+Right.
+Exactly.
+What is this solve?
+The DNS server.
+Right.
+So, remember.
+This.
+This attack.
+Right.
+This.
+Right.
+The race attack.
+The race to, or the attacker to guess the right transaction ID.
+Here, the randomizing the port number would help.
+Right.
+It would.
+Because if the attacker does not, because we see the attacker is not snooping on all this.
+Right.
+He's not there.
+He's outside.
+So, randomizing the port number will help because the attacker would not snooping on all this.
+Right.
+He's not there.
+He's outside.
+So, randomizing the port number will help because the attacker would not only have to guess the transaction ID, but would also have to guess the port number.
+And if you make it, you know, it's a 32-bit port number, then, sorry, 16-bit port number plus 16-bit transaction ID, that's guessing 32 bits less hard.
+Okay.
+Much harder.
+Much less likely the attacker will win.
+And the other problem the DNSSEC will solve is if the DNS server actually replies, it will reply with an authentic reply.
+Meaning it will actually secure the reply, right, and the attacker can no longer spoof it.
+Because eventually, you see, the DNS server does reply.
+And only, and if we use DNSSEC, only this reply will be authentic.
+So, all the other attempts to answer will be discarded because they're not authentic.
+Okay.
+So, how does DNSSEC work?
+Well, it's actually very simple, right?
+It just basically, you know, in a public key version, it just signs the record, right?
+So, remember, it replies with the record, right?
+Now, there is a bit of a debate whether you should sign it on the reply, meaning include the request in the reply, so that you can say this reply is exactly for this request.
+Okay?
+Or, you should pre-compute signed replies ahead of time, and that way save real-time computation.
+You follow me?
+Because DNS servers are busy, right?
+They're servers for a reason.
+They get a lot of queries.
+So, if you pre-compute signatures on popular DNS records, like for example, if a UCI has a DNS server and it pre-computes everything for like ICS-UCI-EDU or ENG-UCI-EDU, that would be smart, right?
+Because there will be a lot of queries for those, but it doesn't need to pre-compute answers to all DNS queries for all hosts, right?
+In the inside UCI, because there's just too many of them, and most of them aren't very, very popular in terms of people going to them.
+Okay?
+So, there is a trade-off there, which can be done in advance.
+The trade-off is that if you don't, if you pre-compute the signed, right?
+If you have public, or digitally signed replies, that means you cannot one-to-one associate the request with a reply, because multiple requests will result in the same reply.
+Okay?
+That raises some issues.
+Nothing super critical.
+You know?
+Now, the other problem is that, how do you distribute public keys?
+That's basically the fundamental public key distribution problem, right?
+So, the PKDNS assumes that the DNS servers have a public key hierarchy.
+PKI.
+Remember we talked about this earlier on?
+But that's actually not difficult, because the DNS itself is a hierarchy.
+Right?
+With all these roots, and then secondlevel.com.edu.org, and then all the others underneath.
+So, establishing a hierarchy is actually pretty natural.
+There is a minor mid-weight version called DNSSEC symmetric key, and basically there it's faster, but it assumes here that there are these pre-established secure channels.
+Okay?
+Between parent-child DNS servers.
+And there's also a secure channel between the client and the first level DNS responder.
+Now, there's also something called DNS over HTTP, network of HTTPS, it's called D-O-H, which essentially makes DNS clear to go over TLS SSL.
+And if you dig into your browser, or your network setting, you might be able to find an option for that.
+It's probably unclear, but you can force your browser to always use that.
+But the idea is basically that all the messages are encrypted and mapped.
+And mapped is the integrity message authentication code.
+So, the encryption in the MAC are done with different keys, kind of like in itself derived from the same master key.
+And yeah, and each message has a nonce, so there's no replaying, etc.
+And the idea is that each DNS must share a symmetric master key with its family.
+If you want to know more about it, here's an in-depth presentation.
+Any questions about DNS?
+I did not tell you about all possible attacks, because just DNS security by itself is probably like a half a quarter, five week course in and of itself.
+This is, again, like everything in this course, kind of an appetizer.
+No rushes?
+Okay.
+Well, that is the end of the net attacks.
+Now we skip something completely different.
+Now I'm going to talk about privacy in a minute.
+So, you probably know a bit about this already.
+It's hard to actually be an internet user and not know about it.
+And unless you live in a vacuum, you definitely hear all the time about attacks and leaks and threats.
+So, privacy is kind of a long-standing problem or a long-standing concept.
+By itself, privacy and anonymity have nothing to do with the digital world.
+I mean, they exist in the analog world.
+We all know what privacy means in the analog world.
+Most of you should know what anonymity means, right?
+Does anybody want to say what anonymity means in the physical world?
+Any guesses?
+You know the word, right?
+What does that actually mean?
+There's no wrong answer.
+I'm not going to be judged.
+Not identifiable.
+Okay.
+Not identifiable what?
+Give me an example.
+Maybe an example you have in mind.
+On the physical world.
+What is anonymity?
+Well, there's a disturbance, some kind of a going on.
+And maybe you've heard of like antifa protesters, right?
+Or whenever there are protests on campus.
+Let's say, like the one we had last year.
+I don't remember if we had masks.
+But in many of those protests, people wear masks.
+Right?
+Why do they wear masks?
+To be anonymous.
+We know they're there.
+They're people, right?
+They're people.
+Well, at least maybe for now, about years from now, they might be robots.
+But today, we know they're people.
+They're humans.
+We might even be able to tell the gender.
+Not always.
+Height, maybe.
+Weight, sort of.
+But most identifying features are hidden, right?
+When you wear a mask.
+Put on a mask, a hat, pair of sunglasses.
+Nobody can tell your eye color, your hair color.
+Right?
+The typical identification.
+Oh, facial recognition doesn't work, right?
+Be careful.
+Not with a COVID mask.
+With a COVID mask, it still works.
+But a real, like a balaclava type mask won't work.
+Right?
+That's anonymity.
+When a bandit, you know, western style bandits will put a bandana on their face to rob a bank
+or a stagecoach, like you've seen in some movies.
+That's essentially what they want.
+An anonymity.
+Right?
+It's not a question where they're robbers.
+Right?
+They're oil robbers.
+You know how many there are.
+But you don't know what they are, who they are.
+That's anonymity.
+If you are worried about privacy, and let's say you want to buy, I don't know, some, let's
+say you are a crypto smoker.
+You are a crypto smoker.
+You don't smoke crypto.
+I don't mean that.
+No, crypto means hidden.
+You're like, you don't want anybody to know who to smoke.
+Okay?
+So, you don't want the transaction to show up on your credit card, for example.
+In fact, you bought cigarettes at 7-Eleven.
+Or that you ordered them on the web, right?
+So, what do you do in the physical world?
+Well, you could.
+You probably will not end well.
+But you could put a paper bag over your head with a couple of holes for eyes.
+Get some cash from the ATM somewhere else well before.
+Walk in.
+Say, don't worry, I'm not here to rob you.
+I would like a pack of Marlboros.
+Okay?
+If the clerk is not scared of trickless, they will take your cash, give you a pack of Marlboros,
+and off you go.
+That's an anonymous transaction.
+Cash is anonymous, right?
+You are anonymous.
+You could be wearing stilts to disguise your height.
+You could be wearing, I don't know, you could bend your knees if you're wearing something
+to disguise your height.
+You could make yourself shorter.
+You know, you could alter your voice.
+And with a paper bag over your head, you're anonymous.
+I know, it's silly.
+But that's the idea of physical anonymity.
+Okay?
+The fact that someone bought cigarettes at that 7-Eleven is not disguised.
+The question is, who bought cigarettes?
+Well, somebody did.
+But that somebody is indistinguishable from anybody outside, right?
+Any number of people.
+That's an anonymity.
+And that's basically what an anonymity is in the digital world.
+You'll see it.
+But it's not the same thing for privacy.
+Privacy is kind of, in the physical world, is the right to be left alone.
+Okay?
+So, there is a bit of a disconnect between the definition of privacy, the way that lawyers
+define it in the physical world, and the way we see it on the internet.
+And it's difficult to define.
+So, I won't try to give you an overall definition of privacy.
+But it is something that most people in the world, not everywhere, believe is like an individual
+right and natural desire to have privacy.
+I mean, right?
+I mean, we have, I don't know, changing rooms for privacy, right?
+We have bathrooms for, stalls for privacy, right?
+We have tentative classrooms, you know, in some places for privacy.
+I mean, lots of things we do in the real world are for privacy.
+Now, privacy is relevant not just to individuals, right?
+So far, everything I said is about individual privacy.
+But it's also relevant to other entities like governments and groups and corporations.
+And maybe it's obvious why.
+Maybe not.
+We'll see.
+So, as the time goes by and sort of the internet is permeating everyday life for more and more
+people, there's definitely globally an increase in awareness of privacy.
+Although most people, if you ask them to define it, well, kind of like you guys, you can't
+define really or not sure you can't, right?
+Give me a good definition of privacy.
+I can't hide it.
+But there is awareness of it.
+Privacy is important.
+But if you ask people, and some researchers did surveys, opinions are all over the map
+like what it means, what privacy means.
+Okay?
+It's also highly cultural and etc.
+And so, I say it's both nebulous and fickle.
+Nebulous means it's kind of, well, difficult to define.
+Fickle means it changes.
+A lot of times people will say, well, you know, my privacy is important.
+Like, if you give an example, what if this happens to you?
+Do you become certain?
+Yes.
+What if it happens to somewhere else?
+No.
+So, privacy is a very personal thing.
+We also live in a society that because of social networking, and this is the last 20
+years, I think, right?
+The beginning of social networking, about 20 years ago.
+The whole idea of social networking promotes, among other things, good and bad, it promotes
+lawyerism and exhibitionism.
+If you don't know what those terms are, or do you?
+Exhibitionism is just like, look at me.
+I'm interesting.
+Yes.
+I bought a purse.
+I bought a new bike.
+Look at me.
+I'm on a vacation in Krakistan.
+Look at me.
+Next to the, you know, the Tower of Pisa.
+Look at me in the Grand Canyon.
+I'm so interested.
+I'm not like those other 10,000 grad students who went on a Grand Canyon vacation as soon
+as I got here.
+So, this is the exhibitionism.
+Voyeurism is the opposite.
+The people who are actually looking at stuff because they have nothing better to do.
+And, you know, in the extreme, do cyber stalking.
+That's lawyers.
+Anyway, so social networking, for better or for worse, promotes these kinds of things.
+And, that's clearly not a good thing for privacy.
+And, even worse, for anonymity, right?
+So, how can you demand privacy if you post your pictures, you know, five times a day?
+With geolocation.
+Anyway, the amount of information, not just social networking type information.
+The amount of information essentially disclosed on the internet, on the public internet, has
+grown tremendously in the last 20 years.
+Right?
+Much more handling and transfer of sensing information occurs.
+And, this is not, again, your own photos and blogs, vlogs and whatever else, right?
+We're talking about sensitive medical information.
+All kinds of records, official records, driver's licenses, marriages, divorces, lawsuits.
+Everything is out there on the internet, right?
+Whereas, 20 years ago, you would probably have a hard time finding a lot of this information.
+Anyway, you would have, it was available, mind you, but you would have to actually physically
+search for it.
+And, unfortunately, as a result of all this, there's much less privacy and accountability.
+Now, we all recall that the internet was designed as a public good, right?
+As a public resource.
+So, complaining about lack of privacy on the internet is a bit silly, in a way.
+Right?
+We know that from the discussions about IP, TCP, et cetera, that most information on the internet
+is, well, a lot of information is public, by default.
+Right?
+So, an IP packet that you could snoop on easily, right, is possible to hide information in it.
+If you use SSLTLS, everything will be hidden from after the transport layer header.
+If you use IPsec, everything after the IP header will be hidden.
+But, at the very least, because routing needs to happen on the public internet, the outermost IP headers are visible, aren't they?
+Always.
+Always, right?
+A definition.
+You have to route packets on the internet.
+And, in the network layer, that means that there has to be an IP layer present.
+Otherwise, that could get discarded or not even sent.
+And recall what's in the IP header.
+Well, among other things, in the IP header, there's source, destination, and the protocol.
+The protocol says which is the transport layer protocol to use now.
+Now, if you don't use IPsec, there's a lot more, right?
+But, even if you use IPsec, the outermost header, at the very least, tells you the IP addresses of IPsec gateways.
+Right?
+Remember these IPsecs?
+You can build tunnels, right?
+So, even if you hide the end posts, right?
+You have an organization on, say, two campuses of the same organization on different places on the internet.
+Alice is in one campus talking to B in another campus.
+That's fine.
+Nobody in the middle of the internet can see that Alice is talking to Bob.
+But, everybody can see that Campus 1 is talking to Campus 2.
+Right?
+Someone on this campus is talking to someone on this campus.
+Because the addresses of the IP gateways, right?
+The border gateways will tell you.
+You might not think that's a lot of information, but it is.
+Also, the frequency of packets.
+Right?
+The timing of packets is important.
+It leaks information.
+Okay?
+For example, if you have, let's say you have the following situation.
+You have a transit autonomous system.
+Right?
+Remember we talked about autonomous systems.
+And there's a transit provider, right?
+Provides transit service.
+And it serves two companies.
+Now we talk about two companies, not two campuses at the same.
+Two companies in AFD.
+Normally, the transit service provider does not observe much traffic between AFD.
+Okay?
+It does not.
+All of a sudden, there is a spike in IPsec traffic.
+Now what could it be?
+AFD are companies that are registered, so you can look up what they are in the real world.
+Let's say one of them is a pharmaceutical company.
+Another one is a pharmaceutical startup.
+Okay?
+What could you possibly conclude when the traffic spikes between a large pharmaceutical company
+and a pharmaceutical startup?
+Probably.
+Probably something is going on between these.
+One is going to probably swallow the other.
+That's privileged information.
+That's kind of insider information.
+Why?
+You don't know what the hell they are talking about.
+But you know when.
+Huh?
+You know when.
+And you know how much a person will do.
+Now they could always pretend to send more traffic than they actually have to send, right?
+By just sending garbage.
+But they cannot send less.
+And obscuring timing.
+How do they obscure timing?
+If the negotiations happen in the middle of the night.
+Ah.
+That might also be an interesting thing.
+Okay?
+It's urgent.
+Then it's time to invest.
+Or buy some shares of that smaller startup.
+Or of the bigger one.
+And you can make some money.
+While others won't.
+Do you see that?
+Where I'm going with this.
+Okay?
+Or all of a sudden you have the US government.
+Department of State.
+Okay?
+That never sends much traffic to its embassy in Zimbabwe.
+And all of a sudden you notice as a transit provider that there's like a giant spider.
+What's going on?
+Huh?
+Maybe there's a coup in Zimbabwe.
+Happens.
+Maybe there's a military action that is being planned.
+That's information.
+Right?
+So that's valuable information.
+Anyway.
+As I said before.
+Encryption doesn't solve this problem.
+Right?
+Encryption is not enough for anonymity or even real privacy.
+What are applications of anonymity?
+Well.
+Hiding transactions.
+Hiding transactions.
+You know.
+If we had, for example, electronic cash.
+Anybody ever heard of electronic cash?
+It exists.
+It's a concept.
+If you took an advanced crypto class you may have heard of electronic cash.
+But I used to give a lecture on it like 10, 12 years ago but now it's becoming obsolete.
+But electronic cash is essentially the idea is to replicate physical cash in electronic
+form.
+And by the way, cryptocurrencies are not, are not cash.
+You know that right?
+Why not?
+Why not?
+Because cryptocurrencies have wallets and have owners and so there's no truly anonymous
+cryptocurrency.
+What cryptocurrencies give you is what's called pseudonymity.
+Like when you, yeah.
+But there's cold wallets.
+They can just give you this crypto.
+Yes.
+But the wallet is a wallet.
+You cannot transform one wallet magically into another wallet that is not linkable.
+You see, you get a wallet, it stays a wallet.
+So, now I don't know who's behind it.
+I don't know it's you or him or anybody else.
+What I do know is what it receives and what it sends, right?
+Like most cryptocurrencies, I don't claim to know a lot about cryptocurrencies, okay?
+But most of them will function on this premise of like wallets where you accumulate a specific
+cryptocurrency.
+If you are, but if you go with like a big provider like Coinbase or something like that,
+they aggregate those wallets for you, okay?
+But if you're an individual in a cryptocurrency trader or investor, you have typically this
+number of wallets.
+You have a Bitcoin wallet, an Ethereum wallet, and they all have addresses.
+Now, the link between an address and a human being, that's something that, you know, not
+given, right?
+It's difficult to establish who that is.
+But what wallets have this form, the term is persistent identifiers, that wallet ID,
+which is like some kind of binary string, right?
+And they're unique.
+And because of that, there is no actual anonymity because you can link all the transactions to
+that wallet.
+You know exactly what that wallet is doing.
+Sending so much money, receiving so much money.
+You know, one of the problems, we haven't talked about ransomware, but when an organization
+gets hit by ransomware and they pay the ransom, it's very clear to whom they're paying.
+A specific wallet, right?
+Because ransomware loves, the attackers, ransomware attackers, they love Bitcoin and other types
+of cryptocurrencies.
+And they give you an ID, usually.
+If you've seen like a ransom message that follows, usually follows the ransomware attack,
+it says, transfer money here.
+And they give you the explicit ID.
+But you don't know who that is.
+It's very hard to find out who.
+But it's still not anonymity.
+Anyway, so online payment, sometimes you want to browse anonymously, right?
+You know, in graduate school people do research.
+Sometimes research requires looking at sites that are not pleasant.
+Okay?
+For example, in my group some years ago, we had to go to some particular porn site.
+Okay.
+Why?
+Because we were studying CAPTCHAs.
+And that porn site, the way it worked, it was free.
+But to get access to it, you had to solve a CAPTCHA.
+But really cleverly, what it was doing, it was specifically making the users of that porn
+site function as human CAPTCHA solvers for a bot.
+Maybe that doesn't make sense here.
+So, there was a bot operator, okay, that was creating Facebook and Gmail accounts, okay?
+And Instagram accounts.
+Now, normally these bots, what they do is they automate, right?
+Create an account, provide a password, select a user ID, fill in the password, etc.
+But then, all these Instagram, Facebook, Google, they have CAPTCHAs, right?
+They say, prove you're a human before we create an account.
+You see what I'm saying?
+But the bot that operated is not human.
+So, what they were doing is that they made a partnership with a porn site, where every
+time, when they wanted to create an account, and a CAPTCHA popped out, they sent this CAPTCHA
+to the porn site, okay?
+That presented that CAPTCHA to the next user.
+And so, with a high enough volume of traffic, there was always somebody trying to get access
+to the porn site.
+They would pop up with a CAPTCHA, the user would solve it quickly, the solution would
+come back to the bot, and it would feed it into Gmail, Instagram, Facebook, okay?
+So, long story short, let's come back.
+Yes, so we had to look at that particular porn site a couple of times, you know, so, you
+don't want to do it from university computers, right?
+So, you do use anonymous browsing, okay?
+That essentially hides your browsing patterns.
+So, if you're using standard browsers, what you're browsing is not private, generally.
+I mean, some of them are more private than others.
+I mean, yes, Safari is better than Firefox, and nothing is worse than even the Explorer,
+but then there is DuckDuckGo, and Brave, and they all pretend to be very private, et cetera,
+but they're actually not very private.
+If you want private, you use the Tor browser, okay?
+I will talk about Tor in a second.
+Okay, so web browsing, you want to look up a site, even something innocuous, like you
+totally, like you want to price out a certain item, right?
+You're looking for, I don't know, a refrigerator, or a pair of shoes.
+You don't want to get ads, okay?
+You don't want to pollute yourself with all this information that will incessantly pop
+out ads about shoes or refrigerators.
+So, anonymous browsing is good for that.
+You want to use a search engine, too.
+You don't want a search engine, like Gmail, or Google, or Bing, or whatever, to know your
+search patterns.
+Sometimes you want to send an untraceable message, an untraceable email, because maybe
+you are a whistleblower, corporate or government whistleblower, and you would like to report
+something criminal or some abuse anonymously.
+Well, hell, even here at UCI, we have a way to do so, by the way.
+We also, I mean, we have it in the physical world, there's an Office of the Ombudsman to
+which you can report things anonymously.
+But we also, last time I checked, a couple years ago, there was a way to anonymously send
+email, except it's not truly anonymous.
+I mean, there's a way to basically use a web form, okay, to send an anonymously.
+If you're a dissident, a political dissident in an oppressive society, maybe this is socially
+sensitive communication about, let's say, addiction.
+You know, groups like Alcoholics Anonymous or people with sexually transmitted diseases
+who form mutual support groups, and you certainly don't want your friends and family or your
+co-workers to know about your participation in such groups.
+So, that's why privacy is super important.
+Also, on the business side, if you have confidential business negotiations, for example, the previous
+thing I said about, you know, two companies have, you know, a startup and a big pharmaceutical
+engaging in intensive communications.
+That's, again, where you need privacy.
+And, last but not least, even law enforcement, which you would think normally is against privacy,
+because, you know, it's fundamentally, like, about uncovering things.
+Even they benefit from privacy.
+When they mount sting operations and set up honeypots for all kinds of miscreants out there.
+When they do secretly communicating in the public network.
+Like, for example, you know, with informers, secret informers or secret agents.
+As I said, okay, I already said digital cash.
+Also, anonymous electronic voting.
+One day, I hope, in not too distant future, we will have internet voting.
+Might not happen for a while, but I hope it will.
+Because it will definitely raise, lower the barriers for voting participation.
+And, just like we vote today, sort of anonymously, right?
+It would be nice to vote better anonymously on the internet.
+But, secure.
+So, the idea is not to give up on security.
+The idea is to still have secure voting, but in a way that's anonymous.
+Okay?
+Today, is the voting anonymous?
+No.
+Why do you say that?
+No, I'm just curious about your intuition.
+Because the ballot, it has your name on it.
+Does it?
+Yeah.
+When is it?
+Did somebody vote recently?
+Yeah, I voted in November.
+In November.
+And your ballot had a name.
+Did you vote by mail?
+No.
+In person?
+Yeah.
+Okay.
+I vote by mail, generally.
+So, my ballot had no name.
+The envelope is the problem.
+Also, I have no proof, actually, that the ballot had no name.
+It could have had a watermark that I didn't see.
+You see, the problem in the physical world, we put a lot of faith in, like, yeah, it's
+supposed to be anonymous.
+But, when you go into a precinct, so you went to a precinct, and then, did they check
+your ID?
+No.
+Right, because it's not, that law is not here yet.
+The government is trying to make it, make it come to life.
+But, did they check your name on the roster?
+Yeah.
+So, somebody knows if you're voted, right?
+Yeah.
+So, the thing is, even if the ballot isn't anonymous, sorry, is anonymous, if the ballot
+is anonymous, somebody, the precinct worker, crossed your name, and said, uh-huh, he or
+she voted, right?
+So, that's already, like, you're sacrificing privacy, right?
+You cannot say, I'm not saying I voted, I didn't vote.
+No.
+You voted.
+You voted.
+If someone voted, it's actually public, right?
+It is, but should it be?
+I understand.
+Should it be?
+Also, what if he walked in, got his name checked, went inside the ballot's, uh, what
+is it called?
+A tent, right?
+It's like a, it's like a changing room, right?
+And never voted, and walked out.
+Good, right?
+I've heard of people doing that.
+Anyway, voting is interesting, and also it's censorship-resistant publishing.
+That is, publishing, there's something, or putting something on, let's say, on the web,
+they cannot be taken down, because nobody knows where it is.
+Imagine that.
+You have something to say, maybe it's good, maybe it's bad, okay?
+Censorship does not distinguish between good and bad things.
+You have something to say, somebody, or, let's say, the government hates it, and wants
+it taken down, but they can't, because they don't know where it is.
+That's called censorship-resistant publishing.
+Oh, of course, where there's good, there's bad, and this is the problem right away that
+should be, it should be obvious to you, that anonymity has two sides, okay?
+Very much depends on which side you look from.
+The usual thing, right?
+If you have anonymity, it will be abused.
+There's no way to separate anonymity for the good from anonymity for the bad.
+All kinds of things, misinformation, propaganda, illegal substances, right?
+All kinds of illegal, murder for hire, sure.
+Chemical weapons, sure.
+Poisons, yeah.
+Drugs, probably most of you are too young to remember the Silk Road.
+If you look up Silk Road, that was a marketplace.
+There was a whole marketplace for illegal substances and illegal activities.
+The guy who ran it, there was even a movie about it, I think Ross Obrecht was his name.
+I think the president pardoned him recently.
+He was serving a very lengthy jail sentence in a federal prison.
+But anyway, that was taken down.
+But there are other marketplaces out there for illegal substances and illegal acts.
+And they cannot be taken down because the way they operate is beyond the reach of the law.
+Because of anonymity.
+Tax avoidance, yes.
+There are some cryptocurrency tricks that try to circumvent the anonymity I mentioned earlier.
+And also just general incitement to criminal activity.
+Let's say you want to use censorship resistant publishing that I mentioned earlier on the previous slide for the purposes of inciting terrorism.
+Well, your opinion is terrorism is legit.
+And the government is trying to censor you by attempting to take it down.
+Well, one person in terrorism is another person in freedom of fire.
+Or you want to incite murder.
+Or you want to incite genocide.
+Sure.
+That's freedom of speech for some.
+And prohibited pain speech for others.
+So, anonymity has two sides.
+But what is it really?
+Let's try to begin.
+I'm going to try to say that it's like inability to identify someone.
+An inability to identify someone with something within a set of subjects.
+Now, the size of the set can vary.
+And the fewer subjects in a set, the worse anonymity is, right?
+So, if I turn my back to the board and somebody throws a spitball at my back, surely some of you have done this in high school,
+I will know that somebody threw a spitball at me.
+I will feel it.
+I'm sensitive.
+But there are 14 people here.
+Which one?
+Is it the guy who is smiling?
+Or is it somebody with a poker face?
+Is it the person pretending to type on their phone?
+Or actually typing on their phone?
+Pretending to be very occupied or looking up in the sky?
+I have no idea.
+That's anonymity.
+You throw a spitball at me when my back is turned.
+I don't have eyes in the back of my head.
+You are anonymous in a group of 14.
+Okay?
+Now, if there are two of you here, wow, my job is easier.
+I might look at your fingers and, you know, or something.
+But, yeah, 14 is good enough for that.
+So, different from privacy, right?
+In other words, one cannot be anonymous alone, right?
+So, if there is one only person here and I feel the spitball hitting my back, I don't know this.
+That's definitely the culprit.
+That's it.
+There is other shades of anonymity.
+One is called unlinkability and the other we call unobservability.
+Okay?
+Unlinkability is an inability to connect multiple actions or action and identity.
+Like, in the spitball example, I also get more than anonymity, I get unlinkability.
+The action was spitball.
+But I cannot link an identity to that action.
+I know it's someone, but I cannot link an identity.
+Do you see this?
+Do you see this?
+The action occurred.
+I know the action occurred.
+Spitball hit me.
+Somebody launched it.
+But who?
+I don't know.
+So, I can't link.
+Or, suppose this.
+Twice this happened.
+Twice.
+My back is turned.
+Bam!
+Spitball.
+Some minutes later, my back is turned again.
+Bam!
+Another spitball.
+Okay.
+I know.
+Two spitballs.
+But let's say this guy, I want to hit me.
+Hit me.
+Hit me.
+Somebody launched it.
+But who?
+I don't know.
+So, I can't link.
+Or, suppose this.
+Twice this happened.
+Twice.
+Twice.
+My back is turned.
+Bam!
+Let's say this guy over here.
+Let's meet him a little seeker.
+He says, you know, it's the same person.
+Snitch.
+That means I have linkability.
+I just linked.
+I don't know who it is, but I know it's the same person.
+You see?
+But if he doesn't tell me, I know that two actions occurred, but I can't link them.
+I mean, they asked spitballs.
+Both.
+But it could have been done by two different people.
+So, inability to link is unlinkability.
+If he rats on somebody, it's just partially rats on somebody.
+You know, it's the same person.
+All I can tell you is the same person.
+Oh, now I have more information.
+There's one person.
+It was not a random act.
+That one person did it twice.
+Okay?
+So, a more appropriate example, perhaps, is connecting Alice to a sent email.
+Now, I know that email was sent, right?
+And if I can't link it to the sender, that's unlinkability.
+But if I can link it to Alice, then I know Alice sent email.
+I might not know what it is.
+It might be well encrypted, but I know she sent email.
+Or, I see two emails, both encrypted.
+I don't know who sent them, but I know it's the same sender.
+Okay?
+That's linkability.
+Inability to do that is unlinkable.
+And then, last, sort of, the impacts of anonymity is called unobservability.
+And that's very hard to achieve.
+Here, if you observe, you don't know when a second action took place.
+Okay?
+So, let's say the room is completely dark.
+Okay?
+The room is completely dark.
+You cannot see me.
+I cannot see you, but I know you're here.
+So, imagine right now all the lights go dark.
+It's completely dark.
+And then, 30 seconds later, the lights go on.
+My question is, did somebody throw a spitball anywhere?
+I didn't feel it, but did somebody do throw a spitball anywhere in the room?
+I don't know.
+Maybe.
+Maybe not.
+Do you see the difference?
+An action may have occurred, or may not have occurred, I don't know.
+So, that inability to tell what happened, just that the action happened, is, by itself,
+unobservability.
+That's really hard.
+So, how do you undermine anonymity, well, by now it should be kind of obvious, right?
+Passive traffic analysis.
+Looking at IP traffic.
+Looking at Ethernet traffic.
+Why Ethernet?
+Why Ethernet?
+Well, at the MAC layer, you still see, remember, MAC addresses, right?
+Even if, because, let's say, in a wireless menu, we use encryption, right?
+There's wireless encryption, right?
+There's wireless encryption protocols.
+So, they hide even the IP header.
+If you're confused, why am I saying this?
+Because, remember, IP packets, once they go on the internet, once they usually pass the
+first wireless hop, right?
+They are IP packets.
+Meaning, that you can see the heads, right?
+You can see IP, you know, IP heads.
+But, on our first wireless hop, right?
+Like this, from here, from here to the access point, there's usually a wireless security protocol
+that encrypts the IP packet between my device and the access point.
+So, if you were observing traffic, what you would be able to see, then, is Ethernet headers.
+Meaning, MAC addresses, right?
+Source, destination.
+But, that's also information, right?
+Because, you can tell that it's, if you know the source, you'll know it's my phone
+that's using that MAC address.
+The destination will be access point.
+But, if we're using, what is it called?
+Direct Wi-Fi?
+But, no direct Wi-Fi.
+Appear Wi-Fi.
+That's what you don't have access point.
+But, let's say, talk directly, like me talking directly to his laptop.
+We can do that.
+Not easy to set up.
+Not a lot of people use it, but you can, right?
+So, in that case, if you snoop on traffic, you will be able to observe that my Ethernet MAC address
+is talking to his Ethernet MAC address.
+So, that's passive traffic analysis, right?
+So, the idea is, if you want to hide patterns in traffic, you have to not only communicate
+sparingly, but you also have to carry other people's traffic.
+Like, relay other people's traffic to obscure patterns.
+And, we'll see how that's done later.
+There's more.
+There's also active traffic analysis, which means injecting traffic and seeing if I can
+recognize it as it traverses some route.
+Put it on timing signatures.
+That's later.
+You can also, if you compromise routers, well, then you don't need to worry about snooping on traffic, right?
+Routers, by definition, receive traffic and forward it.
+So, they don't need to tap any wires or any kind of medium, right?
+They naturally receive traffic and send it on its way.
+And, you will never know if a router is compromised, right?
+Because it's running malicious software that actually logs or examines communication patterns.
+That's done silently.
+So, from history.
+Back in 1981, ancient history, 44 years ago, a guy named David Chow, a brilliantly paranoid
+and crazy person who might have sort of dubious pleasure of meeting a few times.
+Because brilliant scientists are always very nice people.
+And, this guy's an example.
+But, he's brilliant and should get a Turing Award.
+He's old, but he's alive.
+And, actually, should get a Turing Award one of his years.
+He published several papers.
+One of them was a communication with ACM called untraceable electronic mail return addresses
+and digital series.
+Mind you, 1981 was, should, I was in middle school, high school.
+I mean, internet.
+I had never heard of the internet.
+So, that was only like maybe 81 and maybe a few thousand people around the world that knew of internet.
+And, this guy was already thinking ahead about the world we live today.
+Because, back then nobody cared about that anonymity.
+So, you say, security?
+Why?
+Anonymity?
+Who needs it?
+But, that paper was laid the foundation for what today's, what today's anonymity and privacy tools are.
+And, basically, the idea he laid out is that, he first made an argument why we need privacy and anonymity.
+And, then he sort of used this new concept called public encryption because public encryption was run from like late 70s.
+So, he used this very new cryptographic concept of public encryption with the concept of a trusted remailer.
+called the mix.
+Okay?
+And, just, mix works like this.
+And, it's the foundation actually.
+It is the foundation of many, of today's anonymity systems.
+So, the idea is this.
+You have a bunch of users.
+And, the users want to send email to each other.
+So, now we're talking strictly about email because, back in the 1980s, there was no social networking.
+There was no instant messaging.
+There was no SMS.
+There was no cell phones, really.
+So, people communicated.
+If they wanted to communicate electronically, they communicated via email.
+And, the email looked pretty much like a dozen.
+So, the idea is to obscure or hide who is sending email to whom.
+Okay?
+So, we have A, C, D of Alice, Charlie, David, and then we have Bob and Eve.
+And, these are all users.
+And, some of them want to send email to others.
+But, they don't want anybody observing that, anybody observing where that email goes.
+So, you have here Alice, who wants to send an email to Bob.
+But, she does not send it directly to Bob because, if she did, that would be observable.
+So, what she does is, she takes the message that she wants to send to Bob, called M.
+Combines it with a NOS, a random value that she picks, R0.
+And, she encrypts it under the public key of Bob, the receiver.
+And, she takes the result, the encryption.
+Combines it with another NOS, called R1.
+Okay?
+Appends the name of the recipient, B, and encrypts it under the well-known public key of the mix.
+Now, the mix is not like the picture.
+It's a computer.
+And, its job is to mix email.
+But, it doesn't just mix.
+It also decrypts and decrypts, et cetera.
+But, in this example, you'll see.
+So, now, A, instead of sending to, directly to Bob, Alice sends it to the mix.
+Now, the idea is that when the mix gets that email, it knows that all the emails coming to the mix are encrypted under the mix of public key.
+Right?
+So, it tries to decrypt it.
+It doesn't succeed.
+It throws it away.
+But, when it decrypts, what it finds inside is R0 and M encrypted, which you cannot read what it is.
+It doesn't see what M is.
+It doesn't know what R0 is.
+But, he sees the name of B, Bob, right?
+So, he says, that's what I'm going to send.
+Whatever I find inside, I'm going to send to Bob.
+You see that?
+Easy.
+And, he does that.
+Now, imagine you are the observer.
+And, you have seen that message from Alice to the mix.
+And, you have also seen the message from mix to Bob.
+Can you say for sure that these are the same messages?
+What can you tell me?
+What can you tell me?
+If there's no other messages, there's no message.
+Right.
+But, if somebody showed up and said, here's one message, here's the second message.
+Are they the same?
+Can you tell them?
+Huh?
+No.
+You cannot.
+Right?
+You cannot.
+Because, how do you know?
+If this message is encrypted under the big public key of the mix, and the other message
+is encrypted under the public key of Bob.
+You cannot.
+You cannot.
+Right?
+You cannot.
+Because, how do you know?
+If this message is encrypted under the big public key of the mix, and the other message
+is encrypted under the public key of Bob.
+You cannot correlate.
+You cannot correlate.
+But, you are correct if you also know that this message was the only message coming into
+the mix.
+And, very soon afterwards, that message was encrypted, and very likely they had the same
+message.
+Because the mix sent only one message, and before that he received this one message, it
+must be a chain reaction, right?
+Well, that's not how we use a mix, right?
+You can imagine.
+The idea of a mix is to mix things.
+So, a mix is to receive many emails like this.
+Okay?
+Now, this is a toy example, mind you.
+In the real world, this would be hundreds and maybe thousands of messages received in
+very close succession, right?
+One after another, or nearly simultaneously.
+So, look at what happens.
+In this example, there are only three incoming messages.
+Charlie wants to send a message to Eve.
+He encrypts it similarly, you see?
+David wants to send a message to Bob.
+He encrypts it similarly, right?
+Everything is the same format, right?
+And what the mix actually does is output the three messages in a blast at the same time.
+Or you can imagine either at the same time or in some random order.
+But the order in which it outputs, it has nothing to do with the order in which it received.
+Now, you're again the observer who sees what's coming into the mix and what is leaving the mix.
+Can you map incoming to outgoing messages?
+Probabilistically?
+Only probabilistically, yeah.
+This is a silly example, right?
+Can you say, who sent a message to Eve?
+Well, it could be one-third, right?
+Probability.
+It's either Alice, Charlie, or David.
+Who sends a message to Bob?
+Well, it's either Alice and Charlie, Alice and David, or Charlie and David, right?
+You know everybody sent a message.
+What you don't know is to whom.
+But now, think about generalizing this to hundreds of messages and thousands of messages.
+And many thousands of recipients.
+Right?
+Both senders and receivers.
+Then it becomes very difficult to associate.
+So the main thing is that, of course, the mix does not need three messages to start sending.
+It needs to receive a patch that is big enough.
+Right?
+And that's configurable and you can set it to like 10,000.
+So, a mix receives 10,000 messages, then it outputs them in random form.
+Yeah?
+Can you just see that Alice is always in a batch that sends a message to Bob, but whenever
+there's a batch to Alice, it doesn't make me never send a message to Bob.
+Yes.
+Yes.
+You can.
+And then, maybe you can think, you can deduce that Alice did not send a message to Bob,
+or she did send a message to Bob at some point.
+Yes.
+But, again, with a large enough scaling factor, this should be really, really difficult.
+I imagine there's some endpoints that never get message sent in the ticker.
+Aha!
+Yes.
+And there are defenses against that as well.
+Okay?
+In the general system, what happens is, I mean, this is like if you want to maximize or minimize
+kind of the performance levels.
+You do this.
+You output as many messages as a mix, output as many messages as you see.
+There are also very naive or nothing, very intuitive strategies to obscure and prevent attacks
+like you just have.
+And they involve chaffing or generating spurious traffic.
+So the idea is that every user of the mix will randomly send traffic that goes nowhere.
+You see what I'm saying?
+Yes.
+Right?
+It will just send traffic to a special destination called X.
+And there's no X.
+So when the mix receives a packet and receives a message, decrypts it, and she sees destination
+X, it says, oh, this is chaff.
+Throw it.
+Okay?
+So that says that Alice, that obscures the true number of packets or mail messages that
+Alice sends or every user sends.
+In addition to that, a mix can generate spurious messages to random destinations as well.
+A chaff, right?
+You will pick, like, there are no messages for Bob in this batch.
+Oh, let's send a message to Bob and Charlie and Edward and this.
+Okay?
+Well, let's send more messages than there really are.
+And they will be marked specifically so that when the destination, the actual destination
+receives them, they'll just throw them away.
+So that's one way to obscure.
+Does anybody know why R0 is necessary?
+If Alice sends the same message to Bob multiple times, if you don't have R0 and there's a
+little bit of a caveat, if the public key encryption is deterministic, then this message R0, that's
+the same.
+This message from mixed to Bob would be the same.
+No?
+No?
+No?
+No?
+No?
+No?
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No.
+No, no.
+No.
+No, no, no.
+Like why do I have these?
+That's more of it.
+Not really necessary.
+Like extra randomization.
+But does everybody see how a mix works?
+Okay.
+All right, let's end here.
+See you on Thursday.

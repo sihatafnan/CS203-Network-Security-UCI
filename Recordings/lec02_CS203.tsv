@@ -1,0 +1,1082 @@
+start	end	text
+0	4400	And I was about to go into this, so why people do this, all these things.
+4400	6600	Actually, first, any questions?
+6600	10400	Is there anything related to this course?
+10400	11600	Okay.
+11600	14400	So why do people do it? Because there's a lot of money in it.
+14400	16300	Not everybody does it for money.
+16300	19000	People do all kinds of things for ideology.
+19000	24500	Or just, as I said earlier, destructive tendencies.
+24500	26800	Let the world burn, kind of philosophy.
+26800	30800	Anarchy, people do all kinds of things, not for money.
+30800	34800	But, let's do it again.
+34800	44800	Money is a big deal, and there's a lot of money to be made doing things like selling bug bottles.
+44800	55800	That is, finding unknown exploits, bugs, backdoors, and selling them.
+55800	57800	Officially, this is perfectly fine, right?
+57800	67800	Selling them to the hardware manufacturers that develop the hardware or software where the bugs are.
+67800	71800	Some serious money can be made.
+71800	77800	There are companies out there that do this, there are individuals that specialize in this.
+77800	79800	And that's perfectly legitimate.
+79800	89800	There are also brokers that will buy a bug from you, or a vulnerability.
+89800	92800	If you find one, they will buy it from you, and they will market it.
+92800	104800	So, they act as intermediaries between those who find vulnerabilities and the companies that will, in whose software hardware vulnerabilities are found.
+104800	107800	Then there is the shady part, right?
+107800	108800	The shady part is here.
+108800	121800	Yeah, there's kind of gray market, black market entities that will buy this, and often will pay more than, let's say, your Google's and Meta's, et cetera.
+121800	126800	Especially, you know, some serious zero-day exploits.
+126800	133800	Serious buying can be made, but that's most likely, in most jurisdictions, illegal.
+133800	147800	Like I said, there are companies, there are other individuals, there are companies that do this, and there are other buyers.
+147800	149800	There are nation states that buy.
+149800	155800	The United States is definitely one of them, but the typical players are Israel, Britain, Russia, India, Brazil.
+155800	159800	And there are many others that will buy these things.
+159800	167800	Why? Because, well, a lot of nation states are involved in offensive cyber warfare.
+167800	169800	Okay?
+169800	172800	Not surprising.
+172800	175800	Then there's also stolen data.
+175800	187800	So, let's separate very clearly the bugs, exploits, backdoors, vulnerabilities, from stolen data.
+187800	193800	What I thought before was sort of the white zone, the gray zone, the black zone.
+193800	195800	Here, everything is black.
+195800	197800	Here is all illegal.
+197800	200800	This is strictly crime.
+200800	201800	Okay?
+201800	209800	So, there's a big marketplace for stolen data, starting with valid credit card numbers,
+209800	221800	actual credit card numbers, accompanied by, you know, the cards that still have magnetic stripe, right?
+221800	229800	Typically, the chips cannot be cloned, except maybe by some nation states.
+229800	231800	But the magnetic stripe can be.
+231800	232800	Okay?
+232800	241800	So, if you have both the credit card number and the magnetic stripe information, that's a bit more,
+241800	245800	because that can be cloned, right?
+245800	255800	So, with the credit card number, and the three-digit code in exploration, you can buy stuff over the web.
+255800	257800	So, there's a card note present.
+257800	258800	It's called card note present.
+258800	261800	But if you do something, if you don't buy something with a card present,
+261800	265800	then you need to have the magnetic stripe, a card with magnetic stripe.
+265800	271800	You have to have a merchant that still allows you to use the magnetic stripe, which is easy to find.
+271800	276800	So, what it means is you need to manufacture it hard.
+276800	281800	Now, machines that manufacture plastic credit cards, trivial.
+281800	283800	You can buy one.
+283800	285800	It's not illegal.
+285800	290800	And then, they will imprint, emboss the magnetic stripe here.
+290800	292800	So, that's all.
+292800	294800	You will actually have a physical credit card.
+294800	296800	You won't have the chip, clearly.
+296800	299800	But you'll still have the magnetic stripe.
+299800	304800	Fools is like a dossier.
+304800	306800	A whole dossier on a given person.
+306800	308800	A real person, right?
+308800	317800	So, that includes things like name, address, phone, email, date of birth, social security number, bank account, routing numbers, online credentials, credit cards.
+317800	322800	That is not very expensive, right?
+322800	323800	It wasn't a couple of years ago.
+323800	325800	This data is a couple of years old.
+325800	326800	Today is probably cheaper.
+326800	330800	Now, you want online credentials with bank account with money.
+330800	332800	That's going to cost you.
+332800	337800	Now, why doesn't it cost you this much?
+337800	342800	If the bank account has this much money, why sell it for $300?
+342800	346800	It's risky to get it out.
+346800	347800	Right.
+347800	348800	Money is there.
+348800	351800	How do you get it out?
+351800	352800	Right?
+352800	355800	So, that's not easy.
+355800	358800	Let's feel sorry for the bad guys for a second.
+358800	361800	Their job is not always easy.
+361800	366800	They have, let's say, they have access to my bank account.
+366800	368800	They have the right credentials.
+368800	369800	They have everything.
+369800	373800	But, what they don't know is how to transfer that money, how to cash out.
+373800	380800	Because, chances are, the first time they do something like that, they will be caught.
+380800	382800	Or, some flag will go on.
+382800	383800	Right?
+383800	384800	So, what can they do?
+384800	388800	Well, if they have a debit card, they could try to use an ATM.
+388800	390800	But, ATMs have limits.
+390800	392800	Usually, close to this.
+392800	394800	You see why?
+394800	395800	ATMs have limits.
+395800	397800	But, they have to have an ATM debit card.
+397800	399800	That's also not that easy.
+399800	402800	Because, debit cards, ATM debit cards, these days, also have chips.
+402800	403800	Right?
+403800	406800	And, cannot use a magnetic strap.
+406800	408800	They can go to a supermarket.
+408800	409800	Right?
+409800	411800	I think the supermarket will give you like $50 cash.
+411800	412800	Eight.
+412800	413800	Eight.
+413800	414800	Oh, excuse me.
+414800	415800	Eight.
+415800	416800	Still.
+416800	417800	Well.
+417800	418800	Right?
+418800	419800	Same ballpark.
+419800	424800	So, they have to find a place where they can wire the money.
+424800	425800	Right?
+425800	426800	Somewhere.
+426800	430800	Some bank in some Krapistan, Slabonia, somewhere.
+430800	435800	Some place where it is difficult for the US government or the banks to reach.
+435800	437800	But, it's going to be once.
+437800	438800	And, there are limits.
+438800	442800	Most banks, if you know, have limits on the amount of money you can transfer in a single wire,
+442800	445800	in a single day, in a single transaction.
+445800	447800	That's why.
+447800	448800	It's not that.
+448800	449800	Right?
+449800	457800	Typically, there would be, this is sort of my experience, credit card thieves that are
+457800	465800	the most successful are not the ones who go and like, do a shopping spree in Walmart
+465800	468800	or in Amazon.
+468800	475800	The most successful overall credit card theft occurs when it's used by, it's called a death
+475800	477800	by a thousand cuts.
+477800	484800	When you steal a massive number of credit cards and you charge a little bit.
+484800	491800	Now, the idea is that many people, first, don't pay attention to credit card, you know.
+491800	495800	Like, they'll look at the bill at the end of the month because they're lazy.
+495800	496800	Right?
+496800	500800	Most, let me talk, most people like us, how many of you really look at your credit card,
+500800	502800	like, line by line?
+502800	509800	So, if there's a small charge that occurs somewhere, for like, ten bucks or five bucks,
+509800	513800	chances are, one, you might not notice even if you look.
+513800	519800	And, if you don't look, your total monthly amount is going to be about what you'd expect.
+519800	525800	As opposed to going and buying $3,000 refrigerator, which immediately, like, you know, makes you
+525800	526800	want to cancel the cut.
+526800	527800	Right?
+527800	533800	But, it's fair for them, for the adversaries, for the thieves, to just do small amount of
+533800	538800	transactions every month, so they go under readout.
+538800	541800	That could last for a while.
+541800	544800	Eventually, they'll get discovered, and the credit card will get cancelled.
+544800	550800	But, how many people are going to get on the phone with a credit card company and spend an
+550800	553800	hour discussing a $5 charge?
+553800	556800	A lot of people just say, okay.
+556800	563800	So, anyway, there's all kinds of marketplace for everything.
+563800	568800	Not surprisingly, there's also marketplace for botnets and malware.
+568800	572800	You can rent a malware just like you can rent a vehicle.
+572800	573800	Right?
+573800	579800	So, if you use, if any of you have used any kind of darknets, I'm going to hold it against
+579800	585800	you, but if you use Tor hidden services, for example, if you do browse the directory of
+585800	589800	Tor hidden services, you see things like that.
+589800	591800	Basically, you can rent zombies, right?
+591800	592800	So, what are botnets?
+592800	594800	Botnets are networks of zombies.
+594800	600800	That is, computers just like the ones in front of you, and maybe even smartphones, and
+600800	604800	definitely desktops that have been zombified by some malware.
+604800	611800	The owners are generally not aware, but the botnets is controlled by some command and control
+611800	616800	center, and the operator of that command and control center, of course, can make the
+616800	617800	zombies do whatever.
+617800	622800	Lying cryptocurrency, denial of service attacks, right?
+622800	623800	Send spam.
+623800	625800	Why not?
+625800	632800	And anything else you can imagine.
+632800	634800	And there's some bad news.
+634800	642800	The bad news is that no matter what we do, security is almost never a primary consideration,
+642800	643800	in any product.
+643800	646800	That is the sad reality.
+646800	653420	and it's not going to change anytime soon because manufacturers in any sphere
+653420	660540	right whether it's smart cars right these you know super automated vehicles
+660540	666360	or IOT devices or laptops or smartphones the priority of the manufacturer is to
+666360	674400	give you new and better features shinier stuff glossier shinier stuff so
+674400	679620	you'll buy it and because you want to be that person with the shiny glossy stuff
+679620	684840	like the next person right you want to have that latest iPhone latest Samsung
+684840	691080	latest whatever because you want to be a keep up with the Joneses and there's
+691080	697160	these newer features and those exciting new technologies and are wonderful but
+697160	704180	security always takes the backseat because it doesn't sell why have you
+704180	709400	seen an advertisement that says buy I don't know why our phone it will be you
+709400	714200	will be twice as slow as the next one because we're so secure how many people
+714200	719780	are going to go for that so it's not going to be the consideration because it
+719780	726080	sort of impedes progress the other problem is that whether you're dealing
+726080	733760	with smartphones or IMG devices or you know super computer style servers most
+733760	739400	systems that are feature-rich that is that like applications that we use today
+739400	744860	they are rich with features they are complex there's complex software in the
+744860	750740	online and complex software well has bugs and vulnerabilities the bigger the
+750740	757040	software the more likely there are bugs and vulnerabilities and so the more
+757040	761140	programmers you write contribute to a given piece of software the more
+761140	767540	vulnerabilities you're gonna have and examples of course I will buffer overflows you
+767540	773780	probably heard about right people know what buffer overflows are it's okay not to
+773780	782300	know or cross-site scripting another very popular attack methodology also
+782300	787640	networks are open you know we essentially look at you walk into UCI you can use
+787640	795620	connect to a public Wi-Fi here no problem maybe it will go away so but there are many
+795620	799220	places where connecting to the internet and connecting to an open network it's
+799220	807320	just easy doesn't it's not an attack last bullet is also important most
+807320	813620	successful attacks it's a spectacular attack aren't purely electronic digital in
+813620	822200	nature they involve humans yeah us meaning as big and they involves
+822200	830240	attackers so so they may cause damage in the digital world but tremendous damage but
+830240	835460	they often start with a human like like fishing attacks they will start start with
+835460	836600	like social engineering
+836600	863600	the better news is that there are defense mechanisms there are some mitigation techniques or as we discussed last time to some to prevent some to detect some to recover from attacks but we need to understand their limitations some people naively believe that cryptography
+863600	867080	some people naively believe that cryptography
+867080	873500	what's a wonderful thing cryptography and of course everybody should know some but
+873500	876800	cryptography will solve all your problems all you need to do is to have good
+876800	880760	crypto and with good crypto you can build everything possible to defend yourself
+880760	885440	this is absolutely not true this is a quote from one of the top
+885440	890180	photographers in the world basically says I mean verbatim if you think your
+890180	893540	cryptography will solve your problems then you don't understand cryptography and you
+893540	897900	don't understand your problem so it will solve some small problems here and
+897900	903080	there and it needs to be managed very well and well we'll talk about this yeah many
+903080	908900	security problems are based on misunderstanding of cryptography or misuse of
+908900	916100	cryptography it also helps to have user awareness so at the end of the day most
+916100	922760	security methods involve some exposure to human users people like us and even
+922760	930200	people that are even less tech savvy than us right think about don't have to go as
+930200	937520	far as your your grandpa or some kind of a you know idiot uncle you know somewhere but
+937520	941840	you know just think about regular people doing regular every day job in regular
+941840	945180	jobs out there in industry
+945180	960180	so education helps education helps and unfortunately so this is one of those
+960180	965180	grants that I have for the last I've got no so many years you know most of you went to
+965180	970820	high school right you probably went to high school and middle school and in some
+970820	976620	form you probably have health education right this really difficult course that
+976620	981020	everybody loves it sometimes it's called health sometimes called hygiene you know
+981020	985700	some yeah even sex education it's all related right that something in most
+985700	991040	countries they have some kind of course for middle or high school students wouldn't it
+991040	1003100	be nice if we have internet hygiene education or internet or computer hygiene it's
+1003100	1008140	just as important just as important for you to brush your teeth and floss every
+1008140	1012220	morning and to take showers once in a while it is just important to change your
+1012220	1016300	passwords once in a while and to select your passwords appropriately to know how to
+1016300	1020320	log in and if somebody's breathing down your neck as you're logging in you probably
+1020320	1024640	are not in the same space are you and these simple things that we could teach
+1024640	1029860	people from early age would certainly help alleviate a lot of problems that involve
+1029860	1040300	humans but we're not there yet of course usability and this is not just user acceptance
+1040300	1048160	usability of security techniques is important so did any of you present here today take Habib
+1048160	1057220	Farouk's usable security course good so now you you're probably better off than the rest you know
+1057220	1064840	that usable security is important right because security that isn't usable is useless
+1064840	1072340	doesn't do anything right people avoid it people subverted people people come up with all kinds of
+1072340	1080020	tricks not to not to participate right so usability is very important economics economics is important
+1080020	1085340	and there is a whole branch of research I don't do it but I know people who do to study the economics of
+1085340	1102840	security sometimes security that makes no sense because the cost of introducing security outweighs the protection that it gives you so if attack occurs it might be easier to accept the attack than to introduce the security
+1102840	1109340	I know it probably sounds funny coming from somebody like me but there are situations like that they need to understand when they have
+1109340	1127340	sometimes security measures a pure overkill right that maybe for example I in order to vote in a faculty on faculty minutiae like I don't know who gets promoted who or who gets some award whatever
+1127340	1139300	in my department I have to log in to using VPN why what's the point who is going to cheat on that what's the
+1139300	1147300	incentive. Zero. But yet, I have to use the VM, use Duo to log in. Makes no sense at all.
+1147300	1156800	No economic sense. But there are cases where it does. This guy, he looks like a hardened
+1156800	1163300	criminal. Probably somebody you don't want to meet. Or at least somebody who sits in a
+1163300	1168300	basement and writes horrible code, right, that's going to steal your credit card. This
+1168300	1172300	guy is actually a Turing Award winner. His name is Ken Thompson. He doesn't look like
+1172300	1176300	this anymore. I think he's very old. Actually, I think he's still alive, but he's very old.
+1176300	1181300	But now that I've told you, he does look like a very committed geek, doesn't he? T-shirt,
+1181300	1191300	shirt over it, you know. So he is the co-author of C, co-inventor of C language. And also
+1191300	1197300	Unix, one of the sort of principal designers of the original Unix. Well, he had something
+1197300	1201300	to say about trust. He's not fundamentally a security person, but he does know something
+1201300	1207300	about trust. And he had this famous lecture, ACM Award lecture that he gave, and a paper
+1207300	1214300	actually called Reflections on Trusting Trust. And it's just a cute set of observations that
+1214300	1221300	you can get to it, free, at the article. And the main question he was asking, what code,
+1221300	1230300	right, or what software can we trust? Right? And his example was that consider, you know, people
+1230300	1239300	build Linux, right? Anybody else? Anybody who does not know what Linux is? Okay, so you know,
+1239300	1244300	there's a login program, there's a super-user program. I mean, today it's called something
+1244300	1248300	else, or something like that. Traditionally, there's an SU, super-user program, to run
+1248300	1255300	privileged commands using that instead of logging in as root. Right? So these programs,
+1255300	1264300	a part of the Unix of Linux distribution, is the binary containing those programs reliable? Right?
+1264300	1272300	Android is also based somehow loosely on Unix, right? When you log in, does the login program
+1272300	1278300	by any chance, like, send your password somewhere outside? Or does it store it in a special place
+1278300	1286300	when you type in your password? You do type in your password, right? When you log in. Do you ever wonder,
+1286300	1295300	where do those letters go? Do you know what happens when you type in your password? Does anybody know?
+1295300	1300300	What happens? It gets hashed with the salt and then compared against the... Pepper? No?
+1300300	1307300	No? Pepper? No, just salt? I don't know what happens. Okay, so we'll come back to that.
+1307300	1313300	And so there's salt and it's hashed, and that's what you think is happening, right? What should happen.
+1313300	1319300	Right, we type in those letters. Presumably the letters are not logged as we're typing, right?
+1319300	1332300	That's what he said, what he said, supposed to happen. That whatever sequence of letters,
+1332300	1340300	numbers letters, that is supposed to be your password, gets hashed, well, salt and hashed,
+1340300	1347300	into some fixed value, and then? Compare it against the one in your shadow file.
+1347300	1353300	You know, that's the whatever, right, shadow file. We think, we hope that's what happens,
+1353300	1361300	but do we know? Do we know? Or when you use su, right, or sudo, right? And it asks you to write
+1361300	1366300	your root password. Do you know what really happens? Do you know what's supposed to happen?
+1366300	1373300	Or do we know really? Is there a back door there? We have no idea. Did you, like, manually
+1373300	1382300	inspect every single machine instruction in a binary? Do you know anybody who has ever done that?
+1382300	1393300	I don't. So, okay, so the binary you cannot trust, right? So the next thing, again, according
+1393300	1399300	to Ken Thompson, you could check the source code. Because Unix, unlike all the other crap we
+1399300	1406300	ran, right, you know, like iOS or Microsoft Windows, is open source. You could get whatever, Red Hat,
+1406300	1413300	Ubuntu, Linux, embedded Linux, whatever. All these operating systems are open source. You can get all
+1413300	1419300	the entirety of the open source, of the source code for them. You could manually inspect in
+1419300	1428300	C, right? Usually in C. The code, not difficult. Take us some time to say, oh, this is the login
+1428300	1434300	program, right? So there's login.c and login.h. Look for that and say, okay, is it like sending
+1434300	1438300	anything? Is it opening a socket to some God knows where? Or is it like storing opening
+1438300	1445300	a file? No? Good. Okay, so you, you kind of assured yourself that there's nothing wrong
+1445300	1452300	with the source code. All right. Well, then you recompile. Because you don't trust the binary
+1452300	1461300	that's already there. Now you recompile, say, aha, I know the source code. I just compiled it.
+1461300	1470300	This is the compiled version. I can trust it. Hmm. Who wrote the compiler? The compiler is part
+1470300	1482300	of the, your, your, your ecosystem. Hmm. Okay. What if the compiler looks for a pattern in the
+1482300	1489300	login program? That's like, say, reads the password. Just, ah, login program. Normally I compile
+1489300	1498300	faithfully. But for this program, I'm going to insert a back door. Right? Could do it.
+1498300	1503300	All right. So now we say, okay, let's get a little more paranoid than realistic. Let's inspect
+1503300	1513300	the source of the compiler. That's going to take us a while. Compilers are not. You think that,
+1513300	1519300	some of you are thinking that Michael Francis compiler course. Yes? Probably sweated through it,
+1519300	1526300	right? Not easy. Compilers are rough. Not for the faint of heart. Okay. Well, let's say you did your
+1526300	1533300	homework. You went through the compiler. You checked. Okay. Looks good. Recompile the compiler.
+1533300	1545300	Before recompiling the login. Okay? With what exactly? With what are you going to recompile the compiler?
+1545300	1562300	Which you did not expect. So, the compiler that you used to compile the compiler is going to have
+1562300	1569300	these nice couple of things. So, oh, if it matches the login pattern, compile back door. If it matches the
+1569300	1579300	compiler pattern, compile back door. What can I say? At the end of the day, we are royally screwed.
+1579300	1586300	At least that's what he said. And that's, again, a quote from Ken Thompson. The world is obvious.
+1586300	1591300	You can't trust code that you did not totally create yourself. Especially a quote from companies that
+1591300	1604300	employ people like me. And he had the time to work for AT&T research. Yeah. So, that's a nice lesson.
+1604300	1610300	So, what we've looked at so far. Basic security definitions. I barrage you with a lot of, like,
+1610300	1616300	terminology, right? Don't worry about that. Look at the services, make it the tax. All right.
+1616300	1622300	I already said this last time, I think, right? Or did I? No, I think I didn't. We didn't cover the slide.
+1622300	1628300	So, there's a directory. You don't have to do this. Okay? If you already feel comfortable with, like,
+1628300	1633300	elementary, if you took an elementary security course somewhere, someplace, don't bother.
+1633300	1640300	If you haven't, you feel like you need a little bit of, like, a background, go there. Google Drive.
+1640300	1646300	I mean, I'll post this. Oh, actually, I already posted it. So, and you can look at, like, CS-134,
+1646300	1652300	which is the undergrad course that both I and Alfred Chen teach at various times.
+1652300	1658300	And then I want you to watch this video. That's kind of entertaining.
+1658300	1666300	And this lady, which is a very, very competent technical journalist, has this nice book, which I'm trying to recommend the book.
+1666300	1674300	The book is fun to read, but the video is, it was actually her interview with someone at UCF a couple of years ago.
+1674300	1680300	And then, of course, with the projects, right? So, team up whenever possible.
+1680300	1687300	Come up with project topics. I did cover this, I think, last time. So, but let's go over it quickly.
+1687300	1695300	So, you can do any of that. If what you have in mind does not fall into any of these categories, talk to me.
+1695300	1700300	The sooner the better. It's okay. I mean, this is not an exhaustive list.
+1700300	1703300	If you have some great idea, you want to do it as a project, talk to me.
+1703300	1708300	What I want to make sure you don't do is don't double-dip. Okay?
+1708300	1713300	So, what does double-dip mean? It means that you are doing research with your advisor.
+1713300	1718300	Say you're a PhD student, doing research with your advisor on the, I don't know, security for underwater basket weaving.
+1718300	1724300	And you say, oh, you know, that's my topic, research topic, I'm going to do part of it in the project discourse.
+1724300	1729300	No. You're already doing that research, that's great, fine, whatever. Leave it alone.
+1729300	1734300	Oh, you're doing research in, I don't know, some other, sorry, you're doing a project in another course.
+1734300	1737300	I don't know, machine learning. That requires a project, or database.
+1737300	1740300	Let's say you take a database course, they have a project in climate.
+1740300	1744300	You can't commingle them. Okay? So, no double-dipping.
+1744300	1748300	Now, if you have a project that you've done somewhere, or you're doing somewhere, and you say,
+1748300	1754300	well, that project has nothing to do with security, and I'm going to introduce some cool security features to my project,
+1754300	1761300	as long as both instructors know it, me and the other person, and we're okay with it, that may be possible.
+1761300	1763300	Does that make sense?
+1763300	1768300	It gives you a pretty wide playing field.
+1768300	1772300	Any questions?
+1772300	1775300	Okay.
+1775300	1779300	We're ready.
+1779300	1784300	We're going to go breeze through this pretty quickly.
+1784300	1792300	Yeah, this is like, often I just like, in the past I sometimes let students kind of go through it themselves,
+1792300	1800300	but I found it useful, at least go through part of it, in class.
+1800300	1812300	So, this is kind of a blitzkrieg, a tour of network security from this book by Computer Networking by Kuroza Ross.
+1812300	1814300	Has any of you seen this book?
+1814300	1816300	Or used it in your networking course?
+1816300	1819300	It's quite popular.
+1819300	1823300	Anyway, you may or may not have seen this chapter, or at least covered that chapter,
+1823300	1837300	because a lot of times networking courses, especially in UC, which is only 10 weeks, they don't cover security.
+1837300	1839300	Alright, so just a quick roadmap, right?
+1839300	1847300	So the idea behind this chapter, very dense chapter, is to give you kind of very, very quick overview of network security
+1847300	1853300	before we get into more interesting topics, which is what this class is supposed to be about.
+1853300	1858300	So, you need to be conversant in some very basic photography.
+1858300	1866300	Now, if you look at the slide, the pointer I gave earlier about this 134 course, you get more than basic stuff there.
+1866300	1870300	There's like a third of the course is crypto.
+1870300	1873300	But you don't need to absolutely go there.
+1873300	1880300	You know, if you understand these slides that I'm presenting today, you should be okay.
+1880300	1885300	So, remember the networking there, or the network hierarchy, right?
+1885300	1890300	The layer hierarchy of, well, seven layers, roughly.
+1890300	1893300	The question is, well, where do we reduce security?
+1893300	1895300	And the answer is very obvious.
+1895300	1897300	You can't introduce security in just one layer.
+1897300	1900300	You have to pretty much introduce them in every layer.
+1900300	1901300	Right?
+1901300	1902300	So here, a physical layer, right?
+1902300	1904300	Physical layer is radio, right?
+1904300	1905300	Today, it's pretty much radio.
+1905300	1907300	Sometimes it's optical, right?
+1907300	1909300	Just to the optical network.
+1909300	1915300	Sometimes it's some other kind of quantum, right?
+1915300	1918300	These days, quantum is, you know, becoming popular.
+1918300	1920300	So there's, of course, quantum communication.
+1920300	1921300	And that's what they're up.
+1921300	1923300	But most of today's communication, right?
+1923300	1926300	Data link, right?
+1926300	1929300	That would be something like Ethernet, right?
+1929300	1934300	Some form of Ethernet, whether it's wired Ethernet or wireless Ethernet.
+1934300	1936300	Network layer, we have IP, right?
+1936300	1940300	IP is the lingua franca of the Internet, right?
+1940300	1943300	It's the only thing that makes the Internet, not the web.
+1943300	1945300	IP is what makes the Internet.
+1945300	1949300	We have the transport layer, TCP, UDP, RTP.
+1949300	1952300	And then the session layer, like all the socket stuff.
+1952300	1957300	TLS sort of lives up there, too.
+1957300	1959300	Then you have applications.
+1959300	1962300	And then above that, you have the presentation software, essentially,
+1962300	1967300	that faces us, the user-facing software.
+1967300	1972300	So what are we looking at?
+1972300	1977300	Well, a physical layer, which is essentially the layer that,
+1977300	1981300	like if you are using, oh, a bunch of you are using your smartphones
+1981300	1983300	and your laptops.
+1983300	1985300	Well, I don't know, let's forget smartphones.
+1985300	1990300	A lot of people here who are using your tablets and laptops,
+1990300	1994300	probably you're not communicating via cellular,
+1994300	1996300	although you could, in principle.
+1996300	2003300	The chances are you are communicating to the access point, right?
+2003300	2009300	And you are sending wirelessly, of course, the packets,
+2009300	2011300	and receiving packets from the access point.
+2011300	2014300	Some of you are supposed to be talking to each other directly,
+2014300	2016300	using Wi-Fi directly, but that's unlikely.
+2016300	2020300	Most of you probably don't know each other at that point.
+2020300	2023300	So what could be done at that level, right?
+2023300	2027300	At that level, you are susceptible to jamming.
+2027300	2029300	So if I say, you know what?
+2029300	2031300	I'm going to be a hardest about this class.
+2031300	2033300	None of you are going to be browsing the internet.
+2033300	2036300	While I lecture, I will bring a jammer here
+2036300	2038300	and jam this class, right?
+2038300	2041300	So that y'all won't be able to, you can still use your computers,
+2041300	2043300	but you won't be able to use your Wi-Fi.
+2043300	2046300	There are even cellular jammers.
+2046300	2048300	Though they are illegal.
+2048300	2051300	I think they are illegal.
+2051300	2056300	Unless you have, like, some more enforcement permission.
+2056300	2059300	But definitely Wi-Fi jammers I could bring.
+2059300	2062300	And say, okay, no Wi-Fi for you.
+2062300	2063300	Not sure if that...
+2063300	2065300	There are probably also Bluetooth jammers.
+2065300	2066300	But anyway, so what is a jammer?
+2066300	2067300	It's a noise jammer, right?
+2067300	2070300	It generates noise, large amounts of noise
+2070300	2072300	on a particular radio frequency.
+2072300	2074300	It prevents you from communicating.
+2074300	2077300	Now, you will all know that I'm jamming you, right?
+2077300	2081300	Because your interface will realize that it's being jammed.
+2081300	2085300	Or I could just jam this.
+2085300	2088300	And prevent you from essentially accessing the exit.
+2088300	2089300	You will know.
+2089300	2091300	Jamming is what's called an active attack.
+2091300	2093300	It's not subtle.
+2093300	2095300	Okay?
+2095300	2099300	What other things happen in the physical area?
+2099300	2101300	RF fingerprinting.
+2101300	2103300	You might say, what is RF?
+2103300	2107300	Well, radio frequency fingerprinting allows me,
+2107300	2113300	after observing, then sniffing on the traffic going on here.
+2113300	2116300	To essentially come up,
+2116300	2119300	and I might have to use some machine learning a little bit,
+2119300	2125300	to come up with a set of features that describe uniquely your Wi-Fi interface.
+2125300	2128300	As opposed to his, as opposed to his.
+2128300	2129300	Your interface.
+2129300	2133300	And then, of course, I have a profile for his, and for his, and for his.
+2133300	2135300	So, why is that an attack?
+2135300	2137300	Why is that something to be concerned about?
+2137300	2142300	Well, it allows me to then identify your interface,
+2142300	2144300	in some other place in the world.
+2144300	2146300	At some other time.
+2146300	2148300	It allows me to track you.
+2148300	2149300	Right?
+2149300	2151300	And link you.
+2151300	2152300	Right?
+2152300	2154300	Even if you paint your laptop black,
+2154300	2157300	and put a paper bag over your head,
+2157300	2159300	and I don't know who you are,
+2159300	2161300	but I'll know it's the same interface.
+2161300	2164300	Does that make sense?
+2164300	2166300	So, you might think this is a bit of exotic,
+2166300	2167300	why is this an attack?
+2167300	2168300	Trust me, it is.
+2168300	2170300	It is a problem.
+2170300	2171300	Yeah.
+2171300	2172300	Is that for the same class of devices,
+2172300	2173300	or specific?
+2173300	2174300	My last problem?
+2174300	2176300	Uh, I think it's,
+2176300	2178300	okay, depending on,
+2178300	2182300	I didn't say anything about what kind of fingerprinting software I would use,
+2182300	2189300	but, yeah, there are some simple things that will basically, you know,
+2189300	2191300	from your MAC address,
+2191300	2195300	I'll be able to tell, like, if it's a, what devices,
+2195300	2196300	like, it would be an Apple.
+2196300	2199300	I might not be able to tell that it's a particular model,
+2199300	2201300	but I'll know this is an Apple.
+2201300	2202300	Right?
+2202300	2205300	The MAC addresses and Wi-Fi,
+2205300	2207300	in general, the Ethernet MAC addresses,
+2207300	2209300	they have some structure.
+2209300	2213300	So, I should be able to tell the manufacturer,
+2213300	2216300	and maybe sometimes the model, depending,
+2216300	2219300	because they are globally administered, the Ethernet MAC address.
+2219300	2220300	Or at 40 AM.
+2220300	2221300	All right.
+2221300	2226300	So, and then can I,
+2226300	2230300	but that just tells me broadly what kind of device this is,
+2230300	2231300	but it doesn't tell me,
+2231300	2236300	for example, if two of you have the same model of the MacBook,
+2236300	2239300	maybe I won't be able to tell the difference with that simple approach
+2239300	2240300	by just examining the MAC address,
+2240300	2243300	but if I actually listen to the features,
+2243300	2247300	because no matter how much the manufacturers try,
+2247300	2251300	there are imperfections in manufacturing.
+2251300	2252300	Right?
+2252300	2255300	So, the two identical laptops,
+2255300	2258300	their interfaces will not have the same characteristics.
+2258300	2259300	Yeah?
+2259300	2262300	Is it illegal to use a MAC address?
+2262300	2265300	Is that illegal or, yeah?
+2265300	2266300	What do you mean?
+2266300	2269300	Well, it's not illegal to modify a MAC address.
+2269300	2272300	Can I just use other people's MAC address or something?
+2272300	2274300	Well, to use other people's MAC address,
+2274300	2276300	you have to modify yours.
+2276300	2277300	Is that illegal?
+2277300	2278300	I don't think so.
+2278300	2281300	Don't vote me on it, but I believe it's not.
+2281300	2284300	In fact, some laptops,
+2284300	2288300	some phones allow you to change a MAC address.
+2288300	2291300	In part, I think for the same reason,
+2291300	2292300	that it's to prevent tracking.
+2292300	2295300	A lot of devices just like randomize your MAC address.
+2295300	2296300	They do randomize.
+2296300	2297300	For every connection you use.
+2297300	2298300	Yeah.
+2298300	2299300	That's right.
+2299300	2300300	But they have to do it within reason.
+2300300	2301300	They cannot like,
+2301300	2304300	I think there are some rules that they have to abide by when they randomize a MAC address.
+2304300	2305300	Yes.
+2305300	2306300	Yeah.
+2306300	2309300	But to be fair, I don't know the details.
+2309300	2311300	But I'm pretty sure there are rules.
+2311300	2314300	Like there are some things you cannot do when you just pick,
+2314300	2317300	you cannot just pick a completely random MAC address.
+2317300	2318300	There are some things you cannot do.
+2318300	2323300	But yes, there are devices that do it on purpose to prevent tracking.
+2323300	2324300	Which might be okay.
+2324300	2331300	So for example, if you have an LG smartphone and every time it turns on,
+2331300	2335300	it generates a different LG phone MAC address.
+2335300	2336300	That might be okay.
+2336300	2337300	Yeah.
+2337300	2338300	For a popular phone.
+2338300	2339300	Okay.
+2339300	2340300	Yes.
+2340300	2341300	I will know it's an LG phone.
+2341300	2342300	But is it the same?
+2342300	2343300	I have no idea.
+2343300	2345300	I'm pretty sure they do it for every connection you have too.
+2345300	2349300	And then just use the same one for that connection forever.
+2349300	2352300	Do you remember which models tend to do that?
+2352300	2353300	I swear I had a phone.
+2353300	2356300	I think it's more popular with smartphones than with laptops.
+2356300	2358300	I think it was my phone.
+2358300	2359300	I don't know.
+2359300	2361300	The new MacBooks they ran the way they were connected.
+2361300	2362300	Which one?
+2362300	2363300	The new MacBooks they ran the way they were connected.
+2363300	2364300	They do?
+2364300	2369300	But I think it's still a Mac and Apple.
+2369300	2370300	Probably.
+2370300	2371300	Yeah.
+2371300	2373300	Or you could check it out.
+2373300	2377300	That's potentially a subject for a project type study.
+2377300	2381300	The investigation of MAC address usage in popular devices.
+2381300	2384300	That would be interesting to know.
+2384300	2385300	Okay.
+2385300	2387300	So that's the physical layer.
+2387300	2392300	The data layer, you have a tax on the wireless protocols.
+2392300	2393300	Right?
+2393300	2397300	So you have all these WPA, WAP, WAP.
+2397300	2398300	I don't know.
+2398300	2400300	All these three letter protocols.
+2400300	2401300	Right?
+2401300	2404300	That one can configure to use with the access.
+2404300	2405300	Right?
+2405300	2406300	So when you configure it.
+2406300	2407300	It's like at home.
+2407300	2409300	When you set up your home router.
+2409300	2410300	Right?
+2410300	2411300	You get all these choices.
+2411300	2412300	Right?
+2412300	2414300	What kind of security protocols are you configured?
+2414300	2416300	Some of them are more secure than others.
+2416300	2417300	But they can be attacked.
+2417300	2423300	Also, here at the data link layer, you see the MAC addresses.
+2423300	2428300	So another reason is like knowing who is communicating with whom.
+2428300	2429300	Right?
+2429300	2432300	So the metadata is available.
+2432300	2436300	Meaning that you learn, assuming for example MAC addresses don't change.
+2436300	2439300	You learn which MAC addresses are appropriate to which other MAC address.
+2439300	2444300	Now typically in this environment, most of you would be talking to the access point and
+2444300	2445300	receiving from the access.
+2445300	2446300	Right?
+2446300	2448300	Sending and receiving from the access point.
+2448300	2459300	The other thing you can do with, by the way, with the physical layer is use some very simple property called RSSI.
+2459300	2462300	Received signal strength indicator.
+2462300	2470300	Which allows you to essentially tell how far, within reason, how far a particular interface is.
+2470300	2471300	Right?
+2471300	2477300	So as I'm standing close to his laptop, the RSSI is going to be high.
+2477300	2480300	I'm stepping away and it's going to lower and lower and lower.
+2480300	2484300	So you might be able to triangulate devices like that.
+2484300	2485300	Okay.
+2485300	2488300	And the network layer, well, there's tons of attack.
+2488300	2489300	This is the IP.
+2489300	2490300	Right?
+2490300	2491300	The IP layer.
+2491300	2493300	Whether it's V4 or V6, it doesn't really matter.
+2493300	2495300	There are tons of attack.
+2495300	2498300	Address spoofing, of course, is a very easy attack.
+2498300	2500300	There's something called smurfing.
+2500300	2501300	We'll talk about it.
+2501300	2510300	Transport layer has sin flooding, RIPs, and sequence number prediction attacks on TCP specifically.
+2510300	2513300	Then there are like UDP attacks, but they're less interesting.
+2513300	2517300	A session layer, well, also the zone.
+2517300	2519300	I think that's outdated.
+2519300	2525300	And then in the application layer, well, you have all these bugs and exploits.
+2525300	2528300	Because application layer is very rich with features, right?
+2528300	2530300	You have tons of software there.
+2530300	2533300	So the attack surface clearly grows.
+2533300	2535300	And then the human layer, right?
+2535300	2536300	The presentation.
+2536300	2542300	Well, then here we have essentially phishing and social engineering and all kinds of catfishing.
+2542300	2552300	So it gives you an idea that you probably know the answer to the question, where do you put your security?
+2552300	2553300	And which layer?
+2553300	2559300	The answer is, you've got to put it in each layer, because each layer demands its own attention.
+2559300	2560300	Right?
+2560300	2563300	So what do we do?
+2563300	2567300	Well, this isn't the seven layer hierarchy, right?
+2567300	2568300	Anymore.
+2568300	2570300	But we start with the security building blocks.
+2570300	2572300	So a lot of times, not always.
+2572300	2573300	Definitely not always.
+2573300	2579300	But a lot of times, the building blocks, the most primitive blocks are cryptography.
+2579300	2585300	And then using those, we build protocols and various techniques and then policies.
+2585300	2587300	And then we implement them.
+2587300	2589300	And then we pass one on to end users.
+2589300	2591300	And the end users are typically, what are they exposed to?
+2591300	2594300	Well, they're exposed to some policy configuration.
+2594300	2598300	Like for example, you at home configuring your home router, right?
+2598300	2599300	Or installing some IoT device.
+2599300	2602300	You are kind of like your own manager.
+2602300	2611300	But you're generally also exposed to things like password managers and captchas and multi-factor authentication, etc.
+2611300	2615300	And company security policies also that require physical.
+2615300	2617300	Like carrying a badge.
+2617300	2619300	Having a smart card.
+2619300	2622300	Having some kind of a key fob, right?
+2622300	2623300	Dongle.
+2623300	2624300	It opens doors.
+2624300	2630300	All compliance with biometrics, right?
+2630300	2637300	So, roughly speaking, what is network security?
+2637300	2642300	Well, it has all these buzzwords, right?
+2642300	2646300	It's all about things like antigenciality, right?
+2646300	2649300	Because in a network, you usually have a sender and a receiver.
+2649300	2652300	Sometimes, of course, you have more than one sender and more than one receiver.
+2652300	2653300	Right?
+2653300	2660300	But in the most basic case, you have like Alice and Bob talking to each other in some way.
+2660300	2663300	Who should see messages, right?
+2663300	2665300	Who should see that communication?
+2665300	2671300	So, we use crypto for the most part where sender encrypts, receiver decrypts.
+2671300	2672300	Authentication.
+2672300	2677300	Authentication is we want to make sure that the origin of the message is the one that we believe it is.
+2677300	2678300	Right?
+2678300	2683300	And the sender here wants to confirm that the receiver is the one that is going to receive it.
+2683300	2686300	And the receiver wants to confirm that the sender is the one who sent it.
+2686300	2690300	Integrity is tightly coupled with authentication, right?
+2690300	2692300	But not exactly the same.
+2692300	2695300	Don't make a mistake of like thinking it's the same thing.
+2695300	2703300	Integrity is about making sure that the data arrives intact and any modification is detected.
+2703300	2704300	Right?
+2704300	2706300	But typically they are conjoined.
+2706300	2707300	They are put together.
+2707300	2712300	Meaning that you want to have both origin authentication and data integrity.
+2712300	2715300	And that access control, right?
+2715300	2718300	Who has access to what resources?
+2718300	2721300	Meaning, yes, network resources, for example.
+2721300	2723300	And availability.
+2723300	2729300	So availability is just making sure that something is available that is not being, say, subject to
+2729300	2730300	denial of service attack.
+2730300	2731300	Right?
+2731300	2737300	Let's say you're trying to log in to a particular site, but it's being hosed down as a victim
+2737300	2739300	to denial of service.
+2739300	2741300	That is an attack on availability.
+2741300	2744300	It's not an attack on access control.
+2744300	2749300	But if somebody, you know, walks into a door that you have a badge, you open the door and
+2749300	2751300	somebody tailgates you, that's an access attack.
+2751300	2752300	So we all, right?
+2752300	2753300	You've seen these characters before, right?
+2753300	2754300	Alice, Bob, Eve.
+2754300	2755300	No gender associations.
+2755300	2756300	We just use two pictures sometimes.
+2756300	2757300	These are just communicating parties.
+2757300	2758300	In most cases, not always, Alice and Bob are, well, the communicating parties, the benign characters.
+2758300	2765300	And Eve, as you can see, is not a benign character.
+2765300	2766300	That's Nenders.
+2766300	2767300	That's Nenders.
+2767300	2768300	So, but Alice and Bob, don't fall into this trap of thinking, oh, Alice and Bob are always
+2768300	2769300	people, right?
+2769300	2770300	They're not necessarily people.
+2770300	2771300	They could be, users.
+2771300	2773300	But they could be web browser, web server, or let's see if they can be able to access
+2773300	2774300	to their own.
+2774300	2777300	And in most cases, not always, Alice and Bob are, well, the communicating parties, the
+2777300	2778300	benign characters.
+2778300	2781300	And Eve, as you can see, is not a benign character.
+2781300	2782300	That's Nenders.
+2790300	2793300	So, but Alice and Bob, don't fall into this trap of thinking, oh, Alice and Bob are always
+2793300	2794300	people, right?
+2794300	2795300	They're not necessarily people.
+2795300	2796300	They could be.
+2796300	2797300	Users.
+2797300	2804340	users, but it could be web browser, web server, right, there could be client-server and online
+2804340	2810120	banking, there could be a smartphone and a base station that it connects to, it could
+2810120	2817620	be a laptop and an access point, it could be a ground station and a satellite, that
+2817620	2827360	could be your Alice and Bob, clients and DNS, right, everybody knows DNS, okay, routers exchanging
+2827360	2833320	like BGP routers exchanging, border routers are adjacent, exchanging information, game
+2833320	2840260	players and multi-user games, distributed multi-user games, wireless, okay, tons of examples, so
+2840260	2850300	just remember, they're not people, they don't have to be. So, what can the adversary do?
+2850300	2856580	Many things, at the very least, the adversary, the most sort of benign adversary, if such
+2856580	2865600	a thing exists, is an eavesdropper. An eavesdropper, well, that's what the name suggests, eavesdrops.
+2865600	2871500	Intercepts, communication, analyzes, whatever they can see, even if communication is encrypted,
+2871500	2880640	as I mentioned last time, even encrypted communication leaks a lot of interesting information.
+2880640	2890560	Insertion, well, that means of fabrication, introducing fake or fabricated messages into communication.
+2890560	2897460	Impersonation, spoofing addresses, hijacking, taking over a connection, existing connection,
+2897460	2904400	denial of service, etc. This is not an exhaustive list, okay, this is just examples of what an
+2904400	2916560	adversary could do, could try to. Any questions? None of this is very difficult. Crypto! Right, very quick
+2916560	2925460	tool for crypto. Hmm, language, first language, right? Encryption, decryption, right? Encrypt, decrypt.
+2925460	2932460	One reverses the other. Sometimes people use the word enciphered, deciphered. It's not common that people use that.
+2932460	2941560	It does the same thing. Alice, Bob, want to communicate, make sure that Eve does not attack that communication.
+2941560	2947460	Alice must have an encryption algorithm. Bob must have a decryption algorithm, okay?
+2947460	2954460	Now, this picture is misleading. I mean, I took a lot of these slides from, of course, Kuro's, Ross book,
+2954460	2959460	but this picture, because these people are, after all, networking people, they're not security people.
+2959460	2971360	So, why is this picture misleading? Because sometimes, sometimes, secrecy is not important.
+2971360	2979360	Sometimes Alice and Bob want to communicate, a little bit, a lot, doesn't matter. But they don't care if anybody hears them.
+2979360	2985260	Can you think about real-world scenarios? It might not be important to keep communication secret.
+2985260	2992260	What could be more important is to keep communication authentic and maintain integrity.
+2992260	2999260	That means messages sent should not be modified by anybody. Messages cannot be fabricated by somebody.
+2999260	3005260	So, somebody cannot just, like, insert a message saying this comes from Alice to Bob, or this comes from Bob to Alice, right?
+3005260	3012160	That will be, like, fakery. So, sometimes the biggest concern isn't secrecy.
+3012160	3016160	Sometimes the biggest concern is authenticity and integrity.
+3016160	3026160	And, in fact, if you look at something like some of the mechanisms we will talk about later in the course, like TLS and IPsec,
+3026160	3032160	they all, you may not know this, but they all have no encryption option.
+3032160	3039060	For situations where encryption is not important, but authentication and integrity are, right?
+3039060	3043060	Sometimes it's called null encryption. In TLS, I think it's called null encryption.
+3043060	3047060	Anyway, back to this picture. In this picture, if you believe Coroz and Ross,
+3047060	3050060	I mean, they're really talking about encrypting communication, right?
+3050060	3054060	Saving it from being learned by the adversary.
+3054060	3062960	So, here we have a key that Alice has and Bob has, and ideally, they should be the same.
+3062960	3067960	Right? The KAB and KBA should be the same. Otherwise, well, things don't work so well,
+3067960	3073960	because you want to encrypt a plain text, a message with a key, and decrypt it with the same key
+3073960	3077860	in order to get the message back on the box side.
+3077860	3091860	And that black arrow between the green boxes, that's like a wireless hop like this, or it could be, I don't know, 20 hops on the internet.
+3091860	3097760	I make no assumption about this distance here.
+3097760	3103760	Right? It doesn't matter. It could be very close, or it could be very far.
+3103760	3110760	Now, this picture again is very simplistic, because in the real world, there are two types of cryptography.
+3110760	3116760	Symmetric, or asymmetric, or public key. So, asymmetric, public key are synonymous.
+3116760	3126660	Symmetric. So, in the symmetric cryptography world, Alice and Bob must have the same key.
+3126660	3135660	The same key that encrypts must be the key that decrypts. And that's how it works.
+3135660	3140660	In the public key world, and this is where it gets tricky if you've never seen public key crypto,
+3140660	3146660	the encryption key and decryption key are different. And Alice and Bob do not need to share a secret.
+3146660	3155560	In order to communicate. And that's what confuses a lot of people, and this is where they see it for the first time.
+3155560	3164560	So, let's look at, quickly, symmetric. Well, symmetric is easier. It's been around since, I don't know, ancient Rome, or ancient Sparta, anyway.
+3164560	3170560	The oldest, I think, encryption method was used by the Spartans.
+3170560	3178460	They would tie a leather belt around the upper arm of a messenger.
+3178460	3179460	Leather belt.
+3179460	3182460	They would write a messenger.
+3182460	3186360	And then unwrap the belt.
+3186360	3189360	So, the belt was unwrapped.
+3189360	3192360	The letters would make no sense.
+3192360	3197360	You have to put them back on the bicep of the messenger in order for them to make sense again.
+3197360	3200360	And a cue.
+3200360	3205360	Now, if the messenger lost a lot of weight in transit, maybe a problem.
+3205360	3209260	Then there was the Caesar cipher, right? Everybody know Caesar cipher?
+3209260	3214260	Encrypt letters by shifting them by three positions or something like that.
+3214260	3219260	Anyway, so, ancient ciphers were like this. They're typically mono-alphabetic.
+3219260	3222260	I mean, mono-alphabetic means you encrypt one letter at a time.
+3222260	3225260	Because, remember, in the past, people didn't have cubes.
+3225260	3228260	So, nobody cared about encrypting bits.
+3228260	3232260	Right? People wanted to encrypt words or letters.
+3232260	3235160	Usually letters.
+3235160	3238160	So, you had a plain text, and you had a ciphertext.
+3238160	3239160	Right?
+3239160	3242160	And then, you substitute one letter for another.
+3242160	3245160	Now, in this case, look at the plain text there.
+3245160	3247160	That's an alphabet.
+3247160	3249160	That's the 26-letter alphabet.
+3249160	3254160	If you permute the alphabet, like shuffle, shuffle, shuffle, shuffle, shuffle.
+3254160	3256160	Stop at some point.
+3256160	3257160	You have a random permutation.
+3257160	3258160	Right?
+3258160	3261160	That's a random permutation.
+3261160	3267060	So, if you have the regular alphabet, and you have the permutation right underneath,
+3267060	3269060	you can now encrypt.
+3269060	3270060	Yes?
+3270060	3271060	Sure.
+3271060	3272060	It's like a code book, right?
+3272060	3273060	You encrypt.
+3273060	3274060	Every time you see an A, it becomes an M.
+3274060	3276060	Every time you see a J, it becomes a D.
+3276060	3278060	Blah, blah, blah, blah, blah, blah.
+3278060	3279060	So, Bob, I love you.
+3279060	3281060	Alice becomes blah, blah, blah, blah, blah.
+3281060	3284060	It looks like a strange language.
+3284060	3285060	Right?
+3285060	3286060	That's the encryption.
+3286060	3288060	Side of the case.
+3288060	3293960	How many permutations of alphabets are there?
+3293960	3295960	46 factorial?
+3295960	3296960	Close enough.
+3296960	3299960	Exactly 46 factorial.
+3299960	3301960	Not a small number.
+3301960	3309960	And if you use some other alphabet, I don't know, like Hungarian or Russian, you get more
+3309960	3313860	because they are more letters.
+3313860	3315860	Scary number.
+3315860	3318860	So, seems like, why are we using this cipher?
+3318860	3321860	Have you seen this cipher being used?
+3321860	3323860	Probably not.
+3323860	3325860	And for good reason.
+3325860	3329860	The problem is nobody cares about the key.
+3329860	3333860	This cipher can be broken without knowing the key.
+3333860	3337760	Well, not exactly, but close enough.
+3337760	3343760	If you try to break it by brute force, you will indeed have to try up to 26 factorial combinations.
+3343760	3349760	Not quite as bad because on average, you know, asymptotically, it should be 46 factorial over 2.
+3349760	3351760	Big deal, right?
+3351760	3354760	Take a huge number divided by 2, you still have a huge number.
+3354760	3358660	But to be precise, it's 26 factorial over 2.
+3358660	3361660	But, rest assured, you don't need to do this much work.
+3361660	3364660	Because if you know the message is written in English, right?
+3364660	3368660	And we do usually know what language the message is written in.
+3368660	3372660	All you need to do is, hmm, I can't find a slide on this.
+3372660	3373660	No, I don't.
+3373660	3382660	Well, the letter frequency of the English language is public and well-known.
+3382660	3386560	What are the two most frequent letters in English language?
+3386560	3388560	Take a wild guess.
+3388560	3389560	E.
+3389560	3391560	E, what's the second?
+3391560	3393560	T.
+3393560	3396560	By far, they tower above, you see a bar chart, they tower above.
+3396560	3398560	E is like way up.
+3398560	3400560	Then T is like the second.
+3400560	3402560	And H is very close, okay?
+3402560	3406560	So, anybody seen The Game of Jeopardy?
+3406560	3408560	The stupid TV show.
+3408560	3409560	At least you might know.
+3409560	3411560	Well, they do something like this.
+3411560	3415460	You might have guessed like a phrase or something by guessing letters, right?
+3415460	3419460	Well, it's a very similar idea to cryptanalyze this cypher.
+3419460	3421460	First, you look for the most frequent letter.
+3421460	3423460	That should be an E.
+3423460	3427460	So, whatever that is, if it's a Z, you say, ah, Z is the most frequent letter in the encryption?
+3427460	3428960	That's an E.
+3428960	3430460	What's the second most frequent letter?
+3430460	3431460	Oh, that's a T.
+3431460	3435560	Well, that gives you already a lot, because then you can start deducing others without really
+3435560	3436560	knowing about that.
+3436560	3440460	So, you see, the whole thing will fall like a house of cards.
+3440460	3444460	So, you don't need to actually, that's called a shortcut, right?
+3444460	3448460	There's an example of a shortcut where you don't need to brute force the key space, you'll
+3448460	3450460	just figure it out some other way.
+3450460	3459360	All right, so, but we don't use such stupid cyphers anymore, clearly.
+3459360	3461360	So, back to symmetric key.
+3461360	3466360	Symmetric key world, we assume that Alice and Bob have the same key, KAB.
+3466360	3468360	Don't ask me how they know it.
+3468360	3469360	Okay?
+3469360	3474360	Just let's believe in the fairy tale that there's a book that at some point in life, both Alice
+3474360	3477360	and Bob, a little bird sat on their shoulder and gave them KAB.
+3477360	3478360	Okay?
+3478360	3481360	So, now they are the only ones in the world who know KAB.
+3481360	3487260	So, if Alice has a message, she puts it through an encryption algorithm together with a key.
+3487260	3490260	You see the key coming from the top.
+3490260	3492260	Message M becomes a cypher text.
+3492260	3495260	In other words, the annotation KAB over M, right, is encryption.
+3495260	3501260	And when Bob receives the message, he knows the same key, he inputs it into this green box,
+3501260	3503260	and out comes the plain text, right?
+3503260	3508260	Because encryption reverses encryption.
+3508260	3509260	Yay!
+3509260	3510260	Okay.
+3510260	3514260	How do they agree on the key?
+3514260	3518260	Like I said, so far we don't ask hard questions.
+3518260	3523260	DES was a historic cypher.
+3523260	3527260	In fact, well, when I was in grad school, that's what was being used.
+3527260	3533260	That was a long time ago, but I can only give you an example because it's a great example
+3533260	3535260	of a symmetric cypher.
+3535260	3537260	In fact, the variation of DES is still used.
+3537260	3545260	In fact, you will see it in CLS, but it's called triple decimal, three decimal.
+3545260	3548260	This was standardized in 1993.
+3548260	3554260	It's a laughably insecure cypher today, but not insecure because the design is bad.
+3554260	3557260	It's insecure because its key is short.
+3557260	3564260	So DES, or the data encryption standard, has a 56-bit symmetric key.
+3564260	3572260	Actually, it's 64 bits, but 8 bits are what's called parity bits, so they're guessable.
+3572260	3575260	They're not relevant.
+3575260	3582260	So with 56-bit key, you have 2 to the 56 of possible combinations.
+3582260	3589260	Now, up to about mid-1990s, that was a very scary number.
+3589260	3593260	Because if you had the space of 2 to the 56, that was essentially meant that you had to
+3593260	3600260	try, on average, 2 to the 55 possibilities before you could break the key, brute force.
+3600260	3603260	And there were no real shotguns.
+3603260	3605260	But as time progressed, Moore's law, right?
+3605260	3607260	Everybody knows Moore's law.
+3607260	3613260	Right about mid-1990s, people started saying, hmm, this ain't comfortable anymore.
+3613260	3619260	Breaking DES, that is trying doing, designing a specialized ASIC, right?
+3619260	3628260	A specialized computer, specialized hardware, to do 2 to the 55 trials of DES, is no longer
+3628260	3629260	not viable.
+3629260	3631260	A nation-state would, in principle, do it.
+3631260	3634260	So that's why the government started looking for new standards.
+3634260	3637260	And today, of course, we don't use this.
+3637260	3639260	There are other standards, like AES.
+3639260	3644260	But it's harder to show, because it's a more complicated cipher.
+3644260	3647260	So, alright.
+3647260	3652260	DES is not used today because its key is short.
+3652260	3654260	Not because it's insecure, fundamentally.
+3654260	3657260	There are no backdoors to it.
+3657260	3661260	This is the version that is still used today, occasionally.
+3661260	3666260	Which is essentially a triple application of DES.
+3666260	3669260	So it's like triple encryption, if you will.
+3669260	3672260	But it's with two keys, and I might show you later on how it's done.
+3672260	3674260	But anyway.
+3674260	3679260	Here's this diagram.
+3679260	3686260	DES, you don't need to remember this, because it's just a quick tour.
+3686260	3689260	DES is an interesting beast.
+3689260	3693260	Essentially, the plain text, remember it's all about encryption, right?
+3693260	3700260	So it treats plain text message as a sequence of 64-bit blocks.
+3700260	3706260	So DES operates on one 64-bit block at a time.
+3706260	3707260	Okay?
+3707260	3710260	So for DES, there's nothing more than 64 bits.
+3710260	3714260	Just one 64-bit input, one 64-bit output.
+3714260	3721260	If you ever hear of a cipher that outputs fewer bits than it takes on, run away.
+3721260	3722260	Right?
+3722260	3724260	It cannot possibly be.
+3724260	3729260	Something cannot encrypt and produce fewer bits than it takes on.
+3729260	3733260	If it produces more bits, that's believable.
+3733260	3735260	But fewer bits, no.
+3735260	3737260	Because you obviously lose information.
+3737260	3740260	Alright, so 64-bit input, 64-bit output.
+3740260	3745260	Well, in the beginning, there's something called the initial permutation.
+3745260	3748260	And at the end, there's something called the final permutation.
+3748260	3751260	And in the middle, there are 16 rounds of torture.
+3751260	3757260	Like, pure, sheer torture that the bits in that 64-bit block.
+3757260	3761260	They, like in an ancient, like medieval torture machine,
+3761260	3764260	they get expanded and contracted, and expanded and contracted,
+3764260	3769260	and swapped around, and at the end, the 64-bit input comes out.
+3769260	3774260	I could tell you in more gruesome details how this happens,
+3774260	3776260	but if you look at them in more detail,
+3776260	3779260	you will see that actually no information gets lost,
+3779260	3782260	but a lot of information gets permuted and moved around.
+3782260	3790260	And the only operations that Des uses are essentially shifts and XORs.
+3790260	3793260	Sort of like bit shifts, yeah?
+3793260	3797260	Everybody knows what a bit shift is, like left shift, right shift, XOR.
+3797260	3800260	So the operations are super primitive.
+3800260	3806260	There's no, like, exponentiation, multiplication, nothing like that.
+3806260	3807260	Right?
+3807260	3809260	Just like a super primitive thing.
+3809260	3812260	And that's why it was designed to be fast and hardware.
+3812260	3816260	And hardware does not like complicated operations.
+3816260	3820260	And there are 16 rounds of torture.
+3820260	3823260	And in every round, a different...
+3823260	3827260	You see there, on that side, you have a 56-bit key?
+3827260	3829260	That's one of the inputs, right?
+3829260	3831260	Of course, there has to be a key.
+3831260	3835260	And that key gets mangled into 16 different variations.
+3835260	3839260	And every variation corresponds to a round, of which there are 16.
+3839260	3841260	And it's in case 16.
+3841260	3842260	Right?
+3842260	3844260	So there's from one key, 16 subkeys are derived.
+3844260	3848260	And each one is used in its own round.
+3848260	3855260	So, it's like a horror movie for that, of some sort.
+3855260	3862260	But, unlike a horror movie, you can get your data back by encrypting.
+3862260	3863260	So, there is actually...
+3863260	3869260	I'm not showing you in here, but there is a similar algorithm that is inversed,
+3869260	3871260	that is performing decryption.
+3871260	3877260	So, in DES, like in many block ciphers, encryption and decryption are not identical.
+3877260	3879260	But they are inverses of each other.
+3879260	3884260	Okay?
+3884260	3891260	Now, in 2001, NIST, National Institute of Standards and Technology,
+3891260	3896260	which is the US government agency, which I think still exists, despite current administration,
+3896260	3903260	for now, it regulates all kinds of standards, including like, I don't know,
+3903260	3909260	what qualifies as purified water, all the way to encryption.
+3909260	3912260	So, they do all kinds of standardization.
+3912260	3914260	And they had a call, right?
+3914260	3916260	So, they don't themselves come up with standards.
+3916260	3919260	They actually, like, announced a competition.
+3919260	3923260	And so, there was a competition that was won by this, what we call today, AES,
+3923260	3926260	Advanced Encryption Standard.
+3926260	3931260	And, unlike DES, which operates on 64-bit blocks and uses a 56-bit key,
+3931260	3935260	AES gives you a lot of flexibility.
+3935260	3940260	It uses 128, 192, or 256-bit keys.
+3940260	3942260	Allows you this.
+3942260	3947260	And you can also use, as far as input blocks, you can use 128 input, 192 to 56.
+3947260	3949260	You can mix and match.
+3949260	3956260	It means you can take a version of AES and use 256-bit blocks with 128 input keys.
+3956260	3959260	So, any combination is fine.
+3959260	3970260	So, brute force on the smaller, or sort of the weakest version of AES would be 128, 128.
+3970260	3979260	And the brute force attacks will take you something about this amount of time.
+3979260	3983260	Which most of us do not have, sadly.
+3983260	3986260	But on DES, the same attack will take one second.
+3986260	3989260	Because the key is so short.
+3989260	3993260	Not so much because block size is small, but, like, the key is short.
+3993260	3996260	So, as you all probably know, right?
+3996260	4001260	As you increase the bit size of something, the complexity grows exponential, right?
+4001260	4002260	And the increase.
+4002260	4009260	So, you might seem like, well, what's the difference between, let's say, a 56-bit key and an 80-bit key?
+4009260	4011260	Astronomical.
+4011260	4014260	The difference is astronomical.
+4014260	4021260	A 56-bit key today is blatantly, plainly insecure.
+4021260	4025260	So, if you use 56-bit encryption, it can be broken in seconds.
+4025260	4029260	If you use 80-bit encryption, which is the minimum you should be using today,
+4029260	4031260	well, it will take years.
+4031260	4037260	Not trillions, a dozen years, which, again, most of us don't have.
+4037260	4044260	So, just keep that in mind.
+4044260	4048260	Anyway, just another sort of picture of how the block cipher works.
+4048260	4049260	Right?
+4049260	4050260	This is a general structure.
+4050260	4053260	It's not about how DES or ES.
+4053260	4060260	They're all sort of block ciphers, and the name for this whole family is called phi-stone ciphers.
+4060260	4062260	Don't ask me why.
+4062260	4065260	But, essentially, they all look like this.
+4065260	4068260	The 64-bit, of course, changes, right?
+4068260	4072260	It's not only 64 or 8.
+4072260	4078260	Now, what is important to understand is the way that I described DES, right,
+4078260	4083260	and the way that I talked about DES, is it's called a block cipher.
+4083260	4090260	Block ciphers process input, plain text, one block at a time, right?
+4090260	4093260	There's a key, and there's one block of input.
+4093260	4096260	And there's the next block of input, same key.
+4096260	4098260	Third block of input, same key.
+4098260	4099260	Right?
+4099260	4106260	And so on and so on, until the end, until the plain text is exhausted, and we have the second.
+4106260	4112260	So, that is called electronic codebook mode, ECB.
+4112260	4113260	Right?
+4113260	4128260	Because, essentially, if you have the same input block appearing twice in the message, and you use the same key to encrypt that input block, well done.
+4128260	4133260	The output will be the same.
+4133260	4134260	Does it make sense?
+4134260	4135260	Right?
+4135260	4136260	Same key.
+4136260	4137260	Right?
+4137260	4140260	But you have repeated inputs.
+4140260	4144260	Then, the ciphertext will be repeated as well.
+4144260	4145260	Right?
+4145260	4155260	So, if you encrypt the word hello twice, if it appears twice in the plain text, and you encrypt it separately, the word hello, whatever the key is, it doesn't matter.
+4155260	4158260	The ciphertext will be the same.
+4158260	4159260	Does that make sense?
+4159260	4162260	Holler if it doesn't make sense.
+4162260	4170260	In other words, if you encrypt like this, like I just described, the ciphertext will display patterns.
+4170260	4175260	Like, whenever you have repeated plain text, you have repeated ciphertext.
+4175260	4176260	Think about it.
+4176260	4187260	If the message is always, if the message from Alice to Bob always says, hi dear, then that first block will always be, hi dear.
+4187260	4188260	Right?
+4188260	4191260	But the encryption of that will always be the same.
+4191260	4192260	Right?
+4192260	4193260	If they use the same key.
+4193260	4194260	Yes?
+4194260	4199260	That's not good in the real world.
+4199260	4202260	In the real world, that leaks information.
+4202260	4203260	Right?
+4203260	4204260	Leaks information.
+4204260	4206260	It says, this is the same block as here.
+4206260	4210260	Or, it was the same block as we saw in the previous message.
+4210260	4214260	So, that's why we use something called cipher block chaining.
+4214260	4215260	CBC.
+4215260	4216260	Okay?
+4216260	4220260	CBC is, you can use it with any cipher.
+4220260	4223260	It doesn't matter if it's DES, ES, whatever.
+4223260	4227260	But here, you chain the blocks.
+4227260	4236260	That is, you take the message, and before you encrypt it using a block cipher, you XOR it.
+4236260	4238260	Everybody knows XOR, right?
+4238260	4242260	You XOR it with the encryption of the previous block.
+4242260	4245260	Anybody see a problem?
+4245260	4249260	Any problem with that?
+4249260	4250260	No?
+4250260	4251260	No problem?
+4251260	4252260	What about the first block?
+4252260	4255260	What's the previous block for the first block?
+4255260	4256260	No?
+4256260	4257260	No problem?
+4257260	4258260	No problem?
+4258260	4259260	No problem?
+4259260	4262260	What about the first block?
+4262260	4265260	What's the previous block for the first block?
+4265260	4268260	No, I have one.
+4268260	4271260	That's why usually there's something called IV.
+4271260	4272260	This.
+4272260	4274260	Initialization vector.
+4274260	4279260	And that better be picked unique every time.
+4279260	4283260	Because if you don't pick it unique, what happens?
+4283260	4289260	If the message starts with Hi, Bob, and the initial selection is always the same, the beginning
+4289260	4292260	of the message is always going to be the same.
+4292260	4295260	So, think paranoid.
+4295260	4298260	This is a security class.
+4298260	4299260	Alright.
+4299260	4300260	Enough for today?
+4300260	4301260	Enough for today.
+4301260	4304260	So, most of this, I will post this lecture today.
+4304260	4306260	There's more stuff there.
+4306260	4310260	I will try to cover about 15, 20 more minutes of it, and I'll leave the rest of it to you.
+4310260	4315260	Because it's not really, like, truly this course material.
+4315260	4317260	It's kind of background stuff.
+4317260	4320260	Okay, see you next Tuesday.

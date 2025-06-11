@@ -1,0 +1,846 @@
+start	end	text
+0	14880	Routing protocols came back to the late 50s, early 60s and they predate the internet because
+14880	20320	there were other networks out there in the world besides the internet.
+20320	27040	In fact, even today there are other networks, we just don't study them as much, they don't
+27040	33520	impact us very much. There were other architectures that were used for private networking and even
+33520	43040	internet but different types of internet. Anyway, there are two, okay, how many people have heard
+43040	54160	of Dijkstra's algorithm? Oh, that's better. So what does Dijkstra's algorithm do? Shortest
+54160	61760	path. So, right, given a network or a graph, and a graph and a network are kind of the same,
+62800	69360	right, given a connected, not fully connected, but just a connected graph, Dijkstra's algorithm
+69360	81440	will find you a route, i.e. path between A and B. Okay, and it does it depth first.
+83360	91360	How many people heard of Bellman Ford? Oh, good, so you heard it in the same context probably in an
+91360	97360	algorithms course or some other kind of elementary course. Usually they're covered also, re-covered,
+97360	104960	in networks course, as a prelude to route. Bellman Ford is also an algorithm for graphs,
+105920	111040	which are networks, connected, right? If you have a disconnected graph, it doesn't work.
+111040	125520	And it is breadth first, okay? Not depth first, breadth first. And so for the last 70 years,
+126080	133040	there's been a lot of debate about which one is better, right? They're not compatible. They're sort
+133040	142560	of mutually exclusive. You either do breadth first or you do depth first. And so today's internet started
+142560	154720	out, okay, by using a depth first, right? Something called OSPF, okay? And today it's using,
+154720	162160	sorry, it was started out using depth first, now it's using kind of a breadth first. Something called distance vectors.
+162720	169440	Okay, I'll explain quickly how distance vector link state works because they don't have slides
+169440	175280	on it thinking that you already know. Link state works like this. It basically dice this.
+175280	182480	Every node in the network, okay? And imagine we are a graph. So every adjacent person to you is a link, right?
+186160	192880	Everybody broadcasts the state of their links. For example, I'm connected to this guy and this guy.
+194560	202080	And I'm going to broadcast to anybody who hears that these are my connections. Let's go. Alice, Bob.
+202080	212960	Everybody else does the same thing. He broadcasts that he connected just to one person, him. He broadcasts that
+212960	219280	he's connected to, I don't know, two people. Everybody broadcasts that the state of their connection,
+219280	227200	who they are adjacent to. And that broadcast is flooded. Does everybody know what flooded means?
+228160	235040	It means when you receive a packet, you forward it out on all other interfaces, right? Which means on all other
+235040	247840	connections. You following me? So this generalizes into following. Everyone receives the state
+247840	259680	state of every other node in the network. Yeah? You following me? If everything is flooded and broadcast,
+259680	270400	and let's say at roughly the same time, then everyone learns who is connected to whom directly. Yes?
+270400	280560	Okay, that allows you to construct a graph. And do the shortest path, for example, the extra set.
+281680	289200	Okay? Explicitly knowing what the path is. Right? You actually learn the path.
+289200	296000	Right? So for example, to get to you over there, I will learn the path I have to go from him and him.
+296000	301760	That's my shortest path. I could also go around, but the shortest path is like this. Okay?
+302400	304400	This Daxter's algorithm tells me that.
+304400	314800	So that's link state. Why it's called link state? Because everybody broadcasts the state of their links.
+314800	318160	Links means immediate connections. Immediate, right? Who am I connected to?
+318160	326800	So if my connection to him is down, well, I obviously don't broadcast the fact that I'm connected to him.
+326800	333200	I only broadcast the fact that I'm connected to him. And in fact, he's the only one who hears my broadcast.
+333200	340240	But then he rebroadcasts my broadcast, and everybody knows that, oh, well, he attends his name, right?
+340240	344960	But everybody knows that, oh, let's see, this guy has a path of length one to me.
+344960	356720	You learn this. You learn this. Later you rebroadcast. He learns that, he learns that you have a path of length three to me.
+356720	367280	And he knows exactly the path. Okay. That's link state. Distance vector is very different. Distance vector says
+367280	376640	everybody in the beginning has a table of all other nodes. So we know the population.
+378720	385360	Okay. But I tell, I essentially tell my neighbor, my direct neighbor, let's say I'm here.
+386480	391600	My direct neighbor is these two. I tell them my routing table.
+391600	399840	In the beginning, my routing table is very simple. It lists all of you all with a distance infinity.
+401520	412720	Except for them. It says, I can get, I'm connected to him with one half. I'm connected to him with one half.
+413680	417200	If I'm telling you that I'm connected to you with one half, it's useless. You already know this.
+417200	428160	But what you don't know is I have one half to him. Okay. So all of a sudden, now you, instead of having distance infinity to him, say,
+428160	435520	oh, the distance is two and I am the next half. Does everybody understand this example?
+435520	445840	And then he broadcasts his own table, which has infinity for everybody except for me, him, and the two people here.
+448400	454560	This converges. Everybody does the same thing in the distributed fashion. This converges.
+454560	464320	This converges. And at the end, every node has a table with every possible destination, but not the path.
+465520	472480	They don't know the graph at all. What you do know is that to get to Isita over there,
+472480	483440	I, it costs one, two, three, four hops, and the next hop is him. But I don't know how it goes after that.
+483440	491360	Totally ignorant. To get to that guy in the white hat, it will be one, two, three, four. Again, next hop is him.
+491360	497280	To get to that guy over there, next hop is him, and the distance is three. One, two, three.
+497280	504160	One, two, three. That's what we learned in the end in distance vector. Why? Distance vector.
+504160	510960	Because the table shows the distance. And the stuff we exchange out is called distance vectors.
+513280	515200	That is a crash course for free.
+515200	531520	Well, today's internet, okay, does not use either, truly speaking. It uses a hybrid. It's called path vector.
+532960	540160	So, and it does not use actual IP addresses as a destination, or it does not even, in fact,
+541120	547200	you can think of it as using autonomous systems. Remember ASs, ADs, as destinations. So, it does it
+547200	554880	at a coarser granularity, right? Now, there's some details here, the IP prefixes included, but I'm
+554880	560800	going to abstract it all the way. So, think about it that today's internet operates on the granularity
+560800	566960	of autonomous domains or autonomous systems, right? Because they're just these blocks, right? What happens
+566960	573120	within each autonomous system, which could be small or large, is of no concern to BGP, which is the
+573120	578080	protocol that runs it. Inside, you can run whatever routing protocol you want. You could run the same
+578080	585040	BGP, border gateway, inside, or you can run OSPF, which is open shortest path first, or you can run RIP,
+585040	592640	which is a reliable internet, routing internet protocol. There are a number of other options
+592640	599680	you can do. You can do static routing inside also, like manually configured static routing,
+599680	605520	and check out, from the andres of the era that I described here, okay? So, what you do inside it,
+605520	611920	inside it, AS or AD is up to you, but the main thing is, if you want to connect to the internet,
+611920	627280	right, your border routers, right, must run BGP, which is how ASs do routing, okay? So, today,
+628720	636880	routing is done, and then it's BGP level done on the basis of ASs or IDs, but they are still using IP
+636880	643840	addresses for routing, right? The actual routers use IP addresses, and that's because for each AS or AD,
+643840	650880	there is a bunch of IP prefixes associated. So, when you know a route to a particular AS,
+650880	657600	you can associate a bunch of IP prefixes with it, okay? And that allows us to route IP back.
+657600	670640	Right. So, as I said before, and you know, routing, mechanical actually, routing can be by explicit
+670640	677760	IP addresses, but usually it's done by longest prefix match. Remember I discussed that? Longest prefix.
+677760	682240	When the router looks in its table, it looks for the longest prefix. The longest prefix may actually
+682240	688000	be an explicit address, the full address, or it may be some part of the address, like the preface,
+688000	692240	but it looks for the longest prefix, because that's likely to be the best route.
+696400	698320	Right. So, this is basically what I told you.
+701440	705840	So, we're going to forget link state for now, and we're going to forget the dyke strap. I'm going to
+705840	710480	look at Bellman Ford, right? And this is essentially what is at the heart of BGP today.
+714080	720320	There are some pitfalls here, and some of the problems with routing aren't necessarily security
+720320	727600	problems. They are sometimes reliability and fault tolerance problems, except often we cannot tell
+727600	733040	what causes it, right? Is it like accidental malfunction, stupid operators,
+733040	742080	just making mistakes, or is it, or implementation errors in the routing protocol implementation,
+742080	748880	or an attack? So, one of the problems that occurs in distance vector protocol is what's called a
+748880	754960	split horizon update. I don't should just understand how that works. So, I'm going to, this picture shows
+754960	761840	you a kind of a very silly network, which is called a line network, where it's not very interesting,
+761840	770240	right? But it happens in the real world, where you have essentially, well, these entities. You can
+770240	776000	think of them as domains, or you can think of them as just routers or hosts. It doesn't really matter.
+776000	785440	But the thick white lines represent direct connections, okay? So, the idea is, like in distance
+785440	796160	vectors, I just tried to explain, that you see here, G1, it is directly connected to A.
+797840	804880	So, what it does in a normal distance vector protocol, it says, look, it advertises. It tells everybody,
+804880	814240	hey, hey, I have a hop one distance to A. Okay? So, it informs G2. It cannot inform anybody else,
+814240	820560	right? It just, well, it can inform A, but A already knows. So, it informs G2. And so, they quickly,
+820560	830800	and then G2 says, oh, and good news, wonderful. And now I have a two hop route to A. So, it advertises to G3.
+830800	841280	And G3 says, yay, I have a three hop route to A. Oh, why? And G2, right? And then, so on. And G4 lands it
+841280	848320	with a distance four. Finally, G5 lands it. After a bit, it says, I have a five hop route to A. Okay.
+851840	859120	But suppose the link here goes down. Maybe an accident, maybe a hack, we don't care.
+859120	868800	Something bad happens. And this G1 and A get disconnected. So, what the protocol does,
+869920	880240	naively, G2 says, I have a route of length two to A. Remember that? From the previous slide.
+880240	889760	So, G1 says, I have a route with a length infinity. I cannot reach A. The link is down.
+891120	897520	Right? That's a fact. So, when the link is down, you're supposed to mark something with infinity.
+897520	905200	Because you cannot destination unreachable. But, G2 remembers good news from the previous slide.
+905200	913040	And it says, I can get to G1. Sorry, I can get to A in two hops. Remember, distance vector does not
+913040	920320	remember routes. It remembers distances and next hop. That's how it's specified.
+920320	929040	So, basically, what will happen is, G1 will say, all right, two is better than infinity.
+930320	939920	Strictly less. So, now I have a route of length three to eight. That's what G1 thinks.
+939920	951280	And then it starts sending packets. Right? To G1. Sorry, if G1 has packets to A,
+951280	956080	we'll send it to G2. G2 will send it back to G1. G1 will then send it to two. And there's a loop.
+957840	966160	Okay? So, there you have it. And then, what's called is, they're counting to infinity. Because
+966160	974000	as they realize, oh, well, you know, there's no path of length two, they're going to increment it. Right?
+974000	982240	One by one. And it keeps going. It's called counting to infinity problem. Okay?
+984400	992160	Now, once you understand the problem, the solution is easy. Okay? The solution is easy. It says,
+992160	1000160	you know, do not advertise on the same interface that your receipts are. That is, do not re-advertise.
+1000160	1004640	Do not tell me that I can reach things in. Do you follow?
+1004640	1022480	So, as they exchange routing tables, they both start incrementing, right, by one, the cost to get to A.
+1023120	1028080	A is completely unreachable. There's no way to reach A. But they both think that there is a way to reach.
+1028080	1033600	Just the cost goes up. And this can take for a very long time. Infinity is a large number.
+1034320	1039840	Or whatever the number of bits reserved for the hop count, right, eventually will overrun. So,
+1041520	1048400	if you start, if you stop doing that, right, so you don't, you don't advertise, re-advertise a route
+1048400	1053280	on the interface you received it from. That solves the problem. But it only solves the problem if you
+1053280	1058960	have these kind of very small loops. Does that make sense?
+1062160	1068960	Now, link state does not have this problem. Remember how I described link state? In a link state
+1068960	1075120	protocol, every node in the network receives an entire map of the network. So, loops are impossible.
+1075120	1097280	And so, that's why BGP, one of the reasons, BGP today is what's called path vector. So, it works like a
+1097280	1102080	distance vector, but with a, with a twist, with a, with a, with a, like a, a little bit extra feature.
+1103040	1118080	That, in addition to every table, it's actually every node.
+1118080	1127120	So, normally, a distance vector table would be like this. You will have three columns,
+1127840	1134080	and here will be destination, uh, cost,
+1134080	1146800	next hop. Right, that's a distance vector table. And here it will say something like, I don't know,
+1146800	1152720	uci.edu. I'm just, I'm not putting it, it could be numeric, okay, but I'm just putting, let's say,
+1152720	1160320	some prefix corresponding to uci.edu. And, uh, this could be, I don't know, 12, meaning 12 hops away.
+1160320	1169760	And the next hop is, uh, well, depending, if this is, I don't know, uh, uci.davis,
+1171600	1176320	that, that's the table at uci.davis, and this would be the next hop is, uh, ucla.
+1180000	1185040	Okay, that's how a distance vector table sort of looks like. But, in BGP,
+1185040	1202080	this is not next hop, but that, entire path. So, this will be like uci.edu, uh, I don't know,
+1202080	1211520	SoCal, uh, blah, blah, blah, com, cox.net, et cetera, et cetera. Right? So, it will be a sequence of,
+1211520	1216560	uh, of hops, of actual hops that you have to take, like, a full rep.
+1218400	1225040	One of the reasons this is done is to avoid loops. Right? If you know the actual path, right?
+1226800	1230480	You can see when there are loops, right? You will see that, for example, something is,
+1230480	1236800	you are about to add yourself to the path, and you're already there. That's a loop. Right?
+1236800	1241120	So, this allows you to avoid loops. The other reason BGP is like this,
+1241760	1247360	anybody want to guess why? Remember, this is for the internet, right? Worldwide.
+1250320	1250880	Any idea?
+1254080	1258080	It's not a, it's not a trivial question. If you're not familiar with internet,
+1258080	1260160	individually, it has to do with politics.
+1260160	1267360	The internet covers the world. Right? Pretty much every country has access to the internet.
+1267360	1270240	Every country has at least one AS. At least one.
+1273760	1275920	Countries provide transit services, right?
+1278480	1285200	This explicit remuneration of the path is there so that countries can decide,
+1285200	1288800	oh, I don't want to take this path. I prefer this other path.
+1290880	1296960	Okay? So, for example, if you're sending packets, if you're sending traffic from here to India,
+1298240	1303120	maybe you don't want to transit Iran, even though they offer attractive transit service.
+1304320	1310240	Right? Or maybe if you're in South Korea and you want to go, you know, connect to Mongolia,
+1310240	1316560	you don't want to go through North Korea, even though they'll promise you amazing transit service.
+1317680	1320320	Okay? That's why.
+1321200	1325840	So, if this, if you have just distance vector that shows you the distance and the next path,
+1325840	1331360	you don't know the route, right? But when you, with path vector, which is what the GP is,
+1331360	1336160	you actually not only know the distance, but you also know the cost, but you also know the actual path.
+1336720	1342480	But the path is not at the level of ID routers. The path is at the level of domain.
+1344080	1350960	Does that make sense? Because you don't really care, and it's too much, it's really TMI to know which hops you'll take.
+1350960	1357520	What's important is which domains you will cross. In other words, who is going to look at your traffic?
+1357520	1374560	So, fundamentally, it works just like distance vector, right? The adjacent routers exchange
+1375120	1380000	their routing tables, but the routing tables also contain, you know, in addition to the distance,
+1380000	1389440	these paths, right? So, and you can have multiple paths, and there's another thing. You can, in fact,
+1389440	1395760	should have multiple paths for each destination, because you may prefer one path over another.
+1396720	1401360	Like, for example, if you have only one path to get to, I don't know, Mongolia, and it goes to North Korea,
+1402000	1406800	you don't have a choice. If you don't like North Korea, you don't communicate with Mongolia.
+1408000	1413760	But, you know, there is internet, it's very unlikely there is only one path, right? Maybe you can go
+1413760	1422960	through Russia. Could be a little safe, or not? I mean, you can go through, you know, Leos,
+1424640	1429600	low Earth orbit satellites. I gotta do that. Everybody's favorite, Elon Musk.
+1432080	1439520	That's a domain, by the way, right? The Starlink system is a domain, is an internet domain. It's just
+1439520	1445600	not on, it's not on this Earth, but it's still a domain, right? So, you communicate via the internet,
+1445600	1449840	you go, you go to the satellite, for the satellite, then you, you're transiting a satellite domain.
+1450400	1450880	It's barely.
+1455280	1459920	So, here's a BGP example, just that makes it a little bit, perhaps a little more. So, here we have a very
+1459920	1465440	small toy network, right? These are, these are domain, or ASs, right? Autonomic systems. So,
+1465440	1472160	not individual hosts. So, here we have, these are strangely connected networks, but the main thing
+1472160	1477360	is that, for example, AS2, right? The one in the middle, provides transit service for 7. It's
+1477360	1484000	a kind of a transit domain. So, basically, traffic to and from 7 goes through 2, except for 8, right?
+1484000	1493840	8 can reach 7. So, what does 2 advertise? 2 says, well, sorry, 7 says, hello, to its neighbors, right?
+1493840	1498560	I don't know how to reach anybody, but I'm 7, and I'm one hop away from you.
+1502960	1510000	And 2 says, to its neighbors, hello, I'm 2, and if you want to reach 7, you got to go for me,
+1510000	1519920	and the path is to 7. So, like, 1, the main 1 says, oh, if I want to go to 7, I have to,
+1519920	1524800	the path is first 2, then 7, and that's it, right? That's the path.
+1524800	1534080	The vector, right? And they, let's see, 3 and 6, in turn, also advertise to their neighbors,
+1534080	1541120	that if you want to go to 7, you got to go for them, right? So, 3 says to 4. You want to go to 7?
+1541120	1548400	That's me, right? And the path is 3, 2, 7. And 5 learns that the path to 7 is 6, 2, 7.
+1548400	1553920	You see the fundamental difference here. Sometimes it's not, it's not, it's a little subtle, right?
+1553920	1559760	So, in development 4, or the distance vector, path vector protocols, nobody computes the routes,
+1559760	1565840	like, from a graph. You follow? In link state, everybody actually gets a graph,
+1566640	1572560	information about the complete graph, and computes, cranks the, you know, the Dijkstra's protocol,
+1572560	1577520	and computes the route to every destination. Here, you don't compute the route. You kind of,
+1577520	1585360	like, adjust your tables. So, computationally, that's the claim, it's an argument going on for
+1585360	1589440	50 years among networking people and theory people, so which particle is better?
+1591760	1599920	Nobody knows, but one claim is that, oh, well, this one is computationally less costly, yeah?
+1602240	1606400	And so, finally, like, again, I'm not going to go through the whole example, but, you know,
+1606400	1614880	and then 5 says, oh, I'm 5, and sends to his neighbors, and then 6 re-advertises that,
+1614880	1620480	and then the 2 learns to get to 5, you have to go for 6, and then, et cetera, et cetera, right? Okay?
+1621600	1622400	Enough, right?
+1622400	1631440	So, everybody learns like that. So, this slide is, unfortunately, woefully outdated.
+1632800	1638240	I don't know, it's like 8 years old, at least. Sorry about that. But nothing is lower than what you see.
+1639040	1649920	Numbers are higher. So, BGP routing tables, 125,000 address prefixes, right? Typical BGP routing tables.
+1650880	1655520	That's not ASs. I mean, although routing is done at AS level, it's still prefixes, right?
+1655520	1661920	And these prefixes map to about 70,000 to 80,000. Map the paths. Why such disparity?
+1664320	1670880	Why there are, like, about a magnitude more prefix or IP prefixes than there are paths?
+1670880	1690400	Many prefixes live in the same AS, right? So, right, the IP prefixes, you know, at endpoints,
+1690400	1699280	right? We don't route to transit domains, right? Why would you, you know, normally, right? You don't
+1699280	1706640	communicate. There's no web server in a giant, fast, 500,000 dollar router in the middle of the internet.
+1707360	1714720	Right? You don't go to it. You go to the endpoints, yeah? Or CDNs, right? Sort of endpoints.
+1714720	1723120	Okay? So, that's one. There are way more destination prefixes than there are paths. So,
+1723120	1727600	many of them live in the same place. Like, UCI probably has a bunch of IP prefixes.
+1728480	1733440	But anybody who wants to route packets to UCI still uses the same path to get to them.
+1735840	1740800	I think that figure is about double. So, there are probably, like, 20,000 BGP routers.
+1741360	1746800	But mind you, when I say BGP routers, I mean border routers are all autonomous systems.
+1748240	1754480	And every autonomous system, right here, must have at least one if it's a stub autonomous system,
+1754480	1758800	meaning it's like the endpoint, right? And at least two if it provides transit services.
+1758800	1765120	But usually, if it provides transit services, like NISP is kind of a transit service, like COX
+1766320	1769600	or AT&T, they'll have hundreds of BGP routers.
+1771680	1777600	Okay. Again, there's probably about 3,000 ASs today. Don't know. You can probably look this up
+1777600	1780960	very quickly. Somebody should look up on Google and tell me how many ASs there are today.
+1781680	1785600	Definitely more than 2,000. But this information should be available.
+1786880	1792320	Some 6,000 or so. That probably did not change very much. But 6,000 organizations own prefixes,
+1792320	1799520	meaning they have registered prefixes that are assigned to them. There's parts of the IP address space
+1799520	1808080	that is fixed for them. And this is still the case, I believe. I think I recently saw a paper
+1808080	1813040	where they confirm that this is still the case. So what does that mean? It means on the internet,
+1813040	1819440	things are not as far as you think, in terms of like how many ASs you transit on the way to the
+1819440	1829920	destination. So think about it. This says an average route length for internet traffic is less than four.
+1829920	1842720	And this is length in terms of AS hops, not in terms of like IP router hops.
+1843280	1850480	IP router hops is my favorite number, but in terms of AS hops is less than four. And what it tells you is that
+1850480	1858320	there's the AS where the packet starts and AS where the packet ends. That's two.
+1860400	1865200	And there's at least one transit usually, right? Unless the two ASs are connected, which is usually
+1865200	1872080	not the case. But so there's like three is kind of a given. But then think about the real world,
+1872080	1880400	right? You could be connecting to like, I don't know, Solomon Islands, or Madagascar, or somewhere
+1880400	1887920	in the North Pole to a US Arctic station. And still, there may be AS paths that are longer, like six or
+1887920	1893840	seven, but the average is less than four, which means the average is like source domain, destination
+1893840	1896240	domain, and two transits in the middle. Yeah?
+1896240	1901920	But that happens to average most of my requests. I'm not going to the North Pole. I'm going probably
+1901920	1909200	somewhere within America. Okay, you are within the US. So you're going to
+1911760	1913040	Google, right?
+1915920	1917600	The route length is probably three.
+1919840	1925440	That's my guess. But you can do a tracer route, and from tracer route, not always, but you can often
+1925440	1932400	deduce how many AS hubs. Because tracer route might give you a reverse DNS lookup,
+1932400	1938240	which might actually give you that, not this VIP address of what hubs your packets are taking,
+1938240	1945040	but the actual host name. And so by the host name, you can tell the domain. And the domain often tells
+1945040	1954960	you that that's a different AS. Does that make sense? So it has to be that at least three, maybe four,
+1954960	1961920	you know? I mean, let's say you go to, I don't know, state of Florida government website, maybe it will
+1961920	1969760	be four in that case, you know? Or some small department in the University of Lower East South Dakota
+1969760	1974880	somewhere. Yeah. But that's my guess. But it has to be at least three.
+1974880	1983440	So, I don't know if it's surprising, most people get surprised by this, that it's such a small number
+1983440	1990880	of AS hubs. And 50% of the routes are less than four, and that's, tells you like that's the typical
+1990880	1998480	thing, right? Source domain, source AS, one transit, and the destination. 95 of them are less than five,
+1998480	2005440	five. Which means you really have to try hard to get, to hop through more than five domains.
+2009200	2013920	And mind you, internet includes, I think it also includes like cellular, for example,
+2013920	2021440	you're using your phone, right? And you don't have Wi-Fi access, or you're just not using Wi-Fi.
+2021440	2027760	But you're still using IP, right? And so you do IP over cellular. So you're still kind of,
+2027760	2029200	in fact, a part of the internet.
+2033680	2034400	Alright, so,
+2036880	2043760	a lot of problems in BGP, not just BGP, but other routing protocols, but BGP has been susceptible to it,
+2043760	2048080	is something called black-holing. Black-holing is when a router
+2048080	2061840	advertises routes that are too good. Right? And it's like, I have a distance one route to everyone.
+2064000	2071360	Okay? And so, what happens? Like bees and honey, right? To use a more polite analogy,
+2071360	2082000	everybody starts sending traffic to me. Okay? Which is problematic in two cases, right? First,
+2082000	2088000	if this happens accidentally, I get swamped. Clearly, right? Because everybody says, oh,
+2088000	2094720	forget all the other routes I have. This guy has route one distance to everybody. Must be amazing.
+2094720	2101760	So everybody starts sending traffic to me. There's congestion near me. I get totally, you know,
+2101760	2107440	strangled. Nobody can communicate to anybody, right? Because everybody's sending traffic to me
+2107440	2114480	that I can't handle. Right? So, big problem. Black-holing, right? But it can also be done
+2114480	2120000	maliciously. So it has happened accidentally. It has happened maliciously. When somebody says,
+2120880	2127920	I don't like this company over here. This, I don't know, this whistleblower.com. I don't like them.
+2129120	2133680	So I'm going to advertise a very low dislike. I'm one hop from whistleblower.com.
+2134560	2138880	So essentially, she's like, send me their traffic. Send me their traffic. So I can just discard it.
+2141200	2147920	Okay? This has happened as well. Back in prehistory, before you all were born, 97,
+2147920	2153840	was already after the birth of the web. That was the day the internet died. I remember it.
+2155920	2163920	This Florida ISP de-aggregated its BGP routing tables and basically re-agnetized it. It basically
+2163920	2171760	said what I just described. It said, I'm neighbors with everybody. Bam! The internet just crawled
+2171760	2179520	first like slow down like within seconds. Okay? So it has best route to everywhere on the internet.
+2179520	2184960	And of course, it has to happen in Florida. Right? The most intellectual state in the nation.
+2184960	2196000	Also, today, this is not the case, but the original BGP protocol or sort of the virgin BGP protocol,
+2196000	2205120	the vanilla one, has no security. Again, designed for a friendly internet, right? So no authentication,
+2205120	2212640	no integrity. Right? Today, it still doesn't, but there's something called BGP sec, which is the,
+2212640	2218560	like IP sec for BGP basically, kind of like. And it establishes secure tunnels
+2220560	2225280	between adjacent BGP routers. So it sends that updates over those secure tunnels.
+2226560	2232960	Now, that prevents somebody from injecting packets, right? Or modifying packets between two adjacent
+2232960	2239520	routers. But it does not prevent the malicious router from advertising, uh, from advertising valid,
+2239520	2246000	uh, sort of, uh, malicious routes because, you know, it's, it's, it has a secure connection.
+2246880	2252080	So this, this has happened a number of paths. So this is, uh, just for you to read.
+2252080	2264400	This is back in 2003, I think. So YouTube has been around for a long time, right? YouTube actually
+2264400	2272160	predates Google, even though Google owns it, uh, today. But, uh, so YouTube was popular already in
+2272160	2280080	early 2000. So YouTube advertises, see, this is IP prefix. You know, everyone knows this notation,
+2280080	2286720	you know, 22 bits, okay? Um, so it says here on YouTube, you know, and, uh, it's as an AS, right?
+2286720	2290960	It's called, you see there it says AS three, three, six, five, six, one, three, six, five, six, one,
+2290960	2296640	is the autonomous system ID assigned to YouTube. I think it's still in case today. Yeah.
+2296640	2298960	What do you mean by YouTube for names?
+2298960	2304320	Google. Well, I think YouTube was there. YouTube was a company.
+2304320	2308720	I think it came, like, seven years later. Like 2005, it was YouTube.
+2308720	2313920	Wait. 2008. Okay. Do a quick Wikipedia from here.
+2313920	2317520	I did. And? Google was 98. YouTube was 2005.
+2317520	2322320	Google was 98? Nobody heard of it until, like, 2003 or something.
+2322320	2325040	Sure. But even then, YouTube stole them.
+2325040	2327440	So it's later? Yeah, a little bit later.
+2327440	2330080	But it wasn't part of Google. No, it wasn't right now.
+2330080	2331440	Okay. So at least I got one thing right.
+2333040	2340000	Okay. Uh, so there's your YouTube advertising to the rest of the of the world that here I am.
+2340000	2343440	And here the Pakistani government decided that it doesn't like YouTube.
+2343440	2349920	And so a Pakistani ISP, right, telecom, telecom, that is 7557,
+2349920	2352720	advertising, see that 24?
+2357440	2359280	Right? 2865 and 52.
+2359840	2362240	So it basically says, I subsume.
+2362480	2365440	This is a, this is, this is saying, I subsume YouTube.
+2365440	2371520	So all worldwide YouTube traffic went to Pakistan.
+2373280	2373920	For a little bit.
+2374800	2376320	They had to manually intervene.
+2377920	2379440	And it was a two hour outage.
+2379440	2380320	People were incensed.
+2380320	2384320	Valuable videos were not watched.
+2388320	2391440	There were other incidents that one interesting one was the spammers.
+2392400	2397920	So we have a, if we get to it, because we're moving very slow in this class, but steady.
+2397920	2400080	If we get to it, there's a lecture on spam.
+2400080	2407200	But, you know, spammers hijacked a bunch of, a bunch of, kind of a segment of IP prefixes,
+2407200	2412240	allocated to Northrop Grumman, a company you might have heard of, defense company, very large,
+2412240	2416000	located here in Southern California, among other places.
+2416720	2424000	So it was an unused block of addresses that was allocated to Northrop Grumman since like 20 years
+2424000	2426240	before that, okay?
+2427120	2431120	They were, God knows what they were supposed to use it for, but it was allocated to them.
+2431120	2434880	Now, a bunch of spammers hijacked that.
+2436000	2438960	They just used those addresses to send spam.
+2440960	2441920	But guess what happened?
+2443280	2446880	I don't know if they intended it or not, but one, one important consequence is
+2447520	2454880	that because of their, there were already anti-spam measures, the entire block wound up on the, on the, on the, on the, basically blacklist.
+2456560	2456880	Okay?
+2458400	2465280	So, took two months to actually manually reclaim ownership of those addresses and remove them from the blacklist.
+2467120	2472160	Then there was this Malaysian ISP, also that hijacked the prefix of Yahoo.
+2472160	2480640	Nobody knows if it was accidental or political, not sure what Malaysia has against Yahoo, I don't think, probably it was accidental.
+2483040	2488800	This was more like, more likely to have been political, the Turkish ISP did this in 2004.
+2489760	2493520	But similar thing to what the Pakistan ISP did in a previous slide.
+2496160	2499280	This is a much more recent, this is only four years ago.
+2499280	2502320	Maybe you remember, there was a Facebook outage.
+2502320	2511920	And this was, this was accidental, but could have been malicious, but in this case, actually, no, Facebook, basically, itself, didn't do itself.
+2511920	2516480	It withdrew routes of, of, of its prefixes from the DNS servers.
+2517280	2520720	And basically, nobody could resolve Facebook addresses anymore.
+2522400	2526000	Which means, what, like, it's not that Facebook couldn't be accessed.
+2526800	2528160	Facebook was up and running.
+2529120	2536320	But if you type facebook.com, the DNS would not be able to tell you the IP address.
+2537680	2538000	Okay?
+2538320	2542880	So if you had cached, and some people did this, I remember there was a discussion on the forums.
+2543120	2551200	It's like, if you had actually cached the IP address of Facebook, that you could actually type the IP address in the URL, right?
+2551200	2554640	You do know that you can actually substitute the domain name with the IP address.
+2555520	2557680	In your, like, type it in, in your URL.
+2558480	2559760	Well, if you did that, it would work.
+2560320	2562480	But if you type in facebook.com, it wouldn't.
+2562480	2566320	Because, basically, Facebook shot itself in the book.
+2566320	2569360	But it happened, not because of DNS, it did happen because of BGP.
+2571280	2571520	Right?
+2571520	2578720	Because BGP, right, withdrew address prefixes for Facebook's DNS servers.
+2578720	2585760	And when you resolve facebook.com, you can sell Facebook DNS servers.
+2590640	2590960	Okay.
+2592320	2592960	Switch over.
+2593840	2594880	Domain name service.
+2594880	2595680	Nice transition.
+2597280	2598640	Designed by a guy from here.
+2600400	2603120	Got a PhD around 82, 83.
+2603120	2606240	In ICS.
+2607840	2610000	And I met him a bunch of times.
+2610000	2614800	In fact, I worked in the same organization that he, that he was for a few years.
+2615680	2617360	So a guy's name is Paul Macapetrius.
+2617360	2619200	He's kind of a serial entrepreneur these days.
+2619200	2620960	Not much of a researcher or a scientist.
+2620960	2628880	But back in the early 80s, he worked in a place up in Marina del Rey.
+2629760	2631680	Called Information Sciences Institute.
+2631680	2634000	Which is part of USC School of Engineering.
+2634000	2636080	And basically like a research used to be.
+2636080	2637440	Today it's just a development shop.
+2637440	2639760	But back then it was a research think tank.
+2640640	2641920	They did a lot of AI research.
+2641920	2646320	They did a lot of like defense optics and electronics research.
+2646320	2647520	And they did intern research.
+2647520	2649920	So some of the like IP for example.
+2649920	2652160	TCP IP were partly developed there.
+2652960	2654880	At this USC ISI.
+2655600	2660880	So this guy, Paul Macapetrius, he was a staff researcher there.
+2660880	2664000	And he, people say he invented DNS.
+2664000	2665600	There's no such thing as invented DNS.
+2665600	2668320	DNS is a architecture.
+2668320	2673360	What he did is that he realized that there was, the internet was growing.
+2673360	2675440	Even already then, like in the early 80s.
+2676160	2683520	And there needs to be a way to map the human readable host names.
+2684160	2689520	Like foob.bar.com into IP addresses like 128, 195, 2.3.
+2689520	2691040	Which nobody can remember.
+2691040	2691840	Right?
+2691840	2693040	Even back then it was a pain.
+2693920	2696480	So he's the one that sort of realized it first.
+2696480	2699680	And then came up with the first kind of cut implementation.
+2699680	2701360	Of what we today call DNS.
+2701360	2703440	Now DNS has evolved a lot.
+2703440	2705360	It's not like IP.
+2705360	2710320	IP kind of remained, IPv4 remained static since 1980 till what?
+2710320	2712640	Early 40, 45 years.
+2712640	2714160	But DNS evolved.
+2714160	2716400	But the idea behind it is the same.
+2716400	2719440	It's supposed to resolve, right?
+2719440	2723200	IP domain names or host names.
+2723200	2725280	And give you back IP addresses.
+2725280	2729840	It's a hierarchical system.
+2730800	2731120	Okay?
+2731120	2733520	And without it the internet would grind to a halt.
+2733520	2733760	Right?
+2733760	2740400	In the domain name service today, the domain name system is as important as a routing protocol.
+2740400	2740560	Right?
+2740560	2742720	So without routing, the internet dies.
+2742720	2744160	Without DNS, the internet dies.
+2744160	2745760	Not right away necessarily, right?
+2745760	2751520	Because if you cache some DNS addresses, you might not be able to.
+2751520	2753200	You might be able to use the internet for a little bit.
+2754240	2755280	So after a while, I'll be back.
+2756240	2758880	And there are a bunch of these.
+2758880	2759840	What's the root servers?
+2762240	2766240	Anyway, so root servers are like the gods of DNS.
+2766240	2770160	Like they know, they know stuff.
+2773200	2774960	And they are replicated, right?
+2774960	2781280	So they are replicated for fault tolerance and load distribution, load balancing, okay?
+2782080	2782800	Around the world.
+2783760	2788560	And they're not like, there's no like DI there.
+2788560	2791360	They're not trying to be equitable, right?
+2791360	2791920	Or fair.
+2791920	2796880	The reason they are where they are is because of like heavy internet communication.
+2797520	2800400	So they're not trying to say, oh, we should put one in Australia.
+2800400	2801760	Because Australia is a continent.
+2801760	2803360	We should put one in Africa.
+2803360	2805920	We should put one in, I don't know, Siberia.
+2805920	2806400	No.
+2806400	2809440	The idea is, where is the like heaviest communication?
+2810400	2811120	Right?
+2811120	2818640	So it's not driven by so much geopolitical or fairness doctrine, but rather practical stuff.
+2818640	2820240	But where is the traffic?
+2820800	2821920	Most of the traffic, right?
+2821920	2824800	So that's why you see nothing in South America.
+2825920	2829760	South America, as far as the internet goes, is not a powerhouse.
+2830960	2831600	Not a health.
+2831600	2833280	I mean, people obviously use the internet here.
+2833920	2836560	But not as heavily as other places.
+2836560	2837520	Africa, nothing.
+2838720	2839760	Australia, nothing.
+2841360	2843680	This whole chunk of Asia, right?
+2843680	2845520	Or Eurasia, nothing.
+2845520	2846640	But there is something in Japan.
+2848800	2849360	Okay?
+2849360	2853200	And that one must have been more historic, because Japan was one of the first to adopt the internet.
+2854160	2857440	Back in the 70s, or early 80s.
+2857440	2863200	So we have nearby this USCISI, the Marine and Array, that has two root services.
+2863200	2868480	One is actually operated by them, and then is operated by ICANN.
+2868480	2871120	Internet something authority.
+2871120	2879760	It's the organization, non-profit organization that manages essentially the gaming and all kinds of high-level issues for the internet.
+2879760	2883840	And then here, Northern California is a bunch, and then on the East Coast.
+2883840	2887360	Some of these are companies, Verisign and Cogent are companies.
+2887360	2889200	Verisign has been bought, I think.
+2889200	2892720	Then there is another very exciting.
+2892720	2893200	Okay?
+2893200	2899520	Then there is ARL Army Research Lab, US Department of Defense, University of Maryland, Grand One, etc.
+2899520	2899840	Okay?
+2899840	2900560	So you get to see.
+2900560	2903360	Then London has, and then Stockholm has something.
+2903360	2909680	So these are giant, I mean giant in terms of power, not in size, machines.
+2909680	2913760	They get a lot of traffic.
+2913760	2915680	They are super well connected.
+2915680	2916400	Okay?
+2916400	2922160	They have very high bandwidth wires, essentially, or lines connected to them.
+2922160	2923120	Multiple ones.
+2923120	2923360	Okay?
+2923360	2926800	So they should be able to withstand a lot of traffic.
+2928480	2929200	Simultaneously.
+2930240	2930560	Okay?
+2930560	2940320	And so there is this whole architecture for the root that I won't get into that essentially makes
+2940320	2941040	them fault tolerant.
+2941040	2945040	So there have been a number of attacks trying to take down, because if you take down the root service,
+2945040	2946000	you bring down DNS.
+2948160	2949600	But they're very hard to take down.
+2951920	2954000	So what is the root, right?
+2954000	2956240	So remember I showed you a bunch of them, right?
+2956240	2958320	But every root is essentially the same.
+2958320	2964480	There is a root DNS server that is responsible for what's called the dot domain.
+2966320	2966800	The dot.
+2968960	2972320	And then below the dot, you have the top level domains.
+2973600	2987840	Like .com, .net, .org, .iju, etc., .tw for Taiwan, .jp for Japan, .au for Australia.
+2987840	2990080	There are others, there are others like that, okay?
+2990080	2991520	National level domains.
+2991520	2993280	But these are top.
+2994720	2997120	And then .com will be like here, right?
+2997120	2998720	Google.com, etc., etc.
+2998720	3002640	These are authoritative domains for like organizations.
+3004640	3007360	WordPress, Wikipedia, Harvard, etc., right?
+3007360	3009440	So UCI would be under HTML, of course.
+3009440	3015600	And then, yeah, I'm not showing you all the levels that were the hierarchy, because obviously,
+3016960	3019680	actually, UC.edu would be here.
+3019680	3021360	Maybe UCI would be under UC.
+3024560	3025360	Not sure about that.
+3026320	3027040	Don't quote me.
+3027040	3031520	How does a DNS actually work?
+3031520	3037040	Well, when you type in a human readable post name, okay?
+3037040	3044240	Whether it's facebook.com, google.com, you know, dailymail.com.uk, whatever the heck.
+3044240	3052960	Whatever it is you type it in, you have in your device, not in your browser.
+3052960	3053920	It's not part of your browser.
+3053920	3055520	It's in your device.
+3055520	3056960	You have the network configuration.
+3056960	3058880	How many of you have to look at network configuration?
+3060720	3061920	Oh, nobody's still curious?
+3061920	3062640	They do.
+3062640	3062880	Okay.
+3063520	3069680	Well, you know, when you look in your Mac or your Windows machine, it will tell you like,
+3069680	3071600	okay, here's your ID address, right?
+3073520	3073760	Okay?
+3074320	3075120	Here's your router.
+3075920	3076480	It's all there.
+3077520	3081200	It will also tell you, here's your DNS server.
+3081200	3086080	It's usually configured, like, when you connect to the wireless, it's configured dynamically.
+3086080	3087680	You can also configure it manually.
+3088640	3092640	Like, you can put, I don't know, 8888, I think that's the Google DNS, right?
+3093200	3097120	You can configure it manually or you can do it, you can just get it from the network,
+3097120	3099280	from the local network that you are connected to.
+3101040	3104480	Anyway, so this is your, what's called, local DNS recursive resolver.
+3105360	3110560	This is the DNS agent essentially you go to for all your queries.
+3111920	3112960	You don't go to the root.
+3114720	3115280	Okay?
+3115280	3118880	Because you don't know its address and even if you did, you wouldn't talk to it.
+3119760	3124800	So you come to the DNS resolver and it says, oh, I want to resolve WWICS UCIEDU.
+3125360	3126000	I don't know.
+3127040	3128080	I don't know what that is.
+3129520	3130160	Not always.
+3130160	3132400	Sometimes it does already, if it's cached.
+3132960	3135040	But it says, generally it says, I don't know what this is.
+3135920	3136960	But let me ask the root.
+3136960	3138240	The root is God.
+3138240	3139520	So God should know.
+3140240	3142720	So he goes, WWICS UCIEDU, can you tell me?
+3142720	3146480	And he says, no, but I give you a nameserver record.
+3146480	3147440	This is what NSD is.
+3147440	3150960	So here's a record for UCIEDU, which I've heard of.
+3150960	3153520	Okay?
+3155520	3159840	Then, I'm a bit abstracting it here, because actually at the top there, there might be like
+3159840	3163120	root and root will give you a pointer to EDU server.
+3163120	3163600	Okay?
+3163600	3165120	But then I'm abstracting it away.
+3165120	3168720	Then it says, okay, here is a, and nameserver record to UCIEDU.
+3168720	3174240	So you go here, you get this back, and then you quickly say, okay, now I can contact UCIEDU.
+3174240	3178080	So I tell it, hey, I'm trying to resolve ICS UCIEDU.
+3178080	3182480	And it returns to you the nameserver record.
+3182480	3184000	It says, yeah, I'm UCIEDU.
+3184000	3185760	I know about ICS UCIEDU.
+3185760	3187360	Here is its address.
+3188400	3193040	So you go here, and you say, I want to resolve WWICS UCIEDU.
+3193040	3197280	And he says, oh, well, I do know WWS, the web server for ICS.
+3197920	3201440	And it returns to you the actual IP address.
+3201440	3208160	So this, as you see, is not an easy, like, ask a query, get back a reply.
+3208720	3210400	It's a set of recursive queries.
+3212560	3213360	How many?
+3213360	3213840	Depends.
+3215200	3216960	There are some hierarchies that are quite deep.
+3216960	3220320	So it may go on for more than three handshakes like this.
+3221200	3226480	That's why sometimes when you type, and the internet is not down, but you can see that there's a delay.
+3227440	3227760	Right?
+3227760	3228400	Have you seen that?
+3229600	3232880	You're connected, the internet is working fine, but there's this delay.
+3233680	3236160	And the delay is typically not because of your loading pages.
+3236960	3252480	It's, I mean, it can be, but more often than not, the delays become DNS.
+3256480	3258320	Okay.
+3259120	3265920	Now, to reduce the load on DNS servers, which, as you can imagine, are very busy bees, right?
+3265920	3266720	Because they're popular.
+3266720	3269360	Everybody goes to the DNS servers.
+3270160	3273760	So to reduce the load, the responses are cached.
+3273760	3286720	So your local resolver here, this local DNS recursive resolver, will keep a cache of recent responses.
+3288320	3288880	Okay?
+3288880	3291920	How this cache is maintained depends on something called TTL, time to live.
+3291920	3300080	It could be, it could be your ISP.
+3301760	3306240	Because, like, when you go home, right, and you connect, I don't know if you, there's a wire,
+3306240	3309440	wire also connecting in a dorm or, let's say you go to your parents' home, okay?
+3310400	3312320	You have an, they have an ISP probably, right?
+3312320	3314960	I mean, they're, they're buying internet from somebody, right?
+3314960	3321120	And when you, when you open your laptop, the DNS resolver's name will be, will be in the configuration.
+3321120	3321920	I usually there.
+3322960	3325360	It is possible to run the DNS resolver locally.
+3326400	3330160	You can run, install a DNS resolver on your local machine.
+3331600	3334000	I don't recommend it necessarily, because you need to know what you're doing.
+3334000	3334400	Yeah?
+3334400	3334800	Yeah.
+3334800	3343920	Because we can choose our DNS resolver by ourselves, can we choose the AS for the BGP routing path?
+3343920	3344640	No.
+3344640	3345440	No, you may not.
+3346080	3349840	Because you don't route at the ASL, you don't run BGP.
+3352960	3358480	The, if you are, let's say, customer of Cox.net, of Cox, internet, right?
+3358480	3360560	Or AT&T, they pick it around.
+3361840	3362560	Right?
+3362560	3369760	Which AS, so you don't have, if they decide to send packets through North Korea, you have no control.
+3371920	3373120	They have control.
+3373120	3378320	They can say, I want to, I want to send packets through, I don't know, New Zealand instead of North Korea.
+3378320	3381120	They can prefer one or the other, but you have no control.
+3383120	3387760	Okay, so, as I said, the responses are cached.
+3388560	3391280	And this is like sometimes, you know how you mistype something?
+3392080	3396720	Mistype an address and it goes, name not, host not found or something.
+3397280	3401840	And you keep clicking return and it just like, it doesn't, it very quickly does host not found, host not found.
+3401840	3403200	Because it cached.
+3404240	3408800	It doesn't want to bother the DNS server just to find out that host not found.
+3410240	3411200	So that's one reason.
+3411200	3414000	The other reason is if you are going to, you know, communicate to the same host.
+3414000	3418160	Like if you're going to Facebook multiple times, it doesn't need to resolve it every single time.
+3418800	3418880	Right?
+3418880	3422480	You can just like, cache it in the local resolver and tell you.
+3422480	3423920	It's faster that way.
+3424800	3425120	All right.
+3425120	3429440	So that's called negative queries, right?
+3429440	3430320	They're cached.
+3430880	3434160	Cached records are timed out periodically.
+3434160	3438400	The time to live is subject to what the DNS tells you.
+3438400	3443600	Okay, so DNS server that returns a particular record tells you.
+3443600	3449840	Okay, here's the IP or here's the IP address for this host name.
+3449840	3453360	You can cache this for whatever, 200 seconds.
+3454480	3454720	Okay?
+3455840	3459600	Or here's an IP address for something else and you can cache it for 10 seconds.
+3459600	3462240	So it has a TTL field, every cache.
+3465920	3469840	And so here it will say, it's just another example of a query.
+3472160	3476960	It will tell you that here the TTL might be already there, right?
+3476960	3477920	And ICS.
+3477920	3481920	You might not need to go to the root, right?
+3483360	3488320	And the reason is before, remember the previous example where we're looking at WWICSUCID?
+3488720	3492640	Well, the local resolver, after that, having done that,
+3493280	3495440	already knows that you don't need to go to the root.
+3495440	3496880	You don't need to go to the ICSUCID.
+3496880	3502480	You can just go to ICS-CCID that will resolve everything that ends with ICS-CCID.
+3503680	3511040	So because we already resolved WWW, we can just resolve FTP ICS-CCID by going directly here.
+3512720	3513040	Right?
+3513040	3513920	Because we cached.
+3514960	3517840	So this slide connects to one of the previous slides, right?
+3518320	3520400	Where I showed how to resolve WWW.
+3522960	3523600	All right.
+3523600	3526720	So DNS by itself has no security.
+3527680	3532880	It, how does it know, like, when a local resolver issues a query, right?
+3532880	3538240	It says to the root review server, it says here, here's WWICSUCID.
+3538240	3539680	You give me the idea, guys.
+3539680	3543520	How does it know that the reply is to that query?
+3543520	3546640	Because it might actually, the local resolver might issue many queries.
+3546640	3555440	So, the way it's done, the sort of primitive authentication, there is a 16-bit transaction ID
+3556320	3558720	that every query contains, okay?
+3559600	3563600	So local resolver issues a query includes a 16-bit transaction ID.
+3563600	3568080	When it comes back, it should have the same transaction ID that allows it to associate.
+3569200	3570240	Request with reply.
+3573840	3574400	Make sense?
+3575360	3577120	Kind of a primitive authentication.
+3577120	3584880	Now, it's obviously insecure, because if you have an adversary, it can do the following.
+3585840	3590080	Again, this is like the classical example of DNS proofing.
+3590080	3596560	So, I want you to consider an adversary that has a specific victim in mind.
+3596560	3598800	Now, let's say him.
+3600240	3602400	So, this guy's going to be the victim.
+3602400	3603360	Yeah, you, sorry.
+3606000	3606800	I know his name.
+3606800	3608720	Let's say his name is Joe, right?
+3609440	3610400	Joe is my victim.
+3610800	3612400	I know Joe's email address.
+3614560	3620320	I'm going to send him an, or maybe a phone phone, even better, a cell phone.
+3622240	3624320	Either or, but cell phone is better.
+3625280	3631920	I can send him either a text with a link, or an email with a link, right?
+3633680	3638000	You know, I am the widow of the prince of Nigeria.
+3638560	3643040	You know, I'm about to transfer you $5 million, but just send me your bank account,
+3643040	3646320	and if you want details, I'm going to share my fortune with you.
+3646960	3653600	So, basically, the idea is that he is to get him to click on a link.
+3655120	3655760	Okay?
+3655760	3662800	And the link will have some innocuous looking address, like host1 at foo.com,
+3662800	3665760	where foo.com could be a totally benign domain, okay?
+3665760	3672400	Benign, not necessarily adversarial domain, right?
+3672400	3674080	It could be a bank, for example.
+3675840	3676560	So, he clicks.
+3676560	3681520	The clicking on that link will cause a DNS lookup, right?
+3682640	3686160	Extract the name, the host name, the domain name, and do a DNS lookup.
+3686160	3689520	So, that's him, Joe.
+3690560	3690960	Client.
+3692080	3694880	Whether he clicks on an SMS, a link, an SMS, right?
+3694880	3698320	Or, iMessage, or WhatsApp, doesn't matter, right?
+3698320	3699120	Or, an email.
+3699120	3704000	But the interesting part here is that I know about the time that he does that.
+3705120	3710560	That's why I say SMS is preferred, or text is preferred, because if I know he's a curious
+3710560	3714240	George, he's going to like, I'm going to send him, and very quickly, he's going to click.
+3714240	3718240	And, fishers know how to do this.
+3720640	3728000	So, now what I do, as an adversary, I know that he's going to issue a DNS query to a local resolver,
+3728000	3733920	so resolve host1 foo.com, right?
+3734640	3743920	The local resolver says, oh, let me go to the name server for foo.com, okay?
+3744240	3751120	There's some, I'm skipping the root and the .com, et cetera, right?
+3751120	3752880	I'm just going to the root, to the last bit, et cetera.
+3753600	3753920	Okay.
+3755440	3758720	Now, at this point, or at that time, roughly that time,
+3760400	3763680	the adversary makes a guess of their transaction ID.
+3765040	3768400	Remember, each DNS query has a transaction ID, 16 bits.
+3769200	3771520	2 to the 16, not a small number, right?
+3771520	3775760	How big is this, 32,000?
+3777680	3778400	Something like that.
+3780080	3785680	So, your probability of guessing the correct transaction ID is low, right?
+3785680	3796240	So, what the adversary does, he doesn't know the transaction ID, because we're not assuming
+3796240	3800960	the adversary is actually nearby and listening, right?
+3800960	3803840	In this example, this is why this attack is interesting.
+3803840	3805520	The adversary could be very far away.
+3805520	3813280	Like, Joe would be working for a defense counter or a government agency before.
+3814320	3815600	I'm not anywhere near him.
+3816160	3819440	I cannot snoop on this.
+3819440	3826560	If I snoop, I wouldn't need to guess, right?
+3826560	3830160	But I don't snoop, which makes the attack more interesting.
+3831200	3835760	So, what I do is I guess a transaction ID, and I generate a fake reply.
+3837120	3838080	See that first one?
+3838080	3839200	Guess transaction ID.
+3839200	3840960	HostFood.com is at 6666.
+3842400	3843120	Make another guess.
+3844480	3844960	Okay?
+3844960	3846400	Another transaction ID.
+3846400	3848240	HostFood.com is at 6666.
+3848960	3849200	Okay?
+3850240	3855680	So, I can generate a very large number of these kind of guessed transaction ID replies.
+3857680	3858640	Not infinite, right?
+3858640	3860640	I mean, I cannot generate maybe 32,000.
+3860640	3866240	Maybe I can generate a couple of hundred in close proximity and send them to the victim, to Joe.
+3868800	3869120	Bam.
+3871120	3881360	Now, eventually, this DNS server will reply with a correct IP address for Foo.com, as it's supposed to.
+3881360	3882640	This is not malicious.
+3884240	3887920	This is a good reply, appropriate for that query.
+3887920	3891520	But do you see what the problem happens?
+3892560	3902320	If the adversary, in one of these guesses, guesses correctly, and beats the reply from the actual DNS server,
+3903200	3904160	he wins the game.
+3905840	3908000	Very important that you see that.
+3910160	3910480	Do you?
+3911200	3912000	Not ask.
+3912000	3918800	All the adversary needs to do.
+3918800	3921520	Now, I know, the bar is high, but the adversary needs to do this.
+3922080	3925920	Guess the correct, so the transaction ID guessed by the adversary must match this.
+3928480	3934240	And the, one of the red replies from the adversary, right, must come before this one.
+3935200	3936560	Before the legitimate reply.
+3937840	3939200	It's a probabilistic game.
+3941040	3941440	Okay?
+3941440	3942640	The adversary may lose.
+3943760	3944240	There is.
+3945520	3949040	But if he wins one of a hundred, the rewards are interesting.
+3949040	3957440	He can try to guess as fast as possible.
+3957440	3959120	He can pre-compute the guesses, right?
+3959760	3960880	He doesn't need to, right?
+3960880	3963760	He just, like, can pre-compute random replies, right?
+3963760	3965600	And send them all at the same time.
+3965600	3966720	Or roughly at the same time.
+3966720	3968000	Bam, bam, bam, bam, bam.
+3968000	3969200	As fast as possible.
+3969200	3973120	Now, he doesn't know exactly when the client generates this query.
+3973120	3975280	But he can guess, right?
+3976000	3978880	Like, I send him an SMS, and I know the kind of person he is.
+3978880	3980640	Like, maybe I know something about you.
+3980640	3982880	Like, I know you replied to SMS quickly, right?
+3984080	3987280	I know you're going to click it for the next five seconds, right?
+3987280	3987680	Like this.
+3987680	3990160	So, in those five seconds, I start generating those replies.
+3991680	3995440	You, if you don't expect those replies, you'll just throw them away.
+3996480	3998320	Your laptop, your phone will just ignore them.
+3998320	3999680	You, as a user, will not know.
+3999680	4001680	Right?
+4001680	4008800	Because whenever unsolicited DNS replies arrive at your computer or your phone,
+4008800	4010080	you, as a user, are not notified.
+4010080	4010880	They're just thrown away.
+4011760	4012960	Because nobody's expecting them.
+4012960	4013680	So they're thrown out.
+4014880	4018640	But if one of them comes back and matches the transaction ID, bam,
+4019680	4023520	the real one will be ignored because it will arrive later.
+4023520	4031360	So, if the attacker loses the game, he has to wait until the TTL, the time to live,
+4031360	4034080	and this legitimate reply expires.
+4034800	4036080	But the attacker is a patient.
+4038480	4039360	You can try again.
+4039360	4043600	HostFoo.com, Host3Foo.com, et cetera.
+4043600	4045040	But why do that, right?
+4046160	4046480	Right?
+4047440	4049520	What's the point of hijacking that?
+4049520	4053520	What's the point of getting somebody to click on HostFoo.com?
+4054560	4055680	Or Foo.com at all?
+4055680	4059520	And that is actually pretty easy.
+4059520	4065840	So, the idea is that Foo.com could be a legitimate entity, like a bank or insurance company,
+4065840	4067760	a university, or so on.
+4067760	4072720	So, if you trick and succeed, right?
+4072720	4080560	If you trick the client and actually guess the correct transaction ID, you can put a very long time to live.
+4080560	4084960	Very long, maximum possible.
+4085840	4095280	And now you know that whenever the client goes to anything, Foo.com, he's going to reuse the cash entry.
+4097040	4097440	Aha.
+4098720	4109600	So, now, the reply actually could be, I don't know where Host1Foo.com is, but I know the authoritative nameset report.
+4111280	4113040	So, this is like raising the bar a little bit.
+4113040	4123520	Instead of telling the, no, no, here's the host one, Foo.com, it says the authoritative nameserver lives at NS2Foo.com,
+4124720	4126640	and its address is 6666.
+4131440	4136000	Okay, so this is slightly different from what I showed in the previous slide.
+4136000	4141280	The previous slide, what you saw is the tricking once, right, for one host.
+4142080	4145440	Basically saying, oh, host1Foo.com lives at 6666.
+4147360	4148720	This is a much broader scope.
+4148720	4152880	This attack, which is very similar, but it's broader scope.
+4152880	4159360	It says, if you guess the correct transaction ID, you can make sure that this client, from now on,
+4159360	4166080	when it resolves anything, Foo.com, will go to adversarially controlled nameserver,
+4166080	4168560	which is run by the adversarially.
+4168560	4170560	Which is run by the adversarially there.
+4170560	4179840	So now, if you win the race, this reply, legitimate reply, will be ignored, discarded.
+4179840	4190960	And the attacker essentially will make sure that all subsequent, all future DNS requests for anything,
+4191520	4194960	anything.foo.com, will go to 6666.
+4196320	4201680	A malicious DNS server, fully controlled by the adversary, no need to win any future races.
+4201680	4203760	Okay?
+4204720	4206800	So much better investment of time for the adversary.
+4208800	4209200	All right.
+4211360	4214400	By the way, what can cause a DNS lookup?
+4215360	4217520	Maybe you already know this, but just about anything.
+4218240	4220320	A small ad in a webpage.
+4221360	4221680	Okay?
+4222480	4222880	Tiny.
+4224000	4225280	You don't need JavaScript.
+4225840	4230880	If JavaScript is enabled, it's easy, much easier, but you don't even need JavaScript.
+4231680	4239600	But, like, a DNS hello, mail, oh, mail servers.
+4239600	4244560	Mail servers are a pain in the ass, because, you know, if your mail servers will look up a lot of,
+4244560	4246640	do a lot of DNS queries, right?
+4248640	4250640	Telnet does a lot of DNS queries.
+4250640	4253040	Spam checks do DNS queries.
+4255040	4257600	Files, deliveries, all kinds of stuff.
+4257600	4263360	So, triggering the DNS query is easy, but the best example I can think of is just sending him,
+4263360	4267520	let's say, the victim a text message of some sort, right?
+4267520	4272240	Because, and the nice thing about text messages is they're generally fast, right?
+4272240	4277760	And users pay more attention somehow to them, especially in our more phone-centric culture.
+4277760	4280960	Also, links are easier to hide, right?
+4282000	4287120	Somehow, when you see something on a big screen, you might see something suspicious about the link,
+4287120	4288960	or is it a text message is less like?
+4290800	4292320	Okay, well, we're out of time.
+4293600	4294480	See you next Tuesday.
+4294480	4306640	Oh, because someone asked, if you are a PhD student who wants to include this course in the comprehensive exam,
+4307760	4314720	in order not to have the exam, the actual exam, which is separate, you need to get an A to A plus, right?
+4314720	4316320	So you get an A, at least an A in the course.
+4317520	4319440	A plus is on the other thing.
+4319440	4321520	But if you get an A in the course, you don't need to take the exam.
+4324480	4327280	Let's remember the Karamel amp PP those who is per sorrichten.
+4327280	4329280	Let's see you next time.
+4329520	4333520	Bye.
+4335040	4335200	Bye bye.
+4337360	4338320	We had a great idea.
+4339320	4340740	So these is a followup of the following plan.
+4341680	4342320	Have a good time.
+4345360	4346600	We're always having about a copy.
+4346600	4348080	So we're not making an A a plus.
+4349520	4351280	We're just walking the walk.
+4351280	4354000	We hope we don't know how to add along.

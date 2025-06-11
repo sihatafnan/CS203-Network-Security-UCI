@@ -1,0 +1,686 @@
+Alice's password black, it's determined. Well, that means the adversary commits to a certain J, right?
+Where J is a P, J, right? Obviously, the adversary knows all the passwords already, right? All N of them, he already knows in the clear.
+But which one is really Alice's password? The probability of guessing is 1 over N, correct, guessing correctly.
+So, there she goes, there he goes, he says, I'm Alice, here's a password P, J, indeed P, J exists, right?
+And P, J will be authenticated correctly by the server, right? So, these are all passwords.
+One of them is Alice's, and one of them the adversary will enter. Maybe the same as Alice's, but yeah, with probability 1 over N.
+Which one is Alice's password? Can you tell me by looking at this, what could be her password?
+This is not a trick question. There's no, there's nothing hiding in there. It's just a set of random cram.
+So, but we're not done, right? So, the adversary will likely make a mistake, right? By guessing an incorrect password.
+But what now? So, in other words, how do you verify that it's real Alice or an intruder, an attacker?
+Well, this is where the cute little thing comes in, and I'll show you in a minute. That's one question, right?
+So, how does the system, right? The system verify that this J is from the adversary, this password J is from the adversary, but password I is from Alice?
+And the second, how do we generate these hiding words? So, they all look like what you saw earlier, kind of like indistinguishable or equally likely to be a password.
+And you can see that if you generate random passwords that sound like, that look like no human could remember them, and one of the passwords for Alice is something predictable like my friend Bob, then clearly that is the password.
+So, that's a tricky question, right? How do we make the bogus passwords, the decoys look real? And then there's, okay, how do you respond?
+So, the idea is very simple. You have the system that has, I mean, I'm just showing this as a, the system that has the password, the fc password file.
+And it has basically all this, it has means of verifying all these passwords. But in addition to the system that exists today, okay, this is what we already have today.
+But instead, I mean, in addition to that, we also introduced a new component, physically separate component, called the honey checker.
+And a honey checker's only task is to remember, for every user, the index. The honey checker knows no passwords.
+So, think of it as like a really, like, brain damage component, like really stupid component. It just does one thing.
+It gets a user name and an index. And it says, yes or no. Yeah? That's it. That's pretty much 99% of it.
+So, when Alice logs in, right, and supplies password i, the system will check the password i as it already does today.
+Nothing changes so far. But in addition, once they check fast, right, once the password i has been authenticated as Alice's password,
+the index i is sent over to the honey checker. And the honey checker does a quick lookup in its little database and says,
+Alice has index 5. Is i 5? Yes. All good. Nothing happens. But if i is anything other than 5, well.
+So, Alice applies the password. The password is matched to pi, right?
+You're so far with me, right? It's not exactly that easy because actually the honey checker needs to compute,
+remember, this assaulted hash? But he doesn't know what the i is, right?
+So, remember, over here, over here, the password, I show them as being here, but they're not stored like this, right?
+Do you remember how they are stored? They are stored in the hash, salted hash form.
+So, when Alice supplies the p, the system needs to look up all the Alice's, all the m-t-gerts-part into Alice's,
+on each one, compute the salted hash, right? Because the salts are different. So, she computes the salted hash,
+then she says, oh, there is a match to pi. And then it sends i over to the honey checker.
+And the honey checker just says, yes, does nothing. Or, if the adversary or somebody supplies,
+well, it has to be the adversary, actually, if they combine it, be j. And the j, and at this point, the system does not know.
+Notice, this big box here, this system has no idea what the index for Alice is, what the index for Bob is.
+It does not know any indices. It just knows it has m entries for every user.
+So, all it does, it authenticates the user using the supplied password. If authentication succeeds, it says, oh, this corresponds to j,
+j, and it sends j to the honey checker. Bam. Wrong. Aligned. So, now you see the whole thing.
+Most of the time, the honey checker does absolutely nothing other than just do a lookup. If a lookup succeeds, all good.
+That means that j matches i. But if a j is not i, alarm. What does it actually mean?
+Notice, if somebody is trying to guess Alice's password, if the adversary does not have the password file,
+but it's trying to guess Alice's password. With high probability, with all-knowing probability,
+the password that the adversary guesses will not hash into any of Alice's honey passwords, right?
+There's only an N of them. So, that's life as usual. The system will say, wrong password, as it does today, right?
+And you'll say, just wrong password. Invalid, invalid username, password combination. Yeah? Okay.
+So, that experience doesn't change. Alice mistypes her own password.
+Forget to shift, cap, whatever. No problem. Wrong username, password combination. Try again.
+Same as you do today. But the only way, the only way, again, with high probability, the only way that somebody will guess, or have in their possession,
+Alice's password, which is not hers, right? Which is one of the, not i's, right? Anything but i, is going to be somebody who cracked the password file.
+Does that make sense? That's the cause for alarm.
+So, you wouldn't want any of these alternate passwords to be a very commonly known password?
+Right. Right. You don't want them because then you'll be confused, right? Is it, because it has, it cannot be something that somebody would guess about Alice, like trivially, right?
+So, that's the, that goes back to how do you generate these details, right? The other question. How do you generate? We are not there yet.
+So far, so good? So, yeah, this is already what I mentioned. If the true password is submitted, the user is authenticated.
+If a password that is not in the set of Alice's password is submitted, that's a normal authentication error. Okay?
+If, if a non Alice's, if a password is submitted, that is one of Alice's, but is indexed, not i, then an alarm is raised.
+Only a breach, right? Can cause this. Now you should be convinced. And as you said, they have to be non-treated.
+So, if you choose the honey words, judiciously, they will not be like a, a coincidence, right? That you, that somebody, without breaking the password file,
+typed in one of the honey passwords. But interestingly enough, as far as Alice, Bob, Charlie, any user is concerned,
+there is no change in their experience, right? They don't need to remember two passwords. They still remember one.
+They still enter user name, password, hit return. Nothing changes. That's another nice thing.
+You don't want to change the user experience, right? Because user experience requires change, requires training. Adaption. Right?
+Different users adapt differently. But if you tell them, oh, it's the same as before, just there is something in the back.
+Maybe you don't even tell them. They don't need to know.
+So, the nice feature here is that the system that today hosts the password file that authenticates you, just needs to transmit the index.
+Like minimal information, right? Just name of the person, of the user, and the index.
+And so, very little modification, right? You just introduce kind of a call, right? An additional call after you have authenticated the password, right?
+Here. After the password has authenticated, you take the index, and the user name, and send it to the honey checker.
+And you wait for reply, right? And if the honey checker says yes, cool, honey checker says no, alarm, lock up everything, yeah.
+And this is kind of a very trivial way of implementing distributed security, right?
+So, the honey checker, of course, is not a full-blown computer system with accounts, right?
+You want the honey checker to be a device or a computer that is at most as one account, I mean, basically, like, administering,
+user, right? Or a root account that is touched and logged in almost never, right?
+Only when the password file and indices are updated.
+In fact, you can keep indices the same even if you change the passwords, because they are only known to the honey checker.
+No single point of compromise. So, for example, if the computer system is compromised, well, we said, right,
+the password file is a hack, you learn about it, right? Because the first user, the first time the adversary
+threshold again for any user, for any Alice, Bob, and Charlie, alarm will be erased, and that's it.
+The adversary gets one chance. And so, whatever user he picks, Bob, Charlie, Alice, assuming, let's say,
+n is some reasonable number, like 20, his chances of getting in a one out of 20.
+He might get like, but he's got only one chance, and it's one out of 20.
+How long would you update the password without knowing you being fixed?
+Well, that has to be done offline. That's not the pretty part. Because if you want to update, if you, well, let's think about it.
+You can do it if they gave you their old password.
+Yeah, yeah, yeah. I mean, password change, password change programs are separate. Actually, that's a whole, like, separate lecture.
+Doing password changes is an underappreciated problem, and a difficult one. Especially considering what happens if you have disconnects in the process.
+Meaning that, at some point, the protocol for changing password breaks, like because of the system malfunction or network disconnect,
+and you have essentially a user who thinks the password changed, the system does not, or the other way around.
+So, that's a careful thing. That's a problem with all password changes, right?
+So, the only way to assure your password changes is to actually manually log in into the system and password change,
+instead of remotely, physically close. All right? But, that's not scalable, right? We don't want to do that.
+So, that's a whole different headache that is not really different, so much different from the, the case when you use Honey,
+Honey passwords. But, let's see. If the Honey checker fails, right? It just, the system still will function, right?
+Like, if Honey checker goes down, it uses a hardware failure, or some sort, or it gets disconnected,
+the system will function. It will just default to what we have today. It will get no worse than what we have today.
+So, if the computer system fails, well, you can't log in, but that's the same experience we have today, right?
+So, nothing changes so much, if either component, right, is compromised, you don't, it's not failed.
+If you, well, sorry, if it fails, if it fails, it's not failed. Now, if either is compromised, like I said, if the computer system is compromised,
+well, that's the case we already assumed, right? That the adversary compromised it, and learned the password.
+Now, if somebody compromised the Honey checker, without compromising the system, right? So, okay, this is secure,
+the adversary does not know the et cetera password file. It just breaks in here, oh, the adversary learns usernames and indices,
+but that's it. That doesn't help the adversary to log in. Now, what happens if the adversary compromises both, which is, of course, should be unlikely.
+If the adversary compromises both, it gets no worse than we already have.
+If you think it through, the situation is strictly no worse than we have today.
+Because when the adversary learned the indices, and the adversary learned the password file,
+well, he just still has to brute force all the passwords, right, as he would today, so nothing changes.
+And Honey checker can be a very, very, like a simple operation.
+This may not be, so, if you have, for example, a wire between them, right, like an ethernet wire or some other fiber optic wire
+between the computer system and the Honey checker, basically you don't even need any output from the Honey checker.
+And the reason is that you know that it received, right? When you send something over a wire, you know it will be received.
+Then you have a dedicated wire between the two devices.
+So, what if nothing, what if, what if this is a legitimate login?
+Well, silence, everything okay?
+What if it's illegitimate, meaning that this is an adversary supplying some BJ?
+Well, in that case, a physical alarm will go on, right?
+The doors will lock, the administrator will be alerted, right?
+So, some physical consequences will happen, right?
+So, what this is, essentially, it's an input-only system, that you just give it name, index, name, index.
+And in case of a problem, it will raise a real alarm.
+In practice, you may still want to know as soon as possible, but still.
+Make sense?
+So, it can be, like, downstream somewhere in an operations center.
+So, clearly, you want the Honey checker to be more secure, because this is obviously accessed by, this system will have multiple user accounts, right?
+Because they are all logging into it.
+They will have the system administrator.
+The Honey checker can be, basically, not untouched, for the most part.
+So, sitting there, in a box somewhere, does it need a screen, does it need anything, just sit in a box, in a closet, in a, you know, behind an armored door or something, and that's it.
+Right?
+It just gives this sort of rapid alert.
+Right?
+So, I reset that.
+Okay.
+Now, we come back to this issue of Honey word generation.
+How do you do it?
+Now, look at this.
+Which one is the password?
+Obviously, the next to last, because it's the only one that looks like human language.
+The rest look pretty random.
+So, it's very likely, I'm not guaranteed, maybe Alice is a genius, can remember, like one of those savants, can remember a string of two characters, but don't like it.
+Right?
+So, boom.
+Done.
+This one.
+So, well, what could we do?
+Remember, we have Password Crackers, the software, right, that, that, you know, breaks passwords, and it, you know, generates human readable passwords.
+So, we can kind of take passwords, right, potentially decoy passwords, from prior breaches of, like, of password databases, and repurpose them.
+By adding a letter, a number here, an exclamation, or a question mark, or a comma, or a period, right?
+Because they are already human passwords, right?
+The ones from, like, a raw human database.
+Just grab some, not too popular, but, like, grab some mildly popular password, and tweak it a little bit, and make it a decoy.
+Right?
+So, let's say it's something like this.
+Well, now, now it's difficult, right?
+If you're that attacker, you're, you're kind of out of luck, looking at these, these passwords.
+They could all be Alice's password.
+Happens to be that, but could have been any other?
+Okay, there are problem cases.
+Now, if you look at this, which would be more likely to be the password here?
+My guess is, not wild guess, right?
+It's probably the second, right?
+It just kind of sticks out at you.
+Right?
+It's mostly more timely, also.
+All right.
+So, not good, right?
+This is not a good selection.
+Now, if every one of them said, I don't know, down with Joe Biden, down with Donald Trump, down with Gavin Newsom, down with, I don't know, Maduro, et cetera.
+Yes.
+Okay.
+That would be hot.
+Because they all look very similar.
+But, but this, hmm.
+So, one way to generate similar believable passwords is by what's called tweaking.
+Oh, yeah.
+So, essentially, you know, I'll put you to the paper, but of course nobody's going to look at it, but the idea is very similar.
+Tweak the actual password.
+Take, take the user's actual password that he or she picked and tweak them a little bit to generate, like, minor variations.
+That has problems, but, something like this.
+So, both lines are passwords, like gamma half, pacificer six, and this is contamination, right?
+So, all four of these are passwords.
+I mean, nobody, I'm saying, well, he thinks that your password is very long, but, but you get the idea, right?
+They all have similar structure.
+They all start with, like, the same sort of human readable part, and then there are these numbers, right?
+Three, two, one, four, five, six, seven, and then there are the sequential numbers, but they all look very similar.
+Now, looking at this, it's very hard to say, right?
+So, one of them is, is obviously the password, and the rest are tweaked, but which are tweaked?
+Why?
+Because all the other ones, it has the one that has the most common numbers and letters.
+Maybe, maybe, maybe, but it happens to be this one.
+No, I mean that, of course, it's a synthetic example, but it happens to be this one.
+But you get the idea, chaffing is a, does everybody know what the word chaff means?
+Chaffing, like, when you have weak chaff, you know, stuff that is like fluff, noise.
+So, the rest of them are noise, right?
+So, here's another problem.
+Here you have a bunch of very similar passwords, right?
+Which one is the real password?
+Any guesses?
+I know you, you have a guess, but does anybody want to guess?
+Okay.
+It's the fourth one.
+It's the fourth one.
+Why?
+The band.
+The band.
+Now, of course, now you know this, except for him, I don't know why he knows, but it's
+a band from, you know, some, a couple of generations before you.
+It's a rock band, right?
+So, it has meaning.
+The rest of them are kind of random, right?
+But this one has a real meaning.
+Looks random, but it is not.
+So, the semantics of these particular passwords are significant, whereas the rest of them don't
+have any real semantics.
+So, if you just tweak by generation, like if the real password is Blink 182, and you start
+generating Blink 123, Blink 183, well, none of them are rock band.
+So, somebody who knows this will look at it and say, uh-huh, I know exactly what the password
+is.
+That's difficult.
+I think today you can get GBT to generate some meaningful passwords.
+Maybe, now this stuff wasn't proposed in an LLM era, right?
+It was before.
+Yeah.
+You probably can.
+But there's a better idea.
+You can just repurpose other people's passwords.
+You know, even conceivably on the same system takes Bob's and Charlie's passwords and throw
+them in his chaff and Alice's mix.
+They're as believable as Alice's passwords, you see?
+You can do that.
+Well, basically, what is this?
+What is the idea?
+What is the honey password scheme?
+It's an example of distributed security, kind of inexpensive distributed security that
+strictly strengthens the resilience of the system.
+Now, it's not going to prevent password breaches.
+It has absolutely nothing to do with prevention.
+It has everything to do with timely detection.
+Okay?
+So, it will, it's purpose only one, to detect ASAP when something happens, like a password
+file is compromised and the adversary tries to gain access.
+Yeah?
+Can the adversary use these correct passwords and maybe attempt them on a different website?
+Of course!
+And they're forgetting that they're using the password.
+Of course.
+Of course.
+This is not a panacea.
+This is not magic, right?
+The adversary stole the password file.
+And Greg told his password.
+He can try them on a different system because many of us, we use passwords.
+We do, unfortunately.
+Now, some, some password guideline checkers, you know how when you select your password,
+you are asked to enter, I mean, must have at least one lowercase, one uppercase, one special character,
+and one number, right?
+I think usually that's what you see I say.
+And the length, right?
+Eight characters at least, I think, for us.
+What was the last time anybody changed the password?
+I think I have.
+Okay.
+You haven't changed the password either.
+I have.
+I have.
+But I just don't remember the number.
+There are these other rules, but I remember, I think it, I think it's eight.
+Anyway, so some of the systems will have an additional guideline where you must insert
+the name of the system you are logging in into your password.
+Meaning that this is like uci.edu.
+So your password should have uci.edu in it.
+That is a pain.
+Not because if you have uci.edu, that part isn't useful.
+So you have to essentially add this to your password at the end or in the beginning.
+You're not going to sprinkle it throughout.
+And if the limit is eight, well you should not count these seven characters as part of
+the password.
+And for strength purposes, right?
+So essentially, by mandating that you all use uci.edu in your password, I'm saying that
+your password has to be at least 15 characters long, right?
+You see what I'm saying?
+Now, but that would solve a problem, right?
+In that you could not then reuse, well, it would be awkward for you to reuse that same
+password because it contains uci.edu on, I don't know, wellsfarga.com.
+But that's a balance between password usability and password strength.
+Now, back to your question.
+There's one other problem.
+Yes, the adversary could try.
+But remember, the adversary still doesn't know the right index.
+So it's very likely it's going to be frustrating for the adversary if the other system also
+implements a honey checker.
+Well, they would have different honey.
+That's right.
+But then they usually have different passwords.
+Right, but they just have to try like 20 times and then one of them works.
+No, no, no.
+Yes, if the other system, so let's say you broke into, you got uci.edu password for you.
+And then you went to Wells Fargo and they tried to log in as u using those passwords.
+But if Wells Fargo also implements a honey checker, that ain't going to work, right?
+I mean, it ain't going to work.
+Actually, no, let me take it back.
+It will work because one of them is probably, yeah, not probably, one of them is going to overlap.
+So actually, yeah, it might actually work.
+You need to compare it.
+That's right.
+Well, no, no, you don't have to break in to compare.
+If you break into Wells Fargo, then you can compare.
+But that's a high bar.
+I think actually you're right.
+You could take them to another website and try 20 times.
+Now, after three or four times, you'll get locked out.
+So you would have to do this under radar.
+Remember I mentioned that a good hacker or adversary does not rush to victory.
+If I know 10 passwords for you and only one is real, I'm not going to try one after another.
+I'm going to try one and cross it off by myself.
+And I'm going to get an education payment.
+Then knowing that you log into Wells Fargo once a day, suppose, I will wait a day.
+And during that time, you would have logged in successfully.
+Okay?
+Reset the counter.
+I will try the second answer.
+Doesn't work?
+Cross that off.
+Wait another day.
+You get what I'm going?
+Smart adversary will do that.
+Notice that most systems do not warn you when you log in successfully whether they have been in successful attempts before.
+Whether they should or not is an interesting question in and of itself.
+Because if they start telling you it will be meaningful only if you have good memory, if you log in regularly, you know what I mean?
+Like if you are one of those ill retentive people that logs it every day at 8 a.m. to your Wells Fargo account, yes, you will know.
+You say, what the hell?
+At 4 p.m. last night somebody entered the wrong password.
+Ah!
+But if you are like most people, you don't remember, you don't have that capacity.
+Most of us don't do this already.
+Everybody following this conversation?
+Yeah?
+Okay.
+So, anyway, back to this world.
+This is a nice balance between deployment and security, right?
+Because it's relatively easy to deploy.
+Minimally simple, blah, blah, blah.
+Now, two follow-up questions and we are done.
+That was two interesting things.
+Actually, what you raised is also interesting.
+I hadn't thought about that.
+Can we repurpose this theme to add a separate password?
+The Alice would have to remember two, two passwords.
+Well, one of them is real password and the other one is I'm being threatened, I'm under duress.
+Notice that banks use this system, you know, for PIN codes and combinations for like saves and stuff.
+There's two combinations.
+One is emergency, one is real.
+When you enter an emergency combination, the safe will open.
+But they will immediately notify the police or security.
+So the idea is the same here.
+If you have a list of, if you are Alice and you have a list of N passwords,
+it would be nice if you remembered two and only entered that other second one in case of emergency.
+Somebody puts a gun to your head and says, you know, log into your bank account and transfer money.
+Well, you enter, but the bank now knows that somebody is threatening you.
+Yeah, it'd be cool.
+And it can be done with the honey checker, right?
+The honey checker would raise an alarm when you enter that password that is signified in the emergency.
+And now, finally, there is a problem with the honey checker.
+Nothing is just beneficial.
+One of the things that the industry may aim to just recap it.
+Maybe the industry doesn't care to get into the computer system.
+He wants to inconvenience you as much as possible.
+So you imagine you are a large-ish organization where the system has numerous accounts, maybe thousands, right?
+This et cetera password file has like thousands or hundreds of accounts, employees, right?
+The adversary breaks one password.
+Just one.
+Okay?
+He wants to take his chances.
+He doesn't have to crack all of them, right?
+So the answer is easy.
+And enters that.
+Says, Alice, here's password.
+User name Alice, here's password.
+Immediately the alarm goes on.
+What happens at that point?
+At that point, everyone is locked out and everybody must change their password.
+That's a giant nightmare.
+So the adversary could be very happy just achieving that.
+If the adversary's goal is denial of service.
+Questions?
+No questions.
+All right.
+All right.
+Now it's time to switch to something different.
+Let me share the screen.
+All right.
+Now we're going to switch over to something called single synon or something called Kerberus.
+Anybody ever heard of Kerberus?
+Not from Greek mythology, but actual Kerberus.
+Yeah.
+Okay.
+Everybody ever heard of single synon?
+Okay.
+Well, some of you, many of you probably already used Kerberus without knowing it.
+Windows authentication, right?
+Distributed authentication on Windows.
+If you ever use ICS facilities for using, you know, Windows network, you've used Kerberus.
+It's underneath.
+And then we'll go on to web security.
+All right.
+So what is Kerberus or what is single synon?
+The idea of a single synon is very common.
+You have used it on the web, although not using Kerberus.
+Anybody know what OAuth is?
+Two people.
+Anybody else?
+Three.
+Okay.
+Anybody want to tell me what OAuth is?
+Based on, no wrong answers.
+What is OAuth?
+No?
+What does it do for you?
+Okay.
+Let me ask you.
+What does it do for you?
+You can access a different application.
+It's like an authentication.
+Right.
+So you log into Facebook.
+And you want to access, I don't know, TikTok or Instagram or something like that.
+Snapchat.
+And you do it without having to provide your username.
+How is that possible?
+Facebook instead?
+Well, it's not because everybody loves Facebook and respects Facebook.
+No.
+It's just Facebook authenticated you as somebody.
+And Facebook basically passes your credentials over to Instagram and says, this user has been
+authenticated.
+Google does the same thing, right?
+With Gmail.
+You're authenticated with using via Gmail and then you can use Google Drive.
+They had different applications.
+But you only signed on once.
+So the whole idea is to make it easy for users like you and you.
+You can make it easy for users like Google Drive to get your credentials.
+It's not because everybody loves Facebook and respects Facebook.
+No.
+It's just Facebook authenticated you as somebody and Facebook basically passes your credentials
+over to Instagram and says, this user has been authenticated.
+Google does the same thing, right?
+With Gmail.
+You authenticated with using via Gmail and then you can use Google Drive.
+They have different applications but you only signed on once.
+So the whole idea is to make it easy for users like you and Google Drive to use Chrome.
+users like you and me, first to remember fewer passwords, and second having to authenticate
+many many times. You know what it means to authenticate many times. Not just because
+let's say IMT requires us to re-authenticate, but I'm talking about authenticate many times
+to different applications. So that's the whole idea behind single sign-on, is that you sign
+on, you log in. Sign on is just another word for login. You log in once, and you don't do it for every application.
+So the basic problem that Kerberos in general, single sign-on tries to solve is this. You have
+many users and you have many what's called servers. If it helps you think of servers as being even like
+apps or applications that run on different places. Originally and even today, the Kerberos is mostly
+used within organizations. So suppose you're working in an organization like UCI or a commercials entity
+of some sort of company. Not a tiny starter, but a company of certain size. And so you have a bunch of
+users with different job titles and different privileges. Some users can access some resources,
+some and not others, and no different users depending on their job, may have unique access
+policies governing their access to resources. There are compute servers, there are GPUs, there are storage
+devices, there are printers, there are 3D printers. There are all kinds of equipment and there are all kinds of
+services that those that equipment gives you, right? So we call those things servers in this lecture.
+So the main problem is how a user proves their identity, right? Through a multitude of servers,
+right? Because a given user will come in the morning to work, will log in, and then during the day,
+in the course of a typical day, will want to access some service. I want to print a document,
+access company calendar, I don't know, run a job on an expensive GPU rack somewhere, okay? These kind of services.
+So, clearly a naive solution is to say, well, every service or every server that offers a service
+should have its own account database, should have its own account database, and every user that is
+allowed to access that server should have an account, okay? That could make sense. So if you want to,
+if you're allowed to use the GPU farm, well, have an account there. If you're allowed to use that printer,
+well, there's going to be a printer server that will maintain that account database. Same for storage devices and anything else.
+That would work, but it wouldn't scale. Because that means that we have, coming back to the problem
+with the password issue we discussed in the last couple of lectures, you would have to, as a user,
+as an employee, you would have to remember as many passwords, as many user names, but at least as many
+passwords, maybe the username is the same, as many passwords as there are servers, and you will
+physically have as many accounts as there are servers. And of course, if you have all these servers,
+each running its own account database or accounting system, well, an adversary who breaks into any of
+them already gets something. Potentially, if you reuse passwords, you will get your passwords on other
+servers. And we know the people who use passwords, right? So it's not a scalable world if you have
+every server maintaining its own database of users and doing its own access control.
+All right, so
+even if you do, in fact, have the same password for every server, right, separately, if you want to change it,
+you would have to contact each one individually, which is tremendous damage.
+So, clearly, we want to do something better. We want to have better security,
+means be secure against eavesdroppers and actively malicious adversaries. Remember,
+eavesdroppers just listen, malicious adversaries, actively active adversaries interfere, right?
+They introduce their own traffic, they delete traffic, they retard traffic, they change traffic,
+right? When I say traffic, I mean packets, communication. Also, adversaries can keep that in
+mind, and always in this course. Adversaries could very well be legitimate users who are inside.
+A lot of spectacular breaches in this world occur, not because of the evil hackers in a third world
+country or some other faraway place, they occur because there's a rotten insider in their organization.
+Of course, there must be reliability, so that whatever service you do, it must be always available.
+Users should not have to enter passwords and authenticate multiple times. The whole point is
+log in once and get access to as many servers and services as you can.
+So, if a user is asked to enter a password, doing so like once a day is considered okay. Maybe twice a day,
+but not every time you want to do something. That's super annoying. We all know this, right?
+It's annoying what we have here at UCI. And of course, it must be scalable, right? Because we want it
+to scale to large number of users and maybe smaller, but still a large number of servers.
+We want to deal with impersonation or when Alice is a legitimate user and Bob decides to log in as Alice,
+or some outside adversary just tries to log in. We cannot trust the location. For example,
+if you work in a company where computing, and many companies do this, right? They don't allow you to
+bring personal devices like laptops, right? You come to work, you either take your work-issued laptop
+and plug it in to the docking station, or you don't do even that. You just come to work and you log into
+the workstation on your desktop, whatever that is assigned to you. So, trivial idea would be to just say,
+well, you know, a person gained access to this desktop and this desktop is inside the secure premises,
+therefore, it's enough to just use an IP-based authentication, IP address-based authentication.
+That's not good. That's not good enough because IP addresses and even MAC addresses can be changed.
+Okay, so they're a poor form of authentication.
+Let's see. You have to be resilient to eavesdropping. You have to be resilient to replay, right?
+Replay is just basically replaying previously sent information, right? If you trap somebody's password
+in a clear text or somebody's packet that is actually, forget clear. If you trap a packet that has
+Alice's password in an encrypted form and you know that that packet carries Alice's password
+in an encrypted form, you can replay it at a later time and gain access to Alice's account,
+unless the password carries it in some other information like, for example, timestamp or something
+else. Okay, so you get the idea, I think, of what we want to do. So in Kerberos, the main component is
+something called the trusted third party. Trusted third party, or TTP, is the general concept.
+Okay, and by the way, Kerberos is called Kerberos because it's a three-headed dog from Greek mythology.
+There's some story behind it that I don't quite remember. Anyway, the idea is this. That
+pink box with the three dogs, that's the Kerberos trusted third party. Think of it as like the system.
+It is trusted. It maintains a relationship with every user and with every server. Okay,
+it's like the security brains of their, of the organization. So it knows all passwords. Oh,
+knows, I mean, knows as much as like a UX, that's the password. Actually, no, it knows all
+passwords for all users and it also performs what's called access control. So when a user comes in and
+comes in and authenticates and later the user says, oh, my name is Alice. I have authenticated.
+I want to access the GPU farm to run this job. The server, this trusted third party will say,
+are you allowed to do so? And that's called access control, right? This is separate from everything
+we discussed so far, right? Access control means do you have the right to access the GPU farm?
+Maybe Alice is not because Alice worked in the janitorial department. But Bob, who works in a,
+I don't know, coding department is allowed to ask. But maybe Alice is allowed to, you know, access some
+financial system and Bob is not. Okay? So you get the idea. Access control is very important and they,
+one of the roles of the trusted third party is to perform access control.
+It is a convenient entity because there's only one. You authenticate only to it directly as a user.
+And you do not authenticate directly to anybody else but the trusted third party.
+It is also, I admit from the start, anytime you have a system like this,
+it's going to be a single point of failure. So that is true about all systems that use trusted third party.
+Unless there's a hot backup somewhere. Okay? If the system fails, nobody can log in. Nobody can access it.
+Okay? That's from, that's, that's a problem. That's part and parcel of the curbers.
+And clearly that requires physical security, kind of like I mentioned earlier with the certification
+authorities, right? Require special security accommodations while so does the curbers trusted third party.
+So here's a, a bird's eye view. A user, let's say, comes in the morning and enters username, password.
+So that's the user experience. What's it? Well, assume, right? So basically proves identity and says,
+okay, now I want to access some server, like a print server. Okay.
+Okay. User then, if he's authorized, only if authorized, will receive a, what's called a ticket.
+And a ticket, like a ticket in the middleware, allows him to go to the print server and say,
+see, see, I got a ticket, I can print on you. Right? So that's essentially a high level,
+the interaction in curbers. And that's pretty much how most single sign-on services work in the real world.
+So you authenticate as a user once, and from that point on, everything else takes place under the curbers,
+being transparent to you, the human.
+So what is that mysterious ticket? Well, a ticket should be, as you can already guess,
+something secure, something cryptographically protected. Right? Because if it's not cryptographically
+protected, it can be hijacked, it can be modified, reused, abused, et cetera. So there's going to be
+some cryptographic protection for sure. It cannot include a server's password, obviously. Remember,
+the server, I did forget to mention this. So in curbers, every user shares a password,
+or a long-term key with a trusted third party. But also each server shares a long-term key with a trusted
+third party. Okay? So as far as the trusted third party is concerned, it has a database of all the
+users and all the servers. And for each user and for each server, it has a long-term key. Okay?
+Except for servers are not humans, so that key does not need to be a password. It can be a random,
+strong, long key. And it shouldn't change very often. So the ticket must have some information
+that only the server can read and understand that tells the server that this user is authorized to use
+this service right now. And for how long? So remember, it's important to tell the server, like the print
+server, that this ticket is for you. This is for the print server. And it refers to the already
+authenticated user, Alice. So this is for Alice to print on you now. Because if you don't say when,
+then the ticket can be used by others, right? Or it can be used by Alice in perpetuity.
+But remember, in the real world, Alice may be a good employee today and a fired employee tomorrow.
+Yes? So that's why tickets are only issued for a certain period of time.
+8 hours, 10 hours, 24 hours. Kind of like our authenticators here would do, right? When you
+use, when you log into UCI services, right? Eventually, your ticket will expire. And you'll get
+a new window to re-authenticate. The same idea. Okay, so the ticket is something, in this case,
+encrypted for the server with a key known only to the server and the DTP. But the user has no idea
+about that key. Server can then decrypt the ticket and verify the information and says,
+oh yeah, this is for me, because I can decrypt it, so it must be for me. And it refers to Alice. Well,
+Alice is that user. And of course, lack of print. And do whatever.
+All right. All right. So that's essentially how it goes.
+Inside the ticket, you would want to find the username, meaning this is the server to whom it's
+issued. The name of the server is who am I, the server, brain server, right? Who is the user?
+Alice. Address of the user workstation. That's important so that the ticket is not movable from
+one place to another. The ticket is valid for this device. You know how, with a single sign-on,
+with an OID, if you change devices, you'll have to re-authenticate. You move from one laptop to
+another, or desktop to laptop, or smartphone, whatever, you re-authenticate. Same here. There's
+an IP address. Even though IP or address is not a reliable form of authentication, the ticket is
+tied to the IP address. Yeah? Important. Lifetime. Valid from, valid to, or until. Why is that? Because
+we want to know when the ticket is valid. Sometimes it's not valid yet. Sometimes tickets are issued into
+the future. And this ticket will be valid at 8am. Because now 7am, you can still get a ticket, but
+you can't print till 8am. And until, right? And a few other things. At least, it needs to include
+something else called a session key. A session key is a short-term key generated by the trusted third party
+server. For Alice and the server, for user and the server to communicate with. To protect their
+communication. Does that make sense? Stop me if you lost me already.
+So, now let's zoom in. How is an actual session with Kerberos going? Alice comes in the morning.
+Alice wants to log in. She says, my name is Alice, user ID Alice, password, so and so on. The real
+password is not really sentiment clear, okay? But the idea is that somehow it's something that allows
+the trusted third party. Here it's called authentication server, and you'll see why. And when it
+authenticates Alice, it will send back an encrypted ticket.
+The problem with this approach is that the password would be in a clear text, or even a function of the
+password would be in the clear text. And so an eavesdropper could essentially impersonate the user.
+So you cannot send just encrypted password or clear text password, because that would be one.
+And it would require you to do this for every service, right? So for every server which is not good.
+So Kerberos adopts the following system. So here you see this dotted pink
+contour around two entities. And then the reason that it's there is to say that there are two,
+like you can think about two programs and two functions, but they're inside the same platform.
+That means there's one device that runs both of them. One is called the key distribution center,
+and one is called ticket granting service, but they're one in the same.
+They're like two processes running in the same machine. And they are the TTP.
+So the user
+will come after having authenticated initially, right, and pooling his identity once, will go back and say,
+hey, I want to access the PGS service. Okay, my name is Joe, in this case.
+And the system will say, okay, you say your name is Joe. Notice no password. Notice no password there.
+First message is no password. Just says, my name is Joe. I want to access the service called PGS,
+Ticket Granting Service.
+The trusted third party replies with an encrypted ticket granting service ticket,
+where the ticket itself is encrypted under a key, you see it's green, derived from the user's password.
+So that trusted third party knows the user's password and knows how to derive a key,
+because we don't use password, because encryption is directly, right, when we hash them and derive them.
+So that green contour means that the DGS ticket is encrypted with a key derived from the user's password.
+Okay, now the user, if he knows the password, assuming that user knows the password, can decrypt the ticket.
+And then come to the ticket granting service and say, hey, here is my ticket
+that I was issued previously. Can you gain, can you give me access to a server, like printer, file,
+server, storage device, whatever, view farm, and specify. And then get back and return,
+if he's allowed to access that server, get back an encrypted service ticket.
+Now, these two first lines, they happen, right, one after another. This and this happen one after another.
+These two are not necessarily close, meaning this can happen an hour after.
+Meaning that the user logs in, but the user doesn't use any service for a while, like doesn't need to print, right, doesn't need to do anything.
+Maybe the user walks away or starts reading a book in the box station, right. But when the user actually wants to do something, then this happens.
+And so,
+stay away from me for a second. He gets the encrypted service ticket which he can decrypt.
+Well, actually part of it, you'll see. This part he cannot because he doesn't know the yellow key.
+The yellow key is the key of that service. And so he forwards it to the service and says, hey,
+my name is Joe, I have a ticket to use you.
+And that guy decrypts it, verifies it, and allows it.
+The problem with this is that it's still not good enough because the ticket can be hijacked.
+Because you see the ticket is sent,
+kind of encrypted, right, and essentially anybody can intercept the ticket and hijack.
+And the server,
+so the printer, whatever, the file server, it needs to make sure that the user presenting the ticket
+is the same to whom the ticket was originally issued by the DTP.
+Okay.
+Conversely, the server needs to authenticate to the user. So if the user thinks he got access to a printer
+in the next room, okay, the user wants to make sure that he's talking to the printer in the next room
+and not a printer across campus. Okay. So that's what's called mutual authentication.
+The server needs to authenticate the user. The user needs to authenticate the server.
+So now we are ready to look at the actual Kerberos. So in Kerberos here is the notation.
+KC is the long-term key of a client C. The Kerberos uses the terminology client. The client is user.
+Okay. It's derived from the user's password, known to the KDC, and the client.
+TGS is the long-term key of the TGS. TGS, remember, is that part of the trusted enterprise, right,
+and sits there all for that. Only it knows it, nobody else knows it. So this is not a shared key.
+It's not a private key as in public private key, but it's a key only the TGS knows. So that's a
+little weird. Key V is the long-term key of a server V, okay, like a printer server. V and TGS know it,
+but nobody else does. Then this notation refers to a key that is short-term shared between the client,
+Alice, Joe, and TGS. And KCV is the shorter term. This is called the session key, okay? That is,
+will be shared between the user, client, and the server. You might get a little bleary at it at this
+point. It won't become clear. So here's the actual single sign on the Kerberos.
+So let's just finish on this slide. So the user has it on their device, whatever, a smartphone,
+workstation, desktop, et cetera. He enters the password and there's a program that is client
+programming. A purposeful key in it. You have to install it. And what it does is that program
+actually communicates the KDC. So it converts the password into this long-term key, right,
+that presumably is shared with the KDC. It then sends a clear text packet to the KDC or DTP. It
+says the ID of the client, that's username, the ID of the TGS, that's reserved, that's kind of fixed,
+the name of the TGS, and the current time, okay? Notice this packet is not protected. There's no
+authentication. There's no encryption. If the user exists, right, right, because if they specify
+ID that does not exist, they get no answer. But if the user exists and is in good standing,
+meaning not revoked, not expunged, the KDC will reply to this green stuff, which is the encryption
+under the client, under the user's long-term key of a short-term PTC, the blue key, that is to be used
+from now on to talk to the DGS. The ID of the DGS should match the one in the blue, the issue should
+match. The time, the KDC means that the time, the current time on that side of the KDC. Lifetime,
+how long the ticket is valid, right? It's two from two. And a red thing, which by the way,
+looks very small, but it's very important. It's a ticket for the DGS. So actually that red thing is
+actually big, okay? It is an encrypted ticket that only DGS can read. So this green block comes to the
+user, the user because assuming, assuming the user knows the right KDC, and this is not an impersonator,
+right?
+The crypt, the green part, learns KC DGS and ticket DGS, the orange one.
+Okay? He also verifies that the time, for example, the time C and the time KDC have to be near. If
+something is wrong there, you know, that's a, there's a problem with time synchronization,
+right? If the ID DGS does not match, for example, right? You see, the user wants to go to one DGS,
+the different DGS, again, it's a problem. It's an error. Otherwise, he obtains the
+orange ticket DGS and that key, KC DGS. Okay? So that's the initial single sign-on. That is the
+only time the user enters a password. That's it. Now, here's where I obtain a service ticket.
+But since it's 1217, I think, let's just stop here.
+Yeah, you all look a little confused by your own, by your own notation.
+Trust me, if you stare at the slides for a little bit, it will all become clear.
+You are right here.
+Okay.
+Okay.
+Yeah.

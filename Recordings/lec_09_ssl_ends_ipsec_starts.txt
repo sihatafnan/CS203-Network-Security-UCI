@@ -1,0 +1,6518 @@
+I'm Drew Zee, if you don't die, no excuses.
+Now, let's share a quick show of hands.
+Do you want me to post a few example problems?
+Yeah.
+From prior years?
+Yes.
+Let me ask this.
+How many don't want them?
+I'll throw it together, a few examples.
+But I won't post solutions.
+Because many of the type of exams I give in classes I teach
+generally have more than one solution.
+Rarely there's just one.
+It's like for undergrad when I teach crypto,
+there's just one solution.
+It's a numeric answer.
+But other than that, the type of questions you have,
+that will require one, maximum two paragraph answers.
+Okay?
+Do not write me an essay.
+Okay?
+Please.
+Save yourself, save me.
+Don't write an essay.
+Okay?
+Also, just as a rule,
+there are no devices allowed in the essay.
+The phones, calculators,
+everything that you normally bring
+has to be inside your backpack
+or somewhere else away from you.
+Okay?
+No virtual reality AR type devices like this one.
+Okay?
+No earphones.
+No headphones.
+Right?
+None of that.
+No smart devices whatsoever on your body
+at the time of your exam.
+Nice.
+So your backpack, whatever stuff,
+inside, next to you, under you, whatever.
+No problem.
+Okay?
+You need to bring something to write with.
+Pen?
+Pencil?
+Both?
+Sure.
+Okay?
+I will give you paper.
+I know.
+It's old-fashioned.
+It's 20th century.
+You write it on paper.
+Okay?
+I will give you an exam sheet.
+You will have some number of problems.
+Not too large.
+Not too small.
+Same rules apply to the final type.
+And you will have blank sheets of paper
+that I will bring.
+And I will give you a couple to start with.
+If you need more, you'll come up.
+Make some up.
+You can write on one side or both sides.
+I don't care.
+The only thing I absolutely care
+is that you do your best penmanship.
+I am not here to decipher encrypted text.
+It's not what I paid for.
+That's beyond my call of duty.
+So, if I can't read it,
+I'll assume it's not decipherable
+and it requires a deduction of points.
+I mean, I don't want to be calling everybody in
+and saying,
+what did you mean here?
+What is this encrypted word?
+What is it in scrambled sentence?
+Please, write legibly.
+If you have to print,
+use printed letters.
+I don't care.
+Just write legend.
+Okay?
+And if you erase,
+make sure you erase well
+because sometimes, you know,
+when you erase something,
+it's smudgy
+and then you write on top of it
+and then it's hard to read.
+I'll give you more paper.
+No problem.
+Okay?
+So, that's the exam
+and it will cover everything we covered
+including today.
+I might ask you questions
+about the background stuff
+from that,
+remember that lecture one background?
+Why, like, not specific?
+Like, not in big detail, right?
+It's not relevant to what we covered.
+Otherwise, so far,
+I won't ask you, like,
+how does elliptic curve DSA work?
+So, I'll be reasonable
+and you'll try to be reasonable.
+Yeah?
+Are we going to expect
+to know, like,
+the specific numbers
+associated with different protocols?
+What do you think?
+I don't know.
+I'm not happy.
+No.
+No.
+If I ask you something like,
+okay, so how does,
+let's say today's lecture
+was more about IPsec.
+So, I'll say,
+how does IPsec parse headers?
+You should know how it does it
+but you don't need to know
+the vertical numbers
+and, you know,
+this kind of thing.
+That's minutia.
+I don't care about that.
+I do not hear.
+You're not here to, like,
+for growth learning
+to memorize some boring numbers,
+you know.
+Okay, so, on the last episode
+of 203,
+we went for SSL-TLS
+and I know you're probably
+more confused than you were before
+but you do know a bit more about it
+than you knew before.
+It is a complicated protocol.
+Nobody learns SSL-TLS
+in one lecture.
+Okay?
+It's an effort that took years
+by a whole lot of people,
+smart people, right, mostly.
+people with degrees
+and experience
+and security experts
+to put together this protocol
+and to evolve.
+So, don't expect to, like,
+understand everything
+in one lecture
+or even two.
+What I give you here
+in almost every lecture
+is essentially
+an appetizer
+and if you're interested
+in the meal,
+you go further
+and do a dig on your own.
+Okay?
+So, you will know
+just enough to be dangerous.
+but it's not enough
+to be any kind of an expert.
+So, remember,
+what the key things
+about SSL
+and SSL-TLS
+is that they operate
+at this thin sublayer
+above transport.
+They are primarily oriented
+towards the web
+or HTTP traffic
+but not exclusively.
+People use SSL-TLS
+for other things.
+But the biggest consumer
+is the web traffic.
+So, we covered
+the handshake, right?
+Remember
+the handshake protocol?
+Right?
+That's the main
+thing about CLS
+is without the handshake
+nothing else works.
+The handshake protocol
+is very important.
+It is
+a full handshake
+meaning that
+it requires
+an initiator,
+the client,
+to send something first
+usually not authenticated
+because the first message
+cannot be authenticated
+if there's no prior
+contact.
+And then the server replies
+also with usually
+not authenticated message
+saying,
+here's my certificate
+and then the server
+already computes
+a session ID
+because remember
+the client supplies
+a random number
+a nonce
+in the first message
+client hello
+the server replies
+with a certificate
+and the server hello
+and that contains
+a nonce.
+So, given the two nonces
+and some other stuff
+they have a session ID
+so they can identify
+this particular session
+between this client
+and this server.
+Okay?
+And recall that
+99%
+more than 99%
+of the cases
+client authentication
+isn't done
+in SSL TLS.
+It can be done
+but it isn't done
+for reasons
+that I already discussed.
+Right?
+And
+most of the time
+today
+you will see
+that most
+key exchange
+right?
+Not
+right?
+Key exchange
+is done
+using RSA
+where the client
+picks what's called
+pre-master secret
+encrypts it
+using the server's
+public key
+all this is
+after you check
+the server certificate
+right?
+You don't do this
+right?
+The client abandons
+the protocol
+if there's something
+wrong with the
+server certificate.
+Do you remember that?
+Yes?
+So the idea
+in security protocols
+is you don't
+do heavy work
+before you do
+light work.
+So the light work
+means you make sure
+that the server name
+in the certificate
+matches the URL
+the domain name
+of the URL.
+Otherwise
+you're being phished
+and attacked.
+Okay?
+You're being scammed.
+So test the map.
+Of course
+it doesn't help you
+if you mistyped the name.
+If you went
+wanted to go to
+wellsbargo.com
+and you typed
+wellsbargo.com
+well guess what?
+If somebody
+if somebody
+has a website
+called wellsbargo.com
+and registered it
+and has a certificate
+that's where you're
+going to go
+and SSL TLS
+will not help you.
+It doesn't sound
+too good
+does it?
+That's called
+that kind of attack
+was called
+type of squatting
+where
+adversaries
+or sometimes
+not even adversaries
+are like
+porn sites
+or like
+marketing sites
+will set up
+a domain name
+a domain name
+that closely
+resembles a
+legitimate
+well-known
+domain name
+hoping that
+the users
+will mistype
+the name
+and they will
+land on their
+site.
+In the worst case
+you will see
+some questionable
+content
+or you know
+a walking tub
+will be advertised
+to you
+by Akron.
+In the worst case
+you'll be fished.
+Okay?
+Meaning that
+they will present
+to you something
+that looks like
+a wellsbargo page
+and you'll
+blindly
+most people
+blindly
+type their
+username
+and password
+and that's it.
+Bye-bye.
+And so
+SSLTLS
+won't help you
+with this
+but if you
+click
+let's say
+on a bookmark
+that you put
+a long time ago
+that says
+wellsbargo.com
+SSLTLS
+will help you
+because there's
+no typos
+right?
+Right.
+So most
+common
+in
+TLS
+before
+version 1.3
+remember
+I told you
+there's like
+two real
+versions
+out there
+today
+there's
+really
+TLS 1.2
+and 1.3
+they probably
+used
+the most
+there are
+lower versions
+older versions
+still in use
+but they're
+being deprecated
+so a lot
+of web
+servers
+will simply
+not accept
+a conversation
+and TLS
+session
+with a client
+that does
+not support
+at least
+1.2
+TLS
+now 1.2
+and 1.3
+differ
+I already
+alluded to
+that
+but my
+discussion
+last time
+was focused
+on 1.2
+so in
+1.3
+unlike here
+you can
+no longer
+use RSA
+to encrypt
+okay
+in 1.3
+you have to
+basically use
+signatures
+and use
+Diffie-Hellman
+or something
+similar to
+Diffie-Hellman
+for key exchange
+you cannot use
+RSA
+for key exchange
+right
+we looked at
+how key is
+derived
+right
+because remember
+there's
+pre-master secret
+then there's
+like a
+master secret
+well
+in TLS 1.3
+I believe
+there's no
+pre-master secret
+because actually
+both sides
+contribute to
+the key
+and compute
+what's called
+the master secret
+because Diffie-Hellman
+is symmetric
+symmetric
+meaning both sides
+contribute equally
+and then
+using the master
+secret
+we derive
+using
+something called
+the k-derivation
+function
+a set of
+other keys
+right
+that we actually
+use for
+encryption
+and authentication
+during the
+data transfer
+okay
+we looked at
+this
+this
+this
+and then
+there was
+a summary
+right
+we stopped
+around here
+no
+this is a
+summary
+of
+a
+handshake
+client
+below
+followed by
+three messages
+essentially put
+together
+server hello
+server
+certificate
+change
+server hello
+down
+then
+client returns
+to server
+saying
+okay
+this is client
+key exchange
+message
+right
+so now
+that message
+can be secured
+already
+client finished
+by the way
+contains
+in mac
+of all
+of everything
+exchanged so far
+computed
+with a key
+that they just
+agree on
+master secret
+key
+and the last
+message in the
+exchange
+is server
+goes to client
+says confirming
+that we selected
+this
+I mean this
+wording is confusing
+change
+they're not changing
+any cyphers
+today
+right
+they already agreed
+on what cyphers
+they use
+important one
+is server
+finished
+that can also
+contain
+a mac
+of all the
+messages exchanged
+from the
+service
+perspective
+so if the
+survey of the
+client have
+the same view
+of messages
+sent and received
+that means
+no one
+has interfered
+with the
+protocol
+not a single
+bit has
+changed
+then they're
+sure that
+they're talking
+to each other
+and that
+completes the
+handshake
+we talked
+about this
+talking about
+this
+there's some
+options
+yes
+so the other
+thing you can
+do
+is if
+client and
+server have
+previously
+established
+SSL-TLS
+connection
+there is already
+a session ID
+remember there
+was a session ID
+derived
+that identified
+the SSL-TLS
+connection
+the client
+can resume
+the connection
+yeah
+resume
+means
+hey
+I'm still
+here
+I'm still
+here
+there's two
+purposes
+for that
+this one's
+kind of like
+saying I'm
+around
+don't
+don't
+don't
+flush
+the state
+right
+I'm still
+here
+and the
+other one
+is
+the other
+purpose
+is
+oh
+let's
+change
+keys
+let's
+refresh
+key
+okay
+so
+if you
+have
+what's called
+session resumption
+right
+you can
+essentially
+maintain the
+same
+not have to
+redo the
+handshake
+right
+you can
+maintain the
+same
+master secret
+but the
+nonsense can
+change
+remember
+nonsense
+these
+randoms
+they can
+change
+and so
+the actual
+encryption keys
+and authentication
+keys will change
+as a result
+you can
+theoretically
+also change
+the cipher suite
+at that point
+most of the time
+that doesn't happen
+but you can
+change
+say ah
+we'll be using
+I don't know
+RSA
+with
+AES
+let's switch
+to something
+else
+you could do
+that
+if the
+policy allows
+if both
+sides
+agree
+you can
+do
+never mind
+this
+so
+the main
+I'm not going
+to go in
+such detail
+over 1.3
+it is actually
+in some ways
+a simpler
+protocol
+let's
+zoom
+on this
+this is a
+handshake
+so what we've
+seen is this
+right
+the first
+four messages
+are the handshake
+and then you get
+the HTTP
+get
+HTTP
+right
+because this
+is what you
+really want
+right
+you want
+to fetch
+a URL
+so this
+and this
+gives you
+like
+this timeline
+gives you
+approximate
+like
+for comparison
+an average
+timeline
+for how long
+it takes
+so if you look
+at
+it starts
+with 0
+and
+it's 200
+milliseconds
+until you get
+here
+okay
+that's two
+round trips
+and that's
+pure overhead
+and so now
+it's pure overhead
+as far as
+the user
+is concerned
+and then the
+real useful
+stuff is
+get and put
+right
+here
+now with
+version 1.3
+there's just
+one round trip
+and then
+two packets
+plan
+hello
+key share
+and then
+server
+hello
+key share
+certificate
+certificate
+verify
+blah blah blah
+blah blah
+okay
+we're not going
+to go
+through the exact
+format
+but
+essentially
+the time
+is cut in
+half
+with pretty
+much
+the same
+result
+that the
+two parties
+there's still
+a handshake
+it's just
+a two message
+handshake
+not a four
+message
+handshake
+and it's
+faster
+obviously
+right
+so 100
+milliseconds
+you might
+not really
+care
+but over
+time
+this adds up
+right
+for many
+users
+over time
+right
+a lot of
+traffic
+a lot of
+delays
+so cutting
+things in
+half is
+better
+you had a
+question
+what's the
+improvement
+that
+okay
+many
+there are
+a number
+of improvements
+one of the
+things is
+simplification
+so
+TLS
+1.2
+and B4
+they have
+way too
+many
+cipher suites
+some of
+them
+got deprecated
+because they
+were like
+RC4
+is a
+cipher
+MD5
+a hash
+function
+they are
+broken
+or at least
+they are
+no longer
+secure
+DDS
+triple
+DES
+no longer
+considered
+secure
+or too
+expensive
+I forget
+exactly
+yeah
+I think
+it's
+no longer
+considered
+secure
+so
+most of
+the
+time
+today
+you
+will
+see
+AES
+as
+the
+encryption
+as
+the
+bulk
+encryption
+you
+will
+see
+SHA-256
+you
+will
+not
+see
+SHA-128
+anymore
+so
+rather than
+hundreds
+of
+cipher suites
+I think
+the
+main ones
+are like
+five or six
+today
+and
+they're not
+using RSA
+anymore
+so
+also
+the names
+of the
+cipher suites
+changed
+like
+I remember
+I was showing
+like
+TLS
+RSA
+with
+blah blah blah
+blah blah
+and
+the first
+thing
+that
+this
+string
+would
+tell you
+is
+how
+are we
+exchanging
+keys
+which is
+how
+RSA
+when you
+client
+increase
+a random
+number
+for the
+server
+and the
+second
+one
+was
+how
+does
+server
+authenticate
+also
+RSA
+because
+he
+decrypts
+right
+and
+something
+that the
+client
+sent
+to him
+and
+can
+implicitly
+authenticate
+so
+that's
+gone
+instead
+of
+that
+they
+no
+longer
+say
+how
+you
+exchange
+the
+keys
+everything
+is
+done
+essentially
+by
+a
+DPA
+element
+or
+some
+version
+of
+DPA
+element
+which
+is
+either
+elliptic
+curve
+or
+normal
+and
+the
+signatures
+are now
+required
+so
+there's
+no
+more
+implicit
+authentication
+so
+now
+both
+you
+know
+both
+clients
+and
+the
+server
+have
+to
+stop
+well
+the
+server
+has
+to
+stop
+basically
+and
+the
+client
+can
+sign
+with
+the
+ephemeral
+key
+they
+just
+generated
+okay
+so
+it's
+a
+strictly
+stronger
+syntax
+strictly
+more
+higher
+security
+at
+half
+the
+cost
+so
+that
+higher
+security
+enables
+the
+reduction
+in
+messages
+no
+it's
+just
+no
+not
+not
+not
+higher
+no
+it's
+a
+reduction
+in
+messages
+and
+shading
+off
+some
+of
+the
+questionable
+currently
+questionable
+algorithms
+allows us
+to do
+this
+because
+what the
+client
+can do
+now
+you see
+the client
+hello
+is still
+in the
+form
+the client
+says
+I don't know
+anything about
+this server
+right
+I just
+know the
+URL
+so what I want
+is I want a
+certificate
+that says
+that this
+URL is inside
+the certificate
+and it's signed
+by somebody
+I trust
+right
+so
+it's like
+essentially
+you come
+to
+I'm a
+I'm a
+hiring manager
+at a company
+you come to me
+and you say
+I have a UCI
+degree
+I may not have
+ever heard of UCI
+okay
+and I've never met
+you
+but if you give me
+a signed
+diploma
+signed by UCI
+register
+and then I look up
+UCI register
+and I see that
+they are certified
+by University of
+California
+Central Authority
+and that one
+is certified
+by a California
+Department of Education
+well
+I trust
+the Department of Education
+of the state
+of California
+you see what I mean
+so I know
+their root certificate
+I will verify
+the UC certificate
+then I will verify
+UCI certificate
+then I will verify
+your certificate
+make sure it's valid
+make sure it's not revoked
+right
+that kind of thing
+so that's still the case
+the client
+before this starts
+does not trust
+the service
+just knows the URL
+and so
+that remains
+in both versions
+the web
+the fundamentals
+of the web
+don't change
+but what we're saying
+now is a client
+for example
+can generate
+like
+think of it
+as a temporary
+public key
+there
+right
+where he knows
+the private key
+and what he does
+is he can now
+send a message
+with a public key
+to the server
+and he can say
+and by the way
+I do know
+the private key
+and how can you do this
+he can sign
+with a private key
+that message
+that includes
+the public key
+kind of it was
+essentially like
+a self-signed certificate
+the server said
+oh look that's cool
+because now
+you're not joking
+you're not messing around
+with me
+you know the key
+which you
+you know the private key
+for which the public key
+you'll be just sending me
+so then the server says
+okay now I have
+my own certificate
+here's my certificate
+oh maybe a chain
+of certificates
+and I only use RSA
+certificates can be signed
+with RSA
+but my public key
+is no longer RSA
+it's some kind of
+D.K. Hellman type
+public key
+which can be used
+for many things
+but
+there it is
+so now
+a server has a public key
+from the form
+remember G to the B
+or something
+and the client
+has a public key
+remember G to the A
+and then they can
+each compute
+G to the A B
+okay
+so that's basically
+the idea
+and
+when the server
+receives that message
+one
+he's able to
+compute the key
+right away
+because
+he knows his
+you know
+he knows B
+right
+that's his private key
+and he receives
+G to the A
+so right away
+he knows it
+and in that second message
+the second green message
+he can already sign
+using that key
+or MAC
+okay
+so that message
+can be secure
+they already have
+a secret
+in common
+so
+what is
+yeah
+I would like to know
+for the client
+when the client
+decide to
+choose the
+TS 1.2
+and 1.2
+so
+so
+this is
+the client
+hello
+did you get
+that announcement
+I posted
+yes
+did you see
+that announcement
+I posted
+about this
+there's a very cute
+little site
+that if you expand
+everything
+it will tell you
+in excruciating
+detail
+everything
+you want to know
+about this
+now
+if you
+in that pointer
+that I sent you
+link
+right
+there's a 1.2
+if you substitute
+with 1.3
+you will see
+the same
+gory details
+of a 1.3
+handshake
+okay
+now
+the difference is
+the client
+hello
+is present
+in all of them
+so
+at the client
+hello stage
+the first thing
+that the server
+sees is
+the setup
+or the highest
+version
+that the client
+is supporting
+so if the client
+specifies
+the highest version
+he supports
+is 1.2
+that server
+says
+okay
+if I'm allowed
+for example
+the server
+could be
+federal government
+saying
+go away
+I don't
+I don't talk
+to anybody
+who doesn't
+speak the latest
+version
+okay
+but if it's
+an e-commerce
+site
+they're like
+I don't
+sell this one
+I don't care
+if you're using
+the latest version
+so it will say
+okay
+1.2 is fine
+you see what I mean
+if the client
+says
+oh
+1.3
+in the client
+the server
+could say
+yeah
+but I'm in
+I don't know
+Slabonia
+and we don't
+speak 1.3
+here yet
+we're still
+like living
+10 years ago
+so then
+we regress
+to 1.2
+you see what I mean
+so server will
+reply with
+1.2
+but yeah
+for the previous
+slide
+yeah
+for the previous
+slide
+it seems that
+the client
+sent more
+message
+if it
+uses
+1.3
+so if
+no
+no
+less
+less
+because
+look
+both of them
+say
+client
+hello
+right
+but the client
+hello
+is not exactly
+the same
+if you look
+at the
+that's why
+I told you
+if you look
+go into that
+website
+right
+and you compare
+the client
+hello
+messages
+for both
+1.2
+and 1.3
+they're not
+exactly the same
+but the beginning
+is the same
+do you see what I mean
+they are the same
+in the beginning
+so
+if you
+if the client
+hello
+is a 1.2
+hello
+the server
+will realize
+that
+you see what I mean
+so if the client
+is willing to speak
+1.3
+the client
+hello
+should be 1.3
+if the client
+hello
+the client speaks
+only 1.2
+up to 1.2
+he will
+it will be 1.2
+but the server
+will recognize
+by looking
+in the first byte
+yeah
+so
+no
+because
+the server
+will simply
+reply that
+my check
+cipher spec
+I will pick
+1.2
+now
+don't quote me
+on this
+but I think
+one is a superset
+of the other
+so it's still
+parsable
+you don't have
+to trust me
+you have to trust
+all these hundreds
+of people
+that work
+on this
+to make sure
+because it's all
+made for programmers
+right
+it was all
+made for people
+to make it easy
+to code
+to parse things
+right
+so even if
+the format
+changes
+the preamble
+almost never
+changes
+right
+so you should
+be looking
+at like
+the very
+first few
+fields
+in the header
+and say
+ah
+that will tell
+me the version
+right
+and if I don't
+support this version
+then I can't
+then it's an error
+but if I can't
+support this version
+then we can
+downgrade
+right
+if my policy
+allows me
+right
+so for example
+maybe
+that depends
+very much
+on web
+web
+web
+web
+web service
+policy
+whether it's
+like a client
+might come
+from
+within the
+US
+and say
+I speak
+1.2
+and the web
+server says
+okay
+I'll speak
+1.2
+with you
+and the client
+comes over
+from Botswana
+and the server
+says
+uh-uh
+I don't
+trust Botswana
+I don't know
+where the hell
+you are
+really
+so for foreign
+clients
+I will
+bunk with
+three or nothing
+it's totally
+fine
+to do that
+so primarily
+what do we
+use this
+to sell
+for
+I mean
+the primary
+thing
+has always
+been
+some kind
+of e-commerce
+right
+because
+we're buying
+stuff
+right
+internet
+was built
+essentially
+on e-commerce
+internet
+of today
+not
+the original
+internet
+I would say
+sorry
+correction
+the web
+right
+the driving force
+of the web
+is e-commerce
+so
+as I
+already motivated
+before
+client-less education
+is generally
+not needed
+why
+well because
+with what
+right
+you're going
+to an e-commerce
+site
+you're buying
+widgets
+from
+ADC
+incorporated
+and you may
+have never
+visited
+ADC
+incorporated
+you're
+bargain shopping
+right
+using google
+saying compare
+prices
+oh look at
+that
+a company
+in Kravistan
+all right
+cheap stuff
+let me get
+it
+they don't
+know you
+you don't
+know them
+okay
+so you
+authenticated
+them
+but why
+should you
+authenticate
+yourself
+as a client
+until you
+decide to
+buy
+and it's
+not really
+authentication
+that you're
+doing
+right
+you're just
+presenting
+a method
+of payment
+right
+which may be
+stolen
+as long as
+it's valid
+the web server
+doesn't care
+all they want
+to make sure
+is that you
+will pay
+who you are
+they don't really
+care
+so if you're
+sending credit
+card information
+over
+of course
+that should be
+protected
+so that's what
+really SSL is for
+now
+it's also there
+to protect
+to you
+against evil
+web servers
+and that's
+where it
+transcends
+e-commerce
+when you go
+to CNN.com
+assuming you
+trust CNN
+or whatever
+your taste
+may be
+fox.com
+you want
+to get news
+from them
+and not
+from some
+belorussian
+government agency
+right
+or a north
+korean
+mouthpiece
+of what's
+his name
+you know
+so you
+want to get
+the real
+thing
+so in that
+case it's
+not money
+that's a
+stake
+it's authenticity
+right
+in that case
+nobody cares
+that you
+actually encrypt
+right
+in that case
+you may not
+even care about
+encrypting the
+data
+you care about
+authenticating
+the server
+maybe using
+null encryption
+make sense
+right
+of course
+SSL
+and TLS
+they're not
+magic
+right
+they're not
+going to do
+anything
+about like
+guaranteeing
+that if you
+send credit
+card data
+and shipping
+address
+or whatever
+they're not
+going to sell
+it to some
+mass marketer
+or some
+annoying
+telemarketer
+or just
+give it to
+somebody on
+the street
+to quickly
+buy 500
+pair of jeans
+you know
+you have no
+idea what's
+happening
+with your
+credit card
+you're just
+going to
+trust them
+that they
+will erase
+it
+or store
+it
+securely
+most
+clients
+of course
+have no
+idea
+what it
+means
+for a
+server
+certificate
+to even
+exist
+right
+most
+think about
+not
+yourselves
+because
+you're all
+super
+educated
+folks
+but
+think
+about
+various
+family
+members
+and
+you know
+some of
+them
+are
+children
+they don't
+know
+they use
+the web
+they use
+the internet
+they have
+no idea
+what it
+all means
+so we
+rely on
+conscious
+correct
+implementations
+to make
+sure
+that
+certificates
+are valid
+the certificates
+correspond to
+the websites
+that they're
+assigned to
+etc
+more importantly
+than
+e-commerce
+although that's
+not as much
+of a segment
+for
+application
+domain
+for
+CLS
+is
+banking
+and other
+financial
+services
+right
+it's kind
+of
+you can
+think of
+it as
+hyper
+e-commerce
+right
+this is
+where the
+money
+the real
+money
+is
+your
+money
+right
+here the
+bank is
+not selling
+you anything
+right
+you already
+decided to
+put your
+money in
+the bank
+and you
+have a
+relationship
+so instead
+of entering
+your credit
+card info
+actually here
+you do
+enter
+to begin
+a session
+with the
+bank
+you do
+enter
+your
+username
+password
+and god
+knows what
+else
+MFA
+right
+so
+there's
+more
+of a
+beginning
+of a
+session
+and end
+but notice
+that people
+go to
+banks
+also to
+browse
+let's
+say
+interest
+rates
+without
+having to
+log in
+so you
+do want
+to make
+sure you're
+going to
+the bank
+it's the
+right bank
+and it
+displays you
+truthful
+information
+so SSL
+TLS is
+useful there
+too
+right
+even without
+you logging
+in
+and authenticating
+yourself
+sometimes
+in early
+2000s
+mid 2000s
+some banks
+that were
+kind of
+hip
+and
+cool
+thought
+they
+would
+send
+customers
+I think
+I mentioned
+before
+like various
+dongles
+and USB
+keys
+and other
+things
+that you
+could use
+to upload
+a client
+certificate
+for SSL
+TLS
+that way
+you could
+have
+strong
+two-way
+authentication
+this
+somehow
+fell out
+of
+fashion
+okay
+that's
+the end
+of
+SSL
+TLS
+now we
+go on
+to
+another
+beautiful
+masterpiece
+IPsec
+quick show
+of hands
+how many
+people here
+have heard
+IPsec
+two
+three
+and
+well
+okay
+so
+IPsec
+is IP
+security
+extension
+strictly
+speaking
+unlike
+Carverus
+which is
+a system
+right
+Carverus
+remember
+e-system
+have
+many
+protocols
+right
+components
+SSL
+TLS
+is a
+protocol
+right
+our
+protocol suite
+really
+and a set
+of formats
+right
+the protocols
+always have
+formats
+for messages
+so
+IPsec
+strictly speaking
+is not
+a protocol
+it is
+actually
+a set
+of formats
+okay
+so
+this will
+become
+clear
+maybe a
+little bit
+puzzling
+at the
+moment
+become
+clear
+in a
+bit
+I hope
+so
+let's
+consider
+IP
+IP
+is the
+lingua franca
+the English
+of the internet
+right
+you want
+to
+communicate
+you kind of
+better speak
+English
+in the business
+world today
+well
+if you want
+to communicate
+today
+you need
+to speak
+IP
+you don't
+speak
+IP
+you are
+basically
+all right
+IP
+is the
+network
+layer
+it is
+what's
+called
+the
+thin
+waste
+because
+the internet
+has this
+kind of
+a
+what do you
+call it
+the hourglass
+the hourglass
+shape
+if you look
+at the
+protocols
+right
+there are
+many
+protocols
+why do I
+say hourglass
+right
+so
+so
+this
+will
+be
+physical
+layer
+data
+link
+and
+here
+is
+network
+layer
+here
+is
+where
+IP
+goes
+so
+here
+things
+get
+thicker
+and above
+IP
+let's
+say
+this
+is
+IP
+and
+above
+IP
+you
+have
+transport
+layer
+session
+layer
+so
+I have a
+presentation
+application
+whatever
+I forget
+that
+but
+they're
+all
+poorly
+demarcated
+here
+you have
+lots of
+applications
+right
+lots and
+lots of
+applications
+below that
+also
+lots of
+applications
+like
+presentation
+platforms
+of various
+sorts
+and here
+below
+in the
+physical
+layer
+you have
+Wi-Fi
+Zigbee
+Bluetooth
+NFC
+cellular
+right
+you have
+right
+all these
+fiber
+optics
+twisted
+copper
+god
+knows
+what
+oh
+radar
+infrared
+right
+all these
+ways of
+communication
+so
+there are
+many choices
+here
+many choices
+here
+as the
+network
+layer
+on the
+internet
+no
+choice
+IP
+or
+nothing
+that's
+what it's
+called
+the
+thin
+waste
+so
+as I
+said
+before
+IP
+was
+designed
+started
+around
+1976
+the
+design
+was
+finalized
+around
+1980
+or
+81
+most
+of the
+work
+in
+designing
+IP
+was
+done
+actually
+not
+far
+from
+here
+the
+place
+I
+once
+worked
+it's called
+ISI
+information
+sciences
+institute
+part of
+USC
+school
+of
+engineering
+beautifully
+situated
+far away
+from
+USC
+in
+Marina
+Del Rey
+on
+water
+inspiring
+people
+to work
+hard
+in
+course
+so
+true story
+I wasn't
+there
+I'm not
+that old
+but
+it was
+done
+a lot
+of it
+was done
+there
+at UCLA
+also
+there were
+some
+internet
+pioneers
+who designed
+some of
+this
+and
+DARPA
+which is a
+defense
+advanced
+research
+project
+agency
+funded
+all of
+this
+and
+without
+DARPA
+there
+would
+have
+been
+no
+internet
+anyway
+so
+it was
+designed
+to connect
+a bunch
+of
+routers
+switches
+computers
+and
+all
+people
+well
+to
+network
+and
+primary
+motivation
+back
+then
+for
+the
+internet
+was
+to
+access
+scarce
+resources
+remember
+back
+then
+you had
+computers
+most
+of
+them
+there
+were
+no
+personal
+computers
+first
+of
+all
+zero
+when
+FB
+was
+designed
+none
+not
+such
+a
+thing
+did
+not
+exist
+they
+were
+mid-range
+computers
+and they
+were
+like
+mainframes
+bigger
+computers
+and then
+the few
+here and
+there
+around
+the
+world
+supercomputers
+okay
+a
+supercomputer
+from
+back
+back
+then
+is
+an
+IoT
+device
+today
+in
+terms
+of
+its
+computing
+power
+but
+they
+were
+supercomputers
+and
+it
+took
+like
+a
+whole
+floor
+of
+building
+one
+computer
+because
+these
+resources
+were
+scarce
+and
+super
+duper
+expensive
+like
+gazillions
+of
+dollars
+they
+were
+precious
+right
+and people
+who wanted
+to perform
+large scale
+computation
+of any
+kind
+have to
+like
+buy
+time
+on those
+computers
+and
+if
+you
+do
+it
+you
+travel
+somewhere
+to
+use
+your
+computer
+right
+there
+physically
+but
+that's
+not
+scalable
+so
+people
+realize
+that
+if
+you
+want
+to
+have
+access
+remote
+access
+to
+resources
+like
+that
+you
+need
+to
+connect
+them
+somehow
+and
+dial
+up
+what
+existed
+modems
+remember
+modems
+maybe
+you've
+seen
+old
+movies
+go
+and
+there's
+a
+modem
+connection
+yeah
+it's
+not
+somebody
+having
+a
+cold
+well
+I
+still
+remember
+that
+and
+but
+that
+was
+totally
+terrible
+because
+you
+were
+using
+unstable
+telephone
+lines
+and
+terrible
+equipment
+so
+there was
+the idea
+to connect
+them all
+with
+dedicated
+lines
+okay
+so
+there you
+have the birth
+of the internet
+right
+and they
+needed a
+protocol
+that would
+basically
+break
+communication
+data
+arbitrary
+size
+into
+small
+uniform
+size
+chunks
+and
+transmit
+them
+hop
+by hop
+by hop
+by hop
+to their
+destination
+why
+hop
+because
+you
+couldn't
+have
+fully
+connected
+network
+right
+everybody
+connected
+to
+everything
+that would
+be incredibly
+expensive
+logistically
+nightmare
+right
+so
+they
+needed
+to
+connect
+them
+via
+switches
+routers
+right
+that scales
+so
+the internet
+protocol
+was designed
+for that
+to hop
+along
+these
+routers
+and switches
+until
+these
+get to
+the
+destination
+IP
+protocol
+does
+not
+actually
+perform
+the routing
+function
+it doesn't
+distribute
+routes
+okay
+that's done
+by what's
+called
+routing
+protocols
+which you
+should have
+learned in
+your networking
+course
+IP just
+forwards
+things
+all it
+knows
+is how
+to
+let the
+source
+generate
+the packet
+stick it
+on the
+wire
+give it
+to the
+data link
+layer
+below
+and then
+at the
+next hop
+whatever that
+hop might be
+it might be
+the destination
+or it might
+be a router
+pick that packet
+up saying
+hmm
+let's see
+destination
+I don't
+know this
+destination
+I am not
+that destination
+but I think
+somebody else
+I know
+knows where
+the destination
+is
+so you forward
+it to somebody
+else who knows
+better
+according to
+some routing
+data
+so back then
+the internet
+was small
+and very friendly
+it was populated
+by idealistic
+and naive
+geeks
+who just wanted
+to compute
+stuff
+right
+and they were
+not you know
+hostile
+I mean they were
+they could be
+hostile
+but they were
+not about
+to attack
+the internet
+the cow
+that feeds
+them all
+right
+it was all
+essentially
+research
+and almost
+no commercial
+use was allowed
+on the internet
+until early 90s
+so for good
+like 12
+14 years
+there was no
+such thing
+as commerce
+on the internet
+and so
+from that
+small and
+friendly world
+we wound up
+what we have
+today
+essentially
+internet
+in many ways
+is a giant
+global sewer
+where everything
+goes
+and anything
+flies
+and back then
+all the hosts
+were known
+in fact
+if you were
+running a
+unix machine
+back then
+you didn't even
+need domain name
+service
+you could have
+what's a file
+called
+etc password
+there was a file
+called etc hosts
+and it actually
+listed one per line
+names
+and IP addresses
+of every host
+on the internet
+yeah
+I remember
+when I inherited
+my first
+machine
+in grad school
+it was like
+from
+the machine
+was older
+but it had
+this file
+and it had
+like I don't know
+5,000 entries
+and there were
+all the hosts
+on the internet
+that's it
+everywhere in the world
+the users
+were limited too
+right
+security was
+essentially
+not an issue
+back then
+in that world
+it was not an issue
+think of it
+as the internet
+was essentially
+like a hippie
+hippie-dippie
+private network
+you couldn't
+just like
+randomly hook up
+to the internet
+there was no
+wireless
+access
+zero
+okay
+the easiest way
+to work with
+the internet
+was to actually
+like
+use a
+wired
+ethernet
+right
+you have an
+ethernet port
+in the wall
+you
+start with
+wire
+and
+if you have
+internet access
+you can start
+doing
+well
+as you know
+the world has
+changed dramatically
+since then
+so
+security has
+become an issue
+now
+people were not
+totally naive
+already
+in the late 80s
+they started
+thinking about
+what will happen
+when the internet
+becomes available
+to the masses
+and becomes
+commercialized
+so
+hostility
+or
+essentially
+lack of security
+in the original
+internet
+was already
+a problem
+so what can
+you do with
+IP
+IP
+even if you
+don't know
+anything
+about it
+just
+trust me
+you will
+see the
+format
+in a minute
+allows very
+easy address
+spoofing
+so
+IP packets
+all have
+a header
+and a header
+says
+among other things
+where is this
+packet coming from
+and where is it
+going to
+otherwise it would
+make no sense
+at least the
+destination
+but the source
+is the spoofed
+the source is just
+an IP address
+IP address
+is not in the
+form of authentication
+it's just
+there
+right
+you can just
+like
+substitute it
+with some
+other IP address
+and so if you
+do some kind
+of filtering
+based on
+source IP
+addresses
+you're fooling
+yourself
+because it
+doesn't mean
+anything
+the source address
+why do we
+use the source
+address
+well because
+the destination
+when it wants
+to reply
+it needs to
+know where to
+reply
+so we still
+need the
+source
+in the
+kitchen
+most packets
+anybody can
+take a packet
+not touch
+the source
+address
+but modify
+the destination
+address
+or modify
+the payload
+right
+the data
+just pick
+something up
+yeah
+sure
+packets can
+be reordered
+right
+so if a
+malicious router
+receives packets
+and you can
+say oh I
+received packet
+one before
+I received packet
+two but I'm
+going to send
+out packet
+two first and
+then packet
+one just to
+confuse and
+annoy people
+but maybe
+actually there's
+a security
+application
+if you send
+them the good
+example I tell
+kids in the
+undergrad class
+why reordering is
+important is think
+about this
+this is actually
+used to be the
+case back in
+the early 80s
+the ATM machines
+which used to
+have bank
+ATM machines
+used to have
+their own
+private network
+and if you
+and all these
+transactions that
+you do at the
+ATM like
+withdraw $100
+deposit $500
+check my balance
+they were like
+messages
+okay
+and so
+if you were at
+ATM and you
+said okay well
+here's a $500
+deposit
+and transaction
+click return
+and here's a $200
+withdrawal
+on cash
+well that's fine
+but what if you
+reverse the two
+if you reverse the
+two
+you're going to
+get hit with
+overdraft charges
+right
+if you reorder
+these two
+so that's why
+ordering actually
+matters a lot
+I mean not just
+that's a silly
+example
+of course it
+doesn't work
+today but
+it's an issue
+and it actually
+happens even
+today if you
+use ATM for
+example in a
+foreign country
+sometimes they're
+poorly connected
+and you may
+still like for
+example you
+deposit
+something in
+one ATM
+and the
+deposit takes
+a day but
+in the meantime
+you withdrew
+something in a
+different ATM
+that is well
+connected and
+it happens
+immediately
+you may have
+a problem
+anyway reordering
+is an issue
+deletion is an
+issue but
+there's nothing
+we can do
+about deletion
+right so
+we can delete
+packets right
+discard them
+on the way
+eavesdropping
+replay
+replaying
+recording
+all packets
+or recording
+packets
+in real time
+and then
+replaying them
+later
+and eavesdropping
+on not
+just data
+right
+and I want
+you to
+understand
+because it's
+important
+for IPsec
+eavesdropping
+on data
+that is
+carried in
+the packet
+is one
+thing
+you can
+protect
+that
+with like
+SSL
+TLS
+right
+but
+maybe
+maybe not
+right
+depending on
+what
+you're doing
+but
+eavesdropping
+on metadata
+cannot be
+protected
+with SSL
+TLS
+or
+transport
+layer
+security
+now
+what is
+metadata
+that's
+the data
+that's
+carried
+in the
+packet
+header
+and that
+be
+packet
+header
+and it
+leaks
+information
+right
+it leaks
+information
+among others
+where is
+this packet
+coming from
+and where
+is it going
+to
+that itself
+is sensitive
+information
+in many cases
+think about
+censorship
+now you ever
+heard of countries
+that do
+censorship
+right
+based on
+where packets
+come from
+going to
+a number
+of countries
+do that
+that comes
+from metadata
+so
+IPsec
+is a
+very very
+thin layer
+on top
+of IP
+right
+so it
+doesn't
+interfere
+of course
+with
+physical
+and data
+link
+layers
+which
+can use
+their own
+encryption
+and their
+own
+security
+and Wi-Fi
+for example
+uses
+there's a number
+of standards
+right
+for Wi-Fi
+if you dig
+into your
+laptop's Wi-Fi
+settings
+you'll see
+there's
+all kinds
+of options
+for Wi-Fi
+security
+and probably
+most of you
+have
+whole routers
+right
+or wireless
+routers
+that you've
+set up
+and maybe
+you've seen
+the choices
+different choices
+for Wi-Fi
+security
+right
+so that just
+protects
+this first
+last hop
+right
+this
+something
+immediate
+right
+from
+your device
+devices
+to the
+access point
+so that's
+not going
+to help
+you in the
+long
+run
+over
+the
+long run
+and so
+you can
+do this
+hop
+by hop
+every link
+can do
+its own
+encryption
+but it's
+not going
+to help
+n-to-n
+and so
+IP
+is the
+first
+layer
+in the
+hierarchy
+that is
+n-to-n
+source
+destination
+so we
+built
+here
+on top
+of network
+layer
+but it's
+not a
+transport layer
+it's just
+like a
+sublayer
+on top
+of network
+layer
+and its
+presence
+is
+transparent
+okay
+TCP
+UDP
+they don't
+know
+that it
+exists
+just a
+quick recap
+of how
+IP
+works
+anybody
+seen this
+before
+if you've
+taken a
+network
+course
+you should
+have
+seen
+this
+allowing
+a few
+of you
+look
+familiar
+with
+this
+okay
+this
+is
+the
+IP
+before
+heaven
+this
+is
+this
+first
+one
+two
+three
+four
+five
+the
+five
+lines
+are
+the
+head
+this
+is
+options
+they may
+or may
+not be
+present
+okay
+but the
+first
+five
+are always
+there
+okay
+and
+it's
+like
+this
+it's
+32
+bits
+per
+line
+so
+the
+very
+first
+thing
+you
+see
+in
+the
+header
+is
+a
+version
+number
+now
+do you
+know
+how many
+versions
+of IP
+are there
+that's
+a
+for one
+word
+answer
+you're
+both
+right
+and
+wrong
+which
+rarely
+happens
+so
+the
+six
+is
+the
+right
+answer
+because
+there
+exists
+in
+IPv6
+but
+there's
+not a
+conclusion
+there's
+ever
+been
+six
+version
+nobody's
+ever heard
+of one
+and two
+and I
+don't think
+even three
+there's
+IPv4
+and there's
+IPv6
+and
+IPv5
+is like
+some
+lost
+you
+you
+know
+I
+don't
+upward
+effort
+that
+never
+saw
+the
+light
+of it
+so
+I
+don't
+know
+what
+happened
+to
+the
+IPv5
+I
+never
+heard
+of it
+there
+is
+before
+and
+both
+of
+them
+believe it or not
+like
+TLS 1.2
+and TLS 1.3
+exist on the internet
+today
+and if
+you open
+your Mac
+or your
+Windows
+machine
+you open
+your network
+setting
+you will
+see that
+you probably
+have both
+an IPv6
+and IPv4
+address
+depending on
+where you
+are
+which network
+you're using
+yeah
+no
+no
+no
+because
+and I
+thought
+you want
+to know
+why
+because
+this is
+the
+within
+waste
+this is
+the only
+changing
+IP
+is like
+moving
+mountains
+okay
+it's a
+humongous
+undertaking
+people thought
+about it
+for decades
+because IP
+has fundamental
+issues
+no matter
+what version
+it is
+it's a fundamental
+issue
+to change
+to something
+other than
+IP
+requires
+incredible
+effort
+okay
+that's why
+with SSL
+TLS
+it's much
+easier
+with
+Kerber
+it's much
+easier
+this application
+things
+moving things
+in the network
+is very high
+moving things
+evolving things
+here
+easy
+that's
+hop by
+hop
+you can
+do it
+on your
+own
+in your
+home
+install
+some
+weird
+ass
+custom
+hack
+data link
+layer
+that you
+designed
+nobody cares
+nobody cares
+maybe your
+neighbors care
+but you know
+what I mean
+you're totally
+free to do
+that
+you want
+to put
+pigeons
+in the
+physical layer
+that carry
+IP packets
+you know
+no problem
+do it
+but
+yeah
+serious
+you can do
+it
+nobody cares
+except
+people
+get pooped
+on
+but
+network
+layer
+is where
+it's
+common
+and so
+it's
+impossible
+let me put it
+this way
+you all
+got a lot
+of years
+ahead
+I would
+be super
+duper
+surprised
+if there's
+IPV7
+or anything
+higher than
+6
+in your
+lifetime
+of course
+never say
+no
+never
+but
+I would
+be really
+surprised
+because
+it's
+such a
+hard
+thing
+yeah
+but let's
+keep our
+eye on the
+ball
+what
+IP
+before
+remember
+designed
+in like
+early
+80s
+they
+thought
+jeez
+we have
+5,000
+10,000
+hosts
+on the
+internet
+32 bits
+is enough
+for an
+address
+32 bits
+2 to the
+32
+right
+big number
+wrong
+not such a
+big number
+after all
+so
+already
+by the
+decade
+later
+like
+maybe
+like
+late
+80s
+they
+started
+saying
+ah
+maybe
+mid
+80s
+even
+we're
+going to
+run
+out
+sooner
+or
+later
+like
+within
+10
+years
+15
+years
+we're
+going
+to
+run
+out
+and
+the
+truth
+is
+actually
+they never
+did
+and
+we still
+use
+before
+which
+means
+we
+didn't
+quite
+there
+one
+of the
+reasons
+is
+that
+and
+this
+is
+totally
+obscure
+the
+U.S.
+government
+or
+the
+agency
+was
+called
+IANA
+that
+allocates
+IP
+addresses
+instead
+of
+this
+weird
+agency
+that
+worldwide
+they
+allocated
+huge
+blocks
+of
+addresses
+to
+corporations
+that
+never
+used
+them
+and
+they
+also
+reserved
+huge
+blocks
+for
+future
+use
+so
+in
+the
+end
+I
+think
+they
+released
+some
+of
+them
+gradually
+so
+we
+wound
+up
+never
+not
+yet
+running
+out
+of
+IPv4
+addresses
+but
+it's
+still
+not
+a
+good
+idea
+to
+stick
+to
+IPv4
+in
+the
+longer
+so
+IPv6
+was
+designed
+to
+take
+care
+of
+look
+at
+IPv4
+because
+most
+of
+the
+rest
+of
+the
+discussion
+today
+is
+IPv4
+version
+number
+that's
+fixed
+at
+4
+for
+IPv4
+that's
+4
+but
+remember
+our
+SSL
+TLS
+discussion
+if you
+have
+an
+IPv6
+packet
+that
+will
+be
+6
+and
+that
+is
+the
+only
+things
+they
+have
+in
+common
+the
+first
+thing
+in
+the
+packet
+is
+the
+version
+number
+it's
+kind of
+like
+an
+SSL
+TLS
+you
+look at
+the
+version
+numbers
+like
+4
+6
+now
+I
+know
+what
+to
+do
+IHL
+is
+internet
+header
+length
+it's
+only
+4
+bits
+right
+so
+not a lot
+it just
+tells you
+how many
+32 bit
+words
+there
+are
+in
+the
+header
+32 bit
+words
+right
+so
+for
+standard
+IPv4
+without
+options
+it's
+going
+to
+be
+1
+2
+3
+4
+5
+it's
+going
+to
+just
+be
+number
+5
+type
+of
+service
+type
+of
+service
+is
+an
+obscure
+field
+it's
+used
+for
+different
+type
+of
+flows
+it was
+supposed
+to
+distinguish
+between
+let's
+say
+a
+remote
+terminal
+like
+a
+login
+connection
+where
+you
+type
+in
+like
+one
+character
+the
+time
+is
+sent
+as
+a
+packet
+from
+let's
+say
+file
+transfer
+connections
+where you
+have a
+fault
+more like
+HTTP
+small
+requests
+in
+big
+response
+is out
+is it
+because
+it was
+like
+very
+old
+that
+it
+seems
+like
+odd
+that
+they
+would
+waste
+so
+many
+bits
+to
+say
+five
+rather
+than
+oh
+no
+no
+it's
+not
+always
+five
+it's
+not
+always
+it could
+be
+longer
+it could
+be
+longer
+because
+of
+options
+it
+has
+to
+be
+at
+least
+five
+right
+so
+it
+has
+to
+be
+it
+has
+to
+be
+that's
+right
+I
+well
+wait
+a minute
+I
+don't
+quote
+me
+I used
+to
+know
+this
+I
+should
+look
+back
+it
+may
+be
+that
+five
+is
+the
+minimum
+so
+it
+counts
+over
+five
+but
+it
+has
+to
+have
+the
+length
+and
+I'm
+pretty
+sure
+that
+let's
+see
+one
+two
+four
+the
+other
+question
+is
+why
+would
+you need
+the
+IHL
+if you
+have
+the
+total
+length
+anyway
+why
+do
+you
+need
+to
+ah
+total
+length
+is
+including
+the
+data
+that
+includes
+the
+data
+that
+I'll show
+you
+okay
+below
+this
+that's
+the
+header
+below
+this
+is
+the
+data
+so
+that's
+a
+different
+bit
+and
+that's
+16
+bits
+so
+the
+maximum
+you could
+ever
+transmit
+in one
+packet
+is
+2 to
+the
+16
+IP
+does
+not
+tell
+you
+how
+big
+a
+packet
+can
+be
+up to
+that
+cannot
+be
+built
+above
+you
+know
+2
+to
+the
+16
+minus
+1
+but
+it
+can
+be
+less
+and
+that's
+determined
+by
+that's
+again
+more
+than
+you
+want
+to
+know
+but
+is
+determined
+by
+the
+maximum
+transmission
+unit
+of
+the
+link
+of
+the
+link
+not
+the
+path
+the
+link
+that you're
+transmitting
+it
+so
+for
+example
+for
+an
+internet
+it's
+1,500
+something
+bytes
+okay
+there are
+some
+other
+media
+where it's
+smaller
+and some
+where it's
+bigger
+identification
+is essentially
+like a
+sequence number
+of the
+packet
+it
+allows
+the
+receiver
+to say
+okay
+to order
+packets
+flags
+fragment
+offset
+that's
+called
+fragmentation
+IPv4
+supports
+what's
+called
+fragmentation
+which
+means
+if
+you
+give
+on
+the
+source
+side
+to IP
+a
+large
+packet
+it
+will
+chop
+it
+in
+smaller
+pieces
+okay
+subject
+to
+the
+maximum
+transmission
+unit
+of
+its
+link
+am I
+making
+sense
+so
+if
+the
+maximum
+transmission
+unit
+on its
+next
+top
+is
+1500
+bytes
+it
+will
+chop
+everything
+into
+that
+appropriate
+size
+and
+then
+it
+needs
+to
+reassemble
+them
+at
+the
+receiver
+which
+is
+a
+huge
+pain
+in
+ass
+because
+fragments
+of
+the
+same
+packet
+can
+also
+be
+fragmented
+in
+transit
+they
+can
+never
+be
+reassembled
+in
+transit
+because
+in
+transit
+everything
+is
+treated
+as
+one
+packet
+but
+when
+they
+arrive
+at
+the
+destination
+they
+need
+to
+be
+reassembled
+and
+IP
+before
+implementations
+suck
+because
+of
+this
+they
+are
+complex
+because
+fragmentation
+is a
+very
+painful
+thing
+also
+for
+security
+IP
+6
+has
+no
+fragmentation
+so
+fragmentation
+offset
+means
+how far
+into
+the
+original
+packet
+is
+this
+particular
+packet
+make sense
+yeah
+like
+where
+in the
+original
+packet
+does
+this
+one
+start
+which
+piece
+of
+the
+puzzle
+is
+this
+time
+to live
+is a
+hot
+count
+usually
+initialized
+to 255
+not always
+but up
+to 255
+that's the
+only
+thing
+you can
+put there
+and the
+maximum
+value
+and it's
+decremented
+by every
+router
+that
+sees
+the
+packet
+the
+reason
+it's
+there
+is to
+avoid
+loops
+routing
+loops
+and all kinds
+of weird
+traffic
+things that
+used to
+happen
+on the
+internet
+right
+if you
+don't
+have it
+then
+in theory
+a packet
+can
+forever
+run
+around
+like in
+a maze
+so
+once it
+reaches
+zero
+the router
+that receives
+it
+and decrements
+it to
+zero
+discards
+the packet
+also because
+that consumes
+resources
+right
+protocol
+protocol means
+not IP
+what is the
+next protocol
+which transport
+layer
+which
+which
+which protocol
+is going to
+handle this
+packet after
+IP
+when it
+goes up
+remember
+packet is
+received at
+the destination
+goes for the
+physical layer
+right
+then
+from physical
+layer
+to the
+data link
+layer
+I hand it
+over to
+IP
+IP
+does its
+thing
+and says
+what do I
+do with
+it next
+protocol
+tells it
+okay
+it invokes
+the appropriate
+function
+if it's a
+TCP packet
+it calls
+TCP
+received
+if it's a
+UDPAC packet
+it calls
+UDP
+received
+etc
+header
+checksum
+header
+checksum
+is a very
+very silly
+value
+it's a
+once complement
+of once
+complement
+of XOR
+of all
+the 16
+bit
+values
+like
+fold it
+here
+it's a
+terrible
+it's a
+checksum
+of the
+header
+basically
+it catches
+benign errors
+like if
+routers used
+to be very
+unreliable
+and once
+another
+flip a
+bit
+well if
+you flip
+a bit
+in the
+header
+you know
+you can
+like
+change
+the
+destination
+of the
+source
+so
+the reason
+checksum
+is there
+is to
+catch
+such
+errors
+in
+routers
+and
+throw
+away
+the
+pattern
+but it's
+not
+supposed
+to
+protect
+against
+attack
+at all
+okay
+source
+address
+and
+destination
+address
+yay
+okay
+that was
+a 32
+bit
+source
+IP
+destination
+IP
+options
+one second
+options
+all kinds
+of crap
+goes there
+time
+have you ever
+used
+ping
+trace route
+anybody
+that uses
+options
+when you
+use
+ping
+you're
+using
+what's
+called
+record
+route
+options
+because
+when
+you
+do
+it
+will
+show
+you
+for
+example
+how many
+seconds
+it
+gets
+sorry
+ping
+is
+more
+timing
+ping
+is
+about
+timing
+so
+you use
+what's
+called
+timing
+option
+it records
+the time
+to get
+to this
+hop
+the second
+hop
+the third
+hop
+all the way
+to the
+destination
+trace
+route
+is
+used
+record
+route
+option
+which
+tells
+you
+exact
+route
+that
+the packet
+takes
+as it
+gets
+to
+the
+destination
+so
+every
+router
+okay
+most packets
+normal packets
+don't have
+options
+everything you
+see in red
+this should be
+red
+not blue
+everything you
+see in red
+changes
+hop by hop
+or at least
+can't change
+time to live
+always changes
+for every hop
+fragment offset
+can change
+if a router
+refragments
+the packet
+for example
+if you see
+the packet
+of 1500
+bytes
+and the
+next hop
+only takes
+800 bytes
+maximum
+so you
+have to
+split that
+in two
+and that
+changes
+the header
+checksum
+will change
+too
+in fact
+the header
+checksum
+changes
+anytime
+anyway
+because
+time to live
+changes
+yeah
+absolutely
+absolutely
+it should
+change
+but I think
+IHL is not
+including the
+options
+I think
+it is
+I think
+it's back
+to his
+question
+why is it
+five
+I think
+it is
+just
+waste
+but I
+double
+check
+my memory
+is just
+like
+why
+yeah
+I looked
+it up
+it has
+to be
+like the
+minimum
+value
+is
+five
+and the
+max
+is 15
+max
+is 15
+but
+I think
+he's right
+because if
+you record
+the route
+it will go
+over 15
+so I have to
+look up the
+answer to that
+question
+what happens
+I think
+I think
+I think
+it should
+not
+but
+don't know
+anyway
+so
+one of the
+things I
+point out
+is these
+red fields
+they can
+change
+in transit
+okay
+the other
+fields must
+be the same
+IPv6
+in contrast
+very different
+but notice
+the version number
+right
+that's the
+common language
+they have
+see the version
+number
+in the very
+corner
+same
+same field
+same
+same length
+this is how
+you know
+oh IPv6
+IPv4
+yeah
+when you say
+you can't
+change the
+route
+are you
+including
+like
+adding
+routers
+because that
+would change
+the source
+or destination
+shouldn't
+right
+because IPv
+was designed
+before NAT
+yeah
+yes
+of course
+NATs are
+an exception
+I mean
+you could
+always do
+things that
+you're not
+supposed to
+right
+in a way
+but NAT
+was originally
+a hack
+that people
+frowned
+upon
+now
+it's a
+standard
+2
+so it
+co-exists
+yeah
+okay
+so now
+notice
+no options
+anymore
+notice
+no fragments
+anymore
+much cleaner
+design
+destination
+that is
+128
+source
+that is
+128
+we'll not
+run out
+of that
+there probably
+you know
+more than
+grains of sand
+on this
+earth
+right
+2 to the
+128
+is a giant
+number
+payload
+length
+that's the
+length
+of a
+payload
+you don't
+need the
+internet
+header
+length
+because it's
+fixed
+so a
+payload
+length
+is everything
+that comes
+after
+next header
+next header
+means
+particle
+which
+particle
+is going
+to end up
+in the
+header
+after
+meaning
+whatever
+starts
+here
+right
+is not
+just
+playing data
+it's another
+particle
+like
+transport
+or
+another
+or something
+else
+so you
+need to
+tell
+the
+IP
+header
+to which
+particle
+to pass
+this
+next
+hop limit
+that's the
+time to live
+that's still
+there
+right
+but it's
+2,
+3,
+4,
+5,
+6,
+7,
+8
+now
+ok
+same
+shouldn't
+be hopping
+too much
+but in fact
+the number
+of hops
+on the
+internet
+has gone
+down
+over the
+years
+you know
+why
+big ASPs
+big giant
+ASPs
+long haul
+lines
+without
+problems
+right
+so you
+can basically
+do one
+hop
+and cross
+most of
+the US
+in one
+hop
+so
+if you
+do
+just for
+fun
+pick your
+most exotic
+location
+in
+India
+you can
+think of
+like
+again
+Slabonia
+or Kravistan
+somewhere
+and
+try
+to do
+a
+tracer
+you
+won't
+see
+that
+many
+hops
+surprisingly
+anyway
+flow
+label
+traffic
+class
+is
+again
+quality
+of
+service
+that
+talks
+about
+is this
+like
+a
+video
+that
+you
+need
+to
+see
+in
+real
+time
+or
+is
+this
+like
+a
+file
+transfer
+so
+does
+understand
+what
+quality
+of
+service
+means
+or
+is
+this
+like
+a
+terminal
+where
+you're
+typing
+and
+again
+it's
+one
+character
+per
+packet
+so
+the
+delay
+different
+for
+different
+types
+of
+traffic
+and
+that's
+what
+traffic
+class
+is
+supposed
+to
+capture
+flow
+label
+is
+really
+for
+connection
+ID
+think
+about
+connection
+ID
+between
+the
+two
+IP
+interfaces
+source
+and
+this
+page
+but
+there's
+no
+connection
+as
+such
+right
+because
+IP
+is
+connection
+okay
+so
+this
+is
+just
+a
+side
+by
+side
+comparison
+with
+the
+same
+things
+so
+yes
+IPv6
+Harry
+is
+longer
+because
+the
+addresses
+are
+much
+longer
+but
+in
+terms
+of
+like
+its
+format
+it's
+cleaner
+smaller
+right
+so
+in
+the
+rest
+of
+this
+we're
+going
+to
+use
+IPv4
+so
+what
+is
+the
+goal
+of
+IPv4
+IPv4
+well
+tries
+to
+address
+the
+problems
+that
+I
+presented
+in
+the
+beginning
+you
+want
+to
+verify
+the
+source
+of
+IPv4
+okay
+that
+is
+that
+replay
+and
+reordering
+of
+patterns
+reordering
+can happen
+accidentally
+by the
+way
+right
+replay
+not
+likely
+very
+unlikely
+replay
+happens
+reordering
+can
+happen
+reordering
+can
+happen
+for
+following
+reasons
+on
+the
+internet
+there
+is
+no
+guarantee
+that
+packets
+sent
+at
+time
+t
+will
+arrive
+before
+the
+packet
+that
+sent
+at
+time
+t
+1
+you
+see
+what I'm
+saying
+do
+you
+know
+why
+that
+is
+on
+the
+internet
+the
+route
+between
+two
+IP
+addresses
+is
+never
+fixed
+you
+can
+send
+two
+packets
+in
+rapid
+succession
+theoretically
+they
+can
+take
+completely
+different
+routes
+theoretically
+doesn't
+happen
+most of
+the
+time
+but
+they
+can
+there
+is
+actually
+a
+which
+is
+where
+they
+made
+tiny
+in
+like
+changes
+to
+the
+IP
+packets
+that
+didn't
+actually
+affect
+the
+contents
+or
+whatever
+and
+change
+the
+routing
+in
+such
+a
+way
+that
+it
+would
+either
+get
+censored
+or
+not
+censored
+based
+on
+the
+routed
+way
+yeah
+I
+could
+see
+that
+but
+just
+the
+first
+the
+first
+part
+of
+what
+you
+said
+by
+subtly
+changing
+something
+in
+the
+header
+okay
+remember
+that
+quality
+of
+service
+that
+could
+change
+the
+route
+so
+for
+example
+you
+might
+send
+video
+packets
+via
+one
+route
+and
+let's
+say
+conferencing
+video
+packets
+for
+streaming
+video
+service
+on
+one
+route
+zoom
+via
+different
+route
+because
+zoom
+is more
+delay
+sensitive
+than
+let's
+say
+streaming
+video
+that
+you
+could
+buffer
+right
+streaming
+video
+is
+pre-recorded
+you
+can
+buffer
+right
+and
+there
+is
+some
+tolerance
+to
+delay
+right
+because
+of
+the
+buffering
+on
+the
+receiving
+side
+but
+when
+you
+are
+telecom
+fishing
+it
+is
+pre-recorded
+right
+it is
+real
+time
+so
+there is
+no
+buffering
+right
+so
+you
+see
+how
+different
+quality
+of
+service
+when
+you
+type
+on
+a
+terminal
+right
+you
+log in
+remote
+login
+you
+want
+to
+see
+your
+echoed
+letters
+right
+away
+you
+don't
+want
+to
+type
+without
+seeing
+your
+letters
+you
+know
+what
+means
+blind
+and
+stupid
+right
+so
+there is
+a
+different
+delay
+file
+transfer
+much
+more
+relaxed
+right
+when
+you're
+downloading
+your
+file
+the
+delay
+requirements
+are not
+that
+stringent
+so
+there's
+all
+different
+qualities
+of
+service
+my
+guess
+is
+because
+of
+changing
+that
+quality
+of
+service
+field
+you
+get
+different
+routes
+I
+don't
+think
+by
+changing
+packet
+lengths
+I
+assume
+you're
+talking
+about
+same
+source
+same
+destination
+right
+yeah
+I can
+see
+that
+and
+you
+could
+definitely
+change
+traverse
+different
+countries
+right
+by changing
+so
+again
+if you're
+within
+one
+country
+I mean
+political
+entity
+I don't
+see that
+happening
+so
+I
+suspect
+what you're
+talking
+about
+since you
+said
+censorship
+that this
+would be
+across
+borders
+but
+anyway
+maybe not
+I mean
+if you're
+already in
+a country
+that does
+censorship
+maybe
+that doesn't
+work
+so
+the
+security
+model
+for IP
+yeah
+sorry
+just very
+quickly
+do
+users
+or I guess
+both the
+server and
+the client
+do they
+get to
+choose
+what type
+of traffic
+they are
+doesn't that
+violate
+the security
+principle
+about
+resources
+in IP
+yeah
+well
+no no
+no
+that's not
+like
+SSL
+TLS
+right
+or
+HTTP
+in IP
+layer
+you don't
+really choose
+it's more
+like
+first of all
+there's no
+server
+client
+I mean
+like in
+the sense
+of like
+there's
+some
+resources
+right
+and there's
+some users
+yeah
+and
+so
+could you
+it's in their
+interest
+to like
+choose the
+best
+yes
+are you
+saying
+can a
+user of
+a computer
+like a
+laptop
+hack into
+IP
+implementation
+locally
+and fix
+that field
+right
+and change
+IP
+so that
+it will
+always put
+the highest
+priority
+kind of
+UI
+yes
+yes
+you can
+get
+get
+yourself
+Linux
+hack
+it
+source
+available
+you can
+go into
+the IP
+implementation
+and do
+that
+I don't
+think there's
+any way
+to prevent
+that
+but
+the other
+way
+packets
+coming back
+may not
+care about
+what you
+say
+right
+so your
+packets
+might
+get a
+preferential
+treatment
+but the
+return packets
+won't
+unless you
+agree
+unless you
+hack
+both
+say I'm
+Netflix
+why would
+I not
+want to
+make my
+QS
+the best
+and sure
+buffering
+but I don't
+want buffering
+for my
+users
+yeah I
+don't know
+you could
+I suspect
+you could
+can Netflix
+detect anything
+that you're
+messing with
+probably not
+no I mean
+from Netflix
+oh from
+Netflix
+well they have
+to be good
+corporate citizens
+right because
+people can
+inspect their
+packets
+right IP
+packet headers
+are visible
+so this packet
+inspection can
+say ISP
+will say
+they even
+Netflix
+themselves have
+a long distance
+at least ISP
+and like the
+borders Netflix
+right and they'll
+say what the
+hell are you
+doing
+you are choking
+all the other
+traffic out
+I mean they do
+they do
+but they still
+use the rest
+of the
+even if they
+are their own
+ISP
+I mean their
+border other
+what's called
+autonomous
+domains
+and those
+will come
+play
+so the
+IP security
+one is like
+this
+yeah
+I mean I
+will use the
+word machines
+hosts
+but what are
+we really
+talking about
+is interfaces
+right
+because IP
+address is not
+a host
+address
+it's an
+address of
+an interface
+you can have
+a device that
+have multiple
+IP addresses
+right
+you do in
+fact have
+devices with
+multiple IP
+addresses
+all your
+phones and
+laptops have
+multiple IP
+addresses
+but just
+simplifies things
+like this
+so it
+considers that
+you can
+essentially
+secure these
+routers and
+secure the
+hosts
+right
+but what you
+cannot secure
+fundamentally
+is these
+communication
+links
+so here
+from the
+host to
+the
+right
+and I
+imagine
+that this
+picture really
+shows you
+more like
+an organizational
+network
+right
+think about
+this is like
+UCI
+and this is
+UCLA
+and in
+between here
+it's only
+a short
+yellow line
+but this
+is in fact
+a potentially
+giant distance
+right
+many hops
+it is the
+internet
+in between
+so we don't
+trust anything
+that is
+between
+the boundary
+of UCI
+and UCLA
+but we also
+don't trust
+anything here
+within UCI
+because no
+we're using
+the ether
+and you know
+maybe we don't
+even trust
+OIT so much
+because they
+run all the
+wired infrastructure
+so that's the
+outlook from
+my BSEC
+point of view
+that we don't
+trust the
+wires
+and it
+comes in
+two
+well
+it comes in
+two
+what's called
+format flavors
+and two
+modes
+and this is
+confusing
+I already
+can warn you
+has two
+formats
+one is called
+ESP
+another is called
+AH
+that one is
+simpler
+authentication
+header
+and
+encapsulating
+security payload
+and they
+all work
+together
+with something
+we will not
+cover
+because it
+is just
+too damn
+boring
+and too
+difficult
+to cover
+in this
+kind of
+course
+called IP
+security policy
+and something
+called
+Ike
+internet key
+exchange
+so unlike
+TLS
+I will not
+be telling
+you a lot
+about how
+keys
+are established
+because that's
+a separate
+thing
+in SSL
+CLS
+key
+establishment
+is like
+part and parcel
+of all the
+actual
+part
+okay
+cover is
+true
+right
+but in
+IPSEC
+it's not
+it's
+something
+it's like
+a separate
+component
+called
+Ike
+so what does
+IPSEC do
+only a couple
+more minutes
+and we're done
+it provides
+security in
+three cases
+but not only
+the main
+three use cases
+host to host
+meaning interface
+to source
+to destination
+okay
+end to end
+security
+it also
+provides
+host to gateway
+which means
+the typical
+scenario I want
+you to think
+about is that
+you work for a
+company and
+you have a host
+your laptop
+and you're in a
+hotel room
+in Slabonia
+okay
+some godforsaken
+place
+and you want
+to connect
+by the
+untrusted
+internet
+right
+over to
+the home
+office
+so your
+home office
+has a
+gateway
+a router
+right
+a gateway
+is basically
+a border
+router
+and so
+that whole
+wilderness
+between your
+laptop
+and that
+border
+router
+needs to
+be secured
+and that's
+what IPSEC
+will do
+for you
+too
+and then
+gateway
+to gateway
+that's more
+like thinking
+about
+again
+the UCI
+UCLA
+example
+on a
+previous slide
+that's more
+like how do
+we secure
+gateway
+to gateway
+right
+and you
+can also
+have
+all combinations
+there are
+like you can
+secure end
+to end
+and also
+on top of
+that
+gateway
+to gateway
+okay
+you can
+concatenate
+them
+you can
+have
+host to
+gateway
+IPSEC
+then separate
+gateway to
+gateway IPSEC
+and another
+gateway to
+host IPSEC
+IPSEC is
+very malleable
+very flexible
+I guess
+right
+so
+typical
+and it has
+these also
+two modes
+which we
+don't have
+time to
+discuss
+called tunnel
+and transport
+I guess
+that means
+not a lot
+of IPSEC
+questions
+on your
+big jump
+sadly
+but you
+have time
+to read
+I will post
+this
+I just won't
+be asking
+very detailed
+questions
+alright
+good luck
+to y'all
+for next
+Tuesday
+please
+prepare
+I will
+have office
+hours on
+Monday
+typically
+people want
+for some
+reason
+come and
+visit me
+before the
+midterm
+on the
+final
+I don't
+know why
+that is
+yeah
+and
+be on
+time

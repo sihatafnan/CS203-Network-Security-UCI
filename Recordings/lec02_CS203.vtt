@@ -1,0 +1,3245 @@
+WEBVTT
+
+00:00.000 --> 00:04.400
+And I was about to go into this, so why people do this, all these things.
+
+00:04.400 --> 00:06.600
+Actually, first, any questions?
+
+00:06.600 --> 00:10.400
+Is there anything related to this course?
+
+00:10.400 --> 00:11.600
+Okay.
+
+00:11.600 --> 00:14.400
+So why do people do it? Because there's a lot of money in it.
+
+00:14.400 --> 00:16.300
+Not everybody does it for money.
+
+00:16.300 --> 00:19.000
+People do all kinds of things for ideology.
+
+00:19.000 --> 00:24.500
+Or just, as I said earlier, destructive tendencies.
+
+00:24.500 --> 00:26.800
+Let the world burn, kind of philosophy.
+
+00:26.800 --> 00:30.800
+Anarchy, people do all kinds of things, not for money.
+
+00:30.800 --> 00:34.800
+But, let's do it again.
+
+00:34.800 --> 00:44.800
+Money is a big deal, and there's a lot of money to be made doing things like selling bug bottles.
+
+00:44.800 --> 00:55.800
+That is, finding unknown exploits, bugs, backdoors, and selling them.
+
+00:55.800 --> 00:57.800
+Officially, this is perfectly fine, right?
+
+00:57.800 --> 01:07.800
+Selling them to the hardware manufacturers that develop the hardware or software where the bugs are.
+
+01:07.800 --> 01:11.800
+Some serious money can be made.
+
+01:11.800 --> 01:17.800
+There are companies out there that do this, there are individuals that specialize in this.
+
+01:17.800 --> 01:19.800
+And that's perfectly legitimate.
+
+01:19.800 --> 01:29.800
+There are also brokers that will buy a bug from you, or a vulnerability.
+
+01:29.800 --> 01:32.800
+If you find one, they will buy it from you, and they will market it.
+
+01:32.800 --> 01:44.800
+So, they act as intermediaries between those who find vulnerabilities and the companies that will, in whose software hardware vulnerabilities are found.
+
+01:44.800 --> 01:47.800
+Then there is the shady part, right?
+
+01:47.800 --> 01:48.800
+The shady part is here.
+
+01:48.800 --> 02:01.800
+Yeah, there's kind of gray market, black market entities that will buy this, and often will pay more than, let's say, your Google's and Meta's, et cetera.
+
+02:01.800 --> 02:06.800
+Especially, you know, some serious zero-day exploits.
+
+02:06.800 --> 02:13.800
+Serious buying can be made, but that's most likely, in most jurisdictions, illegal.
+
+02:13.800 --> 02:27.800
+Like I said, there are companies, there are other individuals, there are companies that do this, and there are other buyers.
+
+02:27.800 --> 02:29.800
+There are nation states that buy.
+
+02:29.800 --> 02:35.800
+The United States is definitely one of them, but the typical players are Israel, Britain, Russia, India, Brazil.
+
+02:35.800 --> 02:39.800
+And there are many others that will buy these things.
+
+02:39.800 --> 02:47.800
+Why? Because, well, a lot of nation states are involved in offensive cyber warfare.
+
+02:47.800 --> 02:49.800
+Okay?
+
+02:49.800 --> 02:52.800
+Not surprising.
+
+02:52.800 --> 02:55.800
+Then there's also stolen data.
+
+02:55.800 --> 03:07.800
+So, let's separate very clearly the bugs, exploits, backdoors, vulnerabilities, from stolen data.
+
+03:07.800 --> 03:13.800
+What I thought before was sort of the white zone, the gray zone, the black zone.
+
+03:13.800 --> 03:15.800
+Here, everything is black.
+
+03:15.800 --> 03:17.800
+Here is all illegal.
+
+03:17.800 --> 03:20.800
+This is strictly crime.
+
+03:20.800 --> 03:21.800
+Okay?
+
+03:21.800 --> 03:29.800
+So, there's a big marketplace for stolen data, starting with valid credit card numbers,
+
+03:29.800 --> 03:41.800
+actual credit card numbers, accompanied by, you know, the cards that still have magnetic stripe, right?
+
+03:41.800 --> 03:49.800
+Typically, the chips cannot be cloned, except maybe by some nation states.
+
+03:49.800 --> 03:51.800
+But the magnetic stripe can be.
+
+03:51.800 --> 03:52.800
+Okay?
+
+03:52.800 --> 04:01.800
+So, if you have both the credit card number and the magnetic stripe information, that's a bit more,
+
+04:01.800 --> 04:05.800
+because that can be cloned, right?
+
+04:05.800 --> 04:15.800
+So, with the credit card number, and the three-digit code in exploration, you can buy stuff over the web.
+
+04:15.800 --> 04:17.800
+So, there's a card note present.
+
+04:17.800 --> 04:18.800
+It's called card note present.
+
+04:18.800 --> 04:21.800
+But if you do something, if you don't buy something with a card present,
+
+04:21.800 --> 04:25.800
+then you need to have the magnetic stripe, a card with magnetic stripe.
+
+04:25.800 --> 04:31.800
+You have to have a merchant that still allows you to use the magnetic stripe, which is easy to find.
+
+04:31.800 --> 04:36.800
+So, what it means is you need to manufacture it hard.
+
+04:36.800 --> 04:41.800
+Now, machines that manufacture plastic credit cards, trivial.
+
+04:41.800 --> 04:43.800
+You can buy one.
+
+04:43.800 --> 04:45.800
+It's not illegal.
+
+04:45.800 --> 04:50.800
+And then, they will imprint, emboss the magnetic stripe here.
+
+04:50.800 --> 04:52.800
+So, that's all.
+
+04:52.800 --> 04:54.800
+You will actually have a physical credit card.
+
+04:54.800 --> 04:56.800
+You won't have the chip, clearly.
+
+04:56.800 --> 04:59.800
+But you'll still have the magnetic stripe.
+
+04:59.800 --> 05:04.800
+Fools is like a dossier.
+
+05:04.800 --> 05:06.800
+A whole dossier on a given person.
+
+05:06.800 --> 05:08.800
+A real person, right?
+
+05:08.800 --> 05:17.800
+So, that includes things like name, address, phone, email, date of birth, social security number, bank account, routing numbers, online credentials, credit cards.
+
+05:17.800 --> 05:22.800
+That is not very expensive, right?
+
+05:22.800 --> 05:23.800
+It wasn't a couple of years ago.
+
+05:23.800 --> 05:25.800
+This data is a couple of years old.
+
+05:25.800 --> 05:26.800
+Today is probably cheaper.
+
+05:26.800 --> 05:30.800
+Now, you want online credentials with bank account with money.
+
+05:30.800 --> 05:32.800
+That's going to cost you.
+
+05:32.800 --> 05:37.800
+Now, why doesn't it cost you this much?
+
+05:37.800 --> 05:42.800
+If the bank account has this much money, why sell it for $300?
+
+05:42.800 --> 05:46.800
+It's risky to get it out.
+
+05:46.800 --> 05:47.800
+Right.
+
+05:47.800 --> 05:48.800
+Money is there.
+
+05:48.800 --> 05:51.800
+How do you get it out?
+
+05:51.800 --> 05:52.800
+Right?
+
+05:52.800 --> 05:55.800
+So, that's not easy.
+
+05:55.800 --> 05:58.800
+Let's feel sorry for the bad guys for a second.
+
+05:58.800 --> 06:01.800
+Their job is not always easy.
+
+06:01.800 --> 06:06.800
+They have, let's say, they have access to my bank account.
+
+06:06.800 --> 06:08.800
+They have the right credentials.
+
+06:08.800 --> 06:09.800
+They have everything.
+
+06:09.800 --> 06:13.800
+But, what they don't know is how to transfer that money, how to cash out.
+
+06:13.800 --> 06:20.800
+Because, chances are, the first time they do something like that, they will be caught.
+
+06:20.800 --> 06:22.800
+Or, some flag will go on.
+
+06:22.800 --> 06:23.800
+Right?
+
+06:23.800 --> 06:24.800
+So, what can they do?
+
+06:24.800 --> 06:28.800
+Well, if they have a debit card, they could try to use an ATM.
+
+06:28.800 --> 06:30.800
+But, ATMs have limits.
+
+06:30.800 --> 06:32.800
+Usually, close to this.
+
+06:32.800 --> 06:34.800
+You see why?
+
+06:34.800 --> 06:35.800
+ATMs have limits.
+
+06:35.800 --> 06:37.800
+But, they have to have an ATM debit card.
+
+06:37.800 --> 06:39.800
+That's also not that easy.
+
+06:39.800 --> 06:42.800
+Because, debit cards, ATM debit cards, these days, also have chips.
+
+06:42.800 --> 06:43.800
+Right?
+
+06:43.800 --> 06:46.800
+And, cannot use a magnetic strap.
+
+06:46.800 --> 06:48.800
+They can go to a supermarket.
+
+06:48.800 --> 06:49.800
+Right?
+
+06:49.800 --> 06:51.800
+I think the supermarket will give you like $50 cash.
+
+06:51.800 --> 06:52.800
+Eight.
+
+06:52.800 --> 06:53.800
+Eight.
+
+06:53.800 --> 06:54.800
+Oh, excuse me.
+
+06:54.800 --> 06:55.800
+Eight.
+
+06:55.800 --> 06:56.800
+Still.
+
+06:56.800 --> 06:57.800
+Well.
+
+06:57.800 --> 06:58.800
+Right?
+
+06:58.800 --> 06:59.800
+Same ballpark.
+
+06:59.800 --> 07:04.800
+So, they have to find a place where they can wire the money.
+
+07:04.800 --> 07:05.800
+Right?
+
+07:05.800 --> 07:06.800
+Somewhere.
+
+07:06.800 --> 07:10.800
+Some bank in some Krapistan, Slabonia, somewhere.
+
+07:10.800 --> 07:15.800
+Some place where it is difficult for the US government or the banks to reach.
+
+07:15.800 --> 07:17.800
+But, it's going to be once.
+
+07:17.800 --> 07:18.800
+And, there are limits.
+
+07:18.800 --> 07:22.800
+Most banks, if you know, have limits on the amount of money you can transfer in a single wire,
+
+07:22.800 --> 07:25.800
+in a single day, in a single transaction.
+
+07:25.800 --> 07:27.800
+That's why.
+
+07:27.800 --> 07:28.800
+It's not that.
+
+07:28.800 --> 07:29.800
+Right?
+
+07:29.800 --> 07:37.800
+Typically, there would be, this is sort of my experience, credit card thieves that are
+
+07:37.800 --> 07:45.800
+the most successful are not the ones who go and like, do a shopping spree in Walmart
+
+07:45.800 --> 07:48.800
+or in Amazon.
+
+07:48.800 --> 07:55.800
+The most successful overall credit card theft occurs when it's used by, it's called a death
+
+07:55.800 --> 07:57.800
+by a thousand cuts.
+
+07:57.800 --> 08:04.800
+When you steal a massive number of credit cards and you charge a little bit.
+
+08:04.800 --> 08:11.800
+Now, the idea is that many people, first, don't pay attention to credit card, you know.
+
+08:11.800 --> 08:15.800
+Like, they'll look at the bill at the end of the month because they're lazy.
+
+08:15.800 --> 08:16.800
+Right?
+
+08:16.800 --> 08:20.800
+Most, let me talk, most people like us, how many of you really look at your credit card,
+
+08:20.800 --> 08:22.800
+like, line by line?
+
+08:22.800 --> 08:29.800
+So, if there's a small charge that occurs somewhere, for like, ten bucks or five bucks,
+
+08:29.800 --> 08:33.800
+chances are, one, you might not notice even if you look.
+
+08:33.800 --> 08:39.800
+And, if you don't look, your total monthly amount is going to be about what you'd expect.
+
+08:39.800 --> 08:45.800
+As opposed to going and buying $3,000 refrigerator, which immediately, like, you know, makes you
+
+08:45.800 --> 08:46.800
+want to cancel the cut.
+
+08:46.800 --> 08:47.800
+Right?
+
+08:47.800 --> 08:53.800
+But, it's fair for them, for the adversaries, for the thieves, to just do small amount of
+
+08:53.800 --> 08:58.800
+transactions every month, so they go under readout.
+
+08:58.800 --> 09:01.800
+That could last for a while.
+
+09:01.800 --> 09:04.800
+Eventually, they'll get discovered, and the credit card will get cancelled.
+
+09:04.800 --> 09:10.800
+But, how many people are going to get on the phone with a credit card company and spend an
+
+09:10.800 --> 09:13.800
+hour discussing a $5 charge?
+
+09:13.800 --> 09:16.800
+A lot of people just say, okay.
+
+09:16.800 --> 09:23.800
+So, anyway, there's all kinds of marketplace for everything.
+
+09:23.800 --> 09:28.800
+Not surprisingly, there's also marketplace for botnets and malware.
+
+09:28.800 --> 09:32.800
+You can rent a malware just like you can rent a vehicle.
+
+09:32.800 --> 09:33.800
+Right?
+
+09:33.800 --> 09:39.800
+So, if you use, if any of you have used any kind of darknets, I'm going to hold it against
+
+09:39.800 --> 09:45.800
+you, but if you use Tor hidden services, for example, if you do browse the directory of
+
+09:45.800 --> 09:49.800
+Tor hidden services, you see things like that.
+
+09:49.800 --> 09:51.800
+Basically, you can rent zombies, right?
+
+09:51.800 --> 09:52.800
+So, what are botnets?
+
+09:52.800 --> 09:54.800
+Botnets are networks of zombies.
+
+09:54.800 --> 10:00.800
+That is, computers just like the ones in front of you, and maybe even smartphones, and
+
+10:00.800 --> 10:04.800
+definitely desktops that have been zombified by some malware.
+
+10:04.800 --> 10:11.800
+The owners are generally not aware, but the botnets is controlled by some command and control
+
+10:11.800 --> 10:16.800
+center, and the operator of that command and control center, of course, can make the
+
+10:16.800 --> 10:17.800
+zombies do whatever.
+
+10:17.800 --> 10:22.800
+Lying cryptocurrency, denial of service attacks, right?
+
+10:22.800 --> 10:23.800
+Send spam.
+
+10:23.800 --> 10:25.800
+Why not?
+
+10:25.800 --> 10:32.800
+And anything else you can imagine.
+
+10:32.800 --> 10:34.800
+And there's some bad news.
+
+10:34.800 --> 10:42.800
+The bad news is that no matter what we do, security is almost never a primary consideration,
+
+10:42.800 --> 10:43.800
+in any product.
+
+10:43.800 --> 10:46.800
+That is the sad reality.
+
+10:46.800 --> 10:53.420
+and it's not going to change anytime soon because manufacturers in any sphere
+
+10:53.420 --> 11:00.540
+right whether it's smart cars right these you know super automated vehicles
+
+11:00.540 --> 11:06.360
+or IOT devices or laptops or smartphones the priority of the manufacturer is to
+
+11:06.360 --> 11:14.400
+give you new and better features shinier stuff glossier shinier stuff so
+
+11:14.400 --> 11:19.620
+you'll buy it and because you want to be that person with the shiny glossy stuff
+
+11:19.620 --> 11:24.840
+like the next person right you want to have that latest iPhone latest Samsung
+
+11:24.840 --> 11:31.080
+latest whatever because you want to be a keep up with the Joneses and there's
+
+11:31.080 --> 11:37.160
+these newer features and those exciting new technologies and are wonderful but
+
+11:37.160 --> 11:44.180
+security always takes the backseat because it doesn't sell why have you
+
+11:44.180 --> 11:49.400
+seen an advertisement that says buy I don't know why our phone it will be you
+
+11:49.400 --> 11:54.200
+will be twice as slow as the next one because we're so secure how many people
+
+11:54.200 --> 11:59.780
+are going to go for that so it's not going to be the consideration because it
+
+11:59.780 --> 12:06.080
+sort of impedes progress the other problem is that whether you're dealing
+
+12:06.080 --> 12:13.760
+with smartphones or IMG devices or you know super computer style servers most
+
+12:13.760 --> 12:19.400
+systems that are feature-rich that is that like applications that we use today
+
+12:19.400 --> 12:24.860
+they are rich with features they are complex there's complex software in the
+
+12:24.860 --> 12:30.740
+online and complex software well has bugs and vulnerabilities the bigger the
+
+12:30.740 --> 12:37.040
+software the more likely there are bugs and vulnerabilities and so the more
+
+12:37.040 --> 12:41.140
+programmers you write contribute to a given piece of software the more
+
+12:41.140 --> 12:47.540
+vulnerabilities you're gonna have and examples of course I will buffer overflows you
+
+12:47.540 --> 12:53.780
+probably heard about right people know what buffer overflows are it's okay not to
+
+12:53.780 --> 13:02.300
+know or cross-site scripting another very popular attack methodology also
+
+13:02.300 --> 13:07.640
+networks are open you know we essentially look at you walk into UCI you can use
+
+13:07.640 --> 13:15.620
+connect to a public Wi-Fi here no problem maybe it will go away so but there are many
+
+13:15.620 --> 13:19.220
+places where connecting to the internet and connecting to an open network it's
+
+13:19.220 --> 13:27.320
+just easy doesn't it's not an attack last bullet is also important most
+
+13:27.320 --> 13:33.620
+successful attacks it's a spectacular attack aren't purely electronic digital in
+
+13:33.620 --> 13:42.200
+nature they involve humans yeah us meaning as big and they involves
+
+13:42.200 --> 13:50.240
+attackers so so they may cause damage in the digital world but tremendous damage but
+
+13:50.240 --> 13:55.460
+they often start with a human like like fishing attacks they will start start with
+
+13:55.460 --> 13:56.600
+like social engineering
+
+13:56.600 --> 14:23.600
+the better news is that there are defense mechanisms there are some mitigation techniques or as we discussed last time to some to prevent some to detect some to recover from attacks but we need to understand their limitations some people naively believe that cryptography
+
+14:23.600 --> 14:27.080
+some people naively believe that cryptography
+
+14:27.080 --> 14:33.500
+what's a wonderful thing cryptography and of course everybody should know some but
+
+14:33.500 --> 14:36.800
+cryptography will solve all your problems all you need to do is to have good
+
+14:36.800 --> 14:40.760
+crypto and with good crypto you can build everything possible to defend yourself
+
+14:40.760 --> 14:45.440
+this is absolutely not true this is a quote from one of the top
+
+14:45.440 --> 14:50.180
+photographers in the world basically says I mean verbatim if you think your
+
+14:50.180 --> 14:53.540
+cryptography will solve your problems then you don't understand cryptography and you
+
+14:53.540 --> 14:57.900
+don't understand your problem so it will solve some small problems here and
+
+14:57.900 --> 15:03.080
+there and it needs to be managed very well and well we'll talk about this yeah many
+
+15:03.080 --> 15:08.900
+security problems are based on misunderstanding of cryptography or misuse of
+
+15:08.900 --> 15:16.100
+cryptography it also helps to have user awareness so at the end of the day most
+
+15:16.100 --> 15:22.760
+security methods involve some exposure to human users people like us and even
+
+15:22.760 --> 15:30.200
+people that are even less tech savvy than us right think about don't have to go as
+
+15:30.200 --> 15:37.520
+far as your your grandpa or some kind of a you know idiot uncle you know somewhere but
+
+15:37.520 --> 15:41.840
+you know just think about regular people doing regular every day job in regular
+
+15:41.840 --> 15:45.180
+jobs out there in industry
+
+15:45.180 --> 16:00.180
+so education helps education helps and unfortunately so this is one of those
+
+16:00.180 --> 16:05.180
+grants that I have for the last I've got no so many years you know most of you went to
+
+16:05.180 --> 16:10.820
+high school right you probably went to high school and middle school and in some
+
+16:10.820 --> 16:16.620
+form you probably have health education right this really difficult course that
+
+16:16.620 --> 16:21.020
+everybody loves it sometimes it's called health sometimes called hygiene you know
+
+16:21.020 --> 16:25.700
+some yeah even sex education it's all related right that something in most
+
+16:25.700 --> 16:31.040
+countries they have some kind of course for middle or high school students wouldn't it
+
+16:31.040 --> 16:43.100
+be nice if we have internet hygiene education or internet or computer hygiene it's
+
+16:43.100 --> 16:48.140
+just as important just as important for you to brush your teeth and floss every
+
+16:48.140 --> 16:52.220
+morning and to take showers once in a while it is just important to change your
+
+16:52.220 --> 16:56.300
+passwords once in a while and to select your passwords appropriately to know how to
+
+16:56.300 --> 17:00.320
+log in and if somebody's breathing down your neck as you're logging in you probably
+
+17:00.320 --> 17:04.640
+are not in the same space are you and these simple things that we could teach
+
+17:04.640 --> 17:09.860
+people from early age would certainly help alleviate a lot of problems that involve
+
+17:09.860 --> 17:20.300
+humans but we're not there yet of course usability and this is not just user acceptance
+
+17:20.300 --> 17:28.160
+usability of security techniques is important so did any of you present here today take Habib
+
+17:28.160 --> 17:37.220
+Farouk's usable security course good so now you you're probably better off than the rest you know
+
+17:37.220 --> 17:44.840
+that usable security is important right because security that isn't usable is useless
+
+17:44.840 --> 17:52.340
+doesn't do anything right people avoid it people subverted people people come up with all kinds of
+
+17:52.340 --> 18:00.020
+tricks not to not to participate right so usability is very important economics economics is important
+
+18:00.020 --> 18:05.340
+and there is a whole branch of research I don't do it but I know people who do to study the economics of
+
+18:05.340 --> 18:22.840
+security sometimes security that makes no sense because the cost of introducing security outweighs the protection that it gives you so if attack occurs it might be easier to accept the attack than to introduce the security
+
+18:22.840 --> 18:29.340
+I know it probably sounds funny coming from somebody like me but there are situations like that they need to understand when they have
+
+18:29.340 --> 18:47.340
+sometimes security measures a pure overkill right that maybe for example I in order to vote in a faculty on faculty minutiae like I don't know who gets promoted who or who gets some award whatever
+
+18:47.340 --> 18:59.300
+in my department I have to log in to using VPN why what's the point who is going to cheat on that what's the
+
+18:59.300 --> 19:07.300
+incentive. Zero. But yet, I have to use the VM, use Duo to log in. Makes no sense at all.
+
+19:07.300 --> 19:16.800
+No economic sense. But there are cases where it does. This guy, he looks like a hardened
+
+19:16.800 --> 19:23.300
+criminal. Probably somebody you don't want to meet. Or at least somebody who sits in a
+
+19:23.300 --> 19:28.300
+basement and writes horrible code, right, that's going to steal your credit card. This
+
+19:28.300 --> 19:32.300
+guy is actually a Turing Award winner. His name is Ken Thompson. He doesn't look like
+
+19:32.300 --> 19:36.300
+this anymore. I think he's very old. Actually, I think he's still alive, but he's very old.
+
+19:36.300 --> 19:41.300
+But now that I've told you, he does look like a very committed geek, doesn't he? T-shirt,
+
+19:41.300 --> 19:51.300
+shirt over it, you know. So he is the co-author of C, co-inventor of C language. And also
+
+19:51.300 --> 19:57.300
+Unix, one of the sort of principal designers of the original Unix. Well, he had something
+
+19:57.300 --> 20:01.300
+to say about trust. He's not fundamentally a security person, but he does know something
+
+20:01.300 --> 20:07.300
+about trust. And he had this famous lecture, ACM Award lecture that he gave, and a paper
+
+20:07.300 --> 20:14.300
+actually called Reflections on Trusting Trust. And it's just a cute set of observations that
+
+20:14.300 --> 20:21.300
+you can get to it, free, at the article. And the main question he was asking, what code,
+
+20:21.300 --> 20:30.300
+right, or what software can we trust? Right? And his example was that consider, you know, people
+
+20:30.300 --> 20:39.300
+build Linux, right? Anybody else? Anybody who does not know what Linux is? Okay, so you know,
+
+20:39.300 --> 20:44.300
+there's a login program, there's a super-user program. I mean, today it's called something
+
+20:44.300 --> 20:48.300
+else, or something like that. Traditionally, there's an SU, super-user program, to run
+
+20:48.300 --> 20:55.300
+privileged commands using that instead of logging in as root. Right? So these programs,
+
+20:55.300 --> 21:04.300
+a part of the Unix of Linux distribution, is the binary containing those programs reliable? Right?
+
+21:04.300 --> 21:12.300
+Android is also based somehow loosely on Unix, right? When you log in, does the login program
+
+21:12.300 --> 21:18.300
+by any chance, like, send your password somewhere outside? Or does it store it in a special place
+
+21:18.300 --> 21:26.300
+when you type in your password? You do type in your password, right? When you log in. Do you ever wonder,
+
+21:26.300 --> 21:35.300
+where do those letters go? Do you know what happens when you type in your password? Does anybody know?
+
+21:35.300 --> 21:40.300
+What happens? It gets hashed with the salt and then compared against the... Pepper? No?
+
+21:40.300 --> 21:47.300
+No? Pepper? No, just salt? I don't know what happens. Okay, so we'll come back to that.
+
+21:47.300 --> 21:53.300
+And so there's salt and it's hashed, and that's what you think is happening, right? What should happen.
+
+21:53.300 --> 21:59.300
+Right, we type in those letters. Presumably the letters are not logged as we're typing, right?
+
+21:59.300 --> 22:12.300
+That's what he said, what he said, supposed to happen. That whatever sequence of letters,
+
+22:12.300 --> 22:20.300
+numbers letters, that is supposed to be your password, gets hashed, well, salt and hashed,
+
+22:20.300 --> 22:27.300
+into some fixed value, and then? Compare it against the one in your shadow file.
+
+22:27.300 --> 22:33.300
+You know, that's the whatever, right, shadow file. We think, we hope that's what happens,
+
+22:33.300 --> 22:41.300
+but do we know? Do we know? Or when you use su, right, or sudo, right? And it asks you to write
+
+22:41.300 --> 22:46.300
+your root password. Do you know what really happens? Do you know what's supposed to happen?
+
+22:46.300 --> 22:53.300
+Or do we know really? Is there a back door there? We have no idea. Did you, like, manually
+
+22:53.300 --> 23:02.300
+inspect every single machine instruction in a binary? Do you know anybody who has ever done that?
+
+23:02.300 --> 23:13.300
+I don't. So, okay, so the binary you cannot trust, right? So the next thing, again, according
+
+23:13.300 --> 23:19.300
+to Ken Thompson, you could check the source code. Because Unix, unlike all the other crap we
+
+23:19.300 --> 23:26.300
+ran, right, you know, like iOS or Microsoft Windows, is open source. You could get whatever, Red Hat,
+
+23:26.300 --> 23:33.300
+Ubuntu, Linux, embedded Linux, whatever. All these operating systems are open source. You can get all
+
+23:33.300 --> 23:39.300
+the entirety of the open source, of the source code for them. You could manually inspect in
+
+23:39.300 --> 23:48.300
+C, right? Usually in C. The code, not difficult. Take us some time to say, oh, this is the login
+
+23:48.300 --> 23:54.300
+program, right? So there's login.c and login.h. Look for that and say, okay, is it like sending
+
+23:54.300 --> 23:58.300
+anything? Is it opening a socket to some God knows where? Or is it like storing opening
+
+23:58.300 --> 24:05.300
+a file? No? Good. Okay, so you, you kind of assured yourself that there's nothing wrong
+
+24:05.300 --> 24:12.300
+with the source code. All right. Well, then you recompile. Because you don't trust the binary
+
+24:12.300 --> 24:21.300
+that's already there. Now you recompile, say, aha, I know the source code. I just compiled it.
+
+24:21.300 --> 24:30.300
+This is the compiled version. I can trust it. Hmm. Who wrote the compiler? The compiler is part
+
+24:30.300 --> 24:42.300
+of the, your, your, your ecosystem. Hmm. Okay. What if the compiler looks for a pattern in the
+
+24:42.300 --> 24:49.300
+login program? That's like, say, reads the password. Just, ah, login program. Normally I compile
+
+24:49.300 --> 24:58.300
+faithfully. But for this program, I'm going to insert a back door. Right? Could do it.
+
+24:58.300 --> 25:03.300
+All right. So now we say, okay, let's get a little more paranoid than realistic. Let's inspect
+
+25:03.300 --> 25:13.300
+the source of the compiler. That's going to take us a while. Compilers are not. You think that,
+
+25:13.300 --> 25:19.300
+some of you are thinking that Michael Francis compiler course. Yes? Probably sweated through it,
+
+25:19.300 --> 25:26.300
+right? Not easy. Compilers are rough. Not for the faint of heart. Okay. Well, let's say you did your
+
+25:26.300 --> 25:33.300
+homework. You went through the compiler. You checked. Okay. Looks good. Recompile the compiler.
+
+25:33.300 --> 25:45.300
+Before recompiling the login. Okay? With what exactly? With what are you going to recompile the compiler?
+
+25:45.300 --> 26:02.300
+Which you did not expect. So, the compiler that you used to compile the compiler is going to have
+
+26:02.300 --> 26:09.300
+these nice couple of things. So, oh, if it matches the login pattern, compile back door. If it matches the
+
+26:09.300 --> 26:19.300
+compiler pattern, compile back door. What can I say? At the end of the day, we are royally screwed.
+
+26:19.300 --> 26:26.300
+At least that's what he said. And that's, again, a quote from Ken Thompson. The world is obvious.
+
+26:26.300 --> 26:31.300
+You can't trust code that you did not totally create yourself. Especially a quote from companies that
+
+26:31.300 --> 26:44.300
+employ people like me. And he had the time to work for AT&T research. Yeah. So, that's a nice lesson.
+
+26:44.300 --> 26:50.300
+So, what we've looked at so far. Basic security definitions. I barrage you with a lot of, like,
+
+26:50.300 --> 26:56.300
+terminology, right? Don't worry about that. Look at the services, make it the tax. All right.
+
+26:56.300 --> 27:02.300
+I already said this last time, I think, right? Or did I? No, I think I didn't. We didn't cover the slide.
+
+27:02.300 --> 27:08.300
+So, there's a directory. You don't have to do this. Okay? If you already feel comfortable with, like,
+
+27:08.300 --> 27:13.300
+elementary, if you took an elementary security course somewhere, someplace, don't bother.
+
+27:13.300 --> 27:20.300
+If you haven't, you feel like you need a little bit of, like, a background, go there. Google Drive.
+
+27:20.300 --> 27:26.300
+I mean, I'll post this. Oh, actually, I already posted it. So, and you can look at, like, CS-134,
+
+27:26.300 --> 27:32.300
+which is the undergrad course that both I and Alfred Chen teach at various times.
+
+27:32.300 --> 27:38.300
+And then I want you to watch this video. That's kind of entertaining.
+
+27:38.300 --> 27:46.300
+And this lady, which is a very, very competent technical journalist, has this nice book, which I'm trying to recommend the book.
+
+27:46.300 --> 27:54.300
+The book is fun to read, but the video is, it was actually her interview with someone at UCF a couple of years ago.
+
+27:54.300 --> 28:00.300
+And then, of course, with the projects, right? So, team up whenever possible.
+
+28:00.300 --> 28:07.300
+Come up with project topics. I did cover this, I think, last time. So, but let's go over it quickly.
+
+28:07.300 --> 28:15.300
+So, you can do any of that. If what you have in mind does not fall into any of these categories, talk to me.
+
+28:15.300 --> 28:20.300
+The sooner the better. It's okay. I mean, this is not an exhaustive list.
+
+28:20.300 --> 28:23.300
+If you have some great idea, you want to do it as a project, talk to me.
+
+28:23.300 --> 28:28.300
+What I want to make sure you don't do is don't double-dip. Okay?
+
+28:28.300 --> 28:33.300
+So, what does double-dip mean? It means that you are doing research with your advisor.
+
+28:33.300 --> 28:38.300
+Say you're a PhD student, doing research with your advisor on the, I don't know, security for underwater basket weaving.
+
+28:38.300 --> 28:44.300
+And you say, oh, you know, that's my topic, research topic, I'm going to do part of it in the project discourse.
+
+28:44.300 --> 28:49.300
+No. You're already doing that research, that's great, fine, whatever. Leave it alone.
+
+28:49.300 --> 28:54.300
+Oh, you're doing research in, I don't know, some other, sorry, you're doing a project in another course.
+
+28:54.300 --> 28:57.300
+I don't know, machine learning. That requires a project, or database.
+
+28:57.300 --> 29:00.300
+Let's say you take a database course, they have a project in climate.
+
+29:00.300 --> 29:04.300
+You can't commingle them. Okay? So, no double-dipping.
+
+29:04.300 --> 29:08.300
+Now, if you have a project that you've done somewhere, or you're doing somewhere, and you say,
+
+29:08.300 --> 29:14.300
+well, that project has nothing to do with security, and I'm going to introduce some cool security features to my project,
+
+29:14.300 --> 29:21.300
+as long as both instructors know it, me and the other person, and we're okay with it, that may be possible.
+
+29:21.300 --> 29:23.300
+Does that make sense?
+
+29:23.300 --> 29:28.300
+It gives you a pretty wide playing field.
+
+29:28.300 --> 29:32.300
+Any questions?
+
+29:32.300 --> 29:35.300
+Okay.
+
+29:35.300 --> 29:39.300
+We're ready.
+
+29:39.300 --> 29:44.300
+We're going to go breeze through this pretty quickly.
+
+29:44.300 --> 29:52.300
+Yeah, this is like, often I just like, in the past I sometimes let students kind of go through it themselves,
+
+29:52.300 --> 30:00.300
+but I found it useful, at least go through part of it, in class.
+
+30:00.300 --> 30:12.300
+So, this is kind of a blitzkrieg, a tour of network security from this book by Computer Networking by Kuroza Ross.
+
+30:12.300 --> 30:14.300
+Has any of you seen this book?
+
+30:14.300 --> 30:16.300
+Or used it in your networking course?
+
+30:16.300 --> 30:19.300
+It's quite popular.
+
+30:19.300 --> 30:23.300
+Anyway, you may or may not have seen this chapter, or at least covered that chapter,
+
+30:23.300 --> 30:37.300
+because a lot of times networking courses, especially in UC, which is only 10 weeks, they don't cover security.
+
+30:37.300 --> 30:39.300
+Alright, so just a quick roadmap, right?
+
+30:39.300 --> 30:47.300
+So the idea behind this chapter, very dense chapter, is to give you kind of very, very quick overview of network security
+
+30:47.300 --> 30:53.300
+before we get into more interesting topics, which is what this class is supposed to be about.
+
+30:53.300 --> 30:58.300
+So, you need to be conversant in some very basic photography.
+
+30:58.300 --> 31:06.300
+Now, if you look at the slide, the pointer I gave earlier about this 134 course, you get more than basic stuff there.
+
+31:06.300 --> 31:10.300
+There's like a third of the course is crypto.
+
+31:10.300 --> 31:13.300
+But you don't need to absolutely go there.
+
+31:13.300 --> 31:20.300
+You know, if you understand these slides that I'm presenting today, you should be okay.
+
+31:20.300 --> 31:25.300
+So, remember the networking there, or the network hierarchy, right?
+
+31:25.300 --> 31:30.300
+The layer hierarchy of, well, seven layers, roughly.
+
+31:30.300 --> 31:33.300
+The question is, well, where do we reduce security?
+
+31:33.300 --> 31:35.300
+And the answer is very obvious.
+
+31:35.300 --> 31:37.300
+You can't introduce security in just one layer.
+
+31:37.300 --> 31:40.300
+You have to pretty much introduce them in every layer.
+
+31:40.300 --> 31:41.300
+Right?
+
+31:41.300 --> 31:42.300
+So here, a physical layer, right?
+
+31:42.300 --> 31:44.300
+Physical layer is radio, right?
+
+31:44.300 --> 31:45.300
+Today, it's pretty much radio.
+
+31:45.300 --> 31:47.300
+Sometimes it's optical, right?
+
+31:47.300 --> 31:49.300
+Just to the optical network.
+
+31:49.300 --> 31:55.300
+Sometimes it's some other kind of quantum, right?
+
+31:55.300 --> 31:58.300
+These days, quantum is, you know, becoming popular.
+
+31:58.300 --> 32:00.300
+So there's, of course, quantum communication.
+
+32:00.300 --> 32:01.300
+And that's what they're up.
+
+32:01.300 --> 32:03.300
+But most of today's communication, right?
+
+32:03.300 --> 32:06.300
+Data link, right?
+
+32:06.300 --> 32:09.300
+That would be something like Ethernet, right?
+
+32:09.300 --> 32:14.300
+Some form of Ethernet, whether it's wired Ethernet or wireless Ethernet.
+
+32:14.300 --> 32:16.300
+Network layer, we have IP, right?
+
+32:16.300 --> 32:20.300
+IP is the lingua franca of the Internet, right?
+
+32:20.300 --> 32:23.300
+It's the only thing that makes the Internet, not the web.
+
+32:23.300 --> 32:25.300
+IP is what makes the Internet.
+
+32:25.300 --> 32:29.300
+We have the transport layer, TCP, UDP, RTP.
+
+32:29.300 --> 32:32.300
+And then the session layer, like all the socket stuff.
+
+32:32.300 --> 32:37.300
+TLS sort of lives up there, too.
+
+32:37.300 --> 32:39.300
+Then you have applications.
+
+32:39.300 --> 32:42.300
+And then above that, you have the presentation software, essentially,
+
+32:42.300 --> 32:47.300
+that faces us, the user-facing software.
+
+32:47.300 --> 32:52.300
+So what are we looking at?
+
+32:52.300 --> 32:57.300
+Well, a physical layer, which is essentially the layer that,
+
+32:57.300 --> 33:01.300
+like if you are using, oh, a bunch of you are using your smartphones
+
+33:01.300 --> 33:03.300
+and your laptops.
+
+33:03.300 --> 33:05.300
+Well, I don't know, let's forget smartphones.
+
+33:05.300 --> 33:10.300
+A lot of people here who are using your tablets and laptops,
+
+33:10.300 --> 33:14.300
+probably you're not communicating via cellular,
+
+33:14.300 --> 33:16.300
+although you could, in principle.
+
+33:16.300 --> 33:23.300
+The chances are you are communicating to the access point, right?
+
+33:23.300 --> 33:29.300
+And you are sending wirelessly, of course, the packets,
+
+33:29.300 --> 33:31.300
+and receiving packets from the access point.
+
+33:31.300 --> 33:34.300
+Some of you are supposed to be talking to each other directly,
+
+33:34.300 --> 33:36.300
+using Wi-Fi directly, but that's unlikely.
+
+33:36.300 --> 33:40.300
+Most of you probably don't know each other at that point.
+
+33:40.300 --> 33:43.300
+So what could be done at that level, right?
+
+33:43.300 --> 33:47.300
+At that level, you are susceptible to jamming.
+
+33:47.300 --> 33:49.300
+So if I say, you know what?
+
+33:49.300 --> 33:51.300
+I'm going to be a hardest about this class.
+
+33:51.300 --> 33:53.300
+None of you are going to be browsing the internet.
+
+33:53.300 --> 33:56.300
+While I lecture, I will bring a jammer here
+
+33:56.300 --> 33:58.300
+and jam this class, right?
+
+33:58.300 --> 34:01.300
+So that y'all won't be able to, you can still use your computers,
+
+34:01.300 --> 34:03.300
+but you won't be able to use your Wi-Fi.
+
+34:03.300 --> 34:06.300
+There are even cellular jammers.
+
+34:06.300 --> 34:08.300
+Though they are illegal.
+
+34:08.300 --> 34:11.300
+I think they are illegal.
+
+34:11.300 --> 34:16.300
+Unless you have, like, some more enforcement permission.
+
+34:16.300 --> 34:19.300
+But definitely Wi-Fi jammers I could bring.
+
+34:19.300 --> 34:22.300
+And say, okay, no Wi-Fi for you.
+
+34:22.300 --> 34:23.300
+Not sure if that...
+
+34:23.300 --> 34:25.300
+There are probably also Bluetooth jammers.
+
+34:25.300 --> 34:26.300
+But anyway, so what is a jammer?
+
+34:26.300 --> 34:27.300
+It's a noise jammer, right?
+
+34:27.300 --> 34:30.300
+It generates noise, large amounts of noise
+
+34:30.300 --> 34:32.300
+on a particular radio frequency.
+
+34:32.300 --> 34:34.300
+It prevents you from communicating.
+
+34:34.300 --> 34:37.300
+Now, you will all know that I'm jamming you, right?
+
+34:37.300 --> 34:41.300
+Because your interface will realize that it's being jammed.
+
+34:41.300 --> 34:45.300
+Or I could just jam this.
+
+34:45.300 --> 34:48.300
+And prevent you from essentially accessing the exit.
+
+34:48.300 --> 34:49.300
+You will know.
+
+34:49.300 --> 34:51.300
+Jamming is what's called an active attack.
+
+34:51.300 --> 34:53.300
+It's not subtle.
+
+34:53.300 --> 34:55.300
+Okay?
+
+34:55.300 --> 34:59.300
+What other things happen in the physical area?
+
+34:59.300 --> 35:01.300
+RF fingerprinting.
+
+35:01.300 --> 35:03.300
+You might say, what is RF?
+
+35:03.300 --> 35:07.300
+Well, radio frequency fingerprinting allows me,
+
+35:07.300 --> 35:13.300
+after observing, then sniffing on the traffic going on here.
+
+35:13.300 --> 35:16.300
+To essentially come up,
+
+35:16.300 --> 35:19.300
+and I might have to use some machine learning a little bit,
+
+35:19.300 --> 35:25.300
+to come up with a set of features that describe uniquely your Wi-Fi interface.
+
+35:25.300 --> 35:28.300
+As opposed to his, as opposed to his.
+
+35:28.300 --> 35:29.300
+Your interface.
+
+35:29.300 --> 35:33.300
+And then, of course, I have a profile for his, and for his, and for his.
+
+35:33.300 --> 35:35.300
+So, why is that an attack?
+
+35:35.300 --> 35:37.300
+Why is that something to be concerned about?
+
+35:37.300 --> 35:42.300
+Well, it allows me to then identify your interface,
+
+35:42.300 --> 35:44.300
+in some other place in the world.
+
+35:44.300 --> 35:46.300
+At some other time.
+
+35:46.300 --> 35:48.300
+It allows me to track you.
+
+35:48.300 --> 35:49.300
+Right?
+
+35:49.300 --> 35:51.300
+And link you.
+
+35:51.300 --> 35:52.300
+Right?
+
+35:52.300 --> 35:54.300
+Even if you paint your laptop black,
+
+35:54.300 --> 35:57.300
+and put a paper bag over your head,
+
+35:57.300 --> 35:59.300
+and I don't know who you are,
+
+35:59.300 --> 36:01.300
+but I'll know it's the same interface.
+
+36:01.300 --> 36:04.300
+Does that make sense?
+
+36:04.300 --> 36:06.300
+So, you might think this is a bit of exotic,
+
+36:06.300 --> 36:07.300
+why is this an attack?
+
+36:07.300 --> 36:08.300
+Trust me, it is.
+
+36:08.300 --> 36:10.300
+It is a problem.
+
+36:10.300 --> 36:11.300
+Yeah.
+
+36:11.300 --> 36:12.300
+Is that for the same class of devices,
+
+36:12.300 --> 36:13.300
+or specific?
+
+36:13.300 --> 36:14.300
+My last problem?
+
+36:14.300 --> 36:16.300
+Uh, I think it's,
+
+36:16.300 --> 36:18.300
+okay, depending on,
+
+36:18.300 --> 36:22.300
+I didn't say anything about what kind of fingerprinting software I would use,
+
+36:22.300 --> 36:29.300
+but, yeah, there are some simple things that will basically, you know,
+
+36:29.300 --> 36:31.300
+from your MAC address,
+
+36:31.300 --> 36:35.300
+I'll be able to tell, like, if it's a, what devices,
+
+36:35.300 --> 36:36.300
+like, it would be an Apple.
+
+36:36.300 --> 36:39.300
+I might not be able to tell that it's a particular model,
+
+36:39.300 --> 36:41.300
+but I'll know this is an Apple.
+
+36:41.300 --> 36:42.300
+Right?
+
+36:42.300 --> 36:45.300
+The MAC addresses and Wi-Fi,
+
+36:45.300 --> 36:47.300
+in general, the Ethernet MAC addresses,
+
+36:47.300 --> 36:49.300
+they have some structure.
+
+36:49.300 --> 36:53.300
+So, I should be able to tell the manufacturer,
+
+36:53.300 --> 36:56.300
+and maybe sometimes the model, depending,
+
+36:56.300 --> 36:59.300
+because they are globally administered, the Ethernet MAC address.
+
+36:59.300 --> 37:00.300
+Or at 40 AM.
+
+37:00.300 --> 37:01.300
+All right.
+
+37:01.300 --> 37:06.300
+So, and then can I,
+
+37:06.300 --> 37:10.300
+but that just tells me broadly what kind of device this is,
+
+37:10.300 --> 37:11.300
+but it doesn't tell me,
+
+37:11.300 --> 37:16.300
+for example, if two of you have the same model of the MacBook,
+
+37:16.300 --> 37:19.300
+maybe I won't be able to tell the difference with that simple approach
+
+37:19.300 --> 37:20.300
+by just examining the MAC address,
+
+37:20.300 --> 37:23.300
+but if I actually listen to the features,
+
+37:23.300 --> 37:27.300
+because no matter how much the manufacturers try,
+
+37:27.300 --> 37:31.300
+there are imperfections in manufacturing.
+
+37:31.300 --> 37:32.300
+Right?
+
+37:32.300 --> 37:35.300
+So, the two identical laptops,
+
+37:35.300 --> 37:38.300
+their interfaces will not have the same characteristics.
+
+37:38.300 --> 37:39.300
+Yeah?
+
+37:39.300 --> 37:42.300
+Is it illegal to use a MAC address?
+
+37:42.300 --> 37:45.300
+Is that illegal or, yeah?
+
+37:45.300 --> 37:46.300
+What do you mean?
+
+37:46.300 --> 37:49.300
+Well, it's not illegal to modify a MAC address.
+
+37:49.300 --> 37:52.300
+Can I just use other people's MAC address or something?
+
+37:52.300 --> 37:54.300
+Well, to use other people's MAC address,
+
+37:54.300 --> 37:56.300
+you have to modify yours.
+
+37:56.300 --> 37:57.300
+Is that illegal?
+
+37:57.300 --> 37:58.300
+I don't think so.
+
+37:58.300 --> 38:01.300
+Don't vote me on it, but I believe it's not.
+
+38:01.300 --> 38:04.300
+In fact, some laptops,
+
+38:04.300 --> 38:08.300
+some phones allow you to change a MAC address.
+
+38:08.300 --> 38:11.300
+In part, I think for the same reason,
+
+38:11.300 --> 38:12.300
+that it's to prevent tracking.
+
+38:12.300 --> 38:15.300
+A lot of devices just like randomize your MAC address.
+
+38:15.300 --> 38:16.300
+They do randomize.
+
+38:16.300 --> 38:17.300
+For every connection you use.
+
+38:17.300 --> 38:18.300
+Yeah.
+
+38:18.300 --> 38:19.300
+That's right.
+
+38:19.300 --> 38:20.300
+But they have to do it within reason.
+
+38:20.300 --> 38:21.300
+They cannot like,
+
+38:21.300 --> 38:24.300
+I think there are some rules that they have to abide by when they randomize a MAC address.
+
+38:24.300 --> 38:25.300
+Yes.
+
+38:25.300 --> 38:26.300
+Yeah.
+
+38:26.300 --> 38:29.300
+But to be fair, I don't know the details.
+
+38:29.300 --> 38:31.300
+But I'm pretty sure there are rules.
+
+38:31.300 --> 38:34.300
+Like there are some things you cannot do when you just pick,
+
+38:34.300 --> 38:37.300
+you cannot just pick a completely random MAC address.
+
+38:37.300 --> 38:38.300
+There are some things you cannot do.
+
+38:38.300 --> 38:43.300
+But yes, there are devices that do it on purpose to prevent tracking.
+
+38:43.300 --> 38:44.300
+Which might be okay.
+
+38:44.300 --> 38:51.300
+So for example, if you have an LG smartphone and every time it turns on,
+
+38:51.300 --> 38:55.300
+it generates a different LG phone MAC address.
+
+38:55.300 --> 38:56.300
+That might be okay.
+
+38:56.300 --> 38:57.300
+Yeah.
+
+38:57.300 --> 38:58.300
+For a popular phone.
+
+38:58.300 --> 38:59.300
+Okay.
+
+38:59.300 --> 39:00.300
+Yes.
+
+39:00.300 --> 39:01.300
+I will know it's an LG phone.
+
+39:01.300 --> 39:02.300
+But is it the same?
+
+39:02.300 --> 39:03.300
+I have no idea.
+
+39:03.300 --> 39:05.300
+I'm pretty sure they do it for every connection you have too.
+
+39:05.300 --> 39:09.300
+And then just use the same one for that connection forever.
+
+39:09.300 --> 39:12.300
+Do you remember which models tend to do that?
+
+39:12.300 --> 39:13.300
+I swear I had a phone.
+
+39:13.300 --> 39:16.300
+I think it's more popular with smartphones than with laptops.
+
+39:16.300 --> 39:18.300
+I think it was my phone.
+
+39:18.300 --> 39:19.300
+I don't know.
+
+39:19.300 --> 39:21.300
+The new MacBooks they ran the way they were connected.
+
+39:21.300 --> 39:22.300
+Which one?
+
+39:22.300 --> 39:23.300
+The new MacBooks they ran the way they were connected.
+
+39:23.300 --> 39:24.300
+They do?
+
+39:24.300 --> 39:29.300
+But I think it's still a Mac and Apple.
+
+39:29.300 --> 39:30.300
+Probably.
+
+39:30.300 --> 39:31.300
+Yeah.
+
+39:31.300 --> 39:33.300
+Or you could check it out.
+
+39:33.300 --> 39:37.300
+That's potentially a subject for a project type study.
+
+39:37.300 --> 39:41.300
+The investigation of MAC address usage in popular devices.
+
+39:41.300 --> 39:44.300
+That would be interesting to know.
+
+39:44.300 --> 39:45.300
+Okay.
+
+39:45.300 --> 39:47.300
+So that's the physical layer.
+
+39:47.300 --> 39:52.300
+The data layer, you have a tax on the wireless protocols.
+
+39:52.300 --> 39:53.300
+Right?
+
+39:53.300 --> 39:57.300
+So you have all these WPA, WAP, WAP.
+
+39:57.300 --> 39:58.300
+I don't know.
+
+39:58.300 --> 40:00.300
+All these three letter protocols.
+
+40:00.300 --> 40:01.300
+Right?
+
+40:01.300 --> 40:04.300
+That one can configure to use with the access.
+
+40:04.300 --> 40:05.300
+Right?
+
+40:05.300 --> 40:06.300
+So when you configure it.
+
+40:06.300 --> 40:07.300
+It's like at home.
+
+40:07.300 --> 40:09.300
+When you set up your home router.
+
+40:09.300 --> 40:10.300
+Right?
+
+40:10.300 --> 40:11.300
+You get all these choices.
+
+40:11.300 --> 40:12.300
+Right?
+
+40:12.300 --> 40:14.300
+What kind of security protocols are you configured?
+
+40:14.300 --> 40:16.300
+Some of them are more secure than others.
+
+40:16.300 --> 40:17.300
+But they can be attacked.
+
+40:17.300 --> 40:23.300
+Also, here at the data link layer, you see the MAC addresses.
+
+40:23.300 --> 40:28.300
+So another reason is like knowing who is communicating with whom.
+
+40:28.300 --> 40:29.300
+Right?
+
+40:29.300 --> 40:32.300
+So the metadata is available.
+
+40:32.300 --> 40:36.300
+Meaning that you learn, assuming for example MAC addresses don't change.
+
+40:36.300 --> 40:39.300
+You learn which MAC addresses are appropriate to which other MAC address.
+
+40:39.300 --> 40:44.300
+Now typically in this environment, most of you would be talking to the access point and
+
+40:44.300 --> 40:45.300
+receiving from the access.
+
+40:45.300 --> 40:46.300
+Right?
+
+40:46.300 --> 40:48.300
+Sending and receiving from the access point.
+
+40:48.300 --> 40:59.300
+The other thing you can do with, by the way, with the physical layer is use some very simple property called RSSI.
+
+40:59.300 --> 41:02.300
+Received signal strength indicator.
+
+41:02.300 --> 41:10.300
+Which allows you to essentially tell how far, within reason, how far a particular interface is.
+
+41:10.300 --> 41:11.300
+Right?
+
+41:11.300 --> 41:17.300
+So as I'm standing close to his laptop, the RSSI is going to be high.
+
+41:17.300 --> 41:20.300
+I'm stepping away and it's going to lower and lower and lower.
+
+41:20.300 --> 41:24.300
+So you might be able to triangulate devices like that.
+
+41:24.300 --> 41:25.300
+Okay.
+
+41:25.300 --> 41:28.300
+And the network layer, well, there's tons of attack.
+
+41:28.300 --> 41:29.300
+This is the IP.
+
+41:29.300 --> 41:30.300
+Right?
+
+41:30.300 --> 41:31.300
+The IP layer.
+
+41:31.300 --> 41:33.300
+Whether it's V4 or V6, it doesn't really matter.
+
+41:33.300 --> 41:35.300
+There are tons of attack.
+
+41:35.300 --> 41:38.300
+Address spoofing, of course, is a very easy attack.
+
+41:38.300 --> 41:40.300
+There's something called smurfing.
+
+41:40.300 --> 41:41.300
+We'll talk about it.
+
+41:41.300 --> 41:50.300
+Transport layer has sin flooding, RIPs, and sequence number prediction attacks on TCP specifically.
+
+41:50.300 --> 41:53.300
+Then there are like UDP attacks, but they're less interesting.
+
+41:53.300 --> 41:57.300
+A session layer, well, also the zone.
+
+41:57.300 --> 41:59.300
+I think that's outdated.
+
+41:59.300 --> 42:05.300
+And then in the application layer, well, you have all these bugs and exploits.
+
+42:05.300 --> 42:08.300
+Because application layer is very rich with features, right?
+
+42:08.300 --> 42:10.300
+You have tons of software there.
+
+42:10.300 --> 42:13.300
+So the attack surface clearly grows.
+
+42:13.300 --> 42:15.300
+And then the human layer, right?
+
+42:15.300 --> 42:16.300
+The presentation.
+
+42:16.300 --> 42:22.300
+Well, then here we have essentially phishing and social engineering and all kinds of catfishing.
+
+42:22.300 --> 42:32.300
+So it gives you an idea that you probably know the answer to the question, where do you put your security?
+
+42:32.300 --> 42:33.300
+And which layer?
+
+42:33.300 --> 42:39.300
+The answer is, you've got to put it in each layer, because each layer demands its own attention.
+
+42:39.300 --> 42:40.300
+Right?
+
+42:40.300 --> 42:43.300
+So what do we do?
+
+42:43.300 --> 42:47.300
+Well, this isn't the seven layer hierarchy, right?
+
+42:47.300 --> 42:48.300
+Anymore.
+
+42:48.300 --> 42:50.300
+But we start with the security building blocks.
+
+42:50.300 --> 42:52.300
+So a lot of times, not always.
+
+42:52.300 --> 42:53.300
+Definitely not always.
+
+42:53.300 --> 42:59.300
+But a lot of times, the building blocks, the most primitive blocks are cryptography.
+
+42:59.300 --> 43:05.300
+And then using those, we build protocols and various techniques and then policies.
+
+43:05.300 --> 43:07.300
+And then we implement them.
+
+43:07.300 --> 43:09.300
+And then we pass one on to end users.
+
+43:09.300 --> 43:11.300
+And the end users are typically, what are they exposed to?
+
+43:11.300 --> 43:14.300
+Well, they're exposed to some policy configuration.
+
+43:14.300 --> 43:18.300
+Like for example, you at home configuring your home router, right?
+
+43:18.300 --> 43:19.300
+Or installing some IoT device.
+
+43:19.300 --> 43:22.300
+You are kind of like your own manager.
+
+43:22.300 --> 43:31.300
+But you're generally also exposed to things like password managers and captchas and multi-factor authentication, etc.
+
+43:31.300 --> 43:35.300
+And company security policies also that require physical.
+
+43:35.300 --> 43:37.300
+Like carrying a badge.
+
+43:37.300 --> 43:39.300
+Having a smart card.
+
+43:39.300 --> 43:42.300
+Having some kind of a key fob, right?
+
+43:42.300 --> 43:43.300
+Dongle.
+
+43:43.300 --> 43:44.300
+It opens doors.
+
+43:44.300 --> 43:50.300
+All compliance with biometrics, right?
+
+43:50.300 --> 43:57.300
+So, roughly speaking, what is network security?
+
+43:57.300 --> 44:02.300
+Well, it has all these buzzwords, right?
+
+44:02.300 --> 44:06.300
+It's all about things like antigenciality, right?
+
+44:06.300 --> 44:09.300
+Because in a network, you usually have a sender and a receiver.
+
+44:09.300 --> 44:12.300
+Sometimes, of course, you have more than one sender and more than one receiver.
+
+44:12.300 --> 44:13.300
+Right?
+
+44:13.300 --> 44:20.300
+But in the most basic case, you have like Alice and Bob talking to each other in some way.
+
+44:20.300 --> 44:23.300
+Who should see messages, right?
+
+44:23.300 --> 44:25.300
+Who should see that communication?
+
+44:25.300 --> 44:31.300
+So, we use crypto for the most part where sender encrypts, receiver decrypts.
+
+44:31.300 --> 44:32.300
+Authentication.
+
+44:32.300 --> 44:37.300
+Authentication is we want to make sure that the origin of the message is the one that we believe it is.
+
+44:37.300 --> 44:38.300
+Right?
+
+44:38.300 --> 44:43.300
+And the sender here wants to confirm that the receiver is the one that is going to receive it.
+
+44:43.300 --> 44:46.300
+And the receiver wants to confirm that the sender is the one who sent it.
+
+44:46.300 --> 44:50.300
+Integrity is tightly coupled with authentication, right?
+
+44:50.300 --> 44:52.300
+But not exactly the same.
+
+44:52.300 --> 44:55.300
+Don't make a mistake of like thinking it's the same thing.
+
+44:55.300 --> 45:03.300
+Integrity is about making sure that the data arrives intact and any modification is detected.
+
+45:03.300 --> 45:04.300
+Right?
+
+45:04.300 --> 45:06.300
+But typically they are conjoined.
+
+45:06.300 --> 45:07.300
+They are put together.
+
+45:07.300 --> 45:12.300
+Meaning that you want to have both origin authentication and data integrity.
+
+45:12.300 --> 45:15.300
+And that access control, right?
+
+45:15.300 --> 45:18.300
+Who has access to what resources?
+
+45:18.300 --> 45:21.300
+Meaning, yes, network resources, for example.
+
+45:21.300 --> 45:23.300
+And availability.
+
+45:23.300 --> 45:29.300
+So availability is just making sure that something is available that is not being, say, subject to
+
+45:29.300 --> 45:30.300
+denial of service attack.
+
+45:30.300 --> 45:31.300
+Right?
+
+45:31.300 --> 45:37.300
+Let's say you're trying to log in to a particular site, but it's being hosed down as a victim
+
+45:37.300 --> 45:39.300
+to denial of service.
+
+45:39.300 --> 45:41.300
+That is an attack on availability.
+
+45:41.300 --> 45:44.300
+It's not an attack on access control.
+
+45:44.300 --> 45:49.300
+But if somebody, you know, walks into a door that you have a badge, you open the door and
+
+45:49.300 --> 45:51.300
+somebody tailgates you, that's an access attack.
+
+45:51.300 --> 45:52.300
+So we all, right?
+
+45:52.300 --> 45:53.300
+You've seen these characters before, right?
+
+45:53.300 --> 45:54.300
+Alice, Bob, Eve.
+
+45:54.300 --> 45:55.300
+No gender associations.
+
+45:55.300 --> 45:56.300
+We just use two pictures sometimes.
+
+45:56.300 --> 45:57.300
+These are just communicating parties.
+
+45:57.300 --> 45:58.300
+In most cases, not always, Alice and Bob are, well, the communicating parties, the benign characters.
+
+45:58.300 --> 46:05.300
+And Eve, as you can see, is not a benign character.
+
+46:05.300 --> 46:06.300
+That's Nenders.
+
+46:06.300 --> 46:07.300
+That's Nenders.
+
+46:07.300 --> 46:08.300
+So, but Alice and Bob, don't fall into this trap of thinking, oh, Alice and Bob are always
+
+46:08.300 --> 46:09.300
+people, right?
+
+46:09.300 --> 46:10.300
+They're not necessarily people.
+
+46:10.300 --> 46:11.300
+They could be, users.
+
+46:11.300 --> 46:13.300
+But they could be web browser, web server, or let's see if they can be able to access
+
+46:13.300 --> 46:14.300
+to their own.
+
+46:14.300 --> 46:17.300
+And in most cases, not always, Alice and Bob are, well, the communicating parties, the
+
+46:17.300 --> 46:18.300
+benign characters.
+
+46:18.300 --> 46:21.300
+And Eve, as you can see, is not a benign character.
+
+46:21.300 --> 46:22.300
+That's Nenders.
+
+46:30.300 --> 46:33.300
+So, but Alice and Bob, don't fall into this trap of thinking, oh, Alice and Bob are always
+
+46:33.300 --> 46:34.300
+people, right?
+
+46:34.300 --> 46:35.300
+They're not necessarily people.
+
+46:35.300 --> 46:36.300
+They could be.
+
+46:36.300 --> 46:37.300
+Users.
+
+46:37.300 --> 46:44.340
+users, but it could be web browser, web server, right, there could be client-server and online
+
+46:44.340 --> 46:50.120
+banking, there could be a smartphone and a base station that it connects to, it could
+
+46:50.120 --> 46:57.620
+be a laptop and an access point, it could be a ground station and a satellite, that
+
+46:57.620 --> 47:07.360
+could be your Alice and Bob, clients and DNS, right, everybody knows DNS, okay, routers exchanging
+
+47:07.360 --> 47:13.320
+like BGP routers exchanging, border routers are adjacent, exchanging information, game
+
+47:13.320 --> 47:20.260
+players and multi-user games, distributed multi-user games, wireless, okay, tons of examples, so
+
+47:20.260 --> 47:30.300
+just remember, they're not people, they don't have to be. So, what can the adversary do?
+
+47:30.300 --> 47:36.580
+Many things, at the very least, the adversary, the most sort of benign adversary, if such
+
+47:36.580 --> 47:45.600
+a thing exists, is an eavesdropper. An eavesdropper, well, that's what the name suggests, eavesdrops.
+
+47:45.600 --> 47:51.500
+Intercepts, communication, analyzes, whatever they can see, even if communication is encrypted,
+
+47:51.500 --> 48:00.640
+as I mentioned last time, even encrypted communication leaks a lot of interesting information.
+
+48:00.640 --> 48:10.560
+Insertion, well, that means of fabrication, introducing fake or fabricated messages into communication.
+
+48:10.560 --> 48:17.460
+Impersonation, spoofing addresses, hijacking, taking over a connection, existing connection,
+
+48:17.460 --> 48:24.400
+denial of service, etc. This is not an exhaustive list, okay, this is just examples of what an
+
+48:24.400 --> 48:36.560
+adversary could do, could try to. Any questions? None of this is very difficult. Crypto! Right, very quick
+
+48:36.560 --> 48:45.460
+tool for crypto. Hmm, language, first language, right? Encryption, decryption, right? Encrypt, decrypt.
+
+48:45.460 --> 48:52.460
+One reverses the other. Sometimes people use the word enciphered, deciphered. It's not common that people use that.
+
+48:52.460 --> 49:01.560
+It does the same thing. Alice, Bob, want to communicate, make sure that Eve does not attack that communication.
+
+49:01.560 --> 49:07.460
+Alice must have an encryption algorithm. Bob must have a decryption algorithm, okay?
+
+49:07.460 --> 49:14.460
+Now, this picture is misleading. I mean, I took a lot of these slides from, of course, Kuro's, Ross book,
+
+49:14.460 --> 49:19.460
+but this picture, because these people are, after all, networking people, they're not security people.
+
+49:19.460 --> 49:31.360
+So, why is this picture misleading? Because sometimes, sometimes, secrecy is not important.
+
+49:31.360 --> 49:39.360
+Sometimes Alice and Bob want to communicate, a little bit, a lot, doesn't matter. But they don't care if anybody hears them.
+
+49:39.360 --> 49:45.260
+Can you think about real-world scenarios? It might not be important to keep communication secret.
+
+49:45.260 --> 49:52.260
+What could be more important is to keep communication authentic and maintain integrity.
+
+49:52.260 --> 49:59.260
+That means messages sent should not be modified by anybody. Messages cannot be fabricated by somebody.
+
+49:59.260 --> 50:05.260
+So, somebody cannot just, like, insert a message saying this comes from Alice to Bob, or this comes from Bob to Alice, right?
+
+50:05.260 --> 50:12.160
+That will be, like, fakery. So, sometimes the biggest concern isn't secrecy.
+
+50:12.160 --> 50:16.160
+Sometimes the biggest concern is authenticity and integrity.
+
+50:16.160 --> 50:26.160
+And, in fact, if you look at something like some of the mechanisms we will talk about later in the course, like TLS and IPsec,
+
+50:26.160 --> 50:32.160
+they all, you may not know this, but they all have no encryption option.
+
+50:32.160 --> 50:39.060
+For situations where encryption is not important, but authentication and integrity are, right?
+
+50:39.060 --> 50:43.060
+Sometimes it's called null encryption. In TLS, I think it's called null encryption.
+
+50:43.060 --> 50:47.060
+Anyway, back to this picture. In this picture, if you believe Coroz and Ross,
+
+50:47.060 --> 50:50.060
+I mean, they're really talking about encrypting communication, right?
+
+50:50.060 --> 50:54.060
+Saving it from being learned by the adversary.
+
+50:54.060 --> 51:02.960
+So, here we have a key that Alice has and Bob has, and ideally, they should be the same.
+
+51:02.960 --> 51:07.960
+Right? The KAB and KBA should be the same. Otherwise, well, things don't work so well,
+
+51:07.960 --> 51:13.960
+because you want to encrypt a plain text, a message with a key, and decrypt it with the same key
+
+51:13.960 --> 51:17.860
+in order to get the message back on the box side.
+
+51:17.860 --> 51:31.860
+And that black arrow between the green boxes, that's like a wireless hop like this, or it could be, I don't know, 20 hops on the internet.
+
+51:31.860 --> 51:37.760
+I make no assumption about this distance here.
+
+51:37.760 --> 51:43.760
+Right? It doesn't matter. It could be very close, or it could be very far.
+
+51:43.760 --> 51:50.760
+Now, this picture again is very simplistic, because in the real world, there are two types of cryptography.
+
+51:50.760 --> 51:56.760
+Symmetric, or asymmetric, or public key. So, asymmetric, public key are synonymous.
+
+51:56.760 --> 52:06.660
+Symmetric. So, in the symmetric cryptography world, Alice and Bob must have the same key.
+
+52:06.660 --> 52:15.660
+The same key that encrypts must be the key that decrypts. And that's how it works.
+
+52:15.660 --> 52:20.660
+In the public key world, and this is where it gets tricky if you've never seen public key crypto,
+
+52:20.660 --> 52:26.660
+the encryption key and decryption key are different. And Alice and Bob do not need to share a secret.
+
+52:26.660 --> 52:35.560
+In order to communicate. And that's what confuses a lot of people, and this is where they see it for the first time.
+
+52:35.560 --> 52:44.560
+So, let's look at, quickly, symmetric. Well, symmetric is easier. It's been around since, I don't know, ancient Rome, or ancient Sparta, anyway.
+
+52:44.560 --> 52:50.560
+The oldest, I think, encryption method was used by the Spartans.
+
+52:50.560 --> 52:58.460
+They would tie a leather belt around the upper arm of a messenger.
+
+52:58.460 --> 52:59.460
+Leather belt.
+
+52:59.460 --> 53:02.460
+They would write a messenger.
+
+53:02.460 --> 53:06.360
+And then unwrap the belt.
+
+53:06.360 --> 53:09.360
+So, the belt was unwrapped.
+
+53:09.360 --> 53:12.360
+The letters would make no sense.
+
+53:12.360 --> 53:17.360
+You have to put them back on the bicep of the messenger in order for them to make sense again.
+
+53:17.360 --> 53:20.360
+And a cue.
+
+53:20.360 --> 53:25.360
+Now, if the messenger lost a lot of weight in transit, maybe a problem.
+
+53:25.360 --> 53:29.260
+Then there was the Caesar cipher, right? Everybody know Caesar cipher?
+
+53:29.260 --> 53:34.260
+Encrypt letters by shifting them by three positions or something like that.
+
+53:34.260 --> 53:39.260
+Anyway, so, ancient ciphers were like this. They're typically mono-alphabetic.
+
+53:39.260 --> 53:42.260
+I mean, mono-alphabetic means you encrypt one letter at a time.
+
+53:42.260 --> 53:45.260
+Because, remember, in the past, people didn't have cubes.
+
+53:45.260 --> 53:48.260
+So, nobody cared about encrypting bits.
+
+53:48.260 --> 53:52.260
+Right? People wanted to encrypt words or letters.
+
+53:52.260 --> 53:55.160
+Usually letters.
+
+53:55.160 --> 53:58.160
+So, you had a plain text, and you had a ciphertext.
+
+53:58.160 --> 53:59.160
+Right?
+
+53:59.160 --> 54:02.160
+And then, you substitute one letter for another.
+
+54:02.160 --> 54:05.160
+Now, in this case, look at the plain text there.
+
+54:05.160 --> 54:07.160
+That's an alphabet.
+
+54:07.160 --> 54:09.160
+That's the 26-letter alphabet.
+
+54:09.160 --> 54:14.160
+If you permute the alphabet, like shuffle, shuffle, shuffle, shuffle, shuffle.
+
+54:14.160 --> 54:16.160
+Stop at some point.
+
+54:16.160 --> 54:17.160
+You have a random permutation.
+
+54:17.160 --> 54:18.160
+Right?
+
+54:18.160 --> 54:21.160
+That's a random permutation.
+
+54:21.160 --> 54:27.060
+So, if you have the regular alphabet, and you have the permutation right underneath,
+
+54:27.060 --> 54:29.060
+you can now encrypt.
+
+54:29.060 --> 54:30.060
+Yes?
+
+54:30.060 --> 54:31.060
+Sure.
+
+54:31.060 --> 54:32.060
+It's like a code book, right?
+
+54:32.060 --> 54:33.060
+You encrypt.
+
+54:33.060 --> 54:34.060
+Every time you see an A, it becomes an M.
+
+54:34.060 --> 54:36.060
+Every time you see a J, it becomes a D.
+
+54:36.060 --> 54:38.060
+Blah, blah, blah, blah, blah, blah.
+
+54:38.060 --> 54:39.060
+So, Bob, I love you.
+
+54:39.060 --> 54:41.060
+Alice becomes blah, blah, blah, blah, blah.
+
+54:41.060 --> 54:44.060
+It looks like a strange language.
+
+54:44.060 --> 54:45.060
+Right?
+
+54:45.060 --> 54:46.060
+That's the encryption.
+
+54:46.060 --> 54:48.060
+Side of the case.
+
+54:48.060 --> 54:53.960
+How many permutations of alphabets are there?
+
+54:53.960 --> 54:55.960
+46 factorial?
+
+54:55.960 --> 54:56.960
+Close enough.
+
+54:56.960 --> 54:59.960
+Exactly 46 factorial.
+
+54:59.960 --> 55:01.960
+Not a small number.
+
+55:01.960 --> 55:09.960
+And if you use some other alphabet, I don't know, like Hungarian or Russian, you get more
+
+55:09.960 --> 55:13.860
+because they are more letters.
+
+55:13.860 --> 55:15.860
+Scary number.
+
+55:15.860 --> 55:18.860
+So, seems like, why are we using this cipher?
+
+55:18.860 --> 55:21.860
+Have you seen this cipher being used?
+
+55:21.860 --> 55:23.860
+Probably not.
+
+55:23.860 --> 55:25.860
+And for good reason.
+
+55:25.860 --> 55:29.860
+The problem is nobody cares about the key.
+
+55:29.860 --> 55:33.860
+This cipher can be broken without knowing the key.
+
+55:33.860 --> 55:37.760
+Well, not exactly, but close enough.
+
+55:37.760 --> 55:43.760
+If you try to break it by brute force, you will indeed have to try up to 26 factorial combinations.
+
+55:43.760 --> 55:49.760
+Not quite as bad because on average, you know, asymptotically, it should be 46 factorial over 2.
+
+55:49.760 --> 55:51.760
+Big deal, right?
+
+55:51.760 --> 55:54.760
+Take a huge number divided by 2, you still have a huge number.
+
+55:54.760 --> 55:58.660
+But to be precise, it's 26 factorial over 2.
+
+55:58.660 --> 56:01.660
+But, rest assured, you don't need to do this much work.
+
+56:01.660 --> 56:04.660
+Because if you know the message is written in English, right?
+
+56:04.660 --> 56:08.660
+And we do usually know what language the message is written in.
+
+56:08.660 --> 56:12.660
+All you need to do is, hmm, I can't find a slide on this.
+
+56:12.660 --> 56:13.660
+No, I don't.
+
+56:13.660 --> 56:22.660
+Well, the letter frequency of the English language is public and well-known.
+
+56:22.660 --> 56:26.560
+What are the two most frequent letters in English language?
+
+56:26.560 --> 56:28.560
+Take a wild guess.
+
+56:28.560 --> 56:29.560
+E.
+
+56:29.560 --> 56:31.560
+E, what's the second?
+
+56:31.560 --> 56:33.560
+T.
+
+56:33.560 --> 56:36.560
+By far, they tower above, you see a bar chart, they tower above.
+
+56:36.560 --> 56:38.560
+E is like way up.
+
+56:38.560 --> 56:40.560
+Then T is like the second.
+
+56:40.560 --> 56:42.560
+And H is very close, okay?
+
+56:42.560 --> 56:46.560
+So, anybody seen The Game of Jeopardy?
+
+56:46.560 --> 56:48.560
+The stupid TV show.
+
+56:48.560 --> 56:49.560
+At least you might know.
+
+56:49.560 --> 56:51.560
+Well, they do something like this.
+
+56:51.560 --> 56:55.460
+You might have guessed like a phrase or something by guessing letters, right?
+
+56:55.460 --> 56:59.460
+Well, it's a very similar idea to cryptanalyze this cypher.
+
+56:59.460 --> 57:01.460
+First, you look for the most frequent letter.
+
+57:01.460 --> 57:03.460
+That should be an E.
+
+57:03.460 --> 57:07.460
+So, whatever that is, if it's a Z, you say, ah, Z is the most frequent letter in the encryption?
+
+57:07.460 --> 57:08.960
+That's an E.
+
+57:08.960 --> 57:10.460
+What's the second most frequent letter?
+
+57:10.460 --> 57:11.460
+Oh, that's a T.
+
+57:11.460 --> 57:15.560
+Well, that gives you already a lot, because then you can start deducing others without really
+
+57:15.560 --> 57:16.560
+knowing about that.
+
+57:16.560 --> 57:20.460
+So, you see, the whole thing will fall like a house of cards.
+
+57:20.460 --> 57:24.460
+So, you don't need to actually, that's called a shortcut, right?
+
+57:24.460 --> 57:28.460
+There's an example of a shortcut where you don't need to brute force the key space, you'll
+
+57:28.460 --> 57:30.460
+just figure it out some other way.
+
+57:30.460 --> 57:39.360
+All right, so, but we don't use such stupid cyphers anymore, clearly.
+
+57:39.360 --> 57:41.360
+So, back to symmetric key.
+
+57:41.360 --> 57:46.360
+Symmetric key world, we assume that Alice and Bob have the same key, KAB.
+
+57:46.360 --> 57:48.360
+Don't ask me how they know it.
+
+57:48.360 --> 57:49.360
+Okay?
+
+57:49.360 --> 57:54.360
+Just let's believe in the fairy tale that there's a book that at some point in life, both Alice
+
+57:54.360 --> 57:57.360
+and Bob, a little bird sat on their shoulder and gave them KAB.
+
+57:57.360 --> 57:58.360
+Okay?
+
+57:58.360 --> 58:01.360
+So, now they are the only ones in the world who know KAB.
+
+58:01.360 --> 58:07.260
+So, if Alice has a message, she puts it through an encryption algorithm together with a key.
+
+58:07.260 --> 58:10.260
+You see the key coming from the top.
+
+58:10.260 --> 58:12.260
+Message M becomes a cypher text.
+
+58:12.260 --> 58:15.260
+In other words, the annotation KAB over M, right, is encryption.
+
+58:15.260 --> 58:21.260
+And when Bob receives the message, he knows the same key, he inputs it into this green box,
+
+58:21.260 --> 58:23.260
+and out comes the plain text, right?
+
+58:23.260 --> 58:28.260
+Because encryption reverses encryption.
+
+58:28.260 --> 58:29.260
+Yay!
+
+58:29.260 --> 58:30.260
+Okay.
+
+58:30.260 --> 58:34.260
+How do they agree on the key?
+
+58:34.260 --> 58:38.260
+Like I said, so far we don't ask hard questions.
+
+58:38.260 --> 58:43.260
+DES was a historic cypher.
+
+58:43.260 --> 58:47.260
+In fact, well, when I was in grad school, that's what was being used.
+
+58:47.260 --> 58:53.260
+That was a long time ago, but I can only give you an example because it's a great example
+
+58:53.260 --> 58:55.260
+of a symmetric cypher.
+
+58:55.260 --> 58:57.260
+In fact, the variation of DES is still used.
+
+58:57.260 --> 59:05.260
+In fact, you will see it in CLS, but it's called triple decimal, three decimal.
+
+59:05.260 --> 59:08.260
+This was standardized in 1993.
+
+59:08.260 --> 59:14.260
+It's a laughably insecure cypher today, but not insecure because the design is bad.
+
+59:14.260 --> 59:17.260
+It's insecure because its key is short.
+
+59:17.260 --> 59:24.260
+So DES, or the data encryption standard, has a 56-bit symmetric key.
+
+59:24.260 --> 59:32.260
+Actually, it's 64 bits, but 8 bits are what's called parity bits, so they're guessable.
+
+59:32.260 --> 59:35.260
+They're not relevant.
+
+59:35.260 --> 59:42.260
+So with 56-bit key, you have 2 to the 56 of possible combinations.
+
+59:42.260 --> 59:49.260
+Now, up to about mid-1990s, that was a very scary number.
+
+59:49.260 --> 59:53.260
+Because if you had the space of 2 to the 56, that was essentially meant that you had to
+
+59:53.260 --> 01:00:00.260
+try, on average, 2 to the 55 possibilities before you could break the key, brute force.
+
+01:00:00.260 --> 01:00:03.260
+And there were no real shotguns.
+
+01:00:03.260 --> 01:00:05.260
+But as time progressed, Moore's law, right?
+
+01:00:05.260 --> 01:00:07.260
+Everybody knows Moore's law.
+
+01:00:07.260 --> 01:00:13.260
+Right about mid-1990s, people started saying, hmm, this ain't comfortable anymore.
+
+01:00:13.260 --> 01:00:19.260
+Breaking DES, that is trying doing, designing a specialized ASIC, right?
+
+01:00:19.260 --> 01:00:28.260
+A specialized computer, specialized hardware, to do 2 to the 55 trials of DES, is no longer
+
+01:00:28.260 --> 01:00:29.260
+not viable.
+
+01:00:29.260 --> 01:00:31.260
+A nation-state would, in principle, do it.
+
+01:00:31.260 --> 01:00:34.260
+So that's why the government started looking for new standards.
+
+01:00:34.260 --> 01:00:37.260
+And today, of course, we don't use this.
+
+01:00:37.260 --> 01:00:39.260
+There are other standards, like AES.
+
+01:00:39.260 --> 01:00:44.260
+But it's harder to show, because it's a more complicated cipher.
+
+01:00:44.260 --> 01:00:47.260
+So, alright.
+
+01:00:47.260 --> 01:00:52.260
+DES is not used today because its key is short.
+
+01:00:52.260 --> 01:00:54.260
+Not because it's insecure, fundamentally.
+
+01:00:54.260 --> 01:00:57.260
+There are no backdoors to it.
+
+01:00:57.260 --> 01:01:01.260
+This is the version that is still used today, occasionally.
+
+01:01:01.260 --> 01:01:06.260
+Which is essentially a triple application of DES.
+
+01:01:06.260 --> 01:01:09.260
+So it's like triple encryption, if you will.
+
+01:01:09.260 --> 01:01:12.260
+But it's with two keys, and I might show you later on how it's done.
+
+01:01:12.260 --> 01:01:14.260
+But anyway.
+
+01:01:14.260 --> 01:01:19.260
+Here's this diagram.
+
+01:01:19.260 --> 01:01:26.260
+DES, you don't need to remember this, because it's just a quick tour.
+
+01:01:26.260 --> 01:01:29.260
+DES is an interesting beast.
+
+01:01:29.260 --> 01:01:33.260
+Essentially, the plain text, remember it's all about encryption, right?
+
+01:01:33.260 --> 01:01:40.260
+So it treats plain text message as a sequence of 64-bit blocks.
+
+01:01:40.260 --> 01:01:46.260
+So DES operates on one 64-bit block at a time.
+
+01:01:46.260 --> 01:01:47.260
+Okay?
+
+01:01:47.260 --> 01:01:50.260
+So for DES, there's nothing more than 64 bits.
+
+01:01:50.260 --> 01:01:54.260
+Just one 64-bit input, one 64-bit output.
+
+01:01:54.260 --> 01:02:01.260
+If you ever hear of a cipher that outputs fewer bits than it takes on, run away.
+
+01:02:01.260 --> 01:02:02.260
+Right?
+
+01:02:02.260 --> 01:02:04.260
+It cannot possibly be.
+
+01:02:04.260 --> 01:02:09.260
+Something cannot encrypt and produce fewer bits than it takes on.
+
+01:02:09.260 --> 01:02:13.260
+If it produces more bits, that's believable.
+
+01:02:13.260 --> 01:02:15.260
+But fewer bits, no.
+
+01:02:15.260 --> 01:02:17.260
+Because you obviously lose information.
+
+01:02:17.260 --> 01:02:20.260
+Alright, so 64-bit input, 64-bit output.
+
+01:02:20.260 --> 01:02:25.260
+Well, in the beginning, there's something called the initial permutation.
+
+01:02:25.260 --> 01:02:28.260
+And at the end, there's something called the final permutation.
+
+01:02:28.260 --> 01:02:31.260
+And in the middle, there are 16 rounds of torture.
+
+01:02:31.260 --> 01:02:37.260
+Like, pure, sheer torture that the bits in that 64-bit block.
+
+01:02:37.260 --> 01:02:41.260
+They, like in an ancient, like medieval torture machine,
+
+01:02:41.260 --> 01:02:44.260
+they get expanded and contracted, and expanded and contracted,
+
+01:02:44.260 --> 01:02:49.260
+and swapped around, and at the end, the 64-bit input comes out.
+
+01:02:49.260 --> 01:02:54.260
+I could tell you in more gruesome details how this happens,
+
+01:02:54.260 --> 01:02:56.260
+but if you look at them in more detail,
+
+01:02:56.260 --> 01:02:59.260
+you will see that actually no information gets lost,
+
+01:02:59.260 --> 01:03:02.260
+but a lot of information gets permuted and moved around.
+
+01:03:02.260 --> 01:03:10.260
+And the only operations that Des uses are essentially shifts and XORs.
+
+01:03:10.260 --> 01:03:13.260
+Sort of like bit shifts, yeah?
+
+01:03:13.260 --> 01:03:17.260
+Everybody knows what a bit shift is, like left shift, right shift, XOR.
+
+01:03:17.260 --> 01:03:20.260
+So the operations are super primitive.
+
+01:03:20.260 --> 01:03:26.260
+There's no, like, exponentiation, multiplication, nothing like that.
+
+01:03:26.260 --> 01:03:27.260
+Right?
+
+01:03:27.260 --> 01:03:29.260
+Just like a super primitive thing.
+
+01:03:29.260 --> 01:03:32.260
+And that's why it was designed to be fast and hardware.
+
+01:03:32.260 --> 01:03:36.260
+And hardware does not like complicated operations.
+
+01:03:36.260 --> 01:03:40.260
+And there are 16 rounds of torture.
+
+01:03:40.260 --> 01:03:43.260
+And in every round, a different...
+
+01:03:43.260 --> 01:03:47.260
+You see there, on that side, you have a 56-bit key?
+
+01:03:47.260 --> 01:03:49.260
+That's one of the inputs, right?
+
+01:03:49.260 --> 01:03:51.260
+Of course, there has to be a key.
+
+01:03:51.260 --> 01:03:55.260
+And that key gets mangled into 16 different variations.
+
+01:03:55.260 --> 01:03:59.260
+And every variation corresponds to a round, of which there are 16.
+
+01:03:59.260 --> 01:04:01.260
+And it's in case 16.
+
+01:04:01.260 --> 01:04:02.260
+Right?
+
+01:04:02.260 --> 01:04:04.260
+So there's from one key, 16 subkeys are derived.
+
+01:04:04.260 --> 01:04:08.260
+And each one is used in its own round.
+
+01:04:08.260 --> 01:04:15.260
+So, it's like a horror movie for that, of some sort.
+
+01:04:15.260 --> 01:04:22.260
+But, unlike a horror movie, you can get your data back by encrypting.
+
+01:04:22.260 --> 01:04:23.260
+So, there is actually...
+
+01:04:23.260 --> 01:04:29.260
+I'm not showing you in here, but there is a similar algorithm that is inversed,
+
+01:04:29.260 --> 01:04:31.260
+that is performing decryption.
+
+01:04:31.260 --> 01:04:37.260
+So, in DES, like in many block ciphers, encryption and decryption are not identical.
+
+01:04:37.260 --> 01:04:39.260
+But they are inverses of each other.
+
+01:04:39.260 --> 01:04:44.260
+Okay?
+
+01:04:44.260 --> 01:04:51.260
+Now, in 2001, NIST, National Institute of Standards and Technology,
+
+01:04:51.260 --> 01:04:56.260
+which is the US government agency, which I think still exists, despite current administration,
+
+01:04:56.260 --> 01:05:03.260
+for now, it regulates all kinds of standards, including like, I don't know,
+
+01:05:03.260 --> 01:05:09.260
+what qualifies as purified water, all the way to encryption.
+
+01:05:09.260 --> 01:05:12.260
+So, they do all kinds of standardization.
+
+01:05:12.260 --> 01:05:14.260
+And they had a call, right?
+
+01:05:14.260 --> 01:05:16.260
+So, they don't themselves come up with standards.
+
+01:05:16.260 --> 01:05:19.260
+They actually, like, announced a competition.
+
+01:05:19.260 --> 01:05:23.260
+And so, there was a competition that was won by this, what we call today, AES,
+
+01:05:23.260 --> 01:05:26.260
+Advanced Encryption Standard.
+
+01:05:26.260 --> 01:05:31.260
+And, unlike DES, which operates on 64-bit blocks and uses a 56-bit key,
+
+01:05:31.260 --> 01:05:35.260
+AES gives you a lot of flexibility.
+
+01:05:35.260 --> 01:05:40.260
+It uses 128, 192, or 256-bit keys.
+
+01:05:40.260 --> 01:05:42.260
+Allows you this.
+
+01:05:42.260 --> 01:05:47.260
+And you can also use, as far as input blocks, you can use 128 input, 192 to 56.
+
+01:05:47.260 --> 01:05:49.260
+You can mix and match.
+
+01:05:49.260 --> 01:05:56.260
+It means you can take a version of AES and use 256-bit blocks with 128 input keys.
+
+01:05:56.260 --> 01:05:59.260
+So, any combination is fine.
+
+01:05:59.260 --> 01:06:10.260
+So, brute force on the smaller, or sort of the weakest version of AES would be 128, 128.
+
+01:06:10.260 --> 01:06:19.260
+And the brute force attacks will take you something about this amount of time.
+
+01:06:19.260 --> 01:06:23.260
+Which most of us do not have, sadly.
+
+01:06:23.260 --> 01:06:26.260
+But on DES, the same attack will take one second.
+
+01:06:26.260 --> 01:06:29.260
+Because the key is so short.
+
+01:06:29.260 --> 01:06:33.260
+Not so much because block size is small, but, like, the key is short.
+
+01:06:33.260 --> 01:06:36.260
+So, as you all probably know, right?
+
+01:06:36.260 --> 01:06:41.260
+As you increase the bit size of something, the complexity grows exponential, right?
+
+01:06:41.260 --> 01:06:42.260
+And the increase.
+
+01:06:42.260 --> 01:06:49.260
+So, you might seem like, well, what's the difference between, let's say, a 56-bit key and an 80-bit key?
+
+01:06:49.260 --> 01:06:51.260
+Astronomical.
+
+01:06:51.260 --> 01:06:54.260
+The difference is astronomical.
+
+01:06:54.260 --> 01:07:01.260
+A 56-bit key today is blatantly, plainly insecure.
+
+01:07:01.260 --> 01:07:05.260
+So, if you use 56-bit encryption, it can be broken in seconds.
+
+01:07:05.260 --> 01:07:09.260
+If you use 80-bit encryption, which is the minimum you should be using today,
+
+01:07:09.260 --> 01:07:11.260
+well, it will take years.
+
+01:07:11.260 --> 01:07:17.260
+Not trillions, a dozen years, which, again, most of us don't have.
+
+01:07:17.260 --> 01:07:24.260
+So, just keep that in mind.
+
+01:07:24.260 --> 01:07:28.260
+Anyway, just another sort of picture of how the block cipher works.
+
+01:07:28.260 --> 01:07:29.260
+Right?
+
+01:07:29.260 --> 01:07:30.260
+This is a general structure.
+
+01:07:30.260 --> 01:07:33.260
+It's not about how DES or ES.
+
+01:07:33.260 --> 01:07:40.260
+They're all sort of block ciphers, and the name for this whole family is called phi-stone ciphers.
+
+01:07:40.260 --> 01:07:42.260
+Don't ask me why.
+
+01:07:42.260 --> 01:07:45.260
+But, essentially, they all look like this.
+
+01:07:45.260 --> 01:07:48.260
+The 64-bit, of course, changes, right?
+
+01:07:48.260 --> 01:07:52.260
+It's not only 64 or 8.
+
+01:07:52.260 --> 01:07:58.260
+Now, what is important to understand is the way that I described DES, right,
+
+01:07:58.260 --> 01:08:03.260
+and the way that I talked about DES, is it's called a block cipher.
+
+01:08:03.260 --> 01:08:10.260
+Block ciphers process input, plain text, one block at a time, right?
+
+01:08:10.260 --> 01:08:13.260
+There's a key, and there's one block of input.
+
+01:08:13.260 --> 01:08:16.260
+And there's the next block of input, same key.
+
+01:08:16.260 --> 01:08:18.260
+Third block of input, same key.
+
+01:08:18.260 --> 01:08:19.260
+Right?
+
+01:08:19.260 --> 01:08:26.260
+And so on and so on, until the end, until the plain text is exhausted, and we have the second.
+
+01:08:26.260 --> 01:08:32.260
+So, that is called electronic codebook mode, ECB.
+
+01:08:32.260 --> 01:08:33.260
+Right?
+
+01:08:33.260 --> 01:08:48.260
+Because, essentially, if you have the same input block appearing twice in the message, and you use the same key to encrypt that input block, well done.
+
+01:08:48.260 --> 01:08:53.260
+The output will be the same.
+
+01:08:53.260 --> 01:08:54.260
+Does it make sense?
+
+01:08:54.260 --> 01:08:55.260
+Right?
+
+01:08:55.260 --> 01:08:56.260
+Same key.
+
+01:08:56.260 --> 01:08:57.260
+Right?
+
+01:08:57.260 --> 01:09:00.260
+But you have repeated inputs.
+
+01:09:00.260 --> 01:09:04.260
+Then, the ciphertext will be repeated as well.
+
+01:09:04.260 --> 01:09:05.260
+Right?
+
+01:09:05.260 --> 01:09:15.260
+So, if you encrypt the word hello twice, if it appears twice in the plain text, and you encrypt it separately, the word hello, whatever the key is, it doesn't matter.
+
+01:09:15.260 --> 01:09:18.260
+The ciphertext will be the same.
+
+01:09:18.260 --> 01:09:19.260
+Does that make sense?
+
+01:09:19.260 --> 01:09:22.260
+Holler if it doesn't make sense.
+
+01:09:22.260 --> 01:09:30.260
+In other words, if you encrypt like this, like I just described, the ciphertext will display patterns.
+
+01:09:30.260 --> 01:09:35.260
+Like, whenever you have repeated plain text, you have repeated ciphertext.
+
+01:09:35.260 --> 01:09:36.260
+Think about it.
+
+01:09:36.260 --> 01:09:47.260
+If the message is always, if the message from Alice to Bob always says, hi dear, then that first block will always be, hi dear.
+
+01:09:47.260 --> 01:09:48.260
+Right?
+
+01:09:48.260 --> 01:09:51.260
+But the encryption of that will always be the same.
+
+01:09:51.260 --> 01:09:52.260
+Right?
+
+01:09:52.260 --> 01:09:53.260
+If they use the same key.
+
+01:09:53.260 --> 01:09:54.260
+Yes?
+
+01:09:54.260 --> 01:09:59.260
+That's not good in the real world.
+
+01:09:59.260 --> 01:10:02.260
+In the real world, that leaks information.
+
+01:10:02.260 --> 01:10:03.260
+Right?
+
+01:10:03.260 --> 01:10:04.260
+Leaks information.
+
+01:10:04.260 --> 01:10:06.260
+It says, this is the same block as here.
+
+01:10:06.260 --> 01:10:10.260
+Or, it was the same block as we saw in the previous message.
+
+01:10:10.260 --> 01:10:14.260
+So, that's why we use something called cipher block chaining.
+
+01:10:14.260 --> 01:10:15.260
+CBC.
+
+01:10:15.260 --> 01:10:16.260
+Okay?
+
+01:10:16.260 --> 01:10:20.260
+CBC is, you can use it with any cipher.
+
+01:10:20.260 --> 01:10:23.260
+It doesn't matter if it's DES, ES, whatever.
+
+01:10:23.260 --> 01:10:27.260
+But here, you chain the blocks.
+
+01:10:27.260 --> 01:10:36.260
+That is, you take the message, and before you encrypt it using a block cipher, you XOR it.
+
+01:10:36.260 --> 01:10:38.260
+Everybody knows XOR, right?
+
+01:10:38.260 --> 01:10:42.260
+You XOR it with the encryption of the previous block.
+
+01:10:42.260 --> 01:10:45.260
+Anybody see a problem?
+
+01:10:45.260 --> 01:10:49.260
+Any problem with that?
+
+01:10:49.260 --> 01:10:50.260
+No?
+
+01:10:50.260 --> 01:10:51.260
+No problem?
+
+01:10:51.260 --> 01:10:52.260
+What about the first block?
+
+01:10:52.260 --> 01:10:55.260
+What's the previous block for the first block?
+
+01:10:55.260 --> 01:10:56.260
+No?
+
+01:10:56.260 --> 01:10:57.260
+No problem?
+
+01:10:57.260 --> 01:10:58.260
+No problem?
+
+01:10:58.260 --> 01:10:59.260
+No problem?
+
+01:10:59.260 --> 01:11:02.260
+What about the first block?
+
+01:11:02.260 --> 01:11:05.260
+What's the previous block for the first block?
+
+01:11:05.260 --> 01:11:08.260
+No, I have one.
+
+01:11:08.260 --> 01:11:11.260
+That's why usually there's something called IV.
+
+01:11:11.260 --> 01:11:12.260
+This.
+
+01:11:12.260 --> 01:11:14.260
+Initialization vector.
+
+01:11:14.260 --> 01:11:19.260
+And that better be picked unique every time.
+
+01:11:19.260 --> 01:11:23.260
+Because if you don't pick it unique, what happens?
+
+01:11:23.260 --> 01:11:29.260
+If the message starts with Hi, Bob, and the initial selection is always the same, the beginning
+
+01:11:29.260 --> 01:11:32.260
+of the message is always going to be the same.
+
+01:11:32.260 --> 01:11:35.260
+So, think paranoid.
+
+01:11:35.260 --> 01:11:38.260
+This is a security class.
+
+01:11:38.260 --> 01:11:39.260
+Alright.
+
+01:11:39.260 --> 01:11:40.260
+Enough for today?
+
+01:11:40.260 --> 01:11:41.260
+Enough for today.
+
+01:11:41.260 --> 01:11:44.260
+So, most of this, I will post this lecture today.
+
+01:11:44.260 --> 01:11:46.260
+There's more stuff there.
+
+01:11:46.260 --> 01:11:50.260
+I will try to cover about 15, 20 more minutes of it, and I'll leave the rest of it to you.
+
+01:11:50.260 --> 01:11:55.260
+Because it's not really, like, truly this course material.
+
+01:11:55.260 --> 01:11:57.260
+It's kind of background stuff.
+
+01:11:57.260 --> 01:12:00.260
+Okay, see you next Tuesday.
+

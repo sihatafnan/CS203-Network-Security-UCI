@@ -1,0 +1,3952 @@
+start	end	text
+0	9000	like SSL that we're going to go over later and there's some wireless, I think it ends
+9000	17000	with some firewalls which also will go in depth and wireless.
+17000	23000	Any questions from us?
+23000	32000	So again, I would like to have your new proposals by next Tuesday, like last time.
+32000	40000	If you have any fundamental questions there about what I expect, ask.
+40000	44000	I'll have officers on Monday.
+44000	49000	Again, I want to deal with two people.
+49000	59000	No double dipping means not to use material that you did already or you're doing in parallel
+59000	61000	in some other course.
+61000	67000	So there has to be something distinct that you do for this part.
+67000	77000	And if you plan to do writing, survey or something like that, no chatbots.
+77000	81000	That should be you.
+81000	89000	If you do use some tools that you are not sure, or you want to use some tools, you're not quite sure if this transcends the boundary, just ask.
+89000	95000	It's easier to ask now than to explain later.
+95000	101000	Okay, so user authentication, one of the basic topics in computer security.
+101000	103000	How do we authenticate humans?
+103000	107000	That means us.
+107000	112000	All right, basic problem.
+112000	121000	Somebody claims to be Alice or Bob, and now how do you prove that you are that Alice or Bob?
+121000	123000	Now why do we do authentication?
+123000	126000	We do authentication in order to enforce access control.
+126000	132000	All right, just authentication for the sake of authentication isn't useful.
+132000	137000	What's the point of authenticating you if nothing happens?
+137000	147000	And any form of, any time you are asked for anything that identifies you and authenticates you, it's for some purpose.
+147000	152000	Whether it's a policeman that stops you and says, where's your driver's license?
+152000	155000	The driver's license is to let you go.
+155000	157000	If you authenticate you, you let you go.
+157000	158000	Then you get a ticket.
+158000	161000	And without the driver's license, you might get arrested.
+161000	163000	So no access to driving privileges, right?
+163000	171000	If you work for a company, you use a badge and maybe sometimes a camera to authenticate you as an employee, right?
+171000	174000	So you can have access to the premises.
+174000	180000	You get into the UCI's Google space, right?
+180000	183000	Google Docs and Drive space.
+183000	190000	You authenticate it via a dual and password username so you can get access to those resources, et cetera, et cetera.
+190000	194000	So there's always a reason for why you are being authenticated, right?
+194000	199000	There is something that you are given access to if you succeed in authentication.
+199000	200000	Okay.
+200000	205000	So this pops up just about everywhere.
+205000	214000	So, of course, as you know, there are many ways to prove that you are.
+214000	215000	Say you are.
+215000	218000	The most familiar ones are passwords.
+218000	228000	Their demise has been predicted for the last 40 years, and yet they are still here.
+228000	233000	Moreover, they show no signs of going away anytime soon.
+233000	236000	An interesting parallel, email.
+236000	240000	Email has been around since early 80s.
+240000	243000	Pretty much the same way it is used to be.
+243000	248000	Maybe the WYSIWYG changed, you know, the here and there, but the interfaces, et cetera.
+248000	250000	But email is pretty much the same.
+250000	254000	Same format email addresses, and every year somebody says, yeah, I guarantee it.
+254000	255000	You know, it's like a doomsday.
+255000	258000	You say, oh, yeah, the end of the world is coming tomorrow.
+258000	259000	Just you wait.
+259000	261000	And tomorrow comes, ah, you know what?
+261000	262000	My clock was wrong.
+262000	263000	I was like, yeah, it missed you.
+263000	266000	Anyway, ah, the stars did not align.
+266000	270000	So the same thing about email and password, doomsday predictions.
+270000	271000	Email is still here.
+271000	272000	Password is still here.
+272000	274000	No signing going on.
+274000	275000	Right.
+275000	282000	So passwords we know, and nobody loves them, but we're used to them.
+282000	285000	And then we have passphrases, right?
+285000	290000	Or answers to personal questions.
+290000	295000	Like, what color eyes do you like the most?
+295000	300000	Or, what was the make of your first automobile?
+300000	303000	Really difficult questions, right?
+303000	306000	And then there are, of course, secret keys, right?
+306000	307000	So we can use some secret keys.
+307000	310000	If you can remember them, you can use them, right?
+310000	315000	Or you can write them down, which will be a lot of fun.
+315000	319000	But these are things you know, presumably.
+319000	321000	Pins are, of course, another form.
+321000	324000	It's a variation of the theme of passwords, right?
+324000	328000	Because they're supposed to be numbers, not alphanumeric characters.
+328000	332000	Then you can do authentication based on where you are.
+332000	339000	So that is, if you are in some space, and you can prove you are in some space, geographical
+339000	344000	location, then you must have access to something.
+344000	346000	You might be giving access to something.
+346000	350000	Like, if you are in some secure room in the Pentagon, by virtue of being in that secure
+350000	355000	room, you're allowed to access some computer system or some database.
+355000	360000	I'm not saying that's how it should be, but it can be like that.
+360000	366000	It could also be an IP address given to you by your internet provider.
+366000	375000	So, for example, if you live in the campus housing, your entry is provided by UCI, right?
+375000	382000	As opposed to, say, me, I also live on campus, Canada campus, I think on Union Hills here,
+382000	386000	next to campus, my address is provided by Cox.
+386000	391000	And all my neighbors are in the cost of Google to buy them.
+391000	395000	So the IP address tells you something.
+395000	398000	If you believe me, the IP address, of course.
+398000	400000	It could be home phone, right?
+400000	403000	Of course, people don't use home phones anymore, right?
+403000	405000	Landlines are rare.
+405000	406000	Cell phone.
+406000	411000	Cell phone used to be able to, many, many, many years ago, if you had a certain cell phone number,
+411000	415000	then you had to be in a particular space, because back then there was no roaming, right?
+415000	419000	So if your phone number worked, that means you were, you know, with a 949 area code,
+419000	420000	you were in North County.
+420000	422000	It doesn't work anymore.
+422000	430000	Now, MAC addresses, could they be used for identifying where you are, right?
+430000	433000	Or for anything at all?
+433000	438000	Everybody knows what MAC addresses is, right?
+438000	447000	Theoretically, MAC addresses supposed to tell you something about the interface of the device.
+447000	448000	Any ideas?
+448000	449000	No?
+449000	451000	Too early?
+451000	454000	MAC addresses have a special format.
+454000	459000	They actually should tell you who the manufacturer of the device, or the interface.
+459000	464000	It doesn't tell you necessarily where you are, and that's why I put a question mark there.
+464000	466000	Also, MAC addresses are impermanent.
+466000	470000	There was a time when most devices that have MAC addresses, you couldn't change them.
+470000	482000	Today, you can change MAC addresses on most laptops, industrial or desktop systems, most laptops, cell phones, and other guys.
+482000	488000	Also, even if MAC addresses were impermanent, MAC addresses are only used for the one hub, right?
+488000	491000	That's a data link layer.
+491000	496000	So, in this room, the MAC address is only visible to the access point.
+496000	498000	But beyond the access point, it has no meaning, right?
+498000	499000	There's nothing.
+499000	501000	It doesn't longer go there.
+501000	506000	Okay, then there's what you are as a human, right?
+506000	513000	Now, what you are are your intrinsic features, like your DNA, right?
+513000	524000	Your fingerprints, your eyes, your face geometry, your hand geometry, your vein pattern on your wrist.
+524000	531000	There's gait, where you are, not a very good biometric, but that's in you.
+531000	533000	All kinds of other things.
+533000	538000	And then there is the one that you are familiar with the most, which is what you have, right?
+538000	543000	It's a possession of something.
+543000	544000	We know this, right?
+544000	547000	This is the most frequent two-factor.
+547000	552000	You have the app on your phone, and it's visually secure.
+552000	553000	You trust the app.
+553000	556000	The app will pop up, right?
+556000	562000	Either with the approve, disapprove, or a code, right?
+562000	567000	The temporary code, that essentially, by entering that code or hitting approve,
+567000	570000	you're saying, I'm in possession of this phone.
+570000	574000	And because this phone has been pre-registered as associated with you,
+574000	577000	there's a reasonable assumption that because you have this phone,
+577000	581000	and previously you entered the right password and username,
+581000	586000	must be the case that you are a police agent.
+586000	588000	And if you think of it, any other?
+588000	590000	Might I miss something?
+590000	595000	Any other basis upon which you can be authenticated?
+595000	602000	What you know, where you are, what you are, what you have.
+602000	608000	Some people suggested where you've been, but that's hard to remember.
+608000	611000	So, how do our passwords work?
+611000	612000	No.
+612000	613000	Quiet track.
+613000	614000	No.
+614000	615000	Yeah.
+615000	616000	Without a sign.
+616000	618000	So, must not be able to remember.
+618000	619000	Right.
+619000	620000	So, you have a secret password.
+620000	625000	You pick the secret password, and the system checks to authenticate that password.
+625000	632000	Now, sometimes, of course, you don't pick the secret password,
+632000	634000	sometimes the secret password is given to you.
+634000	638000	Like, how many of you have used a browser to select a secret password?
+638000	640000	Then you don't actually know anything.
+640000	641000	Right?
+641000	642000	All you do is, what?
+642000	651000	You log into your computer, or your, uh, smartphone computer, like that.
+651000	658000	And, the idea is that the browser, especially something like Chrome, let's say.
+658000	665000	I want to pick, I use Firefox sometimes here, but let's say Chrome, which is popular.
+665000	668000	Um, you also have to log into your profile, right?
+668000	669000	On Chrome.
+669000	674000	So, you log into the computer, you log into the browser, but the browser doesn't know what
+674000	675000	you log into the computer.
+675000	681000	So, in fact, you log into your profile on Chrome, and that essentially unlocks the so-called
+681000	690000	password vault, or password bundle, that is stored in your profile on Chrome.
+690000	692000	Not super reassuring, right?
+692000	697000	But, convenient, because as long as you use that Chrome, right?
+697000	699000	Actually, it doesn't have to be Chrome there, right?
+699000	701000	You could be using Chrome somewhere else.
+701000	707000	You know, if you set it up correctly, that password that Chrome picked for you will be available
+707000	710000	once you authenticate with the right folder.
+710000	711000	Right.
+711000	717000	So, initialization, but typically the password initialization is you pick the password based
+717000	720000	on some password rules.
+720000	725000	Which vary, of course, from site to site, from time to time.
+725000	730000	And, um, how do you actually communicate with the log in time for the first time, right?
+730000	733000	Or for subsequent times, right?
+733000	736000	There is always this risk of eavesdropping.
+736000	737000	Right?
+737000	746000	So, if you imagine the most naive way of communicating a password is you type your password and then
+746000	748000	it just goes somewhere.
+748000	753000	Now, if it's a local computer, maybe you can have a little more trust.
+753000	758000	You trust the operating system that the log in prompt is actually from the operating system.
+758000	759000	Right?
+759000	765000	So, when you turn on your laptop, you have tablets and laptops, and when you open it, so turn
+765000	771000	it on, and the log in prompt occurs, and says, usually it doesn't say username, right?
+771000	772000	You can't, right?
+772000	773000	But usually it just ends your password.
+773000	774000	Do you know who's asking you for a password?
+774000	775000	Who's still a computer?
+775000	776000	Do you know who's asking?
+776000	777000	Should be the operating system.
+777000	778000	Should be the operating system.
+778000	779000	Is it the operating system?
+779000	780000	Do you have any way to verify that, in fact, the window that shows you the login is the operating
+780000	781000	system window?
+781000	782000	I say no.
+782000	783000	I don't think you know.
+783000	809000	Maybe if you have an encrypted disk, would you type in your password and connect it for
+809000	820380	But even then, I mean, if it just scrolls the right things, it says bias, blah blah blah blah, authenticating, initializing, enterprise, you don't know.
+821020	831820	So, I'm not trying to cause panic here, but you should be aware that, so you have a little more sure when your computer is doing a cold boot, right?
+831820	835540	Because it's functionally like turned off, although that's a whole other story.
+836400	838180	How do you know your device is turned off?
+839000	841360	We will touch upon this in a couple of days.
+841360	850120	You often tell it to turn off, you press the button, and how do you know it's off?
+850120	853560	Well, you say, well, you know what, I'll just unplug it from the wall.
+854560	855900	Are you sure that's on?
+856740	857980	Are you sure there's no battery?
+859400	860980	Do you know what's inside the device?
+862340	864240	They have CMOS battery, too.
+864240	871160	Ah, yeah, but you should like disassembling the device, voiding the warranty, and causing electric shock, potentially.
+871680	873160	So, actually, you don't.
+873220	874640	So, that's a depressing thought, right?
+874680	877420	You actually don't know who is asking for the password.
+877900	878720	But we trust.
+878720	882180	Okay, but that's the password that goes to your operating system, right?
+883320	885420	It doesn't go on the wire, right?
+885520	886620	It's not sent anywhere.
+886620	896240	What about if you're logging into Facebook, or, you know, your Instagram, or whatever, your favorite website, or any kind of service?
+896500	897820	Like, you're going into UCI.
+898440	904800	A window pops up that looks like UCI's little pop-up, with blue and stuff, you know, all the right colors.
+904940	906600	How busy is this to copy?
+906600	909680	So, you enter your password, and then it goes.
+910000	910700	So, you don't know.
+911700	917480	But let's suspend our disbelief, and say, okay, we trust that it goes, it goes to the right place, okay, okay, okay.
+918620	920200	But what about how is it sent?
+921100	922680	Is it sent in clear text?
+924760	925620	That's bad, right?
+925700	928280	It can't be sent in clear text, because then it gets used to the other part.
+929880	933500	Okay, well, you hope that actually in reality, it sends over a secure connection.
+933500	945100	And sort of prior to you entering the password, whatever the stub application, whether it's a browser, a client browser, or some other application on your laptop, or your phone,
+945420	952080	has already established a secure, usually TLS, or VPN connection, to the other end.
+955440	958700	But even then, you might not trust that connection.
+958700	965820	So, probably not a good idea to send the password unencrypted, even over the connection.
+965960	969420	So, what's typically done is the password is, like, hashed.
+970160	971220	Remember hash functions, right?
+973120	973520	Yeah.
+974040	975600	Now the question is, where is it hashed?
+976700	978800	So, who gets to see your password locally?
+979360	982400	Maybe it's hashed in software, with a client software.
+982400	986300	Maybe it's hashed in hardware.
+986980	990960	Maybe there's a way for the login prompt, or if it presents you with a password prompt,
+991200	994780	to communicate directly to some hardware inside your laptop of a smartphone,
+995280	998280	that actually takes that password, hashes it, and that's it.
+999760	1003700	And then there's a template resistant, because if it's not, maybe, you know, somebody can hack it.
+1003700	1008280	And then, how does the other end check the password?
+1009200	1013540	Well, and of course, is your password guessable?
+1014180	1014380	Right?
+1014920	1018420	None of this other stuff is important if your password is weak.
+1020260	1020520	Right?
+1020540	1023220	If I can, with reasonable probability, guess your password,
+1023480	1029740	all the other measures to prevent theft and misuse of password, they're useless.
+1029740	1035320	Because guessing a password means somebody is going to try to log in, just like you would.
+1036560	1040980	So, whatever measures are taken after you enter a password and hit return,
+1041100	1043100	they're useless if the password is being guessed.
+1046760	1050280	Also, on most operating systems, it's difficult to keep a password file secret.
+1052360	1053920	Especially like multi-user systems.
+1055240	1059180	So, I know that you are all used to, essentially, single-user computers, right?
+1059740	1064160	I mean, how many people usually have, like, multiple profiles on their Android?
+1064600	1066980	I mean, you can do it, but it's a pain.
+1067920	1070340	How many of you share your laptop with others?
+1071160	1073320	My guess is not many, if any.
+1074640	1078700	Maybe when you were younger, and you had, like, a sibling, and you shared your laptop.
+1080560	1083700	Or the parent will let you use their laptop and create an account.
+1083840	1086460	But most people, like, you're 80, they don't share laptops.
+1086460	1091600	So, this does not seem relevant to you, but think about a bigger world out there.
+1093020	1094180	Like, an organization.
+1095800	1099100	Where you have multiple users, multiple, many users,
+1099680	1102460	and they all need to log in and access the same system.
+1102460	1109540	So, you need to store the password database somewhere, the password file, right?
+1110540	1115100	And so, in modern systems, at least one of the Unix derived,
+1115520	1117980	historically, the password file is accessible.
+1119440	1120960	It's called world-readable.
+1122360	1126920	And the reason it's world-readable is because it's not just the password file.
+1127160	1128820	It's, essentially, the user database.
+1128820	1135840	And so, programs that run on Linux, or Unix, and whatever,
+1136060	1138700	all these Unix-derived operating systems,
+1139040	1141940	they need to consult that file, not for the password's sake,
+1142680	1148360	but for account's sake, to figure out what accounts have rights for what resources.
+1149380	1150900	So, it's mostly for access control.
+1151740	1151920	Okay?
+1152520	1156680	This was done a long time ago, when Unix first was born, in the 80s.
+1156680	1161020	Now, with hard-to-remember passwords,
+1162600	1165700	if you don't pick a weak password, you pick a hard-to-remember password, you're good.
+1166120	1169480	And if your memory is good, wonderful.
+1170620	1173360	But what about reusing passwords?
+1174940	1177640	A lot of people can remember one difficult password.
+1178780	1179060	Right?
+1179060	1181500	I'm sure you can remember one difficult password.
+1182360	1184680	That is not, by any standard, weak.
+1186360	1189260	But then, can you remember 10, 15?
+1189780	1192800	These days, most of us have well over 10,
+1192960	1195980	some of us, I would say, around 20 different accounts.
+1196120	1199040	There have been some studies about this, but I don't think it's an immediate number.
+1199040	1206880	You could carry around an object, like some kind of a device, like a smartphone,
+1207120	1211520	maybe, that has your passwords all stored there in plain text.
+1212140	1214940	And you unlock your phone, you access your password, and you're like, oh, great.
+1215280	1216440	What if you don't have your phone?
+1216700	1218060	What if somebody steals your phone?
+1218060	1223780	What if a malicious app on the phone exfiltrated that file?
+1225300	1230040	So there is a cottage industry out there called, you know, Password Vault.
+1230220	1231980	Maybe, have anybody used Password Vault?
+1233760	1239540	I mean, some of them are, there are some free, but most of them are cost-mine.
+1240380	1242380	And some companies do use those.
+1243740	1246220	Okay, but guess what?
+1246220	1250340	Well, when you have a company that runs the services, Password Vault Vault,
+1250620	1255960	a third-party Password Vault Vault, they become like honey or a swarm of bees.
+1257420	1262080	They are a super attractive attack target, and just like this DA that we talked about last time,
+1262980	1264880	it's like, attack me.
+1265520	1267420	Because this is where the friendly jewels are.
+1267560	1270880	You get into a password-drawn company, you get into their databases,
+1270880	1275280	whether through outside or inside attack, and you wind up with a big dirt.
+1276220	1277380	Big prize, right?
+1277640	1278380	Tons of passwords.
+1279540	1282100	So I'm not clear that that's a good solution.
+1283120	1285140	Then there's like denial of service issues, right?
+1285180	1288100	If you store your passwords on your phone, if the phone is lost,
+1288440	1290420	or like what happened to me a couple of months ago,
+1290640	1292820	the phone just died, and there's no way.
+1292920	1294740	I mean, it's dead beyond all salvation.
+1295320	1297020	There's no way you can take anything out.
+1297820	1300220	So now it's stuck with having to change all the passwords.
+1300300	1301400	It's like a denial of service.
+1301400	1304980	And for a while, your account's essentially off-limits to you.
+1306780	1310520	One of the more interesting and super easy attacks, by the way,
+1311640	1313280	with a denial of service goal.
+1313980	1316900	Let's say you want to attack a particular company, right?
+1316960	1320020	Let's say you have a company called XYZ Incorporated
+1320020	1325280	that provides access to, I don't know, cute squirrel videos.
+1325480	1327400	And they specialize in cute squirrels only.
+1327980	1328760	No ugly squirrels.
+1328760	1333140	And all the squirrel lovers in the world create accounts there
+1333140	1335320	and just love, you know, it's like popular, right?
+1335960	1338920	So all this community, probably not large,
+1339040	1340460	because how many squirrel lovers out there,
+1340940	1344980	they actively use this service,
+1345320	1348780	and then somebody who wants to just piss them off
+1348780	1353000	or maybe has a competing company decides to mount it in our service.
+1353000	1356760	All they need to do is not break any passwords.
+1358360	1362220	All they need to do is get a large enough sample of the usernames
+1362220	1365420	or people who have an account.
+1366340	1368520	All you do, you can program this.
+1368640	1369980	You can run into this by hand.
+1370280	1371620	Essentially, try to log in.
+1371800	1373820	So for every account, let's say Alice has an account.
+1374280	1376880	Write the username Alice, random password, click.
+1378160	1379920	Username Bob, random password, click.
+1379920	1382460	Do it three times, do it four times,
+1382540	1383580	whatever the little threshold.
+1383700	1384820	Use it, it's a little threshold.
+1385580	1387760	For number of failed logins, right?
+1388780	1389480	What happens?
+1390300	1391700	You're locked out.
+1393000	1394900	So when real users come back to log in,
+1395320	1401020	due to the large number of successive failed login attempts,
+1401140	1404400	you need to contact this 1-800 number in Mauritania.
+1405020	1405620	Good luck.
+1406300	1407200	With awful hours.
+1407420	1408320	With, yes, of course.
+1408320	1412180	We're only open between 3.30 and 4.30 p.m. Hawaii time.
+1412500	1412980	Good luck.
+1413720	1414620	Good luck, right?
+1414700	1416500	Because then, of course, they want to make sure it's you.
+1417220	1419580	Even if it's done in automated fashion
+1419580	1420980	with some other second factor,
+1421100	1422880	all back email, blah, blah, blah, blah, blah, blah.
+1423260	1425560	It's a giant waste of time.
+1426840	1427800	And a logistical nightmare.
+1428020	1430040	So, a great attack.
+1430660	1432520	You can program a bot to do this, right?
+1432520	1437540	You can go for, like, even random usernames.
+1438060	1441440	Eventually, you're going to find usernames that are existing.
+1442200	1442960	Login, login, login.
+1443240	1443520	Bam.
+1444020	1444560	Locked out.
+1445540	1446900	So, no passwords need to be broken.
+1446900	1451260	So, let's see.
+1451940	1453200	Then there's social engineering.
+1453400	1456540	Social engineering is, like, this whole thing in its own right.
+1457500	1460220	You can teach a class on that, just on social engineering.
+1460400	1461880	But it's not really computer science.
+1462640	1465140	Social engineering is all about how to trick people.
+1466100	1468760	So, maybe more appropriate than psychology or some other department.
+1469760	1473840	But it's a wonderful opportunity for attackers, right?
+1473920	1477380	And a lot of spectacular hacks in this world that you've heard about
+1477380	1478920	that sound really, really technical.
+1480420	1484160	I suspect it's TouchNet and Mirai and all these other things.
+1484160	1486280	I think they all, I'm pretty sure,
+1486400	1489340	they all somehow involve elements of social engineering.
+1490640	1492480	Social engineering means human.
+1493740	1494000	Right?
+1494000	1498500	Human interaction is elicitation of sensitive information
+1498500	1501520	in verbal form.
+1502160	1503660	Non-analog form.
+1504580	1504800	Okay?
+1505820	1508480	The typical social engineering attack
+1508480	1510740	probably doesn't work at night today,
+1510740	1511920	but, you know,
+1513200	1514840	a CIO or a, let's say,
+1514980	1516520	no, it's an IT person,
+1517520	1518980	in the middle of the night,
+1519060	1520860	in some department of some random company,
+1521220	1522800	receives a panicked phone call
+1522800	1524820	from the vice president
+1524820	1527700	of, I don't know,
+1527760	1528580	toilet affairs,
+1528700	1529160	and says,
+1529380	1531460	I am stuck in
+1531460	1533540	Timbuktu
+1533540	1534320	on a
+1534320	1536440	very important company trip.
+1536660	1537740	I'm dealing with clients.
+1538360	1539160	All of a sudden,
+1539800	1540640	my phone broke.
+1541000	1541880	I cannot log in.
+1542240	1542520	Help.
+1542520	1544680	Millions of dollars
+1544680	1546200	of business are at stake.
+1546920	1548240	The panicked IT clerk,
+1548940	1549580	who's sleepy,
+1550300	1551200	and probably has,
+1551600	1552380	I don't know,
+1552960	1554520	DeVry Institute course
+1554520	1555820	or education or something,
+1556820	1557700	says,
+1557920	1558800	oh, of course,
+1559080	1559580	yes, sir.
+1560020	1560760	And says,
+1560760	1561120	okay,
+1561240	1562700	here's a one-time login code,
+1562760	1563300	go in this,
+1563360	1563780	do this.
+1564920	1565160	Yeah,
+1565280	1565700	that's it.
+1566020	1566780	That's the end of it.
+1567360	1568160	That's the back door.
+1568280	1569620	That allows the attacker
+1569620	1570040	to get in.
+1570400	1571560	It's still super common.
+1571800	1572040	Yeah,
+1572140	1572700	I'm sure,
+1572880	1573100	you know,
+1573180	1574560	every once in a while,
+1575020	1576620	in a research literature,
+1577000	1577940	or even at, like,
+1578020	1578640	Black Hat,
+1578720	1579180	DEFCON,
+1579660	1580760	you will hear talks
+1580760	1581420	about people saying,
+1581520	1581740	okay,
+1581880	1582760	we did this kind of
+1582760	1583940	probing attack
+1583940	1586100	against 500 companies
+1586100	1586580	than, like,
+1586640	1587000	Brazil,
+1587120	1587800	I heard one talk.
+1588560	1591500	And the particular talk
+1591500	1592360	I heard is that,
+1592360	1593620	you know,
+1593680	1595540	when this was about
+1595540	1596320	the attacks
+1596320	1597560	on the Brazilian banks,
+1597840	1598060	right,
+1598140	1599220	and essentially utilizing
+1599220	1600000	what I just described,
+1600140	1601320	calling at random hours
+1601320	1602700	and pretending to be somebody.
+1602800	1604000	They didn't even invent somebody.
+1604080	1604720	They actually pretended
+1604720	1605200	to be somebody
+1605200	1606100	who worked for the company.
+1606100	1608140	So, you know,
+1608200	1609560	the hackers know in advance.
+1609640	1610480	They've done their research.
+1610580	1610820	They've looked
+1610820	1611700	for the company charts
+1611700	1611960	and said,
+1612200	1612880	who is awake?
+1613060	1614140	Oh, this guy is on vacation.
+1614620	1614820	So,
+1614820	1616400	it is really believable
+1616400	1618740	when most of it is true.
+1619660	1620240	So, they call it,
+1620240	1620420	say,
+1620500	1621340	I'm so-and-so.
+1621660	1622460	I'm on vacation
+1622460	1623340	in Florida.
+1624660	1624940	Oh,
+1625660	1626020	so-and-so.
+1626100	1626420	Yes,
+1626540	1627160	he's on vacation.
+1628940	1629840	Element of truth
+1629840	1630680	goes a long way.
+1632260	1632460	Right?
+1632520	1633020	That's kind of
+1633020	1633740	human psychology.
+1634340	1634860	It works.
+1635360	1636040	In the U.S.,
+1636040	1636800	there were studies that,
+1636920	1637380	oh, you know,
+1637440	1638460	just like infomercials.
+1638460	1638720	I don't know
+1638720	1639260	if you even know
+1639260	1640280	what infomercials are,
+1640640	1642980	but this is a curious thing.
+1642980	1644980	When Americans listen
+1644980	1646560	to a voice
+1646560	1649040	of a salesman,
+1649300	1650000	it helps
+1650000	1650920	if their voice
+1650920	1652720	has a refined British accent.
+1654640	1656040	Maybe you should wonder why.
+1657420	1658640	If somebody speaks like they're
+1658640	1659520	from the deep south,
+1659980	1660480	forget it.
+1660820	1661980	If somebody speaks like they're
+1661980	1663040	from Brooklyn,
+1663440	1664000	forget it.
+1664400	1665260	But if somebody speaks
+1665260	1667040	with a refined British accent,
+1667360	1668700	carefully enunciating
+1668700	1669980	every single syllable,
+1670240	1671520	I'll do every single word
+1671520	1672100	they say.
+1673400	1674220	Most of us,
+1674940	1675520	this country,
+1676160	1676760	oh, yes,
+1676860	1677240	I'm you.
+1677700	1678240	What can I do?
+1679320	1679520	Right?
+1679940	1680700	So that's part
+1680700	1681420	of social engineering.
+1682860	1683140	Right?
+1683360	1683540	So,
+1684840	1685740	another reason is,
+1685840	1686760	another way that it works
+1686760	1687240	is the attacker
+1687240	1688280	will know some information
+1688280	1688900	about you.
+1689040	1689180	Right?
+1689240	1690480	So if they want to impersonate you
+1690480	1691480	or want to get into your account,
+1691540	1692220	they will know information.
+1692740	1693820	Social security numbers,
+1693940	1694560	days of birth,
+1696160	1697160	those are a lot of difficult
+1697160	1698000	things to find out.
+1698000	1698240	Right?
+1698360	1699160	Social security numbers
+1699160	1700420	used to be believed
+1700420	1701040	to be secret.
+1701200	1701740	Nobody believes
+1701740	1702820	to be secret in these days.
+1703340	1704320	Even though we still
+1704320	1705100	keep them private,
+1705600	1706700	but I can buy
+1706700	1707740	your social security number
+1707740	1708500	if you have one.
+1710180	1711100	It's not going to cost me
+1711100	1711600	very much.
+1711940	1713100	And so if I buy it,
+1713140	1713780	even if it costs me
+1713780	1714660	a couple hundred dollars,
+1715100	1716260	it allows me essentially,
+1716860	1717100	well,
+1717220	1718240	not just social security,
+1718340	1719100	but along with
+1719100	1719700	other information
+1719700	1720460	like David Burr,
+1720620	1721320	driving the last time
+1721320	1721580	in December,
+1721680	1722660	maybe open a bank account
+1722660	1723420	online.
+1725620	1726060	Great.
+1726060	1728460	If I open a bank account,
+1728580	1729400	I can rent something
+1729400	1729960	in your name.
+1731740	1732540	Like an apartment.
+1733420	1734620	Establish a gas company
+1734620	1735880	relationship.
+1736020	1736900	Electrical company.
+1737100	1737220	Right?
+1737400	1737760	Essentially,
+1738260	1739320	start stealing your identity.
+1743220	1743480	Yeah,
+1743600	1743920	so,
+1744260	1746220	this is like entertainment,
+1746900	1748440	but anyway,
+1748620	1750260	passwords are a pain.
+1750260	1752120	So we're going to focus
+1752120	1752640	for a moment
+1752640	1753300	on the passwords.
+1755960	1756680	There have been
+1756680	1757520	tons of breaches
+1757520	1757900	in the middle,
+1757940	1758340	but by the way,
+1758360	1759080	this is super old.
+1759200	1759880	All these examples
+1759880	1760480	are super old,
+1760620	1760980	and yet,
+1761660	1762560	I don't refresh them.
+1764000	1765060	They're like 20 years old.
+1765420	1765640	But,
+1765880	1767100	this happens every year.
+1768540	1769700	The similar things
+1769700	1770500	that happened
+1770500	1770820	20,
+1770880	1771700	25 years ago
+1771700	1772360	still happen.
+1773900	1774040	Right?
+1774040	1778860	If you go to the
+1778860	1779920	website,
+1780040	1781020	passwordpresearch.com,
+1781080	1781620	they have lots
+1781620	1782080	of interesting
+1782080	1782420	articles.
+1785000	1785280	Right?
+1785440	1785620	So,
+1785780	1786660	why do people
+1786660	1787300	want your password?
+1787500	1787780	So,
+1787880	1788160	of course,
+1788420	1789000	one of the reasons
+1789000	1789940	they may want your password
+1789940	1791800	is just to log in
+1791800	1792820	and just delete your files.
+1792940	1793640	They just hate you
+1793640	1794460	and they want to
+1794460	1794820	suck.
+1795820	1796600	That doesn't happen
+1796600	1797020	very often.
+1798220	1798720	It can.
+1798940	1799220	I mean,
+1799820	1800700	you make some enemies,
+1800940	1801560	you probably can.
+1801560	1802000	But,
+1802000	1802780	this is very personal.
+1803920	1804320	Generally,
+1805440	1806120	what somebody wants
+1806120	1806860	is more than just
+1806860	1807260	your password.
+1807520	1807640	So,
+1808720	1810220	installing a key log
+1810220	1810760	or a sniffer
+1810760	1812420	is another way.
+1812980	1813600	And then,
+1813840	1814360	basically,
+1814920	1816220	you sniff for more passwords.
+1817380	1818520	Especially if your account,
+1818920	1819740	getting into your account,
+1819820	1820300	is privileged.
+1820480	1820600	Right?
+1820660	1820780	So,
+1820880	1821680	maybe it will be able
+1821680	1822840	to run a sniffer
+1822840	1823460	that will sniff
+1823460	1824420	on other people's passwords.
+1825580	1826420	The other thing
+1826420	1827660	is to steal the password file.
+1829260	1830000	And once you steal
+1830000	1830800	the password file,
+1830880	1831020	well,
+1831020	1831720	then you can run
+1831720	1834860	password cracking too much.
+1835640	1836860	Because the password file,
+1836960	1837820	as you can already imagine,
+1838020	1838860	doesn't actually store
+1838860	1839540	a real password,
+1839680	1840480	but stores hashes.
+1841580	1841800	Right?
+1841860	1841980	So,
+1842060	1842680	all you need to do
+1842680	1843740	is try a brute force adapt.
+1851620	1852060	Alright?
+1852160	1852420	So,
+1852640	1853820	Unix-style passwords
+1853820	1854460	work like this,
+1854520	1854680	right?
+1854740	1855920	You enter your password,
+1856240	1856940	it hashes,
+1857080	1857760	and then this is
+1857760	1858300	the etc.
+1858520	1859780	etc. password file
+1859780	1861040	that has one line
+1861040	1861580	for a user,
+1861740	1862060	generally,
+1862800	1864020	and it contains,
+1864160	1864860	among other things,
+1865000	1865480	so the line,
+1865680	1867000	the one line is like,
+1867000	1867660	it's a text file.
+1868060	1868200	So,
+1868280	1869540	one line for a record,
+1869880	1870060	oh,
+1870180	1871440	one line is a record,
+1871580	1872140	and this record
+1872140	1873180	is for a given user,
+1873680	1874440	and it has some
+1874440	1875600	non-human accounts,
+1876680	1876980	okay?
+1876980	1878340	net, like root,
+1878460	1879740	and admin,
+1879860	1880200	or whatever,
+1880400	1880780	some other,
+1880860	1882020	some other cron account,
+1882340	1883540	but it also has one
+1883540	1884220	for every user.
+1884660	1885020	And so,
+1886080	1887020	when you enter a username,
+1887540	1888420	the username is also
+1888420	1889340	stored there in the clear.
+1892840	1893240	So,
+1893840	1895140	people realized early on
+1895140	1896260	that it's not a good idea
+1896260	1898040	to store a password there,
+1898160	1899340	so why don't we store a hash?
+1900320	1900680	So,
+1900900	1901320	great,
+1902400	1903360	the system doesn't know
+1903360	1903960	your password,
+1904840	1905880	it only knows the hash,
+1906880	1907680	and because,
+1908320	1908680	presumably,
+1908780	1910100	we use a good cryptographic hash,
+1910180	1912020	like the kind we talked about
+1912020	1913120	briefly last time,
+1914540	1915680	hash is supposed to be
+1915680	1916560	one way.
+1918580	1918820	Yeah?
+1919800	1921300	One way means that,
+1921300	1921940	yeah,
+1922140	1922820	the inverting,
+1922940	1923880	like knowing a hash,
+1924220	1925440	and learning what the input
+1925440	1926340	to the hash was,
+1927000	1927540	is hard.
+1929300	1930300	But is it really?
+1931920	1933040	If the input space
+1933040	1933840	is very large,
+1934060	1934640	it is hard.
+1936040	1937240	But if the input space
+1937240	1938360	is constricted,
+1939380	1940200	it might not be so hard.
+1940480	1940980	But wait,
+1941060	1941560	there's more.
+1944160	1945020	Hashing is better
+1945020	1945560	than encryption,
+1945760	1946900	maybe you will realize why.
+1947380	1947840	You know why?
+1952780	1953520	I mean,
+1955640	1956760	encrypting a block,
+1958040	1958740	it should be,
+1958960	1960280	it's usually roughly equivalent
+1960280	1961180	to hashing a block.
+1961180	1963360	All you think encryption
+1963360	1965540	is not used.
+1966540	1967460	And hashing is used.
+1968980	1970100	No decryption.
+1970860	1971680	No decryption.
+1973300	1973940	Yeah,
+1974120	1974960	that's a reason,
+1975100	1975640	it's not that.
+1975980	1976640	Major reason.
+1977380	1978200	I hope you've never
+1978200	1979300	had to see the thing
+1979300	1980100	that's passed through
+1980100	1981200	and that's been honest.
+1981200	1982300	Okay,
+1982360	1983140	now you're getting close.
+1984200	1985460	What else does encryption
+1985460	1986420	mean?
+1987580	1988880	You want to encrypt the question.
+1993620	1994040	No,
+1994220	1995060	it leaks the length,
+1995160	1995520	doesn't it?
+1995940	1996160	Hmm.
+1997520	1998460	So you want to have
+1998460	1999220	the uniform
+1999220	2001320	value,
+2001580	2001860	right?
+2002500	2003380	There are other reasons,
+2003460	2004300	then you can think of some.
+2005000	2005820	Encryption is not,
+2005980	2006640	now encryption,
+2006800	2007000	that's,
+2007380	2008080	let me rephrase
+2008080	2008520	what I said,
+2008600	2009120	be very careful.
+2011500	2012500	Encryption as in
+2012500	2014380	something that can be reversed
+2014380	2015520	is not used.
+2016640	2017820	You can use encryption
+2017820	2018820	to build a hash function.
+2019000	2019840	An encryption function
+2019840	2020460	can be used
+2020460	2021260	to build a hash function.
+2022960	2023320	Okay,
+2023500	2024100	so it's okay
+2024100	2025320	to use encryption function
+2025320	2026420	to build a hash function
+2026420	2027080	that you can use
+2027080	2027660	for this purpose.
+2028040	2028900	But what we don't do
+2028900	2029760	is encrypt
+2029760	2030880	the password itself.
+2031880	2032120	Okay?
+2032120	2036100	So remember the
+2036100	2038220	properties of hash functions,
+2038360	2038520	right?
+2038600	2040240	So if you are a password hacker
+2040240	2042120	and you want to
+2042120	2043060	break the password,
+2043480	2044180	what property
+2044180	2044740	would you like
+2044740	2045540	the hash function
+2045540	2046280	not to have?
+2049660	2050140	Well,
+2050140	2051580	one way is we agree.
+2051700	2052540	We all must have,
+2052600	2052740	right?
+2052740	2053740	Because it should be
+2053740	2054720	difficult to go back
+2054720	2055820	and figure out
+2055820	2056460	from the hash
+2056460	2057080	what the password
+2057080	2057500	is going to be.
+2058080	2058960	But what about
+2058960	2059560	these other things?
+2059680	2060040	Remember,
+2060160	2060700	there's a strong
+2060700	2061720	collision resistance
+2061720	2063640	and weak collision resistance.
+2065200	2066360	Which do we care
+2066360	2067040	about?
+2068900	2069460	Yeah.
+2069840	2070340	Strong
+2070340	2071820	would be nice to have
+2071820	2073560	but not super important
+2073560	2075200	because
+2075200	2077020	the password
+2077020	2078000	is specific,
+2078120	2078240	right?
+2078280	2078720	It's given.
+2079980	2080860	It's given
+2080860	2082440	to the hacker
+2082440	2083860	but it's fixed
+2083860	2084480	by the hash,
+2084840	2085100	right?
+2085720	2086420	So in order
+2086420	2087480	to break
+2087480	2088220	the system
+2088220	2088800	without learning
+2088800	2089360	the password,
+2089360	2090920	the hacker
+2090920	2091640	has to find
+2091640	2092760	another password
+2092760	2094280	that hashes
+2094280	2095320	into the same value.
+2096720	2097240	Does that make sense?
+2098520	2099700	So if your password
+2099700	2100360	is Apple
+2100360	2101660	and it hashes
+2101660	2101920	into
+2101920	2103620	345
+2103620	2105800	and I pick
+2105800	2107100	Pear
+2107100	2107940	and it also
+2107940	2108480	hashes into
+2108480	2109020	the 345
+2109020	2109760	I don't need
+2109760	2110060	to know
+2110060	2110520	Apple.
+2112200	2112960	I can just
+2112960	2113620	log into your account
+2113620	2114460	by typing Pear.
+2114460	2116380	OK?
+2117440	2117880	So
+2117880	2119520	that weak collision
+2119520	2119860	resistance
+2119860	2120760	and that's
+2120760	2121200	what we need.
+2127000	2127480	So
+2127480	2129140	I'm not sure
+2129140	2129380	how many
+2129380	2130020	to do it
+2130020	2130680	but historically
+2130680	2131160	that's what
+2131160	2131660	has been done
+2131660	2132740	is that
+2132740	2134320	Linux
+2134320	2135040	was using
+2135040	2135520	DES
+2135520	2137940	encryption
+2137940	2139420	as a hash
+2139420	2139700	function.
+2139700	2140760	Now how
+2140760	2141420	does it do it?
+2141680	2141960	Well,
+2142080	2142460	it takes
+2142460	2143100	a null
+2143100	2143580	string
+2143580	2145580	a 64-bit
+2145580	2146620	now you remember
+2146620	2148360	DES is a 64-bit block
+2148360	2149320	so it takes
+2149320	2150380	a string of
+2150380	2150620	0
+2150620	2151500	64-bits
+2151500	2151840	long
+2151840	2152780	and then
+2152780	2153780	encrypts it
+2153780	2154400	repeatedly
+2154400	2155120	OK?
+2155560	2156180	Repeatedly
+2156180	2157160	25 times
+2157160	2158800	using
+2158800	2159880	a DES
+2159880	2160240	key
+2160240	2160900	that is
+2160900	2161260	derived
+2161260	2161560	from the
+2161560	2161880	password.
+2163980	2164220	OK?
+2165700	2166260	Make sense?
+2166260	2167920	So it converts
+2167920	2168460	your password
+2168460	2169320	into a key
+2169320	2170720	now that's
+2170720	2171080	also
+2171080	2172060	an interesting
+2172060	2172380	detail
+2172380	2172820	because
+2172820	2173820	DES keys
+2173820	2174280	are actually
+2174280	2175180	56-bits
+2175180	2175560	long
+2175560	2176560	I mean
+2176560	2177180	they're 64
+2177180	2177860	but 8-bits
+2177860	2178680	are parity-bits
+2178680	2179460	so
+2179460	2181500	that's an
+2181500	2182140	interesting one
+2182140	2184100	so we'll come
+2184100	2184560	back to that
+2184560	2185100	in a second.
+2185720	2186140	The idea
+2186140	2186720	so why do
+2186720	2187380	they do this
+2187380	2188200	or why did
+2188200	2188840	they do this
+2188840	2190180	because in
+2190180	2190640	order to
+2190640	2191460	mount a
+2191460	2193960	brute force
+2193960	2194340	attack
+2194340	2194980	on a password
+2194980	2196360	you would
+2196360	2196680	have to
+2196680	2197060	guess the
+2197060	2197520	password
+2197520	2199280	and perform
+2199280	2201460	25
+2201460	2202480	encryptions
+2202480	2204720	or
+2204720	2205380	if you like
+2205380	2205840	25
+2205840	2206300	decryptions
+2206300	2207700	and at
+2207700	2208160	the end
+2208160	2209800	OK?
+2211480	2211840	If you
+2211840	2212420	hit 0
+2212420	2213580	if what
+2213580	2214120	you decrypt
+2214120	2214920	after 25
+2214920	2215480	decryptions
+2215480	2215940	and 0
+2215940	2216280	and a
+2216280	2216620	string of
+2216620	2216960	0s
+2216960	2217520	you guessed
+2217520	2217960	correctly.
+2220800	2221400	OK?
+2222140	2222600	Or
+2222600	2223240	alternatively
+2223240	2223540	you would
+2223540	2223820	take
+2223820	2224400	a string
+2224400	2224960	of 0s
+2224960	2226080	and encrypt
+2226080	2226600	it 25
+2226600	2227060	times
+2227060	2227760	and see
+2227760	2228100	if that
+2228100	2228460	matches
+2228460	2229020	the result
+2229020	2229300	in the
+2229300	2229600	password
+2229600	2229940	file.
+2231380	2231660	Am I
+2231660	2232000	with you?
+2232720	2232960	Any
+2232960	2233260	questions?
+2235100	2235620	So
+2235620	2236100	it's a
+2236100	2236660	clever idea
+2236660	2236900	right?
+2236960	2237260	The idea
+2237260	2237640	was to
+2237640	2238220	slow down
+2238220	2238380	the
+2238380	2238680	attacker
+2238680	2239320	25
+2239320	2240120	that is
+2240120	2240620	for every
+2240620	2241100	guess
+2241100	2242700	of a
+2242700	2243060	password
+2243060	2243780	or every
+2243780	2244880	possible
+2244880	2245280	password
+2245280	2245680	the attacker
+2245680	2246040	guesses
+2246040	2247240	it would
+2247240	2247540	have to
+2247540	2248120	perform
+2248120	2249280	25
+2249280	2250320	encryption
+2250320	2250980	or decryption
+2250980	2251460	operations.
+2251460	2254460	that's
+2254460	2254820	a lot
+2254820	2255940	and back
+2255940	2256380	then
+2256380	2257400	DESC was
+2257400	2257820	implemented
+2257820	2258300	mostly in
+2258300	2258620	hardware
+2258620	2258900	it was
+2258900	2259320	very slow
+2259320	2259800	in software
+2259800	2260680	so it
+2260680	2261180	seemed like
+2261180	2261700	a good idea.
+2262300	2262680	And then
+2262680	2263380	of course
+2263380	2264360	passwords aren't
+2264360	2265020	really random
+2265020	2265380	right?
+2266820	2267700	Doesn't matter
+2267700	2269080	how old you
+2269080	2269580	are, doesn't
+2269580	2270040	matter what
+2270040	2270620	culture
+2270620	2271140	or which
+2271140	2271600	country
+2271600	2272040	which
+2272040	2272940	ethnicity
+2272940	2273560	you come
+2273560	2273920	from
+2273920	2275040	within the
+2275040	2275540	group that
+2275540	2275960	you come
+2275960	2276240	from
+2276240	2277280	you're
+2277280	2277900	likely to
+2277900	2278300	pick a
+2278300	2278680	password
+2278680	2280000	that is
+2280000	2280280	not
+2280280	2280520	truly
+2280520	2280920	random.
+2281960	2282280	There's
+2282280	2282680	no such
+2282680	2283100	thing as
+2283100	2283460	humans
+2283460	2283780	picking
+2283780	2284540	truly
+2284540	2284920	random
+2284920	2285300	passwords.
+2285700	2286140	Even if
+2286140	2286460	you say
+2286460	2286780	well
+2286780	2287660	I know
+2287660	2289480	a certain
+2289480	2289940	date
+2289940	2290780	where
+2290780	2291100	let's
+2291100	2291440	say
+2291440	2292700	I
+2292700	2292800	don't
+2292800	2293060	know
+2293060	2295140	I
+2295140	2295660	graduated
+2295660	2296040	from
+2296040	2296520	college
+2296520	2296960	or
+2296960	2297440	I
+2297440	2298020	had
+2298020	2298180	my
+2298180	2298480	first
+2298480	2298980	date
+2298980	2299380	or
+2299380	2300880	something
+2300880	2301760	auspicious
+2301760	2302260	happened
+2302260	2302520	on a
+2302520	2302840	particular
+2302840	2303140	date
+2303140	2304080	and
+2304080	2304400	nobody
+2304400	2304620	else
+2304620	2304860	knows
+2304860	2305080	it
+2305080	2305700	just
+2305700	2305980	you
+2305980	2307120	you
+2307120	2307340	think
+2307340	2307560	that
+2307560	2307760	might
+2307760	2307900	be
+2307900	2308220	random
+2308220	2308440	but
+2308440	2308700	actually
+2308700	2308880	it's
+2308880	2309140	not.
+2311460	2311640	I
+2311640	2311880	think
+2311880	2312080	about
+2312080	2312560	are
+2312560	2312860	dates
+2312860	2313140	really
+2313140	2313480	random?
+2314460	2314680	There's
+2314680	2314880	a lot
+2314880	2314980	of
+2314980	2315160	people
+2315160	2315420	use
+2315420	2315580	them
+2315580	2316040	professionally.
+2317480	2317720	Think
+2317720	2317900	about
+2317900	2318100	how
+2318100	2318260	we
+2318260	2318600	structure
+2318600	2319020	dates.
+2321220	2321580	Forget
+2321580	2322200	hours
+2322200	2322380	a
+2322380	2322520	minute
+2322520	2322780	just
+2322780	2323120	dates.
+2324580	2324740	I
+2324740	2324860	mean
+2324860	2325180	depending
+2325180	2325340	on
+2325340	2326200	which
+2326200	2326600	notation
+2326600	2326780	it
+2326780	2327020	used
+2327020	2327140	to
+2327140	2327280	them
+2327280	2327400	in
+2327400	2327500	the
+2327500	2327700	United
+2327700	2328040	States
+2328040	2328220	we
+2328220	2328460	use
+2328460	2329280	month
+2329280	2329860	day
+2329860	2330440	year
+2330440	2330940	right?
+2332400	2332680	How
+2332680	2332860	many
+2332860	2333140	months
+2333140	2333280	are
+2333280	2333500	there?
+2334720	2335180	Well
+2335180	2336000	last time I
+2336000	2336220	said
+2336220	2338220	how many
+2338220	2338680	days are
+2338680	2338880	there?
+2339080	2339480	Let's be
+2339480	2340100	generous and
+2340100	2340700	say 51
+2340700	2341100	in every
+2341100	2341380	month
+2341380	2341700	right?
+2342440	2342720	They're
+2342720	2342980	honest
+2342980	2343300	right?
+2343520	2344160	Let's say
+2344160	2344400	they're
+2344400	2344720	out because
+2344720	2345020	they're
+2345020	2345540	the maximum
+2345540	2346760	and how many
+2346760	2347280	years is it?
+2347380	2347700	Well
+2347700	2348140	there are a lot
+2348140	2348580	of years
+2348580	2349940	but you're not
+2349940	2350800	likely to pick
+2350800	2351580	a year from
+2351580	2353040	dark ages
+2353040	2354280	history
+2354280	2354300	history
+2354300	2355680	and
+2355680	2356360	yeah
+2356360	2357240	if you're
+2357240	2357560	a fan
+2357560	2357920	of history
+2357920	2358320	you might
+2358320	2358560	pick
+2358560	2358880	something
+2358880	2362460	ancient
+2362460	2362900	Egyptian
+2362900	2363280	era
+2363280	2363580	or
+2363580	2364340	something
+2364340	2364800	from
+2364800	2365620	the
+2365620	2365880	time
+2365880	2366120	of
+2366120	2367020	William
+2367020	2367200	the
+2367200	2367700	Conqueror
+2367700	2367960	but
+2367960	2368980	most of
+2368980	2369120	us
+2369120	2369400	would pick
+2369400	2369680	something
+2369680	2370080	reasonably
+2370080	2370420	more
+2370420	2371060	1940
+2371060	2371720	21st
+2371720	2372020	century
+2372020	2372420	so
+2372420	2372600	that
+2372600	2372920	does not
+2372920	2373100	be
+2373100	2373400	vulnerable
+2373400	2374280	that's
+2374280	2374540	not
+2374540	2375000	random
+2375000	2376740	and the
+2376740	2377100	space
+2377100	2377380	of that
+2377380	2377500	is
+2377500	2377740	very
+2377740	2378100	small
+2378100	2379640	so
+2379640	2379820	don't
+2379820	2379980	pick
+2379980	2380260	dates
+2380260	2381020	in any
+2381020	2381340	format
+2381340	2383720	right
+2383720	2383920	so
+2383920	2384160	but if
+2384160	2384440	you just
+2384440	2384780	look at
+2384780	2385000	the
+2385000	2385860	52
+2385860	2386380	upper
+2386380	2386560	and
+2386560	2386840	lower
+2386840	2387220	case
+2387220	2387820	letters
+2387820	2389440	that is
+2389440	2389640	being
+2389640	2390040	generous
+2390040	2390440	assuming
+2390440	2390740	that
+2390740	2391120	whatever
+2391120	2391520	system
+2391520	2391720	we're
+2391720	2391960	working
+2391960	2392800	distinguishes
+2392800	2393160	between
+2393160	2393440	upper
+2393440	2393600	and
+2393600	2393740	lower
+2393740	2393900	case
+2393900	2394160	because
+2394160	2394540	some
+2394540	2395620	systems
+2395620	2395860	do
+2395860	2396120	not
+2396120	2396600	right
+2396600	2397520	they'll
+2397520	2397760	just
+2397760	2398420	convert
+2398420	2398800	everything
+2398800	2399000	to
+2399000	2399180	upper
+2399180	2399500	case
+2399500	2399680	or
+2399680	2400000	lower
+2400000	2400200	case
+2400200	2400840	so
+2400840	2401520	52
+2401520	2402420	in English
+2402420	2402740	20
+2402740	2403040	that's
+2403040	2403620	26
+2403620	2404460	26 times
+2404460	2404680	2
+2404680	2404920	plus
+2404920	2405160	10
+2405160	2405620	digits
+2405620	2407080	and
+2407080	2407480	32
+2407480	2408160	punctuation
+2408160	2408560	symbols
+2408560	2409120	although
+2409120	2410860	many
+2410860	2411700	password
+2411700	2412760	rules
+2412760	2413180	will not
+2413180	2413540	allow you
+2413540	2413780	to use
+2413780	2414260	punctuation
+2414260	2415600	they might
+2415600	2416000	allow you
+2416000	2416400	to use
+2416400	2416700	like
+2416700	2418100	exclamation
+2418100	2418660	point
+2418660	2419280	the question
+2419280	2419800	mark
+2419800	2420620	the dot
+2420620	2421020	and maybe
+2421020	2421760	that's it
+2421760	2422820	but okay
+2422820	2423200	let's be
+2423200	2423560	generous
+2423560	2424840	so that
+2424840	2425300	gives us
+2425300	2425740	52
+2425740	2426340	plus 10
+2426340	2427040	plus 32
+2427040	2428500	that's
+2428500	2428980	94
+2428980	2431180	and let's
+2431180	2431560	say we
+2431560	2432040	limit to
+2432040	2432720	8 characters
+2432720	2434600	because
+2434600	2436720	that's
+2436720	2437200	pretty much
+2437200	2437880	how many
+2437880	2438120	of you
+2438120	2438300	have
+2438300	2438760	passwords
+2438760	2439200	that I
+2439200	2439560	exceed
+2439560	2440220	8 characters
+2440220	2442940	yeah
+2442940	2443880	I buy
+2443880	2444240	a lot
+2444240	2445060	how many
+2445060	2445580	exceed
+2445580	2446340	12 characters
+2446340	2448520	look at
+2448520	2448720	you
+2448720	2449500	15
+2449500	2453780	okay
+2453780	2454260	you like
+2454260	2454560	entering
+2454560	2455000	passwords
+2455000	2455420	don't you
+2455420	2456400	because
+2456400	2456760	there's
+2456760	2457060	a big
+2457060	2457460	trade-off
+2457460	2457700	here
+2457700	2458000	right
+2458000	2459020	the big
+2459020	2459520	trade-off
+2459520	2459920	is
+2459920	2460840	okay
+2460840	2461100	so
+2461100	2461360	let's
+2461360	2461500	say
+2461500	2463180	I'm
+2463180	2463440	not going
+2463440	2464080	to
+2464080	2464720	triangulate
+2464720	2464920	your
+2464920	2465220	password
+2465220	2465500	here
+2465500	2466840	but let's
+2466840	2467100	say you
+2467100	2467240	have
+2467240	2467560	15
+2467560	2467900	character
+2467900	2468360	password
+2468360	2469300	and
+2469300	2470520	he has
+2470520	2470900	an 8
+2470900	2471340	character
+2471340	2471760	password
+2471760	2472900	now we
+2472900	2473020	have
+2473020	2473600	usability
+2473600	2474120	issue
+2474120	2475620	let's
+2475620	2475820	say
+2475820	2476100	you're
+2476100	2476500	young
+2476500	2477040	you're
+2477040	2477380	smart
+2477380	2477720	you can
+2477720	2478120	remember
+2478120	2478500	15
+2478500	2478820	characters
+2478820	2479380	obviously
+2479380	2479820	you can
+2479820	2480060	right
+2480060	2483300	but what
+2483300	2483480	about
+2483480	2483780	making
+2483780	2484420	mistakes
+2484420	2485580	in
+2485580	2485740	those
+2485740	2486020	15
+2486020	2486440	characters
+2486440	2486780	as you
+2486780	2487060	type
+2487060	2488900	have
+2488900	2489020	we
+2489020	2489220	never
+2489220	2489420	did
+2489420	2489840	mistakes
+2489840	2493840	right
+2493840	2494580	how likely
+2494580	2494980	let's
+2494980	2495380	put it
+2495380	2495720	another way
+2495720	2496260	how likely
+2496260	2496440	are you
+2496440	2496700	to make
+2496700	2497100	a mistake
+2497100	2497380	in an
+2497380	2497540	8
+2497540	2497880	character
+2497880	2498280	password
+2498280	2498760	as opposed
+2498760	2498980	to a
+2498980	2499220	15
+2499220	2499580	character
+2499580	2499960	password
+2499960	2501820	much more
+2501820	2502120	likely
+2502120	2502680	there are
+2502680	2502860	some
+2502860	2503100	people
+2503100	2503700	fatigued
+2503700	2503920	right
+2503920	2504260	I mean
+2504260	2504820	finger
+2504820	2505260	fatigued
+2505260	2505660	you have
+2505660	2506060	to stare
+2506060	2506260	at the
+2506260	2506500	keyword
+2506500	2507600	so
+2507600	2507880	there's
+2507880	2508160	that
+2508160	2509480	second
+2509480	2509780	issue
+2509780	2510100	is the
+2510100	2510460	time
+2510460	2511380	it just
+2511380	2511580	takes
+2511580	2511940	longer
+2511940	2513400	to enter
+2513400	2513620	that
+2513620	2513940	password
+2513940	2515980	so
+2515980	2517360	while I
+2517360	2518100	find it
+2518100	2518580	commendable
+2518580	2518920	that you
+2518920	2519360	guys use
+2519360	2519800	this long
+2519800	2520220	password
+2520220	2520700	that's
+2520700	2521000	great
+2521000	2523480	that doesn't
+2523480	2523860	mean you're
+2523860	2524200	out of the
+2524200	2524440	woods
+2524440	2525020	with attacks
+2525020	2525900	you know
+2525900	2526600	but
+2526600	2527840	there is a
+2527840	2528220	trade-off
+2528220	2528700	right
+2528700	2529140	and most
+2529140	2529400	people
+2529400	2529800	I mean
+2529800	2530480	they're okay
+2530480	2530900	with like
+2530900	2531540	not super
+2531540	2531860	short
+2531860	2532220	passwords
+2532220	2533060	but like
+2533060	2533660	research
+2533660	2534280	show that
+2534280	2534660	8 is
+2534660	2534980	about
+2534980	2536160	the right
+2536160	2536540	mix
+2536540	2537680	but with
+2537680	2537860	8
+2537860	2538140	characters
+2538160	2538800	which is
+2538800	2539240	I think
+2539240	2539780	for most
+2539780	2540100	people
+2540100	2540880	and I
+2540880	2541240	suspect
+2541240	2541780	most people
+2541780	2542240	your age
+2542240	2542640	have picked
+2542640	2543220	some better
+2543220	2543680	passwords
+2543680	2544160	than let's
+2544160	2544500	say your
+2544500	2544880	uncles
+2544880	2546000	and grandparents
+2546000	2547020	and parents
+2547020	2548440	because you
+2548440	2548580	know
+2548580	2549320	who are less
+2549320	2549720	confused
+2549720	2550040	having
+2550040	2550760	you're going
+2550760	2551240	to wind up
+2551240	2552400	with roughly
+2552400	2553560	6 quadrillion
+2553560	2555680	possible passwords
+2555680	2557060	well to a
+2557060	2557520	kid this
+2557520	2558120	sounds really
+2558120	2558620	impressive
+2558620	2558980	right
+2558980	2559380	you just
+2559380	2559960	explain how
+2559960	2560420	many zeros
+2560420	2560720	are
+2560720	2561360	but we're
+2561360	2561880	all adults
+2561880	2562160	here
+2562160	2563100	6 quadrillion
+2563100	2563580	is not a
+2563580	2564080	large number
+2564080	2566100	okay
+2566100	2567000	not at all
+2567000	2568480	right
+2568480	2569580	and
+2569580	2571120	since
+2571120	2572240	given
+2572240	2573620	freedom
+2573620	2574140	to pick
+2574140	2574380	right
+2574380	2575000	without like
+2575000	2575620	actual
+2575620	2576160	restriction
+2576160	2577900	most of us
+2577900	2578300	will pick
+2578300	2579040	things like
+2579040	2579900	human and
+2579900	2580500	pet names
+2580500	2581040	and dictionary
+2581040	2581500	words
+2581500	2582400	we're going to
+2582400	2582840	wind up
+2582840	2583200	with
+2583200	2585120	20
+2585120	2586020	2 to the
+2586020	2586340	20
+2586340	2586860	essentially
+2586860	2587480	a 20-bit
+2587480	2587840	password
+2587840	2589640	which means
+2589640	2589940	that
+2589940	2590780	even if
+2590780	2591160	your password
+2591160	2591520	is 8
+2591520	2591980	characters
+2591980	2593260	the real
+2593260	2593740	entropy
+2593740	2594060	there
+2594060	2594180	is
+2594180	2594360	about
+2594360	2594640	20
+2594640	2594920	minutes
+2594920	2599260	meaning
+2599260	2599580	that
+2599580	2600260	human
+2600260	2600760	death
+2600760	2601200	names
+2601200	2601580	and all
+2601580	2602180	the dictionary
+2602180	2602600	words
+2602600	2603160	will roughly
+2603160	2603620	be about
+2603620	2603900	2 to the
+2603900	2604060	point
+2604060	2604520	that's
+2604520	2604800	assuming
+2604800	2605240	the language
+2605240	2605660	is known
+2605660	2606200	so you
+2606200	2606440	assume
+2606440	2606860	your password
+2606860	2607800	is English
+2607800	2608180	like
+2608180	2609680	if you
+2609680	2609980	are
+2609980	2611220	Swahili
+2611220	2611720	speaker
+2611720	2612720	then a whole
+2612720	2613000	different
+2613000	2613260	thing
+2613260	2613700	will apply
+2613700	2614520	it will
+2614520	2615000	be based
+2615000	2615520	on the
+2615520	2616280	vocabulary
+2616280	2616720	of that
+2616720	2617000	language
+2617000	2617840	but
+2617840	2618000	you
+2618000	2618140	have
+2618140	2618240	to
+2618240	2618520	assume
+2618520	2618680	that
+2618680	2618900	hacker
+2618900	2619180	knows
+2619180	2619380	about
+2619380	2619520	that
+2619520	2622860	yeah
+2622860	2623460	so
+2623460	2624060	and
+2624060	2624280	if you
+2624280	2624460	think
+2624460	2624780	pins
+2624780	2624920	are
+2624920	2625200	better
+2625200	2625660	they're
+2625660	2626000	not
+2626000	2627080	because
+2627080	2628040	you
+2628040	2628540	get
+2628540	2629080	with
+2629080	2629900	maximum
+2629900	2630460	2 to the
+2630460	2630980	27
+2630980	2631520	with
+2631520	2631880	8
+2631880	2632340	digit
+2632340	2632800	pins
+2632800	2637200	and
+2637200	2637520	that's
+2637520	2637900	something
+2637900	2638260	that
+2638260	2638920	any
+2638920	2641040	software
+2641040	2641520	on your
+2641520	2641760	phone
+2641760	2642080	you can
+2642080	2642740	do
+2642740	2643180	in
+2643180	2643940	seconds
+2643940	2645340	just
+2645340	2645740	iterate
+2645740	2646140	for all
+2646140	2646380	of those
+2646380	2646580	so
+2646580	2646800	that's
+2646800	2647060	not a
+2647060	2647260	scary
+2647260	2647600	number
+2647600	2648440	on
+2648440	2648580	the
+2648580	2649080	websites
+2649080	2649940	they often
+2649940	2650780	restrict
+2650780	2651360	length
+2651360	2651640	for
+2651640	2652960	I get
+2652960	2653460	they have
+2653460	2653780	to store
+2653780	2654080	in a
+2654080	2654500	database
+2654500	2654860	somehow
+2654860	2655800	but why
+2655800	2657600	in the
+2657600	2657940	world
+2657940	2658300	would they
+2658300	2658580	ever
+2658580	2658780	that
+2658780	2659000	takes
+2659000	2659480	no sense
+2659480	2659800	to me
+2659800	2660000	either
+2660000	2660360	symbols
+2660360	2661200	they
+2661200	2662280	so
+2662280	2662860	I think
+2662860	2663380	the reason
+2663380	2663800	okay
+2663800	2664740	you're asking
+2664740	2665300	two questions
+2665300	2666140	why do they
+2666140	2666460	restrict
+2666460	2666800	the length
+2666800	2667540	and why
+2667540	2667920	they don't
+2667920	2668120	allow
+2668120	2668480	symbols
+2668480	2669920	none of
+2669920	2670320	those two
+2670320	2670680	none of
+2670680	2671000	those two
+2671000	2671480	make sense
+2671480	2671920	to me
+2671920	2672540	but I have
+2672540	2673320	a potential
+2673320	2673980	explanation
+2673980	2675040	for why
+2675040	2675220	they don't
+2675220	2675780	allow certain
+2675780	2676220	symbols
+2676220	2676720	is because
+2676720	2677320	they think
+2677320	2678040	these are
+2678040	2678600	executable
+2678600	2679020	some kind
+2679020	2679320	of like
+2679320	2679520	they're
+2679520	2680320	trigger symbols
+2680320	2681920	that somehow
+2681920	2683400	some of
+2683400	2684020	these things
+2684020	2684440	like
+2684440	2687480	slash slash
+2687480	2688200	or back
+2688200	2688700	slash back
+2688700	2689840	dollar sign
+2689840	2690560	can be used
+2690560	2692480	if you somehow
+2692480	2693380	cause a buffer
+2693380	2693960	overflow
+2693960	2695460	they can
+2695460	2696420	so there's
+2696420	2696820	some like
+2696820	2697560	suspicion
+2697560	2698920	of these symbols
+2698920	2700220	dating back years
+2700220	2700860	nobody really
+2700860	2701520	knows why
+2701520	2702520	but that's
+2702520	2703120	my suspicion
+2703120	2703900	why
+2703900	2704360	do they
+2704360	2705240	truncate
+2705240	2707080	and allow
+2707080	2707600	only
+2707600	2708680	fixed
+2708680	2709700	up to a certain
+2709700	2710020	number of
+2710020	2710220	characters
+2710220	2710860	I don't know
+2710860	2711140	that
+2711140	2712540	that may be
+2712540	2714280	it makes no
+2714280	2715060	sense because
+2715060	2716780	it's hashed
+2716780	2718820	and it may be
+2718820	2719460	again that
+2719460	2720440	whoever programmed
+2720440	2721280	the front end
+2721280	2724120	no
+2724120	2725860	they're also
+2725860	2726540	afraid of
+2726540	2727040	these kind
+2727040	2727440	of buffer
+2727440	2728100	overflows
+2728100	2728640	and so on
+2728640	2729120	and memory
+2729120	2729820	bugs
+2729820	2730920	because
+2730920	2731300	you allow
+2731300	2732120	unlimited number
+2732120	2732740	of characters
+2732740	2733300	they're thinking
+2733300	2733720	you're going to
+2733720	2734520	enter 2,000
+2734520	2735040	characters
+2735040	2735980	something is going
+2735980	2736340	to break
+2736340	2736800	in the code
+2736800	2738300	I know
+2738300	2738860	I know
+2738860	2739920	I'm with you
+2739920	2740240	on that
+2740240	2740960	I think that's
+2740960	2741240	silly
+2741240	2742460	right because
+2742460	2743240	there's no
+2743240	2743800	justification
+2743800	2744760	it's only the
+2744760	2745260	front end
+2745260	2746860	because of the
+2746860	2747380	back end
+2747380	2748400	they're hashed
+2748400	2748740	and they're all
+2748740	2749340	the same way
+2749340	2758280	it's a heat
+2758280	2758480	map
+2758480	2759400	some of the
+2759400	2759980	stuff I'll show
+2759980	2760480	you is really
+2760480	2760880	dated
+2760880	2762300	dated as in
+2762300	2762940	like 10 years
+2762940	2763200	old
+2763200	2763820	more than 10
+2763820	2764060	years old
+2764060	2764660	none of it
+2764660	2765380	changed since
+2765380	2767120	people still
+2767120	2767500	think
+2767500	2769260	similar
+2769260	2769540	faster
+2769540	2770040	because the
+2770040	2770440	fundamental
+2770440	2770900	human
+2770900	2772040	mentality
+2772040	2772360	hasn't
+2772360	2772680	changed
+2772680	2774380	what is
+2774380	2774720	a heat
+2774720	2774900	map
+2774900	2775120	what does
+2775120	2775440	it mean
+2775440	2775920	is that
+2775920	2776500	you see
+2776500	2776840	where
+2776840	2778120	things are
+2778120	2778480	really
+2778480	2779480	hot
+2779480	2779700	there
+2779700	2780020	yellow
+2780020	2780500	right
+2780500	2783760	and so
+2783760	2784600	over here
+2784600	2785380	it's a heat
+2785380	2786020	map generated
+2786020	2786820	from a
+2786820	2787080	leaked
+2787080	2787560	password
+2787560	2788140	database
+2788140	2789460	a giant
+2789460	2789800	leaked
+2789800	2790200	password
+2790200	2790540	database
+2790540	2791520	okay
+2791520	2793240	so
+2793240	2795060	this is
+2795060	2797060	a pin
+2797060	2797400	sorry
+2797400	2797860	this is not
+2797860	2798520	a pin
+2798520	2799020	heat map
+2799020	2799860	and so
+2799860	2800260	over here
+2800260	2800620	where it's
+2800620	2801260	really hot
+2801260	2803440	dates
+2803440	2805640	dates are
+2805640	2805980	different
+2805980	2806580	from other
+2806580	2806900	pins
+2806900	2807700	this is
+2807700	2809280	you know
+2809280	2809820	day
+2809820	2810080	day
+2810080	2810340	month
+2810340	2810640	month
+2810640	2810920	type
+2810920	2811240	dates
+2811240	2811560	right
+2811560	2812600	and then
+2812600	2813880	related couplets
+2813880	2814560	meaning repeated
+2814560	2815420	things like
+2815420	2816060	0101
+2816060	2817620	0505
+2817620	2819100	667
+2819100	2820680	they're all
+2820680	2821260	along this
+2821260	2822700	diagonal thing
+2822700	2824280	okay
+2824280	2826220	and these are
+2826220	2826980	years of
+2826980	2827740	specific years
+2827740	2828760	of 19 something
+2828760	2832320	because probably
+2832320	2833000	birth years
+2833000	2833600	people
+2833600	2833620	for people
+2833620	2835080	to take
+2835080	2835460	passwords
+2835460	2835720	back
+2835720	2839220	so
+2839220	2840260	as I said
+2840260	2840700	before
+2840700	2841460	the
+2841460	2843160	Unix
+2843160	2843800	and all
+2843800	2844140	the other
+2844140	2844500	Unix
+2844500	2845980	like systems
+2845980	2846760	have this
+2846760	2847600	etsy
+2847600	2848540	password file
+2848540	2848900	and it's
+2848900	2849480	world readable
+2849480	2850320	for reasons
+2850320	2850620	I already
+2850620	2851060	explained
+2851060	2852560	so
+2852560	2855460	if you don't
+2855460	2855960	do anything
+2855960	2856300	and just
+2856300	2856960	store the
+2856960	2858620	hashed
+2858620	2859080	passwords
+2859080	2859520	in that
+2859520	2859920	file
+2859920	2861120	the attacker
+2861120	2861560	will
+2861560	2863340	easily
+2863340	2864000	before
+2864000	2865560	even knowing
+2865560	2865960	what that
+2865960	2866480	file is
+2866480	2867120	before breaking
+2867120	2867800	in or getting
+2867800	2868220	an accident
+2868220	2868960	the attacker
+2868960	2869800	can precompute
+2869800	2871160	a large table
+2871160	2871800	of all the
+2871800	2872060	hashed
+2872060	2872400	passwords
+2872400	2874800	yeah
+2874800	2876900	I mean
+2876900	2877620	passwords are
+2877620	2878220	passwords right
+2878220	2878700	you can just
+2878700	2879200	pick all the
+2879200	2880180	dictionary words
+2880180	2881060	all the dictionary
+2881060	2881440	words are
+2881440	2881800	reversed
+2881800	2882500	all the
+2882500	2882920	two word
+2882920	2883500	combination
+2883500	2885200	let's restrict
+2885200	2885840	our discussion
+2885840	2886340	to English
+2886340	2886780	for now
+2886780	2887160	okay
+2887160	2887800	because
+2887800	2888720	similar things
+2888720	2889200	apply to
+2889200	2890620	other languages
+2890620	2891280	but let's say
+2891280	2891760	yeah
+2891760	2892760	all the date
+2892760	2894700	in a standard
+2894700	2895680	US format
+2895680	2896620	all the
+2896620	2897540	even times
+2897540	2898060	of day
+2898060	2898760	using
+2898760	2899460	you know
+2899460	2900040	after a second
+2900040	2900440	let's say
+2900440	2901040	granularity
+2901040	2901740	you can precompute
+2901740	2902480	hashes of all
+2902480	2903120	these values
+2903120	2904000	combinations
+2904000	2904620	of all these
+2904620	2905060	values
+2905060	2906160	pet names
+2906160	2907700	city names
+2907700	2909520	state names
+2909520	2911120	university
+2911120	2912400	mascot names
+2912400	2913560	right
+2913560	2914920	all of these
+2914920	2915820	can be precomputed
+2915820	2916260	in a large
+2916260	2916500	database
+2916500	2917300	stored in a large
+2917300	2917560	database
+2917560	2918720	that is something
+2918720	2919420	a task that
+2919420	2919880	an adversary
+2919880	2920520	could do
+2920520	2921480	and would take
+2921480	2922240	maybe a day
+2922240	2922580	or two
+2922580	2923360	maybe less
+2923360	2924500	this can be
+2924500	2924880	stored
+2924880	2925420	and it can be
+2925420	2925920	done at your
+2925920	2926360	own leisure
+2926360	2927320	now
+2927320	2928000	at the time
+2928000	2928640	of intrusion
+2928640	2929220	when the
+2929220	2930020	adversary gains
+2930020	2930620	access to
+2930620	2931760	the password
+2931760	2932220	file
+2932220	2932720	all the
+2932720	2933080	adversary
+2933080	2933600	needs to
+2933600	2933860	do
+2933860	2935020	is extract
+2935020	2935460	the hashed
+2935460	2935900	passports
+2935900	2936360	and do it
+2936360	2936640	database
+2936640	2937040	basically
+2937040	2939660	am I with you
+2939660	2941040	very simple
+2941040	2942740	so a little bit
+2942740	2943300	of work ahead
+2943300	2943640	of it
+2943640	2945260	and then
+2945260	2945900	no work
+2945900	2946400	essentially
+2946400	2947320	once the
+2947320	2948460	password file
+2948460	2949160	becomes available
+2949160	2950620	not only that
+2950620	2950900	but the
+2950900	2951380	adversary can
+2951380	2951780	break into
+2951780	2952740	multiple systems
+2952740	2954120	and reuse
+2954120	2954700	that same
+2954700	2955520	work that
+2955520	2956180	we did
+2956180	2956700	earlier
+2956700	2957640	right
+2957640	2958120	it's not like
+2958120	2958520	he has to
+2958520	2959280	brute force
+2959280	2959980	anything again
+2959980	2961180	just a bunch
+2961180	2961680	of database
+2961680	2962120	who comes
+2962120	2964460	so that's
+2964460	2964980	nice
+2964980	2965500	for the
+2965500	2965880	adversary
+2965880	2966600	bad for
+2966600	2966900	us
+2966900	2969020	right
+2969020	2970800	this is
+2970800	2971200	called an
+2971200	2971680	offline
+2971680	2972120	attack
+2972120	2973740	because the
+2973740	2974380	adversary has
+2974380	2974800	done the
+2974800	2975180	bulk of
+2975180	2975580	the work
+2975580	2976240	offline
+2976240	2977800	and online
+2977800	2978260	just does
+2978260	2978740	lookouts
+2978740	2983340	so that's
+2983340	2983880	why salt
+2983880	2985200	unlike what
+2985200	2985620	the doctors
+2985620	2986260	say is good
+2986260	2986620	for you
+2986620	2990040	we don't
+2990040	2990800	store hash
+2990800	2991460	passwords in
+2991460	2991660	new
+2991660	2992860	password file
+2992860	2993720	we store
+2993720	2994180	salted
+2994180	2994640	passwords
+2994640	2996160	salted
+2996160	2996580	means
+2996580	2997940	at the
+2997940	2998400	time of
+2998400	2999020	the initial
+2999020	3000120	creation of
+3000120	3000460	a user
+3000460	3000920	account
+3000920	3002760	the system
+3002760	3003100	or the
+3003100	3003780	administrator
+3003780	3004900	will pick
+3004900	3005360	a random
+3005360	3005800	number
+3005800	3007140	called a
+3007140	3007380	salt
+3007380	3009240	that random
+3009240	3009760	number is
+3009760	3010220	only used
+3010220	3010880	there in
+3010880	3011240	the password
+3011240	3011680	file
+3011680	3013380	it isn't
+3013380	3013880	stored in
+3013880	3014180	the plain
+3014180	3014480	text
+3014480	3016700	but it's
+3016700	3017960	not reused
+3017960	3019100	so different
+3019100	3019840	systems will
+3019840	3020280	have different
+3020280	3020900	salts for the
+3020900	3021480	same user
+3021480	3024980	so you
+3024980	3025540	have a record
+3025540	3026100	something that
+3026100	3026620	looks something
+3026620	3027180	like this
+3027180	3028760	this is maybe
+3028760	3029620	a little outdated
+3029620	3030840	that green box
+3030840	3031200	you see
+3031200	3032560	gts would be my
+3032560	3033280	account name
+3033280	3035560	the salt will be
+3035560	3036280	that number
+3036280	3037220	right
+3037220	3038560	the first blue
+3038560	3038920	number
+3038920	3040400	the second is
+3040400	3041020	the hash
+3041020	3042320	then you have
+3042320	3042980	like user
+3042980	3043540	identity
+3043540	3044080	uid
+3044080	3044880	i think that
+3044880	3046020	the 14510 is
+3046020	3046460	uid
+3046460	3047500	30 i don't
+3047500	3047640	remember
+3047640	3048620	group id or
+3048620	3048940	something
+3048940	3049940	then the full
+3049940	3050440	name
+3050440	3051840	like what my
+3051840	3052540	actual name is
+3052540	3053180	and then the
+3053180	3053860	login shell
+3053860	3054620	right
+3054620	3055800	and today is
+3055800	3056320	probably like a
+3056320	3056720	lot more
+3056720	3058460	at least that
+3058460	3059960	but we're not
+3059960	3060520	interested in
+3060520	3061380	the rest of the
+3061380	3061680	stuff
+3061680	3062300	the important
+3062300	3062840	thing is
+3062840	3063600	the salt
+3063600	3063920	and the
+3063920	3064340	password
+3064340	3064840	that has
+3064840	3065300	together
+3065300	3067600	okay
+3067600	3068180	so what
+3068180	3068520	happens
+3068520	3069400	very simple
+3069400	3070880	little mandate
+3070880	3071240	right
+3071240	3071860	but makes a
+3071860	3072420	big difference
+3072420	3075440	that offline
+3075440	3076560	attack
+3076560	3077300	is no longer
+3077300	3077800	possible
+3077800	3082060	why not
+3082060	3086460	well let me
+3086460	3086820	give you an
+3086820	3087080	example
+3087080	3087680	suppose the
+3087680	3088140	salt was
+3088140	3089440	one decimal
+3089440	3089800	digit
+3089800	3093560	would the
+3093560	3093900	offline
+3093900	3094240	attack
+3094240	3094400	be
+3094400	3094760	possible
+3094760	3099560	one
+3099560	3099900	just one
+3099900	3100200	decimal
+3100200	3100440	digit
+3100440	3100700	meaning
+3100700	3101100	it's a
+3101100	3101320	number
+3101320	3101820	from zero
+3101820	3102400	to ten
+3102400	3104540	would it
+3104540	3104880	be possible
+3104880	3105300	to mount
+3105300	3106140	this offline
+3106140	3106500	attack
+3106500	3108960	of course
+3108960	3109520	it's possible
+3109520	3110360	why not
+3110360	3110700	right
+3110700	3111880	just the work
+3111880	3113000	increases tenfold
+3113000	3115900	right
+3115900	3116500	but okay
+3116500	3117060	now it depends
+3117060	3117640	on how long
+3117640	3118440	exactly you make
+3118440	3118560	it
+3118560	3119060	but suppose
+3119060	3119660	you make it
+3119660	3121700	128 bits
+3121700	3123700	oh
+3123700	3124600	now
+3124600	3125800	one digit
+3125800	3126900	128 bits
+3126900	3127620	instead of
+3127620	3127980	like what
+3127980	3128760	one digit
+3128760	3129180	is like
+3129180	3129720	three digits
+3129720	3130660	right
+3130660	3132040	so from three
+3132040	3132820	bits to 128
+3132820	3133120	bits
+3133120	3133540	now the
+3133540	3133840	adversary
+3133840	3134600	cannot do
+3134600	3135840	cannot do
+3135840	3137100	an offline
+3137100	3137500	attack
+3137500	3138940	because remember
+3138940	3139720	for every
+3139720	3140300	guess of the
+3140300	3140700	password
+3140700	3142220	that the
+3142220	3142580	adversary
+3142580	3142980	makes
+3142980	3145260	he has to
+3145260	3145920	multiply
+3145920	3146660	do it
+3146660	3147600	two to the
+3147600	3148560	128 times
+3148560	3152400	per password
+3152400	3154400	so it
+3154400	3154760	will be
+3154760	3155300	two to the
+3155300	3156300	128 times
+3156300	3156580	whatever
+3156580	3157260	even two to
+3157260	3157760	the 20
+3157760	3158100	right
+3158100	3158840	is
+3158840	3160900	beyond reach
+3160900	3161180	of the
+3161180	3161540	adversary
+3161540	3162160	today and
+3162160	3162400	for
+3162400	3162960	what it
+3162960	3163380	would be
+3163380	3166100	so originally
+3166100	3166740	they made the
+3166740	3166980	salt
+3166980	3167640	32 bits
+3167640	3168160	I'm not sure
+3168160	3168720	exactly what
+3168720	3168980	it is
+3168980	3169340	because it
+3169340	3169580	varies
+3169580	3170040	I think the
+3170040	3170440	length of the
+3170440	3170940	salt varies
+3170940	3171480	from unique
+3171480	3172060	flavor
+3172060	3172480	to unique
+3172480	3172820	flavor
+3172820	3174140	but if I
+3174140	3174520	were using
+3174520	3174880	it today
+3174880	3175180	I would
+3175180	3175500	want the
+3175500	3175820	salt to
+3175820	3176100	be at
+3176100	3176360	least
+3176360	3178420	80 but
+3178420	3179180	probably
+3179180	3179800	more like
+3179800	3180260	128
+3180260	3180840	than salt
+3180840	3181100	is
+3181100	3182660	healthier
+3182660	3185100	okay
+3185100	3185800	but salt
+3185800	3186420	makes a big
+3186420	3186800	difference
+3186800	3187840	now once the
+3187840	3188660	attacker breaks
+3188660	3189020	in
+3189020	3191200	okay
+3191200	3192360	now there's a
+3192360	3192980	crucial difference
+3192980	3193660	between offline
+3193660	3194240	and online
+3194240	3194560	attack
+3194560	3196320	once the
+3196320	3196640	attacker
+3196640	3197140	breaks in
+3197140	3198400	and reads
+3198400	3198640	the
+3198640	3199360	lc password
+3199360	3199740	file
+3199740	3200120	okay
+3200120	3201660	the attacker
+3201660	3202120	sees the
+3202120	3202320	salt
+3202320	3204360	so then the
+3204360	3204940	attack becomes
+3204940	3205480	much cheaper
+3205480	3207060	but it can
+3207060	3207440	only be
+3207440	3207820	mounted
+3207820	3209200	once he
+3209200	3210160	breaks in
+3210160	3212200	not ahead
+3212200	3215660	because
+3215660	3216580	by knowing
+3216580	3217100	the salt
+3217100	3218180	you shave
+3218180	3218600	off the
+3218600	3218940	2 to the
+3218940	3219280	128
+3219280	3221400	okay
+3221400	3225840	and that
+3225840	3226280	basically
+3226280	3227880	the explanation
+3227880	3228280	is the same
+3228280	3228480	thing
+3228480	3231860	just take a
+3231860	3232060	second
+3232060	3232580	to read it
+3232580	3235940	well you shave
+3235940	3236260	off the
+3236260	3236580	2 to the
+3236580	3237140	number 28
+3237140	3237660	but it's
+3237660	3238260	no longer
+3238260	3239400	only off
+3239400	3239920	line
+3239920	3240740	fully attack
+3240740	3241820	no no
+3241820	3242400	it's online
+3242400	3243100	it's online
+3243100	3243720	it's not
+3243720	3244960	offline
+3244960	3245360	at all
+3245360	3246460	the attacker
+3246460	3247080	breaks in
+3247080	3247760	learns the
+3247760	3247940	salt
+3247940	3248300	and now
+3248300	3248880	has to do
+3248880	3249440	with that
+3249440	3249780	salt
+3249780	3251120	whatever
+3251120	3251640	2 to the
+3251640	3251980	20
+3251980	3252500	2 to the
+3252500	3252820	40
+3252820	3253680	however many
+3253680	3254080	password
+3254080	3254420	guesses
+3254420	3255400	there are
+3255400	3256560	per user
+3256560	3256920	yeah
+3256920	3258860	so there's
+3258860	3259240	still a bit
+3259240	3259580	of work
+3259580	3259900	but it's
+3259900	3260320	not a scary
+3260320	3260880	amount of work
+3260880	3266080	I'm sorry
+3266080	3267020	I mean
+3267020	3267460	we can
+3267460	3268100	let the salt
+3268100	3268960	expire
+3268960	3270340	well
+3270340	3270820	you can
+3270820	3271560	let the salt
+3271560	3272380	expire
+3272380	3273060	but you
+3273060	3273420	have to
+3273420	3274080	replace it
+3274080	3274420	in the
+3274420	3274840	password
+3274840	3275260	file
+3275260	3275940	so
+3275940	3276900	what you're
+3276900	3277200	saying
+3277200	3277600	is that
+3277600	3277960	you know
+3277960	3278220	if you
+3278220	3278520	know
+3278520	3278740	that
+3278740	3278900	they
+3278900	3279140	have
+3279140	3279280	the
+3279280	3279360	so
+3279360	3279460	it
+3279460	3279740	takes
+3279740	3280100	at least
+3280100	3280540	24
+3280540	3281000	hours
+3281000	3282840	to
+3282840	3283320	mount
+3283320	3283520	an
+3283520	3284120	online
+3284120	3284520	attack
+3284520	3284860	once
+3284860	3285020	he
+3285020	3285240	learns
+3285240	3285480	the
+3285480	3285740	salt
+3285740	3287080	then
+3287080	3287200	you
+3287200	3287320	could
+3287320	3287580	change
+3287580	3287760	the
+3287760	3287980	salt
+3287980	3288240	every
+3288240	3288660	24
+3288660	3288900	hour
+3288900	3290560	you could
+3290560	3291760	but the
+3291760	3292440	problem is
+3292440	3294940	okay
+3294940	3296380	so this is a good question
+3296380	3298480	let's think about this
+3298480	3302640	that what you say
+3302640	3303980	would be useful
+3303980	3304640	or would be
+3304640	3305340	possible
+3305340	3306140	if
+3306140	3307560	just
+3307560	3308760	a password
+3308760	3309180	attack
+3309180	3309780	a brute force
+3309780	3310160	password
+3310160	3310580	attack
+3310580	3311040	would take
+3311040	3311420	24
+3311420	3311760	hours
+3311760	3313420	but remember
+3313420	3314240	once the adversary
+3314240	3314840	breaks in
+3314840	3315360	and learns
+3315360	3315900	the salt
+3315900	3318160	he then
+3318160	3319960	also knows
+3319960	3321060	the hash of the salt
+3321060	3321660	and the password
+3321660	3322020	right
+3322020	3322780	so the adversary
+3322780	3323580	knows this
+3323580	3323840	right
+3323840	3324100	that
+3324100	3325020	the
+3325020	3327260	well
+3327260	3327680	that
+3327680	3334000	the adversary
+3334000	3334860	knows this
+3334860	3335860	right
+3335860	3337400	once he breaks in
+3337400	3338000	he knows this
+3338000	3339360	and he also knows
+3339360	3339820	the salt
+3339820	3343080	so you can change
+3343080	3343620	the salt
+3343620	3346060	but he learned
+3346060	3347180	the previous salt
+3347180	3347820	and the hash
+3347820	3348740	of the previous salt
+3348740	3349400	plus password
+3349400	3351420	he's gonna break
+3351420	3351920	the password
+3351920	3353760	see
+3353760	3355580	he's gonna break
+3355580	3355940	the password
+3355940	3357720	so changing the salt
+3357720	3358380	at that point
+3358380	3359720	not effective
+3359720	3361480	not effective
+3361480	3362880	because
+3362880	3364100	if he's breaking
+3364100	3364660	it locally
+3364660	3365020	maybe
+3365020	3365320	but
+3365320	3365780	you know
+3365780	3366100	others
+3366100	3366440	he's gonna
+3366440	3367020	exfiltrate
+3367020	3367520	and break
+3367520	3368020	it on his own
+3368020	3368340	path
+3368340	3369100	so
+3369100	3369820	the password
+3369820	3370460	hasn't changed
+3370460	3371040	that's the main
+3371040	3371440	problem
+3371440	3375240	but here
+3375240	3375700	it says
+3375700	3377520	12
+3377520	3378200	I think
+3378200	3379060	I may be wrong
+3379060	3379360	it wasn't
+3379360	3379580	30
+3379580	3380240	I think
+3380240	3380660	it was even
+3380660	3381280	less
+3381280	3381760	it was 12
+3381760	3382080	bits
+3382080	3382620	originally
+3382620	3383580	well today
+3383580	3384000	12 bits
+3384000	3384520	is laughable
+3384520	3384740	right
+3384740	3385160	so what
+3385160	3385440	is it
+3385440	3385720	saying
+3385720	3386400	if the
+3386400	3386720	passwords
+3386720	3387200	come from
+3387200	3387420	I don't
+3387420	3387560	know
+3387560	3388060	2 to the
+3388060	3388340	20
+3388340	3388800	space
+3388800	3389660	and multiplied
+3389660	3390300	by 2 to the
+3390300	3390560	12
+3390560	3390920	you still
+3390920	3391380	get 2 to
+3391380	3391720	32
+3391720	3392640	which is
+3392640	3393100	a laughably
+3393100	3393760	small number
+3393760	3394780	or password
+3394780	3395140	bracket
+3395140	3396840	right
+3396840	3397340	it takes
+3397340	3398760	a minute
+3398760	3399180	or less
+3399180	3400620	to go for
+3400620	3401080	the 2 to the
+3401080	3401460	32
+3401460	3402380	password
+3402380	3402680	choice
+3402680	3405860	right
+3405860	3406140	so
+3406140	3407080	instead
+3407080	3407700	so
+3407700	3408640	what happens
+3408640	3409680	these days
+3409680	3410020	is that
+3410020	3410600	most systems
+3410600	3411020	actually
+3411020	3412260	kind of
+3412260	3412680	separate
+3412680	3413000	the two
+3413000	3413220	things
+3413220	3413640	they separate
+3413640	3414380	the password
+3414380	3415960	from
+3415960	3417520	the account
+3417520	3418080	information
+3418080	3418620	in Unix
+3418620	3419040	and that's
+3419040	3419240	kind of
+3419240	3419460	a good
+3419460	3419840	practice
+3419840	3420280	anyway
+3420280	3421880	so
+3421880	3423000	they create
+3423000	3423320	what's called
+3423320	3423700	shadow
+3423700	3424180	password
+3424180	3425000	and so
+3425000	3425800	instead of
+3425800	3426280	looking like
+3426280	3426800	what you saw
+3426800	3427320	before
+3427320	3428380	the account
+3428380	3429100	record
+3429100	3429540	in the
+3429540	3429800	etsy
+3429800	3430260	password
+3430260	3430720	file
+3430720	3432620	has
+3432620	3433820	the name
+3433820	3434760	and then
+3434760	3435220	all the other
+3435220	3435780	information
+3435780	3436180	but there's
+3436180	3436520	like an
+3436520	3436920	x
+3436920	3438180	following the
+3438180	3438700	accounting
+3438700	3439200	that says
+3439200	3440000	actual password
+3440000	3440540	isn't here
+3440540	3441660	it's a
+3441660	3443120	special
+3443120	3444260	hashed
+3444260	3444920	password file
+3444920	3445520	which is not
+3445520	3446180	world readable
+3446180	3448280	like it took
+3448280	3449400	only 30 years
+3449400	3450140	for people to realize
+3450140	3451340	that the passwords
+3451340	3452300	and user account
+3452300	3452780	information
+3452780	3453500	shouldn't be stored
+3453500	3453940	together
+3453940	3456760	well that's what
+3456760	3457100	happens
+3457100	3457340	right
+3457340	3458880	because all
+3458880	3459280	those other
+3459280	3459700	programs
+3459700	3460700	application programs
+3460700	3461180	running on
+3461180	3461800	this Unix
+3461800	3462400	like operating
+3462400	3462740	system
+3462740	3463680	they still
+3463680	3464120	do need
+3464120	3464580	the account
+3464580	3465120	information
+3465120	3466040	to figure out
+3466040	3466600	who can access
+3466600	3466980	what
+3466980	3467280	etc
+3467280	3468280	and distinguish
+3468280	3468920	between users
+3468920	3469300	but
+3469300	3471160	they don't
+3471160	3471480	need to know
+3471480	3471940	the passwords
+3471940	3473300	right
+3473300	3473660	so
+3473660	3475900	let's create
+3475900	3476620	a file
+3476620	3477160	that has
+3477160	3477800	all the account
+3477800	3478240	information
+3478240	3478880	that also
+3478880	3479480	store passwords
+3479480	3479700	in
+3479700	3480160	passwords
+3480160	3480600	should only
+3480600	3481000	be visible
+3481000	3481580	to the root
+3481580	3482220	or the admin
+3482220	3482600	account
+3482600	3483540	right
+3483540	3484020	so instead
+3484020	3484500	it's stored
+3484500	3485080	in an etsy
+3485080	3485900	shadow file
+3485900	3486840	which is only
+3486840	3487160	readable
+3487160	3487620	by the
+3487620	3487940	system
+3487940	3488420	administrator
+3488420	3490640	okay
+3490640	3492740	also
+3492740	3493480	very trivial
+3493480	3493860	thing
+3493860	3495040	and of course
+3495040	3495360	it also
+3495360	3496180	added expiration
+3496180	3496420	date
+3496420	3496940	for passwords
+3496940	3497220	right
+3497220	3497580	so that's
+3497580	3498500	why on
+3498500	3499620	most
+3499620	3500400	production
+3500400	3501200	Unix
+3501200	3501780	like systems
+3501780	3502200	you'll be
+3502200	3502540	asked to
+3502540	3502860	renew
+3502860	3503960	or
+3503960	3505960	change
+3505960	3506200	another
+3506200	3506540	password
+3506540	3507000	every so
+3507000	3507200	often
+3507200	3510300	okay
+3510300	3510760	so
+3510760	3511420	you've probably
+3511420	3511820	heard of
+3511820	3512320	keyloggers
+3512320	3512580	right
+3512580	3515700	so these
+3515700	3516120	are things
+3516120	3516600	you generally
+3516600	3517060	have to be
+3517060	3517740	afraid of
+3517740	3519980	not so much
+3519980	3520480	on your own
+3520480	3520980	devices
+3520980	3521580	because
+3521580	3522300	it's not
+3522300	3522780	all that
+3522780	3523100	easy
+3523100	3523680	to install
+3523680	3524220	a keylogger
+3524220	3524480	unless
+3524480	3524820	somebody
+3524820	3525000	has
+3525000	3525760	direct
+3525760	3526380	access
+3526380	3526760	and an
+3526760	3527100	account
+3527100	3527420	on your
+3527420	3527820	device
+3527820	3528360	but
+3528360	3528880	more like
+3528880	3529180	when you're
+3529180	3529400	using
+3529400	3529880	public
+3529880	3531500	facility
+3531500	3531980	like
+3531980	3532460	any of
+3532460	3532700	you ever
+3532700	3532960	use
+3532960	3533500	ICS
+3533500	3534060	terminals
+3534060	3535500	or ICS
+3535500	3535860	machines
+3535860	3536420	but that's
+3536420	3536680	where you
+3536680	3536920	have to
+3536920	3537280	be worried
+3537280	3537720	about
+3537720	3538280	because
+3538280	3541420	there you
+3541420	3541720	have no
+3541720	3542020	idea
+3542020	3543380	what software
+3543380	3543880	is running
+3543880	3544420	who has
+3544420	3544780	been there
+3544780	3545080	before
+3545080	3545260	you
+3545260	3545560	essentially
+3545560	3546180	these
+3546180	3546540	machines
+3546540	3546740	are
+3546740	3548500	sort of
+3548500	3548620	like
+3548620	3548960	public
+3548960	3549280	toilet
+3549280	3549860	you have
+3549860	3550380	no idea
+3550380	3550900	what's
+3550900	3551300	going on
+3551300	3551540	there
+3551540	3552460	and
+3552460	3552660	what
+3552660	3552800	is
+3552800	3553040	running
+3553040	3553260	there
+3553260	3553500	really
+3553500	3555880	so
+3555880	3556020	if
+3556020	3556180	these
+3556180	3556660	drugloggers
+3556660	3556900	are
+3556900	3557440	problem
+3557440	3558580	they
+3558580	3559080	can be
+3559080	3559520	hardware
+3559520	3559880	based
+3559880	3560020	or
+3560020	3560580	software
+3560580	3561020	based
+3561020	3561860	hardware
+3561860	3562160	based
+3562160	3562380	means
+3562380	3562640	somebody
+3562640	3563080	actually
+3563080	3564200	inserted
+3564200	3565860	something
+3565860	3567240	you
+3567240	3567400	know
+3567400	3567960	external
+3567960	3568400	keyboards
+3568400	3568760	not the
+3568760	3568920	kind
+3568920	3569200	you have
+3569200	3569560	right now
+3569560	3569840	in front
+3569840	3570000	of you
+3570000	3570160	but
+3570160	3570560	actual
+3570560	3571100	keyboards
+3571100	3571860	move on
+3571860	3572580	they have
+3572580	3572920	a wire
+3572920	3575180	some of them
+3575180	3575340	do
+3575340	3575700	some of them
+3575700	3575920	don't
+3575920	3576300	but most
+3576300	3576800	have a wire
+3576800	3578520	well
+3578520	3579460	the wire
+3579460	3580000	goes in the
+3580000	3580400	back of the
+3580400	3580680	computer
+3580680	3581040	somewhere
+3581040	3581380	or
+3581380	3581920	some
+3581920	3582900	USB
+3582900	3583940	interface
+3583940	3584860	well
+3584860	3585300	somebody
+3585300	3585560	could have
+3585560	3586360	installed
+3586360	3586700	something
+3586700	3586980	between
+3586980	3587460	the USB
+3587460	3588000	interface
+3588000	3588240	and the
+3588240	3588420	back
+3588420	3588620	of the
+3588620	3588840	computer
+3588840	3589280	you cannot
+3589280	3589560	see
+3589560	3590020	especially
+3590020	3590420	publicly
+3590420	3592380	and
+3592380	3593380	essentially
+3593380	3594440	it
+3594440	3594900	sees
+3594900	3595200	every
+3595200	3595600	keystroke
+3595600	3595920	you have
+3595920	3598260	okay
+3598260	3599460	some
+3599460	3599820	government
+3599820	3600320	computers
+3600320	3601520	in various
+3601520	3601940	agencies
+3601940	3602500	do this
+3602500	3603060	on purpose
+3603060	3603620	they tell
+3603620	3604060	employees
+3604060	3604660	your
+3604660	3606020	keystrokes
+3606020	3606440	are locked
+3606440	3606700	and there's
+3606700	3607260	a keylogger
+3607260	3608100	for
+3608100	3608820	auditability
+3608820	3609260	and logging
+3609260	3609660	purposes
+3609660	3611500	but
+3611500	3612400	do you
+3612400	3613060	yourself
+3613060	3613620	whenever
+3613620	3614160	you use
+3614160	3614700	a public
+3614700	3615440	or at least
+3615440	3615980	not personal
+3615980	3616400	but do you
+3616400	3616840	have a look
+3616840	3617940	to see
+3617940	3618400	that the
+3618400	3618740	wire
+3618740	3619540	goes directly
+3619540	3619860	into the
+3619860	3620440	USB port
+3620440	3620640	in the
+3620640	3620860	back
+3620860	3621060	of the
+3621060	3621360	computer
+3621360	3622200	or
+3622200	3622460	there's
+3622460	3622660	some
+3622660	3622900	other
+3622900	3623460	little
+3623460	3623800	creepy
+3623800	3624280	crawling
+3624280	3624640	that
+3624640	3624900	is in
+3624900	3625260	between
+3625260	3626740	I bet
+3626740	3627120	most people
+3627120	3627540	don't
+3627540	3629320	with
+3629320	3629960	wireless
+3629960	3631580	oh
+3631580	3632100	with wireless
+3632100	3632820	it's even worse
+3632820	3634200	because the
+3634200	3634560	wireless
+3634560	3635040	keyboard
+3635040	3635640	typically
+3635640	3636000	use
+3636000	3636500	encryption
+3636500	3637900	but the
+3637900	3638180	kind of
+3638180	3638480	encryption
+3638480	3638800	you use
+3638800	3639140	is often
+3639140	3639820	homegrown
+3639820	3640180	by the
+3640180	3640660	manufacturer
+3640660	3641060	or really
+3641060	3641400	crappy
+3641400	3643540	and so
+3643540	3644500	you don't
+3644500	3644840	need to
+3644840	3645440	put a
+3645440	3645760	hardware
+3645760	3646280	device
+3646280	3647580	you can
+3647580	3648160	just sniff
+3648160	3648680	on it
+3648680	3649680	externally
+3649680	3651060	right
+3651060	3651340	because
+3651340	3651700	they use
+3651700	3651880	some
+3651880	3652160	kind of
+3652160	3653320	either
+3653320	3653820	infrared
+3653820	3654140	or some
+3654140	3654320	other
+3654320	3654460	kind
+3654460	3654620	of
+3654620	3655100	wireless
+3655100	3659420	so
+3659420	3660000	beware
+3660000	3662000	but
+3662000	3662760	attacks
+3662760	3663660	keylogger
+3663660	3664020	attacks
+3664020	3664420	especially
+3664420	3664920	hardware ones
+3664920	3665160	are not
+3665160	3665380	common
+3665380	3665660	they are
+3665660	3666100	targeted
+3666100	3666420	right
+3666420	3666740	somebody
+3666740	3667000	has to
+3667000	3667260	target
+3667260	3667780	a specific
+3667780	3668140	computer
+3668140	3668560	a specific
+3668560	3668980	person
+3668980	3669640	in order
+3669640	3669920	to do
+3669920	3670100	that
+3670100	3670820	software
+3670820	3671340	keyloggers
+3671340	3671780	are different
+3671780	3673040	that often
+3673040	3673420	happens
+3673420	3674620	with buggy
+3674620	3675200	browsers
+3675200	3678540	or buggy
+3678540	3679000	it used
+3679000	3679340	to happen
+3679340	3679840	once in
+3679840	3680120	a while
+3680120	3680720	with microsoft
+3680720	3681240	windows
+3681240	3682320	where there
+3682320	3682580	would be
+3682580	3683140	some malware
+3683140	3683560	that would
+3683560	3684320	warm itself
+3684320	3684980	and usually
+3684980	3685340	again
+3685340	3685700	with some
+3685700	3686080	degree of
+3686080	3686840	social engineering
+3686840	3687620	preceding it
+3687620	3688660	and then
+3688660	3689380	will
+3689380	3689700	install
+3689700	3689940	itself
+3689940	3690320	and actually
+3690320	3691100	take over
+3691100	3692140	the keyboard
+3692140	3693360	driver
+3693360	3695220	or worse
+3695220	3695400	yet
+3695400	3695860	update
+3695860	3696420	the keyboard
+3696420	3696820	driver
+3696820	3697080	right
+3697080	3697300	because
+3697300	3697740	the keyboard
+3697740	3698080	is a
+3698080	3698400	peripheral
+3698400	3699140	right
+3699140	3699800	there's a
+3699800	3700100	driver
+3700100	3700500	for that
+3700500	3700900	peripheral
+3700900	3701460	to
+3701460	3702360	insert an
+3702360	3703000	illegitimate
+3703000	3703820	fake update
+3703820	3704180	of the
+3704180	3704540	driver
+3705200	3706000	that would
+3706000	3706340	contain
+3706340	3707000	a keylogger
+3707000	3708300	not nice
+3708300	3709320	and then
+3709320	3709700	there are
+3709700	3710120	like
+3710120	3710800	lower tech
+3710800	3711480	ways of
+3711480	3712000	sniffing
+3712000	3712400	on
+3712400	3713760	keyboard
+3713760	3714260	input
+3714260	3715320	shoulder
+3715320	3715760	surfing
+3715760	3717480	everybody
+3717480	3717880	familiar
+3717880	3718100	with
+3718100	3718320	shoulder
+3718320	3718640	surfing
+3718640	3720260	yeah
+3720260	3720700	people are
+3720700	3720880	getting
+3720880	3721380	too close
+3721380	3722180	to you
+3722180	3723100	too close
+3723100	3723600	for comfort
+3723600	3724960	you're entering
+3724960	3725520	your pen
+3725520	3726220	whether it's
+3726220	3726500	on the
+3726500	3726900	door
+3726900	3727500	block
+3727500	3727900	or
+3727900	3728660	on your
+3728660	3728940	bank
+3728940	3729420	ATM
+3729420	3729940	somebody's
+3729940	3730080	like
+3730080	3730380	breathing
+3730380	3730680	down
+3730680	3731120	your neck
+3731120	3732220	that's
+3732220	3732440	shoulder
+3732440	3732800	surfing
+3732800	3734520	I mean
+3734520	3735040	easy to
+3735040	3735440	avoid
+3735440	3737400	but you have
+3737400	3737580	to be
+3737580	3737820	coming
+3737820	3738100	center
+3738100	3738400	right
+3738400	3739140	but
+3739140	3739380	shoulder
+3739380	3739680	surfing
+3739680	3740160	means that
+3740160	3740460	human
+3740460	3742700	eyes are
+3742700	3742920	looking
+3742920	3743260	at something
+3743260	3743760	but it's not
+3743760	3744240	always human
+3744240	3744560	eyes
+3744560	3745500	it could be
+3745500	3746340	a tiny little
+3746340	3746740	drone
+3746740	3748200	it could be
+3748200	3748700	a camera
+3748700	3750300	from farther
+3750300	3750680	away
+3750680	3751000	with a
+3751000	3751500	telephoto
+3751500	3751840	lens
+3751840	3753460	that is
+3753460	3754720	shoulder
+3754720	3755180	surfing
+3755180	3756420	right
+3756420	3757280	so
+3757280	3758080	it could be
+3758080	3758680	think about
+3758680	3758800	it
+3758800	3759420	you go
+3759420	3759960	let's
+3759960	3760080	say
+3760080	3760420	let's
+3760420	3760580	take
+3760580	3760960	example
+3760960	3761100	of
+3761100	3761220	the
+3761220	3761560	ATM
+3761560	3762700	anybody
+3762700	3762920	ever
+3762920	3763080	go
+3763080	3763200	to
+3763200	3763280	the
+3763280	3763540	ATM
+3763540	3763860	anymore
+3763860	3765980	I think
+3765980	3766200	I go
+3766200	3766460	once
+3766460	3766680	twice
+3766680	3766960	a year
+3766960	3768560	but
+3768560	3768940	still
+3768940	3769200	people
+3769200	3769420	do
+3769420	3769840	I can
+3769840	3770120	see you
+3770120	3770400	every time
+3770400	3770540	I go
+3770540	3770740	to the
+3770740	3770900	ATM
+3770900	3771100	there
+3771100	3771500	are
+3771500	3771840	people
+3771840	3772240	so
+3772240	3773000	you don't
+3773000	3773160	trip
+3773160	3773500	in
+3773500	3775940	do you know
+3775940	3776180	how many
+3776180	3776680	cameras are
+3776680	3777040	looking at
+3777040	3777160	you
+3777160	3777440	well
+3777440	3777660	there's
+3777660	3778000	a camera
+3778000	3778380	in the
+3778380	3778720	ATM
+3778720	3778980	right
+3778980	3779360	they usually
+3779360	3779560	have
+3779560	3779840	a camera
+3779840	3780700	but what
+3780700	3780840	about
+3780840	3781020	other
+3781020	3781340	cameras
+3781340	3781620	on the
+3781620	3781820	street
+3781820	3783580	do you
+3783580	3783700	know
+3783700	3783860	if
+3783860	3784120	they have
+3784120	3784240	the
+3784240	3784400	right
+3784400	3784700	angle
+3784700	3785020	maybe
+3785020	3785180	they
+3785180	3785340	do
+3785340	3785540	maybe
+3785540	3785740	there's
+3785740	3785980	something
+3785980	3786200	right
+3786200	3786480	above
+3786480	3786660	you
+3786660	3786920	that's
+3786920	3787160	looking
+3787160	3787660	directly
+3787660	3787840	at
+3787840	3787920	the
+3787920	3788180	ATM
+3788180	3788660	keypad
+3788660	3790360	no
+3790360	3792960	there are
+3792960	3793240	thermal
+3793240	3793700	cameras
+3793700	3794940	that's
+3794940	3795260	something
+3795260	3796240	also
+3796240	3796520	fairly
+3796520	3796880	scary
+3796880	3798880	thermal
+3798880	3799300	cameras
+3799300	3800260	what does
+3800260	3800540	that mean
+3800540	3801140	it means
+3801140	3802100	when you
+3802100	3802360	type
+3802360	3802740	your
+3802740	3803360	password
+3803360	3803620	or
+3803620	3803880	pin
+3803880	3804520	on
+3804520	3804780	some
+3804780	3805160	surface
+3805160	3805420	like
+3805420	3807120	keyboard
+3807120	3807960	or
+3807960	3808200	pin
+3808200	3808440	tab
+3808440	3810120	what
+3810120	3810440	happens
+3810440	3810620	is
+3810620	3810820	your
+3810820	3811280	fingers
+3811280	3811860	touch
+3811860	3812080	the
+3812080	3812400	surface
+3812400	3814300	you
+3814300	3814400	are
+3814400	3814780	human
+3814780	3816240	last
+3816240	3816440	time
+3816440	3816620	you
+3816620	3816860	checked
+3816860	3817020	you
+3817020	3817140	were
+3817140	3817480	human
+3817480	3818540	last
+3818540	3818740	time
+3818740	3818880	you
+3818880	3819080	checked
+3819080	3819260	you
+3819260	3819360	were
+3819360	3819740	alive
+3819740	3820240	which
+3820240	3820580	means
+3820580	3821140	as a
+3821140	3821380	live
+3821380	3821720	human
+3821720	3823280	you have
+3823280	3823540	a certain
+3823540	3824020	temperature
+3824020	3824480	on your
+3824480	3824760	body
+3824760	3825900	and your
+3825900	3826260	fingers
+3826260	3827000	reflect that
+3827000	3827380	temperature
+3827380	3828380	and when
+3828380	3828740	your
+3828740	3829380	live
+3829380	3829660	human
+3829660	3830080	fingers
+3830080	3830880	touch
+3830880	3831140	the
+3831140	3831560	dead
+3831560	3832640	plastic
+3832640	3833320	cold
+3833320	3833760	plastic
+3833760	3834880	this
+3834880	3835040	what
+3835040	3835360	happens
+3835360	3836840	heat
+3836840	3837400	transfer
+3837400	3838600	even
+3838600	3838800	if
+3838800	3838880	you
+3838880	3839120	go
+3839120	3839600	boom
+3839600	3840240	boom
+3840240	3841360	well
+3841360	3841640	that's
+3841640	3842060	the force
+3842060	3842380	right
+3842380	3844320	that generates
+3844320	3844600	heat
+3844600	3844940	cut off
+3844940	3845280	mainly
+3845280	3845920	the
+3845920	3846220	skin
+3846220	3849400	so
+3849400	3850900	if
+3850900	3851400	you
+3851400	3851640	type
+3851640	3851800	in
+3851800	3851940	your
+3851940	3852200	pin
+3852200	3852480	or
+3852480	3852620	your
+3852620	3852940	password
+3852940	3853860	and
+3853860	3854020	then
+3854020	3854400	somebody
+3854400	3854980	snaps
+3854980	3855160	a
+3855160	3855400	photo
+3855400	3856180	of
+3856180	3856380	the
+3856380	3856780	pad
+3856780	3857720	or
+3857720	3857900	the
+3857900	3858300	keyboard
+3858300	3859340	they
+3859340	3859540	will
+3859540	3859940	see
+3859940	3860920	heat
+3860920	3861160	map
+3861160	3862900	they
+3862900	3863080	will
+3863080	3863360	see
+3863360	3863900	the
+3863900	3864240	keys
+3864240	3864460	that
+3864460	3864680	won't
+3864680	3864980	press
+3864980	3865460	most
+3865460	3865840	recently
+3865840	3867180	they
+3867180	3867480	might
+3867480	3867860	not
+3867860	3868520	directly
+3868520	3869060	leak
+3869060	3869740	pin
+3869740	3870000	or
+3870000	3870260	password
+3870260	3870820	information
+3870820	3871660	but
+3871660	3871860	it
+3871860	3872140	leaks
+3872140	3872560	a lot
+3872560	3873100	information
+3873100	3873360	that's
+3873360	3873640	about
+3873640	3875180	in
+3875180	3875680	particular
+3875680	3876120	which
+3876120	3876320	keys
+3876320	3876480	were
+3876480	3876720	pressed
+3876720	3877080	recently
+3877080	3877320	maybe
+3877320	3877520	not
+3877520	3877880	exactly
+3877880	3878080	the
+3878080	3878400	sequence
+3878400	3878920	but
+3878920	3879220	how many
+3879220	3879600	combinations
+3879600	3879880	that
+3879880	3879940	are
+3879940	3880760	right
+3880760	3881760	so
+3881760	3884460	something to worry about
+3884460	3887560	then there is something called acoustic emanation
+3887560	3890020	there's a whole body of research literature on this
+3890020	3892240	starting in like 25 years ago
+3892240	3893480	people realize
+3893480	3896680	people realize
+3896680	3900500	that when you type on any surface
+3900500	3901500	be it a keyboard
+3901500	3901860	or a
+3901860	3902040	thing
+3902040	3904580	even on the phone
+3904580	3905400	on the
+3905400	3906620	on screen keyboard
+3906620	3908820	there are sounds that are being named
+3908820	3911680	and sound propagates
+3911680	3912180	right
+3912180	3913980	when you type
+3913980	3915200	especially in some of those
+3915200	3916040	people like me
+3916040	3916300	etc
+3916300	3916940	aggressive
+3916940	3917340	times
+3917340	3920140	sound propagates
+3920140	3920540	farther
+3920540	3922480	than the human ears
+3922480	3922760	right
+3922760	3925440	so if you put a very sensitive microphone
+3925440	3926800	you know
+3926800	3927840	ten yards away
+3927840	3929100	people still pick up
+3929100	3930500	keyboard emanations
+3930500	3932660	isn't that scary
+3932660	3935180	I think it's very cool
+3935180	3936900	I have a lot of research on this
+3936900	3939220	still these days
+3939220	3940300	there are people who work at it
+3940300	3940500	but
+3940500	3942100	the sound
+3942100	3943500	that your
+3943500	3945140	fingers make
+3945140	3946380	when you type in
+3946380	3947100	anything
+3947100	3948400	not just the classroom
+3948400	3950100	is unique
+3950100	3952000	not because
+3952000	3952460	so much
+3952460	3953420	that you make it
+3953420	3955060	but the keyboard
+3955060	3955520	itself
+3955520	3958000	produces a different sound
+3958000	3960620	for any different key
+3960620	3962680	every key
+3962680	3963800	on your plastic keyboard
+3963800	3967060	makes a different sound
+3967060	3967540	the same
+3967540	3968740	to a lesser extent
+3968740	3970020	old story about the keyboard
+3970020	3970420	you have
+3970420	3972760	but every time you press a key
+3972760	3975060	the sound that it makes
+3975060	3975800	when you press a Z
+3975800	3976720	is different from the sound
+3976720	3977280	that it makes you
+3977280	3978040	when you press a D
+3978040	3979060	or slash
+3979060	3980140	or a question mark
+3980140	3980640	or space
+3980640	3981160	okay
+3981160	3982420	there are different sounds
+3982420	3984600	and so
+3984600	3985880	if I record those sounds
+3985880	3987260	I essentially can key log
+3987260	3989500	without installing a key log
+3989500	3992020	isn't that fun
+3992020	3994620	but it gets worse
+3994620	3996880	much worse
+3996880	3999680	even if the manufacturers
+3999680	4000820	and some made an effort
+4000820	4001500	some didn't
+4001500	4003220	to make all the keyboard
+4003220	4004240	sounds sound the same
+4004240	4006200	it's possible
+4006200	4007640	it makes people
+4007640	4008380	more expensive
+4008380	4011540	there's still a problem
+4011540	4012900	does anybody see the problem?
+4018700	4020020	yourself as a person
+4020020	4021480	what about yourself?
+4021700	4022060	I mean
+4022060	4023380	some people
+4023380	4025280	have just
+4025280	4026080	and they find
+4026080	4026660	and they just
+4026660	4027700	make themselves
+4027700	4029280	because of the finger
+4029280	4029640	and
+4029640	4030080	uh-huh
+4030080	4030960	yeah
+4030960	4031240	yeah
+4031240	4031940	so remember
+4031940	4033440	it's true
+4033440	4034080	that
+4034080	4034980	what I said before
+4034980	4036020	is that there's you
+4036020	4037820	who types differently
+4037820	4039140	depending on which key you type
+4039140	4041420	and then there's the actual keyboard
+4041420	4042500	that makes different sounds
+4042500	4043480	so even if you press
+4043480	4044640	the same way
+4044640	4045320	on the same
+4045320	4046120	like
+4046120	4048320	you have this finger
+4048320	4049080	like you're one of those
+4049080	4049780	hunter tech
+4049780	4051160	people like me
+4051160	4052300	like
+4052300	4053420	you move the keyboard
+4053420	4055980	hit
+4055980	4056940	move the keyboard
+4056940	4057320	hit it
+4057320	4057720	so you see
+4057720	4058980	my angle doesn't change
+4058980	4061040	so I hit the same way
+4061040	4062000	right
+4062000	4063400	but the keyboard sound
+4063400	4063880	is different
+4063880	4065840	but
+4065840	4067860	manufacturers suppose
+4067860	4068820	now fix the keyboard
+4068820	4069620	that all the sounds
+4069620	4070100	are the same
+4070100	4071920	but I haven't changed
+4071920	4072220	right
+4072220	4073300	so
+4073300	4074280	when I use my
+4074280	4075780	this finger
+4075780	4077840	that goes straight down
+4077840	4078920	on this one letter
+4078920	4079900	it sounds one way
+4079900	4081600	when I have to angle my finger
+4081600	4082920	to press shift
+4082920	4084000	right
+4084000	4085680	or press question mark
+4085680	4086680	it sounds differently
+4086680	4087920	not because of the keyboard
+4087920	4089220	but because of the way
+4089220	4090720	I angle my fingers
+4090720	4091820	and the force I apply
+4091820	4092720	correct
+4092720	4094580	but it gets worse than that
+4094580	4096540	that
+4096540	4096880	so
+4096880	4097800	you can indeed
+4097800	4098940	still mine the information
+4098940	4099380	like I said
+4099380	4100740	about the individual
+4100740	4102080	humans typing
+4102080	4103040	characteristics
+4103040	4103520	but
+4103520	4104560	it's harder
+4104560	4105380	it's harder
+4105380	4106340	it's easier to extract
+4106340	4107180	from the manufacturer
+4107180	4107780	introduced
+4107780	4108560	distinction
+4108560	4109360	though
+4109360	4110100	the problem is
+4110100	4110960	what did you say
+4110960	4111320	time
+4111320	4112340	like time between keys
+4112340	4113160	time between keys
+4113160	4113900	that's the problem
+4113900	4115200	turns out
+4115200	4116120	on a standard
+4116120	4117240	QWERTY keyboard
+4117240	4117880	let's assume
+4117880	4118920	that we're using
+4118920	4119560	QWERTYs
+4119560	4119800	right
+4119800	4120540	which is an American
+4120540	4121060	keyboard
+4121060	4124480	as you move
+4124480	4125680	from key to key
+4125680	4127740	right
+4127740	4129720	from let's say
+4129720	4130340	typing key
+4130340	4131180	to typing H
+4131180	4131940	to typing E
+4131940	4132800	to typing N
+4132800	4133500	to typing E
+4133500	4134280	to typing X
+4134280	4135060	to typing E
+4135060	4137000	right
+4137000	4137960	you type one letter
+4137960	4138420	at a time
+4138420	4139120	even if you are
+4139120	4139680	touch typist
+4139680	4140580	you type one letter
+4140580	4141100	at a time
+4141100	4141700	well
+4141700	4143080	the intervals
+4143080	4144060	the timing intervals
+4144060	4145660	between successive letters
+4145660	4147340	are unique to you
+4147340	4148160	also
+4148160	4149420	and the keyboard
+4149420	4150180	they sound like
+4150180	4150660	that's right
+4150660	4151740	they're slightly different
+4151740	4152000	yeah
+4152000	4152460	yeah
+4152460	4152800	but
+4152800	4153680	that's right
+4153680	4154940	they sound
+4154940	4155560	that's true
+4155560	4156180	but that's actually
+4156180	4156980	related more
+4156980	4157600	to what he said
+4157600	4159100	but just
+4159100	4160420	the sheer timings
+4160420	4161600	between the keystrokes
+4161600	4163640	so you don't have
+4163640	4164620	to have any idea
+4164620	4164980	but
+4164980	4166380	guess what
+4166380	4166940	there are
+4166940	4167620	let's say
+4167620	4168600	forget the
+4168600	4169500	exclamation points
+4169500	4170000	forget those
+4170000	4170660	special characters
+4170660	4171280	let's suppose
+4171280	4171620	there are
+4171620	4172100	I don't know
+4172100	4173100	26 keys
+4173100	4173580	on the keyboard
+4173580	4174880	and you're just
+4174880	4175960	typing words
+4175960	4176260	right
+4176260	4178520	so how many
+4178520	4178960	possible
+4178960	4179520	two word
+4179520	4180060	combinations
+4180060	4180480	are there
+4180480	4180880	two letter
+4180880	4181220	combinations
+4181220	4181500	are there
+4181500	4182420	26 times 26
+4182420	4182800	right
+4182800	4184560	so after a while
+4184560	4184920	if you
+4184920	4186340	record
+4186340	4187260	the sounds
+4187260	4187680	of somebody
+4187680	4188080	typing
+4188080	4189020	a lot of text
+4189020	4189280	right
+4189280	4189980	over the day
+4189980	4190740	or two days
+4190740	4191140	or whatever
+4191140	4192100	you're going to
+4192100	4193040	start distinguishing
+4193040	4194500	between transitions
+4194500	4195320	between keys
+4195320	4195720	right
+4195720	4199040	believe me
+4199040	4199940	it's totally doable
+4199940	4201660	because
+4201660	4203000	assuming
+4203000	4203460	somebody
+4203460	4203980	is typing
+4203980	4204920	English text
+4204920	4205240	right
+4205240	4205820	like writing
+4205820	4206700	email messages
+4206700	4207900	or filling out
+4207900	4208420	forms
+4208420	4209460	well
+4209460	4211420	the probability
+4211420	4212120	of occurrence
+4212120	4213260	of two successive
+4213260	4214220	letters
+4214220	4215820	are quite distinct
+4215820	4217000	and essentially
+4217000	4217400	becomes
+4217400	4218460	a simple
+4218460	4218740	decision
+4218740	4219840	so anyway
+4219840	4220460	that was a little
+4220460	4220920	detour
+4220920	4221700	but what about
+4221700	4222420	good vibrations
+4222420	4223400	well good vibrations
+4223400	4224240	refers to another
+4224240	4224680	thing that
+4224680	4225480	actually
+4225480	4226680	if you're using
+4226680	4227220	your phone
+4227220	4227980	and that has
+4227980	4228480	been some
+4228480	4229260	published research
+4229260	4229620	on this
+4229620	4231280	and your phone
+4231280	4231840	is like this
+4231840	4232480	on your
+4232480	4234060	desk
+4234060	4235000	or whatever
+4235000	4235820	in front of you
+4235820	4236040	right
+4236040	4236720	and
+4236720	4238040	as you press
+4238040	4238600	every
+4238600	4239840	on-screen
+4239840	4240560	button
+4240560	4240820	right
+4240820	4241560	on-screen keyboard
+4241560	4242780	your phone
+4242780	4243420	makes like a tiny
+4243420	4244200	vibration sound
+4244200	4245840	like a moment
+4245840	4246340	that the other
+4246340	4246840	phone do
+4246840	4247120	right
+4247120	4248380	just to confirm
+4248380	4248880	that you actually
+4248880	4249520	type
+4249520	4250680	well
+4250680	4253260	those vibrations
+4253260	4254520	when you put a
+4254520	4254880	microphone
+4254880	4255520	underneath your
+4255520	4255960	desk
+4255960	4256720	they can actually
+4256720	4257480	calculate your
+4257480	4257740	typing
+4257740	4262400	other analysis
+4262400	4263180	include taking
+4263180	4263800	photos of
+4263800	4264900	smartphone screens
+4264900	4266340	and looking for
+4266340	4267820	quadrants
+4267820	4268540	little areas
+4268540	4269240	on your screen
+4269240	4270500	that are
+4270500	4271300	most
+4271300	4272480	like smudged
+4272480	4274840	that
+4274840	4275900	leaks information
+4275900	4276640	about your
+4276640	4277700	password
+4277700	4278980	or the
+4278980	4279800	unlock pattern
+4279800	4280100	you know
+4280100	4280300	this
+4280300	4280700	like
+4280700	4281580	anybody use
+4281580	4282160	unlock patterns
+4282160	4283980	like five years
+4283980	4284200	ago
+4284200	4285600	everybody in this
+4285600	4285880	class
+4285880	4286220	was like
+4286220	4286580	yes
+4286580	4287740	I guess
+4287740	4287980	they are
+4287980	4288580	faster now
+4288580	4289840	but apparently
+4289840	4290440	you know
+4290440	4291380	if your human
+4291380	4292760	fingers leave
+4292760	4293400	like oil
+4293400	4294400	residue
+4294400	4295180	on the screen
+4295180	4296340	and so
+4296340	4296980	if you take
+4296980	4297600	a high resolution
+4297600	4298160	photo of
+4298160	4298580	somebody's
+4298580	4299480	smartphone screen
+4299480	4300660	you've got to
+4300660	4301080	figure out
+4301080	4301440	what the
+4301440	4302060	unlock pattern
+4302060	4302340	is
+4302340	4304880	yeah
+4304880	4306220	so all this
+4306220	4306880	is good stuff
+4306880	4308420	but the problem
+4308420	4309020	is of course
+4309020	4309440	like that
+4309440	4309960	the passwords
+4309960	4311340	right
+4311340	4311720	why do I
+4311720	4312260	talk about
+4312260	4312660	all this
+4312660	4313120	previous stuff
+4313120	4313780	because that
+4313780	4314080	would be
+4314080	4314740	not only just
+4314740	4315180	a way of
+4315180	4315800	snoop on
+4315800	4316140	what you're
+4316140	4316400	doing
+4316400	4316880	but of course
+4316880	4317380	to snoop on
+4317380	4317820	your passwords
+4317820	4318740	right
+4318740	4319240	that's the way
+4319240	4319640	to actually
+4319640	4320660	and sort of
+4320660	4321080	learn your
+4321080	4321360	password
+4321360	4322780	the worst
+4322780	4323480	thing we can
+4323480	4324020	do is write
+4324020	4324480	them down
+4324480	4325260	because then
+4325260	4326520	writing them
+4326520	4326800	down
+4326800	4327780	whether it's
+4327780	4328780	on a device
+4328780	4329300	or a piece
+4329300	4329660	of paper
+4329660	4330300	that becomes
+4330300	4331980	a way to
+4331980	4332500	like cause
+4332500	4332900	denial of
+4332900	4333200	service
+4333200	4333540	etc
+4333540	4334820	we can
+4334820	4335400	pick passwords
+4335400	4335660	that are
+4335660	4335980	easy to
+4335980	4336460	remember
+4336460	4340480	some places
+4340480	4340920	don't even
+4340920	4341580	have passwords
+4341580	4342080	I've seen
+4342080	4342640	a few
+4342640	4343640	systems
+4343640	4344140	websites
+4344140	4344660	which
+4344660	4345300	completely
+4345300	4345740	have no
+4345740	4346080	passwords
+4346080	4346540	but instead
+4346540	4347100	have these
+4347100	4347720	special
+4347720	4348300	questions
+4348300	4349120	like
+4349120	4349720	they give
+4349720	4350120	you five
+4350120	4350480	special
+4350480	4350920	questions
+4350920	4351320	every time
+4351320	4351620	you want to
+4351620	4351900	log in
+4351900	4352220	you have to
+4352220	4352720	answer four
+4352720	4353080	out of five
+4353080	4353340	friends
+4353340	4354380	but they all
+4354380	4354760	tend to be
+4354760	4355000	of this
+4355000	4355380	variety
+4355380	4356040	what's your
+4356040	4356580	favorite pet's
+4356580	4356780	name
+4356780	4357980	rover
+4357980	4358520	bio
+4358520	4359920	jerry
+4359920	4361780	and they
+4361780	4362120	give you
+4362120	4362940	some of
+4362940	4363200	them are
+4363200	4363460	worse
+4363460	4363900	than others
+4363900	4364320	some of
+4364320	4364600	them allow
+4364600	4364980	you free
+4364980	4365580	text entry
+4365580	4366660	which is
+4366660	4366940	better
+4366940	4367300	and some
+4367300	4367580	of them
+4367580	4368000	give you
+4368000	4368480	a choice
+4368480	4369880	like
+4369880	4370100	out of
+4370100	4370560	these five
+4370560	4371000	pet names
+4371000	4371360	which one
+4371360	4371660	is your
+4371660	4371940	favorite
+4371940	4372980	really
+4372980	4373500	seriously
+4373500	4374720	terrible
+4374720	4377200	easily
+4377200	4377700	guessable
+4377700	4378180	alright
+4378180	4378540	I think
+4378540	4378880	we should
+4378880	4379100	be
+4379100	4380240	done
+4380240	4380640	for today
+4380640	4380900	yeah
+4380900	4381160	I'll
+4381160	4381400	forget
+4381400	4381620	this
+4381620	4382160	candle
+4382160	4382520	to me
+4382520	4383920	ok
+4383920	4384400	let's be
+4384400	4384560	done
+4384560	4385020	for today
+4385020	4385840	see you
+4385840	4386060	next
+4386060	4386420	Tuesday
+4386420	4387740	come
+4387740	4388040	out
+4388040	4390800	3
+4390800	4391440	2
+4391440	4391900	2
+4391900	4396560	2
+4396560	4397140	3
+4397140	4397860	4
+4397860	4399040	4
+4399040	4399480	5
+4399480	4400600	5
+4400600	4401140	6
+4401140	4401920	6
+4401920	4403080	6
+4403080	4404840	7
+4404840	4405280	6
+4405280	4405920	7
+4405920	4406760	8
+4406760	4407520	7
+4407520	4409060	8
+4409060	4409640	8
+4409640	4409980	7
+4409980	4410740	9
+4410740	4411520	8
+4411520	4411760	8
+4411760	4411940	9
+4411940	4412460	10
+4412460	4413000	12
+4413000	4414000	11
+4414000	4414540	11
+4414540	4414880	12
+4414880	4415000	12
+4415000	4415800	13
+4415800	4416060	11
+4416060	4416980	12
+4416980	4417320	12

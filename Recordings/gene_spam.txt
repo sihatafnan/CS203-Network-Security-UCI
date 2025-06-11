@@ -1,0 +1,1274 @@
+It's the MCM syndrome that I recommend, it's, you know, tells you everything you want to know about spam.
+And surprisingly, 20 years, not many things change about spam.
+But, so why the parallel? Well, spam is annoying, right? This spam.
+And so is the email spam or electronic spam. So that's where the analogy comes from.
+I do some stats. I didn't, like, double check them, but I think they're reasonably accurate.
+So, number of, like, email versus spam, right?
+So you see the bars, the total bars represent total email spam.
+The red part is the percentage of spam. I'm sorry. Total email, percentage of spam.
+From this six-year period, ending in 2022, my guess is it hasn't changed very much.
+It probably continued along the same line up to 20, 25.
+Interestingly, more spam was sent as a percentage of all emails, like, six years ago.
+And then it kind of sort of levels off, you know, right?
+But it's still impressive, right? If you haven't seen this, it is impressive.
+Email is still, right? Maybe not so much, you think, for your generation because you've never really worked outside.
+Or many of you haven't really worked in real jobs.
+But once you get a real job, yes, people use Slack and, you know, some other versions thereof and wikis and God knows what else.
+But email is still there and it has no signs of going away.
+So I predict email is not going to go away for at least a decade.
+It's for the time it is here to stay.
+So, an enlarged percentage of it is spam.
+Spam is not only email-based.
+You may have received robocalls, right? That's spam.
+That's just another version of spam.
+Text messages? Yes? Text?
+A lot of SMS.
+Sometimes WhatsApp, right?
+Well, I get WhatsApp spam.
+Not a lot, but I get it.
+Like, once every couple of weeks.
+SMS, I get once every couple of days.
+Some of these I don't see because it's already, like, filtered.
+Never have I ever received spam on Signal.
+Anybody use Signal?
+Highly recommended.
+For secure messaging.
+Okay?
+If you want to be secure, do not use Telegram.
+That's slimy through and through.
+Okay?
+Do not.
+Unless you want the FBI to knock on your door.
+No, seriously.
+Do not use Telegram.
+SMS.
+Just assume everybody reads it.
+Okay?
+Just assume that it's not private.
+WhatsApp?
+Eh...
+Meta.
+Do you trust Mark?
+Exactly.
+Have you looked at him?
+I don't trust Mark.
+Signal.
+Public domain.
+Okay.
+So, you can look at the code.
+Eh...
+I trust Signal more than others.
+Not that I trust it, but I trust that I did more than others.
+So, if I had to, like, send something securely today, I would do Signal, I might actually split
+the message in two parts and send something by a signal and something by WhatsApp.
+Are you getting what I'm saying?
+Right?
+Okay.
+Yeah?
+But I message is distinct, right?
+Right?
+I message is distinct, but I message is like a stupid overlay.
+Right?
+So, I message works for Macs and iPhones.
+What about the rest of it?
+It's a stupid walled garden religion that Apple imposed on us.
+Right?
+So, yes, iMessage, if you live entirely within Apple universe, iMessage is okay.
+But the problem is, many of us, maybe not you all, but many of us people who use Apple
+products communicate with non-Apple users.
+And you don't often pay attention or know that your text message isn't an iMessage, but
+goes out of the Apple universe.
+And the moment it goes out of the Apple universe, it no longer has that security.
+So, and then, so text messages and messaging apps, you know, have a lot that can present.
+Phone calls, yeah?
+If your phone number is somewhere, chances are, you know, you will get text spam.
+I'm sorry, phone spam by robocalls, sometimes by live people, but that's, that's like not
+really spam.
+I mean, it's annoying.
+And then email is, uh, the lion's share of, of spam is 50% or so.
+So, this is a disturbing thing.
+So this is, a graph is kind of hard to read.
+Uh, so look at the red part.
+It just claims, again, I didn't double verify it.
+It seems reasonably credible.
+Number of people who lost money due to like scams, spam based scams.
+So we're talking here from under 20 million in 2014, all the way to what?
+close to 60 million in 2024.
+Now, I believe that this is cumulative.
+So it's not like 2024, 60 million lost.
+It's all these other accumulated stuff that, by 2024, 60 million lost money.
+I think that it's not, I don't believe this is a discreet per year.
+Although there's a dip here, but I don't, I don't.
+There's a dip here, but I don't believe it.
+They recovered their money.
+Some probably did.
+I would say very small percentage.
+Very small.
+What looks more is, uh, credible is, uh, the yellow part of the graph that shows the average,
+uh, money per person lost.
+You know, and these, uh, when it, when this talks about, uh, scam calls, it talks about also
+email, right?
+So it includes email.
+So things like, oh, you know, we, here's a bill for, I don't know, Norton defender.
+Or here's a thank you for your purchase of Adobe creative cloud.
+Right.
+You've seen those emails, right?
+They say, and here's the bill, or we charged your card or something like that.
+Right.
+And you call the number.
+Somebody does, maybe a relative or a friend, and, uh, they give up their password because
+they're tricked.
+They lose the money.
+Typically these types of scams do not result in like emptying of bank accounts because banks
+often have some safeguards in place, but, uh, people do lose money and no longer.
+Uh, subjects.
+What kind of subjects?
+Well, it's no longer like Nigerian princes, right?
+Right.
+Or Malaysian, uh, multi-billionaires, right?
+Who want to share their immense wealth, uh, with you.
+Right.
+Only if you provide a small amount of information on your bank account where they need to transfer.
+Uh, but you've got prizes and giveaway job opportunities and banking, right?
+The banking spams are typically the ones you've seen where, uh, we identify the problem with
+your account.
+Please immediately call this number.
+Or please click on this link to confirm, uh, your data, right?
+Or change your password.
+Okay.
+Um, and this goes, actually, that's a separate category.
+Request to change your password after your account.
+Then software download, right?
+I mean, uh, you have, we have a new release of, uh, an XYZ package.
+Uh, we see you're using it and enjoying it.
+Please download the free, uh, the next beautiful version of that package.
+Oh, my gambling.
+Haven't seen that much.
+I'm surprised it's 20%.
+Adult content.
+That used to be a lot more, a lot more.
+Like 10 years ago, I would say half of the spam was porn or porn related.
+Now it's, it's down.
+There's probably a good, like social science explanation.
+Cryptocurrency scams.
+Are they out there?
+Not a huge amount, but they're out there.
+I see, I see spam.
+I see spam with cryptocurrency.
+Uh, especially, these are especially on WhatsApp and text.
+Not so much by email.
+And then all kinds of stuff.
+Pharmaceuticals also used to be a huge thing, right?
+Huge.
+Uh, like 15 years ago.
+Pharmaceuticals scams.
+The usual.
+Viagra, Cialis, boldness cures, weight loss.
+Between those three, like lose weight fast, performance, sexual performance enhancements,
+and hair.
+Sometimes it was loose hair.
+Yeah.
+Usually it was like regrow hair fast, right?
+So these three dominated.
+Now they're very small.
+I'm surprised.
+And then, uh, okay.
+Romance scams.
+That's more like, that's a niche.
+That's not in this country so much.
+That's, that's outside.
+And now let's not confuse the dating app scams, right?
+That's a whole different.
+I'm not, I'm ruling those out here.
+You know, these dating apps where they have bots and, uh, uh, that's a whole different
+Okay.
+Uh, here's some more numbers for you.
+About 160 billion spam emails are sending it.
+Billion!
+Billion, right?
+This price.
+We have what?
+4 billion people?
+5 billion people on this earth?
+There's not many emails are sent every freaking day.
+Um, and that's good part of the 350 billion emails overall set.
+Uh, most people receive spam messages.
+The problem is what, so how does spam work?
+Uh, how, how do spammers harvest email addresses?
+Well, the most obvious like they crawl, right?
+They crawl the web and they look for email addresses.
+And all these tricks that people used to do and still do with like, uh, you know, not
+using the add sign, but say add or something, right?
+Or, oh, it's my name at blah, blah, blah.
+Those don't work because these, these crawlers can convert us into email address.
+Sometimes the email address is a guest.
+Like smith at yahoo.com is going to be an email address, right?
+Joey at yahoo.com.
+Uh, you know, uh, Gene Sudik at gmail.com.
+Well, you need to know my last name, right?
+But, but you know, more predictable last names and first names, any combinations that are
+going to be existing email.
+No, it doesn't take a rocket scientist.
+Most of the spam of actual people who send spam don't do the crawling.
+Crawling is done by whole other people system that then sells this harvested spam addresses
+to the spam, right?
+To the actual spam.
+Also, they filter them.
+So when they collect them, they actually test that they exist.
+Right?
+So you get this, what's called data clean in the database world.
+So they clean the data and then they sell the giant, uh, collections of databases of existing,
+uh, email addresses to those who actually want to send spam.
+Uh, maybe it will surprise you that the US sends the most spam.
+There is most spam originates inside the US.
+It may have actually been crafted somewhere else, but the, the sender from the email point
+of view is here in the United States.
+Followed by China.
+Uh, let's see.
+Okay.
+The rest of them are important.
+Uh, financial.
+Now, now this is some, because I was hoping we would have a lecture on phishing.
+I'm not sure if we, at the speed we're going to have that.
+Phishing and spam are like fraternal twins.
+Okay.
+Now, spam can be without phishing.
+And if I draw a Venn diagram, there will be a giant overlap.
+You know, everybody knows a Venn diagram, right?
+Between spam and phishing, but they have distinct parts.
+So, spam is a vehicle for phishing.
+Often.
+Not always.
+Spam can be also selling, I don't know, pharmaceuticals, right?
+Is that phishing?
+No.
+A lot of that stuff is like you want to buy, uh, Adderall.
+Maybe because it's without prescription.
+It may be illegal for you to do so.
+But if you go to the website and enter your credit card, they won't steal it.
+They will ship you Adderall, maybe.
+Or if you want to, uh, I don't know, buy something else, right?
+I mean, uh, a walk, what is it?
+The typical one?
+A walk-in bathtub.
+Everybody knows what that is?
+For some reason, there was a favorite subject of spam for a while.
+That's for old people or people who are handicapped.
+A walk-in bathtub is a bathtub that has a door that you don't have to, like, step in.
+Yes?
+You've seen those?
+Ever?
+No?
+Ever seen spam on that?
+Very popular stuff for a long time.
+So, surely there is a walk-in bathtub you can buy, probably overpriced.
+Okay?
+So it's not phishing.
+It's just selling crap.
+It's the same idea that you get in the mailbox, right?
+You get these useless things, if you ever check, like, actual mail, physical mail.
+You get these useless advertisements, right, for stuff that you don't need most of the time.
+A sail in some, you know, Nordstrom's rack or whatever.
+That's physical spam.
+And, you know, a walk-in bathtub or, I don't know, cheap solar batteries installed in three minutes.
+That's also that kind of spam.
+It's not phishing.
+Phishing is what they want to extract something from you that is, like, very personal.
+Like, credentials.
+Right?
+Okay.
+Blah, blah, blah, blah, blah.
+Oh, yeah.
+Delivery services.
+We have a package for you, right?
+This is typical via text, right?
+Typically SMS, right?
+Because a lot of the delivery services, FedEx, DHL, right?
+Amazon, right?
+They use SMS.
+Many do.
+And so you get this unsolicited text from some special, like a four-six-digit number, right?
+That's not really typically a real phone number.
+And it says, we have a delivery.
+It's waiting for you.
+We just need you to confirm your credit card.
+Details.
+Maybe you won't find that surprising.
+Men 65 and over received the most spam calls.
+No.
+No.
+Not.
+No.
+No.
+No.
+No.
+No, no.
+No.
+No, I'm not.
+All right, I'm sorry.
+Very.
+Holy shit.
+Oh.
+No.
+No.
+No, no.
+and men 18 to 34 the less the least
+any explanation when you might think that's so
+what happens at 65? usual retirement right?
+yes but retirement right? so you have
+idleness right? so you're a working man
+you're a working person you don't have time to talk to spammers
+right? or follow up on some email
+you just ignore whatever you're retired
+now all of a sudden you have a lot of time on your head
+you're bored and you have money
+yeah? you have money you save money you work all your life or whatever
+65 not that long maybe but so these are the most ripe
+the most ripe soil for spammers
+people with disposable income who are idle and bored
+these people I mean crypto millionaires aside
+right? these people have no money
+and they have the attention span of a food flight
+right? not a good target for spammers
+these people also remember these are like boomers
+here 65 and over are boomers
+different generation more perhaps more trusting
+a little more serious you know
+these people roughly your age
+I mean these are men mind you but I think women get fewer
+but I don't know how to explain that
+list not obvious questions
+alright let's switch into something a little more technical
+so email have you ever wondered what your email does when it leaves your hands when you click send?
+was that covered in any networking courses? yes?
+not here
+thank you
+not here
+where?
+I want to go there
+yes I suppose it wasn't covered in networking courses here unfortunately
+which it should be
+so you are the sender
+you have your
+are you all like browser email users?
+who is a non-browser email user?
+anybody use an email front-end?
+like an email program?
+no
+wow
+sign of the times
+okay
+it's a little different in your case
+because
+you are essentially using a front-end
+kind of a fake front-end
+your client browser
+to access your gmail
+right?
+anybody here non-gmail?
+you seem almost hesitant
+look at this monoculture
+you are all gmail users
+is that because UCI dictates it?
+do you have any other non-gmail accounts?
+yeah
+yeah
+okay
+but you use the browser as well to access those
+interesting
+well I don't think the browser on mobile devices
+no
+on the mobile devices I guess you use your mail app right?
+well that's essentially the same thing right?
+everybody uses like an API phone
+well no
+that's a different thing
+okay
+so let's think about your mail app
+like
+do people use mail on phones?
+do you all use mail on phones?
+like that?
+okay
+so you have an app
+right?
+good
+so now we can connect better
+you click send
+your app is that
+is that box over here
+right?
+that's your app over there
+in that box
+it's a computer but it's really like in this case be your phone
+and so it's a client
+it's an email client
+and
+when you configured it
+you had to put some stuff in there
+do you remember?
+like you have to say what is your outgoing server?
+Nicole doing that?
+no Nicole
+oh they give you a profile?
+it's just one of your most login
+oh my god
+oh my god
+okay
+so
+with google
+even if you are using gmail
+with a client
+it goes to
+something called
+smtp.something.something
+which in this case
+will be smtp.google.gmail
+blah blah blah
+and that's your relay
+relay
+now if your destination is in google world
+that same mail relay is going to deliver it to the recipient
+so you won't have this stage
+this mail relay
+if it's google
+and your destination if you have it is google
+it will just hand over to the recipient
+actually it won't handle it
+technically it just stores it
+that some people either pop or imap server
+but that's not interesting
+but generally if you send email to some
+let's say you have a friend in
+I don't know American Samoa
+and you send an email and they have an address with like
+ending with S
+I guess it would be ASA or something like that
+it will be given to the mail relay
+which is the outgoing server
+and that server will figure out
+what is the recipient's mail relay
+okay
+and it will hand over over the internet
+generally this can actually be over the internet
+and it will hand over the mail
+and then it will get to the recipient
+but that's a funny detail here
+the recipient may have a separate server
+where the mail is stored
+that's usually what's called POP3 or IMAP
+depending on how you configure it
+mailbox
+okay
+so you actually fetch email from there
+when you refresh
+all right
+but the important thing is to understand
+is that this is not real time communication
+remember I kept saying that email is stored forward
+so like
+if for example
+this mail relay is down
+this one will buffer your mail
+you might even try a different mail relay
+so that means it's kind of tolerant of delays
+and failures
+TCP is not right
+so this is
+if this was end to end TCP
+it wouldn't work
+but with mail relays because they are running
+application layer right
+yeah
+setting up your own mail relay
+you could in principle do that
+you would have to get your own domain
+probably for that
+you can get a domain
+you can buy one
+you can set up your own mail relay
+you can right now
+let's say you are
+you live in Irvine here
+you are sort of stuck with COX
+internet
+you cannot set up your own mail relay
+at least not easily
+right
+but if you buy your own domain
+then you can
+well I was saying
+so if you set it up right
+and then you are up to your own Gmail
+and you are trying to send
+if you set up your own mail relay
+then it's a front end
+so when you send mail
+you would go for that relay
+and then to Gmail
+but if you are using the browser
+it will still go directly to Google
+your mail
+your mail really will be irrelevant
+you see because when you are using a browser
+you are not using
+you are not using the actual email
+you are using like an interface
+through the email
+so it's like a storage forward component
+can you like do a denial of service attack on the storage forward
+like I assume there is only a limited amount of memory
+generally mail relays have a lot of disk space
+they don't keep those things in memory
+they only keep them when they
+if they try to send
+if they cannot send
+if the send does not succeed
+they buffer on this
+but you could presumably do like a malicious attack
+you could make
+but that will still
+there is a limited amount of time
+that it will try to retransmit
+then it will delete
+you will see mail undeliverable
+how many of you have seen this?
+undeliverable mail
+that's an error message saying
+he tried
+he tried
+and then he gave up
+so
+ok
+ok
+so
+mail relay
+forwards mail
+to the next
+hop
+in principle
+there could be more
+most of the time
+most of the time
+today
+you will have
+at most
+two mail relays
+meaning you will have something like this
+if you are sending mail
+from
+a domain
+to a destination
+in the same domain
+you only have one relay
+because that one relay relay
+will deliver it right away
+to the destination
+does that make sense?
+so
+the way that email works
+is governed by
+a protocol called SMTP
+simple mail transfer protocol
+not extremely simple
+but not too complicated
+ok
+not like TCP
+but it is a protocol
+not a packet form
+right
+so
+here you have
+Bob
+and Bob is
+like
+think of Bob as like
+somebody writing an app
+on their iphone
+a mail app
+or
+like me
+kind of Neanderthal
+who has an email fronted
+I run Thunderbird
+so my email
+is
+is done by
+Thunderbird
+program
+on my
+laptop
+so
+I'm that guy
+and
+when I click send
+SMTP
+governs
+how my
+message
+is transferred
+to
+my
+nearest
+outgoing
+server
+that is configured
+in my profile
+it is configured
+in your profile
+if you look into your mail app
+on your iphone
+or android
+ok
+you can actually see
+what is the
+address
+the host name
+of your outgoing
+relay
+this guy
+this guy
+here
+it's
+it's there
+and then
+so if the email goes to some organization
+where Alice works
+well that organization has its own
+server or relay
+and that
+transfer
+between
+relays
+or between servers
+I use server and relay
+interchangeably
+is also governed by SMTP
+ok
+but it's
+hop
+by
+hop
+not end to end
+hop
+by hop
+and then here
+between
+Alice's mail server
+and actual recipient
+there's something called
+there's several
+protocols for fetching
+actually fetching email
+because
+what email does
+is SMTP
+delivers it
+to the last pop
+but not to the client
+not to the recipient
+the recipient has to explicitly fetch
+mail
+and that's done by
+several protocols
+one
+you know
+pop three is one
+and IMAP
+is another
+and there might be others
+as well
+but these are the two
+the two most popular
+pop
+post office protocol
+and IMAP
+stands for
+internet mail
+and something
+agent protocol
+or something like that
+but we won't be talking about those
+those are not very interesting
+the most interesting part is
+this
+this
+there are two
+ports
+and I'm gonna tell you a bit about SMTP
+because I figured you never heard
+how it works
+alright
+it actually
+it's a little confusing
+because it works
+it works with two different ports
+remember port socket
+port
+port 25
+is a standard email port
+it's been around since 1982
+and
+right around
+very soon after IP and TCP were first proposed
+it is beloved by spammers
+because it is insecure
+so the port 25
+is essentially supporting what's called open relay
+which I'll tell you about in a minute
+it is supported by
+it shouldn't be used
+by your email front end
+so your app for example
+if you look at your email app
+and the configuration of your email app
+one of the things it will tell you there
+is what protocol to use
+maybe you have
+you've tried to add an email account
+to your email app
+has anybody done this?
+add an account
+does it ask you a set of questions?
+mine does
+but that's because mine isn't set up in the standard way
+but in my experience
+all of them ask you questions
+yeah
+like you say
+what is your username
+right
+what is your email provider
+right
+what is your username
+it asks you password
+right
+then it asks you also like
+what protocol
+and that will give you choices
+ok
+so
+25 is one choice
+it might not be supported
+and for good reason
+because it's not secure
+ISPs
+right
+the cloud hosting provider will often block it
+what is it actually used for?
+it is used for
+this
+relay to relay
+server to server
+originally
+everybody used port 25
+for like several decades
+and then when spam became a problem
+they introduced port 587
+and that's the one you're more likely to see
+587
+when you configure your email
+you know
+even if it's done automatically
+you can see it
+in the configuration
+okay
+there's an internet rc
+that's discussed
+it has
+what's called
+a start
+TLS option
+it's not
+it's an option
+it's not a requirement
+but when you use that option
+your email
+is transferred
+over a
+TLS connection
+and that is primarily
+for this
+from your app
+to the outgoing server
+or from your front end
+of your laptop
+to the outgoing server
+okay
+it's a little bit confusing
+but that's how it works
+so
+there are a lot of
+what's called open relays
+out there
+meaning relays
+that do not require you
+to have an account
+to establish a secure connection
+they exist for various reasons
+sometimes they exist because
+you know
+operators of those relays
+get money
+from spammers
+and other businesses
+sometimes they exist because
+people who configure them
+and set them up
+believe in
+freedom of speech
+they just don't allow
+anybody to send email
+through them
+okay
+now
+what does an open relay do
+or what does a relay in general do
+it is
+processing
+so it receives an email
+from the previous
+haha
+it looks at the header
+and it looks to where does it need to go
+right
+what is the destination
+like alice
+abc.com.au
+which means
+the company named ABC
+AU is in Australia
+so it needs to go to Australia
+and so
+it finds out
+what should be the next relay
+topic
+maybe
+smtp.abc.com.au
+maybe
+smtp.abc.com.au
+let's say that's the next email
+it establishes a TCP connection
+and then via smtp transfers the message over
+but as it transfers the message over
+it adds
+it adds
+a received from
+a line
+okay
+into the header field
+and maybe if you looked at the actual raw email
+you might have looked at the raw email message
+in plain text
+have you seen that it has several usually several lines that say received
+that is essentially the path that your email took to get to you
+okay
+that tells you exactly the sequence of relays that it traversed in order to get to you
+and an honest relay according to the scientific protocol needs to add itself to the received
+right
+so the header grows as an email hops around the internet the header grows never shrinks
+so when you receive it you actually see the exact route it took
+not IP route not IP route but a mail route
+now if the relay is hacked or it's malicious it doesn't have to do this
+it doesn't have to abide by the protocol
+and that's why for example spam may be very confusing
+you might not exactly see the hops it took
+especially typical thing is that the spammer has a
+as the first hop a malicious relay
+that does not add its name or adds some incorrect name
+and why to confuse you
+so you don't know where the intel actually comes from
+SMTP will not surprise you
+does not have any built-in authentication
+no built-in security whatsoever
+okay
+like IP
+like TCP
+it was an internet program
+one of those protocols designed in a different at a different time
+right
+50 years ago
+when things were very very different
+let's see
+mail from
+right
+you've seen it
+right
+if you look at the raw text email
+mail from is supposed to be where it actually comes from
+right
+bob
+xyz.com.ca
+which would be
+company xyz in Canada
+okay
+but
+can you trust it
+no
+of course not
+I
+just
+it's like the sender
+sender can put anything you want
+who wants to put
+you know
+moron.trump
+and whitehouse.com
+go ahead
+chancellor gilman
+fbci.edi
+whatever
+he can do it
+so
+and then the recipient
+right
+only sees the IP address
+of the direct peer
+meaning that
+the last hop
+from which
+so the only thing you can trust
+is that of the IP address of the last hop
+from the email
+that's it
+of their relay
+so here's the language of India
+this is what actually happens
+right
+between
+a sending mail server
+like on a client
+so this is in case of your app
+your mail app
+on your app
+on your phone
+and the first
+mail server
+first it says
+some people
+hello
+right
+so this is on port 25
+port 25
+in a
+in a
+in a
+in a
+in a
+in a
+sorry
+let me
+let me take that
+sorry
+this is between two relays
+not between your client
+not between your email client
+on your app
+but rather
+between two relays
+the sending relay
+and the receiving relay
+okay
+so this is using
+port 25
+because that's allowed
+between
+email servers
+hi there i want to send you email
+so it says
+this is not after TCP connection
+is established
+i don't show it
+here
+then it says to some people
+hello
+it's not going to spell it
+that's how it is called
+uh
+and now the reply is
+okay
+i'm ready to receive email
+from you
+then it says
+uh
+the mail i'm about to send you
+is from
+uh
+uh
+hello
+dot com
+and uh
+what the receiving mail server is supposed to do is look at that address and say
+do i want to do i trust this address do i want to forward email that came from this address
+right
+right
+and generally
+i mean unless it
+so you can have a blacklist for example it can consult some spam address database or it can have its own configuration it says okay good 250 means okay here is where it's going to then the sending server says it's going to mary at sweet tooth dot com the receiving server says okay let me check that address do i know where that is
+what that is
+do i like this address
+is it
+is that a
+suspicious address
+maybe it's a non-existent address
+if it's fine it says yeah looks good 250 okay
+and then
+this
+this
+here
+is a data transfer
+right
+actually it's one line at a time
+text
+bam
+bam
+bam
+the last message
+is a dot
+a one line with just a period
+that signifies end of message
+i know
+weird
+so
+when you said
+if you were to insert in your mail a period
+like when you type when you type out in your email
+if you insert a period on by itself on a line
+it's masked
+so that otherwise writing would be misinterpreted as the end of email so it is masked with a slash i think or something like that
+so
+it has to be like one period on a line that says okay we're done
+at this point we're done then there's a quit command and then they acknowledge that this is kind of an error message but it means i acknowledge we're done
+yeah
+is there any particular reason it has to be six back and forth or is it just the first thing they thought
+uh
+uh
+uh
+good question i don't know
+clearly this could be done differently right
+but that's that's how they're that's how the purple works
+you mean these hello okay mail from okay but uh yeah i mean of course you could you could imagine um
+hello is not just okay we're talking this is the beginning of the email of SMTP
+right because TCP is is below it's already established but above it is SMTP protocol right
+so the first two exchanges are they need to be there right just to say we are i i speak SMTP you speak SMTP
+the second two exchanges like mail from okay recipient to okay those could be combined indeed
+i don't see a reason why they're separate but that's just historically how it works
+so it looks more complicated than it is right it's not that difficult
+now this is how port 557 works this is also SMTP protocol but this is between your email client on your
+the app on your phone or a front end on your laptop and the outgoing server that's supposed to be more secure
+so uh instead of hello it's hello which means extended hello why because it's more sophisticated
+okay mail from same as before okay bob looks okay then sending to alice yahoo.com okay check that is okay
+then send data all right every piece of data is line by line until you see a period period is the end
+quit blah blah blah right so it's very very similar except that if you wanted to secure it you could do it
+you could do it you could use a tls option that's called a start tls this is a version that would use start tls
+tcp handshake i showed you here but the beginning then there's really hello 250 means okay and then
+then the receiving email server adds an option count saying start tls it means i support tls
+tls the email client acknowledges 2.8 means go ahead and then there's a tls negotiation there's actually a tls session
+set up here okay and that email is sent over that tls and chances are in new york now stock tls is due
+i can definitely see when i configure a new email account one of the options is pick start tls and
+sometimes your email provider if you don't pick it will not will refuse to work because they say no no no
+i want you to use start tls make sure the email is secure now the typical header fields in an email i can
+attach that you probably see are like these this is not there are more there could be a lot of extended maybe
+you see a lot of fields there called x dot dash have you seen if you look at the email remember
+the same thing feels like s dash that's extended optional fields but the required fields are these
+two to whom is this email this is one or more destinations carbon copy right who is copying on
+these emails and then blind carbon copy okay everyone knows what dcc is what's the stupidest thing anybody can
+have a doubt do with bcc have you ever received email by bcc i've never replied to an email by bcc
+that's the stupidest thing you can do
+does everybody see what i'm saying if you receive a mail by a bcc you use your address is in bcc that
+means everybody else does not see your email as one of the recipients you are a hidden recipient
+but if you do reply all
+everybody will see that yeah you got that email and you weren't on the address list
+you must have been bcc so don't do reply all if you're a bcc on email okay bcc then from who created
+this email the email address usually with a name sometimes with a name not always with a name right
+sender
+usually the same receive okay this is where you have one or more lines of the path
+right in this case just that is line added by each trip but it uses the word transfer agent but the
+sftp relay or server to show you the hops it went through return path right path back to the center
+let's look at this mail plain text
+received by received by so return path received received
+spf we'll talk about this message id from to subject
+okay you see the first receive gives you an ip address
+that was done 12 in a time stamp the second says
+received actually the same time stamp is possible because the time stamp is in seconds so
+uh it is quite possible pacific standard of time uh sftp id is a typically a
+hash of the message some kind of hash that can be assigned every email server can use its own
+heuristic to assign it but the ip addresses are supposed to be legitimate ip addresses
+return path some email address
+uh spf is called the center policy framework we'll talk about it it's basically a um
+this distinction between trusted and untrusted uh sources at the particle uh okay and then there is the
+person presumably who sent this email uh it generally should match return path you see return
+path path and and the front should match
+this is the destination so the victim here is this person
+so this stuff is inserted by relays all of that
+this one link pr is a isp in puerto rico okay
+it claims to have and you see what's there in a uh parenthesis in the brackets is an ip address
+it's supposed to correspond right so the one link pr.net is supposed to correspond to that address
+actually that is somewhere in mongolia
+how do you know if you ping right if you trace your output it's in mongolia
+so already we have that's the spam which means it's an artificially crafted
+uh message
+one in the game of bingo so why do spam spammers want to hide their sources
+right so there is this fundamental thing right when you get spam
+it obviously wants you to do something right if you fall for it it wants you to take an action
+like buy viagra or walk in bathtub or you know order some i don't know some crap on the internet
+right i mean it sends you somewhere right it's not a spam saying it's usually not like oh i don't know
+vote for uh candidate this you get the spam around election time right but um that's different so
+typically it wants you to do something so why if they want you to do something
+meaning go to some website or reply then why would they hide their sources you see the problem
+they hide their sources not so much from you the recipient but from your provider your isp and others who want to kill spam
+you see the distinction they don't really care so much that you know where it comes from they don't want
+others to know so they can't be blacklisted what was your question
+that's true that's true but typically you say you think right intuitively that oh you know it's the
+some even it's either that seller or the agent of the seller that's advertising this product right that
+that they're trying to get me to buy there should be a connection but that doesn't have to be right
+the seller for example could be in a place where they they you know in some other country
+and their email address might be filtered by policy like so what they do is they say you can
+contract the spammer in the united states they send the spammer a template i want you to
+to send to this 10 million addresses this type of message that says dear so and so i am god knows who
+a nigerian prince recently deceased with a lot of money to give away right but the idea is that okay
+if it comes from nigeria right if you see the head of nigeria it would be it would be thrown away but
+if it comes from the us source it won't be right if it's a us isp so that's the reason
+now of course spam filters they they do check the bodies of messages so you you you have these various
+like uh sophos and spam assassin and you might sometimes get from uci write these messages saying
+that we quarantine some messages right have you seen those you have to like to get them you have to
+clicks that go to some link and you know click that's true but spammers are really good at like
+evading them that's a whole separate subject right how do they evade spam filters because spam filters
+basically you know use some heuristics of ai but you know anything that they do can be circumvented if
+they know if you know the algorithms anyway
+there are these clearing houses i think they're still around spam houses spam spam cop dot net these
+are non-profits that you maintain giant data banks of uh spam addresses right there's spam providers
+spam relays um these and this is where your relays these are the typical databases that your mail relays
+will consult in you know as they try to deliver emails and so they will stop like between 15 and
+40 percent of spam but majority of spam still gets through okay uh the other problem is that by the
+time they check the bandwidth is already consumed right so the email can email consumes a lot of
+bandwidth as you can imagine especially if you have uh html inside email right or or some other markups
+right now you have s- does everybody know the s- is secure multimedia mail extension this is when you
+you receive email that is like signed or you know it has multiple parts and so on these these are giant
+or can be quite large uh messages not the typical text email that you get and so that if spammers use
+that it's very difficult um to prevent them from consuming bandwidth so for evading plot tests sorry for evading
+for evading for evading blacklists with blacklists typically don't say oh filter everything with the word
+viagra or anything with the word uh bathtub no they typically list uh ip addresses and host names of known spammers
+so one time trial and very effective trick that spammers use is called thin pipe thick pipe
+and it works like this so you have a target server let's say that serves uh let's say a particular company
+let's say uci ready right so this is our uh sftp server and the spammer wants to send a lot of spam to
+uci uh people like us okay so the spammer controls a botnet a botnet is full of zombies okay zombie botnet
+lsz stands for low speed zombie so this could be like one of your desktop computers in your lab or
+you know it could be a an old laptop that you have at home some would be even an iot device
+then the high speed bot is somewhere else this is geographically far away not near anywhere near the
+low speed zone low speed zombies are many there are thousands maybe tens and thousands of them so
+so the bot picks a zombie and says hey do a tcp handshake with that server right open smtp connection
+then pass on the tcp sequence numbers remember tcp sequence numbers offset
+to this high speed bar you might be getting where what i'm about to say bam send bulk mail with a source
+low speed zone
+remember ip addresses are not a form of authentication so so the high speed bot takes over the tcp session
+you see what's happening here this session was initiated by a low speed zombie as soon as the
+three-way tcp connection is established it passes on the sequence number to its big brother here
+the big brother says all right and sends a lot of spam over to the target server
+a target server thinks that this craft comes over on that connection you see
+cool what happens
+the high speed zombies ip address is hidden from the target server because what will happen
+okay remember how tcp works right it's all acknowledgement right data acknowledgement data
+acknowledgement and data can flow both ways but in email right in email what's happening is one relay
+has mailed message to send the other one is the receiver so the receiver does not send big data back
+right there's no messages to send back it's the sender that sends the message so the sender splits the
+message into chunks remember like tcp segments right because that should be long the email message can be
+long and it sends them with this via this tick line
+with the ip address of the low speed zombie now that that target victim server is going to do
+acknowledgments remember tcp acknowledgments they're not going to come on the thick pipe
+do you see why they cannot right because the acknowledgments will go to the ip address of the
+low speed zombie we don't assume that these guys are controlling internet routing
+so that this guy cannot force the tcp acknowledgments from this target server to come to it
+he cannot
+they will come here and that's okay they're in cahoots with each other
+so
+he's going to keep passing the offset now low bandwidth and this is a low bandwidth channel right low bandwidth
+the bulk of the data gets transmitted here it's a beautiful arrangement and it works now
+eventually the target the cdp server will say hey this is spam right somebody will mark it as spam
+and you'll say oh when did i receive it i received an ip address belonging to the low speed zombie
+okay let's left list the zombie done no more email from that a b address is accepted that's okay
+the high-speed bot goes on to the next zombie because he has thousands okay that other zombie that's done
+barrier that g you get the idea
+there are seven like amazing front-end tools for sending spam this is like one a bit old but it's an
+example this is a sensei program for windows it's a it's a spam automator you can configure it
+to send you see that it it from emails you can consider you can configure it to be like administrator
+at uciadu president usa.gov uh god at heaven dot earth whatever you want you can put it in the from
+uh you see the two aliases right this is to whom is this supposed to go webmaster administrator database
+okay you can vary all of these things subjects you see the subjects vary the subjects right hi hello
+how are you doing montano c etc okay and here's the actual middle text
+it's marked up dear black right so the name will go in there meaning the name two
+dear webmaster we'll go in there or or you see there's like a you don't want right here there's a
+or there is an or or dear colleague don't even need to like specifically address the person or
+hi account this is the typical way to identify when you see when you know it says hi john at uciadu
+have you ever received non-spam that says hi john at uciadu or or anything any greeting followed by your
+account name obviously that person does not know your name right so that's like a 99.99 indicator of
+spam when somebody refers to you by your account name but i guess people fall for it sometimes
+but it's a very nice automator
+all right uh if you're wondering where you know where the open proxies are that you can actually
+spend uh spam through well there's whole clearing houses of these of these proxies that you can what
+does it mean you can go there find a proxy that is alive and configure that proxy to be your outgoing
+smtp server so when you send email instead of going to google right or instead of going to uci
+uh smtp edu it will go to that open proxy okay so you can set this down through
+blacklisting turns out not to be enough because most ip addresses just like in a thin type
+thick type example with a low speed zombie most ip addresses send very little standards
+so blacklisting that's why is is very limited uh effectiveness because you blacklist something
+and it will never spend some time again anyway by the time you blacklist it it's too late
+right what does it show you it's a fraction of clients that says crap in number of appearances
+it means most of them said like once and then they go away
+okay because they're disposable where they come from well this is a while ago okay this is uh this
+is a this is a this is a while ago but at the time this is like almost 20 years ago these were i
+see the as number these are the organizations where spam originally it doesn't mean they spend spam it means
+their clients sent spam
+the the picture would be very different today i already said that
+ah this was around 2010 2012 the world was ruled by uh what like half a thousand giant spam bots
+yeah that was the world back then two particular had the lion's share swisbee and rostock they dominated
+the world of spam they were not themselves creators of spam they were the engines of spam do you see what i'm
+saying they were sending spam they were not creating it they were taking it from their clients and amplifying it
+most of them used a provider in northern california nisp
+okay that was uh very happy making money on them right uh it was not a bot but it had all these
+clients right it hosted these command and control servers command and control server is the brain of a bot
+right as the word name suggests command and control and so both rostock and frisbee were hosted right
+there by this isp now you all know what the difference between hosting provider and isp
+there's very they're similar but not the same you know the difference what's the difference what's the
+difference what's the difference between a hosting provider and isp uh a hosting provider is like
+so an isp provides the internet service and that's it pretty much yeah
+a hosting a hosting doesn't provide internet service it provides like yeah it usually does i mean
+yes true technically no usually does but but its primary purpose is to let you put your stuff on there
+exactly so you can put your web server yeah on a hosting provider okay a world world press is a
+hosting provider right like that google is a hosting provider uh but uh you're also tiny
+this was a relatively small one but it hosted all this now when it was disconnected imagine this three
+quarters of the spam in the world disappeared overnight that was incredible i remember it because uh
+all of a sudden i heard of it like two days later i realized i used to receive a lot of spam i went
+to my phone for the first time in 10 years there was no spam um now swisbee was it was an interesting
+character it was a rookie and a mailer right so basically it was a combination of malware and spam
+in order to have a a botnet you need to have zombies and you have zombies you must have malware they
+created those zombies and zombified them so there's always malware involved in creating a botnet
+it was at one point responsible for more than half the spam worldwide
+and when the mid-color uh hosting provider was taken down the zombies did not disappear right they
+still lived it's like you decapitate the head of the snake but the rest of it is still moving
+so the zombies were motherless all of a sudden right the mother ship has gone away but whoever created
+that botnet was pretty smart and they wanted to essentially for the zombies to look for a different
+mother or a different command and control center and they were programmed to do so and they started
+generating backup domains like this like weird looking backup domains and trying to connect to them
+thinking where's my mother where's my mother right and sure enough the people who were behind this
+botnet created for you know regain control of the zombies by creating a backup mother uh not surprising
+through a registrar registrar is the assigned name authority that uh assigns domain names in a given
+country every country has one well they did it for a russian registrar and hosted new commanding control
+service in estonia so all of a sudden that was like a phoenix from ashes the zombies like in a
+movie they arose and found themselves a mother a new mother it was then disconnected and shut down but
+it was an interesting state rust talk no no no okay we're right all right i just want to well the rest of
+it i guess we'll see either we'll cover it next time or if i decide to switch to a different topic then
+you'll just read it on your own the thing i want to point out is there are legal ways of uh encountering
+spam there's a can spam act that u.s uh uh federal government was passed by the congress in 2003 there
+is something called spf which i mentioned earlier that is a technical way of fighting spam and there
+is something called the main themes maybe we'll talk about it a little bit next time all right any questions
+before we go yes in practice uh if you're like a user of say gmail and someone else is using gmail would
+they would gmail actually use the smtp protocol or would they just like use standard you know in the
+google universe you don't even need smtp protocol unless you're using an app so from your app to google
+google is smtp with a 587 right what he said and after that there's probably no really right it's
+totally internal to google it's like you know if you have hotmail account it's the same you're sending
+to another hotmail very very very similar yeah now when you start crossing domains right what he's saying
+from gmail to hotmail then you are you're going to have this relay to relay okay okay so other than
+uh sample final anything else okay see you thursday
+hey uh did you say uh the final date is it on 10. sorry the final exam date did you say anything
+uh it declared in canvas yes yes okay you can see it from the uh

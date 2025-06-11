@@ -1,0 +1,1242 @@
+system, whereby you log in once per work session, a day, for example, at work, as in a typical
+office, and you don't have to supply your password again. Okay, everything else happens
+under the covers. Okay, transparent to the human user. All right, so Kerberos does this
+by introducing a trusted third party, TDB, which we call Kerberos, collectively a
+kid distribution center. Trusted third party is a generic name, but in Kerberos, the
+terminology is KDC, and inside KDC, there are two components. There is a
+authentication server and a ticket-granting service. Now, what I did not mention last
+time, and maybe I did, but I don't recall, is that the authentication service knows
+all users. Users clients all the humans, right, all the accounts, essentially, right,
+but it does not need to know, it does, but it does not need to know all the servers.
+The Ticket-granting service needs to know all the servers, and is less concerned
+about users, although it has access to the same user digits.
+All right, so this was the overview. User approves identity, requests a ticket, receives
+ticket, goes to access service. But that's a problem, right, because what we know is
+that it's not enough to just get a ticket for a service, right. You may not need the
+service right away. You may have to go to the particular service, like printing
+service, file service, many times a day. So that's why Kerberos separates these two
+tasks of, like, initial authentication that deals only with signal sign-on of the
+user when the user provides a password, etc., etc., and what follows later, which is
+user tries to access various services. Okay, let's go for that. We already did.
+Blah, blah, blah. Okay, I think, do we stop here? No? Roughly? Right, so you see here in
+the cloud. That key distribution center houses both functions. You can think of them in two
+processes running on the same highly secure computer. Okay? User logs in first, gets an
+encrypted TGS ticket. The TGS ticket actually is for the TGS server that it will use later.
+By the time it decrypts it, it has to decrypt it using knowledge of its password or password-derived
+key. You will go to the TGS and ask, I want to access a particular service. If the TGS
+decides to grant it, you will reply to the encrypted service ticket. The service ticket
+will then be decrypted, partially decrypted by the client, the encrypted portion that I'll
+explain later will be sent to the server, and then there's a brief authentication exchange
+between the client and the server. So there's really three phases in the Kerber's sort of
+protocol hierarchy.
+Okay, okay. So here, here I think actually what we almost got to get about that. I want you
+to understand this terminology. The client and the user are almost the same thing but not quite.
+The user is the human. The user knows the password. Okay? The user uses their laptop, smartphone,
+workstation, desktop, whatever, their device, where they log in and supply the password. That
+device, okay, let's call it device, user device, has Kerber's client-side software. Once the user
+provides the password, that client-side software is client from here on. User does not perform
+decryption, encryption in their head, right? Software does it for them. So that's why I use
+the word client to denote that user-side software, which is part of the purpose. Okay, so KC is
+the client's key, right? Client's key, but it's not the same thing as the user password. It's a key
+derived from a password. Okay?
+Known only to the client, to that client, and the key distribution center. Okay? Now, KTGS is a key of the TGS
+for the ticket-granting service. It is known only to the TGS, so you can think of it, it shares it with nobody
+but itself. And if you think, well, why are we using it like that? Because the reason is very simple. The TGS does not need to maintain or does not want to maintain a giant database of all outstanding tickets. Okay? That's a headache. The same way, the same way that on the web today, you have cookies.
+Why do you have cookies? Because the web server does not want to have the headache of maintaining state information about everybody who accesses that web server. So we have cookies. So when you come back to the web server, it can recognize you, spying you, etc. But also it has beneficial side effects. Okay? So it's for the same reason that the TGS is used. Alternative would have been for the
+the TGS for the TGS, sorry, the DGS ticket, the DGS is used. The alternative would be for the KDC to store all tickets locally. But then we have the headache of managing it.
+Okay, so, so therefore, it uses a key that it only shares with itself to essentially encrypt for itself the fact that you have a ticket as a user. And when you come back, you better bring that ticket.
+You don't have a ticket. You don't have a ticket. You don't have a ticket? Your problem. Not server setting. Or not, sorry, not TGS setting.
+KV, the one I think, is a long-term strong key of each server. Printer server, file server, mail server, etc. Okay? Every server has a name V, has a KV, long-term, not converted to anything. It is a key. A real key. Okay?
+Okay? Down to the server and the TGS. Okay. Next, KC TGS. That is a short-term session key that a client, C, okay, will share with the TGS when the ticket is issued.
+When the client first logs in, provides the password, does the authentication exchange. At the end of that exchange, the client will learn this key.
+Okay? It's issued by the AS, but it is for the client to share with the TGS because the client does not talk to the AS anymore after logging.
+Okay? Puzzled? Horrified? Excited? What? Okay? Everything understood.
+All right. Well, there is a shorter-term key. Okay? This is specific to a server. When a client already logged in and has this, wants to access a particular server, it goes to the TGS with its ticket-granting ticket and says,
+I am so-and-so, I want to access that server, please facilitate this. The TGS will reply with a service ticket, and that service ticket will have two parts, but in those two parts, there are some redundancies,
+redundancies, and this KCV is the key that is conveyed directly or indirectly to both the client and the server. So when a client is talking to the printer, or the printer driver,
+the rubberized printer driver on the printer, it will use this key. Okay? That's the hierarchy of key. Almost. There's a little more at the end.
+So, this KNIT program, client, that's the client-side software. It's not the only piece of software in the client, but KNIT is the one that handles this exchange. So there is a user entering a password.
+The password by the client-side software. The password by the client-side software is converted into the KC. But the message, when the user types in, in fact, username,
+Alice. The KNIT does not even have to wait for her to type in the password in order to already send to the key distribution center a message that says,
+hey, I'm Alice, I want to log in. And the reason is because that initial message is not authenticated. Right? It has the idea of the client,
+idea of the DGS, and it seems redundant, but you'll see what it's for, and the time. The current time on the client-side. The time has to be reasonably well synchronized.
+Kerberos, by default, I think, allows five-minute clocks, too. But it can be modified for installation. So the time tells this KDC, right?
+Well, the AS inside the KDC, that this is recent, right? And not a replay, not stale. Okay, so then it issues, then it says, okay, do I,
+the first thing it does, do I know this client? Is this client in my database? If not, no reply or error message. Okay?
+If the client is in a database, the client may be not allowed to log in. In fact, Kerberos has a policy database that I will not show you,
+because it's super boring, but it's necessary. It has a policy database that says, for each existing client, what is the policy for that client to log in?
+A night watchman does not log in in the middle of the day. Okay? A cashier does not log in at 2 AM. These kinds of requirements, policies.
+Who can log in when? A remote employee who works from home Thursday and Friday should not be logging in on Thursday and Friday. For example. Okay?
+Don't quote them, just randomly generated policies. So, then, when it finds the employer, or defines the user, the client, and it finds that the user is allowed to log in,
+it will issue this TGS ticket, or TGT, Ticket Granting Ticket. It's called Ticket Granting Ticket because it's not really a ticket in and of itself, it's a ticket to other tickets.
+All right. So, client obviously cannot forge that ticket. You'll see why. Client can, of course, if the client is a real user and knows the passwords and can compute KC,
+he can forge part of that ticket. But what he cannot do is forge something for the TGT. Sorry, for the TGS. Because he doesn't know the key of the TGS.
+What you see here in green is an encryption. It's essentially a two-layer encryption, but the outer layer is encrypted under the KC, the client's password-derived key.
+And inside, there is a blue KC TGS, right? This is the session key for this entire session, for the, until the client logs out, or the TGT expires, whichever comes first.
+Because you see there is also ID TGS, it better match what the client says. So when the client decrypts this, first of all, if the client cannot decrypt this, like he gets garbage, that means two things.
+Either the client is lying, meaning the user is not the right user, or the user mistyped the password, it happens, or somebody modified this green blob on the way between the KPC and the user.
+Totally possible. Could be innocuous, like a router is buggy, or could be malicious.
+Okay, so failure to decrypt can be any of those things. If the decryption succeeds, the client will make sure that ID TGS he sent in the blue is the same one that comes back in the green.
+It will also make sure that time KPC is reasonably near the time C that he sent earlier.
+And the reason is because time C is in fact acting as a challenge. Yeah? You see that? Time kicks up. So it's kind of acting as a challenge.
+Lifetime.
+Lifetime. Clearly, that's the ticket lifetime for that, for that, for that ticket granting ticket. After that lifetime, you have to re-login.
+And then the last, but definitely in all this, that's a big part, that red part is ticket TGS. That is encrypted using TGS's key.
+Client cannot read it. It just treats it as a block. But if the client decrypts, and everybody, by the way, trusts the KPC.
+KPC is called a trusted third party for a reason. You have no choice but to trust it. It's your big brother.
+If the client succeeds in decrypting the green part, right, the outer encryption, it knows the structure of the red part. It just cannot read it.
+But it knows its structure. It knows what should be inside. And inside, among other things, should be an exact copy of that blue KC TGS.
+And better be the same lifetime, too. Otherwise, the curve of simplification isn't correct.
+Right?
+That key is freshly generated, randomly generated by the AS.
+Right? And so what's inside? Roughly here, this is not an exact format. What is inside is that same blue P, as I said, the ID of the client, for good reason.
+Address of the client. Actually, it could be like a, depending on the version of the purpose, it's either an address, IP address, or a list of IP addresses.
+Okay? Or it could be like blank or like asterisk, which means any IP address. Not advised.
+ID TGS.
+ID TGS.
+ID TGS.
+Well, that's what TGS is going to allow, okay. It's neat.
+Time.
+KDC's time, which is the same as the time in the green.
+And lifetime, which is, again, the same as in the green.
+So there's a lot of duplicate information, and it has to agree, because that's what KDC always does.
+It makes sure that whatever is inside the red part is faithfully replicated inside the green part, okay?
+In fact, there's nothing really secret there. You see, the client can know what's inside.
+But he just cannot decrypt. So, client decrypts with, like I said, green part, the planes keeps TGS, gets the six tracks, the ticket TGS, bam.
+Now, it goes to the TGS, okay, with this TGT on, this ticket from before.
+But it only goes there if it needs to.
+If the client came to work, a user came to work, used the workstation to log in, and wants to, like I said before, take a break, no problem.
+He just wants to run something locally that requires no server access, no problem.
+Kerberis is not involved. The moment the client wants to use some server that is Kerberized, right?
+It's protected by Kerberis, like print something, alright?
+Or use some CAD package, or access a database, or whatever.
+So what it does is it sends the following thing.
+It encrypts, under the case TGS, which he just extracted, or earlier, not just, earlier extracted from the previous packet,
+to encrypt its identity, right, its address, where it's coming from, and the current time.
+And that becomes authentication token.
+Okay?
+Off C.
+In addition to that, it adds the ID of the service.
+It wants server, he wants to access ITV.
+And that red ticket TGS from before, which he cannot read.
+But we remember what's inside there, right?
+So he sends it to the TGS, and the TGS does what?
+It looks at ID and says, huh, well, actually, I'm missing something.
+There's, you'll see it when I give you a full format.
+There's, also, identity of the client is sent in that message.
+It's kind of implied.
+So the, the ticket granting service says, okay, client Alice wants to access server printering.
+So it's, is that allowed?
+So now there's a policy database, right?
+There's, like, a user, remember I said there's, like, a user database that lists users and when they can log in
+and all kinds of policy about when can they, can they get onto the system.
+And then there's a separate policy database that says, which is essentially an access control,
+a representation that says, does this user have the right to access this resource, this server, at this time?
+Okay?
+That is called access control.
+Okay?
+So, if that fails, the TGS doesn't bother.
+It just returns an error.
+Access denied.
+Maybe it was, I forget, maybe it was some code.
+The next thing it does, it authenticates, well, sorry, the next thing it does, it decrypts that red ticket.
+And because the red ticket is encrypted under its own key, it can't decrypt it.
+If it cannot, then, again, either the client is supplying something wrong, or somebody in transit modified it.
+Right?
+You have to always consider the possibility.
+But if it manages to decrypt that red or orange part, then inside it, you will find what we already saw.
+Inside it, you will find this.
+This, this, this, this, this.
+Okay?
+So, among other things, you see the first, the blue part is the KCTGS.
+He will extract it.
+Right?
+He will extract it, and then he will verify off C.
+Off C is computed with KCTGS.
+That's the key she would extract.
+If the off C does not verify, again, two things are possible.
+Either the ticket has been hijacked, and somebody is, or the client did something wrong, or somebody modified it in transit.
+For the message to be fully processed, the TGS has to be able to decrypt the ticket TGS and verify successfully off C.
+And, of course, the policy part, but can this client access this service?
+If all that succeeds, the TGS replies, okay, with, again, double encryption.
+That's a standard format inside, inside Kerberos, double encryption.
+Today, it doesn't do that, but this is canonical Kerberos.
+KCTGS encryption, which the client knows, or should know, right?
+KCV is the new key, randomly, freshly generated.
+That will be the key for the client to talk to that print server.
+Not yet, right, but to be.
+IDV, meaning the server ID.
+Time on the TGS side, and the ticket V.
+The ticket V, in whatever color that is, beige, is not, again, not decryptable by the client.
+But the client pretty much knows what's inside.
+You see, similar to what we saw on the previous slide.
+It's an encryption on the server V's key, long term, strong key.
+On the same KCV, ID of the client, address of the client, ID of the server, just for sanity.
+Time on the TGS side, and the lifetime of the ticket.
+This is how long can this user, Alice, use this particular printer,
+without having to go back to the TGS and get another ticket.
+This lifetime cannot be longer than the TGS ticket lifetime.
+Make sense?
+Otherwise, it would be really stupid.
+Right?
+You don't want to give somebody a right to say print past the time they should be logged back.
+Or, for example, access an employee database.
+Okay.
+So, the client does the same thing to do with TGS before.
+It will, because it knows KC TGS, it will decrypt that outer part, obtain KCV, obtain IDV.
+It will compare IDV to the one it sent in the first message.
+They better match.
+If they don't match, there's something wrong.
+It will check the time TGS to make sure it's a recent time.
+And, you cannot verify TKD, but it just caches it.
+Okay?
+Caches it because we need it again.
+Okay?
+Everybody gets it?
+And now it's time to go obtain CERNs.
+Okay.
+So, you want to actually print.
+Okay.
+So, now you have the client.
+Actually, what I said, the user just says, I want to print.
+But all of this other stuff, like going on the previous slide and this slide, that happens under coverage.
+The user, human, is not involved.
+Right?
+Unless there is an error, right?
+Like access denied or some sort.
+User is not bothered with anything.
+It all happens quickly.
+So, the user, client, excuse me, goes to the server directly now, finally, and says,
+Yo, I have a ticket for you.
+Okay?
+Here is the ticket.
+That pink thing.
+Came from the previous slide.
+Right?
+Here is an authenticator.
+And here is an authenticator.
+To prove that I know the same key that is included in the ticket.
+Why?
+Well, because if I don't know the key, then it's not my ticket.
+Or I'm not me.
+So, the server receives that ticket.
+The server, first, decrypts that ticket using KD.
+Right?
+Decrypts the ticket.
+And inside finds what we already saw.
+That pink thing.
+And it finds KCD, IDC.
+Right?
+It will make sure that the ID of the client is the same one that the message of the next
+slide comes from.
+The address.
+The IP address should be the same.
+Although those are fungible.
+We all know this.
+It will send it to check its own ID.
+Does my ID match what is inside the pink thing?
+The time TGS has to be recent.
+Right?
+But the important thing is the lifetime.
+Okay.
+Okay.
+Now, the interesting thing is time TGS has to be, does not have to be synchronized here.
+Does anybody see why that is?
+All the previous times, when you, all the previous times you saw time, it was like they have to
+be reasonably linear.
+This time TGS does not have to be reasonably linear.
+This has to be within like time.
+Exactly.
+So, if a printer server receives a ticket, a service ticket from some user, and the inside
+when it decrypts the ticket, it's part of the ticket, it says time TGS 8 AM, but it's
+now noon, that's okay.
+That's okay.
+Because the lifetime, right, as long as the lifetime is okay.
+Because it just gives it time TGS plus the lifetime, that's when the ticket expires.
+Okay.
+So now, we're almost done.
+All right?
+So the server extracts, extracts, decrypts the pink ticket, extracts the information, and
+then verifies off C. Why?
+Because the same Kcb better be inside there that was computed with, off C was computed
+with, checks the idea of decline, again, the rest of the time, fine, that time is better
+be timed.
+That off, right, that off C better include the time that's, like, near.
+Synchronized.
+Not perfectly synchronized, but somewhat synchronized.
+Okay.
+Last message.
+Strictly speaking, it's an optional message.
+You can configure curbers to just do one way authentication, like this, to client to
+the server.
+And the reason is you might want to send a print job to, let's say, to the printer, and
+you don't care if you hear anything back.
+Right?
+So the client can just take that, what is that color, lilac, that first message in lilac,
+and append a print job to it, like a PDF file, and say, here, let's print this one.
+So that last message might not always be necessary.
+But typically, I think, by default, it is.
+So it's an encryption on the KCV of the time, time C is from client off C, right?
+So it's kind of a challenge, right?
+Time C functions as a challenge.
+It proves to the client that the server received the previous message, right?
+And, of course, he knows KCV.
+Otherwise, nobody would compute that time C plus 1.
+That is actually one of the vulnerabilities of this version of Curveverse.
+But that's for another lecture.
+Anyway, for now, let's consider this reasonably secure.
+Right?
+That's the idea.
+Right?
+So you have essentially, for a given user who starts out fresh, comes into work, or just
+logs in for the first time, there are three exchanges.
+One is to log in initially.
+The next one is, every server you want to access, you have to get a ticket for that server.
+And then the third is, you do a handshake exchange with that server.
+Now, if the client has multiple jobs to print, let's say, the client gets the tickets for
+printer server at 9am, and then it prints something.
+And then at 10am, the client has something else to print.
+As long as the lifetime of this ticket is valid, the client does not need to go back to the DGS.
+Right?
+It can reuse the same ticket.
+And that's why we have the lifetime.
+Okay?
+Yes?
+Clear?
+So, let's just go through the reasoning.
+For the last, I forgot to mention this.
+Right?
+So, the server, let's look at it from the client perspective.
+The server can only produce this message if he knows the KCB.
+Because only the server.
+Client does not generate messages like that.
+Like this new message.
+Right?
+Because the client is not a server.
+It is not programmed to generate such messages.
+So, the only party that could generate such messages is the right server.
+Because it is the only other party.
+Well, except for the trusted third party who we trust not to do and interfere.
+So, only that server can do.
+Server, on his part, the server can only learn the KCB if he could have decrypted the ticket.
+There's no way he could learn the KCB without decrypting the pink ticket.
+Okay?
+And verifying everything.
+So, everything was A-OK.
+Alright?
+And the server can only decrypt that ticket if he knows KB.
+Right?
+Because that ticket, that pink one, was encrypted with KB.
+Well, then, if the server knows KB, then it must be the right server.
+So, therefore, it's authenticated.
+That's kind of the change of logic here.
+Here's the, sometimes the bird's eye view comes again.
+Okay?
+So, here's the high level of Rubio Athenians for the Stallings book.
+So, it's probably a different terminology but it may help you understand that.
+So, again, once per user login session, you have the request ticket, granting ticket,
+which is essentially login with authentication server.
+You see that all this blob is one machine running two processes or two functions.
+You get a ticket and a session key.
+Then, when you want to use a server, you request service granting ticket, service ticket.
+If successful, you get back a ticket and a session key.
+And then, when you actually use the service, you request service with that server.
+And, if it succeeds in authentication, it will return a mutually authentication.
+Okay?
+And, in another way, more specific.
+These are the messages in Kerberos.
+One day, if you work in the security industry or even for security, doing security function
+in a non-security company, you might have to deal with this.
+Because a lot of industry uses Kerberos in one way.
+Sometimes it's called Kerberos.
+It's integrated like in Windows Enterprise or some other larger software packages.
+But, underneath it is Kerberos.
+So, again, client, server, KDC.
+First message is called ASRequest.
+Authentication, service request.
+That's the login allowed by me.
+The reply with the TGT is ASReply because it comes from the AS file of the KDC.
+Next, when you want to use a service called TGSRequest,
+request from the ticket granting service.
+The reply, if always good, is TGSReplied.
+Then, finally, app.
+Application server request and application server reply.
+Ad nauseam added to that.
+And here's the gory detail of what's inside.
+Okay.
+Now, the terminology here is a little different because it's formal.
+Right?
+Formal from the spec.
+So, ASRequest, principle C is the name of the user.
+You can think of it as the client's name.
+The next one is around, and I'll jump ahead and say that Kerberos works for a single administrative entity.
+Meaning that you cannot have several organizations living under one Kerberos umbrella.
+That doesn't work.
+Each has its own.
+If you have different companies, different parts of the same company, you may want to have two or different multiple Kerberos installations.
+I'll say a few words by the way.
+But this is the, each Kerberos installation is called a round.
+And you need to specify.
+Like, Kerberos is reserved.
+It is, it's a, it's a request to Kerberos, for Kerberos ticket granting ticket.
+And then the uppercase realm, that's configurable.
+Right?
+That's whatever the name of your realm is.
+IP list is the list for potentially empty of IP addresses for which you are requesting a TGT.
+Now, the policy may disallow this.
+And only allow one.
+But, policy allows it to specify multiple.
+Say, for example, I'm going to use an IP address of my MacBook and my desktop and my smartphone.
+Okay.
+But, if the IP list is empty, that means I want a TGT that's independent of the IP address.
+I want it to be portable.
+Again, that might not be allowed.
+That depends on the installation.
+Lifetime.
+I want the ticket for this lifetime.
+That may not, may or may not agree with the lifetime the, the, the, the, the AS wants to issue a ticket for.
+Anyway.
+Okay.
+That's AS request.
+AS reply.
+Let's stick to that, let's stick to that second line.
+AS reply is the same, the realm.
+Right?
+Just echo it.
+Okay?
+Timestamp on AS.
+Lifetime, which cannot be longer than what the user asked for.
+Can be shorter.
+So, the user can ask for 24 hours but only got 8 hours.
+That's okay.
+Lifetime, and KC, TGS.
+Right?
+So, that's the key.
+Remember, we already talked about it.
+And all that curly brackets, curly brackets denote encryption.
+All that is encrypted under KC, which is the client's password or IP.
+And then, that little seeming little part in yellow is TGT and encrypted for TGS.
+Notice what's inside that.
+Okay?
+It's encrypted, right?
+So, I only show you the unencrypted part on second line.
+It has the name of the principle, which is the same, the name of the user, the round,
+the IP list, the timestamp of the AS, lifetime, and KC, TGS.
+So, it actually duplicates a lot of the fields you will see on the left side.
+So, it's encrypted.
+So, it's encrypted.
+So, it's encrypted.
+So, it's encrypted.
+So, it's encrypted.
+So, it's encrypted.
+So, it's encrypted.
+And the KC, which is encrypted.
+And the KC, which is the client's password or IP.
+And then, that little seeming little part in yellow is TGT and encrypted for TGS.
+Notice what's inside that.
+Okay?
+It's encrypted, right?
+It actually duplicates a lot of the fields you will see online.
+Great.
+All right.
+And TGS request.
+This is when this client goes to the TGS and says, I want a ticket for the printer.
+That contains principle V.
+Principle V is the name, official name of the printer service or whatever service you
+want access.
+Lifetime.
+For how long?
+Again, cannot be longer than the lifetime of your TGS ticket.
+And an authenticator, right?
+You don't come to the door without an authenticator.
+So, the authenticator one-off-one is an encryption of the principal C, meaning his own name, timestamp,
+current timestamp on C, the client, and checksides.
+Okay?
+It's an authenticated checksides.
+Very simple checksides.
+Okay?
+So, TGS request arrives.
+It is decrypted and verified.
+Okay?
+And when it's successful, everything goes well.
+The TGS replies with this, with the service ticket.
+And it contains two parts.
+Remember?
+The name of the server.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+And it contains two parts.
+Remember?
+The name of the server.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+The timestamp.
+And theuler of the przyst.
+As for the client.
+So, this part, this part is decrypted by the client.
+And then the next part is only decrypted by the server, when the client decides to go to the server.
+Okay, then these are where the last two messages when the client goes to the printer server and supplies an authenticator
+and then takes this from here, just per meter, copies it here.
+Okay? And yeah, this is time sample, 400 plus 1.
+Any other questions? Any questions at all?
+It's not as difficult as it might seem. The notation might be a little obscure, but stare at it for a while, and then for a while, everything will be clear.
+No question. Okay.
+Now, as I said before, Kerberos isn't made for large networks or administratively heterogeneous environment.
+So, you want to divide even if you have a large company, even if it is one administration, but you have different geographical locations
+and just very large installations, like maybe you have one building, but there are really different departments.
+If you have a product department and a sales department and marketing, maybe you want to separate and have two different Kerberos realms for those.
+It's just easier to do like that. But every realm has to have a KDC. And every realm has to register its own server and its own users, right?
+So, now, how do you interoperate? Well, that's done in a kind of very obvious or naive way.
+And so, one way to think about it is, like, imagine you are at UCI, and we run our Kerberos realm, which we actually do.
+And then we have, let's say, UC Riverside, about 50 miles away. It's another UC campus. They run their own.
+So, they'll have ROM at, you know, Kerberos at UCR, and we have Kerberos at UCI. Those are two different realms.
+But because we are all good UC citizens, we are allowed to access each other's resources.
+Okay? So, how do we do that? Well, you want to do that, you first need to log in locally, where you are known.
+Right? So, your UCI, your UCI denizen of sorts, right? You log in here, you get access, and then, you go to the TGT,
+to TGS, and you ask for a special TGT. For a special ticket. Not a TGT. So, you follow me, you log in, you get the ticket-granting ticket.
+And now you go to the TGS and say, I want a ticket for a server, but it's a special server, it's called KDC at UC Riverside.
+So, the way that it's treated is like another server, but it has to be explicitly registered locally.
+And it has to be bought. It doesn't have to be bilateral, but it makes sense if it was bilateral.
+Does that make sense? But you're not done. The process is more complicated than that.
+Because once you get a service ticket for a TGT, for a TGS in Riverside, you then have to, you don't need to log in.
+You don't need to log in. But you need to bring that service ticket and contact directly the KDC at Riverside.
+And it will say, oh, this is a foreign issue ticket, let me look in the database if I know of UCI KDCs.
+Oh, yes I do, in which case, you know, you can get an application ticket on me locally at UC Riverside,
+and then you can get, you know, printing access and file access and all that. Okay?
+So, it's not, like, trivial, right, in terms of, like, what's, the particles are trivial, given what you already saw.
+It's not really very different, but there are more of them required in order to support cross-ground functionality.
+And also, every KDC, then, has to share a key with every other KDC.
+So, if we have 10 UC campuses, right, and each UC campus runs, you know, its own Kerberos installation,
+there have to be 90 keys, right? And, you know, every UC campus has to share a key, right?
+A KDC, you know, every two KDCs have to share a key.
+And that has to be done manually.
+Now, one of the important things to take away from Kerberos is that it's not super scalable,
+it's not like using public key, you know, in the world of web browsing, okay,
+where things scale to the entire world with questionable security, of course.
+But we feel like they scale to the entire world.
+And Kerberos things don't scale that far.
+But they scale to reasonable size, medium-sized organization.
+And that's important, okay?
+The other interesting thing is Kerberos is basically a symmetric key.
+It does not use, by default, right?
+It's in its vanilla form.
+It does not use public key cryptography at all.
+Which, for example, if you know anything about what's going on in the world of tech today,
+of science, makes it kind of attractive for our quantum resistance.
+Because quantum technology will, sooner or later, make most public key techniques weak or obsolete.
+And that would leave us with either some very exotic public key techniques,
+of this security which we're still not sure about,
+or it would leave us essentially with symmetric key work.
+Like what Kerberos does.
+Anyway, so that's the detour.
+So that's a nice feature.
+The services that use these short-term session keys.
+For both, like, client login session.
+The session key lasts for as long as the TGT is valid.
+And even short-term client application key, right?
+Meaning client-server keys that are used per service.
+Now, current release, I think there was a version last year,
+right middle of last year was released.
+This is 1.13.
+You can, Kerberos is fully public domain.
+If I had a TA and this was a larger class, I may have,
+I would have had maybe some actual exercises with Kerberos.
+Because you can totally install it and play with it.
+It's not that difficult.
+It's reasonably well maintained and it has good documentation.
+In order to use it, you have to, of course,
+install the client-side software.
+Not only that, but the application service.
+So if you want to Kerberize your printing,
+you want to Kerberize a certain database access,
+you have to essentially reinforce every service, right?
+So it usually requires a bit of work.
+Not a huge amount of work,
+but you have to link Kerberos server-side libraries.
+And so you cannot just take a software,
+generally I don't think you can take a software package
+as it is and just plunk it into Kerberos shell
+and say it's Kerberized.
+It has to be Kerberized, Kerberos-friendly.
+It may come Kerberized already from the manufacturer,
+from the software provider.
+That may be.
+But if it doesn't, you have to do it yourself.
+Right.
+So the current version of Kerberized,
+like I said, it's released 1.3.
+Version is called 5.
+You can't see it over there.
+It's obscured by the zoom logger.
+But the version I described to you is more older
+and still in use.
+It's called version 4.
+This is where version 5 has certain interesting modifications.
+For once, it addresses one of the problems in Kerberos,
+which is the first message,
+the first login attempt message, right,
+by the user is in clear text.
+You recall that?
+The key, the password derived key is not used in the first message,
+from the user to the AS.
+And what that says is that if you're an adversary
+and you know the name of the user,
+then all you need to do is send a clear text message,
+pretending to be that user.
+And what you will get back is a nice present.
+And the nice present is, well, it's an AS reply.
+Remember, that's that message.
+But remember that nice present carries in it,
+AS reply carries in it this first part,
+which is encrypted in the KC.
+Yeah?
+That's a password derived key.
+So if you can brute force the password,
+you can decrypt it.
+Yeah?
+Oh.
+No.
+You just brute force.
+Basically, you just brute force the password, right?
+It gives you something to play with.
+It's essentially like you just got an entry
+from an Etsy password file.
+You can just try to decrypt it
+under every possible password derived key
+until you find inside the name of the principal, right?
+You'll know when you hit pay dirt.
+You'll know when you guessed the key correctly.
+Right?
+So it's subject to dictionary attacks.
+The alternative is very, very simple.
+You require what's called pre-authentication,
+which means you require the client to prove knowledge
+of the password or IP in the first message.
+And that's something that Kerber's 5 supports.
+That's called pre-authentication in the initial
+answer request.
+That's not without problems itself.
+Yes?
+The attacker receives that pre-authentication.
+Exactly.
+Exactly.
+Well, let's talk about it for a second.
+Does everybody understand what he just said?
+Are you following?
+No?
+No?
+Hello?
+Sign up with your phone?
+Laptop?
+Big thoughts?
+Worry about the economy?
+No?
+Does everybody understand what he just said?
+Yes.
+If you put, if you require the client to authenticate itself
+in the first message, then there will be something
+obviously computed with a password-derived key
+that is present in the first message.
+That means, yep, okay, that's an opportunity for a password attack,
+right?
+A brute force attack on a password or dictionary attack.
+But are they the same?
+No.
+The main difference is you can't just get an arbitrary
+You get, see, in the first case, right?
+With the current first version I showed you, you get something
+for nothing.
+Right?
+You get something for nothing.
+You just generate a clear text, Alice, blah, blah, blah,
+timestamp, how difficult to get the correct time, et cetera.
+And you get back to present.
+With pre-authentication, indeed, you are still subject to dictionary attack,
+but you got to be lucky and wait, you know, lie and wait, right?
+Lie and wait until the victim user logs in.
+You see what I mean?
+So it's not like, you know, oh, at your convenient time,
+at 3 a.m., we're going to generate a bunch of these
+and get back your class.
+No, no, no.
+You have to be there when Alice comes in, you know,
+and let's move that.
+But, so there is a difference.
+It's not a huge difference, but it is a difference.
+Right.
+So the other modification in Curves version 5, which is today's version,
+is this in client-server application.
+What I showed you before, the client and the server, application server,
+use the same KCV.
+Remember KCV?
+Like, you wanted to print, you used KCV, right?
+Or, you wanted to print again using the same ticket, you used again KCV.
+Well, that's considered poor cryptographic hygiene.
+To reuse the same key for different, like, let's say, server, client service sessions.
+So instead, Converse 5 derives, uses the KCV as a master key for the ticket,
+and then derives individual subkeys for each, like, short client-server session.
+Does that make sense?
+Shorter, shorter, shorter.
+Yeah, that's right.
+So you got your ticket to use the printer for the next 5 hours.
+During those 5 hours, let's say you printed 5 times.
+In Curves version 4, you would have used the same KCV to print.
+In Curves version 5, you would use 5 different subkeys.
+Okay?
+Now, it should be abundantly clear to you, right,
+that the way that the servers are treated in Curves version is as being stateless.
+Does everybody understand what I'm saying stateless?
+The same way that we don't want the TGS to keep track of the issued tickets
+for all the currently loading users, because it makes it heavyweight and unpleasant.
+Even so, even more so, it makes it unpleasant for the servers to keep track of tickets.
+Because imagine what would happen.
+All the users come in the morning, log in, and start printing, and accessing databases,
+so all the poor servers would have to remember all the tickets that the users brought to them, right?
+Cache them.
+That's overhead.
+You can lose things, isn't it?
+But instead, Curves is stateless.
+The server in Curves does not know any users.
+Does not know you from you from me.
+No idea.
+A Curves server only knows one thing.
+Its master.
+And its master is the KDCs.
+Or, more specifically, the Ticket Granting Service.
+And it shares only one key, long term, with that Ticket Granting Service, right?
+So whatever the master says, it obeys.
+Right?
+And keeps no state.
+Keeps no state.
+Which is very nice.
+Because otherwise imagine, you'll print, like a printer is a good example.
+Because printers are usually zanemic devices.
+Right?
+They're good at printing, they have fast mechanical parts and whatever.
+But, in terms of computing power, they're not very powerful.
+And they don't have a lot of storage.
+Because in some ways, printers are like embedded devices.
+So, you don't want to overload them with having to cash tickets.
+So, it's good.
+Now, the other thing is, what you can do in Carver's D5 is you can do what's called forwarding.
+Take that forwarding.
+Yeah?
+How much compute do the heavy duty printers have?
+Well, you know, if you pay $50,000 for a 3D printer, that one will definitely have compute
+power.
+But even there, it's such a precious resource.
+You don't want to overwhelm it with like caching tickets.
+Why?
+Right?
+I don't know.
+Well, it's like the ones we have in DBH.
+Yeah.
+Those are like connected to the internet and everything.
+They are.
+Right.
+That's going to be a lot more power than my printer.
+No, for sure it will have more power.
+But it's still not a full-blown computer, right?
+It will probably have, my guess is that something that we have in DBH will be a power of an iPad
+of some sort.
+Maybe a little better than an iPad, you know?
+Some kind of embedded like, like a, like a airplane entertainment system type, you know,
+device.
+Or a car, infotainment system in a car.
+But not, not a lot stronger than that.
+But also, it's not just compute, it's also storage, right?
+That's the other thing.
+If you have a cache, it better being super fast and expensive memory.
+Yeah.
+So, but also recall, Kerberos was designed, did I say when it was designed?
+1987.
+Okay?
+Your parents were in kindergarten.
+So, the internet already existed.
+But, you know, it wasn't like this, like it is today.
+But, so, considering that something like Kerberos aged relatively well, I would say, it's still being used.
+And it still kind of resembles its original, it's not exactly the same, but it looks very much like what was there in the early 90s at least.
+That's a long time ago.
+There are very few products you can say this about.
+Right, so, authentication forwarding means that you can forward the ticket.
+Like for example, if you're, if you're accessing a file server, it needs to access, and it needs to access your box.
+If you're accessing a mail server, it needs to access a file server.
+So, in the original Kerberos, you would have to get two separate tickets.
+And it was clumsy.
+And now, the ticket that the file server gets can be forwarded to the mail server.
+And it can honor it.
+So, there's like some games to give you from that.
+There are, the Kerberos 5 supports hierarchies of realms.
+So, what I described to you about inter-realm thing and splitting things in Kerberos realms.
+Kerberos V5, if I'm not mistaken, I think I'm not, supports hierarchies.
+Where you don't have just like multiple realms as peers, but you have some super realms.
+Alright, and there's other stuff.
+Oh, it also supports multiple description schemes.
+The original Kerberos used the DES with some weird mode of operation that was not standard.
+And there were some problems because of it.
+Now, you can configure Kerberos to use pretty much any decent encryption function in the hash function or MAC function.
+But just to give you an idea about pre-authentication, coming back to that feature.
+So, as I said, anyone in Kerberos version 4, the way you, the one you sort of described, can use the initial packet as a vehicle for obtaining, you know, gifts.
+Right?
+Things encrypted with passwords and so on.
+So, it makes password guessing easy.
+In Kerberos V5, the first message, the AS request message that you saw earlier, requires another field called PA data.
+And basically, it's like, you can think of it as a timestamp, client's timestamp, encrypted under the client's key.
+It just says, look, this is my timestamp, my current time, encrypted under my key, presumably only I know the key.
+Well, the AS.
+So, the AS only replies if it can be encrypted.
+Okay?
+But in reality, it's done more like this.
+Typical configuration is, the client will send an AS request, normal one, without any authentication.
+And the server will reply, the AS will reply with like a special error code.
+It's an error.
+Pre-authentication required.
+Don't come back to me until you demonstrate the knowledge of the KC.
+And so, that's number three is AS request with the PA data that I showed you before.
+And now, AS is happy if it issues a tissue.
+Everything else is the same.
+Come on.
+So, re-authentication is one new thing, but there are extensions.
+For example, today, Kerberos can be 45 with something called pkinit, which, if I remember correctly,
+allows a user to securely fetch his public key.
+So, the user can be registered with a public key.
+But the user does not need to remember their public key.
+So, the idea is that the user tries to walk in.
+The user's public key will come back and allow, sorry, private key.
+The private key will come back from the AS and will allow the user to use that private key
+for all subsequent exchanges, so that Kerberos is fortifying it.
+The other extension is for public key based cross domain authentication, not important.
+So, what is Kerberos used for?
+For many things, like I said, Windows Enterprise Networking uses it.
+And if you've used Windows on an enterprise scale, even like here in ICS, you probably
+used Kerberos without knowing it.
+You may have occasionally seen some errors that will tell you, that will leak information
+that you are using Kerberos.
+Anybody seen those?
+Anything starting with KRB?
+All right.
+So, it's also used for securing, if you are a Unix person, and you remember these Unix commands,
+like remote shell, remote exec, RCP remote copy.
+Right?
+So, these are insecure commands.
+Right?
+Natively insecure commands.
+FTP, right?
+If you secure them, you can do so, if you want to secure them, you can do so with Kerberos.
+And then it becomes essentially Kerberized, RCP, Kerberized, RXAC, Kerberized shell, etc.
+You can also Kerberize the superuser command.
+Yeah, that's, Jesus.
+Let's see quickly what we're going to look at next.
+Okay.
+So, that concludes Kerberos, and next we're going to go and look at web security.
+Oh.
+Well.
+SSL TLS.
+Any questions about Kerberos at all?
+Okay.
+Okay.
+So, everybody knows SSL.
+Everybody knows SSL.
+TLS is kind of the same, sort of, kind of.
+Anybody know what they stand for?
+Ask them.
+Ask them.
+Ask them.
+Google.
+Or your favorite chat to be.
+Secure sockets layer.
+That's SSL.
+Transactional layer security.
+That's TLS.
+And SSH is secure shell.
+Okay.
+Okay.
+So, we're going to go through the part.
+The particle is complicated.
+But I figure if you know anything, if you want to know anything about today's security
+landscape in the real world, you do need to know about Kerberos.
+You do need to know about SSL TLS.
+And you probably need to know about something called IPsec.
+Does anybody know what that is?
+Okay.
+Two people.
+Okay.
+That's IP security.
+To be covered later.
+So, these are all sort of standards of sorts.
+Kerberos is actually a standard.
+Does anybody know what internet standard means?
+Does anybody know what IETF is?
+Very few people.
+How do you live in computer science world and not know this?
+IETF is Internet Engineering Task Force.
+It's an organization run by volunteers that essentially governs how the internet works.
+Everything about the internet.
+Well, not the web, essentially.
+The web is a web consortium.
+But the internet, essentially, and just above the transport layer, is governed by ATF.
+Internet Engineering Task Force.
+It's an international organization.
+They have working groups.
+And these working groups are concerned with everything from, like, network layer.
+I mean, they don't work on Wi-Fi.
+So, they don't work with data link layer.
+Because that's not interesting.
+They don't work on radio jamming or physical layer.
+Radars and microwaves.
+No.
+IP and IP.
+Right?
+Actually, between IP and, let's say, a session layer.
+Everything there is subject to IETF approval.
+And they publish official documents that are called RFCs.
+Funny enough, it stands for request for comments.
+But it's not really request for comments.
+It's usually an internet standard.
+Okay?
+So, Kerberos has an internet standard.
+If you go look, RFC, Kerberos, you'll find it.
+It tells you exactly how Kerberos works.
+If you look at IP, V6, for example, it has V4.
+They all have RFCs.
+And they tell you exactly how IP works.
+Which means that if you follow the standard, you can implement that protocol, that format,
+in whatever language you want, in whatever platform you want.
+From a smart toaster to a supercomputer.
+And they will be able to interoperate.
+If you implement correctly.
+Okay?
+So, Kerberos is a standard.
+So is SSL TLS.
+And so is that inside.
+All right.
+So, history.
+SSL goes back to the 90s.
+I remember version 2.
+It was like late 90s.
+Version 3 is what we kind of use today.
+Right?
+Because version 3 is essentially TLS.
+Don't ask me why they switched the names from SSL to TLS.
+It had something to do with trademark dispute.
+Okay?
+But there is an RFC 22.6.
+So if you just search on RFC 22.46, you will find a very detailed specification of SSL.
+Sorry, TLS.
+And if you want to look at the open sources limitation, there are many.
+The most popular one is this, open SSL.
+Okay?
+It also implements a lot of crypto stuff.
+So if you're ever dealing with crypto stuff, and you want to dig, and you should not be
+baking anything on your own, because you will mess up royally.
+You should use that.
+Because it's been around for a long time.
+And although occasionally there are bugs, there are fewer bugs in that library than there
+are in most others.
+So, SSL TLS, you secure it in the transport layer.
+It sits just above TCP.
+Okay?
+Although these days, there are also to sell versions for UDP, but we will not do something
+else.
+That's a separate topic.
+So, think about TCP.
+Everybody knows transaction control protocol, transmission control protocol, depending on
+who you ask.
+On top of it, it's going to be TLSSL.
+It's optional.
+It's not always present.
+Okay?
+But it's secure socket, right?
+That's where on top of TCP you have sockets.
+Okay?
+If you want to TLSSize your applications, like with parameters, you need to change them.
+Okay?
+Now it says here, because originally it is worth my slides, that it's a thin layer between
+TCP and HTTP.
+That's not actually true.
+It's not just for HTTP.
+Yes, most things that use, or the biggest user of TLS is the HTTP protocol.
+Okay?
+So whenever you have HTTPS, right, and you see HTTPS in your browser window, you are using
+SSL.
+Or if you use some godforsaken browser, maybe they'll have like some little lock symbol,
+like they used two years ago, instead of HTTPS.
+So that might not be spelled out.
+But if you see a lock symbol or HTTPS explicitly, of course, you are using TLSS.
+It comes with support, right?
+So most reputable browsers, clients, and of course, HTTP servers come with SSL TLS support.
+So it's built in.
+There are two layers in the TLS SSL.
+The layers should not be confused with particles.
+Okay?
+There is called the record layer for just transmitting packets.
+Okay?
+And the upper layer where you do what's called protocols, right?
+And basically record layer is just treating one SSL segment or packet at a time.
+And at the upper layer, you do all this kind of management.
+You will see what I mean in a second.
+So it kind of looks like this.
+Okay?
+So you have this TCP and you have SSL record protocol.
+And then on top, you have these other protocols.
+Okay?
+So it looks weird, I understand.
+Because HTTP, you see HTTP is shown as being on top of the record layer.
+And SSL itself, as the N-shaped protocol, is shown at the same layer.
+Well, it doesn't make sense yet, but it will.
+So you just read this.
+My throat is getting raspy.
+In some ways, you will see some of the same concepts as you saw in Termverse, but SSL TLS is not a symmetric, sorry, it's not using symmetric cryptography throughout.
+It uses, like many other products or software, it uses public cryptography initially to establish, to help establish the secure connection between the client browser.
+I say that because that's the biggest application.
+But keep in mind, SSL TLS is not just for browsing.
+Okay?
+But I will use browsing as an episode between your client browser and the web server on the other end of the world.
+All right?
+It's using public cryptography to establish, just in the very beginning, it minimizes, in fact, the use of public cryptography, but it does not avoid it.
+Okay?
+And once the initial connection is established, public cryptography is no longer used.
+All right?
+So, but there's no trusted third party.
+Okay?
+No KVC, no AS, no TGS.
+There's just a big, bad world out there.
+Okay?
+Where innocent little clients talk to potentially dangerous servers.
+All right.
+Let's look at the actual protocol.
+Okay.
+So, we're going to use terminology client and server.
+So, I know it's a little bit confusing, but it's actually not because if you think in Kerberos, client and server, where?
+Well, user and client and server.
+So, here are two.
+We just don't have KDC, AS, TGS anymore.
+Let's see.
+In TLS SSL, 99.9% of the time, only the server is authenticated.
+Okay?
+So, that's the philosophy also that is different from Kerberos.
+Only the web server, right?
+Think of the web.
+Only the web server is authenticated.
+Have you ever, has anybody ever seen mutual authentication in CSL TLS?
+Assuming you know what I mean.
+No?
+I've seen it twice, three times in the last one year.
+So, TLS does support mutual authentication, but generally does not do it because it actually has little justification.
+And the reason is like this.
+When you are sitting in front of your browser and you type in or paste a URL, think about what happens, right?
+Something gets parsed by your request.
+And there's like three parts really to, well, four parts to the URL.
+There's the protocol identifier, which is the first part, right?
+Doesn't have to be HTTP, by the way.
+But usually it is, right?
+SSL is HTTP, yes.
+Then there's like delimiters.
+Then there's something called the domain name.
+Right?
+It's actually an address, sorry, a host name or a name that can be used to resolve to, you
+know, be resolved by DNS, right?
+Domain name service to produce an IP address.
+So it actually refers to an entity.
+And what follows it?
+There's a slash what?
+What happens after www.uci.edu slash what?
+Maybe nothing.
+Maybe nothing, right?
+Well, wait.
+The domain name is where you want to go.
+What's after that?
+What is it called?
+Path.
+Path, yes.
+It's the path.
+It looks like a Unix path, right?
+It might even be.
+It doesn't have to be.
+Could be interpreted differently, but could be a Unix path, right?
+Like go to that machine, go to that web server, that physical host, and go slash, et cetera,
+slash password, blah, okay?
+And then what?
+And then there might be another component after that.
+Yeah.
+Frequently overloaded.
+That's why you see these URLs that spread for miles.
+Right, so what are we concerned with when we browse the web?
+Fishing?
+Squatting?
+Anybody know about squatting?
+Mistyping?
+You mistyped one letter or one number in the URL and suddenly you are in a God knows where?
+Might pretend?
+Yeah, you type wellsbargo.com and you might wind up in a site that looks like Wells Fargo,
+but it ain't.
+And here you are entering your username and password and your account is toast within minutes.
+Without SSL TLS, it would be.
+So, what's important for you, the user, for us all, is to go to the right website, right?
+When we click on the bookmarks, a lot of times smart people, right?
+People care.
+If they go to particular websites more often than once or regularly, they'll put them in bookmarks.
+So, you click on the website, right?
+You don't actually enter it, right?
+How often do we actually enter it?
+Yeah, basically, enter it.
+So, we're concerned with the authenticity of the website.
+There's no human there, usually, right?
+It's a website.
+There's no human on the other side.
+There's no Bob.
+Right?
+It's a website.
+So, we want to make sure we're going to the right website, the authentic website.
+That's why the website authenticating to us, to our browser, is important.
+How important is this to authenticate us to the service?
+Well, yeah, this is like a social network or another bank where you have an account, yeah?
+Clearly.
+Yes?
+It's important.
+But does your browser know how to authenticate as you?
+No.
+No.
+You authenticate the human using a password, a PIN, an MFA, or something like that.
+A YubiKey.
+So, client, the real client to web server authentication happens at a higher level, or higher level.
+Userless.
+For the client, stay outside, please.
+For the client, it doesn't make sense to authenticate to the server, the same way the
+server authenticate the client.
+Moreover, a lot of web servers we use don't have user accounts, or at least don't require.
+If I go to WWCIDU, I'm going to require an account.
+Does it say you log in?
+No.
+There's a lot of public information out there.
+If I go to WWWhiteHouse.gov, a lot of public info.
+But I care that I go to WWWhiteHouse.gov, not WWWhiteHouse.com, because that used to be a porn site.
+I don't know what it is now.
+So, yeah, I want to make sure I go to the right place.
+Right?
+And so, UCI.edu, not UCI.org, which is United Cycling International, which exists.
+That's the other UCI.
+So, what I've said, that justifies the reason why SSL is so leaning on the security of web
+servers and much less concerned with the web client.
+Okay.
+See you Tuesday.
+I was wondering.
+Yeah.
+What did you decide?
+It's T8, no?
+Oh.
+It's T8.
+So, he asked the professor.
+That's the thing.
+Yeah.
+Last week.
+Yeah.
+Yeah.
+Oh, yeah.
+Right there.
+Yeah.
+Don't worry about it.
+You know.
+It's not their responsibility to worry about it.
+Okay.
+They're responsible.
+You know.
+Okay.
+They're responsible for funding.
+Because you have an awful lot of the states that are getting this.
+Yeah.
+But it is .
+Oh.
+Sorry.
+I didn't manage to pay attention to that.
+Oh.
+Yes, it is.
+You know.
+It's fine.
+Disprint's fine.
+I have WeChat.
+Oh, WeChat is easy.
+Yeah.
+I've used it for your projects before.
+Yeah.
+Okay.
+Let me .
+Yeah.
+Okay.
+Hey.
+You.
+You.
+You.
+Yeah.
+These are the two suspects that you want to work with?
+Yeah.
+Yeah.
+And figure out how you're going to make your project more substantial.
+Right?
+Now you have a trio rather than a duo.
+Okay?
+Right.
+Okay.
+All right.
+But.
+No.
+What I want is an actual update.
+So.
+Kind of like extend your proposal.
+ASAP.
+You know.
+Take you into account.
+Like.
+You know what I'm saying?
+No?
+Yeah.
+They send me a proposal.
+You are not part of it.
+Yeah.
+That's what I'm trying to do.
+Yeah.
+Now that there's you.
+There's more.
+It has to be done.
+Yeah.
+Okay.
+Right?
+You don't get them.
+You don't get a free bath.
+Yeah.
+Yeah.
+Yeah.
+So basically that's all I want.
+真的很 quick.
+So please like to let it go.
+Do it at number.
+Come on.
+Do it at number it Er.
+Good.
+Ummm.
+Yeah.
+I'd actually bring it over.
+The disc…
+Why don't you guys.
+Why don't you pop them up?
+No I don't.
+I don't want them on.
+They're doing so…
+damn it I don't showing them…
+…
+…
+…
+…
+Thank you.
+Thank you.
+Thank you.

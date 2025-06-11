@@ -1,0 +1,1205 @@
+start	end	text
+0	29980	which mail, as you'll know, has a mail from field, right, or all the emails that you receive have a from field, and that usually contains user ID, right, where is it coming from, and some domain name, that will result in the DNS lookup as well, and all kinds of spam checks and other ancillary encountered links will cause, even if bounce, like when an email bounces, even that requires that.
+30000	60000	DNS lookup. Also, we'll talk separately about phishing, but many anti-phishing defenses rely on DNS, right, so they try to resolve a particular name and see if it's a legitimate record or if it's something iffy, right, so that's a problem, and that's the, so spoofing phishing with DNS
+60000	78000	lookups, with poison DNS lookups, it's called farming, ph there, or phishing, from phishing. Let's see. There is also some nifty ways of what's called doing dynamic farming, which is essentially works like this. You provide
+78000	107980	a bogus, like a fake DNS mapping, or a trusted server, and trick a victim, a user, into downloading a malicious script from some attackers controlled evil server. And then the idea is that, what, what, what, what, what, what a phishers or attackers are generally after, they're after obtaining some sensitive information. So, the idea is that you download a malicious script from some evil attacker controlled
+107980	137980	server server, and then force the user to also download some restricted internal content. Think about not your home, think about working for a company, right, organization, where you have sensitive content hosted internally, okay? Like some maybe scripted salary lookups, or personnel record management, or some proprietary product designs, okay?
+137980	144980	So, if you have sensitive information, and so the idea, the attacker's goal is to get access to that sensitive information, right?
+144980	166980	So, if you manage to do that, right, and if you manage to fool JavaScript into, or the browser to realizing that, oh, the evil, the evil script, right, if you download it, and the sensitive content that that evil script tries to access,
+166980	186980	have the same origin, then access will be granted. Java, I mean, your browsers usually have this policy, I mean, all browsers have this policy called same origin policy, which means that, and that's why, for example, cookies tend to be, unless they are third party cookies, tend to be proprietary, right?
+186980	208980	The cookie from let's say, Microsoft cannot be read by cookie from IBM, right? So they are separate. And that has to do with that same, fundamental same origin policy, right? So if HTML, if a page comes from IBM, and it wants to access a Microsoft cookie, it cannot, because they have different origins.
+208980	230980	Okay? Because cookie by Microsoft was put there by MSN.com, or MS.com, or Microsoft.com, and cookie from IBM has an origin of IBM.com. Two different origins. But, if you have, let's say, WW, MSN, MS.com, it can access a cookie placed by MS.com, because the origin is the same.
+230980	252980	So that's the idea. So that's the idea. So let's consider an example. Okay, I'll give you an example. We have a web server, okay? And it sits at this address, intergood.net, okay, inside the organization, okay? And it has a private IP address.
+252980	268980	If everybody know this, okay, private IP addresses are different from public IP addresses, so it's like an internal network, a mail, and the address, let's say, is 10-0-0-7, and this server cannot be accessed from outside, okay?
+268980	278980	So if you try to connect from the outside, the firewall will not match, okay? And anyway, you cannot, there's no routing to that address, right?
+278980	290980	If you try to send a packet from the outside to 10-0-0-7, you'll get a destination and reach it even without firewall, because that's called a private IP address.
+290980	296980	And IP routing or internet routing does not route to such addresses.
+296980	304980	Okay, so this web server hosts, stores sensitive data and sensitive applications, okay?
+304980	318980	So what the attacker does is that the attacker sits at evil.org, gets a user who is an inside, Alice, to browse www.evil.org, okay?
+318980	332980	And you might think, well, how does he do that? But by now you should probably realize that there are many ways to do this with a, let's say, poison SMS message, iMessage, WhatsApp message, signal message, whatever.
+332980	338980	You can come on any messaging service, you can also come via email. Messaging is better because it's usually very quick, right?
+338980	344980	And if somebody falls for the phishing, they will do it very quickly, right?
+344980	360980	So the idea is that to get Alice to browse this, I mean, basically click on a link with www.evil.org, and the attackers placed a malicious JavaScript code on that evil.org, okay?
+360980	373980	And that code, right, as Alice enters www.evil.org, slash whatever, or slash nothing, and she automatically downloads, right, this JavaScript.
+373980	382980	Totally fine to download JavaScript. You can turn off JavaScript, but then a lot of websites won't work, right?
+382980	399980	So, okay, and so now this JavaScript says, okay, now I am inside, I can access something on this interhood.net, which is the internal server, like some CGI app or something like that.
+399980	406980	But it can't do that. It can't do that because that would be a violation of, say, origin policy, right?
+406980	415980	Because the origin of malicious JavaScript is exactly www, is actually evil.org.
+415980	422980	Evil.org, not equal to good.net, okay?
+422980	428980	Different origin, goodbye. So, no way.
+428980	438980	But, if the attacker also controls DNS, that becomes a real problem.
+438980	443980	So, here's the scenario. Go for it step by step.
+443980	449980	So, we have ZDAT 10.0.0.21, Alice's computer device.
+449980	456980	So, Alice has been tricked into looking up some way, right?
+456980	459980	www.evil.org.
+459980	462980	So, this goes to evil.org DNS.
+462980	463980	There's a DNS server, right?
+463980	467980	Authoritative DNS server that's set up by the adversary.
+467980	471980	And I'm showing you not all interactions.
+471980	474980	Actually, when you look up DNS, remember, you go to the root, right?
+474980	482980	And the root says, oh, it's going to the .org, and then .org says, oh, okay, here's the evil.org DNS server.
+482980	483980	Remember that?
+483980	484980	There's a multiple step.
+484980	485980	I'm omitting that.
+485980	486980	I'm just saying.
+486980	488980	I'm basically abstracting it away.
+488980	496980	So, eventually, good.net, the power goes to this evil.org DNS server, and gets back an address, a real address,
+496980	503980	an external address, 222334455, with a pretty short TTL, right?
+503980	508980	So, it's not going to sit in the cache for too long, right?
+508980	512980	And then, right, as she actually does a get, right?
+512980	520980	Because when you do a click on the URL, the first thing is the DNS looked up, and then you actually do an HTTP get.
+520980	521980	So, she gets something.
+521980	523980	I put the slash there, but whatever.
+523980	524980	It doesn't really matter.
+524980	526980	Some URL from there, okay?
+526980	530980	On this evil.org, and the response is a malicious JavaScript, right?
+530980	534980	Some kind of a page that contains a malicious JavaScript code.
+534980	535980	Okay?
+535980	537980	You're with me so far?
+537980	538980	Okay.
+538980	540980	That comes from an evil.org website.
+540980	541980	Okay?
+541980	545980	Not from the DNS server, from evil DNS server, but the evil.org actual website.
+545980	549980	And that's the correct, that 222 address is actually correct for that.
+549980	556980	Now, because that TTL expires very quickly, right?
+556980	560980	Some here, here, it expires, the TTL.
+560980	568980	So, the next time, or actually the next time, when as Alice loads the web page, okay?
+568980	570980	There can be some delay, right?
+570980	571980	That can be inserted there.
+571980	580980	And the JavaScript will again force a lookup of www.evil.org.
+580980	585980	Now, that will not be found in the cache because the TTL already expired, right?
+585980	589980	So, this record there that says 222, that's gone.
+589980	590980	It expired.
+590980	592980	That's why it's very short.
+592980	593980	It's a short TTL.
+593980	600980	And what's going to come back from evil.org DNS, this evil.org DNS, the same one as ever
+600980	606980	on top, is now a different address, 1007.
+606980	611980	See the trick?
+611980	614980	Very, very clever, right?
+614980	622980	And that 1007 points not to evil.org web, but points to an internal sensitive content server.
+622980	629980	That should only be accessed from the inside, by the insiders.
+629980	630980	Okay.
+630980	633980	Now, again, this is Alice, right?
+633980	638980	Alice's device, but it's executing malicious code, right?
+638980	647980	It says post CGI app, some kind of invoking some sensitive CGI app on the evil.org.
+647980	651980	But now evil.org is at 1007.
+651980	652980	Okay?
+652980	660980	So, the post command, the HTTP post command, goes through the intragut net.
+660980	662980	And the response is, that's it.
+662980	664980	That's the compromise, right?
+664980	666980	Now, this CGI is critical.
+666980	668980	What about database query?
+668980	669980	Okay?
+669980	670980	Whatever.
+670980	671980	It could be an embedded SQL query.
+671980	672980	Okay?
+672980	676980	It comes back here with the results, and it will be sent outside.
+676980	677980	Okay?
+677980	680980	I don't show you that.
+680980	687980	But the reason this attack works is because now the JavaScript, the same origin policy that
+687980	699980	it uses, is now satisfying, because the original, sorry, because the evil.org provided this address,
+699980	705980	and intergoodnet is associated with this address now.
+705980	715980	And therefore, the malicious JavaScript can access 1007 because they have the same origin.
+715980	716980	Okay?
+716980	721980	The origin is now evil.org, the same origin.
+721980	727980	So, the attack succeeds.
+727980	732980	Now, how do you solve this problem?
+732980	738980	If you know of the attack, and you wanted just a knee-jerk solution, you can say, well,
+738980	741980	the problem is due to the short TTL.
+741980	744980	Does that really help?
+744980	750980	I mean, it solves that attack problem, right?
+750980	756980	But what if the attacker just does it over and over?
+756980	760980	The same thing just until the attacker might know where the TTL is, right?
+760980	769980	Because the attacker can always, so the idea is that not accepting short TTLs, right?
+769980	779980	And sort of overriding them with long TTLs, long times, so that this entry with 2, 2, 2, 3, 3, 4, 4, 5 does not expire.
+779980	784980	But eventually, it will, right?
+784980	788980	So, it's just sort of hedging the attack a little bit.
+788980	792980	It's not really solving the problem.
+792980	798980	One possibility is to randomize the client port.
+798980	801980	This is a general solution, right?
+801980	808980	So, you know, when the DNS servers, the DNS lives in a very specific reserved port.
+808980	811980	But remember, the clients pick a random port number.
+811980	813980	Well, they're supposed to.
+813980	818980	So, if you randomize the port number, instead of using always sort of the same,
+818980	825980	then that might help the attack, because the attacker has to guess that and transaction ID to reply.
+825980	826980	But this doesn't solve this problem.
+826980	830980	This solves other attacks we discussed in the last class.
+830980	832980	It doesn't solve this problem.
+832980	841980	The other possibility is to introduce some kind of a cryptographic or some more fundamental changes to DNS
+841980	842980	and add something.
+842980	844980	Kind of like with IP, there's IPsec.
+844980	848980	With HTTP, there is SSLTLS.
+848980	857980	So, there is something called DNSsec that can help with some of this.
+857980	859980	Okay, so what is DNSsec?
+859980	865980	Basically, it's extensions to the DNS operation and it works in two ways.
+865980	870980	There is the public key version and a secret key version.
+870980	872980	Or a symmetric key version, excuse me.
+872980	879980	And so the goal is to authenticate and check integrity of DNS requests.
+879980	882980	Okay, so the idea is that the client issues a query.
+882980	887980	Most of the problems occur not on the server side, right?
+887980	888980	It's on the client side.
+888980	895980	So the client receives a query, sorry, receives a query response that is not corresponding to what he asked.
+895980	904980	So, if you have a secure channel between the client and the DNS server, that should presumably solve the problem.
+904980	905980	Yes?
+905980	914980	Are we assuming the DNS server isn't doing the attack itself?
+914980	915980	Right.
+915980	916980	Right.
+916980	917980	Exactly.
+917980	919980	What is this solve?
+919980	921980	The DNS server.
+921980	922980	Right.
+922980	923980	So, remember.
+923980	924980	This.
+924980	925980	This attack.
+925980	926980	Right.
+926980	927980	This.
+927980	928980	Right.
+928980	929980	The race attack.
+929980	933980	The race to, or the attacker to guess the right transaction ID.
+933980	934980	Here, the randomizing the port number would help.
+934980	935980	Right.
+935980	936980	It would.
+936980	940980	Because if the attacker does not, because we see the attacker is not snooping on all this.
+940980	941980	Right.
+941980	942980	He's not there.
+942980	943980	He's outside.
+943980	944980	So, randomizing the port number will help because the attacker would not snooping on all this.
+944980	945980	Right.
+945980	946980	He's not there.
+946980	947980	He's outside.
+947980	967980	So, randomizing the port number will help because the attacker would not only have to guess the transaction ID, but would also have to guess the port number.
+967980	978980	And if you make it, you know, it's a 32-bit port number, then, sorry, 16-bit port number plus 16-bit transaction ID, that's guessing 32 bits less hard.
+978980	979980	Okay.
+979980	980980	Much harder.
+980980	983980	Much less likely the attacker will win.
+983980	994980	And the other problem the DNSSEC will solve is if the DNS server actually replies, it will reply with an authentic reply.
+994980	1001980	Meaning it will actually secure the reply, right, and the attacker can no longer spoof it.
+1001980	1007980	Because eventually, you see, the DNS server does reply.
+1007980	1012980	And only, and if we use DNSSEC, only this reply will be authentic.
+1012980	1017980	So, all the other attempts to answer will be discarded because they're not authentic.
+1017980	1018980	Okay.
+1018980	1019980	So, how does DNSSEC work?
+1019980	1020980	Well, it's actually very simple, right?
+1020980	1035980	It just basically, you know, in a public key version, it just signs the record, right?
+1035980	1038980	So, remember, it replies with the record, right?
+1038980	1053980	Now, there is a bit of a debate whether you should sign it on the reply, meaning include the request in the reply, so that you can say this reply is exactly for this request.
+1053980	1054980	Okay?
+1054980	1065980	Or, you should pre-compute signed replies ahead of time, and that way save real-time computation.
+1065980	1066980	You follow me?
+1066980	1068980	Because DNS servers are busy, right?
+1068980	1069980	They're servers for a reason.
+1069980	1072980	They get a lot of queries.
+1072980	1091980	So, if you pre-compute signatures on popular DNS records, like for example, if a UCI has a DNS server and it pre-computes everything for like ICS-UCI-EDU or ENG-UCI-EDU, that would be smart, right?
+1091980	1099980	Because there will be a lot of queries for those, but it doesn't need to pre-compute answers to all DNS queries for all hosts, right?
+1099980	1106980	In the inside UCI, because there's just too many of them, and most of them aren't very, very popular in terms of people going to them.
+1106980	1107980	Okay?
+1107980	1111980	So, there is a trade-off there, which can be done in advance.
+1111980	1118980	The trade-off is that if you don't, if you pre-compute the signed, right?
+1118980	1130980	If you have public, or digitally signed replies, that means you cannot one-to-one associate the request with a reply, because multiple requests will result in the same reply.
+1130980	1131980	Okay?
+1131980	1133980	That raises some issues.
+1133980	1135980	Nothing super critical.
+1135980	1136980	You know?
+1136980	1140980	Now, the other problem is that, how do you distribute public keys?
+1140980	1143980	That's basically the fundamental public key distribution problem, right?
+1143980	1149980	So, the PKDNS assumes that the DNS servers have a public key hierarchy.
+1149980	1150980	PKI.
+1150980	1152980	Remember we talked about this earlier on?
+1152980	1157980	But that's actually not difficult, because the DNS itself is a hierarchy.
+1157980	1158980	Right?
+1158980	1166980	With all these roots, and then secondlevel.com.edu.org, and then all the others underneath.
+1166980	1169980	So, establishing a hierarchy is actually pretty natural.
+1169980	1184980	There is a minor mid-weight version called DNSSEC symmetric key, and basically there it's faster, but it assumes here that there are these pre-established secure channels.
+1184980	1185980	Okay?
+1185980	1190980	Between parent-child DNS servers.
+1190980	1196980	And there's also a secure channel between the client and the first level DNS responder.
+1196980	1207980	Now, there's also something called DNS over HTTP, network of HTTPS, it's called D-O-H, which essentially makes DNS clear to go over TLS SSL.
+1207980	1215980	And if you dig into your browser, or your network setting, you might be able to find an option for that.
+1215980	1220980	It's probably unclear, but you can force your browser to always use that.
+1220980	1226980	But the idea is basically that all the messages are encrypted and mapped.
+1226980	1229980	And mapped is the integrity message authentication code.
+1229980	1235980	So, the encryption in the MAC are done with different keys, kind of like in itself derived from the same master key.
+1235980	1241980	And yeah, and each message has a nonce, so there's no replaying, etc.
+1241980	1247980	And the idea is that each DNS must share a symmetric master key with its family.
+1247980	1252980	If you want to know more about it, here's an in-depth presentation.
+1252980	1254980	Any questions about DNS?
+1254980	1266980	I did not tell you about all possible attacks, because just DNS security by itself is probably like a half a quarter, five week course in and of itself.
+1266980	1272980	This is, again, like everything in this course, kind of an appetizer.
+1272980	1275980	No rushes?
+1275980	1276980	Okay.
+1276980	1279980	Well, that is the end of the net attacks.
+1279980	1298980	Now we skip something completely different.
+1298980	1302980	Now I'm going to talk about privacy in a minute.
+1302980	1307980	So, you probably know a bit about this already.
+1307980	1312980	It's hard to actually be an internet user and not know about it.
+1312980	1320980	And unless you live in a vacuum, you definitely hear all the time about attacks and leaks and threats.
+1320980	1326980	So, privacy is kind of a long-standing problem or a long-standing concept.
+1326980	1332980	By itself, privacy and anonymity have nothing to do with the digital world.
+1332980	1334980	I mean, they exist in the analog world.
+1334980	1337980	We all know what privacy means in the analog world.
+1337980	1340980	Most of you should know what anonymity means, right?
+1340980	1347980	Does anybody want to say what anonymity means in the physical world?
+1347980	1350980	Any guesses?
+1350980	1353980	You know the word, right?
+1353980	1356980	What does that actually mean?
+1356980	1359980	There's no wrong answer.
+1359980	1362980	I'm not going to be judged.
+1362980	1364980	Not identifiable.
+1364980	1365980	Okay.
+1365980	1367980	Not identifiable what?
+1367980	1370980	Give me an example.
+1370980	1372980	Maybe an example you have in mind.
+1372980	1373980	On the physical world.
+1373980	1374980	What is anonymity?
+1374980	1391980	Well, there's a disturbance, some kind of a going on.
+1391980	1394980	And maybe you've heard of like antifa protesters, right?
+1394980	1398980	Or whenever there are protests on campus.
+1398980	1400980	Let's say, like the one we had last year.
+1400980	1401980	I don't remember if we had masks.
+1401980	1404980	But in many of those protests, people wear masks.
+1404980	1405980	Right?
+1405980	1407980	Why do they wear masks?
+1407980	1411980	To be anonymous.
+1411980	1413980	We know they're there.
+1413980	1414980	They're people, right?
+1414980	1416980	They're people.
+1416980	1420980	Well, at least maybe for now, about years from now, they might be robots.
+1420980	1423980	But today, we know they're people.
+1423980	1424980	They're humans.
+1424980	1427980	We might even be able to tell the gender.
+1427980	1429980	Not always.
+1429980	1431980	Height, maybe.
+1431980	1433980	Weight, sort of.
+1433980	1436980	But most identifying features are hidden, right?
+1436980	1437980	When you wear a mask.
+1437980	1441980	Put on a mask, a hat, pair of sunglasses.
+1441980	1444980	Nobody can tell your eye color, your hair color.
+1444980	1445980	Right?
+1445980	1446980	The typical identification.
+1446980	1449980	Oh, facial recognition doesn't work, right?
+1449980	1450980	Be careful.
+1450980	1452980	Not with a COVID mask.
+1452980	1454980	With a COVID mask, it still works.
+1454980	1459980	But a real, like a balaclava type mask won't work.
+1459980	1460980	Right?
+1460980	1462980	That's anonymity.
+1462980	1468980	When a bandit, you know, western style bandits will put a bandana on their face to rob a bank
+1468980	1471980	or a stagecoach, like you've seen in some movies.
+1471980	1472980	That's essentially what they want.
+1472980	1473980	An anonymity.
+1473980	1474980	Right?
+1474980	1476980	It's not a question where they're robbers.
+1476980	1477980	Right?
+1477980	1478980	They're oil robbers.
+1478980	1480980	You know how many there are.
+1480980	1483980	But you don't know what they are, who they are.
+1483980	1485980	That's anonymity.
+1485980	1494980	If you are worried about privacy, and let's say you want to buy, I don't know, some, let's
+1494980	1497980	say you are a crypto smoker.
+1497980	1498980	You are a crypto smoker.
+1498980	1499980	You don't smoke crypto.
+1499980	1500980	I don't mean that.
+1500980	1501980	No, crypto means hidden.
+1501980	1504980	You're like, you don't want anybody to know who to smoke.
+1504980	1505980	Okay?
+1505980	1512980	So, you don't want the transaction to show up on your credit card, for example.
+1512980	1515980	In fact, you bought cigarettes at 7-Eleven.
+1515980	1518980	Or that you ordered them on the web, right?
+1518980	1520980	So, what do you do in the physical world?
+1520980	1521980	Well, you could.
+1521980	1522980	You probably will not end well.
+1522980	1529980	But you could put a paper bag over your head with a couple of holes for eyes.
+1529980	1534980	Get some cash from the ATM somewhere else well before.
+1534980	1535980	Walk in.
+1535980	1537980	Say, don't worry, I'm not here to rob you.
+1537980	1541980	I would like a pack of Marlboros.
+1541980	1542980	Okay?
+1542980	1548980	If the clerk is not scared of trickless, they will take your cash, give you a pack of Marlboros,
+1548980	1550980	and off you go.
+1550980	1553980	That's an anonymous transaction.
+1553980	1555980	Cash is anonymous, right?
+1555980	1557980	You are anonymous.
+1557980	1560980	You could be wearing stilts to disguise your height.
+1560980	1566980	You could be wearing, I don't know, you could bend your knees if you're wearing something
+1566980	1567980	to disguise your height.
+1567980	1569980	You could make yourself shorter.
+1569980	1571980	You know, you could alter your voice.
+1571980	1575980	And with a paper bag over your head, you're anonymous.
+1575980	1576980	I know, it's silly.
+1576980	1579980	But that's the idea of physical anonymity.
+1579980	1580980	Okay?
+1580980	1587980	The fact that someone bought cigarettes at that 7-Eleven is not disguised.
+1587980	1589980	The question is, who bought cigarettes?
+1589980	1591980	Well, somebody did.
+1591980	1595980	But that somebody is indistinguishable from anybody outside, right?
+1595980	1597980	Any number of people.
+1597980	1598980	That's an anonymity.
+1598980	1602980	And that's basically what an anonymity is in the digital world.
+1602980	1603980	You'll see it.
+1603980	1605980	But it's not the same thing for privacy.
+1605980	1610980	Privacy is kind of, in the physical world, is the right to be left alone.
+1610980	1611980	Okay?
+1611980	1617980	So, there is a bit of a disconnect between the definition of privacy, the way that lawyers
+1617980	1622980	define it in the physical world, and the way we see it on the internet.
+1622980	1624980	And it's difficult to define.
+1624980	1629980	So, I won't try to give you an overall definition of privacy.
+1629980	1637980	But it is something that most people in the world, not everywhere, believe is like an individual
+1637980	1640980	right and natural desire to have privacy.
+1640980	1641980	I mean, right?
+1641980	1646980	I mean, we have, I don't know, changing rooms for privacy, right?
+1646980	1650980	We have bathrooms for, stalls for privacy, right?
+1650980	1655980	We have tentative classrooms, you know, in some places for privacy.
+1655980	1659980	I mean, lots of things we do in the real world are for privacy.
+1659980	1666980	Now, privacy is relevant not just to individuals, right?
+1666980	1669980	So far, everything I said is about individual privacy.
+1669980	1675980	But it's also relevant to other entities like governments and groups and corporations.
+1675980	1678980	And maybe it's obvious why.
+1678980	1679980	Maybe not.
+1679980	1680980	We'll see.
+1680980	1687980	So, as the time goes by and sort of the internet is permeating everyday life for more and more
+1687980	1693980	people, there's definitely globally an increase in awareness of privacy.
+1693980	1698980	Although most people, if you ask them to define it, well, kind of like you guys, you can't
+1698980	1701980	define really or not sure you can't, right?
+1701980	1704980	Give me a good definition of privacy.
+1704980	1705980	I can't hide it.
+1705980	1707980	But there is awareness of it.
+1707980	1708980	Privacy is important.
+1708980	1713980	But if you ask people, and some researchers did surveys, opinions are all over the map
+1713980	1716980	like what it means, what privacy means.
+1716980	1717980	Okay?
+1717980	1721980	It's also highly cultural and etc.
+1721980	1725980	And so, I say it's both nebulous and fickle.
+1725980	1728980	Nebulous means it's kind of, well, difficult to define.
+1728980	1730980	Fickle means it changes.
+1730980	1734980	A lot of times people will say, well, you know, my privacy is important.
+1734980	1737980	Like, if you give an example, what if this happens to you?
+1737980	1738980	Do you become certain?
+1738980	1739980	Yes.
+1739980	1741980	What if it happens to somewhere else?
+1741980	1742980	No.
+1742980	1745980	So, privacy is a very personal thing.
+1745980	1751980	We also live in a society that because of social networking, and this is the last 20
+1751980	1753980	years, I think, right?
+1753980	1757980	The beginning of social networking, about 20 years ago.
+1757980	1764980	The whole idea of social networking promotes, among other things, good and bad, it promotes
+1764980	1766980	lawyerism and exhibitionism.
+1766980	1770980	If you don't know what those terms are, or do you?
+1770980	1771980	Exhibitionism is just like, look at me.
+1771980	1772980	I'm interesting.
+1772980	1773980	Yes.
+1773980	1774980	I bought a purse.
+1774980	1775980	I bought a new bike.
+1775980	1776980	Look at me.
+1776980	1777980	I'm on a vacation in Krakistan.
+1777980	1778980	Look at me.
+1778980	1779980	Next to the, you know, the Tower of Pisa.
+1779980	1780980	Look at me in the Grand Canyon.
+1780980	1781980	I'm so interested.
+1781980	1796980	I'm not like those other 10,000 grad students who went on a Grand Canyon vacation as soon
+1796980	1797980	as I got here.
+1797980	1798980	So, this is the exhibitionism.
+1798980	1799980	Voyeurism is the opposite.
+1799980	1802980	The people who are actually looking at stuff because they have nothing better to do.
+1802980	1805980	And, you know, in the extreme, do cyber stalking.
+1805980	1806980	That's lawyers.
+1806980	1810980	Anyway, so social networking, for better or for worse, promotes these kinds of things.
+1810980	1814980	And, that's clearly not a good thing for privacy.
+1814980	1816980	And, even worse, for anonymity, right?
+1816980	1823980	So, how can you demand privacy if you post your pictures, you know, five times a day?
+1823980	1824980	With geolocation.
+1824980	1834980	Anyway, the amount of information, not just social networking type information.
+1834980	1838980	The amount of information essentially disclosed on the internet, on the public internet, has
+1838980	1841980	grown tremendously in the last 20 years.
+1841980	1842980	Right?
+1842980	1845980	Much more handling and transfer of sensing information occurs.
+1845980	1851980	And, this is not, again, your own photos and blogs, vlogs and whatever else, right?
+1851980	1855980	We're talking about sensitive medical information.
+1855980	1863980	All kinds of records, official records, driver's licenses, marriages, divorces, lawsuits.
+1863980	1866980	Everything is out there on the internet, right?
+1866980	1871980	Whereas, 20 years ago, you would probably have a hard time finding a lot of this information.
+1871980	1876980	Anyway, you would have, it was available, mind you, but you would have to actually physically
+1876980	1878980	search for it.
+1878980	1885980	And, unfortunately, as a result of all this, there's much less privacy and accountability.
+1885980	1890980	Now, we all recall that the internet was designed as a public good, right?
+1890980	1892980	As a public resource.
+1892980	1897980	So, complaining about lack of privacy on the internet is a bit silly, in a way.
+1897980	1898980	Right?
+1898980	1905980	We know that from the discussions about IP, TCP, et cetera, that most information on the internet
+1905980	1908980	is, well, a lot of information is public, by default.
+1908980	1909980	Right?
+1909980	1919980	So, an IP packet that you could snoop on easily, right, is possible to hide information in it.
+1919980	1925980	If you use SSLTLS, everything will be hidden from after the transport layer header.
+1925980	1930980	If you use IPsec, everything after the IP header will be hidden.
+1930980	1938980	But, at the very least, because routing needs to happen on the public internet, the outermost IP headers are visible, aren't they?
+1938980	1939980	Always.
+1939980	1940980	Always, right?
+1940980	1941980	A definition.
+1941980	1944980	You have to route packets on the internet.
+1944980	1948980	And, in the network layer, that means that there has to be an IP layer present.
+1948980	1952980	Otherwise, that could get discarded or not even sent.
+1952980	1955980	And recall what's in the IP header.
+1955980	1960980	Well, among other things, in the IP header, there's source, destination, and the protocol.
+1960980	1965980	The protocol says which is the transport layer protocol to use now.
+1965980	1970980	Now, if you don't use IPsec, there's a lot more, right?
+1970980	1978980	But, even if you use IPsec, the outermost header, at the very least, tells you the IP addresses of IPsec gateways.
+1978980	1979980	Right?
+1979980	1981980	Remember these IPsecs?
+1981980	1984980	You can build tunnels, right?
+1984980	1987980	So, even if you hide the end posts, right?
+1987980	1996980	You have an organization on, say, two campuses of the same organization on different places on the internet.
+1996980	2000980	Alice is in one campus talking to B in another campus.
+2000980	2001980	That's fine.
+2001980	2005980	Nobody in the middle of the internet can see that Alice is talking to Bob.
+2005980	2010980	But, everybody can see that Campus 1 is talking to Campus 2.
+2010980	2011980	Right?
+2011980	2014980	Someone on this campus is talking to someone on this campus.
+2014980	2017980	Because the addresses of the IP gateways, right?
+2017980	2020980	The border gateways will tell you.
+2020980	2025980	You might not think that's a lot of information, but it is.
+2025980	2028980	Also, the frequency of packets.
+2028980	2029980	Right?
+2029980	2031980	The timing of packets is important.
+2031980	2033980	It leaks information.
+2033980	2034980	Okay?
+2034980	2041980	For example, if you have, let's say you have the following situation.
+2041980	2044980	You have a transit autonomous system.
+2044980	2045980	Right?
+2045980	2047980	Remember we talked about autonomous systems.
+2047980	2049980	And there's a transit provider, right?
+2049980	2050980	Provides transit service.
+2050980	2052980	And it serves two companies.
+2052980	2055980	Now we talk about two companies, not two campuses at the same.
+2055980	2057980	Two companies in AFD.
+2057980	2066980	Normally, the transit service provider does not observe much traffic between AFD.
+2066980	2067980	Okay?
+2067980	2070980	It does not.
+2070980	2073980	All of a sudden, there is a spike in IPsec traffic.
+2073980	2076980	Now what could it be?
+2076980	2082980	AFD are companies that are registered, so you can look up what they are in the real world.
+2082980	2086980	Let's say one of them is a pharmaceutical company.
+2086980	2091980	Another one is a pharmaceutical startup.
+2091980	2092980	Okay?
+2092980	2100980	What could you possibly conclude when the traffic spikes between a large pharmaceutical company
+2100980	2105980	and a pharmaceutical startup?
+2105980	2107980	Probably.
+2107980	2110980	Probably something is going on between these.
+2110980	2114980	One is going to probably swallow the other.
+2114980	2117980	That's privileged information.
+2117980	2120980	That's kind of insider information.
+2120980	2121980	Why?
+2121980	2123980	You don't know what the hell they are talking about.
+2123980	2125980	But you know when.
+2125980	2126980	Huh?
+2126980	2127980	You know when.
+2127980	2129980	And you know how much a person will do.
+2129980	2135980	Now they could always pretend to send more traffic than they actually have to send, right?
+2135980	2136980	By just sending garbage.
+2136980	2140980	But they cannot send less.
+2140980	2142980	And obscuring timing.
+2142980	2144980	How do they obscure timing?
+2144980	2146980	If the negotiations happen in the middle of the night.
+2146980	2147980	Ah.
+2147980	2149980	That might also be an interesting thing.
+2149980	2150980	Okay?
+2150980	2151980	It's urgent.
+2151980	2153980	Then it's time to invest.
+2153980	2155980	Or buy some shares of that smaller startup.
+2155980	2156980	Or of the bigger one.
+2156980	2158980	And you can make some money.
+2158980	2159980	While others won't.
+2159980	2160980	Do you see that?
+2160980	2162980	Where I'm going with this.
+2162980	2163980	Okay?
+2163980	2166980	Or all of a sudden you have the US government.
+2166980	2167980	Department of State.
+2167980	2168980	Okay?
+2168980	2172980	That never sends much traffic to its embassy in Zimbabwe.
+2172980	2182980	And all of a sudden you notice as a transit provider that there's like a giant spider.
+2182980	2183980	What's going on?
+2183980	2184980	Huh?
+2184980	2189980	Maybe there's a coup in Zimbabwe.
+2189980	2190980	Happens.
+2190980	2195980	Maybe there's a military action that is being planned.
+2195980	2197980	That's information.
+2197980	2198980	Right?
+2198980	2201980	So that's valuable information.
+2201980	2202980	Anyway.
+2202980	2203980	As I said before.
+2203980	2206980	Encryption doesn't solve this problem.
+2206980	2207980	Right?
+2207980	2216980	Encryption is not enough for anonymity or even real privacy.
+2216980	2221980	What are applications of anonymity?
+2221980	2223980	Well.
+2223980	2226980	Hiding transactions.
+2226980	2227980	Hiding transactions.
+2227980	2228980	You know.
+2228980	2232980	If we had, for example, electronic cash.
+2232980	2234980	Anybody ever heard of electronic cash?
+2234980	2235980	It exists.
+2235980	2236980	It's a concept.
+2236980	2241980	If you took an advanced crypto class you may have heard of electronic cash.
+2241980	2248980	But I used to give a lecture on it like 10, 12 years ago but now it's becoming obsolete.
+2248980	2254980	But electronic cash is essentially the idea is to replicate physical cash in electronic
+2254980	2255980	form.
+2255980	2258980	And by the way, cryptocurrencies are not, are not cash.
+2258980	2259980	You know that right?
+2259980	2260980	Why not?
+2260980	2261980	Why not?
+2261980	2271980	Because cryptocurrencies have wallets and have owners and so there's no truly anonymous
+2271980	2272980	cryptocurrency.
+2272980	2276980	What cryptocurrencies give you is what's called pseudonymity.
+2276980	2277980	Like when you, yeah.
+2277980	2278980	But there's cold wallets.
+2278980	2279980	They can just give you this crypto.
+2279980	2280980	Yes.
+2280980	2281980	But the wallet is a wallet.
+2281980	2292980	You cannot transform one wallet magically into another wallet that is not linkable.
+2292980	2294980	You see, you get a wallet, it stays a wallet.
+2294980	2297980	So, now I don't know who's behind it.
+2297980	2300980	I don't know it's you or him or anybody else.
+2300980	2305980	What I do know is what it receives and what it sends, right?
+2305980	2310980	Like most cryptocurrencies, I don't claim to know a lot about cryptocurrencies, okay?
+2310980	2317980	But most of them will function on this premise of like wallets where you accumulate a specific
+2317980	2318980	cryptocurrency.
+2318980	2324980	If you are, but if you go with like a big provider like Coinbase or something like that,
+2324980	2327980	they aggregate those wallets for you, okay?
+2327980	2334980	But if you're an individual in a cryptocurrency trader or investor, you have typically this
+2334980	2335980	number of wallets.
+2335980	2340980	You have a Bitcoin wallet, an Ethereum wallet, and they all have addresses.
+2340980	2348980	Now, the link between an address and a human being, that's something that, you know, not
+2348980	2349980	given, right?
+2349980	2352980	It's difficult to establish who that is.
+2352980	2359980	But what wallets have this form, the term is persistent identifiers, that wallet ID,
+2359980	2362980	which is like some kind of binary string, right?
+2362980	2364980	And they're unique.
+2364980	2368980	And because of that, there is no actual anonymity because you can link all the transactions to
+2368980	2369980	that wallet.
+2369980	2371980	You know exactly what that wallet is doing.
+2371980	2374980	Sending so much money, receiving so much money.
+2374980	2381980	You know, one of the problems, we haven't talked about ransomware, but when an organization
+2381980	2387980	gets hit by ransomware and they pay the ransom, it's very clear to whom they're paying.
+2387980	2389980	A specific wallet, right?
+2389980	2395980	Because ransomware loves, the attackers, ransomware attackers, they love Bitcoin and other types
+2395980	2396980	of cryptocurrencies.
+2396980	2399980	And they give you an ID, usually.
+2399980	2405980	If you've seen like a ransom message that follows, usually follows the ransomware attack,
+2405980	2408980	it says, transfer money here.
+2408980	2412980	And they give you the explicit ID.
+2412980	2414980	But you don't know who that is.
+2414980	2416980	It's very hard to find out who.
+2416980	2419980	But it's still not anonymity.
+2419980	2428980	Anyway, so online payment, sometimes you want to browse anonymously, right?
+2428980	2433980	You know, in graduate school people do research.
+2433980	2439980	Sometimes research requires looking at sites that are not pleasant.
+2439980	2440980	Okay?
+2440980	2445980	For example, in my group some years ago, we had to go to some particular porn site.
+2445980	2446980	Okay.
+2446980	2447980	Why?
+2447980	2450980	Because we were studying CAPTCHAs.
+2450980	2455980	And that porn site, the way it worked, it was free.
+2455980	2458980	But to get access to it, you had to solve a CAPTCHA.
+2458980	2465980	But really cleverly, what it was doing, it was specifically making the users of that porn
+2465980	2470980	site function as human CAPTCHA solvers for a bot.
+2470980	2473980	Maybe that doesn't make sense here.
+2473980	2480980	So, there was a bot operator, okay, that was creating Facebook and Gmail accounts, okay?
+2480980	2483980	And Instagram accounts.
+2483980	2486980	Now, normally these bots, what they do is they automate, right?
+2486980	2491980	Create an account, provide a password, select a user ID, fill in the password, etc.
+2491980	2498980	But then, all these Instagram, Facebook, Google, they have CAPTCHAs, right?
+2498980	2501980	They say, prove you're a human before we create an account.
+2501980	2504980	You see what I'm saying?
+2504980	2507980	But the bot that operated is not human.
+2507980	2513980	So, what they were doing is that they made a partnership with a porn site, where every
+2513980	2519980	time, when they wanted to create an account, and a CAPTCHA popped out, they sent this CAPTCHA
+2519980	2521980	to the porn site, okay?
+2521980	2524980	That presented that CAPTCHA to the next user.
+2524980	2528980	And so, with a high enough volume of traffic, there was always somebody trying to get access
+2528980	2529980	to the porn site.
+2529980	2534980	They would pop up with a CAPTCHA, the user would solve it quickly, the solution would
+2534980	2540980	come back to the bot, and it would feed it into Gmail, Instagram, Facebook, okay?
+2540980	2543980	So, long story short, let's come back.
+2543980	2548980	Yes, so we had to look at that particular porn site a couple of times, you know, so, you
+2548980	2553980	don't want to do it from university computers, right?
+2553980	2558980	So, you do use anonymous browsing, okay?
+2558980	2563980	That essentially hides your browsing patterns.
+2563980	2570980	So, if you're using standard browsers, what you're browsing is not private, generally.
+2570980	2573980	I mean, some of them are more private than others.
+2573980	2578980	I mean, yes, Safari is better than Firefox, and nothing is worse than even the Explorer,
+2578980	2583980	but then there is DuckDuckGo, and Brave, and they all pretend to be very private, et cetera,
+2583980	2585980	but they're actually not very private.
+2585980	2588980	If you want private, you use the Tor browser, okay?
+2588980	2590980	I will talk about Tor in a second.
+2590980	2599980	Okay, so web browsing, you want to look up a site, even something innocuous, like you
+2599980	2602980	totally, like you want to price out a certain item, right?
+2602980	2606980	You're looking for, I don't know, a refrigerator, or a pair of shoes.
+2606980	2608980	You don't want to get ads, okay?
+2608980	2614980	You don't want to pollute yourself with all this information that will incessantly pop
+2614980	2617980	out ads about shoes or refrigerators.
+2617980	2620980	So, anonymous browsing is good for that.
+2620980	2622980	You want to use a search engine, too.
+2622980	2629980	You don't want a search engine, like Gmail, or Google, or Bing, or whatever, to know your
+2629980	2630980	search patterns.
+2630980	2636980	Sometimes you want to send an untraceable message, an untraceable email, because maybe
+2636980	2641980	you are a whistleblower, corporate or government whistleblower, and you would like to report
+2641980	2645980	something criminal or some abuse anonymously.
+2645980	2651980	Well, hell, even here at UCI, we have a way to do so, by the way.
+2651980	2657980	We also, I mean, we have it in the physical world, there's an Office of the Ombudsman to
+2657980	2659980	which you can report things anonymously.
+2659980	2664980	But we also, last time I checked, a couple years ago, there was a way to anonymously send
+2664980	2666980	email, except it's not truly anonymous.
+2666980	2673980	I mean, there's a way to basically use a web form, okay, to send an anonymously.
+2673980	2683980	If you're a dissident, a political dissident in an oppressive society, maybe this is socially
+2683980	2686980	sensitive communication about, let's say, addiction.
+2686980	2691980	You know, groups like Alcoholics Anonymous or people with sexually transmitted diseases
+2691980	2696980	who form mutual support groups, and you certainly don't want your friends and family or your
+2696980	2699980	co-workers to know about your participation in such groups.
+2699980	2702980	So, that's why privacy is super important.
+2702980	2708980	Also, on the business side, if you have confidential business negotiations, for example, the previous
+2708980	2713980	thing I said about, you know, two companies have, you know, a startup and a big pharmaceutical
+2713980	2716980	engaging in intensive communications.
+2716980	2718980	That's, again, where you need privacy.
+2718980	2723980	And, last but not least, even law enforcement, which you would think normally is against privacy,
+2723980	2727980	because, you know, it's fundamentally, like, about uncovering things.
+2727980	2731980	Even they benefit from privacy.
+2731980	2739980	When they mount sting operations and set up honeypots for all kinds of miscreants out there.
+2739980	2742980	When they do secretly communicating in the public network.
+2742980	2748980	Like, for example, you know, with informers, secret informers or secret agents.
+2748980	2754980	As I said, okay, I already said digital cash.
+2754980	2756980	Also, anonymous electronic voting.
+2756980	2761980	One day, I hope, in not too distant future, we will have internet voting.
+2761980	2765980	Might not happen for a while, but I hope it will.
+2765980	2770980	Because it will definitely raise, lower the barriers for voting participation.
+2770980	2775980	And, just like we vote today, sort of anonymously, right?
+2775980	2780980	It would be nice to vote better anonymously on the internet.
+2780980	2781980	But, secure.
+2781980	2784980	So, the idea is not to give up on security.
+2784980	2790980	The idea is to still have secure voting, but in a way that's anonymous.
+2790980	2791980	Okay?
+2791980	2797980	Today, is the voting anonymous?
+2797980	2799980	No.
+2799980	2802980	Why do you say that?
+2802980	2805980	No, I'm just curious about your intuition.
+2805980	2810980	Because the ballot, it has your name on it.
+2810980	2811980	Does it?
+2811980	2812980	Yeah.
+2814980	2815980	When is it?
+2815980	2816980	Did somebody vote recently?
+2816980	2818980	Yeah, I voted in November.
+2818980	2819980	In November.
+2819980	2820980	And your ballot had a name.
+2820980	2822980	Did you vote by mail?
+2822980	2823980	No.
+2823980	2824980	In person?
+2824980	2825980	Yeah.
+2825980	2826980	Okay.
+2826980	2827980	I vote by mail, generally.
+2827980	2829980	So, my ballot had no name.
+2829980	2833980	The envelope is the problem.
+2833980	2836980	Also, I have no proof, actually, that the ballot had no name.
+2836980	2838980	It could have had a watermark that I didn't see.
+2838980	2842980	You see, the problem in the physical world, we put a lot of faith in, like, yeah, it's
+2842980	2843980	supposed to be anonymous.
+2843980	2848980	But, when you go into a precinct, so you went to a precinct, and then, did they check
+2848980	2849980	your ID?
+2849980	2850980	No.
+2850980	2853980	Right, because it's not, that law is not here yet.
+2853980	2857980	The government is trying to make it, make it come to life.
+2857980	2860980	But, did they check your name on the roster?
+2860980	2861980	Yeah.
+2861980	2864980	So, somebody knows if you're voted, right?
+2864980	2865980	Yeah.
+2865980	2870980	So, the thing is, even if the ballot isn't anonymous, sorry, is anonymous, if the ballot
+2870980	2878980	is anonymous, somebody, the precinct worker, crossed your name, and said, uh-huh, he or
+2878980	2880980	she voted, right?
+2880980	2883980	So, that's already, like, you're sacrificing privacy, right?
+2883980	2886980	You cannot say, I'm not saying I voted, I didn't vote.
+2886980	2887980	No.
+2887980	2888980	You voted.
+2888980	2889980	You voted.
+2889980	2891980	If someone voted, it's actually public, right?
+2891980	2893980	It is, but should it be?
+2893980	2894980	I understand.
+2894980	2895980	Should it be?
+2895980	2905980	Also, what if he walked in, got his name checked, went inside the ballot's, uh, what
+2905980	2906980	is it called?
+2906980	2907980	A tent, right?
+2907980	2911980	It's like a, it's like a changing room, right?
+2911980	2914980	And never voted, and walked out.
+2914980	2916980	Good, right?
+2916980	2921980	I've heard of people doing that.
+2921980	2924980	Anyway, voting is interesting, and also it's censorship-resistant publishing.
+2924980	2928980	That is, publishing, there's something, or putting something on, let's say, on the web,
+2928980	2932980	they cannot be taken down, because nobody knows where it is.
+2932980	2933980	Imagine that.
+2933980	2938980	You have something to say, maybe it's good, maybe it's bad, okay?
+2938980	2941980	Censorship does not distinguish between good and bad things.
+2941980	2946980	You have something to say, somebody, or, let's say, the government hates it, and wants
+2946980	2949980	it taken down, but they can't, because they don't know where it is.
+2949980	2954980	That's called censorship-resistant publishing.
+2954980	2959980	Oh, of course, where there's good, there's bad, and this is the problem right away that
+2959980	2964980	should be, it should be obvious to you, that anonymity has two sides, okay?
+2964980	2967980	Very much depends on which side you look from.
+2967980	2969980	The usual thing, right?
+2969980	2972980	If you have anonymity, it will be abused.
+2972980	2978980	There's no way to separate anonymity for the good from anonymity for the bad.
+2978980	2985980	All kinds of things, misinformation, propaganda, illegal substances, right?
+2985980	2990980	All kinds of illegal, murder for hire, sure.
+2990980	2993980	Chemical weapons, sure.
+2993980	2996980	Poisons, yeah.
+2996980	3002980	Drugs, probably most of you are too young to remember the Silk Road.
+3002980	3007980	If you look up Silk Road, that was a marketplace.
+3007980	3011980	There was a whole marketplace for illegal substances and illegal activities.
+3011980	3017980	The guy who ran it, there was even a movie about it, I think Ross Obrecht was his name.
+3017980	3020980	I think the president pardoned him recently.
+3020980	3026980	He was serving a very lengthy jail sentence in a federal prison.
+3026980	3028980	But anyway, that was taken down.
+3028980	3034980	But there are other marketplaces out there for illegal substances and illegal acts.
+3034980	3039980	And they cannot be taken down because the way they operate is beyond the reach of the law.
+3039980	3041980	Because of anonymity.
+3041980	3044980	Tax avoidance, yes.
+3044980	3052980	There are some cryptocurrency tricks that try to circumvent the anonymity I mentioned earlier.
+3052980	3055980	And also just general incitement to criminal activity.
+3055980	3063980	Let's say you want to use censorship resistant publishing that I mentioned earlier on the previous slide for the purposes of inciting terrorism.
+3063980	3068980	Well, your opinion is terrorism is legit.
+3068980	3072980	And the government is trying to censor you by attempting to take it down.
+3072980	3076980	Well, one person in terrorism is another person in freedom of fire.
+3076980	3077980	Or you want to incite murder.
+3077980	3079980	Or you want to incite genocide.
+3079980	3080980	Sure.
+3080980	3082980	That's freedom of speech for some.
+3082980	3086980	And prohibited pain speech for others.
+3086980	3089980	So, anonymity has two sides.
+3089980	3090980	But what is it really?
+3090980	3092980	Let's try to begin.
+3092980	3099980	I'm going to try to say that it's like inability to identify someone.
+3099980	3105980	An inability to identify someone with something within a set of subjects.
+3105980	3109980	Now, the size of the set can vary.
+3109980	3116980	And the fewer subjects in a set, the worse anonymity is, right?
+3116980	3126980	So, if I turn my back to the board and somebody throws a spitball at my back, surely some of you have done this in high school,
+3126980	3129980	I will know that somebody threw a spitball at me.
+3129980	3131980	I will feel it.
+3131980	3134980	I'm sensitive.
+3134980	3139980	But there are 14 people here.
+3139980	3141980	Which one?
+3141980	3143980	Is it the guy who is smiling?
+3143980	3145980	Or is it somebody with a poker face?
+3145980	3148980	Is it the person pretending to type on their phone?
+3148980	3150980	Or actually typing on their phone?
+3150980	3153980	Pretending to be very occupied or looking up in the sky?
+3153980	3154980	I have no idea.
+3154980	3155980	That's anonymity.
+3155980	3158980	You throw a spitball at me when my back is turned.
+3158980	3159980	I don't have eyes in the back of my head.
+3159980	3162980	You are anonymous in a group of 14.
+3162980	3164980	Okay?
+3164980	3169980	Now, if there are two of you here, wow, my job is easier.
+3169980	3174980	I might look at your fingers and, you know, or something.
+3174980	3177980	But, yeah, 14 is good enough for that.
+3177980	3182980	So, different from privacy, right?
+3182980	3189980	In other words, one cannot be anonymous alone, right?
+3189980	3195980	So, if there is one only person here and I feel the spitball hitting my back, I don't know this.
+3195980	3197980	That's definitely the culprit.
+3197980	3200980	That's it.
+3200980	3202980	There is other shades of anonymity.
+3202980	3207980	One is called unlinkability and the other we call unobservability.
+3207980	3208980	Okay?
+3208980	3214980	Unlinkability is an inability to connect multiple actions or action and identity.
+3214980	3222980	Like, in the spitball example, I also get more than anonymity, I get unlinkability.
+3222980	3224980	The action was spitball.
+3224980	3229980	But I cannot link an identity to that action.
+3229980	3232980	I know it's someone, but I cannot link an identity.
+3232980	3233980	Do you see this?
+3233980	3234980	Do you see this?
+3234980	3235980	The action occurred.
+3235980	3237980	I know the action occurred.
+3237980	3239980	Spitball hit me.
+3239980	3240980	Somebody launched it.
+3240980	3241980	But who?
+3241980	3242980	I don't know.
+3242980	3243980	So, I can't link.
+3243980	3244980	Or, suppose this.
+3244980	3245980	Twice this happened.
+3245980	3246980	Twice.
+3246980	3247980	My back is turned.
+3247980	3248980	Bam!
+3248980	3249980	Spitball.
+3249980	3250980	Some minutes later, my back is turned again.
+3250980	3251980	Bam!
+3251980	3252980	Another spitball.
+3252980	3253980	Okay.
+3253980	3254980	I know.
+3254980	3255980	Two spitballs.
+3255980	3256980	But let's say this guy, I want to hit me.
+3256980	3257980	Hit me.
+3257980	3258980	Hit me.
+3258980	3259980	Somebody launched it.
+3259980	3260980	But who?
+3260980	3261980	I don't know.
+3261980	3262980	So, I can't link.
+3262980	3263980	Or, suppose this.
+3263980	3264980	Twice this happened.
+3264980	3265980	Twice.
+3265980	3266980	Twice.
+3266980	3267980	My back is turned.
+3267980	3268980	Bam!
+3268980	3270980	Let's say this guy over here.
+3270980	3272980	Let's meet him a little seeker.
+3272980	3277980	He says, you know, it's the same person.
+3277980	3279980	Snitch.
+3279980	3281980	That means I have linkability.
+3281980	3282980	I just linked.
+3282980	3285980	I don't know who it is, but I know it's the same person.
+3285980	3286980	You see?
+3286980	3291980	But if he doesn't tell me, I know that two actions occurred, but I can't link them.
+3291980	3293980	I mean, they asked spitballs.
+3293980	3294980	Both.
+3294980	3297980	But it could have been done by two different people.
+3297980	3300980	So, inability to link is unlinkability.
+3300980	3303980	If he rats on somebody, it's just partially rats on somebody.
+3303980	3305980	You know, it's the same person.
+3305980	3306980	All I can tell you is the same person.
+3306980	3308980	Oh, now I have more information.
+3308980	3309980	There's one person.
+3309980	3310980	It was not a random act.
+3310980	3312980	That one person did it twice.
+3312980	3313980	Okay?
+3313980	3321980	So, a more appropriate example, perhaps, is connecting Alice to a sent email.
+3321980	3324980	Now, I know that email was sent, right?
+3324980	3327980	And if I can't link it to the sender, that's unlinkability.
+3327980	3332980	But if I can link it to Alice, then I know Alice sent email.
+3332980	3335980	I might not know what it is.
+3335980	3340980	It might be well encrypted, but I know she sent email.
+3340980	3345980	Or, I see two emails, both encrypted.
+3345980	3349980	I don't know who sent them, but I know it's the same sender.
+3349980	3350980	Okay?
+3350980	3351980	That's linkability.
+3351980	3356980	Inability to do that is unlinkable.
+3356980	3362980	And then, last, sort of, the impacts of anonymity is called unobservability.
+3362980	3364980	And that's very hard to achieve.
+3364980	3373980	Here, if you observe, you don't know when a second action took place.
+3373980	3374980	Okay?
+3374980	3380980	So, let's say the room is completely dark.
+3380980	3381980	Okay?
+3381980	3383980	The room is completely dark.
+3383980	3384980	You cannot see me.
+3384980	3386980	I cannot see you, but I know you're here.
+3386980	3388980	So, imagine right now all the lights go dark.
+3388980	3390980	It's completely dark.
+3390980	3395980	And then, 30 seconds later, the lights go on.
+3395980	3400980	My question is, did somebody throw a spitball anywhere?
+3404980	3408980	I didn't feel it, but did somebody do throw a spitball anywhere in the room?
+3408980	3409980	I don't know.
+3409980	3410980	Maybe.
+3410980	3411980	Maybe not.
+3411980	3413980	Do you see the difference?
+3413980	3418980	An action may have occurred, or may not have occurred, I don't know.
+3418980	3424980	So, that inability to tell what happened, just that the action happened, is, by itself,
+3424980	3425980	unobservability.
+3425980	3426980	That's really hard.
+3426980	3438980	So, how do you undermine anonymity, well, by now it should be kind of obvious, right?
+3438980	3439980	Passive traffic analysis.
+3439980	3443980	Looking at IP traffic.
+3443980	3445980	Looking at Ethernet traffic.
+3445980	3446980	Why Ethernet?
+3446980	3447980	Why Ethernet?
+3447980	3454980	Well, at the MAC layer, you still see, remember, MAC addresses, right?
+3454980	3458980	Even if, because, let's say, in a wireless menu, we use encryption, right?
+3458980	3459980	There's wireless encryption, right?
+3459980	3461980	There's wireless encryption protocols.
+3461980	3464980	So, they hide even the IP header.
+3464980	3467980	If you're confused, why am I saying this?
+3467980	3473980	Because, remember, IP packets, once they go on the internet, once they usually pass the
+3473980	3475980	first wireless hop, right?
+3475980	3478980	They are IP packets.
+3478980	3481980	Meaning, that you can see the heads, right?
+3481980	3484980	You can see IP, you know, IP heads.
+3484980	3487980	But, on our first wireless hop, right?
+3487980	3494980	Like this, from here, from here to the access point, there's usually a wireless security protocol
+3494980	3504980	that encrypts the IP packet between my device and the access point.
+3504980	3511980	So, if you were observing traffic, what you would be able to see, then, is Ethernet headers.
+3511980	3514980	Meaning, MAC addresses, right?
+3514980	3516980	Source, destination.
+3516980	3518980	But, that's also information, right?
+3518980	3523980	Because, you can tell that it's, if you know the source, you'll know it's my phone
+3523980	3525980	that's using that MAC address.
+3525980	3527980	The destination will be access point.
+3527980	3529980	But, if we're using, what is it called?
+3529980	3530980	Direct Wi-Fi?
+3530980	3532980	But, no direct Wi-Fi.
+3532980	3533980	Appear Wi-Fi.
+3533980	3536980	That's what you don't have access point.
+3536980	3540980	But, let's say, talk directly, like me talking directly to his laptop.
+3540980	3542980	We can do that.
+3542980	3543980	Not easy to set up.
+3543980	3545980	Not a lot of people use it, but you can, right?
+3545980	3551980	So, in that case, if you snoop on traffic, you will be able to observe that my Ethernet MAC address
+3551980	3554980	is talking to his Ethernet MAC address.
+3554980	3558980	So, that's passive traffic analysis, right?
+3558980	3566980	So, the idea is, if you want to hide patterns in traffic, you have to not only communicate
+3566980	3569980	sparingly, but you also have to carry other people's traffic.
+3569980	3573980	Like, relay other people's traffic to obscure patterns.
+3573980	3576980	And, we'll see how that's done later.
+3576980	3577980	There's more.
+3577980	3582980	There's also active traffic analysis, which means injecting traffic and seeing if I can
+3582980	3586980	recognize it as it traverses some route.
+3586980	3589980	Put it on timing signatures.
+3589980	3590980	That's later.
+3590980	3597980	You can also, if you compromise routers, well, then you don't need to worry about snooping on traffic, right?
+3597980	3601980	Routers, by definition, receive traffic and forward it.
+3601980	3606980	So, they don't need to tap any wires or any kind of medium, right?
+3606980	3610980	They naturally receive traffic and send it on its way.
+3610980	3615980	And, you will never know if a router is compromised, right?
+3615980	3623980	Because it's running malicious software that actually logs or examines communication patterns.
+3623980	3629980	That's done silently.
+3629980	3632980	So, from history.
+3632980	3640980	Back in 1981, ancient history, 44 years ago, a guy named David Chow, a brilliantly paranoid
+3640980	3646980	and crazy person who might have sort of dubious pleasure of meeting a few times.
+3646980	3649980	Because brilliant scientists are always very nice people.
+3649980	3651980	And, this guy's an example.
+3651980	3656980	But, he's brilliant and should get a Turing Award.
+3656980	3658980	He's old, but he's alive.
+3658980	3661980	And, actually, should get a Turing Award one of his years.
+3661980	3662980	He published several papers.
+3662980	3667980	One of them was a communication with ACM called untraceable electronic mail return addresses
+3667980	3669980	and digital series.
+3669980	3677980	Mind you, 1981 was, should, I was in middle school, high school.
+3677980	3678980	I mean, internet.
+3678980	3680980	I had never heard of the internet.
+3680980	3687980	So, that was only like maybe 81 and maybe a few thousand people around the world that knew of internet.
+3687980	3694980	And, this guy was already thinking ahead about the world we live today.
+3694980	3697980	Because, back then nobody cared about that anonymity.
+3697980	3698980	So, you say, security?
+3698980	3699980	Why?
+3699980	3700980	Anonymity?
+3700980	3701980	Who needs it?
+3701980	3708980	But, that paper was laid the foundation for what today's, what today's anonymity and privacy tools are.
+3708980	3716980	And, basically, the idea he laid out is that, he first made an argument why we need privacy and anonymity.
+3716980	3722980	And, then he sort of used this new concept called public encryption because public encryption was run from like late 70s.
+3722980	3729980	So, he used this very new cryptographic concept of public encryption with the concept of a trusted remailer.
+3729980	3732980	called the mix.
+3732980	3733980	Okay?
+3733980	3738980	And, just, mix works like this.
+3738980	3740980	And, it's the foundation actually.
+3740980	3744980	It is the foundation of many, of today's anonymity systems.
+3744980	3745980	So, the idea is this.
+3745980	3747980	You have a bunch of users.
+3747980	3751980	And, the users want to send email to each other.
+3751980	3757980	So, now we're talking strictly about email because, back in the 1980s, there was no social networking.
+3757980	3759980	There was no instant messaging.
+3759980	3760980	There was no SMS.
+3760980	3762980	There was no cell phones, really.
+3762980	3764980	So, people communicated.
+3764980	3767980	If they wanted to communicate electronically, they communicated via email.
+3767980	3770980	And, the email looked pretty much like a dozen.
+3770980	3780980	So, the idea is to obscure or hide who is sending email to whom.
+3780980	3781980	Okay?
+3781980	3788980	So, we have A, C, D of Alice, Charlie, David, and then we have Bob and Eve.
+3788980	3790980	And, these are all users.
+3790980	3794980	And, some of them want to send email to others.
+3794980	3801980	But, they don't want anybody observing that, anybody observing where that email goes.
+3801980	3809980	So, you have here Alice, who wants to send an email to Bob.
+3809980	3815980	But, she does not send it directly to Bob because, if she did, that would be observable.
+3815980	3822980	So, what she does is, she takes the message that she wants to send to Bob, called M.
+3822980	3830980	Combines it with a NOS, a random value that she picks, R0.
+3830980	3837980	And, she encrypts it under the public key of Bob, the receiver.
+3837980	3840980	And, she takes the result, the encryption.
+3840980	3843980	Combines it with another NOS, called R1.
+3843980	3844980	Okay?
+3844980	3857980	Appends the name of the recipient, B, and encrypts it under the well-known public key of the mix.
+3857980	3861980	Now, the mix is not like the picture.
+3861980	3863980	It's a computer.
+3863980	3867980	And, its job is to mix email.
+3867980	3869980	But, it doesn't just mix.
+3869980	3871980	It also decrypts and decrypts, et cetera.
+3871980	3873980	But, in this example, you'll see.
+3873980	3879980	So, now, A, instead of sending to, directly to Bob, Alice sends it to the mix.
+3879980	3890980	Now, the idea is that when the mix gets that email, it knows that all the emails coming to the mix are encrypted under the mix of public key.
+3890980	3891980	Right?
+3891980	3892980	So, it tries to decrypt it.
+3892980	3893980	It doesn't succeed.
+3893980	3894980	It throws it away.
+3894980	3901980	But, when it decrypts, what it finds inside is R0 and M encrypted, which you cannot read what it is.
+3901980	3903980	It doesn't see what M is.
+3903980	3904980	It doesn't know what R0 is.
+3904980	3908980	But, he sees the name of B, Bob, right?
+3908980	3910980	So, he says, that's what I'm going to send.
+3910980	3913980	Whatever I find inside, I'm going to send to Bob.
+3913980	3915980	You see that?
+3915980	3916980	Easy.
+3916980	3919980	And, he does that.
+3919980	3922980	Now, imagine you are the observer.
+3922980	3926980	And, you have seen that message from Alice to the mix.
+3926980	3931980	And, you have also seen the message from mix to Bob.
+3931980	3936980	Can you say for sure that these are the same messages?
+3936980	3939980	What can you tell me?
+3939980	3940980	What can you tell me?
+3940980	3943980	If there's no other messages, there's no message.
+3943980	3944980	Right.
+3944980	3950980	But, if somebody showed up and said, here's one message, here's the second message.
+3950980	3952980	Are they the same?
+3952980	3954980	Can you tell them?
+3954980	3955980	Huh?
+3955980	3956980	No.
+3956980	3957980	You cannot.
+3957980	3958980	Right?
+3958980	3959980	You cannot.
+3959980	3960980	Because, how do you know?
+3960980	3961980	If this message is encrypted under the big public key of the mix, and the other message
+3961980	3963980	is encrypted under the public key of Bob.
+3963980	3964980	You cannot.
+3964980	3965980	You cannot.
+3965980	3966980	Right?
+3966980	3967980	You cannot.
+3967980	3968980	Because, how do you know?
+3968980	3974980	If this message is encrypted under the big public key of the mix, and the other message
+3974980	3980980	is encrypted under the public key of Bob.
+3980980	3981980	You cannot correlate.
+3981980	3982980	You cannot correlate.
+3982980	3987980	But, you are correct if you also know that this message was the only message coming into
+3987980	3988980	the mix.
+3988980	3994980	And, very soon afterwards, that message was encrypted, and very likely they had the same
+3994980	3995980	message.
+3995980	4001980	Because the mix sent only one message, and before that he received this one message, it
+4001980	4003980	must be a chain reaction, right?
+4003980	4006980	Well, that's not how we use a mix, right?
+4006980	4007980	You can imagine.
+4007980	4011980	The idea of a mix is to mix things.
+4011980	4018980	So, a mix is to receive many emails like this.
+4018980	4019980	Okay?
+4019980	4022980	Now, this is a toy example, mind you.
+4022980	4027980	In the real world, this would be hundreds and maybe thousands of messages received in
+4027980	4029980	very close succession, right?
+4029980	4033980	One after another, or nearly simultaneously.
+4033980	4035980	So, look at what happens.
+4035980	4038980	In this example, there are only three incoming messages.
+4038980	4041980	Charlie wants to send a message to Eve.
+4041980	4044980	He encrypts it similarly, you see?
+4044980	4047980	David wants to send a message to Bob.
+4047980	4048980	He encrypts it similarly, right?
+4048980	4053980	Everything is the same format, right?
+4053980	4064980	And what the mix actually does is output the three messages in a blast at the same time.
+4064980	4067980	Or you can imagine either at the same time or in some random order.
+4067980	4072980	But the order in which it outputs, it has nothing to do with the order in which it received.
+4072980	4081980	Now, you're again the observer who sees what's coming into the mix and what is leaving the mix.
+4081980	4084980	Can you map incoming to outgoing messages?
+4087980	4088980	Probabilistically?
+4088980	4090980	Only probabilistically, yeah.
+4090980	4093980	This is a silly example, right?
+4093980	4096980	Can you say, who sent a message to Eve?
+4096980	4100980	Well, it could be one-third, right?
+4100980	4101980	Probability.
+4101980	4103980	It's either Alice, Charlie, or David.
+4103980	4105980	Who sends a message to Bob?
+4109980	4114980	Well, it's either Alice and Charlie, Alice and David, or Charlie and David, right?
+4117980	4119980	You know everybody sent a message.
+4119980	4121980	What you don't know is to whom.
+4121980	4126980	But now, think about generalizing this to hundreds of messages and thousands of messages.
+4126980	4128980	And many thousands of recipients.
+4129980	4130980	Right?
+4130980	4132980	Both senders and receivers.
+4134980	4136980	Then it becomes very difficult to associate.
+4137980	4141980	So the main thing is that, of course, the mix does not need three messages to start sending.
+4141980	4143980	It needs to receive a patch that is big enough.
+4144980	4145980	Right?
+4145980	4148980	And that's configurable and you can set it to like 10,000.
+4148980	4152980	So, a mix receives 10,000 messages, then it outputs them in random form.
+4152980	4153980	Yeah?
+4153980	4158980	Can you just see that Alice is always in a batch that sends a message to Bob, but whenever
+4158980	4161980	there's a batch to Alice, it doesn't make me never send a message to Bob.
+4162980	4163980	Yes.
+4164980	4165980	Yes.
+4165980	4166980	You can.
+4166980	4171980	And then, maybe you can think, you can deduce that Alice did not send a message to Bob,
+4171980	4173980	or she did send a message to Bob at some point.
+4173980	4174980	Yes.
+4174980	4179980	But, again, with a large enough scaling factor, this should be really, really difficult.
+4180980	4184980	I imagine there's some endpoints that never get message sent in the ticker.
+4184980	4185980	Aha!
+4185980	4186980	Yes.
+4186980	4187980	And there are defenses against that as well.
+4188980	4189980	Okay?
+4189980	4197980	In the general system, what happens is, I mean, this is like if you want to maximize or minimize
+4197980	4198980	kind of the performance levels.
+4198980	4199980	You do this.
+4199980	4204980	You output as many messages as a mix, output as many messages as you see.
+4204980	4213980	There are also very naive or nothing, very intuitive strategies to obscure and prevent attacks
+4213980	4214980	like you just have.
+4214980	4219980	And they involve chaffing or generating spurious traffic.
+4219980	4228980	So the idea is that every user of the mix will randomly send traffic that goes nowhere.
+4228980	4231980	You see what I'm saying?
+4231980	4232980	Yes.
+4232980	4233980	Right?
+4233980	4237980	It will just send traffic to a special destination called X.
+4237980	4239980	And there's no X.
+4239980	4246980	So when the mix receives a packet and receives a message, decrypts it, and she sees destination
+4246980	4248980	X, it says, oh, this is chaff.
+4248980	4249980	Throw it.
+4249980	4250980	Okay?
+4250980	4257980	So that says that Alice, that obscures the true number of packets or mail messages that
+4257980	4259980	Alice sends or every user sends.
+4259980	4266980	In addition to that, a mix can generate spurious messages to random destinations as well.
+4266980	4268980	A chaff, right?
+4268980	4271980	You will pick, like, there are no messages for Bob in this batch.
+4271980	4275980	Oh, let's send a message to Bob and Charlie and Edward and this.
+4275980	4276980	Okay?
+4276980	4278980	Well, let's send more messages than there really are.
+4278980	4283980	And they will be marked specifically so that when the destination, the actual destination
+4283980	4286980	receives them, they'll just throw them away.
+4286980	4289980	So that's one way to obscure.
+4289980	4294980	Does anybody know why R0 is necessary?
+4294980	4301980	If Alice sends the same message to Bob multiple times, if you don't have R0 and there's a
+4301980	4302980	little bit of a caveat, if the public key encryption is deterministic, then this message R0, that's
+4302980	4303980	the same.
+4303980	4304980	This message from mixed to Bob would be the same.
+4304980	4305980	No?
+4305980	4306980	No?
+4306980	4307980	No?
+4307980	4308980	No?
+4308980	4309980	No?
+4309980	4310980	No?
+4310980	4311980	No.
+4311980	4312980	No.
+4312980	4313980	No.
+4313980	4314980	No.
+4314980	4315980	No.
+4315980	4316980	No.
+4316980	4317980	No.
+4317980	4318980	No.
+4318980	4319980	No.
+4319980	4320980	No.
+4320980	4321980	No.
+4321980	4322980	No.
+4322980	4323980	No.
+4323980	4324980	No.
+4324980	4325980	No.
+4325980	4326980	No.
+4326980	4327980	No.
+4327980	4328980	No.
+4328980	4329980	No.
+4329980	4330980	No.
+4330980	4331980	No.
+4332980	4333980	No.
+4333980	4334980	No.
+4334980	4335980	No.
+4335980	4336980	No.
+4336980	4337980	No.
+4337980	4338980	No.
+4338980	4339980	No.
+4339980	4340980	No.
+4340980	4341980	No.
+4341980	4344980	No.
+4344980	4346980	No.
+4346980	4347980	No.
+4347980	4348980	No.
+4348980	4349980	No.
+4349980	4350980	No, no.
+4350980	4351980	No.
+4351980	4352980	No, no, no.
+4352980	4355380	Like why do I have these?
+4355380	4357180	That's more of it.
+4357180	4359000	Not really necessary.
+4359000	4360420	Like extra randomization.
+4361280	4363140	But does everybody see how a mix works?
+4364340	4365820	Okay.
+4365820	4367500	All right, let's end here.
+4367500	4368820	See you on Thursday.

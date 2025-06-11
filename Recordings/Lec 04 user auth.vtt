@@ -1,0 +1,11855 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+like SSL that we're going to go over later and there's some wireless, I think it ends
+
+00:09.000 --> 00:17.000
+with some firewalls which also will go in depth and wireless.
+
+00:17.000 --> 00:23.000
+Any questions from us?
+
+00:23.000 --> 00:32.000
+So again, I would like to have your new proposals by next Tuesday, like last time.
+
+00:32.000 --> 00:40.000
+If you have any fundamental questions there about what I expect, ask.
+
+00:40.000 --> 00:44.000
+I'll have officers on Monday.
+
+00:44.000 --> 00:49.000
+Again, I want to deal with two people.
+
+00:49.000 --> 00:59.000
+No double dipping means not to use material that you did already or you're doing in parallel
+
+00:59.000 --> 01:01.000
+in some other course.
+
+01:01.000 --> 01:07.000
+So there has to be something distinct that you do for this part.
+
+01:07.000 --> 01:17.000
+And if you plan to do writing, survey or something like that, no chatbots.
+
+01:17.000 --> 01:21.000
+That should be you.
+
+01:21.000 --> 01:29.000
+If you do use some tools that you are not sure, or you want to use some tools, you're not quite sure if this transcends the boundary, just ask.
+
+01:29.000 --> 01:35.000
+It's easier to ask now than to explain later.
+
+01:35.000 --> 01:41.000
+Okay, so user authentication, one of the basic topics in computer security.
+
+01:41.000 --> 01:43.000
+How do we authenticate humans?
+
+01:43.000 --> 01:47.000
+That means us.
+
+01:47.000 --> 01:52.000
+All right, basic problem.
+
+01:52.000 --> 02:01.000
+Somebody claims to be Alice or Bob, and now how do you prove that you are that Alice or Bob?
+
+02:01.000 --> 02:03.000
+Now why do we do authentication?
+
+02:03.000 --> 02:06.000
+We do authentication in order to enforce access control.
+
+02:06.000 --> 02:12.000
+All right, just authentication for the sake of authentication isn't useful.
+
+02:12.000 --> 02:17.000
+What's the point of authenticating you if nothing happens?
+
+02:17.000 --> 02:27.000
+And any form of, any time you are asked for anything that identifies you and authenticates you, it's for some purpose.
+
+02:27.000 --> 02:32.000
+Whether it's a policeman that stops you and says, where's your driver's license?
+
+02:32.000 --> 02:35.000
+The driver's license is to let you go.
+
+02:35.000 --> 02:37.000
+If you authenticate you, you let you go.
+
+02:37.000 --> 02:38.000
+Then you get a ticket.
+
+02:38.000 --> 02:41.000
+And without the driver's license, you might get arrested.
+
+02:41.000 --> 02:43.000
+So no access to driving privileges, right?
+
+02:43.000 --> 02:51.000
+If you work for a company, you use a badge and maybe sometimes a camera to authenticate you as an employee, right?
+
+02:51.000 --> 02:54.000
+So you can have access to the premises.
+
+02:54.000 --> 03:00.000
+You get into the UCI's Google space, right?
+
+03:00.000 --> 03:03.000
+Google Docs and Drive space.
+
+03:03.000 --> 03:10.000
+You authenticate it via a dual and password username so you can get access to those resources, et cetera, et cetera.
+
+03:10.000 --> 03:14.000
+So there's always a reason for why you are being authenticated, right?
+
+03:14.000 --> 03:19.000
+There is something that you are given access to if you succeed in authentication.
+
+03:19.000 --> 03:20.000
+Okay.
+
+03:20.000 --> 03:25.000
+So this pops up just about everywhere.
+
+03:25.000 --> 03:34.000
+So, of course, as you know, there are many ways to prove that you are.
+
+03:34.000 --> 03:35.000
+Say you are.
+
+03:35.000 --> 03:38.000
+The most familiar ones are passwords.
+
+03:38.000 --> 03:48.000
+Their demise has been predicted for the last 40 years, and yet they are still here.
+
+03:48.000 --> 03:53.000
+Moreover, they show no signs of going away anytime soon.
+
+03:53.000 --> 03:56.000
+An interesting parallel, email.
+
+03:56.000 --> 04:00.000
+Email has been around since early 80s.
+
+04:00.000 --> 04:03.000
+Pretty much the same way it is used to be.
+
+04:03.000 --> 04:08.000
+Maybe the WYSIWYG changed, you know, the here and there, but the interfaces, et cetera.
+
+04:08.000 --> 04:10.000
+But email is pretty much the same.
+
+04:10.000 --> 04:14.000
+Same format email addresses, and every year somebody says, yeah, I guarantee it.
+
+04:14.000 --> 04:15.000
+You know, it's like a doomsday.
+
+04:15.000 --> 04:18.000
+You say, oh, yeah, the end of the world is coming tomorrow.
+
+04:18.000 --> 04:19.000
+Just you wait.
+
+04:19.000 --> 04:21.000
+And tomorrow comes, ah, you know what?
+
+04:21.000 --> 04:22.000
+My clock was wrong.
+
+04:22.000 --> 04:23.000
+I was like, yeah, it missed you.
+
+04:23.000 --> 04:26.000
+Anyway, ah, the stars did not align.
+
+04:26.000 --> 04:30.000
+So the same thing about email and password, doomsday predictions.
+
+04:30.000 --> 04:31.000
+Email is still here.
+
+04:31.000 --> 04:32.000
+Password is still here.
+
+04:32.000 --> 04:34.000
+No signing going on.
+
+04:34.000 --> 04:35.000
+Right.
+
+04:35.000 --> 04:42.000
+So passwords we know, and nobody loves them, but we're used to them.
+
+04:42.000 --> 04:45.000
+And then we have passphrases, right?
+
+04:45.000 --> 04:50.000
+Or answers to personal questions.
+
+04:50.000 --> 04:55.000
+Like, what color eyes do you like the most?
+
+04:55.000 --> 05:00.000
+Or, what was the make of your first automobile?
+
+05:00.000 --> 05:03.000
+Really difficult questions, right?
+
+05:03.000 --> 05:06.000
+And then there are, of course, secret keys, right?
+
+05:06.000 --> 05:07.000
+So we can use some secret keys.
+
+05:07.000 --> 05:10.000
+If you can remember them, you can use them, right?
+
+05:10.000 --> 05:15.000
+Or you can write them down, which will be a lot of fun.
+
+05:15.000 --> 05:19.000
+But these are things you know, presumably.
+
+05:19.000 --> 05:21.000
+Pins are, of course, another form.
+
+05:21.000 --> 05:24.000
+It's a variation of the theme of passwords, right?
+
+05:24.000 --> 05:28.000
+Because they're supposed to be numbers, not alphanumeric characters.
+
+05:28.000 --> 05:32.000
+Then you can do authentication based on where you are.
+
+05:32.000 --> 05:39.000
+So that is, if you are in some space, and you can prove you are in some space, geographical
+
+05:39.000 --> 05:44.000
+location, then you must have access to something.
+
+05:44.000 --> 05:46.000
+You might be giving access to something.
+
+05:46.000 --> 05:50.000
+Like, if you are in some secure room in the Pentagon, by virtue of being in that secure
+
+05:50.000 --> 05:55.000
+room, you're allowed to access some computer system or some database.
+
+05:55.000 --> 06:00.000
+I'm not saying that's how it should be, but it can be like that.
+
+06:00.000 --> 06:06.000
+It could also be an IP address given to you by your internet provider.
+
+06:06.000 --> 06:15.000
+So, for example, if you live in the campus housing, your entry is provided by UCI, right?
+
+06:15.000 --> 06:22.000
+As opposed to, say, me, I also live on campus, Canada campus, I think on Union Hills here,
+
+06:22.000 --> 06:26.000
+next to campus, my address is provided by Cox.
+
+06:26.000 --> 06:31.000
+And all my neighbors are in the cost of Google to buy them.
+
+06:31.000 --> 06:35.000
+So the IP address tells you something.
+
+06:35.000 --> 06:38.000
+If you believe me, the IP address, of course.
+
+06:38.000 --> 06:40.000
+It could be home phone, right?
+
+06:40.000 --> 06:43.000
+Of course, people don't use home phones anymore, right?
+
+06:43.000 --> 06:45.000
+Landlines are rare.
+
+06:45.000 --> 06:46.000
+Cell phone.
+
+06:46.000 --> 06:51.000
+Cell phone used to be able to, many, many, many years ago, if you had a certain cell phone number,
+
+06:51.000 --> 06:55.000
+then you had to be in a particular space, because back then there was no roaming, right?
+
+06:55.000 --> 06:59.000
+So if your phone number worked, that means you were, you know, with a 949 area code,
+
+06:59.000 --> 07:00.000
+you were in North County.
+
+07:00.000 --> 07:02.000
+It doesn't work anymore.
+
+07:02.000 --> 07:10.000
+Now, MAC addresses, could they be used for identifying where you are, right?
+
+07:10.000 --> 07:13.000
+Or for anything at all?
+
+07:13.000 --> 07:18.000
+Everybody knows what MAC addresses is, right?
+
+07:18.000 --> 07:27.000
+Theoretically, MAC addresses supposed to tell you something about the interface of the device.
+
+07:27.000 --> 07:28.000
+Any ideas?
+
+07:28.000 --> 07:29.000
+No?
+
+07:29.000 --> 07:31.000
+Too early?
+
+07:31.000 --> 07:34.000
+MAC addresses have a special format.
+
+07:34.000 --> 07:39.000
+They actually should tell you who the manufacturer of the device, or the interface.
+
+07:39.000 --> 07:44.000
+It doesn't tell you necessarily where you are, and that's why I put a question mark there.
+
+07:44.000 --> 07:46.000
+Also, MAC addresses are impermanent.
+
+07:46.000 --> 07:50.000
+There was a time when most devices that have MAC addresses, you couldn't change them.
+
+07:50.000 --> 08:02.000
+Today, you can change MAC addresses on most laptops, industrial or desktop systems, most laptops, cell phones, and other guys.
+
+08:02.000 --> 08:08.000
+Also, even if MAC addresses were impermanent, MAC addresses are only used for the one hub, right?
+
+08:08.000 --> 08:11.000
+That's a data link layer.
+
+08:11.000 --> 08:16.000
+So, in this room, the MAC address is only visible to the access point.
+
+08:16.000 --> 08:18.000
+But beyond the access point, it has no meaning, right?
+
+08:18.000 --> 08:19.000
+There's nothing.
+
+08:19.000 --> 08:21.000
+It doesn't longer go there.
+
+08:21.000 --> 08:26.000
+Okay, then there's what you are as a human, right?
+
+08:26.000 --> 08:33.000
+Now, what you are are your intrinsic features, like your DNA, right?
+
+08:33.000 --> 08:44.000
+Your fingerprints, your eyes, your face geometry, your hand geometry, your vein pattern on your wrist.
+
+08:44.000 --> 08:51.000
+There's gait, where you are, not a very good biometric, but that's in you.
+
+08:51.000 --> 08:53.000
+All kinds of other things.
+
+08:53.000 --> 08:58.000
+And then there is the one that you are familiar with the most, which is what you have, right?
+
+08:58.000 --> 09:03.000
+It's a possession of something.
+
+09:03.000 --> 09:04.000
+We know this, right?
+
+09:04.000 --> 09:07.000
+This is the most frequent two-factor.
+
+09:07.000 --> 09:12.000
+You have the app on your phone, and it's visually secure.
+
+09:12.000 --> 09:13.000
+You trust the app.
+
+09:13.000 --> 09:16.000
+The app will pop up, right?
+
+09:16.000 --> 09:22.000
+Either with the approve, disapprove, or a code, right?
+
+09:22.000 --> 09:27.000
+The temporary code, that essentially, by entering that code or hitting approve,
+
+09:27.000 --> 09:30.000
+you're saying, I'm in possession of this phone.
+
+09:30.000 --> 09:34.000
+And because this phone has been pre-registered as associated with you,
+
+09:34.000 --> 09:37.000
+there's a reasonable assumption that because you have this phone,
+
+09:37.000 --> 09:41.000
+and previously you entered the right password and username,
+
+09:41.000 --> 09:46.000
+must be the case that you are a police agent.
+
+09:46.000 --> 09:48.000
+And if you think of it, any other?
+
+09:48.000 --> 09:50.000
+Might I miss something?
+
+09:50.000 --> 09:55.000
+Any other basis upon which you can be authenticated?
+
+09:55.000 --> 10:02.000
+What you know, where you are, what you are, what you have.
+
+10:02.000 --> 10:08.000
+Some people suggested where you've been, but that's hard to remember.
+
+10:08.000 --> 10:11.000
+So, how do our passwords work?
+
+10:11.000 --> 10:12.000
+No.
+
+10:12.000 --> 10:13.000
+Quiet track.
+
+10:13.000 --> 10:14.000
+No.
+
+10:14.000 --> 10:15.000
+Yeah.
+
+10:15.000 --> 10:16.000
+Without a sign.
+
+10:16.000 --> 10:18.000
+So, must not be able to remember.
+
+10:18.000 --> 10:19.000
+Right.
+
+10:19.000 --> 10:20.000
+So, you have a secret password.
+
+10:20.000 --> 10:25.000
+You pick the secret password, and the system checks to authenticate that password.
+
+10:25.000 --> 10:32.000
+Now, sometimes, of course, you don't pick the secret password,
+
+10:32.000 --> 10:34.000
+sometimes the secret password is given to you.
+
+10:34.000 --> 10:38.000
+Like, how many of you have used a browser to select a secret password?
+
+10:38.000 --> 10:40.000
+Then you don't actually know anything.
+
+10:40.000 --> 10:41.000
+Right?
+
+10:41.000 --> 10:42.000
+All you do is, what?
+
+10:42.000 --> 10:51.000
+You log into your computer, or your, uh, smartphone computer, like that.
+
+10:51.000 --> 10:58.000
+And, the idea is that the browser, especially something like Chrome, let's say.
+
+10:58.000 --> 11:05.000
+I want to pick, I use Firefox sometimes here, but let's say Chrome, which is popular.
+
+11:05.000 --> 11:08.000
+Um, you also have to log into your profile, right?
+
+11:08.000 --> 11:09.000
+On Chrome.
+
+11:09.000 --> 11:14.000
+So, you log into the computer, you log into the browser, but the browser doesn't know what
+
+11:14.000 --> 11:15.000
+you log into the computer.
+
+11:15.000 --> 11:21.000
+So, in fact, you log into your profile on Chrome, and that essentially unlocks the so-called
+
+11:21.000 --> 11:30.000
+password vault, or password bundle, that is stored in your profile on Chrome.
+
+11:30.000 --> 11:32.000
+Not super reassuring, right?
+
+11:32.000 --> 11:37.000
+But, convenient, because as long as you use that Chrome, right?
+
+11:37.000 --> 11:39.000
+Actually, it doesn't have to be Chrome there, right?
+
+11:39.000 --> 11:41.000
+You could be using Chrome somewhere else.
+
+11:41.000 --> 11:47.000
+You know, if you set it up correctly, that password that Chrome picked for you will be available
+
+11:47.000 --> 11:50.000
+once you authenticate with the right folder.
+
+11:50.000 --> 11:51.000
+Right.
+
+11:51.000 --> 11:57.000
+So, initialization, but typically the password initialization is you pick the password based
+
+11:57.000 --> 12:00.000
+on some password rules.
+
+12:00.000 --> 12:05.000
+Which vary, of course, from site to site, from time to time.
+
+12:05.000 --> 12:10.000
+And, um, how do you actually communicate with the log in time for the first time, right?
+
+12:10.000 --> 12:13.000
+Or for subsequent times, right?
+
+12:13.000 --> 12:16.000
+There is always this risk of eavesdropping.
+
+12:16.000 --> 12:17.000
+Right?
+
+12:17.000 --> 12:26.000
+So, if you imagine the most naive way of communicating a password is you type your password and then
+
+12:26.000 --> 12:28.000
+it just goes somewhere.
+
+12:28.000 --> 12:33.000
+Now, if it's a local computer, maybe you can have a little more trust.
+
+12:33.000 --> 12:38.000
+You trust the operating system that the log in prompt is actually from the operating system.
+
+12:38.000 --> 12:39.000
+Right?
+
+12:39.000 --> 12:45.000
+So, when you turn on your laptop, you have tablets and laptops, and when you open it, so turn
+
+12:45.000 --> 12:51.000
+it on, and the log in prompt occurs, and says, usually it doesn't say username, right?
+
+12:51.000 --> 12:52.000
+You can't, right?
+
+12:52.000 --> 12:53.000
+But usually it just ends your password.
+
+12:53.000 --> 12:54.000
+Do you know who's asking you for a password?
+
+12:54.000 --> 12:55.000
+Who's still a computer?
+
+12:55.000 --> 12:56.000
+Do you know who's asking?
+
+12:56.000 --> 12:57.000
+Should be the operating system.
+
+12:57.000 --> 12:58.000
+Should be the operating system.
+
+12:58.000 --> 12:59.000
+Is it the operating system?
+
+12:59.000 --> 13:00.000
+Do you have any way to verify that, in fact, the window that shows you the login is the operating
+
+13:00.000 --> 13:01.000
+system window?
+
+13:01.000 --> 13:02.000
+I say no.
+
+13:02.000 --> 13:03.000
+I don't think you know.
+
+13:03.000 --> 13:29.000
+Maybe if you have an encrypted disk, would you type in your password and connect it for
+
+13:29.000 --> 13:40.380
+But even then, I mean, if it just scrolls the right things, it says bias, blah blah blah blah, authenticating, initializing, enterprise, you don't know.
+
+13:41.020 --> 13:51.820
+So, I'm not trying to cause panic here, but you should be aware that, so you have a little more sure when your computer is doing a cold boot, right?
+
+13:51.820 --> 13:55.540
+Because it's functionally like turned off, although that's a whole other story.
+
+13:56.400 --> 13:58.180
+How do you know your device is turned off?
+
+13:59.000 --> 14:01.360
+We will touch upon this in a couple of days.
+
+14:01.360 --> 14:10.120
+You often tell it to turn off, you press the button, and how do you know it's off?
+
+14:10.120 --> 14:13.560
+Well, you say, well, you know what, I'll just unplug it from the wall.
+
+14:14.560 --> 14:15.900
+Are you sure that's on?
+
+14:16.740 --> 14:17.980
+Are you sure there's no battery?
+
+14:19.400 --> 14:20.980
+Do you know what's inside the device?
+
+14:22.340 --> 14:24.240
+They have CMOS battery, too.
+
+14:24.240 --> 14:31.160
+Ah, yeah, but you should like disassembling the device, voiding the warranty, and causing electric shock, potentially.
+
+14:31.680 --> 14:33.160
+So, actually, you don't.
+
+14:33.220 --> 14:34.640
+So, that's a depressing thought, right?
+
+14:34.680 --> 14:37.420
+You actually don't know who is asking for the password.
+
+14:37.900 --> 14:38.720
+But we trust.
+
+14:38.720 --> 14:42.180
+Okay, but that's the password that goes to your operating system, right?
+
+14:43.320 --> 14:45.420
+It doesn't go on the wire, right?
+
+14:45.520 --> 14:46.620
+It's not sent anywhere.
+
+14:46.620 --> 14:56.240
+What about if you're logging into Facebook, or, you know, your Instagram, or whatever, your favorite website, or any kind of service?
+
+14:56.500 --> 14:57.820
+Like, you're going into UCI.
+
+14:58.440 --> 15:04.800
+A window pops up that looks like UCI's little pop-up, with blue and stuff, you know, all the right colors.
+
+15:04.940 --> 15:06.600
+How busy is this to copy?
+
+15:06.600 --> 15:09.680
+So, you enter your password, and then it goes.
+
+15:10.000 --> 15:10.700
+So, you don't know.
+
+15:11.700 --> 15:17.480
+But let's suspend our disbelief, and say, okay, we trust that it goes, it goes to the right place, okay, okay, okay.
+
+15:18.620 --> 15:20.200
+But what about how is it sent?
+
+15:21.100 --> 15:22.680
+Is it sent in clear text?
+
+15:24.760 --> 15:25.620
+That's bad, right?
+
+15:25.700 --> 15:28.280
+It can't be sent in clear text, because then it gets used to the other part.
+
+15:29.880 --> 15:33.500
+Okay, well, you hope that actually in reality, it sends over a secure connection.
+
+15:33.500 --> 15:45.100
+And sort of prior to you entering the password, whatever the stub application, whether it's a browser, a client browser, or some other application on your laptop, or your phone,
+
+15:45.420 --> 15:52.080
+has already established a secure, usually TLS, or VPN connection, to the other end.
+
+15:55.440 --> 15:58.700
+But even then, you might not trust that connection.
+
+15:58.700 --> 16:05.820
+So, probably not a good idea to send the password unencrypted, even over the connection.
+
+16:05.960 --> 16:09.420
+So, what's typically done is the password is, like, hashed.
+
+16:10.160 --> 16:11.220
+Remember hash functions, right?
+
+16:13.120 --> 16:13.520
+Yeah.
+
+16:14.040 --> 16:15.600
+Now the question is, where is it hashed?
+
+16:16.700 --> 16:18.800
+So, who gets to see your password locally?
+
+16:19.360 --> 16:22.400
+Maybe it's hashed in software, with a client software.
+
+16:22.400 --> 16:26.300
+Maybe it's hashed in hardware.
+
+16:26.980 --> 16:30.960
+Maybe there's a way for the login prompt, or if it presents you with a password prompt,
+
+16:31.200 --> 16:34.780
+to communicate directly to some hardware inside your laptop of a smartphone,
+
+16:35.280 --> 16:38.280
+that actually takes that password, hashes it, and that's it.
+
+16:39.760 --> 16:43.700
+And then there's a template resistant, because if it's not, maybe, you know, somebody can hack it.
+
+16:43.700 --> 16:48.280
+And then, how does the other end check the password?
+
+16:49.200 --> 16:53.540
+Well, and of course, is your password guessable?
+
+16:54.180 --> 16:54.380
+Right?
+
+16:54.920 --> 16:58.420
+None of this other stuff is important if your password is weak.
+
+17:00.260 --> 17:00.520
+Right?
+
+17:00.540 --> 17:03.220
+If I can, with reasonable probability, guess your password,
+
+17:03.480 --> 17:09.740
+all the other measures to prevent theft and misuse of password, they're useless.
+
+17:09.740 --> 17:15.320
+Because guessing a password means somebody is going to try to log in, just like you would.
+
+17:16.560 --> 17:20.980
+So, whatever measures are taken after you enter a password and hit return,
+
+17:21.100 --> 17:23.100
+they're useless if the password is being guessed.
+
+17:26.760 --> 17:30.280
+Also, on most operating systems, it's difficult to keep a password file secret.
+
+17:32.360 --> 17:33.920
+Especially like multi-user systems.
+
+17:35.240 --> 17:39.180
+So, I know that you are all used to, essentially, single-user computers, right?
+
+17:39.740 --> 17:44.160
+I mean, how many people usually have, like, multiple profiles on their Android?
+
+17:44.600 --> 17:46.980
+I mean, you can do it, but it's a pain.
+
+17:47.920 --> 17:50.340
+How many of you share your laptop with others?
+
+17:51.160 --> 17:53.320
+My guess is not many, if any.
+
+17:54.640 --> 17:58.700
+Maybe when you were younger, and you had, like, a sibling, and you shared your laptop.
+
+18:00.560 --> 18:03.700
+Or the parent will let you use their laptop and create an account.
+
+18:03.840 --> 18:06.460
+But most people, like, you're 80, they don't share laptops.
+
+18:06.460 --> 18:11.600
+So, this does not seem relevant to you, but think about a bigger world out there.
+
+18:13.020 --> 18:14.180
+Like, an organization.
+
+18:15.800 --> 18:19.100
+Where you have multiple users, multiple, many users,
+
+18:19.680 --> 18:22.460
+and they all need to log in and access the same system.
+
+18:22.460 --> 18:29.540
+So, you need to store the password database somewhere, the password file, right?
+
+18:30.540 --> 18:35.100
+And so, in modern systems, at least one of the Unix derived,
+
+18:35.520 --> 18:37.980
+historically, the password file is accessible.
+
+18:39.440 --> 18:40.960
+It's called world-readable.
+
+18:42.360 --> 18:46.920
+And the reason it's world-readable is because it's not just the password file.
+
+18:47.160 --> 18:48.820
+It's, essentially, the user database.
+
+18:48.820 --> 18:55.840
+And so, programs that run on Linux, or Unix, and whatever,
+
+18:56.060 --> 18:58.700
+all these Unix-derived operating systems,
+
+18:59.040 --> 19:01.940
+they need to consult that file, not for the password's sake,
+
+19:02.680 --> 19:08.360
+but for account's sake, to figure out what accounts have rights for what resources.
+
+19:09.380 --> 19:10.900
+So, it's mostly for access control.
+
+19:11.740 --> 19:11.920
+Okay?
+
+19:12.520 --> 19:16.680
+This was done a long time ago, when Unix first was born, in the 80s.
+
+19:16.680 --> 19:21.020
+Now, with hard-to-remember passwords,
+
+19:22.600 --> 19:25.700
+if you don't pick a weak password, you pick a hard-to-remember password, you're good.
+
+19:26.120 --> 19:29.480
+And if your memory is good, wonderful.
+
+19:30.620 --> 19:33.360
+But what about reusing passwords?
+
+19:34.940 --> 19:37.640
+A lot of people can remember one difficult password.
+
+19:38.780 --> 19:39.060
+Right?
+
+19:39.060 --> 19:41.500
+I'm sure you can remember one difficult password.
+
+19:42.360 --> 19:44.680
+That is not, by any standard, weak.
+
+19:46.360 --> 19:49.260
+But then, can you remember 10, 15?
+
+19:49.780 --> 19:52.800
+These days, most of us have well over 10,
+
+19:52.960 --> 19:55.980
+some of us, I would say, around 20 different accounts.
+
+19:56.120 --> 19:59.040
+There have been some studies about this, but I don't think it's an immediate number.
+
+19:59.040 --> 20:06.880
+You could carry around an object, like some kind of a device, like a smartphone,
+
+20:07.120 --> 20:11.520
+maybe, that has your passwords all stored there in plain text.
+
+20:12.140 --> 20:14.940
+And you unlock your phone, you access your password, and you're like, oh, great.
+
+20:15.280 --> 20:16.440
+What if you don't have your phone?
+
+20:16.700 --> 20:18.060
+What if somebody steals your phone?
+
+20:18.060 --> 20:23.780
+What if a malicious app on the phone exfiltrated that file?
+
+20:25.300 --> 20:30.040
+So there is a cottage industry out there called, you know, Password Vault.
+
+20:30.220 --> 20:31.980
+Maybe, have anybody used Password Vault?
+
+20:33.760 --> 20:39.540
+I mean, some of them are, there are some free, but most of them are cost-mine.
+
+20:40.380 --> 20:42.380
+And some companies do use those.
+
+20:43.740 --> 20:46.220
+Okay, but guess what?
+
+20:46.220 --> 20:50.340
+Well, when you have a company that runs the services, Password Vault Vault,
+
+20:50.620 --> 20:55.960
+a third-party Password Vault Vault, they become like honey or a swarm of bees.
+
+20:57.420 --> 21:02.080
+They are a super attractive attack target, and just like this DA that we talked about last time,
+
+21:02.980 --> 21:04.880
+it's like, attack me.
+
+21:05.520 --> 21:07.420
+Because this is where the friendly jewels are.
+
+21:07.560 --> 21:10.880
+You get into a password-drawn company, you get into their databases,
+
+21:10.880 --> 21:15.280
+whether through outside or inside attack, and you wind up with a big dirt.
+
+21:16.220 --> 21:17.380
+Big prize, right?
+
+21:17.640 --> 21:18.380
+Tons of passwords.
+
+21:19.540 --> 21:22.100
+So I'm not clear that that's a good solution.
+
+21:23.120 --> 21:25.140
+Then there's like denial of service issues, right?
+
+21:25.180 --> 21:28.100
+If you store your passwords on your phone, if the phone is lost,
+
+21:28.440 --> 21:30.420
+or like what happened to me a couple of months ago,
+
+21:30.640 --> 21:32.820
+the phone just died, and there's no way.
+
+21:32.920 --> 21:34.740
+I mean, it's dead beyond all salvation.
+
+21:35.320 --> 21:37.020
+There's no way you can take anything out.
+
+21:37.820 --> 21:40.220
+So now it's stuck with having to change all the passwords.
+
+21:40.300 --> 21:41.400
+It's like a denial of service.
+
+21:41.400 --> 21:44.980
+And for a while, your account's essentially off-limits to you.
+
+21:46.780 --> 21:50.520
+One of the more interesting and super easy attacks, by the way,
+
+21:51.640 --> 21:53.280
+with a denial of service goal.
+
+21:53.980 --> 21:56.900
+Let's say you want to attack a particular company, right?
+
+21:56.960 --> 22:00.020
+Let's say you have a company called XYZ Incorporated
+
+22:00.020 --> 22:05.280
+that provides access to, I don't know, cute squirrel videos.
+
+22:05.480 --> 22:07.400
+And they specialize in cute squirrels only.
+
+22:07.980 --> 22:08.760
+No ugly squirrels.
+
+22:08.760 --> 22:13.140
+And all the squirrel lovers in the world create accounts there
+
+22:13.140 --> 22:15.320
+and just love, you know, it's like popular, right?
+
+22:15.960 --> 22:18.920
+So all this community, probably not large,
+
+22:19.040 --> 22:20.460
+because how many squirrel lovers out there,
+
+22:20.940 --> 22:24.980
+they actively use this service,
+
+22:25.320 --> 22:28.780
+and then somebody who wants to just piss them off
+
+22:28.780 --> 22:33.000
+or maybe has a competing company decides to mount it in our service.
+
+22:33.000 --> 22:36.760
+All they need to do is not break any passwords.
+
+22:38.360 --> 22:42.220
+All they need to do is get a large enough sample of the usernames
+
+22:42.220 --> 22:45.420
+or people who have an account.
+
+22:46.340 --> 22:48.520
+All you do, you can program this.
+
+22:48.640 --> 22:49.980
+You can run into this by hand.
+
+22:50.280 --> 22:51.620
+Essentially, try to log in.
+
+22:51.800 --> 22:53.820
+So for every account, let's say Alice has an account.
+
+22:54.280 --> 22:56.880
+Write the username Alice, random password, click.
+
+22:58.160 --> 22:59.920
+Username Bob, random password, click.
+
+22:59.920 --> 23:02.460
+Do it three times, do it four times,
+
+23:02.540 --> 23:03.580
+whatever the little threshold.
+
+23:03.700 --> 23:04.820
+Use it, it's a little threshold.
+
+23:05.580 --> 23:07.760
+For number of failed logins, right?
+
+23:08.780 --> 23:09.480
+What happens?
+
+23:10.300 --> 23:11.700
+You're locked out.
+
+23:13.000 --> 23:14.900
+So when real users come back to log in,
+
+23:15.320 --> 23:21.020
+due to the large number of successive failed login attempts,
+
+23:21.140 --> 23:24.400
+you need to contact this 1-800 number in Mauritania.
+
+23:25.020 --> 23:25.620
+Good luck.
+
+23:26.300 --> 23:27.200
+With awful hours.
+
+23:27.420 --> 23:28.320
+With, yes, of course.
+
+23:28.320 --> 23:32.180
+We're only open between 3.30 and 4.30 p.m. Hawaii time.
+
+23:32.500 --> 23:32.980
+Good luck.
+
+23:33.720 --> 23:34.620
+Good luck, right?
+
+23:34.700 --> 23:36.500
+Because then, of course, they want to make sure it's you.
+
+23:37.220 --> 23:39.580
+Even if it's done in automated fashion
+
+23:39.580 --> 23:40.980
+with some other second factor,
+
+23:41.100 --> 23:42.880
+all back email, blah, blah, blah, blah, blah, blah.
+
+23:43.260 --> 23:45.560
+It's a giant waste of time.
+
+23:46.840 --> 23:47.800
+And a logistical nightmare.
+
+23:48.020 --> 23:50.040
+So, a great attack.
+
+23:50.660 --> 23:52.520
+You can program a bot to do this, right?
+
+23:52.520 --> 23:57.540
+You can go for, like, even random usernames.
+
+23:58.060 --> 24:01.440
+Eventually, you're going to find usernames that are existing.
+
+24:02.200 --> 24:02.960
+Login, login, login.
+
+24:03.240 --> 24:03.520
+Bam.
+
+24:04.020 --> 24:04.560
+Locked out.
+
+24:05.540 --> 24:06.900
+So, no passwords need to be broken.
+
+24:06.900 --> 24:11.260
+So, let's see.
+
+24:11.940 --> 24:13.200
+Then there's social engineering.
+
+24:13.400 --> 24:16.540
+Social engineering is, like, this whole thing in its own right.
+
+24:17.500 --> 24:20.220
+You can teach a class on that, just on social engineering.
+
+24:20.400 --> 24:21.880
+But it's not really computer science.
+
+24:22.640 --> 24:25.140
+Social engineering is all about how to trick people.
+
+24:26.100 --> 24:28.760
+So, maybe more appropriate than psychology or some other department.
+
+24:29.760 --> 24:33.840
+But it's a wonderful opportunity for attackers, right?
+
+24:33.920 --> 24:37.380
+And a lot of spectacular hacks in this world that you've heard about
+
+24:37.380 --> 24:38.920
+that sound really, really technical.
+
+24:40.420 --> 24:44.160
+I suspect it's TouchNet and Mirai and all these other things.
+
+24:44.160 --> 24:46.280
+I think they all, I'm pretty sure,
+
+24:46.400 --> 24:49.340
+they all somehow involve elements of social engineering.
+
+24:50.640 --> 24:52.480
+Social engineering means human.
+
+24:53.740 --> 24:54.000
+Right?
+
+24:54.000 --> 24:58.500
+Human interaction is elicitation of sensitive information
+
+24:58.500 --> 25:01.520
+in verbal form.
+
+25:02.160 --> 25:03.660
+Non-analog form.
+
+25:04.580 --> 25:04.800
+Okay?
+
+25:05.820 --> 25:08.480
+The typical social engineering attack
+
+25:08.480 --> 25:10.740
+probably doesn't work at night today,
+
+25:10.740 --> 25:11.920
+but, you know,
+
+25:13.200 --> 25:14.840
+a CIO or a, let's say,
+
+25:14.980 --> 25:16.520
+no, it's an IT person,
+
+25:17.520 --> 25:18.980
+in the middle of the night,
+
+25:19.060 --> 25:20.860
+in some department of some random company,
+
+25:21.220 --> 25:22.800
+receives a panicked phone call
+
+25:22.800 --> 25:24.820
+from the vice president
+
+25:24.820 --> 25:27.700
+of, I don't know,
+
+25:27.760 --> 25:28.580
+toilet affairs,
+
+25:28.700 --> 25:29.160
+and says,
+
+25:29.380 --> 25:31.460
+I am stuck in
+
+25:31.460 --> 25:33.540
+Timbuktu
+
+25:33.540 --> 25:34.320
+on a
+
+25:34.320 --> 25:36.440
+very important company trip.
+
+25:36.660 --> 25:37.740
+I'm dealing with clients.
+
+25:38.360 --> 25:39.160
+All of a sudden,
+
+25:39.800 --> 25:40.640
+my phone broke.
+
+25:41.000 --> 25:41.880
+I cannot log in.
+
+25:42.240 --> 25:42.520
+Help.
+
+25:42.520 --> 25:44.680
+Millions of dollars
+
+25:44.680 --> 25:46.200
+of business are at stake.
+
+25:46.920 --> 25:48.240
+The panicked IT clerk,
+
+25:48.940 --> 25:49.580
+who's sleepy,
+
+25:50.300 --> 25:51.200
+and probably has,
+
+25:51.600 --> 25:52.380
+I don't know,
+
+25:52.960 --> 25:54.520
+DeVry Institute course
+
+25:54.520 --> 25:55.820
+or education or something,
+
+25:56.820 --> 25:57.700
+says,
+
+25:57.920 --> 25:58.800
+oh, of course,
+
+25:59.080 --> 25:59.580
+yes, sir.
+
+26:00.020 --> 26:00.760
+And says,
+
+26:00.760 --> 26:01.120
+okay,
+
+26:01.240 --> 26:02.700
+here's a one-time login code,
+
+26:02.760 --> 26:03.300
+go in this,
+
+26:03.360 --> 26:03.780
+do this.
+
+26:04.920 --> 26:05.160
+Yeah,
+
+26:05.280 --> 26:05.700
+that's it.
+
+26:06.020 --> 26:06.780
+That's the end of it.
+
+26:07.360 --> 26:08.160
+That's the back door.
+
+26:08.280 --> 26:09.620
+That allows the attacker
+
+26:09.620 --> 26:10.040
+to get in.
+
+26:10.400 --> 26:11.560
+It's still super common.
+
+26:11.800 --> 26:12.040
+Yeah,
+
+26:12.140 --> 26:12.700
+I'm sure,
+
+26:12.880 --> 26:13.100
+you know,
+
+26:13.180 --> 26:14.560
+every once in a while,
+
+26:15.020 --> 26:16.620
+in a research literature,
+
+26:17.000 --> 26:17.940
+or even at, like,
+
+26:18.020 --> 26:18.640
+Black Hat,
+
+26:18.720 --> 26:19.180
+DEFCON,
+
+26:19.660 --> 26:20.760
+you will hear talks
+
+26:20.760 --> 26:21.420
+about people saying,
+
+26:21.520 --> 26:21.740
+okay,
+
+26:21.880 --> 26:22.760
+we did this kind of
+
+26:22.760 --> 26:23.940
+probing attack
+
+26:23.940 --> 26:26.100
+against 500 companies
+
+26:26.100 --> 26:26.580
+than, like,
+
+26:26.640 --> 26:27.000
+Brazil,
+
+26:27.120 --> 26:27.800
+I heard one talk.
+
+26:28.560 --> 26:31.500
+And the particular talk
+
+26:31.500 --> 26:32.360
+I heard is that,
+
+26:32.360 --> 26:33.620
+you know,
+
+26:33.680 --> 26:35.540
+when this was about
+
+26:35.540 --> 26:36.320
+the attacks
+
+26:36.320 --> 26:37.560
+on the Brazilian banks,
+
+26:37.840 --> 26:38.060
+right,
+
+26:38.140 --> 26:39.220
+and essentially utilizing
+
+26:39.220 --> 26:40.000
+what I just described,
+
+26:40.140 --> 26:41.320
+calling at random hours
+
+26:41.320 --> 26:42.700
+and pretending to be somebody.
+
+26:42.800 --> 26:44.000
+They didn't even invent somebody.
+
+26:44.080 --> 26:44.720
+They actually pretended
+
+26:44.720 --> 26:45.200
+to be somebody
+
+26:45.200 --> 26:46.100
+who worked for the company.
+
+26:46.100 --> 26:48.140
+So, you know,
+
+26:48.200 --> 26:49.560
+the hackers know in advance.
+
+26:49.640 --> 26:50.480
+They've done their research.
+
+26:50.580 --> 26:50.820
+They've looked
+
+26:50.820 --> 26:51.700
+for the company charts
+
+26:51.700 --> 26:51.960
+and said,
+
+26:52.200 --> 26:52.880
+who is awake?
+
+26:53.060 --> 26:54.140
+Oh, this guy is on vacation.
+
+26:54.620 --> 26:54.820
+So,
+
+26:54.820 --> 26:56.400
+it is really believable
+
+26:56.400 --> 26:58.740
+when most of it is true.
+
+26:59.660 --> 27:00.240
+So, they call it,
+
+27:00.240 --> 27:00.420
+say,
+
+27:00.500 --> 27:01.340
+I'm so-and-so.
+
+27:01.660 --> 27:02.460
+I'm on vacation
+
+27:02.460 --> 27:03.340
+in Florida.
+
+27:04.660 --> 27:04.940
+Oh,
+
+27:05.660 --> 27:06.020
+so-and-so.
+
+27:06.100 --> 27:06.420
+Yes,
+
+27:06.540 --> 27:07.160
+he's on vacation.
+
+27:08.940 --> 27:09.840
+Element of truth
+
+27:09.840 --> 27:10.680
+goes a long way.
+
+27:12.260 --> 27:12.460
+Right?
+
+27:12.520 --> 27:13.020
+That's kind of
+
+27:13.020 --> 27:13.740
+human psychology.
+
+27:14.340 --> 27:14.860
+It works.
+
+27:15.360 --> 27:16.040
+In the U.S.,
+
+27:16.040 --> 27:16.800
+there were studies that,
+
+27:16.920 --> 27:17.380
+oh, you know,
+
+27:17.440 --> 27:18.460
+just like infomercials.
+
+27:18.460 --> 27:18.720
+I don't know
+
+27:18.720 --> 27:19.260
+if you even know
+
+27:19.260 --> 27:20.280
+what infomercials are,
+
+27:20.640 --> 27:22.980
+but this is a curious thing.
+
+27:22.980 --> 27:24.980
+When Americans listen
+
+27:24.980 --> 27:26.560
+to a voice
+
+27:26.560 --> 27:29.040
+of a salesman,
+
+27:29.300 --> 27:30.000
+it helps
+
+27:30.000 --> 27:30.920
+if their voice
+
+27:30.920 --> 27:32.720
+has a refined British accent.
+
+27:34.640 --> 27:36.040
+Maybe you should wonder why.
+
+27:37.420 --> 27:38.640
+If somebody speaks like they're
+
+27:38.640 --> 27:39.520
+from the deep south,
+
+27:39.980 --> 27:40.480
+forget it.
+
+27:40.820 --> 27:41.980
+If somebody speaks like they're
+
+27:41.980 --> 27:43.040
+from Brooklyn,
+
+27:43.440 --> 27:44.000
+forget it.
+
+27:44.400 --> 27:45.260
+But if somebody speaks
+
+27:45.260 --> 27:47.040
+with a refined British accent,
+
+27:47.360 --> 27:48.700
+carefully enunciating
+
+27:48.700 --> 27:49.980
+every single syllable,
+
+27:50.240 --> 27:51.520
+I'll do every single word
+
+27:51.520 --> 27:52.100
+they say.
+
+27:53.400 --> 27:54.220
+Most of us,
+
+27:54.940 --> 27:55.520
+this country,
+
+27:56.160 --> 27:56.760
+oh, yes,
+
+27:56.860 --> 27:57.240
+I'm you.
+
+27:57.700 --> 27:58.240
+What can I do?
+
+27:59.320 --> 27:59.520
+Right?
+
+27:59.940 --> 28:00.700
+So that's part
+
+28:00.700 --> 28:01.420
+of social engineering.
+
+28:02.860 --> 28:03.140
+Right?
+
+28:03.360 --> 28:03.540
+So,
+
+28:04.840 --> 28:05.740
+another reason is,
+
+28:05.840 --> 28:06.760
+another way that it works
+
+28:06.760 --> 28:07.240
+is the attacker
+
+28:07.240 --> 28:08.280
+will know some information
+
+28:08.280 --> 28:08.900
+about you.
+
+28:09.040 --> 28:09.180
+Right?
+
+28:09.240 --> 28:10.480
+So if they want to impersonate you
+
+28:10.480 --> 28:11.480
+or want to get into your account,
+
+28:11.540 --> 28:12.220
+they will know information.
+
+28:12.740 --> 28:13.820
+Social security numbers,
+
+28:13.940 --> 28:14.560
+days of birth,
+
+28:16.160 --> 28:17.160
+those are a lot of difficult
+
+28:17.160 --> 28:18.000
+things to find out.
+
+28:18.000 --> 28:18.240
+Right?
+
+28:18.360 --> 28:19.160
+Social security numbers
+
+28:19.160 --> 28:20.420
+used to be believed
+
+28:20.420 --> 28:21.040
+to be secret.
+
+28:21.200 --> 28:21.740
+Nobody believes
+
+28:21.740 --> 28:22.820
+to be secret in these days.
+
+28:23.340 --> 28:24.320
+Even though we still
+
+28:24.320 --> 28:25.100
+keep them private,
+
+28:25.600 --> 28:26.700
+but I can buy
+
+28:26.700 --> 28:27.740
+your social security number
+
+28:27.740 --> 28:28.500
+if you have one.
+
+28:30.180 --> 28:31.100
+It's not going to cost me
+
+28:31.100 --> 28:31.600
+very much.
+
+28:31.940 --> 28:33.100
+And so if I buy it,
+
+28:33.140 --> 28:33.780
+even if it costs me
+
+28:33.780 --> 28:34.660
+a couple hundred dollars,
+
+28:35.100 --> 28:36.260
+it allows me essentially,
+
+28:36.860 --> 28:37.100
+well,
+
+28:37.220 --> 28:38.240
+not just social security,
+
+28:38.340 --> 28:39.100
+but along with
+
+28:39.100 --> 28:39.700
+other information
+
+28:39.700 --> 28:40.460
+like David Burr,
+
+28:40.620 --> 28:41.320
+driving the last time
+
+28:41.320 --> 28:41.580
+in December,
+
+28:41.680 --> 28:42.660
+maybe open a bank account
+
+28:42.660 --> 28:43.420
+online.
+
+28:45.620 --> 28:46.060
+Great.
+
+28:46.060 --> 28:48.460
+If I open a bank account,
+
+28:48.580 --> 28:49.400
+I can rent something
+
+28:49.400 --> 28:49.960
+in your name.
+
+28:51.740 --> 28:52.540
+Like an apartment.
+
+28:53.420 --> 28:54.620
+Establish a gas company
+
+28:54.620 --> 28:55.880
+relationship.
+
+28:56.020 --> 28:56.900
+Electrical company.
+
+28:57.100 --> 28:57.220
+Right?
+
+28:57.400 --> 28:57.760
+Essentially,
+
+28:58.260 --> 28:59.320
+start stealing your identity.
+
+29:03.220 --> 29:03.480
+Yeah,
+
+29:03.600 --> 29:03.920
+so,
+
+29:04.260 --> 29:06.220
+this is like entertainment,
+
+29:06.900 --> 29:08.440
+but anyway,
+
+29:08.620 --> 29:10.260
+passwords are a pain.
+
+29:10.260 --> 29:12.120
+So we're going to focus
+
+29:12.120 --> 29:12.640
+for a moment
+
+29:12.640 --> 29:13.300
+on the passwords.
+
+29:15.960 --> 29:16.680
+There have been
+
+29:16.680 --> 29:17.520
+tons of breaches
+
+29:17.520 --> 29:17.900
+in the middle,
+
+29:17.940 --> 29:18.340
+but by the way,
+
+29:18.360 --> 29:19.080
+this is super old.
+
+29:19.200 --> 29:19.880
+All these examples
+
+29:19.880 --> 29:20.480
+are super old,
+
+29:20.620 --> 29:20.980
+and yet,
+
+29:21.660 --> 29:22.560
+I don't refresh them.
+
+29:24.000 --> 29:25.060
+They're like 20 years old.
+
+29:25.420 --> 29:25.640
+But,
+
+29:25.880 --> 29:27.100
+this happens every year.
+
+29:28.540 --> 29:29.700
+The similar things
+
+29:29.700 --> 29:30.500
+that happened
+
+29:30.500 --> 29:30.820
+20,
+
+29:30.880 --> 29:31.700
+25 years ago
+
+29:31.700 --> 29:32.360
+still happen.
+
+29:33.900 --> 29:34.040
+Right?
+
+29:34.040 --> 29:38.860
+If you go to the
+
+29:38.860 --> 29:39.920
+website,
+
+29:40.040 --> 29:41.020
+passwordpresearch.com,
+
+29:41.080 --> 29:41.620
+they have lots
+
+29:41.620 --> 29:42.080
+of interesting
+
+29:42.080 --> 29:42.420
+articles.
+
+29:45.000 --> 29:45.280
+Right?
+
+29:45.440 --> 29:45.620
+So,
+
+29:45.780 --> 29:46.660
+why do people
+
+29:46.660 --> 29:47.300
+want your password?
+
+29:47.500 --> 29:47.780
+So,
+
+29:47.880 --> 29:48.160
+of course,
+
+29:48.420 --> 29:49.000
+one of the reasons
+
+29:49.000 --> 29:49.940
+they may want your password
+
+29:49.940 --> 29:51.800
+is just to log in
+
+29:51.800 --> 29:52.820
+and just delete your files.
+
+29:52.940 --> 29:53.640
+They just hate you
+
+29:53.640 --> 29:54.460
+and they want to
+
+29:54.460 --> 29:54.820
+suck.
+
+29:55.820 --> 29:56.600
+That doesn't happen
+
+29:56.600 --> 29:57.020
+very often.
+
+29:58.220 --> 29:58.720
+It can.
+
+29:58.940 --> 29:59.220
+I mean,
+
+29:59.820 --> 30:00.700
+you make some enemies,
+
+30:00.940 --> 30:01.560
+you probably can.
+
+30:01.560 --> 30:02.000
+But,
+
+30:02.000 --> 30:02.780
+this is very personal.
+
+30:03.920 --> 30:04.320
+Generally,
+
+30:05.440 --> 30:06.120
+what somebody wants
+
+30:06.120 --> 30:06.860
+is more than just
+
+30:06.860 --> 30:07.260
+your password.
+
+30:07.520 --> 30:07.640
+So,
+
+30:08.720 --> 30:10.220
+installing a key log
+
+30:10.220 --> 30:10.760
+or a sniffer
+
+30:10.760 --> 30:12.420
+is another way.
+
+30:12.980 --> 30:13.600
+And then,
+
+30:13.840 --> 30:14.360
+basically,
+
+30:14.920 --> 30:16.220
+you sniff for more passwords.
+
+30:17.380 --> 30:18.520
+Especially if your account,
+
+30:18.920 --> 30:19.740
+getting into your account,
+
+30:19.820 --> 30:20.300
+is privileged.
+
+30:20.480 --> 30:20.600
+Right?
+
+30:20.660 --> 30:20.780
+So,
+
+30:20.880 --> 30:21.680
+maybe it will be able
+
+30:21.680 --> 30:22.840
+to run a sniffer
+
+30:22.840 --> 30:23.460
+that will sniff
+
+30:23.460 --> 30:24.420
+on other people's passwords.
+
+30:25.580 --> 30:26.420
+The other thing
+
+30:26.420 --> 30:27.660
+is to steal the password file.
+
+30:29.260 --> 30:30.000
+And once you steal
+
+30:30.000 --> 30:30.800
+the password file,
+
+30:30.880 --> 30:31.020
+well,
+
+30:31.020 --> 30:31.720
+then you can run
+
+30:31.720 --> 30:34.860
+password cracking too much.
+
+30:35.640 --> 30:36.860
+Because the password file,
+
+30:36.960 --> 30:37.820
+as you can already imagine,
+
+30:38.020 --> 30:38.860
+doesn't actually store
+
+30:38.860 --> 30:39.540
+a real password,
+
+30:39.680 --> 30:40.480
+but stores hashes.
+
+30:41.580 --> 30:41.800
+Right?
+
+30:41.860 --> 30:41.980
+So,
+
+30:42.060 --> 30:42.680
+all you need to do
+
+30:42.680 --> 30:43.740
+is try a brute force adapt.
+
+30:51.620 --> 30:52.060
+Alright?
+
+30:52.160 --> 30:52.420
+So,
+
+30:52.640 --> 30:53.820
+Unix-style passwords
+
+30:53.820 --> 30:54.460
+work like this,
+
+30:54.520 --> 30:54.680
+right?
+
+30:54.740 --> 30:55.920
+You enter your password,
+
+30:56.240 --> 30:56.940
+it hashes,
+
+30:57.080 --> 30:57.760
+and then this is
+
+30:57.760 --> 30:58.300
+the etc.
+
+30:58.520 --> 30:59.780
+etc. password file
+
+30:59.780 --> 31:01.040
+that has one line
+
+31:01.040 --> 31:01.580
+for a user,
+
+31:01.740 --> 31:02.060
+generally,
+
+31:02.800 --> 31:04.020
+and it contains,
+
+31:04.160 --> 31:04.860
+among other things,
+
+31:05.000 --> 31:05.480
+so the line,
+
+31:05.680 --> 31:07.000
+the one line is like,
+
+31:07.000 --> 31:07.660
+it's a text file.
+
+31:08.060 --> 31:08.200
+So,
+
+31:08.280 --> 31:09.540
+one line for a record,
+
+31:09.880 --> 31:10.060
+oh,
+
+31:10.180 --> 31:11.440
+one line is a record,
+
+31:11.580 --> 31:12.140
+and this record
+
+31:12.140 --> 31:13.180
+is for a given user,
+
+31:13.680 --> 31:14.440
+and it has some
+
+31:14.440 --> 31:15.600
+non-human accounts,
+
+31:16.680 --> 31:16.980
+okay?
+
+31:16.980 --> 31:18.340
+net, like root,
+
+31:18.460 --> 31:19.740
+and admin,
+
+31:19.860 --> 31:20.200
+or whatever,
+
+31:20.400 --> 31:20.780
+some other,
+
+31:20.860 --> 31:22.020
+some other cron account,
+
+31:22.340 --> 31:23.540
+but it also has one
+
+31:23.540 --> 31:24.220
+for every user.
+
+31:24.660 --> 31:25.020
+And so,
+
+31:26.080 --> 31:27.020
+when you enter a username,
+
+31:27.540 --> 31:28.420
+the username is also
+
+31:28.420 --> 31:29.340
+stored there in the clear.
+
+31:32.840 --> 31:33.240
+So,
+
+31:33.840 --> 31:35.140
+people realized early on
+
+31:35.140 --> 31:36.260
+that it's not a good idea
+
+31:36.260 --> 31:38.040
+to store a password there,
+
+31:38.160 --> 31:39.340
+so why don't we store a hash?
+
+31:40.320 --> 31:40.680
+So,
+
+31:40.900 --> 31:41.320
+great,
+
+31:42.400 --> 31:43.360
+the system doesn't know
+
+31:43.360 --> 31:43.960
+your password,
+
+31:44.840 --> 31:45.880
+it only knows the hash,
+
+31:46.880 --> 31:47.680
+and because,
+
+31:48.320 --> 31:48.680
+presumably,
+
+31:48.780 --> 31:50.100
+we use a good cryptographic hash,
+
+31:50.180 --> 31:52.020
+like the kind we talked about
+
+31:52.020 --> 31:53.120
+briefly last time,
+
+31:54.540 --> 31:55.680
+hash is supposed to be
+
+31:55.680 --> 31:56.560
+one way.
+
+31:58.580 --> 31:58.820
+Yeah?
+
+31:59.800 --> 32:01.300
+One way means that,
+
+32:01.300 --> 32:01.940
+yeah,
+
+32:02.140 --> 32:02.820
+the inverting,
+
+32:02.940 --> 32:03.880
+like knowing a hash,
+
+32:04.220 --> 32:05.440
+and learning what the input
+
+32:05.440 --> 32:06.340
+to the hash was,
+
+32:07.000 --> 32:07.540
+is hard.
+
+32:09.300 --> 32:10.300
+But is it really?
+
+32:11.920 --> 32:13.040
+If the input space
+
+32:13.040 --> 32:13.840
+is very large,
+
+32:14.060 --> 32:14.640
+it is hard.
+
+32:16.040 --> 32:17.240
+But if the input space
+
+32:17.240 --> 32:18.360
+is constricted,
+
+32:19.380 --> 32:20.200
+it might not be so hard.
+
+32:20.480 --> 32:20.980
+But wait,
+
+32:21.060 --> 32:21.560
+there's more.
+
+32:24.160 --> 32:25.020
+Hashing is better
+
+32:25.020 --> 32:25.560
+than encryption,
+
+32:25.760 --> 32:26.900
+maybe you will realize why.
+
+32:27.380 --> 32:27.840
+You know why?
+
+32:32.780 --> 32:33.520
+I mean,
+
+32:35.640 --> 32:36.760
+encrypting a block,
+
+32:38.040 --> 32:38.740
+it should be,
+
+32:38.960 --> 32:40.280
+it's usually roughly equivalent
+
+32:40.280 --> 32:41.180
+to hashing a block.
+
+32:41.180 --> 32:43.360
+All you think encryption
+
+32:43.360 --> 32:45.540
+is not used.
+
+32:46.540 --> 32:47.460
+And hashing is used.
+
+32:48.980 --> 32:50.100
+No decryption.
+
+32:50.860 --> 32:51.680
+No decryption.
+
+32:53.300 --> 32:53.940
+Yeah,
+
+32:54.120 --> 32:54.960
+that's a reason,
+
+32:55.100 --> 32:55.640
+it's not that.
+
+32:55.980 --> 32:56.640
+Major reason.
+
+32:57.380 --> 32:58.200
+I hope you've never
+
+32:58.200 --> 32:59.300
+had to see the thing
+
+32:59.300 --> 33:00.100
+that's passed through
+
+33:00.100 --> 33:01.200
+and that's been honest.
+
+33:01.200 --> 33:02.300
+Okay,
+
+33:02.360 --> 33:03.140
+now you're getting close.
+
+33:04.200 --> 33:05.460
+What else does encryption
+
+33:05.460 --> 33:06.420
+mean?
+
+33:07.580 --> 33:08.880
+You want to encrypt the question.
+
+33:13.620 --> 33:14.040
+No,
+
+33:14.220 --> 33:15.060
+it leaks the length,
+
+33:15.160 --> 33:15.520
+doesn't it?
+
+33:15.940 --> 33:16.160
+Hmm.
+
+33:17.520 --> 33:18.460
+So you want to have
+
+33:18.460 --> 33:19.220
+the uniform
+
+33:19.220 --> 33:21.320
+value,
+
+33:21.580 --> 33:21.860
+right?
+
+33:22.500 --> 33:23.380
+There are other reasons,
+
+33:23.460 --> 33:24.300
+then you can think of some.
+
+33:25.000 --> 33:25.820
+Encryption is not,
+
+33:25.980 --> 33:26.640
+now encryption,
+
+33:26.800 --> 33:27.000
+that's,
+
+33:27.380 --> 33:28.080
+let me rephrase
+
+33:28.080 --> 33:28.520
+what I said,
+
+33:28.600 --> 33:29.120
+be very careful.
+
+33:31.500 --> 33:32.500
+Encryption as in
+
+33:32.500 --> 33:34.380
+something that can be reversed
+
+33:34.380 --> 33:35.520
+is not used.
+
+33:36.640 --> 33:37.820
+You can use encryption
+
+33:37.820 --> 33:38.820
+to build a hash function.
+
+33:39.000 --> 33:39.840
+An encryption function
+
+33:39.840 --> 33:40.460
+can be used
+
+33:40.460 --> 33:41.260
+to build a hash function.
+
+33:42.960 --> 33:43.320
+Okay,
+
+33:43.500 --> 33:44.100
+so it's okay
+
+33:44.100 --> 33:45.320
+to use encryption function
+
+33:45.320 --> 33:46.420
+to build a hash function
+
+33:46.420 --> 33:47.080
+that you can use
+
+33:47.080 --> 33:47.660
+for this purpose.
+
+33:48.040 --> 33:48.900
+But what we don't do
+
+33:48.900 --> 33:49.760
+is encrypt
+
+33:49.760 --> 33:50.880
+the password itself.
+
+33:51.880 --> 33:52.120
+Okay?
+
+33:52.120 --> 33:56.100
+So remember the
+
+33:56.100 --> 33:58.220
+properties of hash functions,
+
+33:58.360 --> 33:58.520
+right?
+
+33:58.600 --> 34:00.240
+So if you are a password hacker
+
+34:00.240 --> 34:02.120
+and you want to
+
+34:02.120 --> 34:03.060
+break the password,
+
+34:03.480 --> 34:04.180
+what property
+
+34:04.180 --> 34:04.740
+would you like
+
+34:04.740 --> 34:05.540
+the hash function
+
+34:05.540 --> 34:06.280
+not to have?
+
+34:09.660 --> 34:10.140
+Well,
+
+34:10.140 --> 34:11.580
+one way is we agree.
+
+34:11.700 --> 34:12.540
+We all must have,
+
+34:12.600 --> 34:12.740
+right?
+
+34:12.740 --> 34:13.740
+Because it should be
+
+34:13.740 --> 34:14.720
+difficult to go back
+
+34:14.720 --> 34:15.820
+and figure out
+
+34:15.820 --> 34:16.460
+from the hash
+
+34:16.460 --> 34:17.080
+what the password
+
+34:17.080 --> 34:17.500
+is going to be.
+
+34:18.080 --> 34:18.960
+But what about
+
+34:18.960 --> 34:19.560
+these other things?
+
+34:19.680 --> 34:20.040
+Remember,
+
+34:20.160 --> 34:20.700
+there's a strong
+
+34:20.700 --> 34:21.720
+collision resistance
+
+34:21.720 --> 34:23.640
+and weak collision resistance.
+
+34:25.200 --> 34:26.360
+Which do we care
+
+34:26.360 --> 34:27.040
+about?
+
+34:28.900 --> 34:29.460
+Yeah.
+
+34:29.840 --> 34:30.340
+Strong
+
+34:30.340 --> 34:31.820
+would be nice to have
+
+34:31.820 --> 34:33.560
+but not super important
+
+34:33.560 --> 34:35.200
+because
+
+34:35.200 --> 34:37.020
+the password
+
+34:37.020 --> 34:38.000
+is specific,
+
+34:38.120 --> 34:38.240
+right?
+
+34:38.280 --> 34:38.720
+It's given.
+
+34:39.980 --> 34:40.860
+It's given
+
+34:40.860 --> 34:42.440
+to the hacker
+
+34:42.440 --> 34:43.860
+but it's fixed
+
+34:43.860 --> 34:44.480
+by the hash,
+
+34:44.840 --> 34:45.100
+right?
+
+34:45.720 --> 34:46.420
+So in order
+
+34:46.420 --> 34:47.480
+to break
+
+34:47.480 --> 34:48.220
+the system
+
+34:48.220 --> 34:48.800
+without learning
+
+34:48.800 --> 34:49.360
+the password,
+
+34:49.360 --> 34:50.920
+the hacker
+
+34:50.920 --> 34:51.640
+has to find
+
+34:51.640 --> 34:52.760
+another password
+
+34:52.760 --> 34:54.280
+that hashes
+
+34:54.280 --> 34:55.320
+into the same value.
+
+34:56.720 --> 34:57.240
+Does that make sense?
+
+34:58.520 --> 34:59.700
+So if your password
+
+34:59.700 --> 35:00.360
+is Apple
+
+35:00.360 --> 35:01.660
+and it hashes
+
+35:01.660 --> 35:01.920
+into
+
+35:01.920 --> 35:03.620
+345
+
+35:03.620 --> 35:05.800
+and I pick
+
+35:05.800 --> 35:07.100
+Pear
+
+35:07.100 --> 35:07.940
+and it also
+
+35:07.940 --> 35:08.480
+hashes into
+
+35:08.480 --> 35:09.020
+the 345
+
+35:09.020 --> 35:09.760
+I don't need
+
+35:09.760 --> 35:10.060
+to know
+
+35:10.060 --> 35:10.520
+Apple.
+
+35:12.200 --> 35:12.960
+I can just
+
+35:12.960 --> 35:13.620
+log into your account
+
+35:13.620 --> 35:14.460
+by typing Pear.
+
+35:14.460 --> 35:16.380
+OK?
+
+35:17.440 --> 35:17.880
+So
+
+35:17.880 --> 35:19.520
+that weak collision
+
+35:19.520 --> 35:19.860
+resistance
+
+35:19.860 --> 35:20.760
+and that's
+
+35:20.760 --> 35:21.200
+what we need.
+
+35:27.000 --> 35:27.480
+So
+
+35:27.480 --> 35:29.140
+I'm not sure
+
+35:29.140 --> 35:29.380
+how many
+
+35:29.380 --> 35:30.020
+to do it
+
+35:30.020 --> 35:30.680
+but historically
+
+35:30.680 --> 35:31.160
+that's what
+
+35:31.160 --> 35:31.660
+has been done
+
+35:31.660 --> 35:32.740
+is that
+
+35:32.740 --> 35:34.320
+Linux
+
+35:34.320 --> 35:35.040
+was using
+
+35:35.040 --> 35:35.520
+DES
+
+35:35.520 --> 35:37.940
+encryption
+
+35:37.940 --> 35:39.420
+as a hash
+
+35:39.420 --> 35:39.700
+function.
+
+35:39.700 --> 35:40.760
+Now how
+
+35:40.760 --> 35:41.420
+does it do it?
+
+35:41.680 --> 35:41.960
+Well,
+
+35:42.080 --> 35:42.460
+it takes
+
+35:42.460 --> 35:43.100
+a null
+
+35:43.100 --> 35:43.580
+string
+
+35:43.580 --> 35:45.580
+a 64-bit
+
+35:45.580 --> 35:46.620
+now you remember
+
+35:46.620 --> 35:48.360
+DES is a 64-bit block
+
+35:48.360 --> 35:49.320
+so it takes
+
+35:49.320 --> 35:50.380
+a string of
+
+35:50.380 --> 35:50.620
+0
+
+35:50.620 --> 35:51.500
+64-bits
+
+35:51.500 --> 35:51.840
+long
+
+35:51.840 --> 35:52.780
+and then
+
+35:52.780 --> 35:53.780
+encrypts it
+
+35:53.780 --> 35:54.400
+repeatedly
+
+35:54.400 --> 35:55.120
+OK?
+
+35:55.560 --> 35:56.180
+Repeatedly
+
+35:56.180 --> 35:57.160
+25 times
+
+35:57.160 --> 35:58.800
+using
+
+35:58.800 --> 35:59.880
+a DES
+
+35:59.880 --> 36:00.240
+key
+
+36:00.240 --> 36:00.900
+that is
+
+36:00.900 --> 36:01.260
+derived
+
+36:01.260 --> 36:01.560
+from the
+
+36:01.560 --> 36:01.880
+password.
+
+36:03.980 --> 36:04.220
+OK?
+
+36:05.700 --> 36:06.260
+Make sense?
+
+36:06.260 --> 36:07.920
+So it converts
+
+36:07.920 --> 36:08.460
+your password
+
+36:08.460 --> 36:09.320
+into a key
+
+36:09.320 --> 36:10.720
+now that's
+
+36:10.720 --> 36:11.080
+also
+
+36:11.080 --> 36:12.060
+an interesting
+
+36:12.060 --> 36:12.380
+detail
+
+36:12.380 --> 36:12.820
+because
+
+36:12.820 --> 36:13.820
+DES keys
+
+36:13.820 --> 36:14.280
+are actually
+
+36:14.280 --> 36:15.180
+56-bits
+
+36:15.180 --> 36:15.560
+long
+
+36:15.560 --> 36:16.560
+I mean
+
+36:16.560 --> 36:17.180
+they're 64
+
+36:17.180 --> 36:17.860
+but 8-bits
+
+36:17.860 --> 36:18.680
+are parity-bits
+
+36:18.680 --> 36:19.460
+so
+
+36:19.460 --> 36:21.500
+that's an
+
+36:21.500 --> 36:22.140
+interesting one
+
+36:22.140 --> 36:24.100
+so we'll come
+
+36:24.100 --> 36:24.560
+back to that
+
+36:24.560 --> 36:25.100
+in a second.
+
+36:25.720 --> 36:26.140
+The idea
+
+36:26.140 --> 36:26.720
+so why do
+
+36:26.720 --> 36:27.380
+they do this
+
+36:27.380 --> 36:28.200
+or why did
+
+36:28.200 --> 36:28.840
+they do this
+
+36:28.840 --> 36:30.180
+because in
+
+36:30.180 --> 36:30.640
+order to
+
+36:30.640 --> 36:31.460
+mount a
+
+36:31.460 --> 36:33.960
+brute force
+
+36:33.960 --> 36:34.340
+attack
+
+36:34.340 --> 36:34.980
+on a password
+
+36:34.980 --> 36:36.360
+you would
+
+36:36.360 --> 36:36.680
+have to
+
+36:36.680 --> 36:37.060
+guess the
+
+36:37.060 --> 36:37.520
+password
+
+36:37.520 --> 36:39.280
+and perform
+
+36:39.280 --> 36:41.460
+25
+
+36:41.460 --> 36:42.480
+encryptions
+
+36:42.480 --> 36:44.720
+or
+
+36:44.720 --> 36:45.380
+if you like
+
+36:45.380 --> 36:45.840
+25
+
+36:45.840 --> 36:46.300
+decryptions
+
+36:46.300 --> 36:47.700
+and at
+
+36:47.700 --> 36:48.160
+the end
+
+36:48.160 --> 36:49.800
+OK?
+
+36:51.480 --> 36:51.840
+If you
+
+36:51.840 --> 36:52.420
+hit 0
+
+36:52.420 --> 36:53.580
+if what
+
+36:53.580 --> 36:54.120
+you decrypt
+
+36:54.120 --> 36:54.920
+after 25
+
+36:54.920 --> 36:55.480
+decryptions
+
+36:55.480 --> 36:55.940
+and 0
+
+36:55.940 --> 36:56.280
+and a
+
+36:56.280 --> 36:56.620
+string of
+
+36:56.620 --> 36:56.960
+0s
+
+36:56.960 --> 36:57.520
+you guessed
+
+36:57.520 --> 36:57.960
+correctly.
+
+37:00.800 --> 37:01.400
+OK?
+
+37:02.140 --> 37:02.600
+Or
+
+37:02.600 --> 37:03.240
+alternatively
+
+37:03.240 --> 37:03.540
+you would
+
+37:03.540 --> 37:03.820
+take
+
+37:03.820 --> 37:04.400
+a string
+
+37:04.400 --> 37:04.960
+of 0s
+
+37:04.960 --> 37:06.080
+and encrypt
+
+37:06.080 --> 37:06.600
+it 25
+
+37:06.600 --> 37:07.060
+times
+
+37:07.060 --> 37:07.760
+and see
+
+37:07.760 --> 37:08.100
+if that
+
+37:08.100 --> 37:08.460
+matches
+
+37:08.460 --> 37:09.020
+the result
+
+37:09.020 --> 37:09.300
+in the
+
+37:09.300 --> 37:09.600
+password
+
+37:09.600 --> 37:09.940
+file.
+
+37:11.380 --> 37:11.660
+Am I
+
+37:11.660 --> 37:12.000
+with you?
+
+37:12.720 --> 37:12.960
+Any
+
+37:12.960 --> 37:13.260
+questions?
+
+37:15.100 --> 37:15.620
+So
+
+37:15.620 --> 37:16.100
+it's a
+
+37:16.100 --> 37:16.660
+clever idea
+
+37:16.660 --> 37:16.900
+right?
+
+37:16.960 --> 37:17.260
+The idea
+
+37:17.260 --> 37:17.640
+was to
+
+37:17.640 --> 37:18.220
+slow down
+
+37:18.220 --> 37:18.380
+the
+
+37:18.380 --> 37:18.680
+attacker
+
+37:18.680 --> 37:19.320
+25
+
+37:19.320 --> 37:20.120
+that is
+
+37:20.120 --> 37:20.620
+for every
+
+37:20.620 --> 37:21.100
+guess
+
+37:21.100 --> 37:22.700
+of a
+
+37:22.700 --> 37:23.060
+password
+
+37:23.060 --> 37:23.780
+or every
+
+37:23.780 --> 37:24.880
+possible
+
+37:24.880 --> 37:25.280
+password
+
+37:25.280 --> 37:25.680
+the attacker
+
+37:25.680 --> 37:26.040
+guesses
+
+37:26.040 --> 37:27.240
+it would
+
+37:27.240 --> 37:27.540
+have to
+
+37:27.540 --> 37:28.120
+perform
+
+37:28.120 --> 37:29.280
+25
+
+37:29.280 --> 37:30.320
+encryption
+
+37:30.320 --> 37:30.980
+or decryption
+
+37:30.980 --> 37:31.460
+operations.
+
+37:31.460 --> 37:34.460
+that's
+
+37:34.460 --> 37:34.820
+a lot
+
+37:34.820 --> 37:35.940
+and back
+
+37:35.940 --> 37:36.380
+then
+
+37:36.380 --> 37:37.400
+DESC was
+
+37:37.400 --> 37:37.820
+implemented
+
+37:37.820 --> 37:38.300
+mostly in
+
+37:38.300 --> 37:38.620
+hardware
+
+37:38.620 --> 37:38.900
+it was
+
+37:38.900 --> 37:39.320
+very slow
+
+37:39.320 --> 37:39.800
+in software
+
+37:39.800 --> 37:40.680
+so it
+
+37:40.680 --> 37:41.180
+seemed like
+
+37:41.180 --> 37:41.700
+a good idea.
+
+37:42.300 --> 37:42.680
+And then
+
+37:42.680 --> 37:43.380
+of course
+
+37:43.380 --> 37:44.360
+passwords aren't
+
+37:44.360 --> 37:45.020
+really random
+
+37:45.020 --> 37:45.380
+right?
+
+37:46.820 --> 37:47.700
+Doesn't matter
+
+37:47.700 --> 37:49.080
+how old you
+
+37:49.080 --> 37:49.580
+are, doesn't
+
+37:49.580 --> 37:50.040
+matter what
+
+37:50.040 --> 37:50.620
+culture
+
+37:50.620 --> 37:51.140
+or which
+
+37:51.140 --> 37:51.600
+country
+
+37:51.600 --> 37:52.040
+which
+
+37:52.040 --> 37:52.940
+ethnicity
+
+37:52.940 --> 37:53.560
+you come
+
+37:53.560 --> 37:53.920
+from
+
+37:53.920 --> 37:55.040
+within the
+
+37:55.040 --> 37:55.540
+group that
+
+37:55.540 --> 37:55.960
+you come
+
+37:55.960 --> 37:56.240
+from
+
+37:56.240 --> 37:57.280
+you're
+
+37:57.280 --> 37:57.900
+likely to
+
+37:57.900 --> 37:58.300
+pick a
+
+37:58.300 --> 37:58.680
+password
+
+37:58.680 --> 38:00.000
+that is
+
+38:00.000 --> 38:00.280
+not
+
+38:00.280 --> 38:00.520
+truly
+
+38:00.520 --> 38:00.920
+random.
+
+38:01.960 --> 38:02.280
+There's
+
+38:02.280 --> 38:02.680
+no such
+
+38:02.680 --> 38:03.100
+thing as
+
+38:03.100 --> 38:03.460
+humans
+
+38:03.460 --> 38:03.780
+picking
+
+38:03.780 --> 38:04.540
+truly
+
+38:04.540 --> 38:04.920
+random
+
+38:04.920 --> 38:05.300
+passwords.
+
+38:05.700 --> 38:06.140
+Even if
+
+38:06.140 --> 38:06.460
+you say
+
+38:06.460 --> 38:06.780
+well
+
+38:06.780 --> 38:07.660
+I know
+
+38:07.660 --> 38:09.480
+a certain
+
+38:09.480 --> 38:09.940
+date
+
+38:09.940 --> 38:10.780
+where
+
+38:10.780 --> 38:11.100
+let's
+
+38:11.100 --> 38:11.440
+say
+
+38:11.440 --> 38:12.700
+I
+
+38:12.700 --> 38:12.800
+don't
+
+38:12.800 --> 38:13.060
+know
+
+38:13.060 --> 38:15.140
+I
+
+38:15.140 --> 38:15.660
+graduated
+
+38:15.660 --> 38:16.040
+from
+
+38:16.040 --> 38:16.520
+college
+
+38:16.520 --> 38:16.960
+or
+
+38:16.960 --> 38:17.440
+I
+
+38:17.440 --> 38:18.020
+had
+
+38:18.020 --> 38:18.180
+my
+
+38:18.180 --> 38:18.480
+first
+
+38:18.480 --> 38:18.980
+date
+
+38:18.980 --> 38:19.380
+or
+
+38:19.380 --> 38:20.880
+something
+
+38:20.880 --> 38:21.760
+auspicious
+
+38:21.760 --> 38:22.260
+happened
+
+38:22.260 --> 38:22.520
+on a
+
+38:22.520 --> 38:22.840
+particular
+
+38:22.840 --> 38:23.140
+date
+
+38:23.140 --> 38:24.080
+and
+
+38:24.080 --> 38:24.400
+nobody
+
+38:24.400 --> 38:24.620
+else
+
+38:24.620 --> 38:24.860
+knows
+
+38:24.860 --> 38:25.080
+it
+
+38:25.080 --> 38:25.700
+just
+
+38:25.700 --> 38:25.980
+you
+
+38:25.980 --> 38:27.120
+you
+
+38:27.120 --> 38:27.340
+think
+
+38:27.340 --> 38:27.560
+that
+
+38:27.560 --> 38:27.760
+might
+
+38:27.760 --> 38:27.900
+be
+
+38:27.900 --> 38:28.220
+random
+
+38:28.220 --> 38:28.440
+but
+
+38:28.440 --> 38:28.700
+actually
+
+38:28.700 --> 38:28.880
+it's
+
+38:28.880 --> 38:29.140
+not.
+
+38:31.460 --> 38:31.640
+I
+
+38:31.640 --> 38:31.880
+think
+
+38:31.880 --> 38:32.080
+about
+
+38:32.080 --> 38:32.560
+are
+
+38:32.560 --> 38:32.860
+dates
+
+38:32.860 --> 38:33.140
+really
+
+38:33.140 --> 38:33.480
+random?
+
+38:34.460 --> 38:34.680
+There's
+
+38:34.680 --> 38:34.880
+a lot
+
+38:34.880 --> 38:34.980
+of
+
+38:34.980 --> 38:35.160
+people
+
+38:35.160 --> 38:35.420
+use
+
+38:35.420 --> 38:35.580
+them
+
+38:35.580 --> 38:36.040
+professionally.
+
+38:37.480 --> 38:37.720
+Think
+
+38:37.720 --> 38:37.900
+about
+
+38:37.900 --> 38:38.100
+how
+
+38:38.100 --> 38:38.260
+we
+
+38:38.260 --> 38:38.600
+structure
+
+38:38.600 --> 38:39.020
+dates.
+
+38:41.220 --> 38:41.580
+Forget
+
+38:41.580 --> 38:42.200
+hours
+
+38:42.200 --> 38:42.380
+a
+
+38:42.380 --> 38:42.520
+minute
+
+38:42.520 --> 38:42.780
+just
+
+38:42.780 --> 38:43.120
+dates.
+
+38:44.580 --> 38:44.740
+I
+
+38:44.740 --> 38:44.860
+mean
+
+38:44.860 --> 38:45.180
+depending
+
+38:45.180 --> 38:45.340
+on
+
+38:45.340 --> 38:46.200
+which
+
+38:46.200 --> 38:46.600
+notation
+
+38:46.600 --> 38:46.780
+it
+
+38:46.780 --> 38:47.020
+used
+
+38:47.020 --> 38:47.140
+to
+
+38:47.140 --> 38:47.280
+them
+
+38:47.280 --> 38:47.400
+in
+
+38:47.400 --> 38:47.500
+the
+
+38:47.500 --> 38:47.700
+United
+
+38:47.700 --> 38:48.040
+States
+
+38:48.040 --> 38:48.220
+we
+
+38:48.220 --> 38:48.460
+use
+
+38:48.460 --> 38:49.280
+month
+
+38:49.280 --> 38:49.860
+day
+
+38:49.860 --> 38:50.440
+year
+
+38:50.440 --> 38:50.940
+right?
+
+38:52.400 --> 38:52.680
+How
+
+38:52.680 --> 38:52.860
+many
+
+38:52.860 --> 38:53.140
+months
+
+38:53.140 --> 38:53.280
+are
+
+38:53.280 --> 38:53.500
+there?
+
+38:54.720 --> 38:55.180
+Well
+
+38:55.180 --> 38:56.000
+last time I
+
+38:56.000 --> 38:56.220
+said
+
+38:56.220 --> 38:58.220
+how many
+
+38:58.220 --> 38:58.680
+days are
+
+38:58.680 --> 38:58.880
+there?
+
+38:59.080 --> 38:59.480
+Let's be
+
+38:59.480 --> 39:00.100
+generous and
+
+39:00.100 --> 39:00.700
+say 51
+
+39:00.700 --> 39:01.100
+in every
+
+39:01.100 --> 39:01.380
+month
+
+39:01.380 --> 39:01.700
+right?
+
+39:02.440 --> 39:02.720
+They're
+
+39:02.720 --> 39:02.980
+honest
+
+39:02.980 --> 39:03.300
+right?
+
+39:03.520 --> 39:04.160
+Let's say
+
+39:04.160 --> 39:04.400
+they're
+
+39:04.400 --> 39:04.720
+out because
+
+39:04.720 --> 39:05.020
+they're
+
+39:05.020 --> 39:05.540
+the maximum
+
+39:05.540 --> 39:06.760
+and how many
+
+39:06.760 --> 39:07.280
+years is it?
+
+39:07.380 --> 39:07.700
+Well
+
+39:07.700 --> 39:08.140
+there are a lot
+
+39:08.140 --> 39:08.580
+of years
+
+39:08.580 --> 39:09.940
+but you're not
+
+39:09.940 --> 39:10.800
+likely to pick
+
+39:10.800 --> 39:11.580
+a year from
+
+39:11.580 --> 39:13.040
+dark ages
+
+39:13.040 --> 39:14.280
+history
+
+39:14.280 --> 39:14.300
+history
+
+39:14.300 --> 39:15.680
+and
+
+39:15.680 --> 39:16.360
+yeah
+
+39:16.360 --> 39:17.240
+if you're
+
+39:17.240 --> 39:17.560
+a fan
+
+39:17.560 --> 39:17.920
+of history
+
+39:17.920 --> 39:18.320
+you might
+
+39:18.320 --> 39:18.560
+pick
+
+39:18.560 --> 39:18.880
+something
+
+39:18.880 --> 39:22.460
+ancient
+
+39:22.460 --> 39:22.900
+Egyptian
+
+39:22.900 --> 39:23.280
+era
+
+39:23.280 --> 39:23.580
+or
+
+39:23.580 --> 39:24.340
+something
+
+39:24.340 --> 39:24.800
+from
+
+39:24.800 --> 39:25.620
+the
+
+39:25.620 --> 39:25.880
+time
+
+39:25.880 --> 39:26.120
+of
+
+39:26.120 --> 39:27.020
+William
+
+39:27.020 --> 39:27.200
+the
+
+39:27.200 --> 39:27.700
+Conqueror
+
+39:27.700 --> 39:27.960
+but
+
+39:27.960 --> 39:28.980
+most of
+
+39:28.980 --> 39:29.120
+us
+
+39:29.120 --> 39:29.400
+would pick
+
+39:29.400 --> 39:29.680
+something
+
+39:29.680 --> 39:30.080
+reasonably
+
+39:30.080 --> 39:30.420
+more
+
+39:30.420 --> 39:31.060
+1940
+
+39:31.060 --> 39:31.720
+21st
+
+39:31.720 --> 39:32.020
+century
+
+39:32.020 --> 39:32.420
+so
+
+39:32.420 --> 39:32.600
+that
+
+39:32.600 --> 39:32.920
+does not
+
+39:32.920 --> 39:33.100
+be
+
+39:33.100 --> 39:33.400
+vulnerable
+
+39:33.400 --> 39:34.280
+that's
+
+39:34.280 --> 39:34.540
+not
+
+39:34.540 --> 39:35.000
+random
+
+39:35.000 --> 39:36.740
+and the
+
+39:36.740 --> 39:37.100
+space
+
+39:37.100 --> 39:37.380
+of that
+
+39:37.380 --> 39:37.500
+is
+
+39:37.500 --> 39:37.740
+very
+
+39:37.740 --> 39:38.100
+small
+
+39:38.100 --> 39:39.640
+so
+
+39:39.640 --> 39:39.820
+don't
+
+39:39.820 --> 39:39.980
+pick
+
+39:39.980 --> 39:40.260
+dates
+
+39:40.260 --> 39:41.020
+in any
+
+39:41.020 --> 39:41.340
+format
+
+39:41.340 --> 39:43.720
+right
+
+39:43.720 --> 39:43.920
+so
+
+39:43.920 --> 39:44.160
+but if
+
+39:44.160 --> 39:44.440
+you just
+
+39:44.440 --> 39:44.780
+look at
+
+39:44.780 --> 39:45.000
+the
+
+39:45.000 --> 39:45.860
+52
+
+39:45.860 --> 39:46.380
+upper
+
+39:46.380 --> 39:46.560
+and
+
+39:46.560 --> 39:46.840
+lower
+
+39:46.840 --> 39:47.220
+case
+
+39:47.220 --> 39:47.820
+letters
+
+39:47.820 --> 39:49.440
+that is
+
+39:49.440 --> 39:49.640
+being
+
+39:49.640 --> 39:50.040
+generous
+
+39:50.040 --> 39:50.440
+assuming
+
+39:50.440 --> 39:50.740
+that
+
+39:50.740 --> 39:51.120
+whatever
+
+39:51.120 --> 39:51.520
+system
+
+39:51.520 --> 39:51.720
+we're
+
+39:51.720 --> 39:51.960
+working
+
+39:51.960 --> 39:52.800
+distinguishes
+
+39:52.800 --> 39:53.160
+between
+
+39:53.160 --> 39:53.440
+upper
+
+39:53.440 --> 39:53.600
+and
+
+39:53.600 --> 39:53.740
+lower
+
+39:53.740 --> 39:53.900
+case
+
+39:53.900 --> 39:54.160
+because
+
+39:54.160 --> 39:54.540
+some
+
+39:54.540 --> 39:55.620
+systems
+
+39:55.620 --> 39:55.860
+do
+
+39:55.860 --> 39:56.120
+not
+
+39:56.120 --> 39:56.600
+right
+
+39:56.600 --> 39:57.520
+they'll
+
+39:57.520 --> 39:57.760
+just
+
+39:57.760 --> 39:58.420
+convert
+
+39:58.420 --> 39:58.800
+everything
+
+39:58.800 --> 39:59.000
+to
+
+39:59.000 --> 39:59.180
+upper
+
+39:59.180 --> 39:59.500
+case
+
+39:59.500 --> 39:59.680
+or
+
+39:59.680 --> 40:00.000
+lower
+
+40:00.000 --> 40:00.200
+case
+
+40:00.200 --> 40:00.840
+so
+
+40:00.840 --> 40:01.520
+52
+
+40:01.520 --> 40:02.420
+in English
+
+40:02.420 --> 40:02.740
+20
+
+40:02.740 --> 40:03.040
+that's
+
+40:03.040 --> 40:03.620
+26
+
+40:03.620 --> 40:04.460
+26 times
+
+40:04.460 --> 40:04.680
+2
+
+40:04.680 --> 40:04.920
+plus
+
+40:04.920 --> 40:05.160
+10
+
+40:05.160 --> 40:05.620
+digits
+
+40:05.620 --> 40:07.080
+and
+
+40:07.080 --> 40:07.480
+32
+
+40:07.480 --> 40:08.160
+punctuation
+
+40:08.160 --> 40:08.560
+symbols
+
+40:08.560 --> 40:09.120
+although
+
+40:09.120 --> 40:10.860
+many
+
+40:10.860 --> 40:11.700
+password
+
+40:11.700 --> 40:12.760
+rules
+
+40:12.760 --> 40:13.180
+will not
+
+40:13.180 --> 40:13.540
+allow you
+
+40:13.540 --> 40:13.780
+to use
+
+40:13.780 --> 40:14.260
+punctuation
+
+40:14.260 --> 40:15.600
+they might
+
+40:15.600 --> 40:16.000
+allow you
+
+40:16.000 --> 40:16.400
+to use
+
+40:16.400 --> 40:16.700
+like
+
+40:16.700 --> 40:18.100
+exclamation
+
+40:18.100 --> 40:18.660
+point
+
+40:18.660 --> 40:19.280
+the question
+
+40:19.280 --> 40:19.800
+mark
+
+40:19.800 --> 40:20.620
+the dot
+
+40:20.620 --> 40:21.020
+and maybe
+
+40:21.020 --> 40:21.760
+that's it
+
+40:21.760 --> 40:22.820
+but okay
+
+40:22.820 --> 40:23.200
+let's be
+
+40:23.200 --> 40:23.560
+generous
+
+40:23.560 --> 40:24.840
+so that
+
+40:24.840 --> 40:25.300
+gives us
+
+40:25.300 --> 40:25.740
+52
+
+40:25.740 --> 40:26.340
+plus 10
+
+40:26.340 --> 40:27.040
+plus 32
+
+40:27.040 --> 40:28.500
+that's
+
+40:28.500 --> 40:28.980
+94
+
+40:28.980 --> 40:31.180
+and let's
+
+40:31.180 --> 40:31.560
+say we
+
+40:31.560 --> 40:32.040
+limit to
+
+40:32.040 --> 40:32.720
+8 characters
+
+40:32.720 --> 40:34.600
+because
+
+40:34.600 --> 40:36.720
+that's
+
+40:36.720 --> 40:37.200
+pretty much
+
+40:37.200 --> 40:37.880
+how many
+
+40:37.880 --> 40:38.120
+of you
+
+40:38.120 --> 40:38.300
+have
+
+40:38.300 --> 40:38.760
+passwords
+
+40:38.760 --> 40:39.200
+that I
+
+40:39.200 --> 40:39.560
+exceed
+
+40:39.560 --> 40:40.220
+8 characters
+
+40:40.220 --> 40:42.940
+yeah
+
+40:42.940 --> 40:43.880
+I buy
+
+40:43.880 --> 40:44.240
+a lot
+
+40:44.240 --> 40:45.060
+how many
+
+40:45.060 --> 40:45.580
+exceed
+
+40:45.580 --> 40:46.340
+12 characters
+
+40:46.340 --> 40:48.520
+look at
+
+40:48.520 --> 40:48.720
+you
+
+40:48.720 --> 40:49.500
+15
+
+40:49.500 --> 40:53.780
+okay
+
+40:53.780 --> 40:54.260
+you like
+
+40:54.260 --> 40:54.560
+entering
+
+40:54.560 --> 40:55.000
+passwords
+
+40:55.000 --> 40:55.420
+don't you
+
+40:55.420 --> 40:56.400
+because
+
+40:56.400 --> 40:56.760
+there's
+
+40:56.760 --> 40:57.060
+a big
+
+40:57.060 --> 40:57.460
+trade-off
+
+40:57.460 --> 40:57.700
+here
+
+40:57.700 --> 40:58.000
+right
+
+40:58.000 --> 40:59.020
+the big
+
+40:59.020 --> 40:59.520
+trade-off
+
+40:59.520 --> 40:59.920
+is
+
+40:59.920 --> 41:00.840
+okay
+
+41:00.840 --> 41:01.100
+so
+
+41:01.100 --> 41:01.360
+let's
+
+41:01.360 --> 41:01.500
+say
+
+41:01.500 --> 41:03.180
+I'm
+
+41:03.180 --> 41:03.440
+not going
+
+41:03.440 --> 41:04.080
+to
+
+41:04.080 --> 41:04.720
+triangulate
+
+41:04.720 --> 41:04.920
+your
+
+41:04.920 --> 41:05.220
+password
+
+41:05.220 --> 41:05.500
+here
+
+41:05.500 --> 41:06.840
+but let's
+
+41:06.840 --> 41:07.100
+say you
+
+41:07.100 --> 41:07.240
+have
+
+41:07.240 --> 41:07.560
+15
+
+41:07.560 --> 41:07.900
+character
+
+41:07.900 --> 41:08.360
+password
+
+41:08.360 --> 41:09.300
+and
+
+41:09.300 --> 41:10.520
+he has
+
+41:10.520 --> 41:10.900
+an 8
+
+41:10.900 --> 41:11.340
+character
+
+41:11.340 --> 41:11.760
+password
+
+41:11.760 --> 41:12.900
+now we
+
+41:12.900 --> 41:13.020
+have
+
+41:13.020 --> 41:13.600
+usability
+
+41:13.600 --> 41:14.120
+issue
+
+41:14.120 --> 41:15.620
+let's
+
+41:15.620 --> 41:15.820
+say
+
+41:15.820 --> 41:16.100
+you're
+
+41:16.100 --> 41:16.500
+young
+
+41:16.500 --> 41:17.040
+you're
+
+41:17.040 --> 41:17.380
+smart
+
+41:17.380 --> 41:17.720
+you can
+
+41:17.720 --> 41:18.120
+remember
+
+41:18.120 --> 41:18.500
+15
+
+41:18.500 --> 41:18.820
+characters
+
+41:18.820 --> 41:19.380
+obviously
+
+41:19.380 --> 41:19.820
+you can
+
+41:19.820 --> 41:20.060
+right
+
+41:20.060 --> 41:23.300
+but what
+
+41:23.300 --> 41:23.480
+about
+
+41:23.480 --> 41:23.780
+making
+
+41:23.780 --> 41:24.420
+mistakes
+
+41:24.420 --> 41:25.580
+in
+
+41:25.580 --> 41:25.740
+those
+
+41:25.740 --> 41:26.020
+15
+
+41:26.020 --> 41:26.440
+characters
+
+41:26.440 --> 41:26.780
+as you
+
+41:26.780 --> 41:27.060
+type
+
+41:27.060 --> 41:28.900
+have
+
+41:28.900 --> 41:29.020
+we
+
+41:29.020 --> 41:29.220
+never
+
+41:29.220 --> 41:29.420
+did
+
+41:29.420 --> 41:29.840
+mistakes
+
+41:29.840 --> 41:33.840
+right
+
+41:33.840 --> 41:34.580
+how likely
+
+41:34.580 --> 41:34.980
+let's
+
+41:34.980 --> 41:35.380
+put it
+
+41:35.380 --> 41:35.720
+another way
+
+41:35.720 --> 41:36.260
+how likely
+
+41:36.260 --> 41:36.440
+are you
+
+41:36.440 --> 41:36.700
+to make
+
+41:36.700 --> 41:37.100
+a mistake
+
+41:37.100 --> 41:37.380
+in an
+
+41:37.380 --> 41:37.540
+8
+
+41:37.540 --> 41:37.880
+character
+
+41:37.880 --> 41:38.280
+password
+
+41:38.280 --> 41:38.760
+as opposed
+
+41:38.760 --> 41:38.980
+to a
+
+41:38.980 --> 41:39.220
+15
+
+41:39.220 --> 41:39.580
+character
+
+41:39.580 --> 41:39.960
+password
+
+41:39.960 --> 41:41.820
+much more
+
+41:41.820 --> 41:42.120
+likely
+
+41:42.120 --> 41:42.680
+there are
+
+41:42.680 --> 41:42.860
+some
+
+41:42.860 --> 41:43.100
+people
+
+41:43.100 --> 41:43.700
+fatigued
+
+41:43.700 --> 41:43.920
+right
+
+41:43.920 --> 41:44.260
+I mean
+
+41:44.260 --> 41:44.820
+finger
+
+41:44.820 --> 41:45.260
+fatigued
+
+41:45.260 --> 41:45.660
+you have
+
+41:45.660 --> 41:46.060
+to stare
+
+41:46.060 --> 41:46.260
+at the
+
+41:46.260 --> 41:46.500
+keyword
+
+41:46.500 --> 41:47.600
+so
+
+41:47.600 --> 41:47.880
+there's
+
+41:47.880 --> 41:48.160
+that
+
+41:48.160 --> 41:49.480
+second
+
+41:49.480 --> 41:49.780
+issue
+
+41:49.780 --> 41:50.100
+is the
+
+41:50.100 --> 41:50.460
+time
+
+41:50.460 --> 41:51.380
+it just
+
+41:51.380 --> 41:51.580
+takes
+
+41:51.580 --> 41:51.940
+longer
+
+41:51.940 --> 41:53.400
+to enter
+
+41:53.400 --> 41:53.620
+that
+
+41:53.620 --> 41:53.940
+password
+
+41:53.940 --> 41:55.980
+so
+
+41:55.980 --> 41:57.360
+while I
+
+41:57.360 --> 41:58.100
+find it
+
+41:58.100 --> 41:58.580
+commendable
+
+41:58.580 --> 41:58.920
+that you
+
+41:58.920 --> 41:59.360
+guys use
+
+41:59.360 --> 41:59.800
+this long
+
+41:59.800 --> 42:00.220
+password
+
+42:00.220 --> 42:00.700
+that's
+
+42:00.700 --> 42:01.000
+great
+
+42:01.000 --> 42:03.480
+that doesn't
+
+42:03.480 --> 42:03.860
+mean you're
+
+42:03.860 --> 42:04.200
+out of the
+
+42:04.200 --> 42:04.440
+woods
+
+42:04.440 --> 42:05.020
+with attacks
+
+42:05.020 --> 42:05.900
+you know
+
+42:05.900 --> 42:06.600
+but
+
+42:06.600 --> 42:07.840
+there is a
+
+42:07.840 --> 42:08.220
+trade-off
+
+42:08.220 --> 42:08.700
+right
+
+42:08.700 --> 42:09.140
+and most
+
+42:09.140 --> 42:09.400
+people
+
+42:09.400 --> 42:09.800
+I mean
+
+42:09.800 --> 42:10.480
+they're okay
+
+42:10.480 --> 42:10.900
+with like
+
+42:10.900 --> 42:11.540
+not super
+
+42:11.540 --> 42:11.860
+short
+
+42:11.860 --> 42:12.220
+passwords
+
+42:12.220 --> 42:13.060
+but like
+
+42:13.060 --> 42:13.660
+research
+
+42:13.660 --> 42:14.280
+show that
+
+42:14.280 --> 42:14.660
+8 is
+
+42:14.660 --> 42:14.980
+about
+
+42:14.980 --> 42:16.160
+the right
+
+42:16.160 --> 42:16.540
+mix
+
+42:16.540 --> 42:17.680
+but with
+
+42:17.680 --> 42:17.860
+8
+
+42:17.860 --> 42:18.140
+characters
+
+42:18.160 --> 42:18.800
+which is
+
+42:18.800 --> 42:19.240
+I think
+
+42:19.240 --> 42:19.780
+for most
+
+42:19.780 --> 42:20.100
+people
+
+42:20.100 --> 42:20.880
+and I
+
+42:20.880 --> 42:21.240
+suspect
+
+42:21.240 --> 42:21.780
+most people
+
+42:21.780 --> 42:22.240
+your age
+
+42:22.240 --> 42:22.640
+have picked
+
+42:22.640 --> 42:23.220
+some better
+
+42:23.220 --> 42:23.680
+passwords
+
+42:23.680 --> 42:24.160
+than let's
+
+42:24.160 --> 42:24.500
+say your
+
+42:24.500 --> 42:24.880
+uncles
+
+42:24.880 --> 42:26.000
+and grandparents
+
+42:26.000 --> 42:27.020
+and parents
+
+42:27.020 --> 42:28.440
+because you
+
+42:28.440 --> 42:28.580
+know
+
+42:28.580 --> 42:29.320
+who are less
+
+42:29.320 --> 42:29.720
+confused
+
+42:29.720 --> 42:30.040
+having
+
+42:30.040 --> 42:30.760
+you're going
+
+42:30.760 --> 42:31.240
+to wind up
+
+42:31.240 --> 42:32.400
+with roughly
+
+42:32.400 --> 42:33.560
+6 quadrillion
+
+42:33.560 --> 42:35.680
+possible passwords
+
+42:35.680 --> 42:37.060
+well to a
+
+42:37.060 --> 42:37.520
+kid this
+
+42:37.520 --> 42:38.120
+sounds really
+
+42:38.120 --> 42:38.620
+impressive
+
+42:38.620 --> 42:38.980
+right
+
+42:38.980 --> 42:39.380
+you just
+
+42:39.380 --> 42:39.960
+explain how
+
+42:39.960 --> 42:40.420
+many zeros
+
+42:40.420 --> 42:40.720
+are
+
+42:40.720 --> 42:41.360
+but we're
+
+42:41.360 --> 42:41.880
+all adults
+
+42:41.880 --> 42:42.160
+here
+
+42:42.160 --> 42:43.100
+6 quadrillion
+
+42:43.100 --> 42:43.580
+is not a
+
+42:43.580 --> 42:44.080
+large number
+
+42:44.080 --> 42:46.100
+okay
+
+42:46.100 --> 42:47.000
+not at all
+
+42:47.000 --> 42:48.480
+right
+
+42:48.480 --> 42:49.580
+and
+
+42:49.580 --> 42:51.120
+since
+
+42:51.120 --> 42:52.240
+given
+
+42:52.240 --> 42:53.620
+freedom
+
+42:53.620 --> 42:54.140
+to pick
+
+42:54.140 --> 42:54.380
+right
+
+42:54.380 --> 42:55.000
+without like
+
+42:55.000 --> 42:55.620
+actual
+
+42:55.620 --> 42:56.160
+restriction
+
+42:56.160 --> 42:57.900
+most of us
+
+42:57.900 --> 42:58.300
+will pick
+
+42:58.300 --> 42:59.040
+things like
+
+42:59.040 --> 42:59.900
+human and
+
+42:59.900 --> 43:00.500
+pet names
+
+43:00.500 --> 43:01.040
+and dictionary
+
+43:01.040 --> 43:01.500
+words
+
+43:01.500 --> 43:02.400
+we're going to
+
+43:02.400 --> 43:02.840
+wind up
+
+43:02.840 --> 43:03.200
+with
+
+43:03.200 --> 43:05.120
+20
+
+43:05.120 --> 43:06.020
+2 to the
+
+43:06.020 --> 43:06.340
+20
+
+43:06.340 --> 43:06.860
+essentially
+
+43:06.860 --> 43:07.480
+a 20-bit
+
+43:07.480 --> 43:07.840
+password
+
+43:07.840 --> 43:09.640
+which means
+
+43:09.640 --> 43:09.940
+that
+
+43:09.940 --> 43:10.780
+even if
+
+43:10.780 --> 43:11.160
+your password
+
+43:11.160 --> 43:11.520
+is 8
+
+43:11.520 --> 43:11.980
+characters
+
+43:11.980 --> 43:13.260
+the real
+
+43:13.260 --> 43:13.740
+entropy
+
+43:13.740 --> 43:14.060
+there
+
+43:14.060 --> 43:14.180
+is
+
+43:14.180 --> 43:14.360
+about
+
+43:14.360 --> 43:14.640
+20
+
+43:14.640 --> 43:14.920
+minutes
+
+43:14.920 --> 43:19.260
+meaning
+
+43:19.260 --> 43:19.580
+that
+
+43:19.580 --> 43:20.260
+human
+
+43:20.260 --> 43:20.760
+death
+
+43:20.760 --> 43:21.200
+names
+
+43:21.200 --> 43:21.580
+and all
+
+43:21.580 --> 43:22.180
+the dictionary
+
+43:22.180 --> 43:22.600
+words
+
+43:22.600 --> 43:23.160
+will roughly
+
+43:23.160 --> 43:23.620
+be about
+
+43:23.620 --> 43:23.900
+2 to the
+
+43:23.900 --> 43:24.060
+point
+
+43:24.060 --> 43:24.520
+that's
+
+43:24.520 --> 43:24.800
+assuming
+
+43:24.800 --> 43:25.240
+the language
+
+43:25.240 --> 43:25.660
+is known
+
+43:25.660 --> 43:26.200
+so you
+
+43:26.200 --> 43:26.440
+assume
+
+43:26.440 --> 43:26.860
+your password
+
+43:26.860 --> 43:27.800
+is English
+
+43:27.800 --> 43:28.180
+like
+
+43:28.180 --> 43:29.680
+if you
+
+43:29.680 --> 43:29.980
+are
+
+43:29.980 --> 43:31.220
+Swahili
+
+43:31.220 --> 43:31.720
+speaker
+
+43:31.720 --> 43:32.720
+then a whole
+
+43:32.720 --> 43:33.000
+different
+
+43:33.000 --> 43:33.260
+thing
+
+43:33.260 --> 43:33.700
+will apply
+
+43:33.700 --> 43:34.520
+it will
+
+43:34.520 --> 43:35.000
+be based
+
+43:35.000 --> 43:35.520
+on the
+
+43:35.520 --> 43:36.280
+vocabulary
+
+43:36.280 --> 43:36.720
+of that
+
+43:36.720 --> 43:37.000
+language
+
+43:37.000 --> 43:37.840
+but
+
+43:37.840 --> 43:38.000
+you
+
+43:38.000 --> 43:38.140
+have
+
+43:38.140 --> 43:38.240
+to
+
+43:38.240 --> 43:38.520
+assume
+
+43:38.520 --> 43:38.680
+that
+
+43:38.680 --> 43:38.900
+hacker
+
+43:38.900 --> 43:39.180
+knows
+
+43:39.180 --> 43:39.380
+about
+
+43:39.380 --> 43:39.520
+that
+
+43:39.520 --> 43:42.860
+yeah
+
+43:42.860 --> 43:43.460
+so
+
+43:43.460 --> 43:44.060
+and
+
+43:44.060 --> 43:44.280
+if you
+
+43:44.280 --> 43:44.460
+think
+
+43:44.460 --> 43:44.780
+pins
+
+43:44.780 --> 43:44.920
+are
+
+43:44.920 --> 43:45.200
+better
+
+43:45.200 --> 43:45.660
+they're
+
+43:45.660 --> 43:46.000
+not
+
+43:46.000 --> 43:47.080
+because
+
+43:47.080 --> 43:48.040
+you
+
+43:48.040 --> 43:48.540
+get
+
+43:48.540 --> 43:49.080
+with
+
+43:49.080 --> 43:49.900
+maximum
+
+43:49.900 --> 43:50.460
+2 to the
+
+43:50.460 --> 43:50.980
+27
+
+43:50.980 --> 43:51.520
+with
+
+43:51.520 --> 43:51.880
+8
+
+43:51.880 --> 43:52.340
+digit
+
+43:52.340 --> 43:52.800
+pins
+
+43:52.800 --> 43:57.200
+and
+
+43:57.200 --> 43:57.520
+that's
+
+43:57.520 --> 43:57.900
+something
+
+43:57.900 --> 43:58.260
+that
+
+43:58.260 --> 43:58.920
+any
+
+43:58.920 --> 44:01.040
+software
+
+44:01.040 --> 44:01.520
+on your
+
+44:01.520 --> 44:01.760
+phone
+
+44:01.760 --> 44:02.080
+you can
+
+44:02.080 --> 44:02.740
+do
+
+44:02.740 --> 44:03.180
+in
+
+44:03.180 --> 44:03.940
+seconds
+
+44:03.940 --> 44:05.340
+just
+
+44:05.340 --> 44:05.740
+iterate
+
+44:05.740 --> 44:06.140
+for all
+
+44:06.140 --> 44:06.380
+of those
+
+44:06.380 --> 44:06.580
+so
+
+44:06.580 --> 44:06.800
+that's
+
+44:06.800 --> 44:07.060
+not a
+
+44:07.060 --> 44:07.260
+scary
+
+44:07.260 --> 44:07.600
+number
+
+44:07.600 --> 44:08.440
+on
+
+44:08.440 --> 44:08.580
+the
+
+44:08.580 --> 44:09.080
+websites
+
+44:09.080 --> 44:09.940
+they often
+
+44:09.940 --> 44:10.780
+restrict
+
+44:10.780 --> 44:11.360
+length
+
+44:11.360 --> 44:11.640
+for
+
+44:11.640 --> 44:12.960
+I get
+
+44:12.960 --> 44:13.460
+they have
+
+44:13.460 --> 44:13.780
+to store
+
+44:13.780 --> 44:14.080
+in a
+
+44:14.080 --> 44:14.500
+database
+
+44:14.500 --> 44:14.860
+somehow
+
+44:14.860 --> 44:15.800
+but why
+
+44:15.800 --> 44:17.600
+in the
+
+44:17.600 --> 44:17.940
+world
+
+44:17.940 --> 44:18.300
+would they
+
+44:18.300 --> 44:18.580
+ever
+
+44:18.580 --> 44:18.780
+that
+
+44:18.780 --> 44:19.000
+takes
+
+44:19.000 --> 44:19.480
+no sense
+
+44:19.480 --> 44:19.800
+to me
+
+44:19.800 --> 44:20.000
+either
+
+44:20.000 --> 44:20.360
+symbols
+
+44:20.360 --> 44:21.200
+they
+
+44:21.200 --> 44:22.280
+so
+
+44:22.280 --> 44:22.860
+I think
+
+44:22.860 --> 44:23.380
+the reason
+
+44:23.380 --> 44:23.800
+okay
+
+44:23.800 --> 44:24.740
+you're asking
+
+44:24.740 --> 44:25.300
+two questions
+
+44:25.300 --> 44:26.140
+why do they
+
+44:26.140 --> 44:26.460
+restrict
+
+44:26.460 --> 44:26.800
+the length
+
+44:26.800 --> 44:27.540
+and why
+
+44:27.540 --> 44:27.920
+they don't
+
+44:27.920 --> 44:28.120
+allow
+
+44:28.120 --> 44:28.480
+symbols
+
+44:28.480 --> 44:29.920
+none of
+
+44:29.920 --> 44:30.320
+those two
+
+44:30.320 --> 44:30.680
+none of
+
+44:30.680 --> 44:31.000
+those two
+
+44:31.000 --> 44:31.480
+make sense
+
+44:31.480 --> 44:31.920
+to me
+
+44:31.920 --> 44:32.540
+but I have
+
+44:32.540 --> 44:33.320
+a potential
+
+44:33.320 --> 44:33.980
+explanation
+
+44:33.980 --> 44:35.040
+for why
+
+44:35.040 --> 44:35.220
+they don't
+
+44:35.220 --> 44:35.780
+allow certain
+
+44:35.780 --> 44:36.220
+symbols
+
+44:36.220 --> 44:36.720
+is because
+
+44:36.720 --> 44:37.320
+they think
+
+44:37.320 --> 44:38.040
+these are
+
+44:38.040 --> 44:38.600
+executable
+
+44:38.600 --> 44:39.020
+some kind
+
+44:39.020 --> 44:39.320
+of like
+
+44:39.320 --> 44:39.520
+they're
+
+44:39.520 --> 44:40.320
+trigger symbols
+
+44:40.320 --> 44:41.920
+that somehow
+
+44:41.920 --> 44:43.400
+some of
+
+44:43.400 --> 44:44.020
+these things
+
+44:44.020 --> 44:44.440
+like
+
+44:44.440 --> 44:47.480
+slash slash
+
+44:47.480 --> 44:48.200
+or back
+
+44:48.200 --> 44:48.700
+slash back
+
+44:48.700 --> 44:49.840
+dollar sign
+
+44:49.840 --> 44:50.560
+can be used
+
+44:50.560 --> 44:52.480
+if you somehow
+
+44:52.480 --> 44:53.380
+cause a buffer
+
+44:53.380 --> 44:53.960
+overflow
+
+44:53.960 --> 44:55.460
+they can
+
+44:55.460 --> 44:56.420
+so there's
+
+44:56.420 --> 44:56.820
+some like
+
+44:56.820 --> 44:57.560
+suspicion
+
+44:57.560 --> 44:58.920
+of these symbols
+
+44:58.920 --> 45:00.220
+dating back years
+
+45:00.220 --> 45:00.860
+nobody really
+
+45:00.860 --> 45:01.520
+knows why
+
+45:01.520 --> 45:02.520
+but that's
+
+45:02.520 --> 45:03.120
+my suspicion
+
+45:03.120 --> 45:03.900
+why
+
+45:03.900 --> 45:04.360
+do they
+
+45:04.360 --> 45:05.240
+truncate
+
+45:05.240 --> 45:07.080
+and allow
+
+45:07.080 --> 45:07.600
+only
+
+45:07.600 --> 45:08.680
+fixed
+
+45:08.680 --> 45:09.700
+up to a certain
+
+45:09.700 --> 45:10.020
+number of
+
+45:10.020 --> 45:10.220
+characters
+
+45:10.220 --> 45:10.860
+I don't know
+
+45:10.860 --> 45:11.140
+that
+
+45:11.140 --> 45:12.540
+that may be
+
+45:12.540 --> 45:14.280
+it makes no
+
+45:14.280 --> 45:15.060
+sense because
+
+45:15.060 --> 45:16.780
+it's hashed
+
+45:16.780 --> 45:18.820
+and it may be
+
+45:18.820 --> 45:19.460
+again that
+
+45:19.460 --> 45:20.440
+whoever programmed
+
+45:20.440 --> 45:21.280
+the front end
+
+45:21.280 --> 45:24.120
+no
+
+45:24.120 --> 45:25.860
+they're also
+
+45:25.860 --> 45:26.540
+afraid of
+
+45:26.540 --> 45:27.040
+these kind
+
+45:27.040 --> 45:27.440
+of buffer
+
+45:27.440 --> 45:28.100
+overflows
+
+45:28.100 --> 45:28.640
+and so on
+
+45:28.640 --> 45:29.120
+and memory
+
+45:29.120 --> 45:29.820
+bugs
+
+45:29.820 --> 45:30.920
+because
+
+45:30.920 --> 45:31.300
+you allow
+
+45:31.300 --> 45:32.120
+unlimited number
+
+45:32.120 --> 45:32.740
+of characters
+
+45:32.740 --> 45:33.300
+they're thinking
+
+45:33.300 --> 45:33.720
+you're going to
+
+45:33.720 --> 45:34.520
+enter 2,000
+
+45:34.520 --> 45:35.040
+characters
+
+45:35.040 --> 45:35.980
+something is going
+
+45:35.980 --> 45:36.340
+to break
+
+45:36.340 --> 45:36.800
+in the code
+
+45:36.800 --> 45:38.300
+I know
+
+45:38.300 --> 45:38.860
+I know
+
+45:38.860 --> 45:39.920
+I'm with you
+
+45:39.920 --> 45:40.240
+on that
+
+45:40.240 --> 45:40.960
+I think that's
+
+45:40.960 --> 45:41.240
+silly
+
+45:41.240 --> 45:42.460
+right because
+
+45:42.460 --> 45:43.240
+there's no
+
+45:43.240 --> 45:43.800
+justification
+
+45:43.800 --> 45:44.760
+it's only the
+
+45:44.760 --> 45:45.260
+front end
+
+45:45.260 --> 45:46.860
+because of the
+
+45:46.860 --> 45:47.380
+back end
+
+45:47.380 --> 45:48.400
+they're hashed
+
+45:48.400 --> 45:48.740
+and they're all
+
+45:48.740 --> 45:49.340
+the same way
+
+45:49.340 --> 45:58.280
+it's a heat
+
+45:58.280 --> 45:58.480
+map
+
+45:58.480 --> 45:59.400
+some of the
+
+45:59.400 --> 45:59.980
+stuff I'll show
+
+45:59.980 --> 46:00.480
+you is really
+
+46:00.480 --> 46:00.880
+dated
+
+46:00.880 --> 46:02.300
+dated as in
+
+46:02.300 --> 46:02.940
+like 10 years
+
+46:02.940 --> 46:03.200
+old
+
+46:03.200 --> 46:03.820
+more than 10
+
+46:03.820 --> 46:04.060
+years old
+
+46:04.060 --> 46:04.660
+none of it
+
+46:04.660 --> 46:05.380
+changed since
+
+46:05.380 --> 46:07.120
+people still
+
+46:07.120 --> 46:07.500
+think
+
+46:07.500 --> 46:09.260
+similar
+
+46:09.260 --> 46:09.540
+faster
+
+46:09.540 --> 46:10.040
+because the
+
+46:10.040 --> 46:10.440
+fundamental
+
+46:10.440 --> 46:10.900
+human
+
+46:10.900 --> 46:12.040
+mentality
+
+46:12.040 --> 46:12.360
+hasn't
+
+46:12.360 --> 46:12.680
+changed
+
+46:12.680 --> 46:14.380
+what is
+
+46:14.380 --> 46:14.720
+a heat
+
+46:14.720 --> 46:14.900
+map
+
+46:14.900 --> 46:15.120
+what does
+
+46:15.120 --> 46:15.440
+it mean
+
+46:15.440 --> 46:15.920
+is that
+
+46:15.920 --> 46:16.500
+you see
+
+46:16.500 --> 46:16.840
+where
+
+46:16.840 --> 46:18.120
+things are
+
+46:18.120 --> 46:18.480
+really
+
+46:18.480 --> 46:19.480
+hot
+
+46:19.480 --> 46:19.700
+there
+
+46:19.700 --> 46:20.020
+yellow
+
+46:20.020 --> 46:20.500
+right
+
+46:20.500 --> 46:23.760
+and so
+
+46:23.760 --> 46:24.600
+over here
+
+46:24.600 --> 46:25.380
+it's a heat
+
+46:25.380 --> 46:26.020
+map generated
+
+46:26.020 --> 46:26.820
+from a
+
+46:26.820 --> 46:27.080
+leaked
+
+46:27.080 --> 46:27.560
+password
+
+46:27.560 --> 46:28.140
+database
+
+46:28.140 --> 46:29.460
+a giant
+
+46:29.460 --> 46:29.800
+leaked
+
+46:29.800 --> 46:30.200
+password
+
+46:30.200 --> 46:30.540
+database
+
+46:30.540 --> 46:31.520
+okay
+
+46:31.520 --> 46:33.240
+so
+
+46:33.240 --> 46:35.060
+this is
+
+46:35.060 --> 46:37.060
+a pin
+
+46:37.060 --> 46:37.400
+sorry
+
+46:37.400 --> 46:37.860
+this is not
+
+46:37.860 --> 46:38.520
+a pin
+
+46:38.520 --> 46:39.020
+heat map
+
+46:39.020 --> 46:39.860
+and so
+
+46:39.860 --> 46:40.260
+over here
+
+46:40.260 --> 46:40.620
+where it's
+
+46:40.620 --> 46:41.260
+really hot
+
+46:41.260 --> 46:43.440
+dates
+
+46:43.440 --> 46:45.640
+dates are
+
+46:45.640 --> 46:45.980
+different
+
+46:45.980 --> 46:46.580
+from other
+
+46:46.580 --> 46:46.900
+pins
+
+46:46.900 --> 46:47.700
+this is
+
+46:47.700 --> 46:49.280
+you know
+
+46:49.280 --> 46:49.820
+day
+
+46:49.820 --> 46:50.080
+day
+
+46:50.080 --> 46:50.340
+month
+
+46:50.340 --> 46:50.640
+month
+
+46:50.640 --> 46:50.920
+type
+
+46:50.920 --> 46:51.240
+dates
+
+46:51.240 --> 46:51.560
+right
+
+46:51.560 --> 46:52.600
+and then
+
+46:52.600 --> 46:53.880
+related couplets
+
+46:53.880 --> 46:54.560
+meaning repeated
+
+46:54.560 --> 46:55.420
+things like
+
+46:55.420 --> 46:56.060
+0101
+
+46:56.060 --> 46:57.620
+0505
+
+46:57.620 --> 46:59.100
+667
+
+46:59.100 --> 47:00.680
+they're all
+
+47:00.680 --> 47:01.260
+along this
+
+47:01.260 --> 47:02.700
+diagonal thing
+
+47:02.700 --> 47:04.280
+okay
+
+47:04.280 --> 47:06.220
+and these are
+
+47:06.220 --> 47:06.980
+years of
+
+47:06.980 --> 47:07.740
+specific years
+
+47:07.740 --> 47:08.760
+of 19 something
+
+47:08.760 --> 47:12.320
+because probably
+
+47:12.320 --> 47:13.000
+birth years
+
+47:13.000 --> 47:13.600
+people
+
+47:13.600 --> 47:13.620
+for people
+
+47:13.620 --> 47:15.080
+to take
+
+47:15.080 --> 47:15.460
+passwords
+
+47:15.460 --> 47:15.720
+back
+
+47:15.720 --> 47:19.220
+so
+
+47:19.220 --> 47:20.260
+as I said
+
+47:20.260 --> 47:20.700
+before
+
+47:20.700 --> 47:21.460
+the
+
+47:21.460 --> 47:23.160
+Unix
+
+47:23.160 --> 47:23.800
+and all
+
+47:23.800 --> 47:24.140
+the other
+
+47:24.140 --> 47:24.500
+Unix
+
+47:24.500 --> 47:25.980
+like systems
+
+47:25.980 --> 47:26.760
+have this
+
+47:26.760 --> 47:27.600
+etsy
+
+47:27.600 --> 47:28.540
+password file
+
+47:28.540 --> 47:28.900
+and it's
+
+47:28.900 --> 47:29.480
+world readable
+
+47:29.480 --> 47:30.320
+for reasons
+
+47:30.320 --> 47:30.620
+I already
+
+47:30.620 --> 47:31.060
+explained
+
+47:31.060 --> 47:32.560
+so
+
+47:32.560 --> 47:35.460
+if you don't
+
+47:35.460 --> 47:35.960
+do anything
+
+47:35.960 --> 47:36.300
+and just
+
+47:36.300 --> 47:36.960
+store the
+
+47:36.960 --> 47:38.620
+hashed
+
+47:38.620 --> 47:39.080
+passwords
+
+47:39.080 --> 47:39.520
+in that
+
+47:39.520 --> 47:39.920
+file
+
+47:39.920 --> 47:41.120
+the attacker
+
+47:41.120 --> 47:41.560
+will
+
+47:41.560 --> 47:43.340
+easily
+
+47:43.340 --> 47:44.000
+before
+
+47:44.000 --> 47:45.560
+even knowing
+
+47:45.560 --> 47:45.960
+what that
+
+47:45.960 --> 47:46.480
+file is
+
+47:46.480 --> 47:47.120
+before breaking
+
+47:47.120 --> 47:47.800
+in or getting
+
+47:47.800 --> 47:48.220
+an accident
+
+47:48.220 --> 47:48.960
+the attacker
+
+47:48.960 --> 47:49.800
+can precompute
+
+47:49.800 --> 47:51.160
+a large table
+
+47:51.160 --> 47:51.800
+of all the
+
+47:51.800 --> 47:52.060
+hashed
+
+47:52.060 --> 47:52.400
+passwords
+
+47:52.400 --> 47:54.800
+yeah
+
+47:54.800 --> 47:56.900
+I mean
+
+47:56.900 --> 47:57.620
+passwords are
+
+47:57.620 --> 47:58.220
+passwords right
+
+47:58.220 --> 47:58.700
+you can just
+
+47:58.700 --> 47:59.200
+pick all the
+
+47:59.200 --> 48:00.180
+dictionary words
+
+48:00.180 --> 48:01.060
+all the dictionary
+
+48:01.060 --> 48:01.440
+words are
+
+48:01.440 --> 48:01.800
+reversed
+
+48:01.800 --> 48:02.500
+all the
+
+48:02.500 --> 48:02.920
+two word
+
+48:02.920 --> 48:03.500
+combination
+
+48:03.500 --> 48:05.200
+let's restrict
+
+48:05.200 --> 48:05.840
+our discussion
+
+48:05.840 --> 48:06.340
+to English
+
+48:06.340 --> 48:06.780
+for now
+
+48:06.780 --> 48:07.160
+okay
+
+48:07.160 --> 48:07.800
+because
+
+48:07.800 --> 48:08.720
+similar things
+
+48:08.720 --> 48:09.200
+apply to
+
+48:09.200 --> 48:10.620
+other languages
+
+48:10.620 --> 48:11.280
+but let's say
+
+48:11.280 --> 48:11.760
+yeah
+
+48:11.760 --> 48:12.760
+all the date
+
+48:12.760 --> 48:14.700
+in a standard
+
+48:14.700 --> 48:15.680
+US format
+
+48:15.680 --> 48:16.620
+all the
+
+48:16.620 --> 48:17.540
+even times
+
+48:17.540 --> 48:18.060
+of day
+
+48:18.060 --> 48:18.760
+using
+
+48:18.760 --> 48:19.460
+you know
+
+48:19.460 --> 48:20.040
+after a second
+
+48:20.040 --> 48:20.440
+let's say
+
+48:20.440 --> 48:21.040
+granularity
+
+48:21.040 --> 48:21.740
+you can precompute
+
+48:21.740 --> 48:22.480
+hashes of all
+
+48:22.480 --> 48:23.120
+these values
+
+48:23.120 --> 48:24.000
+combinations
+
+48:24.000 --> 48:24.620
+of all these
+
+48:24.620 --> 48:25.060
+values
+
+48:25.060 --> 48:26.160
+pet names
+
+48:26.160 --> 48:27.700
+city names
+
+48:27.700 --> 48:29.520
+state names
+
+48:29.520 --> 48:31.120
+university
+
+48:31.120 --> 48:32.400
+mascot names
+
+48:32.400 --> 48:33.560
+right
+
+48:33.560 --> 48:34.920
+all of these
+
+48:34.920 --> 48:35.820
+can be precomputed
+
+48:35.820 --> 48:36.260
+in a large
+
+48:36.260 --> 48:36.500
+database
+
+48:36.500 --> 48:37.300
+stored in a large
+
+48:37.300 --> 48:37.560
+database
+
+48:37.560 --> 48:38.720
+that is something
+
+48:38.720 --> 48:39.420
+a task that
+
+48:39.420 --> 48:39.880
+an adversary
+
+48:39.880 --> 48:40.520
+could do
+
+48:40.520 --> 48:41.480
+and would take
+
+48:41.480 --> 48:42.240
+maybe a day
+
+48:42.240 --> 48:42.580
+or two
+
+48:42.580 --> 48:43.360
+maybe less
+
+48:43.360 --> 48:44.500
+this can be
+
+48:44.500 --> 48:44.880
+stored
+
+48:44.880 --> 48:45.420
+and it can be
+
+48:45.420 --> 48:45.920
+done at your
+
+48:45.920 --> 48:46.360
+own leisure
+
+48:46.360 --> 48:47.320
+now
+
+48:47.320 --> 48:48.000
+at the time
+
+48:48.000 --> 48:48.640
+of intrusion
+
+48:48.640 --> 48:49.220
+when the
+
+48:49.220 --> 48:50.020
+adversary gains
+
+48:50.020 --> 48:50.620
+access to
+
+48:50.620 --> 48:51.760
+the password
+
+48:51.760 --> 48:52.220
+file
+
+48:52.220 --> 48:52.720
+all the
+
+48:52.720 --> 48:53.080
+adversary
+
+48:53.080 --> 48:53.600
+needs to
+
+48:53.600 --> 48:53.860
+do
+
+48:53.860 --> 48:55.020
+is extract
+
+48:55.020 --> 48:55.460
+the hashed
+
+48:55.460 --> 48:55.900
+passports
+
+48:55.900 --> 48:56.360
+and do it
+
+48:56.360 --> 48:56.640
+database
+
+48:56.640 --> 48:57.040
+basically
+
+48:57.040 --> 48:59.660
+am I with you
+
+48:59.660 --> 49:01.040
+very simple
+
+49:01.040 --> 49:02.740
+so a little bit
+
+49:02.740 --> 49:03.300
+of work ahead
+
+49:03.300 --> 49:03.640
+of it
+
+49:03.640 --> 49:05.260
+and then
+
+49:05.260 --> 49:05.900
+no work
+
+49:05.900 --> 49:06.400
+essentially
+
+49:06.400 --> 49:07.320
+once the
+
+49:07.320 --> 49:08.460
+password file
+
+49:08.460 --> 49:09.160
+becomes available
+
+49:09.160 --> 49:10.620
+not only that
+
+49:10.620 --> 49:10.900
+but the
+
+49:10.900 --> 49:11.380
+adversary can
+
+49:11.380 --> 49:11.780
+break into
+
+49:11.780 --> 49:12.740
+multiple systems
+
+49:12.740 --> 49:14.120
+and reuse
+
+49:14.120 --> 49:14.700
+that same
+
+49:14.700 --> 49:15.520
+work that
+
+49:15.520 --> 49:16.180
+we did
+
+49:16.180 --> 49:16.700
+earlier
+
+49:16.700 --> 49:17.640
+right
+
+49:17.640 --> 49:18.120
+it's not like
+
+49:18.120 --> 49:18.520
+he has to
+
+49:18.520 --> 49:19.280
+brute force
+
+49:19.280 --> 49:19.980
+anything again
+
+49:19.980 --> 49:21.180
+just a bunch
+
+49:21.180 --> 49:21.680
+of database
+
+49:21.680 --> 49:22.120
+who comes
+
+49:22.120 --> 49:24.460
+so that's
+
+49:24.460 --> 49:24.980
+nice
+
+49:24.980 --> 49:25.500
+for the
+
+49:25.500 --> 49:25.880
+adversary
+
+49:25.880 --> 49:26.600
+bad for
+
+49:26.600 --> 49:26.900
+us
+
+49:26.900 --> 49:29.020
+right
+
+49:29.020 --> 49:30.800
+this is
+
+49:30.800 --> 49:31.200
+called an
+
+49:31.200 --> 49:31.680
+offline
+
+49:31.680 --> 49:32.120
+attack
+
+49:32.120 --> 49:33.740
+because the
+
+49:33.740 --> 49:34.380
+adversary has
+
+49:34.380 --> 49:34.800
+done the
+
+49:34.800 --> 49:35.180
+bulk of
+
+49:35.180 --> 49:35.580
+the work
+
+49:35.580 --> 49:36.240
+offline
+
+49:36.240 --> 49:37.800
+and online
+
+49:37.800 --> 49:38.260
+just does
+
+49:38.260 --> 49:38.740
+lookouts
+
+49:38.740 --> 49:43.340
+so that's
+
+49:43.340 --> 49:43.880
+why salt
+
+49:43.880 --> 49:45.200
+unlike what
+
+49:45.200 --> 49:45.620
+the doctors
+
+49:45.620 --> 49:46.260
+say is good
+
+49:46.260 --> 49:46.620
+for you
+
+49:46.620 --> 49:50.040
+we don't
+
+49:50.040 --> 49:50.800
+store hash
+
+49:50.800 --> 49:51.460
+passwords in
+
+49:51.460 --> 49:51.660
+new
+
+49:51.660 --> 49:52.860
+password file
+
+49:52.860 --> 49:53.720
+we store
+
+49:53.720 --> 49:54.180
+salted
+
+49:54.180 --> 49:54.640
+passwords
+
+49:54.640 --> 49:56.160
+salted
+
+49:56.160 --> 49:56.580
+means
+
+49:56.580 --> 49:57.940
+at the
+
+49:57.940 --> 49:58.400
+time of
+
+49:58.400 --> 49:59.020
+the initial
+
+49:59.020 --> 50:00.120
+creation of
+
+50:00.120 --> 50:00.460
+a user
+
+50:00.460 --> 50:00.920
+account
+
+50:00.920 --> 50:02.760
+the system
+
+50:02.760 --> 50:03.100
+or the
+
+50:03.100 --> 50:03.780
+administrator
+
+50:03.780 --> 50:04.900
+will pick
+
+50:04.900 --> 50:05.360
+a random
+
+50:05.360 --> 50:05.800
+number
+
+50:05.800 --> 50:07.140
+called a
+
+50:07.140 --> 50:07.380
+salt
+
+50:07.380 --> 50:09.240
+that random
+
+50:09.240 --> 50:09.760
+number is
+
+50:09.760 --> 50:10.220
+only used
+
+50:10.220 --> 50:10.880
+there in
+
+50:10.880 --> 50:11.240
+the password
+
+50:11.240 --> 50:11.680
+file
+
+50:11.680 --> 50:13.380
+it isn't
+
+50:13.380 --> 50:13.880
+stored in
+
+50:13.880 --> 50:14.180
+the plain
+
+50:14.180 --> 50:14.480
+text
+
+50:14.480 --> 50:16.700
+but it's
+
+50:16.700 --> 50:17.960
+not reused
+
+50:17.960 --> 50:19.100
+so different
+
+50:19.100 --> 50:19.840
+systems will
+
+50:19.840 --> 50:20.280
+have different
+
+50:20.280 --> 50:20.900
+salts for the
+
+50:20.900 --> 50:21.480
+same user
+
+50:21.480 --> 50:24.980
+so you
+
+50:24.980 --> 50:25.540
+have a record
+
+50:25.540 --> 50:26.100
+something that
+
+50:26.100 --> 50:26.620
+looks something
+
+50:26.620 --> 50:27.180
+like this
+
+50:27.180 --> 50:28.760
+this is maybe
+
+50:28.760 --> 50:29.620
+a little outdated
+
+50:29.620 --> 50:30.840
+that green box
+
+50:30.840 --> 50:31.200
+you see
+
+50:31.200 --> 50:32.560
+gts would be my
+
+50:32.560 --> 50:33.280
+account name
+
+50:33.280 --> 50:35.560
+the salt will be
+
+50:35.560 --> 50:36.280
+that number
+
+50:36.280 --> 50:37.220
+right
+
+50:37.220 --> 50:38.560
+the first blue
+
+50:38.560 --> 50:38.920
+number
+
+50:38.920 --> 50:40.400
+the second is
+
+50:40.400 --> 50:41.020
+the hash
+
+50:41.020 --> 50:42.320
+then you have
+
+50:42.320 --> 50:42.980
+like user
+
+50:42.980 --> 50:43.540
+identity
+
+50:43.540 --> 50:44.080
+uid
+
+50:44.080 --> 50:44.880
+i think that
+
+50:44.880 --> 50:46.020
+the 14510 is
+
+50:46.020 --> 50:46.460
+uid
+
+50:46.460 --> 50:47.500
+30 i don't
+
+50:47.500 --> 50:47.640
+remember
+
+50:47.640 --> 50:48.620
+group id or
+
+50:48.620 --> 50:48.940
+something
+
+50:48.940 --> 50:49.940
+then the full
+
+50:49.940 --> 50:50.440
+name
+
+50:50.440 --> 50:51.840
+like what my
+
+50:51.840 --> 50:52.540
+actual name is
+
+50:52.540 --> 50:53.180
+and then the
+
+50:53.180 --> 50:53.860
+login shell
+
+50:53.860 --> 50:54.620
+right
+
+50:54.620 --> 50:55.800
+and today is
+
+50:55.800 --> 50:56.320
+probably like a
+
+50:56.320 --> 50:56.720
+lot more
+
+50:56.720 --> 50:58.460
+at least that
+
+50:58.460 --> 50:59.960
+but we're not
+
+50:59.960 --> 51:00.520
+interested in
+
+51:00.520 --> 51:01.380
+the rest of the
+
+51:01.380 --> 51:01.680
+stuff
+
+51:01.680 --> 51:02.300
+the important
+
+51:02.300 --> 51:02.840
+thing is
+
+51:02.840 --> 51:03.600
+the salt
+
+51:03.600 --> 51:03.920
+and the
+
+51:03.920 --> 51:04.340
+password
+
+51:04.340 --> 51:04.840
+that has
+
+51:04.840 --> 51:05.300
+together
+
+51:05.300 --> 51:07.600
+okay
+
+51:07.600 --> 51:08.180
+so what
+
+51:08.180 --> 51:08.520
+happens
+
+51:08.520 --> 51:09.400
+very simple
+
+51:09.400 --> 51:10.880
+little mandate
+
+51:10.880 --> 51:11.240
+right
+
+51:11.240 --> 51:11.860
+but makes a
+
+51:11.860 --> 51:12.420
+big difference
+
+51:12.420 --> 51:15.440
+that offline
+
+51:15.440 --> 51:16.560
+attack
+
+51:16.560 --> 51:17.300
+is no longer
+
+51:17.300 --> 51:17.800
+possible
+
+51:17.800 --> 51:22.060
+why not
+
+51:22.060 --> 51:26.460
+well let me
+
+51:26.460 --> 51:26.820
+give you an
+
+51:26.820 --> 51:27.080
+example
+
+51:27.080 --> 51:27.680
+suppose the
+
+51:27.680 --> 51:28.140
+salt was
+
+51:28.140 --> 51:29.440
+one decimal
+
+51:29.440 --> 51:29.800
+digit
+
+51:29.800 --> 51:33.560
+would the
+
+51:33.560 --> 51:33.900
+offline
+
+51:33.900 --> 51:34.240
+attack
+
+51:34.240 --> 51:34.400
+be
+
+51:34.400 --> 51:34.760
+possible
+
+51:34.760 --> 51:39.560
+one
+
+51:39.560 --> 51:39.900
+just one
+
+51:39.900 --> 51:40.200
+decimal
+
+51:40.200 --> 51:40.440
+digit
+
+51:40.440 --> 51:40.700
+meaning
+
+51:40.700 --> 51:41.100
+it's a
+
+51:41.100 --> 51:41.320
+number
+
+51:41.320 --> 51:41.820
+from zero
+
+51:41.820 --> 51:42.400
+to ten
+
+51:42.400 --> 51:44.540
+would it
+
+51:44.540 --> 51:44.880
+be possible
+
+51:44.880 --> 51:45.300
+to mount
+
+51:45.300 --> 51:46.140
+this offline
+
+51:46.140 --> 51:46.500
+attack
+
+51:46.500 --> 51:48.960
+of course
+
+51:48.960 --> 51:49.520
+it's possible
+
+51:49.520 --> 51:50.360
+why not
+
+51:50.360 --> 51:50.700
+right
+
+51:50.700 --> 51:51.880
+just the work
+
+51:51.880 --> 51:53.000
+increases tenfold
+
+51:53.000 --> 51:55.900
+right
+
+51:55.900 --> 51:56.500
+but okay
+
+51:56.500 --> 51:57.060
+now it depends
+
+51:57.060 --> 51:57.640
+on how long
+
+51:57.640 --> 51:58.440
+exactly you make
+
+51:58.440 --> 51:58.560
+it
+
+51:58.560 --> 51:59.060
+but suppose
+
+51:59.060 --> 51:59.660
+you make it
+
+51:59.660 --> 52:01.700
+128 bits
+
+52:01.700 --> 52:03.700
+oh
+
+52:03.700 --> 52:04.600
+now
+
+52:04.600 --> 52:05.800
+one digit
+
+52:05.800 --> 52:06.900
+128 bits
+
+52:06.900 --> 52:07.620
+instead of
+
+52:07.620 --> 52:07.980
+like what
+
+52:07.980 --> 52:08.760
+one digit
+
+52:08.760 --> 52:09.180
+is like
+
+52:09.180 --> 52:09.720
+three digits
+
+52:09.720 --> 52:10.660
+right
+
+52:10.660 --> 52:12.040
+so from three
+
+52:12.040 --> 52:12.820
+bits to 128
+
+52:12.820 --> 52:13.120
+bits
+
+52:13.120 --> 52:13.540
+now the
+
+52:13.540 --> 52:13.840
+adversary
+
+52:13.840 --> 52:14.600
+cannot do
+
+52:14.600 --> 52:15.840
+cannot do
+
+52:15.840 --> 52:17.100
+an offline
+
+52:17.100 --> 52:17.500
+attack
+
+52:17.500 --> 52:18.940
+because remember
+
+52:18.940 --> 52:19.720
+for every
+
+52:19.720 --> 52:20.300
+guess of the
+
+52:20.300 --> 52:20.700
+password
+
+52:20.700 --> 52:22.220
+that the
+
+52:22.220 --> 52:22.580
+adversary
+
+52:22.580 --> 52:22.980
+makes
+
+52:22.980 --> 52:25.260
+he has to
+
+52:25.260 --> 52:25.920
+multiply
+
+52:25.920 --> 52:26.660
+do it
+
+52:26.660 --> 52:27.600
+two to the
+
+52:27.600 --> 52:28.560
+128 times
+
+52:28.560 --> 52:32.400
+per password
+
+52:32.400 --> 52:34.400
+so it
+
+52:34.400 --> 52:34.760
+will be
+
+52:34.760 --> 52:35.300
+two to the
+
+52:35.300 --> 52:36.300
+128 times
+
+52:36.300 --> 52:36.580
+whatever
+
+52:36.580 --> 52:37.260
+even two to
+
+52:37.260 --> 52:37.760
+the 20
+
+52:37.760 --> 52:38.100
+right
+
+52:38.100 --> 52:38.840
+is
+
+52:38.840 --> 52:40.900
+beyond reach
+
+52:40.900 --> 52:41.180
+of the
+
+52:41.180 --> 52:41.540
+adversary
+
+52:41.540 --> 52:42.160
+today and
+
+52:42.160 --> 52:42.400
+for
+
+52:42.400 --> 52:42.960
+what it
+
+52:42.960 --> 52:43.380
+would be
+
+52:43.380 --> 52:46.100
+so originally
+
+52:46.100 --> 52:46.740
+they made the
+
+52:46.740 --> 52:46.980
+salt
+
+52:46.980 --> 52:47.640
+32 bits
+
+52:47.640 --> 52:48.160
+I'm not sure
+
+52:48.160 --> 52:48.720
+exactly what
+
+52:48.720 --> 52:48.980
+it is
+
+52:48.980 --> 52:49.340
+because it
+
+52:49.340 --> 52:49.580
+varies
+
+52:49.580 --> 52:50.040
+I think the
+
+52:50.040 --> 52:50.440
+length of the
+
+52:50.440 --> 52:50.940
+salt varies
+
+52:50.940 --> 52:51.480
+from unique
+
+52:51.480 --> 52:52.060
+flavor
+
+52:52.060 --> 52:52.480
+to unique
+
+52:52.480 --> 52:52.820
+flavor
+
+52:52.820 --> 52:54.140
+but if I
+
+52:54.140 --> 52:54.520
+were using
+
+52:54.520 --> 52:54.880
+it today
+
+52:54.880 --> 52:55.180
+I would
+
+52:55.180 --> 52:55.500
+want the
+
+52:55.500 --> 52:55.820
+salt to
+
+52:55.820 --> 52:56.100
+be at
+
+52:56.100 --> 52:56.360
+least
+
+52:56.360 --> 52:58.420
+80 but
+
+52:58.420 --> 52:59.180
+probably
+
+52:59.180 --> 52:59.800
+more like
+
+52:59.800 --> 53:00.260
+128
+
+53:00.260 --> 53:00.840
+than salt
+
+53:00.840 --> 53:01.100
+is
+
+53:01.100 --> 53:02.660
+healthier
+
+53:02.660 --> 53:05.100
+okay
+
+53:05.100 --> 53:05.800
+but salt
+
+53:05.800 --> 53:06.420
+makes a big
+
+53:06.420 --> 53:06.800
+difference
+
+53:06.800 --> 53:07.840
+now once the
+
+53:07.840 --> 53:08.660
+attacker breaks
+
+53:08.660 --> 53:09.020
+in
+
+53:09.020 --> 53:11.200
+okay
+
+53:11.200 --> 53:12.360
+now there's a
+
+53:12.360 --> 53:12.980
+crucial difference
+
+53:12.980 --> 53:13.660
+between offline
+
+53:13.660 --> 53:14.240
+and online
+
+53:14.240 --> 53:14.560
+attack
+
+53:14.560 --> 53:16.320
+once the
+
+53:16.320 --> 53:16.640
+attacker
+
+53:16.640 --> 53:17.140
+breaks in
+
+53:17.140 --> 53:18.400
+and reads
+
+53:18.400 --> 53:18.640
+the
+
+53:18.640 --> 53:19.360
+lc password
+
+53:19.360 --> 53:19.740
+file
+
+53:19.740 --> 53:20.120
+okay
+
+53:20.120 --> 53:21.660
+the attacker
+
+53:21.660 --> 53:22.120
+sees the
+
+53:22.120 --> 53:22.320
+salt
+
+53:22.320 --> 53:24.360
+so then the
+
+53:24.360 --> 53:24.940
+attack becomes
+
+53:24.940 --> 53:25.480
+much cheaper
+
+53:25.480 --> 53:27.060
+but it can
+
+53:27.060 --> 53:27.440
+only be
+
+53:27.440 --> 53:27.820
+mounted
+
+53:27.820 --> 53:29.200
+once he
+
+53:29.200 --> 53:30.160
+breaks in
+
+53:30.160 --> 53:32.200
+not ahead
+
+53:32.200 --> 53:35.660
+because
+
+53:35.660 --> 53:36.580
+by knowing
+
+53:36.580 --> 53:37.100
+the salt
+
+53:37.100 --> 53:38.180
+you shave
+
+53:38.180 --> 53:38.600
+off the
+
+53:38.600 --> 53:38.940
+2 to the
+
+53:38.940 --> 53:39.280
+128
+
+53:39.280 --> 53:41.400
+okay
+
+53:41.400 --> 53:45.840
+and that
+
+53:45.840 --> 53:46.280
+basically
+
+53:46.280 --> 53:47.880
+the explanation
+
+53:47.880 --> 53:48.280
+is the same
+
+53:48.280 --> 53:48.480
+thing
+
+53:48.480 --> 53:51.860
+just take a
+
+53:51.860 --> 53:52.060
+second
+
+53:52.060 --> 53:52.580
+to read it
+
+53:52.580 --> 53:55.940
+well you shave
+
+53:55.940 --> 53:56.260
+off the
+
+53:56.260 --> 53:56.580
+2 to the
+
+53:56.580 --> 53:57.140
+number 28
+
+53:57.140 --> 53:57.660
+but it's
+
+53:57.660 --> 53:58.260
+no longer
+
+53:58.260 --> 53:59.400
+only off
+
+53:59.400 --> 53:59.920
+line
+
+53:59.920 --> 54:00.740
+fully attack
+
+54:00.740 --> 54:01.820
+no no
+
+54:01.820 --> 54:02.400
+it's online
+
+54:02.400 --> 54:03.100
+it's online
+
+54:03.100 --> 54:03.720
+it's not
+
+54:03.720 --> 54:04.960
+offline
+
+54:04.960 --> 54:05.360
+at all
+
+54:05.360 --> 54:06.460
+the attacker
+
+54:06.460 --> 54:07.080
+breaks in
+
+54:07.080 --> 54:07.760
+learns the
+
+54:07.760 --> 54:07.940
+salt
+
+54:07.940 --> 54:08.300
+and now
+
+54:08.300 --> 54:08.880
+has to do
+
+54:08.880 --> 54:09.440
+with that
+
+54:09.440 --> 54:09.780
+salt
+
+54:09.780 --> 54:11.120
+whatever
+
+54:11.120 --> 54:11.640
+2 to the
+
+54:11.640 --> 54:11.980
+20
+
+54:11.980 --> 54:12.500
+2 to the
+
+54:12.500 --> 54:12.820
+40
+
+54:12.820 --> 54:13.680
+however many
+
+54:13.680 --> 54:14.080
+password
+
+54:14.080 --> 54:14.420
+guesses
+
+54:14.420 --> 54:15.400
+there are
+
+54:15.400 --> 54:16.560
+per user
+
+54:16.560 --> 54:16.920
+yeah
+
+54:16.920 --> 54:18.860
+so there's
+
+54:18.860 --> 54:19.240
+still a bit
+
+54:19.240 --> 54:19.580
+of work
+
+54:19.580 --> 54:19.900
+but it's
+
+54:19.900 --> 54:20.320
+not a scary
+
+54:20.320 --> 54:20.880
+amount of work
+
+54:20.880 --> 54:26.080
+I'm sorry
+
+54:26.080 --> 54:27.020
+I mean
+
+54:27.020 --> 54:27.460
+we can
+
+54:27.460 --> 54:28.100
+let the salt
+
+54:28.100 --> 54:28.960
+expire
+
+54:28.960 --> 54:30.340
+well
+
+54:30.340 --> 54:30.820
+you can
+
+54:30.820 --> 54:31.560
+let the salt
+
+54:31.560 --> 54:32.380
+expire
+
+54:32.380 --> 54:33.060
+but you
+
+54:33.060 --> 54:33.420
+have to
+
+54:33.420 --> 54:34.080
+replace it
+
+54:34.080 --> 54:34.420
+in the
+
+54:34.420 --> 54:34.840
+password
+
+54:34.840 --> 54:35.260
+file
+
+54:35.260 --> 54:35.940
+so
+
+54:35.940 --> 54:36.900
+what you're
+
+54:36.900 --> 54:37.200
+saying
+
+54:37.200 --> 54:37.600
+is that
+
+54:37.600 --> 54:37.960
+you know
+
+54:37.960 --> 54:38.220
+if you
+
+54:38.220 --> 54:38.520
+know
+
+54:38.520 --> 54:38.740
+that
+
+54:38.740 --> 54:38.900
+they
+
+54:38.900 --> 54:39.140
+have
+
+54:39.140 --> 54:39.280
+the
+
+54:39.280 --> 54:39.360
+so
+
+54:39.360 --> 54:39.460
+it
+
+54:39.460 --> 54:39.740
+takes
+
+54:39.740 --> 54:40.100
+at least
+
+54:40.100 --> 54:40.540
+24
+
+54:40.540 --> 54:41.000
+hours
+
+54:41.000 --> 54:42.840
+to
+
+54:42.840 --> 54:43.320
+mount
+
+54:43.320 --> 54:43.520
+an
+
+54:43.520 --> 54:44.120
+online
+
+54:44.120 --> 54:44.520
+attack
+
+54:44.520 --> 54:44.860
+once
+
+54:44.860 --> 54:45.020
+he
+
+54:45.020 --> 54:45.240
+learns
+
+54:45.240 --> 54:45.480
+the
+
+54:45.480 --> 54:45.740
+salt
+
+54:45.740 --> 54:47.080
+then
+
+54:47.080 --> 54:47.200
+you
+
+54:47.200 --> 54:47.320
+could
+
+54:47.320 --> 54:47.580
+change
+
+54:47.580 --> 54:47.760
+the
+
+54:47.760 --> 54:47.980
+salt
+
+54:47.980 --> 54:48.240
+every
+
+54:48.240 --> 54:48.660
+24
+
+54:48.660 --> 54:48.900
+hour
+
+54:48.900 --> 54:50.560
+you could
+
+54:50.560 --> 54:51.760
+but the
+
+54:51.760 --> 54:52.440
+problem is
+
+54:52.440 --> 54:54.940
+okay
+
+54:54.940 --> 54:56.380
+so this is a good question
+
+54:56.380 --> 54:58.480
+let's think about this
+
+54:58.480 --> 55:02.640
+that what you say
+
+55:02.640 --> 55:03.980
+would be useful
+
+55:03.980 --> 55:04.640
+or would be
+
+55:04.640 --> 55:05.340
+possible
+
+55:05.340 --> 55:06.140
+if
+
+55:06.140 --> 55:07.560
+just
+
+55:07.560 --> 55:08.760
+a password
+
+55:08.760 --> 55:09.180
+attack
+
+55:09.180 --> 55:09.780
+a brute force
+
+55:09.780 --> 55:10.160
+password
+
+55:10.160 --> 55:10.580
+attack
+
+55:10.580 --> 55:11.040
+would take
+
+55:11.040 --> 55:11.420
+24
+
+55:11.420 --> 55:11.760
+hours
+
+55:11.760 --> 55:13.420
+but remember
+
+55:13.420 --> 55:14.240
+once the adversary
+
+55:14.240 --> 55:14.840
+breaks in
+
+55:14.840 --> 55:15.360
+and learns
+
+55:15.360 --> 55:15.900
+the salt
+
+55:15.900 --> 55:18.160
+he then
+
+55:18.160 --> 55:19.960
+also knows
+
+55:19.960 --> 55:21.060
+the hash of the salt
+
+55:21.060 --> 55:21.660
+and the password
+
+55:21.660 --> 55:22.020
+right
+
+55:22.020 --> 55:22.780
+so the adversary
+
+55:22.780 --> 55:23.580
+knows this
+
+55:23.580 --> 55:23.840
+right
+
+55:23.840 --> 55:24.100
+that
+
+55:24.100 --> 55:25.020
+the
+
+55:25.020 --> 55:27.260
+well
+
+55:27.260 --> 55:27.680
+that
+
+55:27.680 --> 55:34.000
+the adversary
+
+55:34.000 --> 55:34.860
+knows this
+
+55:34.860 --> 55:35.860
+right
+
+55:35.860 --> 55:37.400
+once he breaks in
+
+55:37.400 --> 55:38.000
+he knows this
+
+55:38.000 --> 55:39.360
+and he also knows
+
+55:39.360 --> 55:39.820
+the salt
+
+55:39.820 --> 55:43.080
+so you can change
+
+55:43.080 --> 55:43.620
+the salt
+
+55:43.620 --> 55:46.060
+but he learned
+
+55:46.060 --> 55:47.180
+the previous salt
+
+55:47.180 --> 55:47.820
+and the hash
+
+55:47.820 --> 55:48.740
+of the previous salt
+
+55:48.740 --> 55:49.400
+plus password
+
+55:49.400 --> 55:51.420
+he's gonna break
+
+55:51.420 --> 55:51.920
+the password
+
+55:51.920 --> 55:53.760
+see
+
+55:53.760 --> 55:55.580
+he's gonna break
+
+55:55.580 --> 55:55.940
+the password
+
+55:55.940 --> 55:57.720
+so changing the salt
+
+55:57.720 --> 55:58.380
+at that point
+
+55:58.380 --> 55:59.720
+not effective
+
+55:59.720 --> 56:01.480
+not effective
+
+56:01.480 --> 56:02.880
+because
+
+56:02.880 --> 56:04.100
+if he's breaking
+
+56:04.100 --> 56:04.660
+it locally
+
+56:04.660 --> 56:05.020
+maybe
+
+56:05.020 --> 56:05.320
+but
+
+56:05.320 --> 56:05.780
+you know
+
+56:05.780 --> 56:06.100
+others
+
+56:06.100 --> 56:06.440
+he's gonna
+
+56:06.440 --> 56:07.020
+exfiltrate
+
+56:07.020 --> 56:07.520
+and break
+
+56:07.520 --> 56:08.020
+it on his own
+
+56:08.020 --> 56:08.340
+path
+
+56:08.340 --> 56:09.100
+so
+
+56:09.100 --> 56:09.820
+the password
+
+56:09.820 --> 56:10.460
+hasn't changed
+
+56:10.460 --> 56:11.040
+that's the main
+
+56:11.040 --> 56:11.440
+problem
+
+56:11.440 --> 56:15.240
+but here
+
+56:15.240 --> 56:15.700
+it says
+
+56:15.700 --> 56:17.520
+12
+
+56:17.520 --> 56:18.200
+I think
+
+56:18.200 --> 56:19.060
+I may be wrong
+
+56:19.060 --> 56:19.360
+it wasn't
+
+56:19.360 --> 56:19.580
+30
+
+56:19.580 --> 56:20.240
+I think
+
+56:20.240 --> 56:20.660
+it was even
+
+56:20.660 --> 56:21.280
+less
+
+56:21.280 --> 56:21.760
+it was 12
+
+56:21.760 --> 56:22.080
+bits
+
+56:22.080 --> 56:22.620
+originally
+
+56:22.620 --> 56:23.580
+well today
+
+56:23.580 --> 56:24.000
+12 bits
+
+56:24.000 --> 56:24.520
+is laughable
+
+56:24.520 --> 56:24.740
+right
+
+56:24.740 --> 56:25.160
+so what
+
+56:25.160 --> 56:25.440
+is it
+
+56:25.440 --> 56:25.720
+saying
+
+56:25.720 --> 56:26.400
+if the
+
+56:26.400 --> 56:26.720
+passwords
+
+56:26.720 --> 56:27.200
+come from
+
+56:27.200 --> 56:27.420
+I don't
+
+56:27.420 --> 56:27.560
+know
+
+56:27.560 --> 56:28.060
+2 to the
+
+56:28.060 --> 56:28.340
+20
+
+56:28.340 --> 56:28.800
+space
+
+56:28.800 --> 56:29.660
+and multiplied
+
+56:29.660 --> 56:30.300
+by 2 to the
+
+56:30.300 --> 56:30.560
+12
+
+56:30.560 --> 56:30.920
+you still
+
+56:30.920 --> 56:31.380
+get 2 to
+
+56:31.380 --> 56:31.720
+32
+
+56:31.720 --> 56:32.640
+which is
+
+56:32.640 --> 56:33.100
+a laughably
+
+56:33.100 --> 56:33.760
+small number
+
+56:33.760 --> 56:34.780
+or password
+
+56:34.780 --> 56:35.140
+bracket
+
+56:35.140 --> 56:36.840
+right
+
+56:36.840 --> 56:37.340
+it takes
+
+56:37.340 --> 56:38.760
+a minute
+
+56:38.760 --> 56:39.180
+or less
+
+56:39.180 --> 56:40.620
+to go for
+
+56:40.620 --> 56:41.080
+the 2 to the
+
+56:41.080 --> 56:41.460
+32
+
+56:41.460 --> 56:42.380
+password
+
+56:42.380 --> 56:42.680
+choice
+
+56:42.680 --> 56:45.860
+right
+
+56:45.860 --> 56:46.140
+so
+
+56:46.140 --> 56:47.080
+instead
+
+56:47.080 --> 56:47.700
+so
+
+56:47.700 --> 56:48.640
+what happens
+
+56:48.640 --> 56:49.680
+these days
+
+56:49.680 --> 56:50.020
+is that
+
+56:50.020 --> 56:50.600
+most systems
+
+56:50.600 --> 56:51.020
+actually
+
+56:51.020 --> 56:52.260
+kind of
+
+56:52.260 --> 56:52.680
+separate
+
+56:52.680 --> 56:53.000
+the two
+
+56:53.000 --> 56:53.220
+things
+
+56:53.220 --> 56:53.640
+they separate
+
+56:53.640 --> 56:54.380
+the password
+
+56:54.380 --> 56:55.960
+from
+
+56:55.960 --> 56:57.520
+the account
+
+56:57.520 --> 56:58.080
+information
+
+56:58.080 --> 56:58.620
+in Unix
+
+56:58.620 --> 56:59.040
+and that's
+
+56:59.040 --> 56:59.240
+kind of
+
+56:59.240 --> 56:59.460
+a good
+
+56:59.460 --> 56:59.840
+practice
+
+56:59.840 --> 57:00.280
+anyway
+
+57:00.280 --> 57:01.880
+so
+
+57:01.880 --> 57:03.000
+they create
+
+57:03.000 --> 57:03.320
+what's called
+
+57:03.320 --> 57:03.700
+shadow
+
+57:03.700 --> 57:04.180
+password
+
+57:04.180 --> 57:05.000
+and so
+
+57:05.000 --> 57:05.800
+instead of
+
+57:05.800 --> 57:06.280
+looking like
+
+57:06.280 --> 57:06.800
+what you saw
+
+57:06.800 --> 57:07.320
+before
+
+57:07.320 --> 57:08.380
+the account
+
+57:08.380 --> 57:09.100
+record
+
+57:09.100 --> 57:09.540
+in the
+
+57:09.540 --> 57:09.800
+etsy
+
+57:09.800 --> 57:10.260
+password
+
+57:10.260 --> 57:10.720
+file
+
+57:10.720 --> 57:12.620
+has
+
+57:12.620 --> 57:13.820
+the name
+
+57:13.820 --> 57:14.760
+and then
+
+57:14.760 --> 57:15.220
+all the other
+
+57:15.220 --> 57:15.780
+information
+
+57:15.780 --> 57:16.180
+but there's
+
+57:16.180 --> 57:16.520
+like an
+
+57:16.520 --> 57:16.920
+x
+
+57:16.920 --> 57:18.180
+following the
+
+57:18.180 --> 57:18.700
+accounting
+
+57:18.700 --> 57:19.200
+that says
+
+57:19.200 --> 57:20.000
+actual password
+
+57:20.000 --> 57:20.540
+isn't here
+
+57:20.540 --> 57:21.660
+it's a
+
+57:21.660 --> 57:23.120
+special
+
+57:23.120 --> 57:24.260
+hashed
+
+57:24.260 --> 57:24.920
+password file
+
+57:24.920 --> 57:25.520
+which is not
+
+57:25.520 --> 57:26.180
+world readable
+
+57:26.180 --> 57:28.280
+like it took
+
+57:28.280 --> 57:29.400
+only 30 years
+
+57:29.400 --> 57:30.140
+for people to realize
+
+57:30.140 --> 57:31.340
+that the passwords
+
+57:31.340 --> 57:32.300
+and user account
+
+57:32.300 --> 57:32.780
+information
+
+57:32.780 --> 57:33.500
+shouldn't be stored
+
+57:33.500 --> 57:33.940
+together
+
+57:33.940 --> 57:36.760
+well that's what
+
+57:36.760 --> 57:37.100
+happens
+
+57:37.100 --> 57:37.340
+right
+
+57:37.340 --> 57:38.880
+because all
+
+57:38.880 --> 57:39.280
+those other
+
+57:39.280 --> 57:39.700
+programs
+
+57:39.700 --> 57:40.700
+application programs
+
+57:40.700 --> 57:41.180
+running on
+
+57:41.180 --> 57:41.800
+this Unix
+
+57:41.800 --> 57:42.400
+like operating
+
+57:42.400 --> 57:42.740
+system
+
+57:42.740 --> 57:43.680
+they still
+
+57:43.680 --> 57:44.120
+do need
+
+57:44.120 --> 57:44.580
+the account
+
+57:44.580 --> 57:45.120
+information
+
+57:45.120 --> 57:46.040
+to figure out
+
+57:46.040 --> 57:46.600
+who can access
+
+57:46.600 --> 57:46.980
+what
+
+57:46.980 --> 57:47.280
+etc
+
+57:47.280 --> 57:48.280
+and distinguish
+
+57:48.280 --> 57:48.920
+between users
+
+57:48.920 --> 57:49.300
+but
+
+57:49.300 --> 57:51.160
+they don't
+
+57:51.160 --> 57:51.480
+need to know
+
+57:51.480 --> 57:51.940
+the passwords
+
+57:51.940 --> 57:53.300
+right
+
+57:53.300 --> 57:53.660
+so
+
+57:53.660 --> 57:55.900
+let's create
+
+57:55.900 --> 57:56.620
+a file
+
+57:56.620 --> 57:57.160
+that has
+
+57:57.160 --> 57:57.800
+all the account
+
+57:57.800 --> 57:58.240
+information
+
+57:58.240 --> 57:58.880
+that also
+
+57:58.880 --> 57:59.480
+store passwords
+
+57:59.480 --> 57:59.700
+in
+
+57:59.700 --> 58:00.160
+passwords
+
+58:00.160 --> 58:00.600
+should only
+
+58:00.600 --> 58:01.000
+be visible
+
+58:01.000 --> 58:01.580
+to the root
+
+58:01.580 --> 58:02.220
+or the admin
+
+58:02.220 --> 58:02.600
+account
+
+58:02.600 --> 58:03.540
+right
+
+58:03.540 --> 58:04.020
+so instead
+
+58:04.020 --> 58:04.500
+it's stored
+
+58:04.500 --> 58:05.080
+in an etsy
+
+58:05.080 --> 58:05.900
+shadow file
+
+58:05.900 --> 58:06.840
+which is only
+
+58:06.840 --> 58:07.160
+readable
+
+58:07.160 --> 58:07.620
+by the
+
+58:07.620 --> 58:07.940
+system
+
+58:07.940 --> 58:08.420
+administrator
+
+58:08.420 --> 58:10.640
+okay
+
+58:10.640 --> 58:12.740
+also
+
+58:12.740 --> 58:13.480
+very trivial
+
+58:13.480 --> 58:13.860
+thing
+
+58:13.860 --> 58:15.040
+and of course
+
+58:15.040 --> 58:15.360
+it also
+
+58:15.360 --> 58:16.180
+added expiration
+
+58:16.180 --> 58:16.420
+date
+
+58:16.420 --> 58:16.940
+for passwords
+
+58:16.940 --> 58:17.220
+right
+
+58:17.220 --> 58:17.580
+so that's
+
+58:17.580 --> 58:18.500
+why on
+
+58:18.500 --> 58:19.620
+most
+
+58:19.620 --> 58:20.400
+production
+
+58:20.400 --> 58:21.200
+Unix
+
+58:21.200 --> 58:21.780
+like systems
+
+58:21.780 --> 58:22.200
+you'll be
+
+58:22.200 --> 58:22.540
+asked to
+
+58:22.540 --> 58:22.860
+renew
+
+58:22.860 --> 58:23.960
+or
+
+58:23.960 --> 58:25.960
+change
+
+58:25.960 --> 58:26.200
+another
+
+58:26.200 --> 58:26.540
+password
+
+58:26.540 --> 58:27.000
+every so
+
+58:27.000 --> 58:27.200
+often
+
+58:27.200 --> 58:30.300
+okay
+
+58:30.300 --> 58:30.760
+so
+
+58:30.760 --> 58:31.420
+you've probably
+
+58:31.420 --> 58:31.820
+heard of
+
+58:31.820 --> 58:32.320
+keyloggers
+
+58:32.320 --> 58:32.580
+right
+
+58:32.580 --> 58:35.700
+so these
+
+58:35.700 --> 58:36.120
+are things
+
+58:36.120 --> 58:36.600
+you generally
+
+58:36.600 --> 58:37.060
+have to be
+
+58:37.060 --> 58:37.740
+afraid of
+
+58:37.740 --> 58:39.980
+not so much
+
+58:39.980 --> 58:40.480
+on your own
+
+58:40.480 --> 58:40.980
+devices
+
+58:40.980 --> 58:41.580
+because
+
+58:41.580 --> 58:42.300
+it's not
+
+58:42.300 --> 58:42.780
+all that
+
+58:42.780 --> 58:43.100
+easy
+
+58:43.100 --> 58:43.680
+to install
+
+58:43.680 --> 58:44.220
+a keylogger
+
+58:44.220 --> 58:44.480
+unless
+
+58:44.480 --> 58:44.820
+somebody
+
+58:44.820 --> 58:45.000
+has
+
+58:45.000 --> 58:45.760
+direct
+
+58:45.760 --> 58:46.380
+access
+
+58:46.380 --> 58:46.760
+and an
+
+58:46.760 --> 58:47.100
+account
+
+58:47.100 --> 58:47.420
+on your
+
+58:47.420 --> 58:47.820
+device
+
+58:47.820 --> 58:48.360
+but
+
+58:48.360 --> 58:48.880
+more like
+
+58:48.880 --> 58:49.180
+when you're
+
+58:49.180 --> 58:49.400
+using
+
+58:49.400 --> 58:49.880
+public
+
+58:49.880 --> 58:51.500
+facility
+
+58:51.500 --> 58:51.980
+like
+
+58:51.980 --> 58:52.460
+any of
+
+58:52.460 --> 58:52.700
+you ever
+
+58:52.700 --> 58:52.960
+use
+
+58:52.960 --> 58:53.500
+ICS
+
+58:53.500 --> 58:54.060
+terminals
+
+58:54.060 --> 58:55.500
+or ICS
+
+58:55.500 --> 58:55.860
+machines
+
+58:55.860 --> 58:56.420
+but that's
+
+58:56.420 --> 58:56.680
+where you
+
+58:56.680 --> 58:56.920
+have to
+
+58:56.920 --> 58:57.280
+be worried
+
+58:57.280 --> 58:57.720
+about
+
+58:57.720 --> 58:58.280
+because
+
+58:58.280 --> 59:01.420
+there you
+
+59:01.420 --> 59:01.720
+have no
+
+59:01.720 --> 59:02.020
+idea
+
+59:02.020 --> 59:03.380
+what software
+
+59:03.380 --> 59:03.880
+is running
+
+59:03.880 --> 59:04.420
+who has
+
+59:04.420 --> 59:04.780
+been there
+
+59:04.780 --> 59:05.080
+before
+
+59:05.080 --> 59:05.260
+you
+
+59:05.260 --> 59:05.560
+essentially
+
+59:05.560 --> 59:06.180
+these
+
+59:06.180 --> 59:06.540
+machines
+
+59:06.540 --> 59:06.740
+are
+
+59:06.740 --> 59:08.500
+sort of
+
+59:08.500 --> 59:08.620
+like
+
+59:08.620 --> 59:08.960
+public
+
+59:08.960 --> 59:09.280
+toilet
+
+59:09.280 --> 59:09.860
+you have
+
+59:09.860 --> 59:10.380
+no idea
+
+59:10.380 --> 59:10.900
+what's
+
+59:10.900 --> 59:11.300
+going on
+
+59:11.300 --> 59:11.540
+there
+
+59:11.540 --> 59:12.460
+and
+
+59:12.460 --> 59:12.660
+what
+
+59:12.660 --> 59:12.800
+is
+
+59:12.800 --> 59:13.040
+running
+
+59:13.040 --> 59:13.260
+there
+
+59:13.260 --> 59:13.500
+really
+
+59:13.500 --> 59:15.880
+so
+
+59:15.880 --> 59:16.020
+if
+
+59:16.020 --> 59:16.180
+these
+
+59:16.180 --> 59:16.660
+drugloggers
+
+59:16.660 --> 59:16.900
+are
+
+59:16.900 --> 59:17.440
+problem
+
+59:17.440 --> 59:18.580
+they
+
+59:18.580 --> 59:19.080
+can be
+
+59:19.080 --> 59:19.520
+hardware
+
+59:19.520 --> 59:19.880
+based
+
+59:19.880 --> 59:20.020
+or
+
+59:20.020 --> 59:20.580
+software
+
+59:20.580 --> 59:21.020
+based
+
+59:21.020 --> 59:21.860
+hardware
+
+59:21.860 --> 59:22.160
+based
+
+59:22.160 --> 59:22.380
+means
+
+59:22.380 --> 59:22.640
+somebody
+
+59:22.640 --> 59:23.080
+actually
+
+59:23.080 --> 59:24.200
+inserted
+
+59:24.200 --> 59:25.860
+something
+
+59:25.860 --> 59:27.240
+you
+
+59:27.240 --> 59:27.400
+know
+
+59:27.400 --> 59:27.960
+external
+
+59:27.960 --> 59:28.400
+keyboards
+
+59:28.400 --> 59:28.760
+not the
+
+59:28.760 --> 59:28.920
+kind
+
+59:28.920 --> 59:29.200
+you have
+
+59:29.200 --> 59:29.560
+right now
+
+59:29.560 --> 59:29.840
+in front
+
+59:29.840 --> 59:30.000
+of you
+
+59:30.000 --> 59:30.160
+but
+
+59:30.160 --> 59:30.560
+actual
+
+59:30.560 --> 59:31.100
+keyboards
+
+59:31.100 --> 59:31.860
+move on
+
+59:31.860 --> 59:32.580
+they have
+
+59:32.580 --> 59:32.920
+a wire
+
+59:32.920 --> 59:35.180
+some of them
+
+59:35.180 --> 59:35.340
+do
+
+59:35.340 --> 59:35.700
+some of them
+
+59:35.700 --> 59:35.920
+don't
+
+59:35.920 --> 59:36.300
+but most
+
+59:36.300 --> 59:36.800
+have a wire
+
+59:36.800 --> 59:38.520
+well
+
+59:38.520 --> 59:39.460
+the wire
+
+59:39.460 --> 59:40.000
+goes in the
+
+59:40.000 --> 59:40.400
+back of the
+
+59:40.400 --> 59:40.680
+computer
+
+59:40.680 --> 59:41.040
+somewhere
+
+59:41.040 --> 59:41.380
+or
+
+59:41.380 --> 59:41.920
+some
+
+59:41.920 --> 59:42.900
+USB
+
+59:42.900 --> 59:43.940
+interface
+
+59:43.940 --> 59:44.860
+well
+
+59:44.860 --> 59:45.300
+somebody
+
+59:45.300 --> 59:45.560
+could have
+
+59:45.560 --> 59:46.360
+installed
+
+59:46.360 --> 59:46.700
+something
+
+59:46.700 --> 59:46.980
+between
+
+59:46.980 --> 59:47.460
+the USB
+
+59:47.460 --> 59:48.000
+interface
+
+59:48.000 --> 59:48.240
+and the
+
+59:48.240 --> 59:48.420
+back
+
+59:48.420 --> 59:48.620
+of the
+
+59:48.620 --> 59:48.840
+computer
+
+59:48.840 --> 59:49.280
+you cannot
+
+59:49.280 --> 59:49.560
+see
+
+59:49.560 --> 59:50.020
+especially
+
+59:50.020 --> 59:50.420
+publicly
+
+59:50.420 --> 59:52.380
+and
+
+59:52.380 --> 59:53.380
+essentially
+
+59:53.380 --> 59:54.440
+it
+
+59:54.440 --> 59:54.900
+sees
+
+59:54.900 --> 59:55.200
+every
+
+59:55.200 --> 59:55.600
+keystroke
+
+59:55.600 --> 59:55.920
+you have
+
+59:55.920 --> 59:58.260
+okay
+
+59:58.260 --> 59:59.460
+some
+
+59:59.460 --> 59:59.820
+government
+
+59:59.820 --> 01:00:00.320
+computers
+
+01:00:00.320 --> 01:00:01.520
+in various
+
+01:00:01.520 --> 01:00:01.940
+agencies
+
+01:00:01.940 --> 01:00:02.500
+do this
+
+01:00:02.500 --> 01:00:03.060
+on purpose
+
+01:00:03.060 --> 01:00:03.620
+they tell
+
+01:00:03.620 --> 01:00:04.060
+employees
+
+01:00:04.060 --> 01:00:04.660
+your
+
+01:00:04.660 --> 01:00:06.020
+keystrokes
+
+01:00:06.020 --> 01:00:06.440
+are locked
+
+01:00:06.440 --> 01:00:06.700
+and there's
+
+01:00:06.700 --> 01:00:07.260
+a keylogger
+
+01:00:07.260 --> 01:00:08.100
+for
+
+01:00:08.100 --> 01:00:08.820
+auditability
+
+01:00:08.820 --> 01:00:09.260
+and logging
+
+01:00:09.260 --> 01:00:09.660
+purposes
+
+01:00:09.660 --> 01:00:11.500
+but
+
+01:00:11.500 --> 01:00:12.400
+do you
+
+01:00:12.400 --> 01:00:13.060
+yourself
+
+01:00:13.060 --> 01:00:13.620
+whenever
+
+01:00:13.620 --> 01:00:14.160
+you use
+
+01:00:14.160 --> 01:00:14.700
+a public
+
+01:00:14.700 --> 01:00:15.440
+or at least
+
+01:00:15.440 --> 01:00:15.980
+not personal
+
+01:00:15.980 --> 01:00:16.400
+but do you
+
+01:00:16.400 --> 01:00:16.840
+have a look
+
+01:00:16.840 --> 01:00:17.940
+to see
+
+01:00:17.940 --> 01:00:18.400
+that the
+
+01:00:18.400 --> 01:00:18.740
+wire
+
+01:00:18.740 --> 01:00:19.540
+goes directly
+
+01:00:19.540 --> 01:00:19.860
+into the
+
+01:00:19.860 --> 01:00:20.440
+USB port
+
+01:00:20.440 --> 01:00:20.640
+in the
+
+01:00:20.640 --> 01:00:20.860
+back
+
+01:00:20.860 --> 01:00:21.060
+of the
+
+01:00:21.060 --> 01:00:21.360
+computer
+
+01:00:21.360 --> 01:00:22.200
+or
+
+01:00:22.200 --> 01:00:22.460
+there's
+
+01:00:22.460 --> 01:00:22.660
+some
+
+01:00:22.660 --> 01:00:22.900
+other
+
+01:00:22.900 --> 01:00:23.460
+little
+
+01:00:23.460 --> 01:00:23.800
+creepy
+
+01:00:23.800 --> 01:00:24.280
+crawling
+
+01:00:24.280 --> 01:00:24.640
+that
+
+01:00:24.640 --> 01:00:24.900
+is in
+
+01:00:24.900 --> 01:00:25.260
+between
+
+01:00:25.260 --> 01:00:26.740
+I bet
+
+01:00:26.740 --> 01:00:27.120
+most people
+
+01:00:27.120 --> 01:00:27.540
+don't
+
+01:00:27.540 --> 01:00:29.320
+with
+
+01:00:29.320 --> 01:00:29.960
+wireless
+
+01:00:29.960 --> 01:00:31.580
+oh
+
+01:00:31.580 --> 01:00:32.100
+with wireless
+
+01:00:32.100 --> 01:00:32.820
+it's even worse
+
+01:00:32.820 --> 01:00:34.200
+because the
+
+01:00:34.200 --> 01:00:34.560
+wireless
+
+01:00:34.560 --> 01:00:35.040
+keyboard
+
+01:00:35.040 --> 01:00:35.640
+typically
+
+01:00:35.640 --> 01:00:36.000
+use
+
+01:00:36.000 --> 01:00:36.500
+encryption
+
+01:00:36.500 --> 01:00:37.900
+but the
+
+01:00:37.900 --> 01:00:38.180
+kind of
+
+01:00:38.180 --> 01:00:38.480
+encryption
+
+01:00:38.480 --> 01:00:38.800
+you use
+
+01:00:38.800 --> 01:00:39.140
+is often
+
+01:00:39.140 --> 01:00:39.820
+homegrown
+
+01:00:39.820 --> 01:00:40.180
+by the
+
+01:00:40.180 --> 01:00:40.660
+manufacturer
+
+01:00:40.660 --> 01:00:41.060
+or really
+
+01:00:41.060 --> 01:00:41.400
+crappy
+
+01:00:41.400 --> 01:00:43.540
+and so
+
+01:00:43.540 --> 01:00:44.500
+you don't
+
+01:00:44.500 --> 01:00:44.840
+need to
+
+01:00:44.840 --> 01:00:45.440
+put a
+
+01:00:45.440 --> 01:00:45.760
+hardware
+
+01:00:45.760 --> 01:00:46.280
+device
+
+01:00:46.280 --> 01:00:47.580
+you can
+
+01:00:47.580 --> 01:00:48.160
+just sniff
+
+01:00:48.160 --> 01:00:48.680
+on it
+
+01:00:48.680 --> 01:00:49.680
+externally
+
+01:00:49.680 --> 01:00:51.060
+right
+
+01:00:51.060 --> 01:00:51.340
+because
+
+01:00:51.340 --> 01:00:51.700
+they use
+
+01:00:51.700 --> 01:00:51.880
+some
+
+01:00:51.880 --> 01:00:52.160
+kind of
+
+01:00:52.160 --> 01:00:53.320
+either
+
+01:00:53.320 --> 01:00:53.820
+infrared
+
+01:00:53.820 --> 01:00:54.140
+or some
+
+01:00:54.140 --> 01:00:54.320
+other
+
+01:00:54.320 --> 01:00:54.460
+kind
+
+01:00:54.460 --> 01:00:54.620
+of
+
+01:00:54.620 --> 01:00:55.100
+wireless
+
+01:00:55.100 --> 01:00:59.420
+so
+
+01:00:59.420 --> 01:01:00.000
+beware
+
+01:01:00.000 --> 01:01:02.000
+but
+
+01:01:02.000 --> 01:01:02.760
+attacks
+
+01:01:02.760 --> 01:01:03.660
+keylogger
+
+01:01:03.660 --> 01:01:04.020
+attacks
+
+01:01:04.020 --> 01:01:04.420
+especially
+
+01:01:04.420 --> 01:01:04.920
+hardware ones
+
+01:01:04.920 --> 01:01:05.160
+are not
+
+01:01:05.160 --> 01:01:05.380
+common
+
+01:01:05.380 --> 01:01:05.660
+they are
+
+01:01:05.660 --> 01:01:06.100
+targeted
+
+01:01:06.100 --> 01:01:06.420
+right
+
+01:01:06.420 --> 01:01:06.740
+somebody
+
+01:01:06.740 --> 01:01:07.000
+has to
+
+01:01:07.000 --> 01:01:07.260
+target
+
+01:01:07.260 --> 01:01:07.780
+a specific
+
+01:01:07.780 --> 01:01:08.140
+computer
+
+01:01:08.140 --> 01:01:08.560
+a specific
+
+01:01:08.560 --> 01:01:08.980
+person
+
+01:01:08.980 --> 01:01:09.640
+in order
+
+01:01:09.640 --> 01:01:09.920
+to do
+
+01:01:09.920 --> 01:01:10.100
+that
+
+01:01:10.100 --> 01:01:10.820
+software
+
+01:01:10.820 --> 01:01:11.340
+keyloggers
+
+01:01:11.340 --> 01:01:11.780
+are different
+
+01:01:11.780 --> 01:01:13.040
+that often
+
+01:01:13.040 --> 01:01:13.420
+happens
+
+01:01:13.420 --> 01:01:14.620
+with buggy
+
+01:01:14.620 --> 01:01:15.200
+browsers
+
+01:01:15.200 --> 01:01:18.540
+or buggy
+
+01:01:18.540 --> 01:01:19.000
+it used
+
+01:01:19.000 --> 01:01:19.340
+to happen
+
+01:01:19.340 --> 01:01:19.840
+once in
+
+01:01:19.840 --> 01:01:20.120
+a while
+
+01:01:20.120 --> 01:01:20.720
+with microsoft
+
+01:01:20.720 --> 01:01:21.240
+windows
+
+01:01:21.240 --> 01:01:22.320
+where there
+
+01:01:22.320 --> 01:01:22.580
+would be
+
+01:01:22.580 --> 01:01:23.140
+some malware
+
+01:01:23.140 --> 01:01:23.560
+that would
+
+01:01:23.560 --> 01:01:24.320
+warm itself
+
+01:01:24.320 --> 01:01:24.980
+and usually
+
+01:01:24.980 --> 01:01:25.340
+again
+
+01:01:25.340 --> 01:01:25.700
+with some
+
+01:01:25.700 --> 01:01:26.080
+degree of
+
+01:01:26.080 --> 01:01:26.840
+social engineering
+
+01:01:26.840 --> 01:01:27.620
+preceding it
+
+01:01:27.620 --> 01:01:28.660
+and then
+
+01:01:28.660 --> 01:01:29.380
+will
+
+01:01:29.380 --> 01:01:29.700
+install
+
+01:01:29.700 --> 01:01:29.940
+itself
+
+01:01:29.940 --> 01:01:30.320
+and actually
+
+01:01:30.320 --> 01:01:31.100
+take over
+
+01:01:31.100 --> 01:01:32.140
+the keyboard
+
+01:01:32.140 --> 01:01:33.360
+driver
+
+01:01:33.360 --> 01:01:35.220
+or worse
+
+01:01:35.220 --> 01:01:35.400
+yet
+
+01:01:35.400 --> 01:01:35.860
+update
+
+01:01:35.860 --> 01:01:36.420
+the keyboard
+
+01:01:36.420 --> 01:01:36.820
+driver
+
+01:01:36.820 --> 01:01:37.080
+right
+
+01:01:37.080 --> 01:01:37.300
+because
+
+01:01:37.300 --> 01:01:37.740
+the keyboard
+
+01:01:37.740 --> 01:01:38.080
+is a
+
+01:01:38.080 --> 01:01:38.400
+peripheral
+
+01:01:38.400 --> 01:01:39.140
+right
+
+01:01:39.140 --> 01:01:39.800
+there's a
+
+01:01:39.800 --> 01:01:40.100
+driver
+
+01:01:40.100 --> 01:01:40.500
+for that
+
+01:01:40.500 --> 01:01:40.900
+peripheral
+
+01:01:40.900 --> 01:01:41.460
+to
+
+01:01:41.460 --> 01:01:42.360
+insert an
+
+01:01:42.360 --> 01:01:43.000
+illegitimate
+
+01:01:43.000 --> 01:01:43.820
+fake update
+
+01:01:43.820 --> 01:01:44.180
+of the
+
+01:01:44.180 --> 01:01:44.540
+driver
+
+01:01:45.200 --> 01:01:46.000
+that would
+
+01:01:46.000 --> 01:01:46.340
+contain
+
+01:01:46.340 --> 01:01:47.000
+a keylogger
+
+01:01:47.000 --> 01:01:48.300
+not nice
+
+01:01:48.300 --> 01:01:49.320
+and then
+
+01:01:49.320 --> 01:01:49.700
+there are
+
+01:01:49.700 --> 01:01:50.120
+like
+
+01:01:50.120 --> 01:01:50.800
+lower tech
+
+01:01:50.800 --> 01:01:51.480
+ways of
+
+01:01:51.480 --> 01:01:52.000
+sniffing
+
+01:01:52.000 --> 01:01:52.400
+on
+
+01:01:52.400 --> 01:01:53.760
+keyboard
+
+01:01:53.760 --> 01:01:54.260
+input
+
+01:01:54.260 --> 01:01:55.320
+shoulder
+
+01:01:55.320 --> 01:01:55.760
+surfing
+
+01:01:55.760 --> 01:01:57.480
+everybody
+
+01:01:57.480 --> 01:01:57.880
+familiar
+
+01:01:57.880 --> 01:01:58.100
+with
+
+01:01:58.100 --> 01:01:58.320
+shoulder
+
+01:01:58.320 --> 01:01:58.640
+surfing
+
+01:01:58.640 --> 01:02:00.260
+yeah
+
+01:02:00.260 --> 01:02:00.700
+people are
+
+01:02:00.700 --> 01:02:00.880
+getting
+
+01:02:00.880 --> 01:02:01.380
+too close
+
+01:02:01.380 --> 01:02:02.180
+to you
+
+01:02:02.180 --> 01:02:03.100
+too close
+
+01:02:03.100 --> 01:02:03.600
+for comfort
+
+01:02:03.600 --> 01:02:04.960
+you're entering
+
+01:02:04.960 --> 01:02:05.520
+your pen
+
+01:02:05.520 --> 01:02:06.220
+whether it's
+
+01:02:06.220 --> 01:02:06.500
+on the
+
+01:02:06.500 --> 01:02:06.900
+door
+
+01:02:06.900 --> 01:02:07.500
+block
+
+01:02:07.500 --> 01:02:07.900
+or
+
+01:02:07.900 --> 01:02:08.660
+on your
+
+01:02:08.660 --> 01:02:08.940
+bank
+
+01:02:08.940 --> 01:02:09.420
+ATM
+
+01:02:09.420 --> 01:02:09.940
+somebody's
+
+01:02:09.940 --> 01:02:10.080
+like
+
+01:02:10.080 --> 01:02:10.380
+breathing
+
+01:02:10.380 --> 01:02:10.680
+down
+
+01:02:10.680 --> 01:02:11.120
+your neck
+
+01:02:11.120 --> 01:02:12.220
+that's
+
+01:02:12.220 --> 01:02:12.440
+shoulder
+
+01:02:12.440 --> 01:02:12.800
+surfing
+
+01:02:12.800 --> 01:02:14.520
+I mean
+
+01:02:14.520 --> 01:02:15.040
+easy to
+
+01:02:15.040 --> 01:02:15.440
+avoid
+
+01:02:15.440 --> 01:02:17.400
+but you have
+
+01:02:17.400 --> 01:02:17.580
+to be
+
+01:02:17.580 --> 01:02:17.820
+coming
+
+01:02:17.820 --> 01:02:18.100
+center
+
+01:02:18.100 --> 01:02:18.400
+right
+
+01:02:18.400 --> 01:02:19.140
+but
+
+01:02:19.140 --> 01:02:19.380
+shoulder
+
+01:02:19.380 --> 01:02:19.680
+surfing
+
+01:02:19.680 --> 01:02:20.160
+means that
+
+01:02:20.160 --> 01:02:20.460
+human
+
+01:02:20.460 --> 01:02:22.700
+eyes are
+
+01:02:22.700 --> 01:02:22.920
+looking
+
+01:02:22.920 --> 01:02:23.260
+at something
+
+01:02:23.260 --> 01:02:23.760
+but it's not
+
+01:02:23.760 --> 01:02:24.240
+always human
+
+01:02:24.240 --> 01:02:24.560
+eyes
+
+01:02:24.560 --> 01:02:25.500
+it could be
+
+01:02:25.500 --> 01:02:26.340
+a tiny little
+
+01:02:26.340 --> 01:02:26.740
+drone
+
+01:02:26.740 --> 01:02:28.200
+it could be
+
+01:02:28.200 --> 01:02:28.700
+a camera
+
+01:02:28.700 --> 01:02:30.300
+from farther
+
+01:02:30.300 --> 01:02:30.680
+away
+
+01:02:30.680 --> 01:02:31.000
+with a
+
+01:02:31.000 --> 01:02:31.500
+telephoto
+
+01:02:31.500 --> 01:02:31.840
+lens
+
+01:02:31.840 --> 01:02:33.460
+that is
+
+01:02:33.460 --> 01:02:34.720
+shoulder
+
+01:02:34.720 --> 01:02:35.180
+surfing
+
+01:02:35.180 --> 01:02:36.420
+right
+
+01:02:36.420 --> 01:02:37.280
+so
+
+01:02:37.280 --> 01:02:38.080
+it could be
+
+01:02:38.080 --> 01:02:38.680
+think about
+
+01:02:38.680 --> 01:02:38.800
+it
+
+01:02:38.800 --> 01:02:39.420
+you go
+
+01:02:39.420 --> 01:02:39.960
+let's
+
+01:02:39.960 --> 01:02:40.080
+say
+
+01:02:40.080 --> 01:02:40.420
+let's
+
+01:02:40.420 --> 01:02:40.580
+take
+
+01:02:40.580 --> 01:02:40.960
+example
+
+01:02:40.960 --> 01:02:41.100
+of
+
+01:02:41.100 --> 01:02:41.220
+the
+
+01:02:41.220 --> 01:02:41.560
+ATM
+
+01:02:41.560 --> 01:02:42.700
+anybody
+
+01:02:42.700 --> 01:02:42.920
+ever
+
+01:02:42.920 --> 01:02:43.080
+go
+
+01:02:43.080 --> 01:02:43.200
+to
+
+01:02:43.200 --> 01:02:43.280
+the
+
+01:02:43.280 --> 01:02:43.540
+ATM
+
+01:02:43.540 --> 01:02:43.860
+anymore
+
+01:02:43.860 --> 01:02:45.980
+I think
+
+01:02:45.980 --> 01:02:46.200
+I go
+
+01:02:46.200 --> 01:02:46.460
+once
+
+01:02:46.460 --> 01:02:46.680
+twice
+
+01:02:46.680 --> 01:02:46.960
+a year
+
+01:02:46.960 --> 01:02:48.560
+but
+
+01:02:48.560 --> 01:02:48.940
+still
+
+01:02:48.940 --> 01:02:49.200
+people
+
+01:02:49.200 --> 01:02:49.420
+do
+
+01:02:49.420 --> 01:02:49.840
+I can
+
+01:02:49.840 --> 01:02:50.120
+see you
+
+01:02:50.120 --> 01:02:50.400
+every time
+
+01:02:50.400 --> 01:02:50.540
+I go
+
+01:02:50.540 --> 01:02:50.740
+to the
+
+01:02:50.740 --> 01:02:50.900
+ATM
+
+01:02:50.900 --> 01:02:51.100
+there
+
+01:02:51.100 --> 01:02:51.500
+are
+
+01:02:51.500 --> 01:02:51.840
+people
+
+01:02:51.840 --> 01:02:52.240
+so
+
+01:02:52.240 --> 01:02:53.000
+you don't
+
+01:02:53.000 --> 01:02:53.160
+trip
+
+01:02:53.160 --> 01:02:53.500
+in
+
+01:02:53.500 --> 01:02:55.940
+do you know
+
+01:02:55.940 --> 01:02:56.180
+how many
+
+01:02:56.180 --> 01:02:56.680
+cameras are
+
+01:02:56.680 --> 01:02:57.040
+looking at
+
+01:02:57.040 --> 01:02:57.160
+you
+
+01:02:57.160 --> 01:02:57.440
+well
+
+01:02:57.440 --> 01:02:57.660
+there's
+
+01:02:57.660 --> 01:02:58.000
+a camera
+
+01:02:58.000 --> 01:02:58.380
+in the
+
+01:02:58.380 --> 01:02:58.720
+ATM
+
+01:02:58.720 --> 01:02:58.980
+right
+
+01:02:58.980 --> 01:02:59.360
+they usually
+
+01:02:59.360 --> 01:02:59.560
+have
+
+01:02:59.560 --> 01:02:59.840
+a camera
+
+01:02:59.840 --> 01:03:00.700
+but what
+
+01:03:00.700 --> 01:03:00.840
+about
+
+01:03:00.840 --> 01:03:01.020
+other
+
+01:03:01.020 --> 01:03:01.340
+cameras
+
+01:03:01.340 --> 01:03:01.620
+on the
+
+01:03:01.620 --> 01:03:01.820
+street
+
+01:03:01.820 --> 01:03:03.580
+do you
+
+01:03:03.580 --> 01:03:03.700
+know
+
+01:03:03.700 --> 01:03:03.860
+if
+
+01:03:03.860 --> 01:03:04.120
+they have
+
+01:03:04.120 --> 01:03:04.240
+the
+
+01:03:04.240 --> 01:03:04.400
+right
+
+01:03:04.400 --> 01:03:04.700
+angle
+
+01:03:04.700 --> 01:03:05.020
+maybe
+
+01:03:05.020 --> 01:03:05.180
+they
+
+01:03:05.180 --> 01:03:05.340
+do
+
+01:03:05.340 --> 01:03:05.540
+maybe
+
+01:03:05.540 --> 01:03:05.740
+there's
+
+01:03:05.740 --> 01:03:05.980
+something
+
+01:03:05.980 --> 01:03:06.200
+right
+
+01:03:06.200 --> 01:03:06.480
+above
+
+01:03:06.480 --> 01:03:06.660
+you
+
+01:03:06.660 --> 01:03:06.920
+that's
+
+01:03:06.920 --> 01:03:07.160
+looking
+
+01:03:07.160 --> 01:03:07.660
+directly
+
+01:03:07.660 --> 01:03:07.840
+at
+
+01:03:07.840 --> 01:03:07.920
+the
+
+01:03:07.920 --> 01:03:08.180
+ATM
+
+01:03:08.180 --> 01:03:08.660
+keypad
+
+01:03:08.660 --> 01:03:10.360
+no
+
+01:03:10.360 --> 01:03:12.960
+there are
+
+01:03:12.960 --> 01:03:13.240
+thermal
+
+01:03:13.240 --> 01:03:13.700
+cameras
+
+01:03:13.700 --> 01:03:14.940
+that's
+
+01:03:14.940 --> 01:03:15.260
+something
+
+01:03:15.260 --> 01:03:16.240
+also
+
+01:03:16.240 --> 01:03:16.520
+fairly
+
+01:03:16.520 --> 01:03:16.880
+scary
+
+01:03:16.880 --> 01:03:18.880
+thermal
+
+01:03:18.880 --> 01:03:19.300
+cameras
+
+01:03:19.300 --> 01:03:20.260
+what does
+
+01:03:20.260 --> 01:03:20.540
+that mean
+
+01:03:20.540 --> 01:03:21.140
+it means
+
+01:03:21.140 --> 01:03:22.100
+when you
+
+01:03:22.100 --> 01:03:22.360
+type
+
+01:03:22.360 --> 01:03:22.740
+your
+
+01:03:22.740 --> 01:03:23.360
+password
+
+01:03:23.360 --> 01:03:23.620
+or
+
+01:03:23.620 --> 01:03:23.880
+pin
+
+01:03:23.880 --> 01:03:24.520
+on
+
+01:03:24.520 --> 01:03:24.780
+some
+
+01:03:24.780 --> 01:03:25.160
+surface
+
+01:03:25.160 --> 01:03:25.420
+like
+
+01:03:25.420 --> 01:03:27.120
+keyboard
+
+01:03:27.120 --> 01:03:27.960
+or
+
+01:03:27.960 --> 01:03:28.200
+pin
+
+01:03:28.200 --> 01:03:28.440
+tab
+
+01:03:28.440 --> 01:03:30.120
+what
+
+01:03:30.120 --> 01:03:30.440
+happens
+
+01:03:30.440 --> 01:03:30.620
+is
+
+01:03:30.620 --> 01:03:30.820
+your
+
+01:03:30.820 --> 01:03:31.280
+fingers
+
+01:03:31.280 --> 01:03:31.860
+touch
+
+01:03:31.860 --> 01:03:32.080
+the
+
+01:03:32.080 --> 01:03:32.400
+surface
+
+01:03:32.400 --> 01:03:34.300
+you
+
+01:03:34.300 --> 01:03:34.400
+are
+
+01:03:34.400 --> 01:03:34.780
+human
+
+01:03:34.780 --> 01:03:36.240
+last
+
+01:03:36.240 --> 01:03:36.440
+time
+
+01:03:36.440 --> 01:03:36.620
+you
+
+01:03:36.620 --> 01:03:36.860
+checked
+
+01:03:36.860 --> 01:03:37.020
+you
+
+01:03:37.020 --> 01:03:37.140
+were
+
+01:03:37.140 --> 01:03:37.480
+human
+
+01:03:37.480 --> 01:03:38.540
+last
+
+01:03:38.540 --> 01:03:38.740
+time
+
+01:03:38.740 --> 01:03:38.880
+you
+
+01:03:38.880 --> 01:03:39.080
+checked
+
+01:03:39.080 --> 01:03:39.260
+you
+
+01:03:39.260 --> 01:03:39.360
+were
+
+01:03:39.360 --> 01:03:39.740
+alive
+
+01:03:39.740 --> 01:03:40.240
+which
+
+01:03:40.240 --> 01:03:40.580
+means
+
+01:03:40.580 --> 01:03:41.140
+as a
+
+01:03:41.140 --> 01:03:41.380
+live
+
+01:03:41.380 --> 01:03:41.720
+human
+
+01:03:41.720 --> 01:03:43.280
+you have
+
+01:03:43.280 --> 01:03:43.540
+a certain
+
+01:03:43.540 --> 01:03:44.020
+temperature
+
+01:03:44.020 --> 01:03:44.480
+on your
+
+01:03:44.480 --> 01:03:44.760
+body
+
+01:03:44.760 --> 01:03:45.900
+and your
+
+01:03:45.900 --> 01:03:46.260
+fingers
+
+01:03:46.260 --> 01:03:47.000
+reflect that
+
+01:03:47.000 --> 01:03:47.380
+temperature
+
+01:03:47.380 --> 01:03:48.380
+and when
+
+01:03:48.380 --> 01:03:48.740
+your
+
+01:03:48.740 --> 01:03:49.380
+live
+
+01:03:49.380 --> 01:03:49.660
+human
+
+01:03:49.660 --> 01:03:50.080
+fingers
+
+01:03:50.080 --> 01:03:50.880
+touch
+
+01:03:50.880 --> 01:03:51.140
+the
+
+01:03:51.140 --> 01:03:51.560
+dead
+
+01:03:51.560 --> 01:03:52.640
+plastic
+
+01:03:52.640 --> 01:03:53.320
+cold
+
+01:03:53.320 --> 01:03:53.760
+plastic
+
+01:03:53.760 --> 01:03:54.880
+this
+
+01:03:54.880 --> 01:03:55.040
+what
+
+01:03:55.040 --> 01:03:55.360
+happens
+
+01:03:55.360 --> 01:03:56.840
+heat
+
+01:03:56.840 --> 01:03:57.400
+transfer
+
+01:03:57.400 --> 01:03:58.600
+even
+
+01:03:58.600 --> 01:03:58.800
+if
+
+01:03:58.800 --> 01:03:58.880
+you
+
+01:03:58.880 --> 01:03:59.120
+go
+
+01:03:59.120 --> 01:03:59.600
+boom
+
+01:03:59.600 --> 01:04:00.240
+boom
+
+01:04:00.240 --> 01:04:01.360
+well
+
+01:04:01.360 --> 01:04:01.640
+that's
+
+01:04:01.640 --> 01:04:02.060
+the force
+
+01:04:02.060 --> 01:04:02.380
+right
+
+01:04:02.380 --> 01:04:04.320
+that generates
+
+01:04:04.320 --> 01:04:04.600
+heat
+
+01:04:04.600 --> 01:04:04.940
+cut off
+
+01:04:04.940 --> 01:04:05.280
+mainly
+
+01:04:05.280 --> 01:04:05.920
+the
+
+01:04:05.920 --> 01:04:06.220
+skin
+
+01:04:06.220 --> 01:04:09.400
+so
+
+01:04:09.400 --> 01:04:10.900
+if
+
+01:04:10.900 --> 01:04:11.400
+you
+
+01:04:11.400 --> 01:04:11.640
+type
+
+01:04:11.640 --> 01:04:11.800
+in
+
+01:04:11.800 --> 01:04:11.940
+your
+
+01:04:11.940 --> 01:04:12.200
+pin
+
+01:04:12.200 --> 01:04:12.480
+or
+
+01:04:12.480 --> 01:04:12.620
+your
+
+01:04:12.620 --> 01:04:12.940
+password
+
+01:04:12.940 --> 01:04:13.860
+and
+
+01:04:13.860 --> 01:04:14.020
+then
+
+01:04:14.020 --> 01:04:14.400
+somebody
+
+01:04:14.400 --> 01:04:14.980
+snaps
+
+01:04:14.980 --> 01:04:15.160
+a
+
+01:04:15.160 --> 01:04:15.400
+photo
+
+01:04:15.400 --> 01:04:16.180
+of
+
+01:04:16.180 --> 01:04:16.380
+the
+
+01:04:16.380 --> 01:04:16.780
+pad
+
+01:04:16.780 --> 01:04:17.720
+or
+
+01:04:17.720 --> 01:04:17.900
+the
+
+01:04:17.900 --> 01:04:18.300
+keyboard
+
+01:04:18.300 --> 01:04:19.340
+they
+
+01:04:19.340 --> 01:04:19.540
+will
+
+01:04:19.540 --> 01:04:19.940
+see
+
+01:04:19.940 --> 01:04:20.920
+heat
+
+01:04:20.920 --> 01:04:21.160
+map
+
+01:04:21.160 --> 01:04:22.900
+they
+
+01:04:22.900 --> 01:04:23.080
+will
+
+01:04:23.080 --> 01:04:23.360
+see
+
+01:04:23.360 --> 01:04:23.900
+the
+
+01:04:23.900 --> 01:04:24.240
+keys
+
+01:04:24.240 --> 01:04:24.460
+that
+
+01:04:24.460 --> 01:04:24.680
+won't
+
+01:04:24.680 --> 01:04:24.980
+press
+
+01:04:24.980 --> 01:04:25.460
+most
+
+01:04:25.460 --> 01:04:25.840
+recently
+
+01:04:25.840 --> 01:04:27.180
+they
+
+01:04:27.180 --> 01:04:27.480
+might
+
+01:04:27.480 --> 01:04:27.860
+not
+
+01:04:27.860 --> 01:04:28.520
+directly
+
+01:04:28.520 --> 01:04:29.060
+leak
+
+01:04:29.060 --> 01:04:29.740
+pin
+
+01:04:29.740 --> 01:04:30.000
+or
+
+01:04:30.000 --> 01:04:30.260
+password
+
+01:04:30.260 --> 01:04:30.820
+information
+
+01:04:30.820 --> 01:04:31.660
+but
+
+01:04:31.660 --> 01:04:31.860
+it
+
+01:04:31.860 --> 01:04:32.140
+leaks
+
+01:04:32.140 --> 01:04:32.560
+a lot
+
+01:04:32.560 --> 01:04:33.100
+information
+
+01:04:33.100 --> 01:04:33.360
+that's
+
+01:04:33.360 --> 01:04:33.640
+about
+
+01:04:33.640 --> 01:04:35.180
+in
+
+01:04:35.180 --> 01:04:35.680
+particular
+
+01:04:35.680 --> 01:04:36.120
+which
+
+01:04:36.120 --> 01:04:36.320
+keys
+
+01:04:36.320 --> 01:04:36.480
+were
+
+01:04:36.480 --> 01:04:36.720
+pressed
+
+01:04:36.720 --> 01:04:37.080
+recently
+
+01:04:37.080 --> 01:04:37.320
+maybe
+
+01:04:37.320 --> 01:04:37.520
+not
+
+01:04:37.520 --> 01:04:37.880
+exactly
+
+01:04:37.880 --> 01:04:38.080
+the
+
+01:04:38.080 --> 01:04:38.400
+sequence
+
+01:04:38.400 --> 01:04:38.920
+but
+
+01:04:38.920 --> 01:04:39.220
+how many
+
+01:04:39.220 --> 01:04:39.600
+combinations
+
+01:04:39.600 --> 01:04:39.880
+that
+
+01:04:39.880 --> 01:04:39.940
+are
+
+01:04:39.940 --> 01:04:40.760
+right
+
+01:04:40.760 --> 01:04:41.760
+so
+
+01:04:41.760 --> 01:04:44.460
+something to worry about
+
+01:04:44.460 --> 01:04:47.560
+then there is something called acoustic emanation
+
+01:04:47.560 --> 01:04:50.020
+there's a whole body of research literature on this
+
+01:04:50.020 --> 01:04:52.240
+starting in like 25 years ago
+
+01:04:52.240 --> 01:04:53.480
+people realize
+
+01:04:53.480 --> 01:04:56.680
+people realize
+
+01:04:56.680 --> 01:05:00.500
+that when you type on any surface
+
+01:05:00.500 --> 01:05:01.500
+be it a keyboard
+
+01:05:01.500 --> 01:05:01.860
+or a
+
+01:05:01.860 --> 01:05:02.040
+thing
+
+01:05:02.040 --> 01:05:04.580
+even on the phone
+
+01:05:04.580 --> 01:05:05.400
+on the
+
+01:05:05.400 --> 01:05:06.620
+on screen keyboard
+
+01:05:06.620 --> 01:05:08.820
+there are sounds that are being named
+
+01:05:08.820 --> 01:05:11.680
+and sound propagates
+
+01:05:11.680 --> 01:05:12.180
+right
+
+01:05:12.180 --> 01:05:13.980
+when you type
+
+01:05:13.980 --> 01:05:15.200
+especially in some of those
+
+01:05:15.200 --> 01:05:16.040
+people like me
+
+01:05:16.040 --> 01:05:16.300
+etc
+
+01:05:16.300 --> 01:05:16.940
+aggressive
+
+01:05:16.940 --> 01:05:17.340
+times
+
+01:05:17.340 --> 01:05:20.140
+sound propagates
+
+01:05:20.140 --> 01:05:20.540
+farther
+
+01:05:20.540 --> 01:05:22.480
+than the human ears
+
+01:05:22.480 --> 01:05:22.760
+right
+
+01:05:22.760 --> 01:05:25.440
+so if you put a very sensitive microphone
+
+01:05:25.440 --> 01:05:26.800
+you know
+
+01:05:26.800 --> 01:05:27.840
+ten yards away
+
+01:05:27.840 --> 01:05:29.100
+people still pick up
+
+01:05:29.100 --> 01:05:30.500
+keyboard emanations
+
+01:05:30.500 --> 01:05:32.660
+isn't that scary
+
+01:05:32.660 --> 01:05:35.180
+I think it's very cool
+
+01:05:35.180 --> 01:05:36.900
+I have a lot of research on this
+
+01:05:36.900 --> 01:05:39.220
+still these days
+
+01:05:39.220 --> 01:05:40.300
+there are people who work at it
+
+01:05:40.300 --> 01:05:40.500
+but
+
+01:05:40.500 --> 01:05:42.100
+the sound
+
+01:05:42.100 --> 01:05:43.500
+that your
+
+01:05:43.500 --> 01:05:45.140
+fingers make
+
+01:05:45.140 --> 01:05:46.380
+when you type in
+
+01:05:46.380 --> 01:05:47.100
+anything
+
+01:05:47.100 --> 01:05:48.400
+not just the classroom
+
+01:05:48.400 --> 01:05:50.100
+is unique
+
+01:05:50.100 --> 01:05:52.000
+not because
+
+01:05:52.000 --> 01:05:52.460
+so much
+
+01:05:52.460 --> 01:05:53.420
+that you make it
+
+01:05:53.420 --> 01:05:55.060
+but the keyboard
+
+01:05:55.060 --> 01:05:55.520
+itself
+
+01:05:55.520 --> 01:05:58.000
+produces a different sound
+
+01:05:58.000 --> 01:06:00.620
+for any different key
+
+01:06:00.620 --> 01:06:02.680
+every key
+
+01:06:02.680 --> 01:06:03.800
+on your plastic keyboard
+
+01:06:03.800 --> 01:06:07.060
+makes a different sound
+
+01:06:07.060 --> 01:06:07.540
+the same
+
+01:06:07.540 --> 01:06:08.740
+to a lesser extent
+
+01:06:08.740 --> 01:06:10.020
+old story about the keyboard
+
+01:06:10.020 --> 01:06:10.420
+you have
+
+01:06:10.420 --> 01:06:12.760
+but every time you press a key
+
+01:06:12.760 --> 01:06:15.060
+the sound that it makes
+
+01:06:15.060 --> 01:06:15.800
+when you press a Z
+
+01:06:15.800 --> 01:06:16.720
+is different from the sound
+
+01:06:16.720 --> 01:06:17.280
+that it makes you
+
+01:06:17.280 --> 01:06:18.040
+when you press a D
+
+01:06:18.040 --> 01:06:19.060
+or slash
+
+01:06:19.060 --> 01:06:20.140
+or a question mark
+
+01:06:20.140 --> 01:06:20.640
+or space
+
+01:06:20.640 --> 01:06:21.160
+okay
+
+01:06:21.160 --> 01:06:22.420
+there are different sounds
+
+01:06:22.420 --> 01:06:24.600
+and so
+
+01:06:24.600 --> 01:06:25.880
+if I record those sounds
+
+01:06:25.880 --> 01:06:27.260
+I essentially can key log
+
+01:06:27.260 --> 01:06:29.500
+without installing a key log
+
+01:06:29.500 --> 01:06:32.020
+isn't that fun
+
+01:06:32.020 --> 01:06:34.620
+but it gets worse
+
+01:06:34.620 --> 01:06:36.880
+much worse
+
+01:06:36.880 --> 01:06:39.680
+even if the manufacturers
+
+01:06:39.680 --> 01:06:40.820
+and some made an effort
+
+01:06:40.820 --> 01:06:41.500
+some didn't
+
+01:06:41.500 --> 01:06:43.220
+to make all the keyboard
+
+01:06:43.220 --> 01:06:44.240
+sounds sound the same
+
+01:06:44.240 --> 01:06:46.200
+it's possible
+
+01:06:46.200 --> 01:06:47.640
+it makes people
+
+01:06:47.640 --> 01:06:48.380
+more expensive
+
+01:06:48.380 --> 01:06:51.540
+there's still a problem
+
+01:06:51.540 --> 01:06:52.900
+does anybody see the problem?
+
+01:06:58.700 --> 01:07:00.020
+yourself as a person
+
+01:07:00.020 --> 01:07:01.480
+what about yourself?
+
+01:07:01.700 --> 01:07:02.060
+I mean
+
+01:07:02.060 --> 01:07:03.380
+some people
+
+01:07:03.380 --> 01:07:05.280
+have just
+
+01:07:05.280 --> 01:07:06.080
+and they find
+
+01:07:06.080 --> 01:07:06.660
+and they just
+
+01:07:06.660 --> 01:07:07.700
+make themselves
+
+01:07:07.700 --> 01:07:09.280
+because of the finger
+
+01:07:09.280 --> 01:07:09.640
+and
+
+01:07:09.640 --> 01:07:10.080
+uh-huh
+
+01:07:10.080 --> 01:07:10.960
+yeah
+
+01:07:10.960 --> 01:07:11.240
+yeah
+
+01:07:11.240 --> 01:07:11.940
+so remember
+
+01:07:11.940 --> 01:07:13.440
+it's true
+
+01:07:13.440 --> 01:07:14.080
+that
+
+01:07:14.080 --> 01:07:14.980
+what I said before
+
+01:07:14.980 --> 01:07:16.020
+is that there's you
+
+01:07:16.020 --> 01:07:17.820
+who types differently
+
+01:07:17.820 --> 01:07:19.140
+depending on which key you type
+
+01:07:19.140 --> 01:07:21.420
+and then there's the actual keyboard
+
+01:07:21.420 --> 01:07:22.500
+that makes different sounds
+
+01:07:22.500 --> 01:07:23.480
+so even if you press
+
+01:07:23.480 --> 01:07:24.640
+the same way
+
+01:07:24.640 --> 01:07:25.320
+on the same
+
+01:07:25.320 --> 01:07:26.120
+like
+
+01:07:26.120 --> 01:07:28.320
+you have this finger
+
+01:07:28.320 --> 01:07:29.080
+like you're one of those
+
+01:07:29.080 --> 01:07:29.780
+hunter tech
+
+01:07:29.780 --> 01:07:31.160
+people like me
+
+01:07:31.160 --> 01:07:32.300
+like
+
+01:07:32.300 --> 01:07:33.420
+you move the keyboard
+
+01:07:33.420 --> 01:07:35.980
+hit
+
+01:07:35.980 --> 01:07:36.940
+move the keyboard
+
+01:07:36.940 --> 01:07:37.320
+hit it
+
+01:07:37.320 --> 01:07:37.720
+so you see
+
+01:07:37.720 --> 01:07:38.980
+my angle doesn't change
+
+01:07:38.980 --> 01:07:41.040
+so I hit the same way
+
+01:07:41.040 --> 01:07:42.000
+right
+
+01:07:42.000 --> 01:07:43.400
+but the keyboard sound
+
+01:07:43.400 --> 01:07:43.880
+is different
+
+01:07:43.880 --> 01:07:45.840
+but
+
+01:07:45.840 --> 01:07:47.860
+manufacturers suppose
+
+01:07:47.860 --> 01:07:48.820
+now fix the keyboard
+
+01:07:48.820 --> 01:07:49.620
+that all the sounds
+
+01:07:49.620 --> 01:07:50.100
+are the same
+
+01:07:50.100 --> 01:07:51.920
+but I haven't changed
+
+01:07:51.920 --> 01:07:52.220
+right
+
+01:07:52.220 --> 01:07:53.300
+so
+
+01:07:53.300 --> 01:07:54.280
+when I use my
+
+01:07:54.280 --> 01:07:55.780
+this finger
+
+01:07:55.780 --> 01:07:57.840
+that goes straight down
+
+01:07:57.840 --> 01:07:58.920
+on this one letter
+
+01:07:58.920 --> 01:07:59.900
+it sounds one way
+
+01:07:59.900 --> 01:08:01.600
+when I have to angle my finger
+
+01:08:01.600 --> 01:08:02.920
+to press shift
+
+01:08:02.920 --> 01:08:04.000
+right
+
+01:08:04.000 --> 01:08:05.680
+or press question mark
+
+01:08:05.680 --> 01:08:06.680
+it sounds differently
+
+01:08:06.680 --> 01:08:07.920
+not because of the keyboard
+
+01:08:07.920 --> 01:08:09.220
+but because of the way
+
+01:08:09.220 --> 01:08:10.720
+I angle my fingers
+
+01:08:10.720 --> 01:08:11.820
+and the force I apply
+
+01:08:11.820 --> 01:08:12.720
+correct
+
+01:08:12.720 --> 01:08:14.580
+but it gets worse than that
+
+01:08:14.580 --> 01:08:16.540
+that
+
+01:08:16.540 --> 01:08:16.880
+so
+
+01:08:16.880 --> 01:08:17.800
+you can indeed
+
+01:08:17.800 --> 01:08:18.940
+still mine the information
+
+01:08:18.940 --> 01:08:19.380
+like I said
+
+01:08:19.380 --> 01:08:20.740
+about the individual
+
+01:08:20.740 --> 01:08:22.080
+humans typing
+
+01:08:22.080 --> 01:08:23.040
+characteristics
+
+01:08:23.040 --> 01:08:23.520
+but
+
+01:08:23.520 --> 01:08:24.560
+it's harder
+
+01:08:24.560 --> 01:08:25.380
+it's harder
+
+01:08:25.380 --> 01:08:26.340
+it's easier to extract
+
+01:08:26.340 --> 01:08:27.180
+from the manufacturer
+
+01:08:27.180 --> 01:08:27.780
+introduced
+
+01:08:27.780 --> 01:08:28.560
+distinction
+
+01:08:28.560 --> 01:08:29.360
+though
+
+01:08:29.360 --> 01:08:30.100
+the problem is
+
+01:08:30.100 --> 01:08:30.960
+what did you say
+
+01:08:30.960 --> 01:08:31.320
+time
+
+01:08:31.320 --> 01:08:32.340
+like time between keys
+
+01:08:32.340 --> 01:08:33.160
+time between keys
+
+01:08:33.160 --> 01:08:33.900
+that's the problem
+
+01:08:33.900 --> 01:08:35.200
+turns out
+
+01:08:35.200 --> 01:08:36.120
+on a standard
+
+01:08:36.120 --> 01:08:37.240
+QWERTY keyboard
+
+01:08:37.240 --> 01:08:37.880
+let's assume
+
+01:08:37.880 --> 01:08:38.920
+that we're using
+
+01:08:38.920 --> 01:08:39.560
+QWERTYs
+
+01:08:39.560 --> 01:08:39.800
+right
+
+01:08:39.800 --> 01:08:40.540
+which is an American
+
+01:08:40.540 --> 01:08:41.060
+keyboard
+
+01:08:41.060 --> 01:08:44.480
+as you move
+
+01:08:44.480 --> 01:08:45.680
+from key to key
+
+01:08:45.680 --> 01:08:47.740
+right
+
+01:08:47.740 --> 01:08:49.720
+from let's say
+
+01:08:49.720 --> 01:08:50.340
+typing key
+
+01:08:50.340 --> 01:08:51.180
+to typing H
+
+01:08:51.180 --> 01:08:51.940
+to typing E
+
+01:08:51.940 --> 01:08:52.800
+to typing N
+
+01:08:52.800 --> 01:08:53.500
+to typing E
+
+01:08:53.500 --> 01:08:54.280
+to typing X
+
+01:08:54.280 --> 01:08:55.060
+to typing E
+
+01:08:55.060 --> 01:08:57.000
+right
+
+01:08:57.000 --> 01:08:57.960
+you type one letter
+
+01:08:57.960 --> 01:08:58.420
+at a time
+
+01:08:58.420 --> 01:08:59.120
+even if you are
+
+01:08:59.120 --> 01:08:59.680
+touch typist
+
+01:08:59.680 --> 01:09:00.580
+you type one letter
+
+01:09:00.580 --> 01:09:01.100
+at a time
+
+01:09:01.100 --> 01:09:01.700
+well
+
+01:09:01.700 --> 01:09:03.080
+the intervals
+
+01:09:03.080 --> 01:09:04.060
+the timing intervals
+
+01:09:04.060 --> 01:09:05.660
+between successive letters
+
+01:09:05.660 --> 01:09:07.340
+are unique to you
+
+01:09:07.340 --> 01:09:08.160
+also
+
+01:09:08.160 --> 01:09:09.420
+and the keyboard
+
+01:09:09.420 --> 01:09:10.180
+they sound like
+
+01:09:10.180 --> 01:09:10.660
+that's right
+
+01:09:10.660 --> 01:09:11.740
+they're slightly different
+
+01:09:11.740 --> 01:09:12.000
+yeah
+
+01:09:12.000 --> 01:09:12.460
+yeah
+
+01:09:12.460 --> 01:09:12.800
+but
+
+01:09:12.800 --> 01:09:13.680
+that's right
+
+01:09:13.680 --> 01:09:14.940
+they sound
+
+01:09:14.940 --> 01:09:15.560
+that's true
+
+01:09:15.560 --> 01:09:16.180
+but that's actually
+
+01:09:16.180 --> 01:09:16.980
+related more
+
+01:09:16.980 --> 01:09:17.600
+to what he said
+
+01:09:17.600 --> 01:09:19.100
+but just
+
+01:09:19.100 --> 01:09:20.420
+the sheer timings
+
+01:09:20.420 --> 01:09:21.600
+between the keystrokes
+
+01:09:21.600 --> 01:09:23.640
+so you don't have
+
+01:09:23.640 --> 01:09:24.620
+to have any idea
+
+01:09:24.620 --> 01:09:24.980
+but
+
+01:09:24.980 --> 01:09:26.380
+guess what
+
+01:09:26.380 --> 01:09:26.940
+there are
+
+01:09:26.940 --> 01:09:27.620
+let's say
+
+01:09:27.620 --> 01:09:28.600
+forget the
+
+01:09:28.600 --> 01:09:29.500
+exclamation points
+
+01:09:29.500 --> 01:09:30.000
+forget those
+
+01:09:30.000 --> 01:09:30.660
+special characters
+
+01:09:30.660 --> 01:09:31.280
+let's suppose
+
+01:09:31.280 --> 01:09:31.620
+there are
+
+01:09:31.620 --> 01:09:32.100
+I don't know
+
+01:09:32.100 --> 01:09:33.100
+26 keys
+
+01:09:33.100 --> 01:09:33.580
+on the keyboard
+
+01:09:33.580 --> 01:09:34.880
+and you're just
+
+01:09:34.880 --> 01:09:35.960
+typing words
+
+01:09:35.960 --> 01:09:36.260
+right
+
+01:09:36.260 --> 01:09:38.520
+so how many
+
+01:09:38.520 --> 01:09:38.960
+possible
+
+01:09:38.960 --> 01:09:39.520
+two word
+
+01:09:39.520 --> 01:09:40.060
+combinations
+
+01:09:40.060 --> 01:09:40.480
+are there
+
+01:09:40.480 --> 01:09:40.880
+two letter
+
+01:09:40.880 --> 01:09:41.220
+combinations
+
+01:09:41.220 --> 01:09:41.500
+are there
+
+01:09:41.500 --> 01:09:42.420
+26 times 26
+
+01:09:42.420 --> 01:09:42.800
+right
+
+01:09:42.800 --> 01:09:44.560
+so after a while
+
+01:09:44.560 --> 01:09:44.920
+if you
+
+01:09:44.920 --> 01:09:46.340
+record
+
+01:09:46.340 --> 01:09:47.260
+the sounds
+
+01:09:47.260 --> 01:09:47.680
+of somebody
+
+01:09:47.680 --> 01:09:48.080
+typing
+
+01:09:48.080 --> 01:09:49.020
+a lot of text
+
+01:09:49.020 --> 01:09:49.280
+right
+
+01:09:49.280 --> 01:09:49.980
+over the day
+
+01:09:49.980 --> 01:09:50.740
+or two days
+
+01:09:50.740 --> 01:09:51.140
+or whatever
+
+01:09:51.140 --> 01:09:52.100
+you're going to
+
+01:09:52.100 --> 01:09:53.040
+start distinguishing
+
+01:09:53.040 --> 01:09:54.500
+between transitions
+
+01:09:54.500 --> 01:09:55.320
+between keys
+
+01:09:55.320 --> 01:09:55.720
+right
+
+01:09:55.720 --> 01:09:59.040
+believe me
+
+01:09:59.040 --> 01:09:59.940
+it's totally doable
+
+01:09:59.940 --> 01:10:01.660
+because
+
+01:10:01.660 --> 01:10:03.000
+assuming
+
+01:10:03.000 --> 01:10:03.460
+somebody
+
+01:10:03.460 --> 01:10:03.980
+is typing
+
+01:10:03.980 --> 01:10:04.920
+English text
+
+01:10:04.920 --> 01:10:05.240
+right
+
+01:10:05.240 --> 01:10:05.820
+like writing
+
+01:10:05.820 --> 01:10:06.700
+email messages
+
+01:10:06.700 --> 01:10:07.900
+or filling out
+
+01:10:07.900 --> 01:10:08.420
+forms
+
+01:10:08.420 --> 01:10:09.460
+well
+
+01:10:09.460 --> 01:10:11.420
+the probability
+
+01:10:11.420 --> 01:10:12.120
+of occurrence
+
+01:10:12.120 --> 01:10:13.260
+of two successive
+
+01:10:13.260 --> 01:10:14.220
+letters
+
+01:10:14.220 --> 01:10:15.820
+are quite distinct
+
+01:10:15.820 --> 01:10:17.000
+and essentially
+
+01:10:17.000 --> 01:10:17.400
+becomes
+
+01:10:17.400 --> 01:10:18.460
+a simple
+
+01:10:18.460 --> 01:10:18.740
+decision
+
+01:10:18.740 --> 01:10:19.840
+so anyway
+
+01:10:19.840 --> 01:10:20.460
+that was a little
+
+01:10:20.460 --> 01:10:20.920
+detour
+
+01:10:20.920 --> 01:10:21.700
+but what about
+
+01:10:21.700 --> 01:10:22.420
+good vibrations
+
+01:10:22.420 --> 01:10:23.400
+well good vibrations
+
+01:10:23.400 --> 01:10:24.240
+refers to another
+
+01:10:24.240 --> 01:10:24.680
+thing that
+
+01:10:24.680 --> 01:10:25.480
+actually
+
+01:10:25.480 --> 01:10:26.680
+if you're using
+
+01:10:26.680 --> 01:10:27.220
+your phone
+
+01:10:27.220 --> 01:10:27.980
+and that has
+
+01:10:27.980 --> 01:10:28.480
+been some
+
+01:10:28.480 --> 01:10:29.260
+published research
+
+01:10:29.260 --> 01:10:29.620
+on this
+
+01:10:29.620 --> 01:10:31.280
+and your phone
+
+01:10:31.280 --> 01:10:31.840
+is like this
+
+01:10:31.840 --> 01:10:32.480
+on your
+
+01:10:32.480 --> 01:10:34.060
+desk
+
+01:10:34.060 --> 01:10:35.000
+or whatever
+
+01:10:35.000 --> 01:10:35.820
+in front of you
+
+01:10:35.820 --> 01:10:36.040
+right
+
+01:10:36.040 --> 01:10:36.720
+and
+
+01:10:36.720 --> 01:10:38.040
+as you press
+
+01:10:38.040 --> 01:10:38.600
+every
+
+01:10:38.600 --> 01:10:39.840
+on-screen
+
+01:10:39.840 --> 01:10:40.560
+button
+
+01:10:40.560 --> 01:10:40.820
+right
+
+01:10:40.820 --> 01:10:41.560
+on-screen keyboard
+
+01:10:41.560 --> 01:10:42.780
+your phone
+
+01:10:42.780 --> 01:10:43.420
+makes like a tiny
+
+01:10:43.420 --> 01:10:44.200
+vibration sound
+
+01:10:44.200 --> 01:10:45.840
+like a moment
+
+01:10:45.840 --> 01:10:46.340
+that the other
+
+01:10:46.340 --> 01:10:46.840
+phone do
+
+01:10:46.840 --> 01:10:47.120
+right
+
+01:10:47.120 --> 01:10:48.380
+just to confirm
+
+01:10:48.380 --> 01:10:48.880
+that you actually
+
+01:10:48.880 --> 01:10:49.520
+type
+
+01:10:49.520 --> 01:10:50.680
+well
+
+01:10:50.680 --> 01:10:53.260
+those vibrations
+
+01:10:53.260 --> 01:10:54.520
+when you put a
+
+01:10:54.520 --> 01:10:54.880
+microphone
+
+01:10:54.880 --> 01:10:55.520
+underneath your
+
+01:10:55.520 --> 01:10:55.960
+desk
+
+01:10:55.960 --> 01:10:56.720
+they can actually
+
+01:10:56.720 --> 01:10:57.480
+calculate your
+
+01:10:57.480 --> 01:10:57.740
+typing
+
+01:10:57.740 --> 01:11:02.400
+other analysis
+
+01:11:02.400 --> 01:11:03.180
+include taking
+
+01:11:03.180 --> 01:11:03.800
+photos of
+
+01:11:03.800 --> 01:11:04.900
+smartphone screens
+
+01:11:04.900 --> 01:11:06.340
+and looking for
+
+01:11:06.340 --> 01:11:07.820
+quadrants
+
+01:11:07.820 --> 01:11:08.540
+little areas
+
+01:11:08.540 --> 01:11:09.240
+on your screen
+
+01:11:09.240 --> 01:11:10.500
+that are
+
+01:11:10.500 --> 01:11:11.300
+most
+
+01:11:11.300 --> 01:11:12.480
+like smudged
+
+01:11:12.480 --> 01:11:14.840
+that
+
+01:11:14.840 --> 01:11:15.900
+leaks information
+
+01:11:15.900 --> 01:11:16.640
+about your
+
+01:11:16.640 --> 01:11:17.700
+password
+
+01:11:17.700 --> 01:11:18.980
+or the
+
+01:11:18.980 --> 01:11:19.800
+unlock pattern
+
+01:11:19.800 --> 01:11:20.100
+you know
+
+01:11:20.100 --> 01:11:20.300
+this
+
+01:11:20.300 --> 01:11:20.700
+like
+
+01:11:20.700 --> 01:11:21.580
+anybody use
+
+01:11:21.580 --> 01:11:22.160
+unlock patterns
+
+01:11:22.160 --> 01:11:23.980
+like five years
+
+01:11:23.980 --> 01:11:24.200
+ago
+
+01:11:24.200 --> 01:11:25.600
+everybody in this
+
+01:11:25.600 --> 01:11:25.880
+class
+
+01:11:25.880 --> 01:11:26.220
+was like
+
+01:11:26.220 --> 01:11:26.580
+yes
+
+01:11:26.580 --> 01:11:27.740
+I guess
+
+01:11:27.740 --> 01:11:27.980
+they are
+
+01:11:27.980 --> 01:11:28.580
+faster now
+
+01:11:28.580 --> 01:11:29.840
+but apparently
+
+01:11:29.840 --> 01:11:30.440
+you know
+
+01:11:30.440 --> 01:11:31.380
+if your human
+
+01:11:31.380 --> 01:11:32.760
+fingers leave
+
+01:11:32.760 --> 01:11:33.400
+like oil
+
+01:11:33.400 --> 01:11:34.400
+residue
+
+01:11:34.400 --> 01:11:35.180
+on the screen
+
+01:11:35.180 --> 01:11:36.340
+and so
+
+01:11:36.340 --> 01:11:36.980
+if you take
+
+01:11:36.980 --> 01:11:37.600
+a high resolution
+
+01:11:37.600 --> 01:11:38.160
+photo of
+
+01:11:38.160 --> 01:11:38.580
+somebody's
+
+01:11:38.580 --> 01:11:39.480
+smartphone screen
+
+01:11:39.480 --> 01:11:40.660
+you've got to
+
+01:11:40.660 --> 01:11:41.080
+figure out
+
+01:11:41.080 --> 01:11:41.440
+what the
+
+01:11:41.440 --> 01:11:42.060
+unlock pattern
+
+01:11:42.060 --> 01:11:42.340
+is
+
+01:11:42.340 --> 01:11:44.880
+yeah
+
+01:11:44.880 --> 01:11:46.220
+so all this
+
+01:11:46.220 --> 01:11:46.880
+is good stuff
+
+01:11:46.880 --> 01:11:48.420
+but the problem
+
+01:11:48.420 --> 01:11:49.020
+is of course
+
+01:11:49.020 --> 01:11:49.440
+like that
+
+01:11:49.440 --> 01:11:49.960
+the passwords
+
+01:11:49.960 --> 01:11:51.340
+right
+
+01:11:51.340 --> 01:11:51.720
+why do I
+
+01:11:51.720 --> 01:11:52.260
+talk about
+
+01:11:52.260 --> 01:11:52.660
+all this
+
+01:11:52.660 --> 01:11:53.120
+previous stuff
+
+01:11:53.120 --> 01:11:53.780
+because that
+
+01:11:53.780 --> 01:11:54.080
+would be
+
+01:11:54.080 --> 01:11:54.740
+not only just
+
+01:11:54.740 --> 01:11:55.180
+a way of
+
+01:11:55.180 --> 01:11:55.800
+snoop on
+
+01:11:55.800 --> 01:11:56.140
+what you're
+
+01:11:56.140 --> 01:11:56.400
+doing
+
+01:11:56.400 --> 01:11:56.880
+but of course
+
+01:11:56.880 --> 01:11:57.380
+to snoop on
+
+01:11:57.380 --> 01:11:57.820
+your passwords
+
+01:11:57.820 --> 01:11:58.740
+right
+
+01:11:58.740 --> 01:11:59.240
+that's the way
+
+01:11:59.240 --> 01:11:59.640
+to actually
+
+01:11:59.640 --> 01:12:00.660
+and sort of
+
+01:12:00.660 --> 01:12:01.080
+learn your
+
+01:12:01.080 --> 01:12:01.360
+password
+
+01:12:01.360 --> 01:12:02.780
+the worst
+
+01:12:02.780 --> 01:12:03.480
+thing we can
+
+01:12:03.480 --> 01:12:04.020
+do is write
+
+01:12:04.020 --> 01:12:04.480
+them down
+
+01:12:04.480 --> 01:12:05.260
+because then
+
+01:12:05.260 --> 01:12:06.520
+writing them
+
+01:12:06.520 --> 01:12:06.800
+down
+
+01:12:06.800 --> 01:12:07.780
+whether it's
+
+01:12:07.780 --> 01:12:08.780
+on a device
+
+01:12:08.780 --> 01:12:09.300
+or a piece
+
+01:12:09.300 --> 01:12:09.660
+of paper
+
+01:12:09.660 --> 01:12:10.300
+that becomes
+
+01:12:10.300 --> 01:12:11.980
+a way to
+
+01:12:11.980 --> 01:12:12.500
+like cause
+
+01:12:12.500 --> 01:12:12.900
+denial of
+
+01:12:12.900 --> 01:12:13.200
+service
+
+01:12:13.200 --> 01:12:13.540
+etc
+
+01:12:13.540 --> 01:12:14.820
+we can
+
+01:12:14.820 --> 01:12:15.400
+pick passwords
+
+01:12:15.400 --> 01:12:15.660
+that are
+
+01:12:15.660 --> 01:12:15.980
+easy to
+
+01:12:15.980 --> 01:12:16.460
+remember
+
+01:12:16.460 --> 01:12:20.480
+some places
+
+01:12:20.480 --> 01:12:20.920
+don't even
+
+01:12:20.920 --> 01:12:21.580
+have passwords
+
+01:12:21.580 --> 01:12:22.080
+I've seen
+
+01:12:22.080 --> 01:12:22.640
+a few
+
+01:12:22.640 --> 01:12:23.640
+systems
+
+01:12:23.640 --> 01:12:24.140
+websites
+
+01:12:24.140 --> 01:12:24.660
+which
+
+01:12:24.660 --> 01:12:25.300
+completely
+
+01:12:25.300 --> 01:12:25.740
+have no
+
+01:12:25.740 --> 01:12:26.080
+passwords
+
+01:12:26.080 --> 01:12:26.540
+but instead
+
+01:12:26.540 --> 01:12:27.100
+have these
+
+01:12:27.100 --> 01:12:27.720
+special
+
+01:12:27.720 --> 01:12:28.300
+questions
+
+01:12:28.300 --> 01:12:29.120
+like
+
+01:12:29.120 --> 01:12:29.720
+they give
+
+01:12:29.720 --> 01:12:30.120
+you five
+
+01:12:30.120 --> 01:12:30.480
+special
+
+01:12:30.480 --> 01:12:30.920
+questions
+
+01:12:30.920 --> 01:12:31.320
+every time
+
+01:12:31.320 --> 01:12:31.620
+you want to
+
+01:12:31.620 --> 01:12:31.900
+log in
+
+01:12:31.900 --> 01:12:32.220
+you have to
+
+01:12:32.220 --> 01:12:32.720
+answer four
+
+01:12:32.720 --> 01:12:33.080
+out of five
+
+01:12:33.080 --> 01:12:33.340
+friends
+
+01:12:33.340 --> 01:12:34.380
+but they all
+
+01:12:34.380 --> 01:12:34.760
+tend to be
+
+01:12:34.760 --> 01:12:35.000
+of this
+
+01:12:35.000 --> 01:12:35.380
+variety
+
+01:12:35.380 --> 01:12:36.040
+what's your
+
+01:12:36.040 --> 01:12:36.580
+favorite pet's
+
+01:12:36.580 --> 01:12:36.780
+name
+
+01:12:36.780 --> 01:12:37.980
+rover
+
+01:12:37.980 --> 01:12:38.520
+bio
+
+01:12:38.520 --> 01:12:39.920
+jerry
+
+01:12:39.920 --> 01:12:41.780
+and they
+
+01:12:41.780 --> 01:12:42.120
+give you
+
+01:12:42.120 --> 01:12:42.940
+some of
+
+01:12:42.940 --> 01:12:43.200
+them are
+
+01:12:43.200 --> 01:12:43.460
+worse
+
+01:12:43.460 --> 01:12:43.900
+than others
+
+01:12:43.900 --> 01:12:44.320
+some of
+
+01:12:44.320 --> 01:12:44.600
+them allow
+
+01:12:44.600 --> 01:12:44.980
+you free
+
+01:12:44.980 --> 01:12:45.580
+text entry
+
+01:12:45.580 --> 01:12:46.660
+which is
+
+01:12:46.660 --> 01:12:46.940
+better
+
+01:12:46.940 --> 01:12:47.300
+and some
+
+01:12:47.300 --> 01:12:47.580
+of them
+
+01:12:47.580 --> 01:12:48.000
+give you
+
+01:12:48.000 --> 01:12:48.480
+a choice
+
+01:12:48.480 --> 01:12:49.880
+like
+
+01:12:49.880 --> 01:12:50.100
+out of
+
+01:12:50.100 --> 01:12:50.560
+these five
+
+01:12:50.560 --> 01:12:51.000
+pet names
+
+01:12:51.000 --> 01:12:51.360
+which one
+
+01:12:51.360 --> 01:12:51.660
+is your
+
+01:12:51.660 --> 01:12:51.940
+favorite
+
+01:12:51.940 --> 01:12:52.980
+really
+
+01:12:52.980 --> 01:12:53.500
+seriously
+
+01:12:53.500 --> 01:12:54.720
+terrible
+
+01:12:54.720 --> 01:12:57.200
+easily
+
+01:12:57.200 --> 01:12:57.700
+guessable
+
+01:12:57.700 --> 01:12:58.180
+alright
+
+01:12:58.180 --> 01:12:58.540
+I think
+
+01:12:58.540 --> 01:12:58.880
+we should
+
+01:12:58.880 --> 01:12:59.100
+be
+
+01:12:59.100 --> 01:13:00.240
+done
+
+01:13:00.240 --> 01:13:00.640
+for today
+
+01:13:00.640 --> 01:13:00.900
+yeah
+
+01:13:00.900 --> 01:13:01.160
+I'll
+
+01:13:01.160 --> 01:13:01.400
+forget
+
+01:13:01.400 --> 01:13:01.620
+this
+
+01:13:01.620 --> 01:13:02.160
+candle
+
+01:13:02.160 --> 01:13:02.520
+to me
+
+01:13:02.520 --> 01:13:03.920
+ok
+
+01:13:03.920 --> 01:13:04.400
+let's be
+
+01:13:04.400 --> 01:13:04.560
+done
+
+01:13:04.560 --> 01:13:05.020
+for today
+
+01:13:05.020 --> 01:13:05.840
+see you
+
+01:13:05.840 --> 01:13:06.060
+next
+
+01:13:06.060 --> 01:13:06.420
+Tuesday
+
+01:13:06.420 --> 01:13:07.740
+come
+
+01:13:07.740 --> 01:13:08.040
+out
+
+01:13:08.040 --> 01:13:10.800
+3
+
+01:13:10.800 --> 01:13:11.440
+2
+
+01:13:11.440 --> 01:13:11.900
+2
+
+01:13:11.900 --> 01:13:16.560
+2
+
+01:13:16.560 --> 01:13:17.140
+3
+
+01:13:17.140 --> 01:13:17.860
+4
+
+01:13:17.860 --> 01:13:19.040
+4
+
+01:13:19.040 --> 01:13:19.480
+5
+
+01:13:19.480 --> 01:13:20.600
+5
+
+01:13:20.600 --> 01:13:21.140
+6
+
+01:13:21.140 --> 01:13:21.920
+6
+
+01:13:21.920 --> 01:13:23.080
+6
+
+01:13:23.080 --> 01:13:24.840
+7
+
+01:13:24.840 --> 01:13:25.280
+6
+
+01:13:25.280 --> 01:13:25.920
+7
+
+01:13:25.920 --> 01:13:26.760
+8
+
+01:13:26.760 --> 01:13:27.520
+7
+
+01:13:27.520 --> 01:13:29.060
+8
+
+01:13:29.060 --> 01:13:29.640
+8
+
+01:13:29.640 --> 01:13:29.980
+7
+
+01:13:29.980 --> 01:13:30.740
+9
+
+01:13:30.740 --> 01:13:31.520
+8
+
+01:13:31.520 --> 01:13:31.760
+8
+
+01:13:31.760 --> 01:13:31.940
+9
+
+01:13:31.940 --> 01:13:32.460
+10
+
+01:13:32.460 --> 01:13:33.000
+12
+
+01:13:33.000 --> 01:13:34.000
+11
+
+01:13:34.000 --> 01:13:34.540
+11
+
+01:13:34.540 --> 01:13:34.880
+12
+
+01:13:34.880 --> 01:13:35.000
+12
+
+01:13:35.000 --> 01:13:35.800
+13
+
+01:13:35.800 --> 01:13:36.060
+11
+
+01:13:36.060 --> 01:13:36.980
+12
+
+01:13:36.980 --> 01:13:37.320
+12
+

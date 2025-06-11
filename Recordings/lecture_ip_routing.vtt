@@ -1,0 +1,2537 @@
+WEBVTT
+
+00:00.000 --> 00:14.880
+Routing protocols came back to the late 50s, early 60s and they predate the internet because
+
+00:14.880 --> 00:20.320
+there were other networks out there in the world besides the internet.
+
+00:20.320 --> 00:27.040
+In fact, even today there are other networks, we just don't study them as much, they don't
+
+00:27.040 --> 00:33.520
+impact us very much. There were other architectures that were used for private networking and even
+
+00:33.520 --> 00:43.040
+internet but different types of internet. Anyway, there are two, okay, how many people have heard
+
+00:43.040 --> 00:54.160
+of Dijkstra's algorithm? Oh, that's better. So what does Dijkstra's algorithm do? Shortest
+
+00:54.160 --> 01:01.760
+path. So, right, given a network or a graph, and a graph and a network are kind of the same,
+
+01:02.800 --> 01:09.360
+right, given a connected, not fully connected, but just a connected graph, Dijkstra's algorithm
+
+01:09.360 --> 01:21.440
+will find you a route, i.e. path between A and B. Okay, and it does it depth first.
+
+01:23.360 --> 01:31.360
+How many people heard of Bellman Ford? Oh, good, so you heard it in the same context probably in an
+
+01:31.360 --> 01:37.360
+algorithms course or some other kind of elementary course. Usually they're covered also, re-covered,
+
+01:37.360 --> 01:44.960
+in networks course, as a prelude to route. Bellman Ford is also an algorithm for graphs,
+
+01:45.920 --> 01:51.040
+which are networks, connected, right? If you have a disconnected graph, it doesn't work.
+
+01:51.040 --> 02:05.520
+And it is breadth first, okay? Not depth first, breadth first. And so for the last 70 years,
+
+02:06.080 --> 02:13.040
+there's been a lot of debate about which one is better, right? They're not compatible. They're sort
+
+02:13.040 --> 02:22.560
+of mutually exclusive. You either do breadth first or you do depth first. And so today's internet started
+
+02:22.560 --> 02:34.720
+out, okay, by using a depth first, right? Something called OSPF, okay? And today it's using,
+
+02:34.720 --> 02:42.160
+sorry, it was started out using depth first, now it's using kind of a breadth first. Something called distance vectors.
+
+02:42.720 --> 02:49.440
+Okay, I'll explain quickly how distance vector link state works because they don't have slides
+
+02:49.440 --> 02:55.280
+on it thinking that you already know. Link state works like this. It basically dice this.
+
+02:55.280 --> 03:02.480
+Every node in the network, okay? And imagine we are a graph. So every adjacent person to you is a link, right?
+
+03:06.160 --> 03:12.880
+Everybody broadcasts the state of their links. For example, I'm connected to this guy and this guy.
+
+03:14.560 --> 03:22.080
+And I'm going to broadcast to anybody who hears that these are my connections. Let's go. Alice, Bob.
+
+03:22.080 --> 03:32.960
+Everybody else does the same thing. He broadcasts that he connected just to one person, him. He broadcasts that
+
+03:32.960 --> 03:39.280
+he's connected to, I don't know, two people. Everybody broadcasts that the state of their connection,
+
+03:39.280 --> 03:47.200
+who they are adjacent to. And that broadcast is flooded. Does everybody know what flooded means?
+
+03:48.160 --> 03:55.040
+It means when you receive a packet, you forward it out on all other interfaces, right? Which means on all other
+
+03:55.040 --> 04:07.840
+connections. You following me? So this generalizes into following. Everyone receives the state
+
+04:07.840 --> 04:19.680
+state of every other node in the network. Yeah? You following me? If everything is flooded and broadcast,
+
+04:19.680 --> 04:30.400
+and let's say at roughly the same time, then everyone learns who is connected to whom directly. Yes?
+
+04:30.400 --> 04:40.560
+Okay, that allows you to construct a graph. And do the shortest path, for example, the extra set.
+
+04:41.680 --> 04:49.200
+Okay? Explicitly knowing what the path is. Right? You actually learn the path.
+
+04:49.200 --> 04:56.000
+Right? So for example, to get to you over there, I will learn the path I have to go from him and him.
+
+04:56.000 --> 05:01.760
+That's my shortest path. I could also go around, but the shortest path is like this. Okay?
+
+05:02.400 --> 05:04.400
+This Daxter's algorithm tells me that.
+
+05:04.400 --> 05:14.800
+So that's link state. Why it's called link state? Because everybody broadcasts the state of their links.
+
+05:14.800 --> 05:18.160
+Links means immediate connections. Immediate, right? Who am I connected to?
+
+05:18.160 --> 05:26.800
+So if my connection to him is down, well, I obviously don't broadcast the fact that I'm connected to him.
+
+05:26.800 --> 05:33.200
+I only broadcast the fact that I'm connected to him. And in fact, he's the only one who hears my broadcast.
+
+05:33.200 --> 05:40.240
+But then he rebroadcasts my broadcast, and everybody knows that, oh, well, he attends his name, right?
+
+05:40.240 --> 05:44.960
+But everybody knows that, oh, let's see, this guy has a path of length one to me.
+
+05:44.960 --> 05:56.720
+You learn this. You learn this. Later you rebroadcast. He learns that, he learns that you have a path of length three to me.
+
+05:56.720 --> 06:07.280
+And he knows exactly the path. Okay. That's link state. Distance vector is very different. Distance vector says
+
+06:07.280 --> 06:16.640
+everybody in the beginning has a table of all other nodes. So we know the population.
+
+06:18.720 --> 06:25.360
+Okay. But I tell, I essentially tell my neighbor, my direct neighbor, let's say I'm here.
+
+06:26.480 --> 06:31.600
+My direct neighbor is these two. I tell them my routing table.
+
+06:31.600 --> 06:39.840
+In the beginning, my routing table is very simple. It lists all of you all with a distance infinity.
+
+06:41.520 --> 06:52.720
+Except for them. It says, I can get, I'm connected to him with one half. I'm connected to him with one half.
+
+06:53.680 --> 06:57.200
+If I'm telling you that I'm connected to you with one half, it's useless. You already know this.
+
+06:57.200 --> 07:08.160
+But what you don't know is I have one half to him. Okay. So all of a sudden, now you, instead of having distance infinity to him, say,
+
+07:08.160 --> 07:15.520
+oh, the distance is two and I am the next half. Does everybody understand this example?
+
+07:15.520 --> 07:25.840
+And then he broadcasts his own table, which has infinity for everybody except for me, him, and the two people here.
+
+07:28.400 --> 07:34.560
+This converges. Everybody does the same thing in the distributed fashion. This converges.
+
+07:34.560 --> 07:44.320
+This converges. And at the end, every node has a table with every possible destination, but not the path.
+
+07:45.520 --> 07:52.480
+They don't know the graph at all. What you do know is that to get to Isita over there,
+
+07:52.480 --> 08:03.440
+I, it costs one, two, three, four hops, and the next hop is him. But I don't know how it goes after that.
+
+08:03.440 --> 08:11.360
+Totally ignorant. To get to that guy in the white hat, it will be one, two, three, four. Again, next hop is him.
+
+08:11.360 --> 08:17.280
+To get to that guy over there, next hop is him, and the distance is three. One, two, three.
+
+08:17.280 --> 08:24.160
+One, two, three. That's what we learned in the end in distance vector. Why? Distance vector.
+
+08:24.160 --> 08:30.960
+Because the table shows the distance. And the stuff we exchange out is called distance vectors.
+
+08:33.280 --> 08:35.200
+That is a crash course for free.
+
+08:35.200 --> 08:51.520
+Well, today's internet, okay, does not use either, truly speaking. It uses a hybrid. It's called path vector.
+
+08:52.960 --> 09:00.160
+So, and it does not use actual IP addresses as a destination, or it does not even, in fact,
+
+09:01.120 --> 09:07.200
+you can think of it as using autonomous systems. Remember ASs, ADs, as destinations. So, it does it
+
+09:07.200 --> 09:14.880
+at a coarser granularity, right? Now, there's some details here, the IP prefixes included, but I'm
+
+09:14.880 --> 09:20.800
+going to abstract it all the way. So, think about it that today's internet operates on the granularity
+
+09:20.800 --> 09:26.960
+of autonomous domains or autonomous systems, right? Because they're just these blocks, right? What happens
+
+09:26.960 --> 09:33.120
+within each autonomous system, which could be small or large, is of no concern to BGP, which is the
+
+09:33.120 --> 09:38.080
+protocol that runs it. Inside, you can run whatever routing protocol you want. You could run the same
+
+09:38.080 --> 09:45.040
+BGP, border gateway, inside, or you can run OSPF, which is open shortest path first, or you can run RIP,
+
+09:45.040 --> 09:52.640
+which is a reliable internet, routing internet protocol. There are a number of other options
+
+09:52.640 --> 09:59.680
+you can do. You can do static routing inside also, like manually configured static routing,
+
+09:59.680 --> 10:05.520
+and check out, from the andres of the era that I described here, okay? So, what you do inside it,
+
+10:05.520 --> 10:11.920
+inside it, AS or AD is up to you, but the main thing is, if you want to connect to the internet,
+
+10:11.920 --> 10:27.280
+right, your border routers, right, must run BGP, which is how ASs do routing, okay? So, today,
+
+10:28.720 --> 10:36.880
+routing is done, and then it's BGP level done on the basis of ASs or IDs, but they are still using IP
+
+10:36.880 --> 10:43.840
+addresses for routing, right? The actual routers use IP addresses, and that's because for each AS or AD,
+
+10:43.840 --> 10:50.880
+there is a bunch of IP prefixes associated. So, when you know a route to a particular AS,
+
+10:50.880 --> 10:57.600
+you can associate a bunch of IP prefixes with it, okay? And that allows us to route IP back.
+
+10:57.600 --> 11:10.640
+Right. So, as I said before, and you know, routing, mechanical actually, routing can be by explicit
+
+11:10.640 --> 11:17.760
+IP addresses, but usually it's done by longest prefix match. Remember I discussed that? Longest prefix.
+
+11:17.760 --> 11:22.240
+When the router looks in its table, it looks for the longest prefix. The longest prefix may actually
+
+11:22.240 --> 11:28.000
+be an explicit address, the full address, or it may be some part of the address, like the preface,
+
+11:28.000 --> 11:32.240
+but it looks for the longest prefix, because that's likely to be the best route.
+
+11:36.400 --> 11:38.320
+Right. So, this is basically what I told you.
+
+11:41.440 --> 11:45.840
+So, we're going to forget link state for now, and we're going to forget the dyke strap. I'm going to
+
+11:45.840 --> 11:50.480
+look at Bellman Ford, right? And this is essentially what is at the heart of BGP today.
+
+11:54.080 --> 12:00.320
+There are some pitfalls here, and some of the problems with routing aren't necessarily security
+
+12:00.320 --> 12:07.600
+problems. They are sometimes reliability and fault tolerance problems, except often we cannot tell
+
+12:07.600 --> 12:13.040
+what causes it, right? Is it like accidental malfunction, stupid operators,
+
+12:13.040 --> 12:22.080
+just making mistakes, or is it, or implementation errors in the routing protocol implementation,
+
+12:22.080 --> 12:28.880
+or an attack? So, one of the problems that occurs in distance vector protocol is what's called a
+
+12:28.880 --> 12:34.960
+split horizon update. I don't should just understand how that works. So, I'm going to, this picture shows
+
+12:34.960 --> 12:41.840
+you a kind of a very silly network, which is called a line network, where it's not very interesting,
+
+12:41.840 --> 12:50.240
+right? But it happens in the real world, where you have essentially, well, these entities. You can
+
+12:50.240 --> 12:56.000
+think of them as domains, or you can think of them as just routers or hosts. It doesn't really matter.
+
+12:56.000 --> 13:05.440
+But the thick white lines represent direct connections, okay? So, the idea is, like in distance
+
+13:05.440 --> 13:16.160
+vectors, I just tried to explain, that you see here, G1, it is directly connected to A.
+
+13:17.840 --> 13:24.880
+So, what it does in a normal distance vector protocol, it says, look, it advertises. It tells everybody,
+
+13:24.880 --> 13:34.240
+hey, hey, I have a hop one distance to A. Okay? So, it informs G2. It cannot inform anybody else,
+
+13:34.240 --> 13:40.560
+right? It just, well, it can inform A, but A already knows. So, it informs G2. And so, they quickly,
+
+13:40.560 --> 13:50.800
+and then G2 says, oh, and good news, wonderful. And now I have a two hop route to A. So, it advertises to G3.
+
+13:50.800 --> 14:01.280
+And G3 says, yay, I have a three hop route to A. Oh, why? And G2, right? And then, so on. And G4 lands it
+
+14:01.280 --> 14:08.320
+with a distance four. Finally, G5 lands it. After a bit, it says, I have a five hop route to A. Okay.
+
+14:11.840 --> 14:19.120
+But suppose the link here goes down. Maybe an accident, maybe a hack, we don't care.
+
+14:19.120 --> 14:28.800
+Something bad happens. And this G1 and A get disconnected. So, what the protocol does,
+
+14:29.920 --> 14:40.240
+naively, G2 says, I have a route of length two to A. Remember that? From the previous slide.
+
+14:40.240 --> 14:49.760
+So, G1 says, I have a route with a length infinity. I cannot reach A. The link is down.
+
+14:51.120 --> 14:57.520
+Right? That's a fact. So, when the link is down, you're supposed to mark something with infinity.
+
+14:57.520 --> 15:05.200
+Because you cannot destination unreachable. But, G2 remembers good news from the previous slide.
+
+15:05.200 --> 15:13.040
+And it says, I can get to G1. Sorry, I can get to A in two hops. Remember, distance vector does not
+
+15:13.040 --> 15:20.320
+remember routes. It remembers distances and next hop. That's how it's specified.
+
+15:20.320 --> 15:29.040
+So, basically, what will happen is, G1 will say, all right, two is better than infinity.
+
+15:30.320 --> 15:39.920
+Strictly less. So, now I have a route of length three to eight. That's what G1 thinks.
+
+15:39.920 --> 15:51.280
+And then it starts sending packets. Right? To G1. Sorry, if G1 has packets to A,
+
+15:51.280 --> 15:56.080
+we'll send it to G2. G2 will send it back to G1. G1 will then send it to two. And there's a loop.
+
+15:57.840 --> 16:06.160
+Okay? So, there you have it. And then, what's called is, they're counting to infinity. Because
+
+16:06.160 --> 16:14.000
+as they realize, oh, well, you know, there's no path of length two, they're going to increment it. Right?
+
+16:14.000 --> 16:22.240
+One by one. And it keeps going. It's called counting to infinity problem. Okay?
+
+16:24.400 --> 16:32.160
+Now, once you understand the problem, the solution is easy. Okay? The solution is easy. It says,
+
+16:32.160 --> 16:40.160
+you know, do not advertise on the same interface that your receipts are. That is, do not re-advertise.
+
+16:40.160 --> 16:44.640
+Do not tell me that I can reach things in. Do you follow?
+
+16:44.640 --> 17:02.480
+So, as they exchange routing tables, they both start incrementing, right, by one, the cost to get to A.
+
+17:03.120 --> 17:08.080
+A is completely unreachable. There's no way to reach A. But they both think that there is a way to reach.
+
+17:08.080 --> 17:13.600
+Just the cost goes up. And this can take for a very long time. Infinity is a large number.
+
+17:14.320 --> 17:19.840
+Or whatever the number of bits reserved for the hop count, right, eventually will overrun. So,
+
+17:21.520 --> 17:28.400
+if you start, if you stop doing that, right, so you don't, you don't advertise, re-advertise a route
+
+17:28.400 --> 17:33.280
+on the interface you received it from. That solves the problem. But it only solves the problem if you
+
+17:33.280 --> 17:38.960
+have these kind of very small loops. Does that make sense?
+
+17:42.160 --> 17:48.960
+Now, link state does not have this problem. Remember how I described link state? In a link state
+
+17:48.960 --> 17:55.120
+protocol, every node in the network receives an entire map of the network. So, loops are impossible.
+
+17:55.120 --> 18:17.280
+And so, that's why BGP, one of the reasons, BGP today is what's called path vector. So, it works like a
+
+18:17.280 --> 18:22.080
+distance vector, but with a, with a twist, with a, with a, with a, like a, a little bit extra feature.
+
+18:23.040 --> 18:38.080
+That, in addition to every table, it's actually every node.
+
+18:38.080 --> 18:47.120
+So, normally, a distance vector table would be like this. You will have three columns,
+
+18:47.840 --> 18:54.080
+and here will be destination, uh, cost,
+
+18:54.080 --> 19:06.800
+next hop. Right, that's a distance vector table. And here it will say something like, I don't know,
+
+19:06.800 --> 19:12.720
+uci.edu. I'm just, I'm not putting it, it could be numeric, okay, but I'm just putting, let's say,
+
+19:12.720 --> 19:20.320
+some prefix corresponding to uci.edu. And, uh, this could be, I don't know, 12, meaning 12 hops away.
+
+19:20.320 --> 19:29.760
+And the next hop is, uh, well, depending, if this is, I don't know, uh, uci.davis,
+
+19:31.600 --> 19:36.320
+that, that's the table at uci.davis, and this would be the next hop is, uh, ucla.
+
+19:40.000 --> 19:45.040
+Okay, that's how a distance vector table sort of looks like. But, in BGP,
+
+19:45.040 --> 20:02.080
+this is not next hop, but that, entire path. So, this will be like uci.edu, uh, I don't know,
+
+20:02.080 --> 20:11.520
+SoCal, uh, blah, blah, blah, com, cox.net, et cetera, et cetera. Right? So, it will be a sequence of,
+
+20:11.520 --> 20:16.560
+uh, of hops, of actual hops that you have to take, like, a full rep.
+
+20:18.400 --> 20:25.040
+One of the reasons this is done is to avoid loops. Right? If you know the actual path, right?
+
+20:26.800 --> 20:30.480
+You can see when there are loops, right? You will see that, for example, something is,
+
+20:30.480 --> 20:36.800
+you are about to add yourself to the path, and you're already there. That's a loop. Right?
+
+20:36.800 --> 20:41.120
+So, this allows you to avoid loops. The other reason BGP is like this,
+
+20:41.760 --> 20:47.360
+anybody want to guess why? Remember, this is for the internet, right? Worldwide.
+
+20:50.320 --> 20:50.880
+Any idea?
+
+20:54.080 --> 20:58.080
+It's not a, it's not a trivial question. If you're not familiar with internet,
+
+20:58.080 --> 21:00.160
+individually, it has to do with politics.
+
+21:00.160 --> 21:07.360
+The internet covers the world. Right? Pretty much every country has access to the internet.
+
+21:07.360 --> 21:10.240
+Every country has at least one AS. At least one.
+
+21:13.760 --> 21:15.920
+Countries provide transit services, right?
+
+21:18.480 --> 21:25.200
+This explicit remuneration of the path is there so that countries can decide,
+
+21:25.200 --> 21:28.800
+oh, I don't want to take this path. I prefer this other path.
+
+21:30.880 --> 21:36.960
+Okay? So, for example, if you're sending packets, if you're sending traffic from here to India,
+
+21:38.240 --> 21:43.120
+maybe you don't want to transit Iran, even though they offer attractive transit service.
+
+21:44.320 --> 21:50.240
+Right? Or maybe if you're in South Korea and you want to go, you know, connect to Mongolia,
+
+21:50.240 --> 21:56.560
+you don't want to go through North Korea, even though they'll promise you amazing transit service.
+
+21:57.680 --> 22:00.320
+Okay? That's why.
+
+22:01.200 --> 22:05.840
+So, if this, if you have just distance vector that shows you the distance and the next path,
+
+22:05.840 --> 22:11.360
+you don't know the route, right? But when you, with path vector, which is what the GP is,
+
+22:11.360 --> 22:16.160
+you actually not only know the distance, but you also know the cost, but you also know the actual path.
+
+22:16.720 --> 22:22.480
+But the path is not at the level of ID routers. The path is at the level of domain.
+
+22:24.080 --> 22:30.960
+Does that make sense? Because you don't really care, and it's too much, it's really TMI to know which hops you'll take.
+
+22:30.960 --> 22:37.520
+What's important is which domains you will cross. In other words, who is going to look at your traffic?
+
+22:37.520 --> 22:54.560
+So, fundamentally, it works just like distance vector, right? The adjacent routers exchange
+
+22:55.120 --> 23:00.000
+their routing tables, but the routing tables also contain, you know, in addition to the distance,
+
+23:00.000 --> 23:09.440
+these paths, right? So, and you can have multiple paths, and there's another thing. You can, in fact,
+
+23:09.440 --> 23:15.760
+should have multiple paths for each destination, because you may prefer one path over another.
+
+23:16.720 --> 23:21.360
+Like, for example, if you have only one path to get to, I don't know, Mongolia, and it goes to North Korea,
+
+23:22.000 --> 23:26.800
+you don't have a choice. If you don't like North Korea, you don't communicate with Mongolia.
+
+23:28.000 --> 23:33.760
+But, you know, there is internet, it's very unlikely there is only one path, right? Maybe you can go
+
+23:33.760 --> 23:42.960
+through Russia. Could be a little safe, or not? I mean, you can go through, you know, Leos,
+
+23:44.640 --> 23:49.600
+low Earth orbit satellites. I gotta do that. Everybody's favorite, Elon Musk.
+
+23:52.080 --> 23:59.520
+That's a domain, by the way, right? The Starlink system is a domain, is an internet domain. It's just
+
+23:59.520 --> 24:05.600
+not on, it's not on this Earth, but it's still a domain, right? So, you communicate via the internet,
+
+24:05.600 --> 24:09.840
+you go, you go to the satellite, for the satellite, then you, you're transiting a satellite domain.
+
+24:10.400 --> 24:10.880
+It's barely.
+
+24:15.280 --> 24:19.920
+So, here's a BGP example, just that makes it a little bit, perhaps a little more. So, here we have a very
+
+24:19.920 --> 24:25.440
+small toy network, right? These are, these are domain, or ASs, right? Autonomic systems. So,
+
+24:25.440 --> 24:32.160
+not individual hosts. So, here we have, these are strangely connected networks, but the main thing
+
+24:32.160 --> 24:37.360
+is that, for example, AS2, right? The one in the middle, provides transit service for 7. It's
+
+24:37.360 --> 24:44.000
+a kind of a transit domain. So, basically, traffic to and from 7 goes through 2, except for 8, right?
+
+24:44.000 --> 24:53.840
+8 can reach 7. So, what does 2 advertise? 2 says, well, sorry, 7 says, hello, to its neighbors, right?
+
+24:53.840 --> 24:58.560
+I don't know how to reach anybody, but I'm 7, and I'm one hop away from you.
+
+25:02.960 --> 25:10.000
+And 2 says, to its neighbors, hello, I'm 2, and if you want to reach 7, you got to go for me,
+
+25:10.000 --> 25:19.920
+and the path is to 7. So, like, 1, the main 1 says, oh, if I want to go to 7, I have to,
+
+25:19.920 --> 25:24.800
+the path is first 2, then 7, and that's it, right? That's the path.
+
+25:24.800 --> 25:34.080
+The vector, right? And they, let's see, 3 and 6, in turn, also advertise to their neighbors,
+
+25:34.080 --> 25:41.120
+that if you want to go to 7, you got to go for them, right? So, 3 says to 4. You want to go to 7?
+
+25:41.120 --> 25:48.400
+That's me, right? And the path is 3, 2, 7. And 5 learns that the path to 7 is 6, 2, 7.
+
+25:48.400 --> 25:53.920
+You see the fundamental difference here. Sometimes it's not, it's not, it's a little subtle, right?
+
+25:53.920 --> 25:59.760
+So, in development 4, or the distance vector, path vector protocols, nobody computes the routes,
+
+25:59.760 --> 26:05.840
+like, from a graph. You follow? In link state, everybody actually gets a graph,
+
+26:06.640 --> 26:12.560
+information about the complete graph, and computes, cranks the, you know, the Dijkstra's protocol,
+
+26:12.560 --> 26:17.520
+and computes the route to every destination. Here, you don't compute the route. You kind of,
+
+26:17.520 --> 26:25.360
+like, adjust your tables. So, computationally, that's the claim, it's an argument going on for
+
+26:25.360 --> 26:29.440
+50 years among networking people and theory people, so which particle is better?
+
+26:31.760 --> 26:39.920
+Nobody knows, but one claim is that, oh, well, this one is computationally less costly, yeah?
+
+26:42.240 --> 26:46.400
+And so, finally, like, again, I'm not going to go through the whole example, but, you know,
+
+26:46.400 --> 26:54.880
+and then 5 says, oh, I'm 5, and sends to his neighbors, and then 6 re-advertises that,
+
+26:54.880 --> 27:00.480
+and then the 2 learns to get to 5, you have to go for 6, and then, et cetera, et cetera, right? Okay?
+
+27:01.600 --> 27:02.400
+Enough, right?
+
+27:02.400 --> 27:11.440
+So, everybody learns like that. So, this slide is, unfortunately, woefully outdated.
+
+27:12.800 --> 27:18.240
+I don't know, it's like 8 years old, at least. Sorry about that. But nothing is lower than what you see.
+
+27:19.040 --> 27:29.920
+Numbers are higher. So, BGP routing tables, 125,000 address prefixes, right? Typical BGP routing tables.
+
+27:30.880 --> 27:35.520
+That's not ASs. I mean, although routing is done at AS level, it's still prefixes, right?
+
+27:35.520 --> 27:41.920
+And these prefixes map to about 70,000 to 80,000. Map the paths. Why such disparity?
+
+27:44.320 --> 27:50.880
+Why there are, like, about a magnitude more prefix or IP prefixes than there are paths?
+
+27:50.880 --> 28:10.400
+Many prefixes live in the same AS, right? So, right, the IP prefixes, you know, at endpoints,
+
+28:10.400 --> 28:19.280
+right? We don't route to transit domains, right? Why would you, you know, normally, right? You don't
+
+28:19.280 --> 28:26.640
+communicate. There's no web server in a giant, fast, 500,000 dollar router in the middle of the internet.
+
+28:27.360 --> 28:34.720
+Right? You don't go to it. You go to the endpoints, yeah? Or CDNs, right? Sort of endpoints.
+
+28:34.720 --> 28:43.120
+Okay? So, that's one. There are way more destination prefixes than there are paths. So,
+
+28:43.120 --> 28:47.600
+many of them live in the same place. Like, UCI probably has a bunch of IP prefixes.
+
+28:48.480 --> 28:53.440
+But anybody who wants to route packets to UCI still uses the same path to get to them.
+
+28:55.840 --> 29:00.800
+I think that figure is about double. So, there are probably, like, 20,000 BGP routers.
+
+29:01.360 --> 29:06.800
+But mind you, when I say BGP routers, I mean border routers are all autonomous systems.
+
+29:08.240 --> 29:14.480
+And every autonomous system, right here, must have at least one if it's a stub autonomous system,
+
+29:14.480 --> 29:18.800
+meaning it's like the endpoint, right? And at least two if it provides transit services.
+
+29:18.800 --> 29:25.120
+But usually, if it provides transit services, like NISP is kind of a transit service, like COX
+
+29:26.320 --> 29:29.600
+or AT&T, they'll have hundreds of BGP routers.
+
+29:31.680 --> 29:37.600
+Okay. Again, there's probably about 3,000 ASs today. Don't know. You can probably look this up
+
+29:37.600 --> 29:40.960
+very quickly. Somebody should look up on Google and tell me how many ASs there are today.
+
+29:41.680 --> 29:45.600
+Definitely more than 2,000. But this information should be available.
+
+29:46.880 --> 29:52.320
+Some 6,000 or so. That probably did not change very much. But 6,000 organizations own prefixes,
+
+29:52.320 --> 29:59.520
+meaning they have registered prefixes that are assigned to them. There's parts of the IP address space
+
+29:59.520 --> 30:08.080
+that is fixed for them. And this is still the case, I believe. I think I recently saw a paper
+
+30:08.080 --> 30:13.040
+where they confirm that this is still the case. So what does that mean? It means on the internet,
+
+30:13.040 --> 30:19.440
+things are not as far as you think, in terms of like how many ASs you transit on the way to the
+
+30:19.440 --> 30:29.920
+destination. So think about it. This says an average route length for internet traffic is less than four.
+
+30:29.920 --> 30:42.720
+And this is length in terms of AS hops, not in terms of like IP router hops.
+
+30:43.280 --> 30:50.480
+IP router hops is my favorite number, but in terms of AS hops is less than four. And what it tells you is that
+
+30:50.480 --> 30:58.320
+there's the AS where the packet starts and AS where the packet ends. That's two.
+
+31:00.400 --> 31:05.200
+And there's at least one transit usually, right? Unless the two ASs are connected, which is usually
+
+31:05.200 --> 31:12.080
+not the case. But so there's like three is kind of a given. But then think about the real world,
+
+31:12.080 --> 31:20.400
+right? You could be connecting to like, I don't know, Solomon Islands, or Madagascar, or somewhere
+
+31:20.400 --> 31:27.920
+in the North Pole to a US Arctic station. And still, there may be AS paths that are longer, like six or
+
+31:27.920 --> 31:33.840
+seven, but the average is less than four, which means the average is like source domain, destination
+
+31:33.840 --> 31:36.240
+domain, and two transits in the middle. Yeah?
+
+31:36.240 --> 31:41.920
+But that happens to average most of my requests. I'm not going to the North Pole. I'm going probably
+
+31:41.920 --> 31:49.200
+somewhere within America. Okay, you are within the US. So you're going to
+
+31:51.760 --> 31:53.040
+Google, right?
+
+31:55.920 --> 31:57.600
+The route length is probably three.
+
+31:59.840 --> 32:05.440
+That's my guess. But you can do a tracer route, and from tracer route, not always, but you can often
+
+32:05.440 --> 32:12.400
+deduce how many AS hubs. Because tracer route might give you a reverse DNS lookup,
+
+32:12.400 --> 32:18.240
+which might actually give you that, not this VIP address of what hubs your packets are taking,
+
+32:18.240 --> 32:25.040
+but the actual host name. And so by the host name, you can tell the domain. And the domain often tells
+
+32:25.040 --> 32:34.960
+you that that's a different AS. Does that make sense? So it has to be that at least three, maybe four,
+
+32:34.960 --> 32:41.920
+you know? I mean, let's say you go to, I don't know, state of Florida government website, maybe it will
+
+32:41.920 --> 32:49.760
+be four in that case, you know? Or some small department in the University of Lower East South Dakota
+
+32:49.760 --> 32:54.880
+somewhere. Yeah. But that's my guess. But it has to be at least three.
+
+32:54.880 --> 33:03.440
+So, I don't know if it's surprising, most people get surprised by this, that it's such a small number
+
+33:03.440 --> 33:10.880
+of AS hubs. And 50% of the routes are less than four, and that's, tells you like that's the typical
+
+33:10.880 --> 33:18.480
+thing, right? Source domain, source AS, one transit, and the destination. 95 of them are less than five,
+
+33:18.480 --> 33:25.440
+five. Which means you really have to try hard to get, to hop through more than five domains.
+
+33:29.200 --> 33:33.920
+And mind you, internet includes, I think it also includes like cellular, for example,
+
+33:33.920 --> 33:41.440
+you're using your phone, right? And you don't have Wi-Fi access, or you're just not using Wi-Fi.
+
+33:41.440 --> 33:47.760
+But you're still using IP, right? And so you do IP over cellular. So you're still kind of,
+
+33:47.760 --> 33:49.200
+in fact, a part of the internet.
+
+33:53.680 --> 33:54.400
+Alright, so,
+
+33:56.880 --> 34:03.760
+a lot of problems in BGP, not just BGP, but other routing protocols, but BGP has been susceptible to it,
+
+34:03.760 --> 34:08.080
+is something called black-holing. Black-holing is when a router
+
+34:08.080 --> 34:21.840
+advertises routes that are too good. Right? And it's like, I have a distance one route to everyone.
+
+34:24.000 --> 34:31.360
+Okay? And so, what happens? Like bees and honey, right? To use a more polite analogy,
+
+34:31.360 --> 34:42.000
+everybody starts sending traffic to me. Okay? Which is problematic in two cases, right? First,
+
+34:42.000 --> 34:48.000
+if this happens accidentally, I get swamped. Clearly, right? Because everybody says, oh,
+
+34:48.000 --> 34:54.720
+forget all the other routes I have. This guy has route one distance to everybody. Must be amazing.
+
+34:54.720 --> 35:01.760
+So everybody starts sending traffic to me. There's congestion near me. I get totally, you know,
+
+35:01.760 --> 35:07.440
+strangled. Nobody can communicate to anybody, right? Because everybody's sending traffic to me
+
+35:07.440 --> 35:14.480
+that I can't handle. Right? So, big problem. Black-holing, right? But it can also be done
+
+35:14.480 --> 35:20.000
+maliciously. So it has happened accidentally. It has happened maliciously. When somebody says,
+
+35:20.880 --> 35:27.920
+I don't like this company over here. This, I don't know, this whistleblower.com. I don't like them.
+
+35:29.120 --> 35:33.680
+So I'm going to advertise a very low dislike. I'm one hop from whistleblower.com.
+
+35:34.560 --> 35:38.880
+So essentially, she's like, send me their traffic. Send me their traffic. So I can just discard it.
+
+35:41.200 --> 35:47.920
+Okay? This has happened as well. Back in prehistory, before you all were born, 97,
+
+35:47.920 --> 35:53.840
+was already after the birth of the web. That was the day the internet died. I remember it.
+
+35:55.920 --> 36:03.920
+This Florida ISP de-aggregated its BGP routing tables and basically re-agnetized it. It basically
+
+36:03.920 --> 36:11.760
+said what I just described. It said, I'm neighbors with everybody. Bam! The internet just crawled
+
+36:11.760 --> 36:19.520
+first like slow down like within seconds. Okay? So it has best route to everywhere on the internet.
+
+36:19.520 --> 36:24.960
+And of course, it has to happen in Florida. Right? The most intellectual state in the nation.
+
+36:24.960 --> 36:36.000
+Also, today, this is not the case, but the original BGP protocol or sort of the virgin BGP protocol,
+
+36:36.000 --> 36:45.120
+the vanilla one, has no security. Again, designed for a friendly internet, right? So no authentication,
+
+36:45.120 --> 36:52.640
+no integrity. Right? Today, it still doesn't, but there's something called BGP sec, which is the,
+
+36:52.640 --> 36:58.560
+like IP sec for BGP basically, kind of like. And it establishes secure tunnels
+
+37:00.560 --> 37:05.280
+between adjacent BGP routers. So it sends that updates over those secure tunnels.
+
+37:06.560 --> 37:12.960
+Now, that prevents somebody from injecting packets, right? Or modifying packets between two adjacent
+
+37:12.960 --> 37:19.520
+routers. But it does not prevent the malicious router from advertising, uh, from advertising valid,
+
+37:19.520 --> 37:26.000
+uh, sort of, uh, malicious routes because, you know, it's, it's, it has a secure connection.
+
+37:26.880 --> 37:32.080
+So this, this has happened a number of paths. So this is, uh, just for you to read.
+
+37:32.080 --> 37:44.400
+This is back in 2003, I think. So YouTube has been around for a long time, right? YouTube actually
+
+37:44.400 --> 37:52.160
+predates Google, even though Google owns it, uh, today. But, uh, so YouTube was popular already in
+
+37:52.160 --> 38:00.080
+early 2000. So YouTube advertises, see, this is IP prefix. You know, everyone knows this notation,
+
+38:00.080 --> 38:06.720
+you know, 22 bits, okay? Um, so it says here on YouTube, you know, and, uh, it's as an AS, right?
+
+38:06.720 --> 38:10.960
+It's called, you see there it says AS three, three, six, five, six, one, three, six, five, six, one,
+
+38:10.960 --> 38:16.640
+is the autonomous system ID assigned to YouTube. I think it's still in case today. Yeah.
+
+38:16.640 --> 38:18.960
+What do you mean by YouTube for names?
+
+38:18.960 --> 38:24.320
+Google. Well, I think YouTube was there. YouTube was a company.
+
+38:24.320 --> 38:28.720
+I think it came, like, seven years later. Like 2005, it was YouTube.
+
+38:28.720 --> 38:33.920
+Wait. 2008. Okay. Do a quick Wikipedia from here.
+
+38:33.920 --> 38:37.520
+I did. And? Google was 98. YouTube was 2005.
+
+38:37.520 --> 38:42.320
+Google was 98? Nobody heard of it until, like, 2003 or something.
+
+38:42.320 --> 38:45.040
+Sure. But even then, YouTube stole them.
+
+38:45.040 --> 38:47.440
+So it's later? Yeah, a little bit later.
+
+38:47.440 --> 38:50.080
+But it wasn't part of Google. No, it wasn't right now.
+
+38:50.080 --> 38:51.440
+Okay. So at least I got one thing right.
+
+38:53.040 --> 39:00.000
+Okay. Uh, so there's your YouTube advertising to the rest of the of the world that here I am.
+
+39:00.000 --> 39:03.440
+And here the Pakistani government decided that it doesn't like YouTube.
+
+39:03.440 --> 39:09.920
+And so a Pakistani ISP, right, telecom, telecom, that is 7557,
+
+39:09.920 --> 39:12.720
+advertising, see that 24?
+
+39:17.440 --> 39:19.280
+Right? 2865 and 52.
+
+39:19.840 --> 39:22.240
+So it basically says, I subsume.
+
+39:22.480 --> 39:25.440
+This is a, this is, this is saying, I subsume YouTube.
+
+39:25.440 --> 39:31.520
+So all worldwide YouTube traffic went to Pakistan.
+
+39:33.280 --> 39:33.920
+For a little bit.
+
+39:34.800 --> 39:36.320
+They had to manually intervene.
+
+39:37.920 --> 39:39.440
+And it was a two hour outage.
+
+39:39.440 --> 39:40.320
+People were incensed.
+
+39:40.320 --> 39:44.320
+Valuable videos were not watched.
+
+39:48.320 --> 39:51.440
+There were other incidents that one interesting one was the spammers.
+
+39:52.400 --> 39:57.920
+So we have a, if we get to it, because we're moving very slow in this class, but steady.
+
+39:57.920 --> 40:00.080
+If we get to it, there's a lecture on spam.
+
+40:00.080 --> 40:07.200
+But, you know, spammers hijacked a bunch of, a bunch of, kind of a segment of IP prefixes,
+
+40:07.200 --> 40:12.240
+allocated to Northrop Grumman, a company you might have heard of, defense company, very large,
+
+40:12.240 --> 40:16.000
+located here in Southern California, among other places.
+
+40:16.720 --> 40:24.000
+So it was an unused block of addresses that was allocated to Northrop Grumman since like 20 years
+
+40:24.000 --> 40:26.240
+before that, okay?
+
+40:27.120 --> 40:31.120
+They were, God knows what they were supposed to use it for, but it was allocated to them.
+
+40:31.120 --> 40:34.880
+Now, a bunch of spammers hijacked that.
+
+40:36.000 --> 40:38.960
+They just used those addresses to send spam.
+
+40:40.960 --> 40:41.920
+But guess what happened?
+
+40:43.280 --> 40:46.880
+I don't know if they intended it or not, but one, one important consequence is
+
+40:47.520 --> 40:54.880
+that because of their, there were already anti-spam measures, the entire block wound up on the, on the, on the, on the, basically blacklist.
+
+40:56.560 --> 40:56.880
+Okay?
+
+40:58.400 --> 41:05.280
+So, took two months to actually manually reclaim ownership of those addresses and remove them from the blacklist.
+
+41:07.120 --> 41:12.160
+Then there was this Malaysian ISP, also that hijacked the prefix of Yahoo.
+
+41:12.160 --> 41:20.640
+Nobody knows if it was accidental or political, not sure what Malaysia has against Yahoo, I don't think, probably it was accidental.
+
+41:23.040 --> 41:28.800
+This was more like, more likely to have been political, the Turkish ISP did this in 2004.
+
+41:29.760 --> 41:33.520
+But similar thing to what the Pakistan ISP did in a previous slide.
+
+41:36.160 --> 41:39.280
+This is a much more recent, this is only four years ago.
+
+41:39.280 --> 41:42.320
+Maybe you remember, there was a Facebook outage.
+
+41:42.320 --> 41:51.920
+And this was, this was accidental, but could have been malicious, but in this case, actually, no, Facebook, basically, itself, didn't do itself.
+
+41:51.920 --> 41:56.480
+It withdrew routes of, of, of its prefixes from the DNS servers.
+
+41:57.280 --> 42:00.720
+And basically, nobody could resolve Facebook addresses anymore.
+
+42:02.400 --> 42:06.000
+Which means, what, like, it's not that Facebook couldn't be accessed.
+
+42:06.800 --> 42:08.160
+Facebook was up and running.
+
+42:09.120 --> 42:16.320
+But if you type facebook.com, the DNS would not be able to tell you the IP address.
+
+42:17.680 --> 42:18.000
+Okay?
+
+42:18.320 --> 42:22.880
+So if you had cached, and some people did this, I remember there was a discussion on the forums.
+
+42:23.120 --> 42:31.200
+It's like, if you had actually cached the IP address of Facebook, that you could actually type the IP address in the URL, right?
+
+42:31.200 --> 42:34.640
+You do know that you can actually substitute the domain name with the IP address.
+
+42:35.520 --> 42:37.680
+In your, like, type it in, in your URL.
+
+42:38.480 --> 42:39.760
+Well, if you did that, it would work.
+
+42:40.320 --> 42:42.480
+But if you type in facebook.com, it wouldn't.
+
+42:42.480 --> 42:46.320
+Because, basically, Facebook shot itself in the book.
+
+42:46.320 --> 42:49.360
+But it happened, not because of DNS, it did happen because of BGP.
+
+42:51.280 --> 42:51.520
+Right?
+
+42:51.520 --> 42:58.720
+Because BGP, right, withdrew address prefixes for Facebook's DNS servers.
+
+42:58.720 --> 43:05.760
+And when you resolve facebook.com, you can sell Facebook DNS servers.
+
+43:10.640 --> 43:10.960
+Okay.
+
+43:12.320 --> 43:12.960
+Switch over.
+
+43:13.840 --> 43:14.880
+Domain name service.
+
+43:14.880 --> 43:15.680
+Nice transition.
+
+43:17.280 --> 43:18.640
+Designed by a guy from here.
+
+43:20.400 --> 43:23.120
+Got a PhD around 82, 83.
+
+43:23.120 --> 43:26.240
+In ICS.
+
+43:27.840 --> 43:30.000
+And I met him a bunch of times.
+
+43:30.000 --> 43:34.800
+In fact, I worked in the same organization that he, that he was for a few years.
+
+43:35.680 --> 43:37.360
+So a guy's name is Paul Macapetrius.
+
+43:37.360 --> 43:39.200
+He's kind of a serial entrepreneur these days.
+
+43:39.200 --> 43:40.960
+Not much of a researcher or a scientist.
+
+43:40.960 --> 43:48.880
+But back in the early 80s, he worked in a place up in Marina del Rey.
+
+43:49.760 --> 43:51.680
+Called Information Sciences Institute.
+
+43:51.680 --> 43:54.000
+Which is part of USC School of Engineering.
+
+43:54.000 --> 43:56.080
+And basically like a research used to be.
+
+43:56.080 --> 43:57.440
+Today it's just a development shop.
+
+43:57.440 --> 43:59.760
+But back then it was a research think tank.
+
+44:00.640 --> 44:01.920
+They did a lot of AI research.
+
+44:01.920 --> 44:06.320
+They did a lot of like defense optics and electronics research.
+
+44:06.320 --> 44:07.520
+And they did intern research.
+
+44:07.520 --> 44:09.920
+So some of the like IP for example.
+
+44:09.920 --> 44:12.160
+TCP IP were partly developed there.
+
+44:12.960 --> 44:14.880
+At this USC ISI.
+
+44:15.600 --> 44:20.880
+So this guy, Paul Macapetrius, he was a staff researcher there.
+
+44:20.880 --> 44:24.000
+And he, people say he invented DNS.
+
+44:24.000 --> 44:25.600
+There's no such thing as invented DNS.
+
+44:25.600 --> 44:28.320
+DNS is a architecture.
+
+44:28.320 --> 44:33.360
+What he did is that he realized that there was, the internet was growing.
+
+44:33.360 --> 44:35.440
+Even already then, like in the early 80s.
+
+44:36.160 --> 44:43.520
+And there needs to be a way to map the human readable host names.
+
+44:44.160 --> 44:49.520
+Like foob.bar.com into IP addresses like 128, 195, 2.3.
+
+44:49.520 --> 44:51.040
+Which nobody can remember.
+
+44:51.040 --> 44:51.840
+Right?
+
+44:51.840 --> 44:53.040
+Even back then it was a pain.
+
+44:53.920 --> 44:56.480
+So he's the one that sort of realized it first.
+
+44:56.480 --> 44:59.680
+And then came up with the first kind of cut implementation.
+
+44:59.680 --> 45:01.360
+Of what we today call DNS.
+
+45:01.360 --> 45:03.440
+Now DNS has evolved a lot.
+
+45:03.440 --> 45:05.360
+It's not like IP.
+
+45:05.360 --> 45:10.320
+IP kind of remained, IPv4 remained static since 1980 till what?
+
+45:10.320 --> 45:12.640
+Early 40, 45 years.
+
+45:12.640 --> 45:14.160
+But DNS evolved.
+
+45:14.160 --> 45:16.400
+But the idea behind it is the same.
+
+45:16.400 --> 45:19.440
+It's supposed to resolve, right?
+
+45:19.440 --> 45:23.200
+IP domain names or host names.
+
+45:23.200 --> 45:25.280
+And give you back IP addresses.
+
+45:25.280 --> 45:29.840
+It's a hierarchical system.
+
+45:30.800 --> 45:31.120
+Okay?
+
+45:31.120 --> 45:33.520
+And without it the internet would grind to a halt.
+
+45:33.520 --> 45:33.760
+Right?
+
+45:33.760 --> 45:40.400
+In the domain name service today, the domain name system is as important as a routing protocol.
+
+45:40.400 --> 45:40.560
+Right?
+
+45:40.560 --> 45:42.720
+So without routing, the internet dies.
+
+45:42.720 --> 45:44.160
+Without DNS, the internet dies.
+
+45:44.160 --> 45:45.760
+Not right away necessarily, right?
+
+45:45.760 --> 45:51.520
+Because if you cache some DNS addresses, you might not be able to.
+
+45:51.520 --> 45:53.200
+You might be able to use the internet for a little bit.
+
+45:54.240 --> 45:55.280
+So after a while, I'll be back.
+
+45:56.240 --> 45:58.880
+And there are a bunch of these.
+
+45:58.880 --> 45:59.840
+What's the root servers?
+
+46:02.240 --> 46:06.240
+Anyway, so root servers are like the gods of DNS.
+
+46:06.240 --> 46:10.160
+Like they know, they know stuff.
+
+46:13.200 --> 46:14.960
+And they are replicated, right?
+
+46:14.960 --> 46:21.280
+So they are replicated for fault tolerance and load distribution, load balancing, okay?
+
+46:22.080 --> 46:22.800
+Around the world.
+
+46:23.760 --> 46:28.560
+And they're not like, there's no like DI there.
+
+46:28.560 --> 46:31.360
+They're not trying to be equitable, right?
+
+46:31.360 --> 46:31.920
+Or fair.
+
+46:31.920 --> 46:36.880
+The reason they are where they are is because of like heavy internet communication.
+
+46:37.520 --> 46:40.400
+So they're not trying to say, oh, we should put one in Australia.
+
+46:40.400 --> 46:41.760
+Because Australia is a continent.
+
+46:41.760 --> 46:43.360
+We should put one in Africa.
+
+46:43.360 --> 46:45.920
+We should put one in, I don't know, Siberia.
+
+46:45.920 --> 46:46.400
+No.
+
+46:46.400 --> 46:49.440
+The idea is, where is the like heaviest communication?
+
+46:50.400 --> 46:51.120
+Right?
+
+46:51.120 --> 46:58.640
+So it's not driven by so much geopolitical or fairness doctrine, but rather practical stuff.
+
+46:58.640 --> 47:00.240
+But where is the traffic?
+
+47:00.800 --> 47:01.920
+Most of the traffic, right?
+
+47:01.920 --> 47:04.800
+So that's why you see nothing in South America.
+
+47:05.920 --> 47:09.760
+South America, as far as the internet goes, is not a powerhouse.
+
+47:10.960 --> 47:11.600
+Not a health.
+
+47:11.600 --> 47:13.280
+I mean, people obviously use the internet here.
+
+47:13.920 --> 47:16.560
+But not as heavily as other places.
+
+47:16.560 --> 47:17.520
+Africa, nothing.
+
+47:18.720 --> 47:19.760
+Australia, nothing.
+
+47:21.360 --> 47:23.680
+This whole chunk of Asia, right?
+
+47:23.680 --> 47:25.520
+Or Eurasia, nothing.
+
+47:25.520 --> 47:26.640
+But there is something in Japan.
+
+47:28.800 --> 47:29.360
+Okay?
+
+47:29.360 --> 47:33.200
+And that one must have been more historic, because Japan was one of the first to adopt the internet.
+
+47:34.160 --> 47:37.440
+Back in the 70s, or early 80s.
+
+47:37.440 --> 47:43.200
+So we have nearby this USCISI, the Marine and Array, that has two root services.
+
+47:43.200 --> 47:48.480
+One is actually operated by them, and then is operated by ICANN.
+
+47:48.480 --> 47:51.120
+Internet something authority.
+
+47:51.120 --> 47:59.760
+It's the organization, non-profit organization that manages essentially the gaming and all kinds of high-level issues for the internet.
+
+47:59.760 --> 48:03.840
+And then here, Northern California is a bunch, and then on the East Coast.
+
+48:03.840 --> 48:07.360
+Some of these are companies, Verisign and Cogent are companies.
+
+48:07.360 --> 48:09.200
+Verisign has been bought, I think.
+
+48:09.200 --> 48:12.720
+Then there is another very exciting.
+
+48:12.720 --> 48:13.200
+Okay?
+
+48:13.200 --> 48:19.520
+Then there is ARL Army Research Lab, US Department of Defense, University of Maryland, Grand One, etc.
+
+48:19.520 --> 48:19.840
+Okay?
+
+48:19.840 --> 48:20.560
+So you get to see.
+
+48:20.560 --> 48:23.360
+Then London has, and then Stockholm has something.
+
+48:23.360 --> 48:29.680
+So these are giant, I mean giant in terms of power, not in size, machines.
+
+48:29.680 --> 48:33.760
+They get a lot of traffic.
+
+48:33.760 --> 48:35.680
+They are super well connected.
+
+48:35.680 --> 48:36.400
+Okay?
+
+48:36.400 --> 48:42.160
+They have very high bandwidth wires, essentially, or lines connected to them.
+
+48:42.160 --> 48:43.120
+Multiple ones.
+
+48:43.120 --> 48:43.360
+Okay?
+
+48:43.360 --> 48:46.800
+So they should be able to withstand a lot of traffic.
+
+48:48.480 --> 48:49.200
+Simultaneously.
+
+48:50.240 --> 48:50.560
+Okay?
+
+48:50.560 --> 49:00.320
+And so there is this whole architecture for the root that I won't get into that essentially makes
+
+49:00.320 --> 49:01.040
+them fault tolerant.
+
+49:01.040 --> 49:05.040
+So there have been a number of attacks trying to take down, because if you take down the root service,
+
+49:05.040 --> 49:06.000
+you bring down DNS.
+
+49:08.160 --> 49:09.600
+But they're very hard to take down.
+
+49:11.920 --> 49:14.000
+So what is the root, right?
+
+49:14.000 --> 49:16.240
+So remember I showed you a bunch of them, right?
+
+49:16.240 --> 49:18.320
+But every root is essentially the same.
+
+49:18.320 --> 49:24.480
+There is a root DNS server that is responsible for what's called the dot domain.
+
+49:26.320 --> 49:26.800
+The dot.
+
+49:28.960 --> 49:32.320
+And then below the dot, you have the top level domains.
+
+49:33.600 --> 49:47.840
+Like .com, .net, .org, .iju, etc., .tw for Taiwan, .jp for Japan, .au for Australia.
+
+49:47.840 --> 49:50.080
+There are others, there are others like that, okay?
+
+49:50.080 --> 49:51.520
+National level domains.
+
+49:51.520 --> 49:53.280
+But these are top.
+
+49:54.720 --> 49:57.120
+And then .com will be like here, right?
+
+49:57.120 --> 49:58.720
+Google.com, etc., etc.
+
+49:58.720 --> 50:02.640
+These are authoritative domains for like organizations.
+
+50:04.640 --> 50:07.360
+WordPress, Wikipedia, Harvard, etc., right?
+
+50:07.360 --> 50:09.440
+So UCI would be under HTML, of course.
+
+50:09.440 --> 50:15.600
+And then, yeah, I'm not showing you all the levels that were the hierarchy, because obviously,
+
+50:16.960 --> 50:19.680
+actually, UC.edu would be here.
+
+50:19.680 --> 50:21.360
+Maybe UCI would be under UC.
+
+50:24.560 --> 50:25.360
+Not sure about that.
+
+50:26.320 --> 50:27.040
+Don't quote me.
+
+50:27.040 --> 50:31.520
+How does a DNS actually work?
+
+50:31.520 --> 50:37.040
+Well, when you type in a human readable post name, okay?
+
+50:37.040 --> 50:44.240
+Whether it's facebook.com, google.com, you know, dailymail.com.uk, whatever the heck.
+
+50:44.240 --> 50:52.960
+Whatever it is you type it in, you have in your device, not in your browser.
+
+50:52.960 --> 50:53.920
+It's not part of your browser.
+
+50:53.920 --> 50:55.520
+It's in your device.
+
+50:55.520 --> 50:56.960
+You have the network configuration.
+
+50:56.960 --> 50:58.880
+How many of you have to look at network configuration?
+
+51:00.720 --> 51:01.920
+Oh, nobody's still curious?
+
+51:01.920 --> 51:02.640
+They do.
+
+51:02.640 --> 51:02.880
+Okay.
+
+51:03.520 --> 51:09.680
+Well, you know, when you look in your Mac or your Windows machine, it will tell you like,
+
+51:09.680 --> 51:11.600
+okay, here's your ID address, right?
+
+51:13.520 --> 51:13.760
+Okay?
+
+51:14.320 --> 51:15.120
+Here's your router.
+
+51:15.920 --> 51:16.480
+It's all there.
+
+51:17.520 --> 51:21.200
+It will also tell you, here's your DNS server.
+
+51:21.200 --> 51:26.080
+It's usually configured, like, when you connect to the wireless, it's configured dynamically.
+
+51:26.080 --> 51:27.680
+You can also configure it manually.
+
+51:28.640 --> 51:32.640
+Like, you can put, I don't know, 8888, I think that's the Google DNS, right?
+
+51:33.200 --> 51:37.120
+You can configure it manually or you can do it, you can just get it from the network,
+
+51:37.120 --> 51:39.280
+from the local network that you are connected to.
+
+51:41.040 --> 51:44.480
+Anyway, so this is your, what's called, local DNS recursive resolver.
+
+51:45.360 --> 51:50.560
+This is the DNS agent essentially you go to for all your queries.
+
+51:51.920 --> 51:52.960
+You don't go to the root.
+
+51:54.720 --> 51:55.280
+Okay?
+
+51:55.280 --> 51:58.880
+Because you don't know its address and even if you did, you wouldn't talk to it.
+
+51:59.760 --> 52:04.800
+So you come to the DNS resolver and it says, oh, I want to resolve WWICS UCIEDU.
+
+52:05.360 --> 52:06.000
+I don't know.
+
+52:07.040 --> 52:08.080
+I don't know what that is.
+
+52:09.520 --> 52:10.160
+Not always.
+
+52:10.160 --> 52:12.400
+Sometimes it does already, if it's cached.
+
+52:12.960 --> 52:15.040
+But it says, generally it says, I don't know what this is.
+
+52:15.920 --> 52:16.960
+But let me ask the root.
+
+52:16.960 --> 52:18.240
+The root is God.
+
+52:18.240 --> 52:19.520
+So God should know.
+
+52:20.240 --> 52:22.720
+So he goes, WWICS UCIEDU, can you tell me?
+
+52:22.720 --> 52:26.480
+And he says, no, but I give you a nameserver record.
+
+52:26.480 --> 52:27.440
+This is what NSD is.
+
+52:27.440 --> 52:30.960
+So here's a record for UCIEDU, which I've heard of.
+
+52:30.960 --> 52:33.520
+Okay?
+
+52:35.520 --> 52:39.840
+Then, I'm a bit abstracting it here, because actually at the top there, there might be like
+
+52:39.840 --> 52:43.120
+root and root will give you a pointer to EDU server.
+
+52:43.120 --> 52:43.600
+Okay?
+
+52:43.600 --> 52:45.120
+But then I'm abstracting it away.
+
+52:45.120 --> 52:48.720
+Then it says, okay, here is a, and nameserver record to UCIEDU.
+
+52:48.720 --> 52:54.240
+So you go here, you get this back, and then you quickly say, okay, now I can contact UCIEDU.
+
+52:54.240 --> 52:58.080
+So I tell it, hey, I'm trying to resolve ICS UCIEDU.
+
+52:58.080 --> 53:02.480
+And it returns to you the nameserver record.
+
+53:02.480 --> 53:04.000
+It says, yeah, I'm UCIEDU.
+
+53:04.000 --> 53:05.760
+I know about ICS UCIEDU.
+
+53:05.760 --> 53:07.360
+Here is its address.
+
+53:08.400 --> 53:13.040
+So you go here, and you say, I want to resolve WWICS UCIEDU.
+
+53:13.040 --> 53:17.280
+And he says, oh, well, I do know WWS, the web server for ICS.
+
+53:17.920 --> 53:21.440
+And it returns to you the actual IP address.
+
+53:21.440 --> 53:28.160
+So this, as you see, is not an easy, like, ask a query, get back a reply.
+
+53:28.720 --> 53:30.400
+It's a set of recursive queries.
+
+53:32.560 --> 53:33.360
+How many?
+
+53:33.360 --> 53:33.840
+Depends.
+
+53:35.200 --> 53:36.960
+There are some hierarchies that are quite deep.
+
+53:36.960 --> 53:40.320
+So it may go on for more than three handshakes like this.
+
+53:41.200 --> 53:46.480
+That's why sometimes when you type, and the internet is not down, but you can see that there's a delay.
+
+53:47.440 --> 53:47.760
+Right?
+
+53:47.760 --> 53:48.400
+Have you seen that?
+
+53:49.600 --> 53:52.880
+You're connected, the internet is working fine, but there's this delay.
+
+53:53.680 --> 53:56.160
+And the delay is typically not because of your loading pages.
+
+53:56.960 --> 54:12.480
+It's, I mean, it can be, but more often than not, the delays become DNS.
+
+54:16.480 --> 54:18.320
+Okay.
+
+54:19.120 --> 54:25.920
+Now, to reduce the load on DNS servers, which, as you can imagine, are very busy bees, right?
+
+54:25.920 --> 54:26.720
+Because they're popular.
+
+54:26.720 --> 54:29.360
+Everybody goes to the DNS servers.
+
+54:30.160 --> 54:33.760
+So to reduce the load, the responses are cached.
+
+54:33.760 --> 54:46.720
+So your local resolver here, this local DNS recursive resolver, will keep a cache of recent responses.
+
+54:48.320 --> 54:48.880
+Okay?
+
+54:48.880 --> 54:51.920
+How this cache is maintained depends on something called TTL, time to live.
+
+54:51.920 --> 55:00.080
+It could be, it could be your ISP.
+
+55:01.760 --> 55:06.240
+Because, like, when you go home, right, and you connect, I don't know if you, there's a wire,
+
+55:06.240 --> 55:09.440
+wire also connecting in a dorm or, let's say you go to your parents' home, okay?
+
+55:10.400 --> 55:12.320
+You have an, they have an ISP probably, right?
+
+55:12.320 --> 55:14.960
+I mean, they're, they're buying internet from somebody, right?
+
+55:14.960 --> 55:21.120
+And when you, when you open your laptop, the DNS resolver's name will be, will be in the configuration.
+
+55:21.120 --> 55:21.920
+I usually there.
+
+55:22.960 --> 55:25.360
+It is possible to run the DNS resolver locally.
+
+55:26.400 --> 55:30.160
+You can run, install a DNS resolver on your local machine.
+
+55:31.600 --> 55:34.000
+I don't recommend it necessarily, because you need to know what you're doing.
+
+55:34.000 --> 55:34.400
+Yeah?
+
+55:34.400 --> 55:34.800
+Yeah.
+
+55:34.800 --> 55:43.920
+Because we can choose our DNS resolver by ourselves, can we choose the AS for the BGP routing path?
+
+55:43.920 --> 55:44.640
+No.
+
+55:44.640 --> 55:45.440
+No, you may not.
+
+55:46.080 --> 55:49.840
+Because you don't route at the ASL, you don't run BGP.
+
+55:52.960 --> 55:58.480
+The, if you are, let's say, customer of Cox.net, of Cox, internet, right?
+
+55:58.480 --> 56:00.560
+Or AT&T, they pick it around.
+
+56:01.840 --> 56:02.560
+Right?
+
+56:02.560 --> 56:09.760
+Which AS, so you don't have, if they decide to send packets through North Korea, you have no control.
+
+56:11.920 --> 56:13.120
+They have control.
+
+56:13.120 --> 56:18.320
+They can say, I want to, I want to send packets through, I don't know, New Zealand instead of North Korea.
+
+56:18.320 --> 56:21.120
+They can prefer one or the other, but you have no control.
+
+56:23.120 --> 56:27.760
+Okay, so, as I said, the responses are cached.
+
+56:28.560 --> 56:31.280
+And this is like sometimes, you know how you mistype something?
+
+56:32.080 --> 56:36.720
+Mistype an address and it goes, name not, host not found or something.
+
+56:37.280 --> 56:41.840
+And you keep clicking return and it just like, it doesn't, it very quickly does host not found, host not found.
+
+56:41.840 --> 56:43.200
+Because it cached.
+
+56:44.240 --> 56:48.800
+It doesn't want to bother the DNS server just to find out that host not found.
+
+56:50.240 --> 56:51.200
+So that's one reason.
+
+56:51.200 --> 56:54.000
+The other reason is if you are going to, you know, communicate to the same host.
+
+56:54.000 --> 56:58.160
+Like if you're going to Facebook multiple times, it doesn't need to resolve it every single time.
+
+56:58.800 --> 56:58.880
+Right?
+
+56:58.880 --> 57:02.480
+You can just like, cache it in the local resolver and tell you.
+
+57:02.480 --> 57:03.920
+It's faster that way.
+
+57:04.800 --> 57:05.120
+All right.
+
+57:05.120 --> 57:09.440
+So that's called negative queries, right?
+
+57:09.440 --> 57:10.320
+They're cached.
+
+57:10.880 --> 57:14.160
+Cached records are timed out periodically.
+
+57:14.160 --> 57:18.400
+The time to live is subject to what the DNS tells you.
+
+57:18.400 --> 57:23.600
+Okay, so DNS server that returns a particular record tells you.
+
+57:23.600 --> 57:29.840
+Okay, here's the IP or here's the IP address for this host name.
+
+57:29.840 --> 57:33.360
+You can cache this for whatever, 200 seconds.
+
+57:34.480 --> 57:34.720
+Okay?
+
+57:35.840 --> 57:39.600
+Or here's an IP address for something else and you can cache it for 10 seconds.
+
+57:39.600 --> 57:42.240
+So it has a TTL field, every cache.
+
+57:45.920 --> 57:49.840
+And so here it will say, it's just another example of a query.
+
+57:52.160 --> 57:56.960
+It will tell you that here the TTL might be already there, right?
+
+57:56.960 --> 57:57.920
+And ICS.
+
+57:57.920 --> 58:01.920
+You might not need to go to the root, right?
+
+58:03.360 --> 58:08.320
+And the reason is before, remember the previous example where we're looking at WWICSUCID?
+
+58:08.720 --> 58:12.640
+Well, the local resolver, after that, having done that,
+
+58:13.280 --> 58:15.440
+already knows that you don't need to go to the root.
+
+58:15.440 --> 58:16.880
+You don't need to go to the ICSUCID.
+
+58:16.880 --> 58:22.480
+You can just go to ICS-CCID that will resolve everything that ends with ICS-CCID.
+
+58:23.680 --> 58:31.040
+So because we already resolved WWW, we can just resolve FTP ICS-CCID by going directly here.
+
+58:32.720 --> 58:33.040
+Right?
+
+58:33.040 --> 58:33.920
+Because we cached.
+
+58:34.960 --> 58:37.840
+So this slide connects to one of the previous slides, right?
+
+58:38.320 --> 58:40.400
+Where I showed how to resolve WWW.
+
+58:42.960 --> 58:43.600
+All right.
+
+58:43.600 --> 58:46.720
+So DNS by itself has no security.
+
+58:47.680 --> 58:52.880
+It, how does it know, like, when a local resolver issues a query, right?
+
+58:52.880 --> 58:58.240
+It says to the root review server, it says here, here's WWICSUCID.
+
+58:58.240 --> 58:59.680
+You give me the idea, guys.
+
+58:59.680 --> 59:03.520
+How does it know that the reply is to that query?
+
+59:03.520 --> 59:06.640
+Because it might actually, the local resolver might issue many queries.
+
+59:06.640 --> 59:15.440
+So, the way it's done, the sort of primitive authentication, there is a 16-bit transaction ID
+
+59:16.320 --> 59:18.720
+that every query contains, okay?
+
+59:19.600 --> 59:23.600
+So local resolver issues a query includes a 16-bit transaction ID.
+
+59:23.600 --> 59:28.080
+When it comes back, it should have the same transaction ID that allows it to associate.
+
+59:29.200 --> 59:30.240
+Request with reply.
+
+59:33.840 --> 59:34.400
+Make sense?
+
+59:35.360 --> 59:37.120
+Kind of a primitive authentication.
+
+59:37.120 --> 59:44.880
+Now, it's obviously insecure, because if you have an adversary, it can do the following.
+
+59:45.840 --> 59:50.080
+Again, this is like the classical example of DNS proofing.
+
+59:50.080 --> 59:56.560
+So, I want you to consider an adversary that has a specific victim in mind.
+
+59:56.560 --> 59:58.800
+Now, let's say him.
+
+01:00:00.240 --> 01:00:02.400
+So, this guy's going to be the victim.
+
+01:00:02.400 --> 01:00:03.360
+Yeah, you, sorry.
+
+01:00:06.000 --> 01:00:06.800
+I know his name.
+
+01:00:06.800 --> 01:00:08.720
+Let's say his name is Joe, right?
+
+01:00:09.440 --> 01:00:10.400
+Joe is my victim.
+
+01:00:10.800 --> 01:00:12.400
+I know Joe's email address.
+
+01:00:14.560 --> 01:00:20.320
+I'm going to send him an, or maybe a phone phone, even better, a cell phone.
+
+01:00:22.240 --> 01:00:24.320
+Either or, but cell phone is better.
+
+01:00:25.280 --> 01:00:31.920
+I can send him either a text with a link, or an email with a link, right?
+
+01:00:33.680 --> 01:00:38.000
+You know, I am the widow of the prince of Nigeria.
+
+01:00:38.560 --> 01:00:43.040
+You know, I'm about to transfer you $5 million, but just send me your bank account,
+
+01:00:43.040 --> 01:00:46.320
+and if you want details, I'm going to share my fortune with you.
+
+01:00:46.960 --> 01:00:53.600
+So, basically, the idea is that he is to get him to click on a link.
+
+01:00:55.120 --> 01:00:55.760
+Okay?
+
+01:00:55.760 --> 01:01:02.800
+And the link will have some innocuous looking address, like host1 at foo.com,
+
+01:01:02.800 --> 01:01:05.760
+where foo.com could be a totally benign domain, okay?
+
+01:01:05.760 --> 01:01:12.400
+Benign, not necessarily adversarial domain, right?
+
+01:01:12.400 --> 01:01:14.080
+It could be a bank, for example.
+
+01:01:15.840 --> 01:01:16.560
+So, he clicks.
+
+01:01:16.560 --> 01:01:21.520
+The clicking on that link will cause a DNS lookup, right?
+
+01:01:22.640 --> 01:01:26.160
+Extract the name, the host name, the domain name, and do a DNS lookup.
+
+01:01:26.160 --> 01:01:29.520
+So, that's him, Joe.
+
+01:01:30.560 --> 01:01:30.960
+Client.
+
+01:01:32.080 --> 01:01:34.880
+Whether he clicks on an SMS, a link, an SMS, right?
+
+01:01:34.880 --> 01:01:38.320
+Or, iMessage, or WhatsApp, doesn't matter, right?
+
+01:01:38.320 --> 01:01:39.120
+Or, an email.
+
+01:01:39.120 --> 01:01:44.000
+But the interesting part here is that I know about the time that he does that.
+
+01:01:45.120 --> 01:01:50.560
+That's why I say SMS is preferred, or text is preferred, because if I know he's a curious
+
+01:01:50.560 --> 01:01:54.240
+George, he's going to like, I'm going to send him, and very quickly, he's going to click.
+
+01:01:54.240 --> 01:01:58.240
+And, fishers know how to do this.
+
+01:02:00.640 --> 01:02:08.000
+So, now what I do, as an adversary, I know that he's going to issue a DNS query to a local resolver,
+
+01:02:08.000 --> 01:02:13.920
+so resolve host1 foo.com, right?
+
+01:02:14.640 --> 01:02:23.920
+The local resolver says, oh, let me go to the name server for foo.com, okay?
+
+01:02:24.240 --> 01:02:31.120
+There's some, I'm skipping the root and the .com, et cetera, right?
+
+01:02:31.120 --> 01:02:32.880
+I'm just going to the root, to the last bit, et cetera.
+
+01:02:33.600 --> 01:02:33.920
+Okay.
+
+01:02:35.440 --> 01:02:38.720
+Now, at this point, or at that time, roughly that time,
+
+01:02:40.400 --> 01:02:43.680
+the adversary makes a guess of their transaction ID.
+
+01:02:45.040 --> 01:02:48.400
+Remember, each DNS query has a transaction ID, 16 bits.
+
+01:02:49.200 --> 01:02:51.520
+2 to the 16, not a small number, right?
+
+01:02:51.520 --> 01:02:55.760
+How big is this, 32,000?
+
+01:02:57.680 --> 01:02:58.400
+Something like that.
+
+01:03:00.080 --> 01:03:05.680
+So, your probability of guessing the correct transaction ID is low, right?
+
+01:03:05.680 --> 01:03:16.240
+So, what the adversary does, he doesn't know the transaction ID, because we're not assuming
+
+01:03:16.240 --> 01:03:20.960
+the adversary is actually nearby and listening, right?
+
+01:03:20.960 --> 01:03:23.840
+In this example, this is why this attack is interesting.
+
+01:03:23.840 --> 01:03:25.520
+The adversary could be very far away.
+
+01:03:25.520 --> 01:03:33.280
+Like, Joe would be working for a defense counter or a government agency before.
+
+01:03:34.320 --> 01:03:35.600
+I'm not anywhere near him.
+
+01:03:36.160 --> 01:03:39.440
+I cannot snoop on this.
+
+01:03:39.440 --> 01:03:46.560
+If I snoop, I wouldn't need to guess, right?
+
+01:03:46.560 --> 01:03:50.160
+But I don't snoop, which makes the attack more interesting.
+
+01:03:51.200 --> 01:03:55.760
+So, what I do is I guess a transaction ID, and I generate a fake reply.
+
+01:03:57.120 --> 01:03:58.080
+See that first one?
+
+01:03:58.080 --> 01:03:59.200
+Guess transaction ID.
+
+01:03:59.200 --> 01:04:00.960
+HostFood.com is at 6666.
+
+01:04:02.400 --> 01:04:03.120
+Make another guess.
+
+01:04:04.480 --> 01:04:04.960
+Okay?
+
+01:04:04.960 --> 01:04:06.400
+Another transaction ID.
+
+01:04:06.400 --> 01:04:08.240
+HostFood.com is at 6666.
+
+01:04:08.960 --> 01:04:09.200
+Okay?
+
+01:04:10.240 --> 01:04:15.680
+So, I can generate a very large number of these kind of guessed transaction ID replies.
+
+01:04:17.680 --> 01:04:18.640
+Not infinite, right?
+
+01:04:18.640 --> 01:04:20.640
+I mean, I cannot generate maybe 32,000.
+
+01:04:20.640 --> 01:04:26.240
+Maybe I can generate a couple of hundred in close proximity and send them to the victim, to Joe.
+
+01:04:28.800 --> 01:04:29.120
+Bam.
+
+01:04:31.120 --> 01:04:41.360
+Now, eventually, this DNS server will reply with a correct IP address for Foo.com, as it's supposed to.
+
+01:04:41.360 --> 01:04:42.640
+This is not malicious.
+
+01:04:44.240 --> 01:04:47.920
+This is a good reply, appropriate for that query.
+
+01:04:47.920 --> 01:04:51.520
+But do you see what the problem happens?
+
+01:04:52.560 --> 01:05:02.320
+If the adversary, in one of these guesses, guesses correctly, and beats the reply from the actual DNS server,
+
+01:05:03.200 --> 01:05:04.160
+he wins the game.
+
+01:05:05.840 --> 01:05:08.000
+Very important that you see that.
+
+01:05:10.160 --> 01:05:10.480
+Do you?
+
+01:05:11.200 --> 01:05:12.000
+Not ask.
+
+01:05:12.000 --> 01:05:18.800
+All the adversary needs to do.
+
+01:05:18.800 --> 01:05:21.520
+Now, I know, the bar is high, but the adversary needs to do this.
+
+01:05:22.080 --> 01:05:25.920
+Guess the correct, so the transaction ID guessed by the adversary must match this.
+
+01:05:28.480 --> 01:05:34.240
+And the, one of the red replies from the adversary, right, must come before this one.
+
+01:05:35.200 --> 01:05:36.560
+Before the legitimate reply.
+
+01:05:37.840 --> 01:05:39.200
+It's a probabilistic game.
+
+01:05:41.040 --> 01:05:41.440
+Okay?
+
+01:05:41.440 --> 01:05:42.640
+The adversary may lose.
+
+01:05:43.760 --> 01:05:44.240
+There is.
+
+01:05:45.520 --> 01:05:49.040
+But if he wins one of a hundred, the rewards are interesting.
+
+01:05:49.040 --> 01:05:57.440
+He can try to guess as fast as possible.
+
+01:05:57.440 --> 01:05:59.120
+He can pre-compute the guesses, right?
+
+01:05:59.760 --> 01:06:00.880
+He doesn't need to, right?
+
+01:06:00.880 --> 01:06:03.760
+He just, like, can pre-compute random replies, right?
+
+01:06:03.760 --> 01:06:05.600
+And send them all at the same time.
+
+01:06:05.600 --> 01:06:06.720
+Or roughly at the same time.
+
+01:06:06.720 --> 01:06:08.000
+Bam, bam, bam, bam, bam.
+
+01:06:08.000 --> 01:06:09.200
+As fast as possible.
+
+01:06:09.200 --> 01:06:13.120
+Now, he doesn't know exactly when the client generates this query.
+
+01:06:13.120 --> 01:06:15.280
+But he can guess, right?
+
+01:06:16.000 --> 01:06:18.880
+Like, I send him an SMS, and I know the kind of person he is.
+
+01:06:18.880 --> 01:06:20.640
+Like, maybe I know something about you.
+
+01:06:20.640 --> 01:06:22.880
+Like, I know you replied to SMS quickly, right?
+
+01:06:24.080 --> 01:06:27.280
+I know you're going to click it for the next five seconds, right?
+
+01:06:27.280 --> 01:06:27.680
+Like this.
+
+01:06:27.680 --> 01:06:30.160
+So, in those five seconds, I start generating those replies.
+
+01:06:31.680 --> 01:06:35.440
+You, if you don't expect those replies, you'll just throw them away.
+
+01:06:36.480 --> 01:06:38.320
+Your laptop, your phone will just ignore them.
+
+01:06:38.320 --> 01:06:39.680
+You, as a user, will not know.
+
+01:06:39.680 --> 01:06:41.680
+Right?
+
+01:06:41.680 --> 01:06:48.800
+Because whenever unsolicited DNS replies arrive at your computer or your phone,
+
+01:06:48.800 --> 01:06:50.080
+you, as a user, are not notified.
+
+01:06:50.080 --> 01:06:50.880
+They're just thrown away.
+
+01:06:51.760 --> 01:06:52.960
+Because nobody's expecting them.
+
+01:06:52.960 --> 01:06:53.680
+So they're thrown out.
+
+01:06:54.880 --> 01:06:58.640
+But if one of them comes back and matches the transaction ID, bam,
+
+01:06:59.680 --> 01:07:03.520
+the real one will be ignored because it will arrive later.
+
+01:07:03.520 --> 01:07:11.360
+So, if the attacker loses the game, he has to wait until the TTL, the time to live,
+
+01:07:11.360 --> 01:07:14.080
+and this legitimate reply expires.
+
+01:07:14.800 --> 01:07:16.080
+But the attacker is a patient.
+
+01:07:18.480 --> 01:07:19.360
+You can try again.
+
+01:07:19.360 --> 01:07:23.600
+HostFoo.com, Host3Foo.com, et cetera.
+
+01:07:23.600 --> 01:07:25.040
+But why do that, right?
+
+01:07:26.160 --> 01:07:26.480
+Right?
+
+01:07:27.440 --> 01:07:29.520
+What's the point of hijacking that?
+
+01:07:29.520 --> 01:07:33.520
+What's the point of getting somebody to click on HostFoo.com?
+
+01:07:34.560 --> 01:07:35.680
+Or Foo.com at all?
+
+01:07:35.680 --> 01:07:39.520
+And that is actually pretty easy.
+
+01:07:39.520 --> 01:07:45.840
+So, the idea is that Foo.com could be a legitimate entity, like a bank or insurance company,
+
+01:07:45.840 --> 01:07:47.760
+a university, or so on.
+
+01:07:47.760 --> 01:07:52.720
+So, if you trick and succeed, right?
+
+01:07:52.720 --> 01:08:00.560
+If you trick the client and actually guess the correct transaction ID, you can put a very long time to live.
+
+01:08:00.560 --> 01:08:04.960
+Very long, maximum possible.
+
+01:08:05.840 --> 01:08:15.280
+And now you know that whenever the client goes to anything, Foo.com, he's going to reuse the cash entry.
+
+01:08:17.040 --> 01:08:17.440
+Aha.
+
+01:08:18.720 --> 01:08:29.600
+So, now, the reply actually could be, I don't know where Host1Foo.com is, but I know the authoritative nameset report.
+
+01:08:31.280 --> 01:08:33.040
+So, this is like raising the bar a little bit.
+
+01:08:33.040 --> 01:08:43.520
+Instead of telling the, no, no, here's the host one, Foo.com, it says the authoritative nameserver lives at NS2Foo.com,
+
+01:08:44.720 --> 01:08:46.640
+and its address is 6666.
+
+01:08:51.440 --> 01:08:56.000
+Okay, so this is slightly different from what I showed in the previous slide.
+
+01:08:56.000 --> 01:09:01.280
+The previous slide, what you saw is the tricking once, right, for one host.
+
+01:09:02.080 --> 01:09:05.440
+Basically saying, oh, host1Foo.com lives at 6666.
+
+01:09:07.360 --> 01:09:08.720
+This is a much broader scope.
+
+01:09:08.720 --> 01:09:12.880
+This attack, which is very similar, but it's broader scope.
+
+01:09:12.880 --> 01:09:19.360
+It says, if you guess the correct transaction ID, you can make sure that this client, from now on,
+
+01:09:19.360 --> 01:09:26.080
+when it resolves anything, Foo.com, will go to adversarially controlled nameserver,
+
+01:09:26.080 --> 01:09:28.560
+which is run by the adversarially.
+
+01:09:28.560 --> 01:09:30.560
+Which is run by the adversarially there.
+
+01:09:30.560 --> 01:09:39.840
+So now, if you win the race, this reply, legitimate reply, will be ignored, discarded.
+
+01:09:39.840 --> 01:09:50.960
+And the attacker essentially will make sure that all subsequent, all future DNS requests for anything,
+
+01:09:51.520 --> 01:09:54.960
+anything.foo.com, will go to 6666.
+
+01:09:56.320 --> 01:10:01.680
+A malicious DNS server, fully controlled by the adversary, no need to win any future races.
+
+01:10:01.680 --> 01:10:03.760
+Okay?
+
+01:10:04.720 --> 01:10:06.800
+So much better investment of time for the adversary.
+
+01:10:08.800 --> 01:10:09.200
+All right.
+
+01:10:11.360 --> 01:10:14.400
+By the way, what can cause a DNS lookup?
+
+01:10:15.360 --> 01:10:17.520
+Maybe you already know this, but just about anything.
+
+01:10:18.240 --> 01:10:20.320
+A small ad in a webpage.
+
+01:10:21.360 --> 01:10:21.680
+Okay?
+
+01:10:22.480 --> 01:10:22.880
+Tiny.
+
+01:10:24.000 --> 01:10:25.280
+You don't need JavaScript.
+
+01:10:25.840 --> 01:10:30.880
+If JavaScript is enabled, it's easy, much easier, but you don't even need JavaScript.
+
+01:10:31.680 --> 01:10:39.600
+But, like, a DNS hello, mail, oh, mail servers.
+
+01:10:39.600 --> 01:10:44.560
+Mail servers are a pain in the ass, because, you know, if your mail servers will look up a lot of,
+
+01:10:44.560 --> 01:10:46.640
+do a lot of DNS queries, right?
+
+01:10:48.640 --> 01:10:50.640
+Telnet does a lot of DNS queries.
+
+01:10:50.640 --> 01:10:53.040
+Spam checks do DNS queries.
+
+01:10:55.040 --> 01:10:57.600
+Files, deliveries, all kinds of stuff.
+
+01:10:57.600 --> 01:11:03.360
+So, triggering the DNS query is easy, but the best example I can think of is just sending him,
+
+01:11:03.360 --> 01:11:07.520
+let's say, the victim a text message of some sort, right?
+
+01:11:07.520 --> 01:11:12.240
+Because, and the nice thing about text messages is they're generally fast, right?
+
+01:11:12.240 --> 01:11:17.760
+And users pay more attention somehow to them, especially in our more phone-centric culture.
+
+01:11:17.760 --> 01:11:20.960
+Also, links are easier to hide, right?
+
+01:11:22.000 --> 01:11:27.120
+Somehow, when you see something on a big screen, you might see something suspicious about the link,
+
+01:11:27.120 --> 01:11:28.960
+or is it a text message is less like?
+
+01:11:30.800 --> 01:11:32.320
+Okay, well, we're out of time.
+
+01:11:33.600 --> 01:11:34.480
+See you next Tuesday.
+
+01:11:34.480 --> 01:11:46.640
+Oh, because someone asked, if you are a PhD student who wants to include this course in the comprehensive exam,
+
+01:11:47.760 --> 01:11:54.720
+in order not to have the exam, the actual exam, which is separate, you need to get an A to A plus, right?
+
+01:11:54.720 --> 01:11:56.320
+So you get an A, at least an A in the course.
+
+01:11:57.520 --> 01:11:59.440
+A plus is on the other thing.
+
+01:11:59.440 --> 01:12:01.520
+But if you get an A in the course, you don't need to take the exam.
+
+01:12:04.480 --> 01:12:07.280
+Let's remember the Karamel amp PP those who is per sorrichten.
+
+01:12:07.280 --> 01:12:09.280
+Let's see you next time.
+
+01:12:09.520 --> 01:12:13.520
+Bye.
+
+01:12:15.040 --> 01:12:15.200
+Bye bye.
+
+01:12:17.360 --> 01:12:18.320
+We had a great idea.
+
+01:12:19.320 --> 01:12:20.740
+So these is a followup of the following plan.
+
+01:12:21.680 --> 01:12:22.320
+Have a good time.
+
+01:12:25.360 --> 01:12:26.600
+We're always having about a copy.
+
+01:12:26.600 --> 01:12:28.080
+So we're not making an A a plus.
+
+01:12:29.520 --> 01:12:31.280
+We're just walking the walk.
+
+01:12:31.280 --> 01:12:34.000
+We hope we don't know how to add along.
+

@@ -1,0 +1,543 @@
+start	end	text
+0	7320	right there's this single trusted benevolent mix that basically well
+7320	14460	batches and mixes all this traffic right and of course if only one person sends
+14460	20580	an email and only one person receives right it's clear who sent and who received
+20580	28880	if the adversary can observe all the links that are incident to the mix right
+28880	41540	that clear but anonymity loves company the more people use the mix the better
+41540	48500	right so popularity is good because the more traffic more people send mail then
+48500	52760	it's very difficult to map it the more difficult becomes to map incoming
+52760	60080	messages into outgoing messages okay even if you have like even in the worst case
+60080	64640	like a one sender right but if that one sender sends a lot of mail to different
+64640	71060	recipients even then mix can help because it can mix those messages and it would
+71060	75200	be difficult to see at what time did this sender send mail to this particular
+75200	79640	destination okay so you still get a little bit of help even if there's only one
+79640	84080	sender but of course in the real world you want mix to be heavily used by lots of
+84080	86400	people
+92400	101420	right so how do you reply if you send an anonymous mail message right previous
+101420	108560	slide really showed you how to do that right Alice knows Bob's address Alice
+108560	113000	encrypts a message for Bob obtains Bob's public key from some directory
+113000	119320	right here's Alice you know she knows Bob's public key she knows that Bob's
+119320	125000	existence otherwise why would she send email right so she has a secret message to send
+125000	131360	it and she doesn't want anybody to observe the fact that she sent a message to Bob but
+131360	137720	that's fine for one-way communication okay for example this is a whistleblower
+137720	146180	reporting on some abuse but what if this is a conversation what if Bob now needs to
+146180	152000	reply this doesn't solve that problem right there's no reply here because when Bob
+152000	156960	receives the message he doesn't know who sent it unless Alice explicitly tells him
+156960	163340	inside the message that she did but otherwise it's just a message destined for Bob from
+163340	177800	someone now how does Bob reply to that someone without knowing who that someone is so
+177800	184800	same idea as before right same idea Alice sends a message to Bob for the minute but now the message that
+184800	193260	Alice prepares has format has some structure inside that message well there's actual text whatever she wants to send
+193260	200720	but there is a preamble that has this stuff in pink all right there is that a key
+200720	209760	symmetric chosen by Alice at random Alice's name in this case she doesn't mind telling him
+209760	218220	I'm sorry sorry in Alice's name but it only cryptic under the public key of a mix so
+218220	228180	actually Bob won't find out who Alice is in this case now if you your eyesight is good you will see if it says
+228180	238140	it says mix try because Alice for the return correspondence for return email could choose a different mix
+238140	248420	doesn't have to be the same mix that she used on the way to Bob okay same idea but this she may choose a different
+248420	262380	right right and then k2 okay and k2 is a fresh public key okay and sorry k1 is a fresh public key and mix mix
+262380	274380	and he says prime is possibly different doesn't have to be the same thing
+274380	280920	so now how does uh how does Bob reply so the first message follows that first blue
+280920	286980	arrow second blue arrow just like in a previous slide the same thing the mix does the same thing
+286980	291540	I mean of course I don't show you other people who send mail right so of course you assume there's other
+291540	297300	people so but I'm just focusing on the communication between Alice and Bob so that's the message as
+297300	305760	before what's what makes sense to Bob is uh pretty much the same thing except Bob now knows that inside
+305760	319740	m there is that magenta part mk2 okay and so the reply message from Bob that has a different format
+319740	325500	it doesn't have the same format okay it's not it doesn't have the same format as the original
+325500	335740	initial message from Alice the reply message has two parts the pink part and that's taken verbatim from
+335740	345340	inside the message and the black part which is a you know the m prime that that message that that bob wants to
+345340	352220	reply to ask right he wants to say something back and that message doesn't need to have any structure
+353420	360140	it's just a message i'm proud and all that is encrypted on the k2 that's a public key
+360140	368220	so far so good
+373180	379020	so the mix knowing that this is the return message it treats returning messages or reply messages
+379020	384780	differently from the forward going messages right he knows that this message has two parts
+384780	391420	so what it does it decrypts this pink part right because it's encrypted with its public key
+392540	396940	and inside the pink part he sees a and a key k1
+399340	403980	and what he does and he does what he's instructed to do which means he takes
+405180	410940	k1 and takes r2 m prime the black part over there encrypts it with k1
+410940	418460	k1 is a symmetric key k2 is a public key okay so this is a symmetric encryption
+419260	423340	and addresses this to a so this a is visible in the clear text
+427580	428140	make sense
+430300	436060	so a gets it a knows k1 because she generated it originally
+436060	445180	okay okay she will decrypt the outer encryption and then because she also generated k2 right
+445180	450540	she knows the corresponding private key to decrypt this encryption so she will obtain him
+454060	464140	so what is this here right this is an anonymous two-way channel between alice and bob alice knows
+464140	467980	who bob is right somebody needs to know this in the beginning
+469580	474380	otherwise what's the point of communication but bob does not know who alice is
+477500	481020	just he knows it's someone but he doesn't know who
+484300	489100	so what is this good for well you know many types of interactions right
+489100	497100	like uh whistleblowing right it's also great for confession
+499180	504780	you want to make an anonymous confession kind of like certain religions allow you to go to a
+505420	513020	temple church and anonymously right go into a booth you've seen it in the movies and you have done
+513020	519820	yourself you go into a booth and there's a partition it's a dark little booth and you sit on a little
+519820	528300	leg there's a partition there's a mesh you know there's a person on the other side you can see the
+528300	534540	silhouette maybe but you don't know who they are and that person more importantly does not know who you
+534540	539900	are but generally they confess the person making the confession knows that it's a priest
+540700	547900	or some kind of other religious character right because when you go to church and make a confession
+547900	553420	generally not who the priests are in the church but the priest does not know who you are right
+554380	557020	ideally in the physical world
+559580	564460	not likely they probably know because you know they can open the door after confession see who walks out
+564460	571580	or they can recognize the person by voice right or by what they're confessing okay so but in the physical
+571580	579020	world we know how this works right so this is can be done much better in this world alice says i want to
+579020	588380	send a confession to bob bob is a religious character person who like a cleric she confesses her sins and
+588380	595340	she gets enough solutions back and bob learns nothing about alice other than her sins
+597900	602380	nope not compelling to all i'm sure there are other applications you can think about
+603500	605180	okay any questions
+607580	615820	fine now why would you want to rely on one mix one mix is nice because you're just wild you don't need to
+615820	620620	you know create any kind of big infrastructure you just dedicate a huge computing power
+621180	627100	and storage power to this giant mix and you presume that some benevolent entity runs it and it can never
+627100	633660	be hacked because boy if it can be hacked you know bad things will happen but what if you didn't want to
+633660	639900	rely on one single point of failure because the other problem is that if the mix just like goes down
+639900	648140	or subject to a massive denial of service attack well then the buy anonymous mail uh but more importantly
+648140	656220	it's difficult to find one entity one organization that will run a global mix so for that reason one
+656780	661820	what child that same character that designed this thing and back in the early 80s suggested using what's
+661820	667340	called a mixed cascade or a mixed network this is basically what the word suggests right it's just
+667340	675420	a sequence of mixes and generally operated by different entities like one operated by an electronic
+675420	683420	frontiers foundation one by aclu one by you know uh say the whales and one by you know icelandic whale
+683420	688780	hunters i don't know and whatever whatever whatever so mutually like suspicious entities but they're all
+688780	694620	interested in operating at least one of those so you can imagine them sending your messages through not
+694620	703500	one but one but several okay one immediate benefit is that that first mix is compromised or controlled
+703500	712860	by the adversary you're still okay because the second mix is now in fact even if both here the first and
+712860	718060	the last are controlled by the adversary you're still okay because the middle mix is not controlled by the
+718060	727660	others and because mail is by its very nature not a real time not a synchronous protocol right it's
+727660	735500	what's called stored and forward in other words asynchronous meaning that you do not expect mail to arrive
+735500	743580	the second you sent it yes yes we do sometimes we do when we wait for those second factor
+743580	750220	one-time code notifications right we expect email to arrive very quickly and sometimes it doesn't
+750220	757260	because it gives you no guarantees okay text messages that's another story right what's up text etc
+757260	763660	they usually try to make things very fast and they don't guarantee but you assume that things unless
+763660	769180	you are disconnected from the internet or cellular network you expect uh like these kind of instant
+769180	776140	messages right with sms apple i message what's up signal telegram etc they arrive quick but email
+776140	785900	makes no guarantees because it is stored and forward yes so if that one mix in the middle is still honest
+785900	793260	well you can mix enough messages to cause confusion essentially prevent the compromise or the adversarially
+793260	800700	control basis from learning who is sending messages to whom right in other words it will try to foil
+800700	804860	this correlation attack which incoming message corresponds to which outgoing message
+810860	813660	but as you can imagine
+813660	824140	there's a lot of overhead here okay because public key encryption especially like the layer because
+824140	833100	what we need to do in a mixed cascade you solve it you do it with one mix right this but if you have
+833100	840380	multiple mixes you see those encryptions that have that alice and charlie and david perform here
+840380	847180	here well if you hop through three mixes then each message needs to be encrypted three times
+850300	856380	which is expensive it's expensive for senders but it's also expensive for mixes now they have to
+856380	857500	that they have to decrypt
+857500	871980	and so it's expensive and high latency is encouraged because well as i said messages are not instantaneous but
+871980	880620	still even for something like email latency can be high because every mix on the path to the destination
+881420	892140	needs to batch enough incoming messages to mix them right if it's if a mix receives and sends immediately
+893660	901180	that's not very good right because anyone eavesdropping on that mix will see a correlation between incoming and outgoing message
+902380	906540	so that's the whole point is that there isn't mixing right now there are other things you can do
+906540	915500	i mentioned earlier that you can uh generate spurious traffic meaning chaff right garbage
+916220	920780	you confuse the needs dropping out your certain stuff that looks like it's an encrypted message
+920780	925500	but in fact when they make when they're receiving mix decrypt it you realize the garbage throws away
+927020	932460	so every mix could always generate a lot of that kind of chaff but that's expensive too
+932460	937660	and generating is not but receiving it is expensive because you have to decrypt try to decrypt it
+938540	946860	in order to realize it's got it so in uh today's world uh mix nets are still useful
+947660	953900	somewhat and there are um actually operational mix nets out there that you can use
+953900	967260	uh even for free but they're not very popular okay most people today want anonymity for other things
+967900	975980	and primarily they want anonymity for web browsing okay not so much from watching movies but because they
+975980	982140	are small but even for watching movies sometimes right accessing let's say uh well everybody's favorite
+982140	988380	of course is porn but then there is like streaming services that uh are not always accessible from
+988380	994620	where you are or being on your local provider does not allow you to connect to some let's say streaming
+994620	999980	services so people often want to use an anonymous communication for that purpose okay
+1002300	1009500	so if you're a whistleblower or something like that email is fine right if you want to send an anonymous
+1009500	1014860	denunciation message and complain about something you know it's fine to use anonymous mail but if you want
+1014860	1023260	to browse the web if you want to use uh a remote terminal right like a remote login you can't use makes that
+1023900	1035740	too slow right so today that the preeminent uh means of anonymous communication on the internet is torn
+1035740	1048060	the onion browser and uh basically it works like this so pretty much all anonymous communication methods for
+1048780	1055020	low latency or synchronous traffic what that is they use public key cryptography kind of like makes it but
+1055020	1061340	only in the beginning and so they use it to establish what's called a circuit the virtual circuit
+1061340	1069900	for a sequence of anonymous routers for a sequence of anonymous routers and then once the circuit is
+1069900	1076940	established the traffic the bulk traffic flows through that circuit but no longer using uh public
+1076940	1086300	key control it then uses symmetric which is much cheaper make sense all right so you pay a cost to start
+1086300	1092620	anybody here ever use a tor browser or any tor application yeah so you know that when you start it
+1093500	1100140	there's a delay right why is there a delay exactly because your core browser is probably as
+1100140	1103900	any of you modify any configurations on the program so you just use the default
+1106300	1111820	okay use the default but the default is i think three pops right if i remember correctly
+1111820	1119500	one well i'll tell you more about it but essentially it has to pick three routers from some directory
+1119500	1125900	which we'll talk about later and it has to establish these public key based initially circuits through
+1125900	1130700	those three routers and once you establish a circuit it will tell you on your browser right
+1131580	1137900	connection established right remember that when you start to store browser it says connection established
+1137900	1143260	then when you when you type in a website or click on something it's reasonably fast right it's not terrible
+1144780	1149260	not terrible slower than your normal graph for sure but it's not terrible
+1150780	1155260	okay and that's another connection and it doesn't matter how many websites you go to
+1155260	1161500	you're probably using the same circuit unless you specifically call for like there's an option say
+1161500	1167260	new tor circuit for this website and if you just use a default no matter how many websites you go to
+1167260	1177020	it goes for one circuit okay and so at every hop in that circuit there is encryption there's decryption and
+1177020	1183820	re-encryption decryption and re-encryption why because just like in the next example if anybody is
+1183820	1190780	listening eavesdropping on our on an anonymous router sees what comes in what comes out they should not be
+1190780	1199500	able to correlate incoming to outgoing okay but if you listen to be careful you might be wondering how
+1199500	1209500	is it that asynchronous communication right how do we can't delay it right so he comes in and out comes
+1209500	1214460	in and out you must must do so right cannot be sitting there waiting for enough other traffic right
+1214460	1221100	so that's that's that if you're thinking about that that would be an interesting issue an interesting
+1221100	1227420	question so the way that these routers work is they also rely on many simultaneous connections
+1229740	1237100	that is many users using every single router and if many users are using every single router or
+1237100	1242300	synchronous communication browsing the web we won't log in whatever then there's always packets coming
+1242300	1250620	into that router so in other words it does not retard them or mix them in any way it tries to process
+1250620	1257900	it as fast as possible but it but the way that it achieves a lack of correlation between incoming and outgoing
+1257900	1263340	traffic is by expecting to receive a lot of stuff okay
+1263340	1281500	so the design of uh under routing goes back to mid to late 70s 90s and there's a it's kind of a seminal
+1281500	1288940	paper called uh by under routers by beat cyberson galschlag and uh basically it's it's what you expect
+1289580	1298060	you have a set of routers represented by circles here some of those routers are malicious
+1299180	1308140	untrustworthy okay and some are transporting but you don't know which ones okay so you as a
+1309180	1314940	some as as alice a user who wants to use a design of routing you just pick three
+1314940	1323580	out of the set some directory of anonymous routers in this case r1 r2 r4 sorry r1 and 2 r3 r4 sorry
+1323580	1332220	four hops here and uh the pink ones of these r's are just regular routers you didn't pick the red one
+1332220	1337260	the red circles represent the ones that are uh controlled by the address so you also it so happened
+1338140	1346300	alice obviously did not know this but it so happens that r3 is malicious so she sets up her circuit
+1347980	1353980	and she can't know which ones are malicious which ones are not all she expects is that at least one
+1355660	1356860	is not malicious
+1356860	1364140	okay of course alice controls the length she could say you know i just want to go for one router it
+1364140	1368620	it would be stupid kind of not recommended or she can say i want to go for 10. that's all stuff
+1368620	1374460	done you could configure uh core to get on any other one in routing you need to go for as many
+1374460	1380460	routers as you want the more you go through the slower your connection will be clearly because
+1380460	1390460	only routing is not routing in the internet sense of the world remember we talked about bgb and like internet routing
+1394060	1398780	nobody has any recollection there was a full system reset since then
+1400700	1408780	new version of software was installed no uh remember routing for ip right when i say routing here i don't
+1408780	1415660	mean that that that onion routing works at the application level so you install like a software
+1415660	1421660	package and it does this kind of routing it's essentially what's called an overlay right everybody
+1421660	1428860	heard that word before it's an overlay so it runs way above id okay and one of the reasons it does so is
+1428860	1434780	because if you want community participation right they strengthen numbers the more onion runners that there
+1434780	1443340	the better you don't need to have good people just to run an application program make sense so you
+1443340	1449100	can install tor and on let's say you don't want to start in your laptop that would be really foolish
+1450060	1458940	for many reasons but if you have a desktop machine not in student house they'll they'll crack down on you
+1458940	1466140	like immediately uh they monitor that stuff but if you have i don't know in your home off campus or your
+1466140	1472060	parents home or whatever you have a desktop machine or at least a laptop that's pretty powerful you can
+1472060	1483660	install tor yourself and become a tor relay or tor router not difficult right clearly you'll be sacrificing
+1483660	1490540	something right so your your your device will slow down not right away because actually tor routers are
+1490540	1495420	not trusted right away because if you're a newbie nobody trusts you very little by little it's reputation
+1495420	1503420	based anyway back to our regular schedule broadcast so you control the power and uh that's pretty much
+1503420	1510780	it how onion routing works but why is it called an onion routing is it because it's smelly spicy
+1510780	1515820	edible any idea
+1518540	1523100	layers layers of encryption layers
+1525500	1531900	because if you go through four routers here and alice has to hop for one one or two or three or four
+1531900	1541180	four she better encrypt whatever message she sends first in our fourth public key then in our fourth key
+1541980	1553100	then on top of that r3 key r2 key r1 key okay then she sends message to r1 r1 peels off the outermost layer
+1553100	1558860	you see why onion then okay good
+1564380	1565340	better illustration
+1567980	1575660	now this is around establishment but this is uh hypothetical only this is with public key this is not
+1575660	1585420	how four works this is how it works it it's a good illustration of uh uh on your right so here is a message
+1587020	1593740	that alice wants to send to bob that message is encrypted under bob's public key
+1593740	1604700	why well because eventually that message should reach r4 and r4 is what's called exit node right
+1604700	1610620	exit the network the overlay network and so if you don't encrypt it then the message will be in clear
+1610620	1620620	text right arriving to bob sometimes may be okay but generally not a good idea so next layer see here
+1620620	1633660	k4 that message on the public key is encrypted with k4 what is k4 the message sorry the key that alice shares with r4
+1637580	1646060	the last part what is this here this part that right is encrypted on the public key of our board
+1646060	1654460	okay okay and it contains k4 okay and it contains k4 so this is a little bit this is like a header to do
+1654460	1665100	a little header and this is the actual body so let's follow again then all that that up blob gets encrypted
+1665100	1675580	out with k3 but k3 itself with r4 is here okay and so on and so on so it's one two
+1676060	1679180	three four five layers of encryption
+1687500	1697980	okay so let's remember animation here yeah okay so let's consider this to be the big onion big fat onion
+1697980	1699100	five layers of encryption
+1702300	1708620	alice sends it to r1 r1 removes that layer you see why because r1 sees this
+1709420	1721900	he decrypt this he decrypt this with his private key learns r2 learns k1 okay now he's gonna decrypt
+1723500	1726300	that k1 get rid of this encryption
+1728780	1730460	okay and send it to r2
+1733500	1733820	bam
+1733820	1749420	okay okay r2 decrypts this with his private key finds r3 and k2 and now decrypts the rest of the message
+1749420	1757020	with k2 so the onion gets smaller bam okay r3
+1757020	1768460	r3 well same thing right rinse repeat bam r4 and bob receives the innermost message
+1770060	1776940	now yeah the r3 is still adversarial right it's still an adversary controlling it but what does the
+1776940	1777740	adversary learn
+1777740	1791500	when r2 who is honest processes the message sends it to r3 r3 receives it and sees what he might know
+1791500	1797660	who forwarded it he probably does it's r2 forwarded it he knows they received it from r2 and he knows the
+1797660	1803260	next top is r4 does he know that r4 is the last top you know
+1803260	1814860	r2 maybe maybe not so all he learns all the adversary learns is that okay uh i received it from r2
+1816460	1817900	and i'm sending it to r4
+1820220	1820540	so
+1822940	1832060	right you see that still doesn't learn anything useful now if it was r1 that was uh adversarial
+1833260	1839340	right if r1 was malicious instead of r3 then r1 would learn that alice is sending a message to
+1839340	1844220	somebody and the next top is r2 but that's it
+1846940	1852140	the adversary could control r1 of course would know that he's an m3 node the first top
+1855420	1862700	if the adversary controls controls r2 instead of r3 exactly the same situation as r3
+1864220	1868540	knows the previous top does the next top does not know if he's first or last
+1869740	1875420	if the adversary controls r4 he knows he's last he knows he's last because the next destination is not
+1875420	1877980	an onion runner okay
+1880300	1884940	but he doesn't know how many hops before and he doesn't know where it comes from of course
+1885580	1893900	so tor today doesn't quite work like that that was how it used to be
+1895420	1898460	uh it's what's called second generation
+1898460	1903500	on the routing network uh first generation used what we saw before
+1903500	1913260	uh this one uses what's called a telescopic round setup okay uh i'll explain what that means uh if you
+1913260	1921580	want to read about it download stuff uh from uh related to tor it has uh plugins it has uh
+1921580	1934140	uh the the the self-standing tor browser that there are apps for um ios and android uh all kinds of uh
+1934140	1941420	notebook so there's plenty of platforms supported by tor okay so if you want to use it doesn't matter
+1941420	1952540	what device you can always install um it is designed for anonymous low latency communication and it's
+1952540	1961340	been running since 2003 it's quite a long time and there have been many attacks but there have been few
+1961340	1966940	successful actually no no real successful attacks on tor this is not that i've heard of and that would
+1966940	1975180	have been probably publicized well if there had been um there are thousands of tor nodes like maybe
+1975180	1983740	10 000 tor nodes worldwide there are hundreds on every continent uh there are as of three years ago
+1983740	1990140	between three to four million regular users now regular users are people who use for like daily basis
+1991180	1996620	there are surveys done um but there are probably 10 times as many occasional users
+1996620	2005820	um it is easy to use actually i don't know i wouldn't even use quotes it is reasonably easy to use if
+2005820	2012140	you just take the default if you want to dig into the guts and configure it yourself you could also shoot
+2012140	2019340	yourself in the foot by doing something silly or you could slow it you could slow yourself down tremendously so
+2019340	2023500	most people just leave it deep there are situations when
+2023500	2035100	uh you go to certain countries that uh don't like anonymous communication and they will block tor
+2037020	2041020	okay and so in those countries you need to use what's called door bridges
+2041820	2049820	which is additional like very temporary relays for relays that are too short-lived to be blacklisted
+2050540	2055260	by the authorities so i've been in that situation myself in countries where
+2056780	2064220	let's say freedom is a little tough to come by and then the tool works right you just need to use
+2064220	2070860	what's called bridges and it slows it down all right so the proxies plugins it's free it's great
+2070860	2076940	uh the only piece of software that i will advertise in this class if you are ever want to do anything
+2076940	2083500	i don't understand how does it work well it it is still kind of an onion network
+2084700	2092780	and it imagines all these uh multitude of uh tor nodes right onto these properties now because it's an
+2092780	2100700	overlay right it does not correspond to geography or internet connectivity you see what i'm saying
+2101820	2109180	what overlay means is that overlay is essentially an any to any network that's why you see lines drawn
+2109180	2112940	into a different light so these are virtual connections virtual lines these are not physical
+2113500	2117420	lines obviously right it's not like this node is connected to this node there could be like they could be
+2117420	2126140	a different content but logically they can communicate directly because of the application of layer
+2127500	2131020	so the client alice who uses tor
+2131020	2140780	in order in order to set up a circuit she picks today three nodes the default so she picks the first
+2140780	2150140	entry node and she establishes a connection and that connection is established because you public it
+2152220	2158220	okay public it because she well i'll show you later but there's a directory of tor nodes that is the
+2158220	2163980	download from the distribution from the software distribution side as a directory and you select
+2164780	2168700	the tornadoes the three tornadoes you want to use randomly from that directory
+2170940	2176460	and so one of them will be the first and it could be very far away from you or it could be very close
+2177820	2184860	doesn't really matter so you establish a tor connection right a direct connection between here and there
+2184860	2192220	so think of it as a kind of an asset if it helps you think about it as like a tls on ip set connection
+2192220	2197980	like a pipe secure pipe but it's not that the network layer or or or session it's at the application
+2198860	2209020	okay so anybody who observes this right who is dropping on alice here will know that she's connecting to some tor
+2209020	2225580	or no no no right somewhere but they cannot see the traffic now the second hop right the second router
+2225580	2231740	alice is going to use the already established connection the the red line as a kind of a secure
+2231740	2238940	pipe for which to insert an extension to the second round that's why it's called
+2238940	2244700	telescopic telescopic like like a you know like an antenna that you stretch out an old-fashioned
+2244700	2250460	old-fashioned radio tv kind of like that or old-fashioned pointer that you start position
+2252860	2257820	so she basically does this so the second
+2257820	2267260	one
+2269740	2272140	router two i think i'm missing the router two here
+2273580	2278060	oops so anyway the point is i'll just get so she uses
+2279900	2285500	the green key you see protects well the green key corresponds to the security of this connection
+2285500	2293580	here okay the magenta key is the second connection that is established and through this now to this
+2293580	2302700	second half and then the green key sorry this mustard the brown color key is the one that is used to
+2302700	2311500	establish through here to this so they are like one inside the other right the only the first connection
+2311500	2320540	is established directly from alice all the others are established through other nodes and then you see
+2320540	2328140	those red things going to two different places and why because once a tor circuit is established
+2328940	2335580	you can use it for many sessions like on the web it doesn't it doesn't be used just on the web but mainly
+2335580	2342140	it's used for the web so if you're using tor browser you could have two different tabs or two different
+2342140	2350620	windows and one could be going on to cnn.com and one could be going to whitehouse.gov it's the same tor
+2350620	2356140	circuit right that's carrying traffic from all and it's only demultiplexed here
+2356140	2361580	and the last hop or exit does that make sense
+2364300	2366940	the telescopic nature of the route is attached
+2369580	2369820	no
+2373420	2375420	yes i'm sure
+2375420	2387580	but once the route is established that packets are encrypted and re-encrypted additionally right so
+2390060	2397100	alice encrypts here it's decrypted re-encrypted so in here decrypted re-encrypted here decrypted re-encrypted
+2397740	2399820	boom destination
+2399820	2411100	so what does the adversary see if the adversary is there while yoni i can say before sees that alice
+2411100	2417420	is talking to a tor node right so uh the adversary might be able to decide if the adversary looks at
+2417420	2426220	the ip address of the of that node right that yellow node with which that is uh the first hop because
+2426220	2430460	the adversary can also download tor and look at the directory and say ah this is a tor node
+2432140	2433980	okay yeah
+2438220	2442940	yeah there's denial of services i mean tor nodes can come down i mean it's a power object
+2443580	2447660	yeah you just reestablish a server for a different set of nodes
+2448380	2451660	but you don't know that the message didn't get delivered
+2452220	2457820	you have no idea but it doesn't matter because i mean this is your graph like if you're browsing
+2457820	2463420	the web it just the pre-establish connection wait a few more seconds be all right i mean yes there is
+2463420	2469740	a tor node can always be performed analysis yeah it can drop back well in that case your connection
+2469740	2473420	will be unstable you can just always click on like new tor circuit
+2473420	2482460	if the adversary is here all you learn is that it's in the middle of the tor connection so between
+2482460	2490060	two tor routers and uh that's all so somebody is using tor but there's no idea who or how many people
+2490060	2499420	are here same thing here is the worst part right because here if especially if alice does not include
+2499420	2505500	it right for bob this would be a problem because that would actually reveal that it's out right
+2506780	2512620	like if there's some kind of a web form right the post an http post where she fills in the name and
+2512620	2519820	address right so obviously if you're using like tor browser you should be using only https
+2519820	2524700	right right right or tls ssl right
+2527980	2534860	well you can use http but then you don't enter any information okay you have to make sure not to enter
+2534860	2535420	any information
+2539660	2546540	so as i said before many applications can share one circuit uh that's also true but you know if you're
+2546540	2551820	using different applications not just web browsing then it's a little difficult right so maybe on the
+2551820	2558860	on the phone that's more possible uh tor router as i said doesn't have root privileges so any one of you
+2558860	2565500	any one of us can install a tor router and register it in uh in a directory there's a slow reputation
+2565500	2571900	building process you won't be used right away but after a while you know if you if you basically
+2571900	2579260	reputation is based on like where you are what your speed is like performance and also like uh what
+2579260	2584300	is your hours of operation like are you reliable you 24 hours are you only available at night so on
+2584300	2591980	some some routers have restrictions on timing uh directory service so this is
+2593420	2597180	a bit of an issue right so you need to know who the tor routers are
+2597180	2605420	and um today there is this foundation right the electronic frontiers foundation which is a
+2605420	2611660	a non-profit organization that essentially kind of like it's a little bit like aclu but it's not a
+2611660	2617820	it's not a legal defense fund i mean like aclu it's really just about privacy like supposed to promote
+2618780	2624620	the right to privacy right so it's all about it's not only about privacy but if you go to efr.org you can
+2624620	2631580	read all on your own uh they also distribute torn right so the door is mainly distributed through
+2631580	2636460	that website it's like if you want to get chrome you go to google right if you want to get tor you go
+2636460	2642380	here um you want to get firefox you go to mozilla right you don't go somewhere you know to some other
+2642380	2650460	place so it is one place so if somebody mounts an attack against dff that would be a problem
+2651180	2660060	um directory servers right identities and and keys public keys of the of the of the routers and uh and
+2660060	2670140	sorry let me let me back up sorry the routers are identified by some ids and ip addresses and
+2671900	2676620	the way you found out about find out about short routers is from what's called port directory
+2676620	2684540	servers and these are special nodes that its only purpose is to provide the directory of tor routers
+2685420	2689980	now why does the ff not do it because the population changes it's too dynamic right so the directory
+2689980	2697420	servers are supposed to maintain up-to-date lists of like reputation ranked uh tor routers there are not
+2697420	2703100	that many there are some i guess thousands of these directories but here's the pov the point of
+2703100	2711100	vulnerability if somebody hacks directory servers and compromising those keys it's possible to poison
+2711100	2719980	the directory and distribute identities of tor routers that are malicious so if some let's say state level
+2719980	2729100	actor decides to mount us for a civil attack and creates hundreds of malicious tor routers and introduces
+2729100	2735900	them into a compromised directory tor will fold and will be a major problem it hasn't happened yet
+2735900	2740540	but it could happen and that's it that's the main uh issue with tor
+2744060	2749100	now tor also allows you for something very nifty or very dangerous depending on the point of view
+2749100	2764060	you anybody heard of this one person used it or just heard of it it's okay listen i won't i won't i won't tell
+2765900	2772620	uh so location hidden services you'll see why they're locking in a minute um so you wanted to you want to
+2772620	2782620	deploy a service on the internet right without a which offers a service of some sort maybe it's a digital
+2782620	2790540	service maybe it's a conversation service maybe it's a service that sells physical goods like analog
+2792460	2797180	but you don't want anybody to know who you are and you don't want anybody to know where it is
+2797180	2811820	it could be that this is an information service for example you live in an oppressive society and you
+2811820	2820380	want to publish something as a service that is uh like a subversive in its nature goes against the
+2820380	2828540	regime and of course the regime wants to silence you and censor you but if they cannot know if they
+2828540	2835180	cannot know where you are they cannot censor you right they can't find you they can't do anything
+2835980	2841420	so it's not just for selling stuff all right it's also for publishing stuff
+2843820	2848380	so there was a infamous marketplace called the silk road anybody remember it no
+2848380	2860620	it was an example a mega example of a of a hidden service on on tour
+2862940	2867980	so the idea about not silver but in general hidden services they should be accessible from anywhere
+2868620	2875820	resistant to censorship survivable against like even a full-blown denial of service and resistance to
+2875820	2880380	the physical attacks because if you don't know where it is you get physically damaging or harm
+2883020	2887580	so silk road was uh yeah this is actually a uh a screenshot
+2892460	2897020	this is some years ago but yeah uh you see lots of good stuff beautiful good
+2897020	2905660	draft paraphernalia electronics probably stolen uh apparel computer equipment likely stolen too
+2905660	2911820	psychedelic stimulants opioids ecstasy cannabis cannabis not exactly like they
+2912620	2919820	drugs lots of different drugs right so uh yeah good stuff all right even pictures
+2925660	2930300	so how do you create a location hidden server right so how do you how do you make this happen
+2930300	2936380	if you want something like this you want an enterprising person uh so you let's say your name is bob and
+2936380	2945420	you want to serve set this up so you use uh tor right to create these kind of uh uh let's call them
+2945420	2950860	semi-permanent circuits tor circuits so you need to have a stable connection to the internet right
+2951980	2956300	that's that's that's important and you need to set up these by the way tor does not
+2956300	2962620	uh i don't believe it dictates how long the connections can last so you can keep the connection
+2962620	2968220	up it stays right so you set up in this case three different connections to one tor service
+2969100	2976460	three different tor circuits to three different places okay called introduction points and these are
+2976460	2981420	themselves uh services they're computers somewhere they could also be tor routers themselves
+2981420	2987820	okay but in general that they don't have to right so these are just like some computers somewhere
+2987820	2994140	that grants them software that will quite fresh so you set up these semi-permanent software
+2996620	3000940	step one okay then
+3011420	3024940	step one okay you're not seeing what i want you to see
+3024940	3046860	yeah what you're not seeing here is that now once these once these things are set up the server bob
+3047500	3052780	gives these descriptors what's called that they're called dot onion addresses have anybody ever seen
+3052780	3060620	dot onion addresses that's hidden service if you ever encountered a url that has a dot onion that's a tor
+3060620	3069340	hidden server uh so this is done in the beginning only right so the server the server bob gives to this
+3070140	3076780	lookup service lookup directory which is a well-known detective place on tor uh the description right points for
+3076780	3084220	these introduction so they're essentially a bunch of x digits with dot onion so i have a random looking
+3084220	3089660	addresses with dot onion at the end and they are published in this directory which you don't see
+3089660	3096620	then you also don't see i don't know why because it looks fine on my laptop there's client alice here in that
+3096620	3104460	white box and alice she looks at this this public directory of our service descriptor and says oh
+3104460	3117260	oh ecstasy cheap i'm going to buy some ecstasy i'm going to rain yo okay so she gets the address of those
+3117260	3119980	interpoids that's one of those dot onion addresses
+3119980	3134940	okay what you don't see is she also ah this is maddening she sets up another circuit to something
+3134940	3141580	called a rendezvous point which you don't see don't see here okay that's point four there is a she picks
+3141580	3147740	just like just like bob picked introduction point she picks some other place on the tor network and she
+3147740	3156700	calls it a rendezvous point rendezvous and sets up a four circuit there okay so this is in real time
+3156700	3163100	right she looked up the service directory fished out an introduction point address for bob's ecstasy
+3163100	3169580	selling service and then she creates the four circuit to a day rendezvous point which you do not see
+3171580	3177420	that's step four step five once that rendezvous point circuit is set up she sends the
+3177420	3184300	address of the address of the rendezvous point okay to one of bob's introduction points
+3186380	3191500	you following me don't look so much at the picture just try to because it's not it's missing some of the
+3191500	3192780	graphics that it's supposed to show
+3196780	3200060	okay so far so good now the introduction point
+3200060	3212140	informs bob yo you have a customer potential customer bob wake up bob says i don't work in these hours so
+3212140	3220620	he might say no way not interested uh or if he's interested to perform the service he
+3222540	3227020	he basically connects to the rendezvous point which you don't see that's the end of the blue arrow there
+3227020	3234700	should be a rendezvous point there just imagine but you see what's happening now so the rendezvous
+3234700	3241980	point which you don't see matches bob's incoming that blue circuit with alice's
+3243180	3248220	circuit that she previously established again you don't see it right and says oh this
+3248220	3255500	thing that somebody she doesn't know the rendezvous point doesn't know it's alice this thing from the
+3255500	3264380	buyer or from the user matches this thing from the service and she you know connects the two okay
+3265020	3274140	so now you have essentially two tour circuits one from serve above to the rendezvous point and one from
+3274140	3282860	client alice to the rendezvous point make sense again don't believe the lying guys don't look at that picture
+3285100	3288620	so you have a concatenation of two tour circuits managed by that random point
+3289340	3292700	and now the transaction can proceed okay
+3292700	3302540	and this is the ross umbrick that was the guy i mean i guess he moved then he doesn't look so happy today
+3303500	3308460	he spent time in federal prison until our president recently pardoned him
+3310140	3316860	but yeah that guy ross umbrick was the operator of the of the uh so-called marketplace and was arrested
+3316860	3321420	from 2013 and i think a couple of years later was convinced convicted and sent to federal jail
+3321980	3327740	um it's a nifty operation you you could also what you didn't see there you could also buy murder for
+3327740	3334780	hire yeah you can get somebody's like busted kneecaps puncture tires anything lighter than murder too
+3334780	3341500	but murders are fine uh nobody knows how many were bought and sold through that uh so throughout the site
+3341500	3351340	um one of the interesting uh uh posters there is that nobody knows really how it was how he was
+3351340	3358860	trapped right because it's a it's a hidden service right so it wasn't torn at least most people in the
+3358860	3363820	security community believe that it was not a weakness of tor that the federal government despite all of its
+3363820	3369580	power could not penetrate tor partly because they have no jurisdiction over torn notes overseas outside the
+3369580	3378620	united states right no jurisdiction whatsoever uh so there are three speakers only the last one makes
+3378620	3384060	sense makes more sense there was a package of peccadees from canada that was traced to an apartment in
+3384060	3391900	san francisco where he lived that was one theory there was a fake uh murder for hire that was arranged by
+3391900	3399500	law enforcement and apparently trapped him again no no proof for that more likely the last one
+3400140	3408380	familiar with stack overflow right so somebody accidentally under the name olbrick ross olbrick posted a
+3408380	3408780	question
+3411580	3417580	before like way before how can i connect to a torn hidden services in curling php and then a few
+3417580	3422060	seconds later they changed the name because realized he'll you know revealed his real name change the name to
+3422060	3431900	frosty too late right stuck uh you know stack overflow like elephants never forgets so somebody took a
+3431900	3438940	snapshot of that oh yeah and uh this last bit helped the encryption key of the server ends with
+3438940	3448540	substrate frosty a frosty so that's another catch right uh tor is not the only thing out there but by far
+3448540	3456460	the most popular there are others uh pre-handed has an excellent biography biography that you can read if
+3456460	3463500	you're interested in the field mixed minion mix master still exists uh but they're not very popular i mean you can use them
+3463500	3470700	there they're they're mostly uh they're quite slow right but they're different so slightly different
+3470700	3478620	interpretations of the challenge mixed cascade okay now let's see quickly i'm going to show you something
+3478620	3485740	that is a bit out in the left field uh there's pure cryptography or at least on the surface so the idea
+3485740	3491580	here is to show you that how to achieve the best anonymity possible like not relying on anything else
+3491580	3497500	and the idea is a little crazy and it's also due to the same person ciao that crazy guy from the 80s
+3499100	3506700	and it's called dining cryptography problem okay so but the idea behind it is to do this how to send a
+3506700	3515980	message in a message in a group without right without any kind of transibility you want to reveal a
+3515980	3522060	message send a message in a group let's say like our group here but nobody knows who sent the message
+3524140	3532220	okay imagine that so this paper from 1988 shows how to do it and they they kind of really interesting
+3532220	3536780	part about it is what's called information theoretic anonymity it gives you this information
+3536780	3541500	theoretic anonymity meaning that it's not based on any mathematical problem it's not based on any kind
+3541500	3545580	of assumptions okay that's uh question
+3548380	3553500	that's the most beautiful things it's difficult to make practical so here's the scenario three
+3553500	3557580	cryptographers we're gonna start with three because that's the easiest part right but it's generalizable
+3557580	3562300	to a groupie like as big as ours bigger or any of any size three cryptographers are having dinner
+3562940	3571740	okay in a restaurant now either nsa national security agency is paying for dinner or one of them is
+3571740	3579740	paying for dinner but if one of them is paying for dinner he wishes to remain anonymous he wants everybody
+3579740	3586620	to know like one of them is paying for dinner but he doesn't know want the other two to know who that
+3586620	3595260	is and he will deny of course okay let's assume they're all he just for ease of explanation so how
+3595260	3601100	does the particle work so imagine three people sitting around the table three people around the table
+3601820	3607100	finish dinner check comes somebody paid for the check so now they're trying to figure out who paid
+3607100	3615020	and a safe on one of them so each person flips a coin last time i checked most coins had two sides
+3615020	3622860	and scales and shows it to its neighbor on the left so everybody in a circular table has a neighbor
+3624060	3630060	right and left you flip a coin show it to your left-hand neighbor everybody does the same thing
+3630060	3640380	okay okay every diner right every cryptographer sees two points their own right and the right neighbors
+3641260	3647820	so if i'm one of those cryptographers i know my coin flip and the guy over here you're going to show me
+3647820	3658860	his that's the problem each person then publicly announces whether the two coins are the same
+3660060	3665660	both heads or both tails doesn't say which just says if they're the same like for example if i throw
+3667340	3674140	heads and the person on my right shows me tails i'll say different if i throw heads and that person
+3674140	3684380	shows me heads also i'll say same so here's the rule if the number now the all three all three of them
+3684380	3690700	say the same say say something right each one must say either same or different that's the only two
+3690700	3697980	words allowed if the number of same is one or three then nsa is paid no gathering
+3697980	3705980	if the number of same is zero or two then one of them paid and nobody knows who
+3708460	3715340	main thing is non-payer the person who did not pay does not know which one of the other two it is
+3716140	3719580	he knows one of them paid the non-payer knows he didn't pay right
+3719580	3728380	but he doesn't know which one of the other two paid yeah what's your question so if the parity of
+3728380	3733740	the guests changes instead of the parity of the answers let's see it's coming right
+3738380	3743900	so here we have pictures one thousand words three cryptographers first and on the side you have
+3743900	3752700	going to say who may have paid for dinner check all right somebody paid right think about what if
+3752700	3759580	you are not a payer you're one of the critographers who did not pay you know you didn't pay and you see
+3759580	3765500	the same point right meaning that meaning that you you basically threw heads that was your point
+3765500	3778300	and the guy over there showed your head right and that's so what's what's what's like one possibility
+3778300	3784220	is the guy over there declared same and the guy over there declared different right that's possible
+3786780	3792860	what could you say about this picture because remember this is yours right you are this guy
+3793740	3799980	this is your point you showed it to this person he said same
+3804780	3808620	what must the other one must have been heads right
+3810940	3812140	but if he threw heads
+3814140	3818220	if he threw heads and he showed the guy over there heads
+3818220	3825180	then that guy and that guy showed you him then that guy also should have said same
+3827100	3827900	somebody's lying
+3831260	3833100	the payer lies right
+3834380	3844700	but who is the payer are you following who is the payer right because this is obviously the case that one of
+3844700	3845260	them paid
+3847740	3855820	right again somebody showed you this you threw this means you have the view of the same you said same
+3855820	3861340	the guy on your on your left said same which means that if he's not lying he saw
+3862300	3870620	heads and he threw heads and he showed heads to the guy on his on his left which says different but wait he showed
+3870620	3876860	you this what the hell but you can't say that that guy is lying because it would be this guy who is lying
+3879180	3881100	they all look generic
+3881100	3892620	could be this right this could be a pair or could be this equally likely
+3895900	3896700	believe it right
+3896700	3906540	okay okay now if you are not a payer but you see different coins you threw tails and you saw heads so you announced
+3907420	3912060	different and the other people said same same
+3915260	3915500	well
+3918060	3921260	you showed him tails you showed him tails
+3921260	3932860	he showed head which means he is the payer if he's lying potentially or you showed him tails
+3933980	3941740	and he did have tails he showed the guy on his left tails but he is the payer who lied equally likely
+3943420	3947740	so you see in this case we're coming back to this rule
+3947740	3957020	that if the number of same is zero or two then one of them is paying because one of them lied
+3958620	3962140	in this case the number of same is two
+3964780	3965420	in this case
+3968940	3971980	different right the number of same is two
+3971980	3979900	now the idea is that this is a generalization something called super post setting never might
+3979900	3985500	this slide is too much but the idea is that you can send essentially a message that i paid
+3987020	3992620	in a group like it's a one-bit message that says i paid and nobody knows who you are
+3994060	4000060	so the same generalizes to a group of like our size or five or six cryptographers right it'll be the same
+4000060	4001980	okay
+4003500	4007900	just to extend the protocol a little bit but the idea is that if one of them paid they will announce
+4007900	4012700	the fact that they paid but nobody knows who paid and that's the best kind of anonymity you can achieve
+4015180	4015580	all right
+4018460	4018860	let's see
+4022700	4024140	yeah let's let's finish here
+4024140	4040780	we only have a few minutes no point in getting into the next exciting topic which is spam

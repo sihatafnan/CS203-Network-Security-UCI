@@ -1,0 +1,547 @@
+perverse a number of what's called autonomous systems. Some autonomous systems are called
+stomp, because you need stomp, meaning that they're like ISPs, that they provide services
+to individual customers. And then there are these transit or backbone ISPs that essentially
+do not deal with individual customers, but rather provide, well, just transit services.
+And so an autonomous system, as I think I have mentioned at least a couple of times,
+is a collection of resources under the control of a single administration.
+It is typically contiguous. So you can have autonomous systems, or you can have an organization
+that is so large that it has multiple sites, multiple locations on the internet, and then
+most likely you have different autonomous system numbers. Each autonomous system is assigned an
+official number. You cannot just pop up on the internet and become an autonomous system. You
+have to register and apply for a number. You can be assigned a unique number.
+Okay. Various days. OSI, standard vertical stack that you probably would have seen in the network's
+power source. Seven layers. It does not correspond to reality. At least not in the upper layer. The lower
+core layers kind of do, because here we have the actual physical transmission, right? Some kind of
+wireless or wired, not basically that, even pigeons, right? Whatever. And then on top of that,
+you have a data layer, something that's called MAC layer, media access control, right? MAC layer. And above that,
+you have a network layer, where in our case, IP lives. And then in a transport layer, you have things like
+TCP, UDP, ICMP, and what else? Some kind of niche protocols. And then on top of that, you have things
+like SSL and CLS, and HTTP, etc. And this has RPC, while this is a bit outdated, but remote procedure
+calls that used to be implemented. This still is implemented on top of the transport layer. And then
+the rest is like session and presentation layer. There's like a bit less clarity, how to map that.
+So we call the data format. So your application will be passing the data forward to the transport layer.
+The data that an application passes to the transport layer can be just a blob, okay? Some kind of blob,
+we don't care how long it is, as long as it fits in the address space of a computer, right? Available
+program memory, some kind of buffer. So we don't say how long this is. Let's just assume it can be
+arbitrarily long. And the transport layer, typically today, what happens is, if it goes to a DCP, right?
+So a DCP is by far the prevalent protocol for transport layer, not the only one. But a DCP layer,
+what happens is DCP will look at the application data and say, okay, I am aware, I, DCP, I'm aware
+of the maximum transmission unit of the lower layers. I know exactly what is the maximum packet size.
+So because it is aware, it will chop that application data into chunks or segments,
+and then slap a TCP header in front of each one of them. A unique DCP header that will be unique,
+because remember, DCP header has all kinds of things. But one of the things you should remember,
+we talked about it, is data offset. Remember offset field? So for a given DCP connection, right, there will be
+different offsets when the application data is split out. But the source, destination, port numbers
+in those PCP headers in multiple segments will be the same. So the offset field is very important,
+and it's interesting because it serves as both the actual offset into the data,
+but it also serves as kind of a sequencing. Except it's not incremented by one, it's incremented by the size of each segment.
+So at any time, a DCP connection, the offset represents the number of bytes, of data bytes,
+in that direction. It's unidirectional, which means that Alice is talking to Bob. This is going to reflect
+the number of bytes that Alice sent to Bob thus far on this DCP connection. Okay? Bob Mason, more or
+less, it has its own offset in Bob to Alice direction. Okay? At the network player, each DCP segment,
+each DCP segment, will likely not get fractured. Okay? Because the DCP is aware that an IP header will be
+slapsed in front of you. So it accommodates that. It takes it into account. Okay? So now we have an IP
+IP header, a DCP header, followed by data. That is faster than the data lake layer. In this case,
+it's Ethernet. Now Ethernet works over wires, twisted there, over fiber, it works over Ether.
+Right? But it stands in, so that's physical layer, right? That's physical layer. What physical
+media uses? But the MAC layer, okay, data lake layer, there's a standard, Ethernet standard,
+that says exactly how packets are formatted. So the network layer, IP packet comes in,
+and Ethernet header is added, and then Ethernet tree lays again. So the packet essentially encapsulates
+this. Okay? If you are using any secure, or if your Wi-Fi, you know, usually wired does not,
+but if your Wi-Fi is using some security measures, like WAP, WAP, or whatever the heck they're using,
+WFPA, that will be taken to our pair, at that layer. Okay? So there will be additional shields,
+additional subtenants here. But what I'm showing you here is just without any security, right?
+If time permits, at some point I will talk to you about wireless security, right? That usually happens
+at this layer, not above. Now, if you listen to prior lectures carefully, you remember me spending time
+on fragmentation, right? And you may ask, why did I spend all this time talking about fragmentation,
+and I just informed you that fragmentation actually does not have an IP layer, right? Yeah.
+Contradiction? Yes. Except that TCP is not the only transport layer protocol. Other transport layer
+protocols are allowed not to be as complicated and to pass to IP anyway. In fact, TCP is just very
+considerate and nice this way. One of the reasons it is, is because it doesn't want to deal with IP
+fragmentation. It has its own fragmentation to use. Do you see? So it wants things to go fast.
+It optimizes through. It optimizes through. Other protocols do not have to do. How many of you are
+familiar with the Linux kernel or any Linux kernel? A few of you. Did you know that there's something
+called raw sockets? Anybody knew that? Good. You can actually have an application, write an application
+that uses IP directly. You do not have to go through some session layer and then transport layer. You can
+actually write an application. They just directly accesses IP. In which case your application is its own
+is your own transport layer. Okay? Stunted, crazy, silly, maybe, yes, but it's allowed. Just FYI,
+many open unisex versions allow you to also write raw ethernet. That is, if your application
+if your kernel configuration lets you do it, you can actually open a raw ethernet socket and send
+directly infinite packets. In which case your own network layer. But these packets will not go
+past the first router. You see what I'm saying? Okay? Unless you re-implement IP and DCP and whatever
+else, right? So that's why this is not a contradiction, right? For example, UDP, which is another transport
+protocol, can hand over to IP a packet that is very big, and then IP is N24, will fragment. IPv6 will
+barge. Okay, let's give you an error. Right, so TCP requires the segment to break data into segments,
+and the receiver must reassemble segments. And because TCP is a connection-oriented
+protocol, right? With explicit establishment and tear down a connection, there's an acknowledgement for
+every packet. Well, there's an acknowledgement, okay? And lost packets, when the lost packets are
+detected or there's no acknowledgement coming through the center for a particular system, it has to
+re-transpense. And one of the more important things in TCP is the maintenance of what's called
+receiver window. Does everybody know what that is? So, normally, when you send segments one,
+segment two, segment three, segment four, you expect, normally, to receive them in the same sequence.
+But what if segment two gets lost? What if some router modifies a bit in segment two, and when it is
+received, it is incorrect. So, it's from away. So, it's essentially not being received. Or maybe it gets
+sent by a different route and gets stuck somewhere. So, that allows, so TCP handles this and allows the
+receiver to receive packets or segments that are not in order. And so, instead of expecting a window
+of size zero, meaning I receive packets one, two, three, the next one is four, right? It says, oh,
+I receive packets one, two, five, but I'm okay with receiving three, four, or six, okay? So, that's called
+the size of the window. The size of the window is dynamic based on the characteristics of the network
+of traffic, right? It has to do with, like, congestion on the internet, okay? And many other
+factors that influence the size of the TCP window. Now, IP is much simpler. Recall, it says vertical,
+but it's actually not a vertical. It is a packet format. It is an extreverse. Every packet is on its own.
+So, it uses either prefixes off or exact destination addresses for routing. Okay? What am I saying?
+When the packet arrives at a router, IP back, the router's main job is to take the destination of
+that packet and look that up in its routing table, FIB, forwarding information dates. That's a weird term.
+It's really a routing table. And it can be huge, huge, huge, especially for a backbone router.
+So, how does it look it up? Well, it's not the exact match. It's possible that the destination
+IP address is exactly present in the routing table. It says to this, for this destination address,
+go there. But most likely it's not like that. What it says is the prefix for that destination address
+is over there. So, you see this example destination here. So, it could be that the routing table can
+trace an entry for exactly this, or it could be that it contains an entry for 171, 64, 66.
+That's called a prefix. That's called a prefix. It's one example. 171 is also a prefix. That's the
+shorter prefix. So, what I think I'm going to do is it looks for the longest prefix, right? The most
+exact match possible. And that is the entry when it finds the entry with the longest prefix. It says,
+okay, what is the next entry? In that entry, you have all kinds of stuff, including which interface
+to forward it on next. What is the next stop for this package? It doesn't know the actual route,
+right? IP routers do not know the actual route this package will take to the destination. It's just
+the destination and the next stop. Okay. If no match is found, what's supposed to happen but doesn't
+always happen is an ICMP destination and reachable packet is generated back to the source.
+source. Okay? So, whatever you see in your browser post-unreachable, right? You're trying to load
+something unreachable, that's essentially what happens. Okay. So, long as we can match,
+of course, there are usually several hops, often more than several. If you actually do a trace route,
+you will see if you do a trace route and then give an IP address or trace out host names,
+you will actually see in excruciating detail the hops, the IP addresses of the hops, your packet takes
+from here to there. Okay. Now, the hops and ASs are different things, right? A hop is a physical
+hop from IP router to IP router or from IP host to the router or from IP router to the destination host,
+right? All these are physical hops. Now, there are AS hops, which means how many ASs you go through
+on the way to the destination. Well, every AS typically has at least a hop within it, right?
+So, you enter an AS through what's called an entry router and you exit through an exit router.
+They may be connected directly or there may be intermediate hops within the AS.
+So, trace route should tell you that, but some ASs do not expose their internal structure
+and they will not reply to this, will not respect the trace route.
+So, it's not guaranteed. Typically, what you see in trace route is correct, but it's not complete.
+All right. Any questions so far? ICMP is the protocol I mentioned, right? Instead of for plumbing on the
+internet, it's a very compact transport layer protocol that is used for exchanging maintenance
+messages. This is actually a protocol, not a packet format. I mean, it has packet formats,
+but it is a protocol meaning messages here are generated upon some events and they have mean.
+So, error reporting, congestion control, reachability, timing, etc. Okay? So, destination
+unreachable I already mentioned. Time exceeded. Oh, that's when TTL gets decremented to zero. Remember
+TTL and IP packet header? And this packet has been, yeah, usually set to 255. So, if something,
+if it reached zero, this packet has been looping around. Something is very wrong. Parameter problem,
+I'm not sure what the heck that is. Redirect to a better gateway means that, tells the previous gateway,
+your routing is messed up. You're sending it to be a packet, but there's a better place, better next
+hop of that packet than me. Reachability test, that's the one, echo reply, that's the one that trace
+round uses. And timestamp reply, this is also for when you put a timestamp option in an IP option field.
+TMI. Security issues. Many security issues because neither TCP nor IP were natively designed for
+security. Remember, it was all designed in a very, uh, prehistoric, friendly world, where nobody wanted
+to hurt each other, steal each other's information. So, uh, packets go by untrusted hosts, our routers,
+uh, sniff, and maybe log packets. And sometimes, for good reason, organizations, uh, companies will
+often log all IP traffic that comes from inside out and also inside in for all kinds of, uh, auditing
+purposes. Like if shit hits the fan and things go wrong, they need to investigate and figure out, ah,
+how exactly sort of forensically figure out what happened, right? Where did the malware come in? Where
+did the phishing come in? Where did the routing update, you know, fake routing that they can be
+so they need to do this. And so this logging can, or sniff, sniffing can happen for benign reasons,
+or it can happen for non, for malicious reasons. IP addresses, as, as, as we talked about, are public.
+They're not hidden, um, unless you're using IPsec, but even with IPsec, right, the outermost IP
+here is visible. And it often provides some information. Uh, TCP connection. So IP is difficult
+to abuse by itself because it's not a protocol, but TCP is a protocol. And you saw the state diagram
+that I hope impressed the heck out of you, right? There are actually courses out there. When I was in
+grad school, we had to memorize the freaking TCP diagram and answer, you know, final questions
+that you should feel, you should feel lucky. I mean, pretty much everybody failed that. But,
+but it was, it was rough. Um, TCP requires state, right? Because the connection is this connection
+oriented protocol and every connection oriented protocol on the face of this earth requires state
+here and there at the source and the destination or whatever the connection endpoints, right?
+And that state isn't free. Depending on how your, uh, network protocol stack is implemented within
+the kernel, outside the kernel, it is consuming memory and resources. There is a whole course discussion
+of whether you should put, you know, an operating system should keep the network
+stack inside the kernel or outside the kernel. Outside the kernel makes the kernel nicer, smaller,
+easier to find bugs, et cetera, et cetera, faster maybe, but putting it inside makes networking faster.
+Because if the, if the networking stack runs outside kernel space, you have to switch into the kernel
+often, right? Because there's some still controls that need to take place. Anyway, um, state is important. And
+there are attacks and so attacks on that state. And we will see one very impressive example called
+SynthFlight. Also, TCP state, the state that is maintained at both ends of a connection is not secret by
+nature. And because it's not secret, it can be sometimes easily guessed. And if you guess that state
+correctly, you can manipulate the connection by injecting traffic into it. Even from my outside,
+from far away, from far away, you can inject traffic into it. And you can even close a connection,
+which is kind of a nifty denial of service attack. Okay, so sniffing is not so impressive, right? So
+what they have to do just sniff. But years ago, back in the 90s, early 2000s, there was still a lot of
+alignment, there were most implementations of these commands like ftp, telnet, rcp, you may have run into
+these commands. And they still exist in many Unix versions, right? FTP file transfer, telnet, remote
+login, rcp, remote copy, RSH, remote shell. Okay, these commands required passwords, right? But they
+sent them in the clear. Because remember, the world was friendly. Yes, you have to have a password that if you
+sniffed on those packets that were sent back and forth, and you sniffed on them in the beginning of a
+connection, you would actually get a clear text password. Now, why am I telling you this? This is
+prehistory, right? Well, the truth is, prehistory is not actually that much of a prehistory. Because
+out there in the real world today, there are still Windows 3.0 implementations running.
+Yes, legacy, like from the 90s, there are many places, especially in industrial control,
+where really obsolete operating systems are used. Why? Because some software is written
+to take advantage of those operating system features, and nobody knows because the people
+who wrote it probably are dead now, okay? Or in a retirement home and demented, or doing something
+else, and nobody learned how to program on Windows 3.0 because it's so old. You get the point? Just like
+NASA and the federal government in general has gazillions of lines of code in various software
+installations that run COBOL. Maybe your grandparents know what COBOL is, if they were in the tech industry.
+But COBOL is a language from the 60s. Tons of code was written in COBOL, and a lot of it still remains.
+Because nobody knows COBOL programmers today earn big bucks. If they're alive. Anyway, so these,
+these things still out there. The other thing is that if you, the Ethernet itself, right?
+So I'm stepping down into the data link layer. Ethernet by itself has some very interesting features.
+Most Ethernet interfaces have a way of being put in what's called promiscuous mode.
+And this is how ethereal works and TCP dump, if you've used those pretty popular programs.
+They put the card in the, in the promiscuous, your card, the NIC, the network interface control module,
+into this promiscuous mode. And you basically receive all the packets sent on the second. So
+it means that if one of you does this with ethereal and TCP dump, you should be able to see everything
+that goes on here, maybe even outside, as long as the same access point is being used.
+Right? It's called an Ethernet segment, right? So you will hear all the packets on the Ethernet segment.
+So that's not very nice, but that's how it works.
+Now, if there's wireless security, like web, web, WPA, or something like that, plus there is IPsec,
+plus there is SSL, you won't get anything. But at the very least, you'll see who is communicating.
+You will also see how much they're communicating.
+Right? You will see, oh, a particular Ethernet MAC address is talking to the access point,
+and it's sending large chunks of stuff. Oh, maybe somebody is recording this lecture here.
+God forbid. Or they're not sending large chunks of stuff. Small chunks, they're receiving large
+chunks in regular fashion, like regularly. Ah, somebody here is using streaming video. Right?
+Or it will be sending small chunks of small Ethernet packets upwards and receiving kind of irregular
+size things back. Well, they're probably just browsing the web, right? So information is power.
+So one example of an
+Ethernet, sorry, of an attack that works on the Ethernet, but is actually not an Ethernet attack,
+is the SMRF. Don't try this. You may actually find a few places where this would work. It shouldn't
+work today because of some remedial measures, but the SMRF attack basically works like this. You have,
+you see, these hosts, these computers are on the same Ethernet segment. It doesn't matter if this is
+wired about wires, okay? Okay, so they're on the same segment, and they're controlled by that router.
+So if they talk to each other, they talk directly, but if they talk to anybody outside,
+they go through the router, okay? Kind of like we do go through the access point here. Okay, so
+suppose the adversary has a victim, some computer, right? Some phone, a computer or tablet or something
+with an IP address, okay? That victim is somewhere else. Could be close nearby, could be far away.
+Okay, so what the adversary does is it generates an ICMP packet, okay? ECHO request with ECHO request
+back. And according to the protocol specs, when a host receives an ICMP ECHO request,
+it's supposed to reply with ICMP ECHO reply. Nothing, nothing bad about that,
+but if you generate this packet from outside, right? That Ethernet segment, it goes for the router,
+and then, as long as you put the destination broadcast address, and by the way, there is such
+a thing, right? 255, 255, 255, 255 means everybody's supposed to receive this.
+Everybody will receive it and dutifully generate an ECHO reply. Now, my silly picture has three
+hosts on that set. But what if there is a 10,000 host on that set? Two things will happen.
+One is the router will get a bit clogged. Maybe not so much. But that victim is going to get overwhelmed,
+because especially if the adversary generates at nearly the same time a bunch of those ECHO requests
+to different Ethernet segments out there, and everyone will reply to the poor victim.
+Yes. The adversary also, you see, and the source, as the source does not put his IP address,
+puts the victim's IP address in red. I think that IP address is unauthenticated.
+So the router will pass it, all the hosts on that segment will receive it, and dutifully reply.
+Once you know the problem, it's easy to fix, right? But the problem existed for a while.
+You see this problem? Don't turn off broadcast. Maybe that is a bit heavy-handed,
+because there may be legitimate reasons to use broadcast within here, within this segment.
+But what you do instead, you say, fill the router. You should not allow external packets
+address to the broadcast address. Right? Simple. You cannot authenticate the source that victims address.
+You don't know if it's true or not. But what you can do is say, broadcast can only be on the inside.
+The router does not pass any any broadcast address pattern. Just drop it. That's it.
+Ring of death. Even that might still exist. This is very old, but that might still exist somewhere.
+Because if you have an old, like, I think 3.0 or 3.1 Windows machine, there was a bug in the kernel.
+And what if, because, of course, IP was inside the kernel, so an ICMP packet with a payload over 64k was received,
+bam, crashed. It's not supposed to send IP packets over 64k, but if somebody does, there was no check.
+So memory was overwritten. Some important stuff was overwritten as a result. Right? Because what does
+it mean received? You receive a packet and you have to copy it into some buffer, right? Yeah, you all
+programmed at one point in your life, right? You have to copy it into some freaking buffer. But if the buffer is
+set hard-coded 64k, and you receive a packet of 128k, what's going to happen if this bug is present,
+if you don't check the boundaries? You're going to keep writing. And the extra 64k are going to
+overwrite something damn important. Boom. Okay, it's easy to fix once you know.
+Right. Then there's teardrop. They all have cutesy names, right? Teardrop.
+Remember we talked about overlapping fragments, right? So that's one. Except this is for TCP, not for IP.
+Right? So you can have this overlapping in IP. You have fragmentation offset, remember? That's for the
+same packet. While the same thing, similar thing happens in TCP, except remember TCP sends segments.
+And every segment has an offset field. It's not a fragmentation. It's just offset into the
+conversation, right? And if you send overlapping offsets, then bad things would happen. Right? So the
+attacker says offset filter overlapping values. And then when you reassemble, remember what happens
+when you reassemble things with overlapping values, you wind up also overwriting stuff. So it would crash.
+Again, easy to fix once you know.
+I love this one. I don't know why it's called land. But there was also an older version of Windows,
+again, I think 3.0. Where if you send an IP packet with a source address and a destination address the
+same, meaning itself. So it's like saying, oh, the packet comes from the outside, but the source
+address is this host. And the destination address is this host. And the port numbers are the same.
+It will just, like, lock the CPU. Go into, like, obviously an endless loop.
+So easy to fix. You shouldn't be receiving packets with your address as the source. Hey, right?
+Uh, okay. Reminded by TCP handshake. We're not down to TCP. Yeah. Three-way handshake. Three packets.
+So not, like, one and a half round check, really. Now remember, client starts the connection, right?
+Client starts the connection because client has something to say to the server. Now here,
+the server doesn't have to be a web server, right? We're talking about just a connection.
+So just think more broadly than just a web. So the client starts with the sin packet, the sinc.
+The server, when it receives the packet, says, oh, ah, new connection request. Wonderful. Let me allocate
+some state. Let me reserve a little space in my table. I have a stable of open connections. Let me
+create a new entry. Let me put the source address of this packet, meaning the client's source,
+IP address there. Let me put the fact that the connection is ongoing. It's not established,
+okay? And sometimes, many times, spawn a thread. That is, threading is such a cool paradigm, right?
+Everybody loves threading, right? So spawn a new thread for that connection and go on to another thing,
+okay? You don't want to sit there, right? And be dumb, you know, to just like receive a packet
+and then send a packet and then wait, right? And lock up and nothing happens. Now, you spawn a thread,
+that thread corresponds to this connection that is not yet established. And then you go on to do other
+things, right? Like receiving more connection requests, okay? Makes sense. As soon as you spawn a
+thread reply, the server replies with its, as the protocol dictates with sin s, which is the server
+sin, and the act saying, hey, here's client, here's your act. I acknowledge having received your connection
+request. The client is then supposed to reply with act to the server act s. And at this point,
+the connection is established, okay? Remember with the firewall lecture, we had this like one example
+where there was a table and it's a connection like established. So it wasn't in the being
+established, it's already established, right? So at this point, connection is established on both hands.
+That's the normal way of doing things. That's how it's supposed to happen.
+Now here's a sin-flying attack. The adversary doesn't have to play by the rules, right? That's why it's the
+adversary. The adversary generates in quick succession, or almost simultaneous, a large number of sin packets.
+This is the opening salvo, right? The first packet in the TCP connection is a sin from the client.
+The second packet. Bam, bam, bam, bam, bam, bam. For every stupid sin, the server says,
+how nice, let me open a, let me spawn a thread, dedicate some buffer space or table space.
+Do you see what's happening? This grows faster than a mushroom under the brain, right?
+It expands immediately, like the consumption. Many threads get created, right, at almost the same time.
+The server chokes. Runs out of space. No more space. No more TCP connection. Including no more legitimate
+TCP connection. Do you see the point? It's not that necessarily, maybe the, maybe the adversary's
+goal is to just bring down the server. Or maybe the adversary's goal is to prevent legitimate TCP
+connection. Same effect. Top problem.
+So, it costs nothing for the attacker to do this. Also, my silly example on the previous slide showed
+one little red devil. One attacker, right? I'll let it fool you. It could be one attacker that controls
+multiple zombies around the internet. Right? A botnet. Every member of that botnet could generate
+that kind of a sin storm. Get the idea? The combination. One zombie, eh. A million zombies? The server is dead.
+It's dead. Plus, traffic gets congested, right? So, especially nice thing about controlling a zombie botnet
+is that zombies, ideally, are distributed well. Zombies everywhere in the world, they control them.
+On command from the command and control center, they start generating these sins to the victim.
+What happens is a funnel effect. Because the zombies are distributed at the source near them, nothing bad
+happens. But as they get closer to the victim, right, the funnel takes place. The traffic gets more
+concentrated. Higher volume, yes? You see that? Like, think about the victim's ISP. All of a sudden,
+the victim's ISP is going to get more concentrated. So, not only the victim is going to get screwed, but
+nodes next to you, IS. The ISP IS is going to get congested. So, it's going to affect more than just the victim.
+Okay. So, you can read this, right? The point of this attack is a classical example of a symmetry.
+Why a symmetry?
+Very clear, no? It costs nothing to generate a sin. It costs nothing to generate a thousand sins.
+For a client. But for a server, there's an investment. It's asymmetric. It has to create
+state, right? Allocate memory. Spawn a thread. Even you say, oh, why didn't you spawn a thread?
+There are other paradigms you could use. Yeah, yeah, yeah, yeah. Sure. Spawning a thread is not
+required. But even if we weren't spawning a thread and using a different paradigm,
+we'd still have to allocate space. We'd still have to have a new connection. Something to remember about
+this, you know, not yet established connection, yeah? That's the asymmetry. Have you seen examples of
+this before? Anybody? Asymmetry. In attacks.
+Hell, most of you were born just probably after 9-11. 9-11, that horrific attack at the World
+Trade Center was an example of asymmetry. Over 3,000 people died, two skyscrapers were destroyed,
+a plane full of hijackers and innocent passengers flew into the building. That's an asymmetric attack.
+A guerrilla, terrorist, freedom fighter, call it whatever, with an RPG taking down a helicopter
+is an asymmetric attack. 9-11, it costs very little. You can probably buy an RPG, you know,
+across the border for a thousand dollars. Cheaper if you buy in bulk. A helicopter costs a gazillion
+dollars. 100, 140 million dollars. You bring down a helicopter with an RPG, that's a symmetric attack.
+Okay? Sorry to make this automatic. You get the idea. Asymmetry. It's unfortunate, but that's how it is.
+Now, what can we do about it? With a helicopter? Plants flying into buildings. I'm sorry, but there's not much we can do.
+But here we could do something.
+First, we examine the problem. What creates it? This sort of state allocation, asymmetric.
+Guys, the client is not dedicating anything, right? The client, a benign client in TCP, is supposed to allocate
+state before sending the SIM. He says, hey, I'm going to open a connection, right? So it creates a
+state space, and it's, you know, a table. It doesn't necessarily spawn a thread. It could.
+So it creates space, allocates memory, whatever, and then sends the sensee.
+But an adversary doesn't have to play with the rules. It doesn't need to allocate anything.
+It just can generate sensees at infinity. So he's not losing anything. Just sending packets.
+Now, one solution is cookies. And you think, oh, it's going to use web. No, no, it's not web,
+but it's similar to the web cookies. Okay? And the idea is, if instead of
+state allocation on the server side, will it receive that SIM from the client, if the server could
+somehow avoid creating state, then maybe it would solve this problem. And that's what this solution does.
+So here's a cute little solution. This is from about 15 years ago. It is, in fact, deployed. It is
+compatible with TCP. So you wouldn't know if it's deployed on a particular server, right? Unless you
+actually snoop on traffic. Okay? So the client starts with a sensee, right? Just like it does. We don't
+know if this client is good, bad, or ugly. Just a client. The server receives that sin. And remember,
+TCP server is over listening, right? That's why it's called the server. It's listening. So it gets the sensee,
+but that does not spawn a thread, does not create any state. That's the cool part. What it does,
+it replies with a sin as an axi, which is that second packet, the way it's supposed to,
+but it abuses or repurposes one of the field, which is a sequence number. Now the sequence number there
+in the reply, okay, is like, you get 16 bits, right? I think it's 16 bits. So what it does is,
+no, 32 bits, excuse me. And instead of leaving it be, to be whatever, zero, zero, right? Because
+at that point, no data has been, you know, sent back and forth. No real data, right? No application.
+It puts a certain value, and that value is a function. You see the function f of source address,
+destination, sorry, source port, destination address, destination port, course time,
+that's server's own time, right? Maybe rounded, not exactly like nanosecond precision, but let's say
+rounded to the nearest, I don't know, 10 milliseconds or something like that. That's server's own clock.
+And most importantly, server's secret, the key. A key that only server knows, so it's not shared with anyone.
+Okay, so it computes this 32-bit quantity and stuffs it into the sequence number field.
+The client receives the SNS-ACC packet and actually doesn't do anything. It's supposed to echo the sequence
+number back. That's according to the rules. It's supposed to echo that sequence. That's TCP rules. So the
+client does not know what's going on. He is not aware of any of this defense. So he just beautifully
+generates S for, you know, and includes the cookie, which he copies from the, is supposed to, as supposed
+to from the sequence number. Aha! So now the server says, okay, I am going to recompute the cookie.
+Why? Because you see, where does this source address, source port, destination, position report come from?
+They come from the IP packet. That is that first one, right? The SIN-C. Make sense?
+So that magenta field, right? It captures the source address, destination address of the original packet
+that opened the connection, the ones to open the connection. Now this S is also an IP packet, right?
+To the TCP, et cetera, et cetera. But the IP header, if it's an honest client, will contain the same IP
+source and the same IP destination and port numbers as it did in the original packet, yes?
+If the client is honest.
+So what the server does is says, ah, extracts the cookie and says, well, let me get the IP source,
+IP destination, the port numbers from this packet. I know my own secret.
+I know the course time, right? Because the time, not much time has passed, right?
+So it just recomputes the cookie and compares it to the one received in this packet.
+If the cookie values match, then it says connection is open, it creates a state.
+One second. If they don't match, throws it away. That's it. No big loss, right?
+As if it has never happened.
+Ah, good question, right? Okay, I was waiting for that.
+Why doesn't the attacker just play along? Tell me, why?
+Excellent exam question, but now it's gone.
+Why doesn't the attacker do the same thing? He knows what the, he knows the cookies look off.
+He can guess that the server is playing along, or he's playing this game. He can just do it.
+Pretend that, otherwise, sure.
+Any ideas? Any ideas at all?
+Why does this help at all?
+It helps because, remember the original attack, machine gun, bam, bam, bam, bam, right?
+One sin after another, bam, bam, bam, bam, bam.
+You can put different distance, source addresses in there, right?
+Yes? But now things have changed. The adversary before, let's for a second consider the adversary
+with a single host coming from a single computer, single IP group. The adversary would generate
+a large number of SIN requests, right? The initial packet, essentially machine gun the server,
+starting, you know, strangling itself to death. But now, in order for the server to delegate any
+resources, the client has to be there to receive the SIN ACK, right? Otherwise, server hasn't done anything.
+You get it? You get it? So, if the client did not receive the SIN ACK, he cannot generate ACK S,
+because he doesn't know the cookie. He doesn't know the cookie.
+One variation of this is to say, oh,
+the server, forget the cookies, let's not use cookies, but let's change TCP on the server so
+that server only allocates space after he receives an ACK S for the client.
+That's not a keyword. That's equally stupid as the original. You see why that is? Because if the server
+only allocates state after he receives ACK S without the cookie, generating ACK S is easy for any client,
+because it contains nothing secret. But the trick in this specific solution is that the cookie is
+computed with a secret known to the server, and no one can create valid cookies but the server.
+Now, somebody can snoop on a cookie. You can copy a cookie. But a cookie is only valid for a little bit of time.
+Okay? And if the source address doesn't match, cookie will be thrown away. So the whole idea is that it does not
+prevent the attack complicate. It makes it much harder for the adversary, because the adversary has to
+essentially complete that three-way handshake with the server for every fake connection it tries to establish.
+So yes, the server will still create the state and maybe spawn a threat, but it will only do it here,
+when this succeeds. Not there when it first receives the path, the original path. Questions?
+So, in reality, what is F? Because, okay, 32 bits is not really an encryption technique. So it's really
+more like a hash function. Okay? Because you kind of like stuff encryption in there. It's a hash function.
+Like the one with cryptographic hash. Typically, it's an AES, like AES-based hash or truncated SHA.
+Truncated means the server computes, recomputes the hash, which is like 128 bits, but only uses 32 of those.
+So the unfortunate thing about this approach is that it is restricted to 32 bits, which means that
+if somebody guesses a cookie, they can attack this technique. But guessing a cookie is probably
+the 1 over 2 to the 3 too. So it's not that easy to guess a cookie.
+Right. All right, this is just a verbal description. There's that, just take a second to read through
+this, but basically it's a word I already said.
+Right, so this will be, one thing to know is, of course, the IP address of the source may still be
+both. But that's not really a service for money. The server doesn't really care about it.
+Okay, a completely different approach, which uses no secrets, and is just a little bit kind of over
+the top, but works surprisingly well, it's called random deletion. And that is, it works like this.
+It works like this. When a server gets these connection requests, the initial connection
+requests to send C from the client, what it does, it creates an entry in this table. Right?
+Kind of like this, I have a half open means the connection is in progress. It's not, it's not
+established yet. So that C results in a new entry in the table. I don't show the entire table,
+I'm just showing that. This says, oh, I have a connection that is in the process of being open
+with all of these four hosts, right? It's not established yet. And so this table has limitations,
+right? It's like maximum size of some sort, right? About 10,000, a million, right? Depends on
+a lot. It's a web server, it could be many millions. But when it reaches its limit, right? What you do is
+you just delete random entries. Just pick the brand number and delete one. Okay? Next time it's full,
+delete one. Now when connections close, right? The entries get flushed anyway, right? Connections get,
+in TCP, I don't remember if I said that. There's an explicit connection teardown, right? Using RSD reset
+plan that terminates the connection. There's like a handshake there too. Or connection can be terminated
+due to timeouts. And whenever connection terminates, of course, the server will remove the entry, right?
+Free the entry. So some entries will be terminated one way or another and some will be just randomly
+deleted. Now what does that do? That's bad for an honest connection. That is like
+an honest host that is trying to establish a connection.
+But it's also bad for the fake connections, right? Because if you put it random, right,
+the entry to delete, you're penalizing everybody equal. So legitimate connections have a chance to
+complete and fake will be eventually deleted, right? Because they will timeout. Now the other thing I
+should have mentioned earlier is, of course, the server when it dedicates space, right, or creates a
+state that is for a connection that is not established, right, during the three-way handshake,
+if the three-way handshake does not complete, that connection will timeout. It will be deleted.
+Okay, so it's not like it spawns a thread, dedicates space, and it stays there forever. No, it gets flushed out,
+but not soon enough. That's why that original attack worked, because the industry generated
+many, many, many, many connection requests at the same time, or almost the same time.
+Right. Spoofing. So the other thing is, remember I said sequence number, port numbers, right? Sequence
+are like offset, right? When I say sequence number and offset, they're the same thing. And port number,
+right? Every connection is associated with the port number. So there is nothing inherently secret in a TCP
+connection state. Port numbers, especially for server ports, are easy to guess, right? You don't need to guess them, right?
+Okay. They're well, they are signed, right? HTTP, FTP, ICMP, whatever. They're telling that they all have
+well-known port numbers. Sequence numbers are not like fixed, right? They change. Sequence numbers means
+you start with zero, then you send 1500 bytes, then it becomes 1500, right? You send another 500 bytes,
+then it becomes 2000, right? So these are the sequence numbers. Number of bytes exchanged so far,
+in one direction. Well, an adversary who is sitting along the path between a sender and a receiver,
+right? As the adversary is here, between, might actually see the sequence numbers.
+So that adversary can generate like a reset,
+and then close the connection, or inject packets into the connection, you see?
+Pretending that, you know, that they're part of this connection. But the more interesting thing,
+but that's, you could say, well, you know, you could protect against that, maybe this is
+inside an organization or behind some kind of a firewall or whatever. But it doesn't have to be inside a
+firewall organization. It's just that the adversary might be like here, far away, not on the path,
+between the source and destination, right? Most cases, in the realistic cases, in the internet,
+right? The adversary isn't actively snooping up, or is actively interfering. He's not on the path
+between source and destination. The adversary is somewhere else in the basement of his grandma's home
+in Slavonia, okay? So how is that adversary attack? Well, that's the interesting part. The adversary
+can actually guess, he knows the initial sequence number is always zero, right? I mean, it's a
+typical connection, because it starts with zero bytes. And then he can guess, okay? You just guess.
+Well, you say, you know, guessing is hard, because remember I said the sequence number is 32 bits,
+right? So guessing 232, not that easy. But remember window size? So if the DCP window size is zero,
+which means DCP is super strict, it wants to receive things exactly in order, this attack will not work.
+But in the real world, over the internet, right? We communicate DCP session over the internet. There's loss,
+packet loss, there's congestion, there's all the other factors that dictate for DCP to have a
+flexible window size, the window size of the packets, or offsets it willing to receive, on the
+recipient right there. Which means the adversary has a larger space to play with. As long as the
+adversary generates packets with the offset within the window size, they will be accepted.
+It makes sense. So, that's what we have. And this is especially the case when you are like
+communicating with, I say, with your portable devices, with like smartphones. And I see you're driving,
+walking around, you're somewhere where the connectivity is not very good, and you have a DCP
+connection. And you're watching streaming video, you could be browsing the web, whatever.
+But, what happens in these environments, is that there can be sudden, like massive packet loss.
+You know, you have a poor connection. It happens. Like, I drive for Crystal Cove,
+a bunch of times, every week. You drive on PCH for Crystal Cove, you're going to have that happen.
+Because the cellular connection is terrible. And of course, IP runs over cells. So,
+there's always a massive packet loss. So, clearly, the window size, on the receiving end,
+not to lose the connection, has to accommodate that. And the window size has to be large.
+Right? So, what the adversary can do, is instead of sending one packet,
+fake packet, injecting into DCP connection, the adversary can just generate the flood of packets,
+all with different offsets, right? Or sequence numbers. Hoping that at least one of them will
+fit in the window. And if one of them does, well, great. It will be accepted.
+Including reset. So, you can also, like, if reset is, like, terminate the connection. It's a,
+there's a flag, like, send flag, add flag. In the DCP header, there's, remember, there's a flag
+still. And one of the flags is RST, or reset. And that signals to the receiving party that the
+connection is being terminated. What's the nature? Well, I mean, it's kind of denial of service,
+right? Your connection is suddenly reset. You may have seen, you may see this sometimes,
+what in, in some browsers will display, like, connection reset. Have you seen that message?
+Black screen, connection reset. Yeah, that means something, the server terminated the connection,
+or time had it occurred. Usually, the explicit connection was terminated for some reason. So,
+so that's what happens. Not a huge problem in many cases, unless the TPCP connection is critical.
+Like, for example, some routing protocols, remember routing,
+maintain long-lived TCP connections between adjacent routers. Especially, let's say this is one domain,
+and this is another domain, and here we have two border routers. And they maintain this connection.
+Long-lived TCP connection. Not for forwarding packets, but for exchanging routing information.
+Okay? Like DGP. We'll talk about it later. And if you reset this connection,
+that requires them to reset the connection and restart. And routers don't like to do that,
+because that's not their critical path. That's not what they do. In fact, they need to do things
+fast. Restarting a new routing, sorry, TCP connection takes time. So, that's real denial of service.
+Also, UDP. UDP is not as popular as TCP, but it is used. Okay? It's unreliable. Use stands for
+unreliable. Tells you everything. Unreliable datagram protocol, which is a very, very lightweight
+transport layout that runs on top of IP. It has port numbers, just like TCP, but
+doesn't have a connection established with DGP. It was super popular years ago for these P2P
+applications. Anybody remember P2P peer streaming? Yeah. So, it was really popular because
+the idea was that it was too hard to run TCP servers, right? On like small devices. So, instead,
+if you run UDP, you didn't have to run a server. You could just like have light. There's no
+establishment connection, no teardown. You just like wanted to grab an illegally copied movie from
+somebody near, you know, on a laptop. It just did it quickly without having to establish a connection.
+But UDP provides no closeness, no flow control, no windows, nothing. So, UDP flooding is easy.
+They just generate a bunch of UDP packets. Now, some, some operating systems, some hosts do not
+accept UDP traffic. Some screen it more. But natively, UDP traffic is not screened.
+So, well, what can we do about all of this, all of these data? Well, you know, at the Bob
+transport layer, we can use things like a purpose, sure, right? Remember that.
+A Bob network layer, we can use this as a cell TLS or as a stage. I think Cap is a stage,
+a different alternative. And the network layer. Also, okay, but that's, that's a purpose.
+Remember, it provides user authentication, client authentication, server authentication,
+but does not protect you against, like, network attacks. So, any kind of connection hijacking,
+connection spoofing, you know. SSL TLS will protect you at this, kind of this session layer,
+but does not
+against denial of service. For example, SYN flooding. You cannot
+prevent with SSL TLS. Or UDP flooding.
+As a network player, you can use IPsec.
+IPsec is great. It will protect you against
+connection, hijacking, injection, all of the attacks. Pretty much all the attacks I just
+described can be fixed with using IPsec.
+But IPsec is a heavy
+machinery. It demands what we didn't cover is like
+establishment of keys and then the actual connection
+in maintenance there. It's not free. You will see a performance degradation
+for your network.
+So it's
+pretty much the best solution there is for preventing these kinds of attacks.
+mitigating these types of attacks. But like I said, there's
+performance penalty and also the key management
+is just very, very complicated.
+Okay? So if you work for
+organization where they set up IPsec, that's great.
+But for yourself, it's not easy.
+And below network layer, none of these
+attacks can be solved except for the one that
+the SMART.
+Okay, I think we'll end here because the rest of it has to do with routing
+and you'll probably forget if I just start.
+All right, see you Thursday.
+We'll see you from

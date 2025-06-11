@@ -1,0 +1,4816 @@
+1
+00:00:00,000 --> 00:00:29,980
+which mail, as you'll know, has a mail from field, right, or all the emails that you receive have a from field, and that usually contains user ID, right, where is it coming from, and some domain name, that will result in the DNS lookup as well, and all kinds of spam checks and other ancillary encountered links will cause, even if bounce, like when an email bounces, even that requires that.
+
+2
+00:00:30,000 --> 00:01:00,000
+DNS lookup. Also, we'll talk separately about phishing, but many anti-phishing defenses rely on DNS, right, so they try to resolve a particular name and see if it's a legitimate record or if it's something iffy, right, so that's a problem, and that's the, so spoofing phishing with DNS
+
+3
+00:01:00,000 --> 00:01:18,000
+lookups, with poison DNS lookups, it's called farming, ph there, or phishing, from phishing. Let's see. There is also some nifty ways of what's called doing dynamic farming, which is essentially works like this. You provide
+
+4
+00:01:18,000 --> 00:01:47,980
+a bogus, like a fake DNS mapping, or a trusted server, and trick a victim, a user, into downloading a malicious script from some attackers controlled evil server. And then the idea is that, what, what, what, what, what, what a phishers or attackers are generally after, they're after obtaining some sensitive information. So, the idea is that you download a malicious script from some evil attacker controlled
+
+5
+00:01:47,980 --> 00:02:17,980
+server server, and then force the user to also download some restricted internal content. Think about not your home, think about working for a company, right, organization, where you have sensitive content hosted internally, okay? Like some maybe scripted salary lookups, or personnel record management, or some proprietary product designs, okay?
+
+6
+00:02:17,980 --> 00:02:24,980
+So, if you have sensitive information, and so the idea, the attacker's goal is to get access to that sensitive information, right?
+
+7
+00:02:24,980 --> 00:02:46,980
+So, if you manage to do that, right, and if you manage to fool JavaScript into, or the browser to realizing that, oh, the evil, the evil script, right, if you download it, and the sensitive content that that evil script tries to access,
+
+8
+00:02:46,980 --> 00:03:06,980
+have the same origin, then access will be granted. Java, I mean, your browsers usually have this policy, I mean, all browsers have this policy called same origin policy, which means that, and that's why, for example, cookies tend to be, unless they are third party cookies, tend to be proprietary, right?
+
+9
+00:03:06,980 --> 00:03:28,980
+The cookie from let's say, Microsoft cannot be read by cookie from IBM, right? So they are separate. And that has to do with that same, fundamental same origin policy, right? So if HTML, if a page comes from IBM, and it wants to access a Microsoft cookie, it cannot, because they have different origins.
+
+10
+00:03:28,980 --> 00:03:50,980
+Okay? Because cookie by Microsoft was put there by MSN.com, or MS.com, or Microsoft.com, and cookie from IBM has an origin of IBM.com. Two different origins. But, if you have, let's say, WW, MSN, MS.com, it can access a cookie placed by MS.com, because the origin is the same.
+
+11
+00:03:50,980 --> 00:04:12,980
+So that's the idea. So that's the idea. So let's consider an example. Okay, I'll give you an example. We have a web server, okay? And it sits at this address, intergood.net, okay, inside the organization, okay? And it has a private IP address.
+
+12
+00:04:12,980 --> 00:04:28,980
+If everybody know this, okay, private IP addresses are different from public IP addresses, so it's like an internal network, a mail, and the address, let's say, is 10-0-0-7, and this server cannot be accessed from outside, okay?
+
+13
+00:04:28,980 --> 00:04:38,980
+So if you try to connect from the outside, the firewall will not match, okay? And anyway, you cannot, there's no routing to that address, right?
+
+14
+00:04:38,980 --> 00:04:50,980
+If you try to send a packet from the outside to 10-0-0-7, you'll get a destination and reach it even without firewall, because that's called a private IP address.
+
+15
+00:04:50,980 --> 00:04:56,980
+And IP routing or internet routing does not route to such addresses.
+
+16
+00:04:56,980 --> 00:05:04,980
+Okay, so this web server hosts, stores sensitive data and sensitive applications, okay?
+
+17
+00:05:04,980 --> 00:05:18,980
+So what the attacker does is that the attacker sits at evil.org, gets a user who is an inside, Alice, to browse www.evil.org, okay?
+
+18
+00:05:18,980 --> 00:05:32,980
+And you might think, well, how does he do that? But by now you should probably realize that there are many ways to do this with a, let's say, poison SMS message, iMessage, WhatsApp message, signal message, whatever.
+
+19
+00:05:32,980 --> 00:05:38,980
+You can come on any messaging service, you can also come via email. Messaging is better because it's usually very quick, right?
+
+20
+00:05:38,980 --> 00:05:44,980
+And if somebody falls for the phishing, they will do it very quickly, right?
+
+21
+00:05:44,980 --> 00:06:00,980
+So the idea is that to get Alice to browse this, I mean, basically click on a link with www.evil.org, and the attackers placed a malicious JavaScript code on that evil.org, okay?
+
+22
+00:06:00,980 --> 00:06:13,980
+And that code, right, as Alice enters www.evil.org, slash whatever, or slash nothing, and she automatically downloads, right, this JavaScript.
+
+23
+00:06:13,980 --> 00:06:22,980
+Totally fine to download JavaScript. You can turn off JavaScript, but then a lot of websites won't work, right?
+
+24
+00:06:22,980 --> 00:06:39,980
+So, okay, and so now this JavaScript says, okay, now I am inside, I can access something on this interhood.net, which is the internal server, like some CGI app or something like that.
+
+25
+00:06:39,980 --> 00:06:46,980
+But it can't do that. It can't do that because that would be a violation of, say, origin policy, right?
+
+26
+00:06:46,980 --> 00:06:55,980
+Because the origin of malicious JavaScript is exactly www, is actually evil.org.
+
+27
+00:06:55,980 --> 00:07:02,980
+Evil.org, not equal to good.net, okay?
+
+28
+00:07:02,980 --> 00:07:08,980
+Different origin, goodbye. So, no way.
+
+29
+00:07:08,980 --> 00:07:18,980
+But, if the attacker also controls DNS, that becomes a real problem.
+
+30
+00:07:18,980 --> 00:07:23,980
+So, here's the scenario. Go for it step by step.
+
+31
+00:07:23,980 --> 00:07:29,980
+So, we have ZDAT 10.0.0.21, Alice's computer device.
+
+32
+00:07:29,980 --> 00:07:36,980
+So, Alice has been tricked into looking up some way, right?
+
+33
+00:07:36,980 --> 00:07:39,980
+www.evil.org.
+
+34
+00:07:39,980 --> 00:07:42,980
+So, this goes to evil.org DNS.
+
+35
+00:07:42,980 --> 00:07:43,980
+There's a DNS server, right?
+
+36
+00:07:43,980 --> 00:07:47,980
+Authoritative DNS server that's set up by the adversary.
+
+37
+00:07:47,980 --> 00:07:51,980
+And I'm showing you not all interactions.
+
+38
+00:07:51,980 --> 00:07:54,980
+Actually, when you look up DNS, remember, you go to the root, right?
+
+39
+00:07:54,980 --> 00:08:02,980
+And the root says, oh, it's going to the .org, and then .org says, oh, okay, here's the evil.org DNS server.
+
+40
+00:08:02,980 --> 00:08:03,980
+Remember that?
+
+41
+00:08:03,980 --> 00:08:04,980
+There's a multiple step.
+
+42
+00:08:04,980 --> 00:08:05,980
+I'm omitting that.
+
+43
+00:08:05,980 --> 00:08:06,980
+I'm just saying.
+
+44
+00:08:06,980 --> 00:08:08,980
+I'm basically abstracting it away.
+
+45
+00:08:08,980 --> 00:08:16,980
+So, eventually, good.net, the power goes to this evil.org DNS server, and gets back an address, a real address,
+
+46
+00:08:16,980 --> 00:08:23,980
+an external address, 222334455, with a pretty short TTL, right?
+
+47
+00:08:23,980 --> 00:08:28,980
+So, it's not going to sit in the cache for too long, right?
+
+48
+00:08:28,980 --> 00:08:32,980
+And then, right, as she actually does a get, right?
+
+49
+00:08:32,980 --> 00:08:40,980
+Because when you do a click on the URL, the first thing is the DNS looked up, and then you actually do an HTTP get.
+
+50
+00:08:40,980 --> 00:08:41,980
+So, she gets something.
+
+51
+00:08:41,980 --> 00:08:43,980
+I put the slash there, but whatever.
+
+52
+00:08:43,980 --> 00:08:44,980
+It doesn't really matter.
+
+53
+00:08:44,980 --> 00:08:46,980
+Some URL from there, okay?
+
+54
+00:08:46,980 --> 00:08:50,980
+On this evil.org, and the response is a malicious JavaScript, right?
+
+55
+00:08:50,980 --> 00:08:54,980
+Some kind of a page that contains a malicious JavaScript code.
+
+56
+00:08:54,980 --> 00:08:55,980
+Okay?
+
+57
+00:08:55,980 --> 00:08:57,980
+You're with me so far?
+
+58
+00:08:57,980 --> 00:08:58,980
+Okay.
+
+59
+00:08:58,980 --> 00:09:00,980
+That comes from an evil.org website.
+
+60
+00:09:00,980 --> 00:09:01,980
+Okay?
+
+61
+00:09:01,980 --> 00:09:05,980
+Not from the DNS server, from evil DNS server, but the evil.org actual website.
+
+62
+00:09:05,980 --> 00:09:09,980
+And that's the correct, that 222 address is actually correct for that.
+
+63
+00:09:09,980 --> 00:09:16,980
+Now, because that TTL expires very quickly, right?
+
+64
+00:09:16,980 --> 00:09:20,980
+Some here, here, it expires, the TTL.
+
+65
+00:09:20,980 --> 00:09:28,980
+So, the next time, or actually the next time, when as Alice loads the web page, okay?
+
+66
+00:09:28,980 --> 00:09:30,980
+There can be some delay, right?
+
+67
+00:09:30,980 --> 00:09:31,980
+That can be inserted there.
+
+68
+00:09:31,980 --> 00:09:40,980
+And the JavaScript will again force a lookup of www.evil.org.
+
+69
+00:09:40,980 --> 00:09:45,980
+Now, that will not be found in the cache because the TTL already expired, right?
+
+70
+00:09:45,980 --> 00:09:49,980
+So, this record there that says 222, that's gone.
+
+71
+00:09:49,980 --> 00:09:50,980
+It expired.
+
+72
+00:09:50,980 --> 00:09:52,980
+That's why it's very short.
+
+73
+00:09:52,980 --> 00:09:53,980
+It's a short TTL.
+
+74
+00:09:53,980 --> 00:10:00,980
+And what's going to come back from evil.org DNS, this evil.org DNS, the same one as ever
+
+75
+00:10:00,980 --> 00:10:06,980
+on top, is now a different address, 1007.
+
+76
+00:10:06,980 --> 00:10:11,980
+See the trick?
+
+77
+00:10:11,980 --> 00:10:14,980
+Very, very clever, right?
+
+78
+00:10:14,980 --> 00:10:22,980
+And that 1007 points not to evil.org web, but points to an internal sensitive content server.
+
+79
+00:10:22,980 --> 00:10:29,980
+That should only be accessed from the inside, by the insiders.
+
+80
+00:10:29,980 --> 00:10:30,980
+Okay.
+
+81
+00:10:30,980 --> 00:10:33,980
+Now, again, this is Alice, right?
+
+82
+00:10:33,980 --> 00:10:38,980
+Alice's device, but it's executing malicious code, right?
+
+83
+00:10:38,980 --> 00:10:47,980
+It says post CGI app, some kind of invoking some sensitive CGI app on the evil.org.
+
+84
+00:10:47,980 --> 00:10:51,980
+But now evil.org is at 1007.
+
+85
+00:10:51,980 --> 00:10:52,980
+Okay?
+
+86
+00:10:52,980 --> 00:11:00,980
+So, the post command, the HTTP post command, goes through the intragut net.
+
+87
+00:11:00,980 --> 00:11:02,980
+And the response is, that's it.
+
+88
+00:11:02,980 --> 00:11:04,980
+That's the compromise, right?
+
+89
+00:11:04,980 --> 00:11:06,980
+Now, this CGI is critical.
+
+90
+00:11:06,980 --> 00:11:08,980
+What about database query?
+
+91
+00:11:08,980 --> 00:11:09,980
+Okay?
+
+92
+00:11:09,980 --> 00:11:10,980
+Whatever.
+
+93
+00:11:10,980 --> 00:11:11,980
+It could be an embedded SQL query.
+
+94
+00:11:11,980 --> 00:11:12,980
+Okay?
+
+95
+00:11:12,980 --> 00:11:16,980
+It comes back here with the results, and it will be sent outside.
+
+96
+00:11:16,980 --> 00:11:17,980
+Okay?
+
+97
+00:11:17,980 --> 00:11:20,980
+I don't show you that.
+
+98
+00:11:20,980 --> 00:11:27,980
+But the reason this attack works is because now the JavaScript, the same origin policy that
+
+99
+00:11:27,980 --> 00:11:39,980
+it uses, is now satisfying, because the original, sorry, because the evil.org provided this address,
+
+100
+00:11:39,980 --> 00:11:45,980
+and intergoodnet is associated with this address now.
+
+101
+00:11:45,980 --> 00:11:55,980
+And therefore, the malicious JavaScript can access 1007 because they have the same origin.
+
+102
+00:11:55,980 --> 00:11:56,980
+Okay?
+
+103
+00:11:56,980 --> 00:12:01,980
+The origin is now evil.org, the same origin.
+
+104
+00:12:01,980 --> 00:12:07,980
+So, the attack succeeds.
+
+105
+00:12:07,980 --> 00:12:12,980
+Now, how do you solve this problem?
+
+106
+00:12:12,980 --> 00:12:18,980
+If you know of the attack, and you wanted just a knee-jerk solution, you can say, well,
+
+107
+00:12:18,980 --> 00:12:21,980
+the problem is due to the short TTL.
+
+108
+00:12:21,980 --> 00:12:24,980
+Does that really help?
+
+109
+00:12:24,980 --> 00:12:30,980
+I mean, it solves that attack problem, right?
+
+110
+00:12:30,980 --> 00:12:36,980
+But what if the attacker just does it over and over?
+
+111
+00:12:36,980 --> 00:12:40,980
+The same thing just until the attacker might know where the TTL is, right?
+
+112
+00:12:40,980 --> 00:12:49,980
+Because the attacker can always, so the idea is that not accepting short TTLs, right?
+
+113
+00:12:49,980 --> 00:12:59,980
+And sort of overriding them with long TTLs, long times, so that this entry with 2, 2, 2, 3, 3, 4, 4, 5 does not expire.
+
+114
+00:12:59,980 --> 00:13:04,980
+But eventually, it will, right?
+
+115
+00:13:04,980 --> 00:13:08,980
+So, it's just sort of hedging the attack a little bit.
+
+116
+00:13:08,980 --> 00:13:12,980
+It's not really solving the problem.
+
+117
+00:13:12,980 --> 00:13:18,980
+One possibility is to randomize the client port.
+
+118
+00:13:18,980 --> 00:13:21,980
+This is a general solution, right?
+
+119
+00:13:21,980 --> 00:13:28,980
+So, you know, when the DNS servers, the DNS lives in a very specific reserved port.
+
+120
+00:13:28,980 --> 00:13:31,980
+But remember, the clients pick a random port number.
+
+121
+00:13:31,980 --> 00:13:33,980
+Well, they're supposed to.
+
+122
+00:13:33,980 --> 00:13:38,980
+So, if you randomize the port number, instead of using always sort of the same,
+
+123
+00:13:38,980 --> 00:13:45,980
+then that might help the attack, because the attacker has to guess that and transaction ID to reply.
+
+124
+00:13:45,980 --> 00:13:46,980
+But this doesn't solve this problem.
+
+125
+00:13:46,980 --> 00:13:50,980
+This solves other attacks we discussed in the last class.
+
+126
+00:13:50,980 --> 00:13:52,980
+It doesn't solve this problem.
+
+127
+00:13:52,980 --> 00:14:01,980
+The other possibility is to introduce some kind of a cryptographic or some more fundamental changes to DNS
+
+128
+00:14:01,980 --> 00:14:02,980
+and add something.
+
+129
+00:14:02,980 --> 00:14:04,980
+Kind of like with IP, there's IPsec.
+
+130
+00:14:04,980 --> 00:14:08,980
+With HTTP, there is SSLTLS.
+
+131
+00:14:08,980 --> 00:14:17,980
+So, there is something called DNSsec that can help with some of this.
+
+132
+00:14:17,980 --> 00:14:19,980
+Okay, so what is DNSsec?
+
+133
+00:14:19,980 --> 00:14:25,980
+Basically, it's extensions to the DNS operation and it works in two ways.
+
+134
+00:14:25,980 --> 00:14:30,980
+There is the public key version and a secret key version.
+
+135
+00:14:30,980 --> 00:14:32,980
+Or a symmetric key version, excuse me.
+
+136
+00:14:32,980 --> 00:14:39,980
+And so the goal is to authenticate and check integrity of DNS requests.
+
+137
+00:14:39,980 --> 00:14:42,980
+Okay, so the idea is that the client issues a query.
+
+138
+00:14:42,980 --> 00:14:47,980
+Most of the problems occur not on the server side, right?
+
+139
+00:14:47,980 --> 00:14:48,980
+It's on the client side.
+
+140
+00:14:48,980 --> 00:14:55,980
+So the client receives a query, sorry, receives a query response that is not corresponding to what he asked.
+
+141
+00:14:55,980 --> 00:15:04,980
+So, if you have a secure channel between the client and the DNS server, that should presumably solve the problem.
+
+142
+00:15:04,980 --> 00:15:05,980
+Yes?
+
+143
+00:15:05,980 --> 00:15:14,980
+Are we assuming the DNS server isn't doing the attack itself?
+
+144
+00:15:14,980 --> 00:15:15,980
+Right.
+
+145
+00:15:15,980 --> 00:15:16,980
+Right.
+
+146
+00:15:16,980 --> 00:15:17,980
+Exactly.
+
+147
+00:15:17,980 --> 00:15:19,980
+What is this solve?
+
+148
+00:15:19,980 --> 00:15:21,980
+The DNS server.
+
+149
+00:15:21,980 --> 00:15:22,980
+Right.
+
+150
+00:15:22,980 --> 00:15:23,980
+So, remember.
+
+151
+00:15:23,980 --> 00:15:24,980
+This.
+
+152
+00:15:24,980 --> 00:15:25,980
+This attack.
+
+153
+00:15:25,980 --> 00:15:26,980
+Right.
+
+154
+00:15:26,980 --> 00:15:27,980
+This.
+
+155
+00:15:27,980 --> 00:15:28,980
+Right.
+
+156
+00:15:28,980 --> 00:15:29,980
+The race attack.
+
+157
+00:15:29,980 --> 00:15:33,980
+The race to, or the attacker to guess the right transaction ID.
+
+158
+00:15:33,980 --> 00:15:34,980
+Here, the randomizing the port number would help.
+
+159
+00:15:34,980 --> 00:15:35,980
+Right.
+
+160
+00:15:35,980 --> 00:15:36,980
+It would.
+
+161
+00:15:36,980 --> 00:15:40,980
+Because if the attacker does not, because we see the attacker is not snooping on all this.
+
+162
+00:15:40,980 --> 00:15:41,980
+Right.
+
+163
+00:15:41,980 --> 00:15:42,980
+He's not there.
+
+164
+00:15:42,980 --> 00:15:43,980
+He's outside.
+
+165
+00:15:43,980 --> 00:15:44,980
+So, randomizing the port number will help because the attacker would not snooping on all this.
+
+166
+00:15:44,980 --> 00:15:45,980
+Right.
+
+167
+00:15:45,980 --> 00:15:46,980
+He's not there.
+
+168
+00:15:46,980 --> 00:15:47,980
+He's outside.
+
+169
+00:15:47,980 --> 00:16:07,980
+So, randomizing the port number will help because the attacker would not only have to guess the transaction ID, but would also have to guess the port number.
+
+170
+00:16:07,980 --> 00:16:18,980
+And if you make it, you know, it's a 32-bit port number, then, sorry, 16-bit port number plus 16-bit transaction ID, that's guessing 32 bits less hard.
+
+171
+00:16:18,980 --> 00:16:19,980
+Okay.
+
+172
+00:16:19,980 --> 00:16:20,980
+Much harder.
+
+173
+00:16:20,980 --> 00:16:23,980
+Much less likely the attacker will win.
+
+174
+00:16:23,980 --> 00:16:34,980
+And the other problem the DNSSEC will solve is if the DNS server actually replies, it will reply with an authentic reply.
+
+175
+00:16:34,980 --> 00:16:41,980
+Meaning it will actually secure the reply, right, and the attacker can no longer spoof it.
+
+176
+00:16:41,980 --> 00:16:47,980
+Because eventually, you see, the DNS server does reply.
+
+177
+00:16:47,980 --> 00:16:52,980
+And only, and if we use DNSSEC, only this reply will be authentic.
+
+178
+00:16:52,980 --> 00:16:57,980
+So, all the other attempts to answer will be discarded because they're not authentic.
+
+179
+00:16:57,980 --> 00:16:58,980
+Okay.
+
+180
+00:16:58,980 --> 00:16:59,980
+So, how does DNSSEC work?
+
+181
+00:16:59,980 --> 00:17:00,980
+Well, it's actually very simple, right?
+
+182
+00:17:00,980 --> 00:17:15,980
+It just basically, you know, in a public key version, it just signs the record, right?
+
+183
+00:17:15,980 --> 00:17:18,980
+So, remember, it replies with the record, right?
+
+184
+00:17:18,980 --> 00:17:33,980
+Now, there is a bit of a debate whether you should sign it on the reply, meaning include the request in the reply, so that you can say this reply is exactly for this request.
+
+185
+00:17:33,980 --> 00:17:34,980
+Okay?
+
+186
+00:17:34,980 --> 00:17:45,980
+Or, you should pre-compute signed replies ahead of time, and that way save real-time computation.
+
+187
+00:17:45,980 --> 00:17:46,980
+You follow me?
+
+188
+00:17:46,980 --> 00:17:48,980
+Because DNS servers are busy, right?
+
+189
+00:17:48,980 --> 00:17:49,980
+They're servers for a reason.
+
+190
+00:17:49,980 --> 00:17:52,980
+They get a lot of queries.
+
+191
+00:17:52,980 --> 00:18:11,980
+So, if you pre-compute signatures on popular DNS records, like for example, if a UCI has a DNS server and it pre-computes everything for like ICS-UCI-EDU or ENG-UCI-EDU, that would be smart, right?
+
+192
+00:18:11,980 --> 00:18:19,980
+Because there will be a lot of queries for those, but it doesn't need to pre-compute answers to all DNS queries for all hosts, right?
+
+193
+00:18:19,980 --> 00:18:26,980
+In the inside UCI, because there's just too many of them, and most of them aren't very, very popular in terms of people going to them.
+
+194
+00:18:26,980 --> 00:18:27,980
+Okay?
+
+195
+00:18:27,980 --> 00:18:31,980
+So, there is a trade-off there, which can be done in advance.
+
+196
+00:18:31,980 --> 00:18:38,980
+The trade-off is that if you don't, if you pre-compute the signed, right?
+
+197
+00:18:38,980 --> 00:18:50,980
+If you have public, or digitally signed replies, that means you cannot one-to-one associate the request with a reply, because multiple requests will result in the same reply.
+
+198
+00:18:50,980 --> 00:18:51,980
+Okay?
+
+199
+00:18:51,980 --> 00:18:53,980
+That raises some issues.
+
+200
+00:18:53,980 --> 00:18:55,980
+Nothing super critical.
+
+201
+00:18:55,980 --> 00:18:56,980
+You know?
+
+202
+00:18:56,980 --> 00:19:00,980
+Now, the other problem is that, how do you distribute public keys?
+
+203
+00:19:00,980 --> 00:19:03,980
+That's basically the fundamental public key distribution problem, right?
+
+204
+00:19:03,980 --> 00:19:09,980
+So, the PKDNS assumes that the DNS servers have a public key hierarchy.
+
+205
+00:19:09,980 --> 00:19:10,980
+PKI.
+
+206
+00:19:10,980 --> 00:19:12,980
+Remember we talked about this earlier on?
+
+207
+00:19:12,980 --> 00:19:17,980
+But that's actually not difficult, because the DNS itself is a hierarchy.
+
+208
+00:19:17,980 --> 00:19:18,980
+Right?
+
+209
+00:19:18,980 --> 00:19:26,980
+With all these roots, and then secondlevel.com.edu.org, and then all the others underneath.
+
+210
+00:19:26,980 --> 00:19:29,980
+So, establishing a hierarchy is actually pretty natural.
+
+211
+00:19:29,980 --> 00:19:44,980
+There is a minor mid-weight version called DNSSEC symmetric key, and basically there it's faster, but it assumes here that there are these pre-established secure channels.
+
+212
+00:19:44,980 --> 00:19:45,980
+Okay?
+
+213
+00:19:45,980 --> 00:19:50,980
+Between parent-child DNS servers.
+
+214
+00:19:50,980 --> 00:19:56,980
+And there's also a secure channel between the client and the first level DNS responder.
+
+215
+00:19:56,980 --> 00:20:07,980
+Now, there's also something called DNS over HTTP, network of HTTPS, it's called D-O-H, which essentially makes DNS clear to go over TLS SSL.
+
+216
+00:20:07,980 --> 00:20:15,980
+And if you dig into your browser, or your network setting, you might be able to find an option for that.
+
+217
+00:20:15,980 --> 00:20:20,980
+It's probably unclear, but you can force your browser to always use that.
+
+218
+00:20:20,980 --> 00:20:26,980
+But the idea is basically that all the messages are encrypted and mapped.
+
+219
+00:20:26,980 --> 00:20:29,980
+And mapped is the integrity message authentication code.
+
+220
+00:20:29,980 --> 00:20:35,980
+So, the encryption in the MAC are done with different keys, kind of like in itself derived from the same master key.
+
+221
+00:20:35,980 --> 00:20:41,980
+And yeah, and each message has a nonce, so there's no replaying, etc.
+
+222
+00:20:41,980 --> 00:20:47,980
+And the idea is that each DNS must share a symmetric master key with its family.
+
+223
+00:20:47,980 --> 00:20:52,980
+If you want to know more about it, here's an in-depth presentation.
+
+224
+00:20:52,980 --> 00:20:54,980
+Any questions about DNS?
+
+225
+00:20:54,980 --> 00:21:06,980
+I did not tell you about all possible attacks, because just DNS security by itself is probably like a half a quarter, five week course in and of itself.
+
+226
+00:21:06,980 --> 00:21:12,980
+This is, again, like everything in this course, kind of an appetizer.
+
+227
+00:21:12,980 --> 00:21:15,980
+No rushes?
+
+228
+00:21:15,980 --> 00:21:16,980
+Okay.
+
+229
+00:21:16,980 --> 00:21:19,980
+Well, that is the end of the net attacks.
+
+230
+00:21:19,980 --> 00:21:38,980
+Now we skip something completely different.
+
+231
+00:21:38,980 --> 00:21:42,980
+Now I'm going to talk about privacy in a minute.
+
+232
+00:21:42,980 --> 00:21:47,980
+So, you probably know a bit about this already.
+
+233
+00:21:47,980 --> 00:21:52,980
+It's hard to actually be an internet user and not know about it.
+
+234
+00:21:52,980 --> 00:22:00,980
+And unless you live in a vacuum, you definitely hear all the time about attacks and leaks and threats.
+
+235
+00:22:00,980 --> 00:22:06,980
+So, privacy is kind of a long-standing problem or a long-standing concept.
+
+236
+00:22:06,980 --> 00:22:12,980
+By itself, privacy and anonymity have nothing to do with the digital world.
+
+237
+00:22:12,980 --> 00:22:14,980
+I mean, they exist in the analog world.
+
+238
+00:22:14,980 --> 00:22:17,980
+We all know what privacy means in the analog world.
+
+239
+00:22:17,980 --> 00:22:20,980
+Most of you should know what anonymity means, right?
+
+240
+00:22:20,980 --> 00:22:27,980
+Does anybody want to say what anonymity means in the physical world?
+
+241
+00:22:27,980 --> 00:22:30,980
+Any guesses?
+
+242
+00:22:30,980 --> 00:22:33,980
+You know the word, right?
+
+243
+00:22:33,980 --> 00:22:36,980
+What does that actually mean?
+
+244
+00:22:36,980 --> 00:22:39,980
+There's no wrong answer.
+
+245
+00:22:39,980 --> 00:22:42,980
+I'm not going to be judged.
+
+246
+00:22:42,980 --> 00:22:44,980
+Not identifiable.
+
+247
+00:22:44,980 --> 00:22:45,980
+Okay.
+
+248
+00:22:45,980 --> 00:22:47,980
+Not identifiable what?
+
+249
+00:22:47,980 --> 00:22:50,980
+Give me an example.
+
+250
+00:22:50,980 --> 00:22:52,980
+Maybe an example you have in mind.
+
+251
+00:22:52,980 --> 00:22:53,980
+On the physical world.
+
+252
+00:22:53,980 --> 00:22:54,980
+What is anonymity?
+
+253
+00:22:54,980 --> 00:23:11,980
+Well, there's a disturbance, some kind of a going on.
+
+254
+00:23:11,980 --> 00:23:14,980
+And maybe you've heard of like antifa protesters, right?
+
+255
+00:23:14,980 --> 00:23:18,980
+Or whenever there are protests on campus.
+
+256
+00:23:18,980 --> 00:23:20,980
+Let's say, like the one we had last year.
+
+257
+00:23:20,980 --> 00:23:21,980
+I don't remember if we had masks.
+
+258
+00:23:21,980 --> 00:23:24,980
+But in many of those protests, people wear masks.
+
+259
+00:23:24,980 --> 00:23:25,980
+Right?
+
+260
+00:23:25,980 --> 00:23:27,980
+Why do they wear masks?
+
+261
+00:23:27,980 --> 00:23:31,980
+To be anonymous.
+
+262
+00:23:31,980 --> 00:23:33,980
+We know they're there.
+
+263
+00:23:33,980 --> 00:23:34,980
+They're people, right?
+
+264
+00:23:34,980 --> 00:23:36,980
+They're people.
+
+265
+00:23:36,980 --> 00:23:40,980
+Well, at least maybe for now, about years from now, they might be robots.
+
+266
+00:23:40,980 --> 00:23:43,980
+But today, we know they're people.
+
+267
+00:23:43,980 --> 00:23:44,980
+They're humans.
+
+268
+00:23:44,980 --> 00:23:47,980
+We might even be able to tell the gender.
+
+269
+00:23:47,980 --> 00:23:49,980
+Not always.
+
+270
+00:23:49,980 --> 00:23:51,980
+Height, maybe.
+
+271
+00:23:51,980 --> 00:23:53,980
+Weight, sort of.
+
+272
+00:23:53,980 --> 00:23:56,980
+But most identifying features are hidden, right?
+
+273
+00:23:56,980 --> 00:23:57,980
+When you wear a mask.
+
+274
+00:23:57,980 --> 00:24:01,980
+Put on a mask, a hat, pair of sunglasses.
+
+275
+00:24:01,980 --> 00:24:04,980
+Nobody can tell your eye color, your hair color.
+
+276
+00:24:04,980 --> 00:24:05,980
+Right?
+
+277
+00:24:05,980 --> 00:24:06,980
+The typical identification.
+
+278
+00:24:06,980 --> 00:24:09,980
+Oh, facial recognition doesn't work, right?
+
+279
+00:24:09,980 --> 00:24:10,980
+Be careful.
+
+280
+00:24:10,980 --> 00:24:12,980
+Not with a COVID mask.
+
+281
+00:24:12,980 --> 00:24:14,980
+With a COVID mask, it still works.
+
+282
+00:24:14,980 --> 00:24:19,980
+But a real, like a balaclava type mask won't work.
+
+283
+00:24:19,980 --> 00:24:20,980
+Right?
+
+284
+00:24:20,980 --> 00:24:22,980
+That's anonymity.
+
+285
+00:24:22,980 --> 00:24:28,980
+When a bandit, you know, western style bandits will put a bandana on their face to rob a bank
+
+286
+00:24:28,980 --> 00:24:31,980
+or a stagecoach, like you've seen in some movies.
+
+287
+00:24:31,980 --> 00:24:32,980
+That's essentially what they want.
+
+288
+00:24:32,980 --> 00:24:33,980
+An anonymity.
+
+289
+00:24:33,980 --> 00:24:34,980
+Right?
+
+290
+00:24:34,980 --> 00:24:36,980
+It's not a question where they're robbers.
+
+291
+00:24:36,980 --> 00:24:37,980
+Right?
+
+292
+00:24:37,980 --> 00:24:38,980
+They're oil robbers.
+
+293
+00:24:38,980 --> 00:24:40,980
+You know how many there are.
+
+294
+00:24:40,980 --> 00:24:43,980
+But you don't know what they are, who they are.
+
+295
+00:24:43,980 --> 00:24:45,980
+That's anonymity.
+
+296
+00:24:45,980 --> 00:24:54,980
+If you are worried about privacy, and let's say you want to buy, I don't know, some, let's
+
+297
+00:24:54,980 --> 00:24:57,980
+say you are a crypto smoker.
+
+298
+00:24:57,980 --> 00:24:58,980
+You are a crypto smoker.
+
+299
+00:24:58,980 --> 00:24:59,980
+You don't smoke crypto.
+
+300
+00:24:59,980 --> 00:25:00,980
+I don't mean that.
+
+301
+00:25:00,980 --> 00:25:01,980
+No, crypto means hidden.
+
+302
+00:25:01,980 --> 00:25:04,980
+You're like, you don't want anybody to know who to smoke.
+
+303
+00:25:04,980 --> 00:25:05,980
+Okay?
+
+304
+00:25:05,980 --> 00:25:12,980
+So, you don't want the transaction to show up on your credit card, for example.
+
+305
+00:25:12,980 --> 00:25:15,980
+In fact, you bought cigarettes at 7-Eleven.
+
+306
+00:25:15,980 --> 00:25:18,980
+Or that you ordered them on the web, right?
+
+307
+00:25:18,980 --> 00:25:20,980
+So, what do you do in the physical world?
+
+308
+00:25:20,980 --> 00:25:21,980
+Well, you could.
+
+309
+00:25:21,980 --> 00:25:22,980
+You probably will not end well.
+
+310
+00:25:22,980 --> 00:25:29,980
+But you could put a paper bag over your head with a couple of holes for eyes.
+
+311
+00:25:29,980 --> 00:25:34,980
+Get some cash from the ATM somewhere else well before.
+
+312
+00:25:34,980 --> 00:25:35,980
+Walk in.
+
+313
+00:25:35,980 --> 00:25:37,980
+Say, don't worry, I'm not here to rob you.
+
+314
+00:25:37,980 --> 00:25:41,980
+I would like a pack of Marlboros.
+
+315
+00:25:41,980 --> 00:25:42,980
+Okay?
+
+316
+00:25:42,980 --> 00:25:48,980
+If the clerk is not scared of trickless, they will take your cash, give you a pack of Marlboros,
+
+317
+00:25:48,980 --> 00:25:50,980
+and off you go.
+
+318
+00:25:50,980 --> 00:25:53,980
+That's an anonymous transaction.
+
+319
+00:25:53,980 --> 00:25:55,980
+Cash is anonymous, right?
+
+320
+00:25:55,980 --> 00:25:57,980
+You are anonymous.
+
+321
+00:25:57,980 --> 00:26:00,980
+You could be wearing stilts to disguise your height.
+
+322
+00:26:00,980 --> 00:26:06,980
+You could be wearing, I don't know, you could bend your knees if you're wearing something
+
+323
+00:26:06,980 --> 00:26:07,980
+to disguise your height.
+
+324
+00:26:07,980 --> 00:26:09,980
+You could make yourself shorter.
+
+325
+00:26:09,980 --> 00:26:11,980
+You know, you could alter your voice.
+
+326
+00:26:11,980 --> 00:26:15,980
+And with a paper bag over your head, you're anonymous.
+
+327
+00:26:15,980 --> 00:26:16,980
+I know, it's silly.
+
+328
+00:26:16,980 --> 00:26:19,980
+But that's the idea of physical anonymity.
+
+329
+00:26:19,980 --> 00:26:20,980
+Okay?
+
+330
+00:26:20,980 --> 00:26:27,980
+The fact that someone bought cigarettes at that 7-Eleven is not disguised.
+
+331
+00:26:27,980 --> 00:26:29,980
+The question is, who bought cigarettes?
+
+332
+00:26:29,980 --> 00:26:31,980
+Well, somebody did.
+
+333
+00:26:31,980 --> 00:26:35,980
+But that somebody is indistinguishable from anybody outside, right?
+
+334
+00:26:35,980 --> 00:26:37,980
+Any number of people.
+
+335
+00:26:37,980 --> 00:26:38,980
+That's an anonymity.
+
+336
+00:26:38,980 --> 00:26:42,980
+And that's basically what an anonymity is in the digital world.
+
+337
+00:26:42,980 --> 00:26:43,980
+You'll see it.
+
+338
+00:26:43,980 --> 00:26:45,980
+But it's not the same thing for privacy.
+
+339
+00:26:45,980 --> 00:26:50,980
+Privacy is kind of, in the physical world, is the right to be left alone.
+
+340
+00:26:50,980 --> 00:26:51,980
+Okay?
+
+341
+00:26:51,980 --> 00:26:57,980
+So, there is a bit of a disconnect between the definition of privacy, the way that lawyers
+
+342
+00:26:57,980 --> 00:27:02,980
+define it in the physical world, and the way we see it on the internet.
+
+343
+00:27:02,980 --> 00:27:04,980
+And it's difficult to define.
+
+344
+00:27:04,980 --> 00:27:09,980
+So, I won't try to give you an overall definition of privacy.
+
+345
+00:27:09,980 --> 00:27:17,980
+But it is something that most people in the world, not everywhere, believe is like an individual
+
+346
+00:27:17,980 --> 00:27:20,980
+right and natural desire to have privacy.
+
+347
+00:27:20,980 --> 00:27:21,980
+I mean, right?
+
+348
+00:27:21,980 --> 00:27:26,980
+I mean, we have, I don't know, changing rooms for privacy, right?
+
+349
+00:27:26,980 --> 00:27:30,980
+We have bathrooms for, stalls for privacy, right?
+
+350
+00:27:30,980 --> 00:27:35,980
+We have tentative classrooms, you know, in some places for privacy.
+
+351
+00:27:35,980 --> 00:27:39,980
+I mean, lots of things we do in the real world are for privacy.
+
+352
+00:27:39,980 --> 00:27:46,980
+Now, privacy is relevant not just to individuals, right?
+
+353
+00:27:46,980 --> 00:27:49,980
+So far, everything I said is about individual privacy.
+
+354
+00:27:49,980 --> 00:27:55,980
+But it's also relevant to other entities like governments and groups and corporations.
+
+355
+00:27:55,980 --> 00:27:58,980
+And maybe it's obvious why.
+
+356
+00:27:58,980 --> 00:27:59,980
+Maybe not.
+
+357
+00:27:59,980 --> 00:28:00,980
+We'll see.
+
+358
+00:28:00,980 --> 00:28:07,980
+So, as the time goes by and sort of the internet is permeating everyday life for more and more
+
+359
+00:28:07,980 --> 00:28:13,980
+people, there's definitely globally an increase in awareness of privacy.
+
+360
+00:28:13,980 --> 00:28:18,980
+Although most people, if you ask them to define it, well, kind of like you guys, you can't
+
+361
+00:28:18,980 --> 00:28:21,980
+define really or not sure you can't, right?
+
+362
+00:28:21,980 --> 00:28:24,980
+Give me a good definition of privacy.
+
+363
+00:28:24,980 --> 00:28:25,980
+I can't hide it.
+
+364
+00:28:25,980 --> 00:28:27,980
+But there is awareness of it.
+
+365
+00:28:27,980 --> 00:28:28,980
+Privacy is important.
+
+366
+00:28:28,980 --> 00:28:33,980
+But if you ask people, and some researchers did surveys, opinions are all over the map
+
+367
+00:28:33,980 --> 00:28:36,980
+like what it means, what privacy means.
+
+368
+00:28:36,980 --> 00:28:37,980
+Okay?
+
+369
+00:28:37,980 --> 00:28:41,980
+It's also highly cultural and etc.
+
+370
+00:28:41,980 --> 00:28:45,980
+And so, I say it's both nebulous and fickle.
+
+371
+00:28:45,980 --> 00:28:48,980
+Nebulous means it's kind of, well, difficult to define.
+
+372
+00:28:48,980 --> 00:28:50,980
+Fickle means it changes.
+
+373
+00:28:50,980 --> 00:28:54,980
+A lot of times people will say, well, you know, my privacy is important.
+
+374
+00:28:54,980 --> 00:28:57,980
+Like, if you give an example, what if this happens to you?
+
+375
+00:28:57,980 --> 00:28:58,980
+Do you become certain?
+
+376
+00:28:58,980 --> 00:28:59,980
+Yes.
+
+377
+00:28:59,980 --> 00:29:01,980
+What if it happens to somewhere else?
+
+378
+00:29:01,980 --> 00:29:02,980
+No.
+
+379
+00:29:02,980 --> 00:29:05,980
+So, privacy is a very personal thing.
+
+380
+00:29:05,980 --> 00:29:11,980
+We also live in a society that because of social networking, and this is the last 20
+
+381
+00:29:11,980 --> 00:29:13,980
+years, I think, right?
+
+382
+00:29:13,980 --> 00:29:17,980
+The beginning of social networking, about 20 years ago.
+
+383
+00:29:17,980 --> 00:29:24,980
+The whole idea of social networking promotes, among other things, good and bad, it promotes
+
+384
+00:29:24,980 --> 00:29:26,980
+lawyerism and exhibitionism.
+
+385
+00:29:26,980 --> 00:29:30,980
+If you don't know what those terms are, or do you?
+
+386
+00:29:30,980 --> 00:29:31,980
+Exhibitionism is just like, look at me.
+
+387
+00:29:31,980 --> 00:29:32,980
+I'm interesting.
+
+388
+00:29:32,980 --> 00:29:33,980
+Yes.
+
+389
+00:29:33,980 --> 00:29:34,980
+I bought a purse.
+
+390
+00:29:34,980 --> 00:29:35,980
+I bought a new bike.
+
+391
+00:29:35,980 --> 00:29:36,980
+Look at me.
+
+392
+00:29:36,980 --> 00:29:37,980
+I'm on a vacation in Krakistan.
+
+393
+00:29:37,980 --> 00:29:38,980
+Look at me.
+
+394
+00:29:38,980 --> 00:29:39,980
+Next to the, you know, the Tower of Pisa.
+
+395
+00:29:39,980 --> 00:29:40,980
+Look at me in the Grand Canyon.
+
+396
+00:29:40,980 --> 00:29:41,980
+I'm so interested.
+
+397
+00:29:41,980 --> 00:29:56,980
+I'm not like those other 10,000 grad students who went on a Grand Canyon vacation as soon
+
+398
+00:29:56,980 --> 00:29:57,980
+as I got here.
+
+399
+00:29:57,980 --> 00:29:58,980
+So, this is the exhibitionism.
+
+400
+00:29:58,980 --> 00:29:59,980
+Voyeurism is the opposite.
+
+401
+00:29:59,980 --> 00:30:02,980
+The people who are actually looking at stuff because they have nothing better to do.
+
+402
+00:30:02,980 --> 00:30:05,980
+And, you know, in the extreme, do cyber stalking.
+
+403
+00:30:05,980 --> 00:30:06,980
+That's lawyers.
+
+404
+00:30:06,980 --> 00:30:10,980
+Anyway, so social networking, for better or for worse, promotes these kinds of things.
+
+405
+00:30:10,980 --> 00:30:14,980
+And, that's clearly not a good thing for privacy.
+
+406
+00:30:14,980 --> 00:30:16,980
+And, even worse, for anonymity, right?
+
+407
+00:30:16,980 --> 00:30:23,980
+So, how can you demand privacy if you post your pictures, you know, five times a day?
+
+408
+00:30:23,980 --> 00:30:24,980
+With geolocation.
+
+409
+00:30:24,980 --> 00:30:34,980
+Anyway, the amount of information, not just social networking type information.
+
+410
+00:30:34,980 --> 00:30:38,980
+The amount of information essentially disclosed on the internet, on the public internet, has
+
+411
+00:30:38,980 --> 00:30:41,980
+grown tremendously in the last 20 years.
+
+412
+00:30:41,980 --> 00:30:42,980
+Right?
+
+413
+00:30:42,980 --> 00:30:45,980
+Much more handling and transfer of sensing information occurs.
+
+414
+00:30:45,980 --> 00:30:51,980
+And, this is not, again, your own photos and blogs, vlogs and whatever else, right?
+
+415
+00:30:51,980 --> 00:30:55,980
+We're talking about sensitive medical information.
+
+416
+00:30:55,980 --> 00:31:03,980
+All kinds of records, official records, driver's licenses, marriages, divorces, lawsuits.
+
+417
+00:31:03,980 --> 00:31:06,980
+Everything is out there on the internet, right?
+
+418
+00:31:06,980 --> 00:31:11,980
+Whereas, 20 years ago, you would probably have a hard time finding a lot of this information.
+
+419
+00:31:11,980 --> 00:31:16,980
+Anyway, you would have, it was available, mind you, but you would have to actually physically
+
+420
+00:31:16,980 --> 00:31:18,980
+search for it.
+
+421
+00:31:18,980 --> 00:31:25,980
+And, unfortunately, as a result of all this, there's much less privacy and accountability.
+
+422
+00:31:25,980 --> 00:31:30,980
+Now, we all recall that the internet was designed as a public good, right?
+
+423
+00:31:30,980 --> 00:31:32,980
+As a public resource.
+
+424
+00:31:32,980 --> 00:31:37,980
+So, complaining about lack of privacy on the internet is a bit silly, in a way.
+
+425
+00:31:37,980 --> 00:31:38,980
+Right?
+
+426
+00:31:38,980 --> 00:31:45,980
+We know that from the discussions about IP, TCP, et cetera, that most information on the internet
+
+427
+00:31:45,980 --> 00:31:48,980
+is, well, a lot of information is public, by default.
+
+428
+00:31:48,980 --> 00:31:49,980
+Right?
+
+429
+00:31:49,980 --> 00:31:59,980
+So, an IP packet that you could snoop on easily, right, is possible to hide information in it.
+
+430
+00:31:59,980 --> 00:32:05,980
+If you use SSLTLS, everything will be hidden from after the transport layer header.
+
+431
+00:32:05,980 --> 00:32:10,980
+If you use IPsec, everything after the IP header will be hidden.
+
+432
+00:32:10,980 --> 00:32:18,980
+But, at the very least, because routing needs to happen on the public internet, the outermost IP headers are visible, aren't they?
+
+433
+00:32:18,980 --> 00:32:19,980
+Always.
+
+434
+00:32:19,980 --> 00:32:20,980
+Always, right?
+
+435
+00:32:20,980 --> 00:32:21,980
+A definition.
+
+436
+00:32:21,980 --> 00:32:24,980
+You have to route packets on the internet.
+
+437
+00:32:24,980 --> 00:32:28,980
+And, in the network layer, that means that there has to be an IP layer present.
+
+438
+00:32:28,980 --> 00:32:32,980
+Otherwise, that could get discarded or not even sent.
+
+439
+00:32:32,980 --> 00:32:35,980
+And recall what's in the IP header.
+
+440
+00:32:35,980 --> 00:32:40,980
+Well, among other things, in the IP header, there's source, destination, and the protocol.
+
+441
+00:32:40,980 --> 00:32:45,980
+The protocol says which is the transport layer protocol to use now.
+
+442
+00:32:45,980 --> 00:32:50,980
+Now, if you don't use IPsec, there's a lot more, right?
+
+443
+00:32:50,980 --> 00:32:58,980
+But, even if you use IPsec, the outermost header, at the very least, tells you the IP addresses of IPsec gateways.
+
+444
+00:32:58,980 --> 00:32:59,980
+Right?
+
+445
+00:32:59,980 --> 00:33:01,980
+Remember these IPsecs?
+
+446
+00:33:01,980 --> 00:33:04,980
+You can build tunnels, right?
+
+447
+00:33:04,980 --> 00:33:07,980
+So, even if you hide the end posts, right?
+
+448
+00:33:07,980 --> 00:33:16,980
+You have an organization on, say, two campuses of the same organization on different places on the internet.
+
+449
+00:33:16,980 --> 00:33:20,980
+Alice is in one campus talking to B in another campus.
+
+450
+00:33:20,980 --> 00:33:21,980
+That's fine.
+
+451
+00:33:21,980 --> 00:33:25,980
+Nobody in the middle of the internet can see that Alice is talking to Bob.
+
+452
+00:33:25,980 --> 00:33:30,980
+But, everybody can see that Campus 1 is talking to Campus 2.
+
+453
+00:33:30,980 --> 00:33:31,980
+Right?
+
+454
+00:33:31,980 --> 00:33:34,980
+Someone on this campus is talking to someone on this campus.
+
+455
+00:33:34,980 --> 00:33:37,980
+Because the addresses of the IP gateways, right?
+
+456
+00:33:37,980 --> 00:33:40,980
+The border gateways will tell you.
+
+457
+00:33:40,980 --> 00:33:45,980
+You might not think that's a lot of information, but it is.
+
+458
+00:33:45,980 --> 00:33:48,980
+Also, the frequency of packets.
+
+459
+00:33:48,980 --> 00:33:49,980
+Right?
+
+460
+00:33:49,980 --> 00:33:51,980
+The timing of packets is important.
+
+461
+00:33:51,980 --> 00:33:53,980
+It leaks information.
+
+462
+00:33:53,980 --> 00:33:54,980
+Okay?
+
+463
+00:33:54,980 --> 00:34:01,980
+For example, if you have, let's say you have the following situation.
+
+464
+00:34:01,980 --> 00:34:04,980
+You have a transit autonomous system.
+
+465
+00:34:04,980 --> 00:34:05,980
+Right?
+
+466
+00:34:05,980 --> 00:34:07,980
+Remember we talked about autonomous systems.
+
+467
+00:34:07,980 --> 00:34:09,980
+And there's a transit provider, right?
+
+468
+00:34:09,980 --> 00:34:10,980
+Provides transit service.
+
+469
+00:34:10,980 --> 00:34:12,980
+And it serves two companies.
+
+470
+00:34:12,980 --> 00:34:15,980
+Now we talk about two companies, not two campuses at the same.
+
+471
+00:34:15,980 --> 00:34:17,980
+Two companies in AFD.
+
+472
+00:34:17,980 --> 00:34:26,980
+Normally, the transit service provider does not observe much traffic between AFD.
+
+473
+00:34:26,980 --> 00:34:27,980
+Okay?
+
+474
+00:34:27,980 --> 00:34:30,980
+It does not.
+
+475
+00:34:30,980 --> 00:34:33,980
+All of a sudden, there is a spike in IPsec traffic.
+
+476
+00:34:33,980 --> 00:34:36,980
+Now what could it be?
+
+477
+00:34:36,980 --> 00:34:42,980
+AFD are companies that are registered, so you can look up what they are in the real world.
+
+478
+00:34:42,980 --> 00:34:46,980
+Let's say one of them is a pharmaceutical company.
+
+479
+00:34:46,980 --> 00:34:51,980
+Another one is a pharmaceutical startup.
+
+480
+00:34:51,980 --> 00:34:52,980
+Okay?
+
+481
+00:34:52,980 --> 00:35:00,980
+What could you possibly conclude when the traffic spikes between a large pharmaceutical company
+
+482
+00:35:00,980 --> 00:35:05,980
+and a pharmaceutical startup?
+
+483
+00:35:05,980 --> 00:35:07,980
+Probably.
+
+484
+00:35:07,980 --> 00:35:10,980
+Probably something is going on between these.
+
+485
+00:35:10,980 --> 00:35:14,980
+One is going to probably swallow the other.
+
+486
+00:35:14,980 --> 00:35:17,980
+That's privileged information.
+
+487
+00:35:17,980 --> 00:35:20,980
+That's kind of insider information.
+
+488
+00:35:20,980 --> 00:35:21,980
+Why?
+
+489
+00:35:21,980 --> 00:35:23,980
+You don't know what the hell they are talking about.
+
+490
+00:35:23,980 --> 00:35:25,980
+But you know when.
+
+491
+00:35:25,980 --> 00:35:26,980
+Huh?
+
+492
+00:35:26,980 --> 00:35:27,980
+You know when.
+
+493
+00:35:27,980 --> 00:35:29,980
+And you know how much a person will do.
+
+494
+00:35:29,980 --> 00:35:35,980
+Now they could always pretend to send more traffic than they actually have to send, right?
+
+495
+00:35:35,980 --> 00:35:36,980
+By just sending garbage.
+
+496
+00:35:36,980 --> 00:35:40,980
+But they cannot send less.
+
+497
+00:35:40,980 --> 00:35:42,980
+And obscuring timing.
+
+498
+00:35:42,980 --> 00:35:44,980
+How do they obscure timing?
+
+499
+00:35:44,980 --> 00:35:46,980
+If the negotiations happen in the middle of the night.
+
+500
+00:35:46,980 --> 00:35:47,980
+Ah.
+
+501
+00:35:47,980 --> 00:35:49,980
+That might also be an interesting thing.
+
+502
+00:35:49,980 --> 00:35:50,980
+Okay?
+
+503
+00:35:50,980 --> 00:35:51,980
+It's urgent.
+
+504
+00:35:51,980 --> 00:35:53,980
+Then it's time to invest.
+
+505
+00:35:53,980 --> 00:35:55,980
+Or buy some shares of that smaller startup.
+
+506
+00:35:55,980 --> 00:35:56,980
+Or of the bigger one.
+
+507
+00:35:56,980 --> 00:35:58,980
+And you can make some money.
+
+508
+00:35:58,980 --> 00:35:59,980
+While others won't.
+
+509
+00:35:59,980 --> 00:36:00,980
+Do you see that?
+
+510
+00:36:00,980 --> 00:36:02,980
+Where I'm going with this.
+
+511
+00:36:02,980 --> 00:36:03,980
+Okay?
+
+512
+00:36:03,980 --> 00:36:06,980
+Or all of a sudden you have the US government.
+
+513
+00:36:06,980 --> 00:36:07,980
+Department of State.
+
+514
+00:36:07,980 --> 00:36:08,980
+Okay?
+
+515
+00:36:08,980 --> 00:36:12,980
+That never sends much traffic to its embassy in Zimbabwe.
+
+516
+00:36:12,980 --> 00:36:22,980
+And all of a sudden you notice as a transit provider that there's like a giant spider.
+
+517
+00:36:22,980 --> 00:36:23,980
+What's going on?
+
+518
+00:36:23,980 --> 00:36:24,980
+Huh?
+
+519
+00:36:24,980 --> 00:36:29,980
+Maybe there's a coup in Zimbabwe.
+
+520
+00:36:29,980 --> 00:36:30,980
+Happens.
+
+521
+00:36:30,980 --> 00:36:35,980
+Maybe there's a military action that is being planned.
+
+522
+00:36:35,980 --> 00:36:37,980
+That's information.
+
+523
+00:36:37,980 --> 00:36:38,980
+Right?
+
+524
+00:36:38,980 --> 00:36:41,980
+So that's valuable information.
+
+525
+00:36:41,980 --> 00:36:42,980
+Anyway.
+
+526
+00:36:42,980 --> 00:36:43,980
+As I said before.
+
+527
+00:36:43,980 --> 00:36:46,980
+Encryption doesn't solve this problem.
+
+528
+00:36:46,980 --> 00:36:47,980
+Right?
+
+529
+00:36:47,980 --> 00:36:56,980
+Encryption is not enough for anonymity or even real privacy.
+
+530
+00:36:56,980 --> 00:37:01,980
+What are applications of anonymity?
+
+531
+00:37:01,980 --> 00:37:03,980
+Well.
+
+532
+00:37:03,980 --> 00:37:06,980
+Hiding transactions.
+
+533
+00:37:06,980 --> 00:37:07,980
+Hiding transactions.
+
+534
+00:37:07,980 --> 00:37:08,980
+You know.
+
+535
+00:37:08,980 --> 00:37:12,980
+If we had, for example, electronic cash.
+
+536
+00:37:12,980 --> 00:37:14,980
+Anybody ever heard of electronic cash?
+
+537
+00:37:14,980 --> 00:37:15,980
+It exists.
+
+538
+00:37:15,980 --> 00:37:16,980
+It's a concept.
+
+539
+00:37:16,980 --> 00:37:21,980
+If you took an advanced crypto class you may have heard of electronic cash.
+
+540
+00:37:21,980 --> 00:37:28,980
+But I used to give a lecture on it like 10, 12 years ago but now it's becoming obsolete.
+
+541
+00:37:28,980 --> 00:37:34,980
+But electronic cash is essentially the idea is to replicate physical cash in electronic
+
+542
+00:37:34,980 --> 00:37:35,980
+form.
+
+543
+00:37:35,980 --> 00:37:38,980
+And by the way, cryptocurrencies are not, are not cash.
+
+544
+00:37:38,980 --> 00:37:39,980
+You know that right?
+
+545
+00:37:39,980 --> 00:37:40,980
+Why not?
+
+546
+00:37:40,980 --> 00:37:41,980
+Why not?
+
+547
+00:37:41,980 --> 00:37:51,980
+Because cryptocurrencies have wallets and have owners and so there's no truly anonymous
+
+548
+00:37:51,980 --> 00:37:52,980
+cryptocurrency.
+
+549
+00:37:52,980 --> 00:37:56,980
+What cryptocurrencies give you is what's called pseudonymity.
+
+550
+00:37:56,980 --> 00:37:57,980
+Like when you, yeah.
+
+551
+00:37:57,980 --> 00:37:58,980
+But there's cold wallets.
+
+552
+00:37:58,980 --> 00:37:59,980
+They can just give you this crypto.
+
+553
+00:37:59,980 --> 00:38:00,980
+Yes.
+
+554
+00:38:00,980 --> 00:38:01,980
+But the wallet is a wallet.
+
+555
+00:38:01,980 --> 00:38:12,980
+You cannot transform one wallet magically into another wallet that is not linkable.
+
+556
+00:38:12,980 --> 00:38:14,980
+You see, you get a wallet, it stays a wallet.
+
+557
+00:38:14,980 --> 00:38:17,980
+So, now I don't know who's behind it.
+
+558
+00:38:17,980 --> 00:38:20,980
+I don't know it's you or him or anybody else.
+
+559
+00:38:20,980 --> 00:38:25,980
+What I do know is what it receives and what it sends, right?
+
+560
+00:38:25,980 --> 00:38:30,980
+Like most cryptocurrencies, I don't claim to know a lot about cryptocurrencies, okay?
+
+561
+00:38:30,980 --> 00:38:37,980
+But most of them will function on this premise of like wallets where you accumulate a specific
+
+562
+00:38:37,980 --> 00:38:38,980
+cryptocurrency.
+
+563
+00:38:38,980 --> 00:38:44,980
+If you are, but if you go with like a big provider like Coinbase or something like that,
+
+564
+00:38:44,980 --> 00:38:47,980
+they aggregate those wallets for you, okay?
+
+565
+00:38:47,980 --> 00:38:54,980
+But if you're an individual in a cryptocurrency trader or investor, you have typically this
+
+566
+00:38:54,980 --> 00:38:55,980
+number of wallets.
+
+567
+00:38:55,980 --> 00:39:00,980
+You have a Bitcoin wallet, an Ethereum wallet, and they all have addresses.
+
+568
+00:39:00,980 --> 00:39:08,980
+Now, the link between an address and a human being, that's something that, you know, not
+
+569
+00:39:08,980 --> 00:39:09,980
+given, right?
+
+570
+00:39:09,980 --> 00:39:12,980
+It's difficult to establish who that is.
+
+571
+00:39:12,980 --> 00:39:19,980
+But what wallets have this form, the term is persistent identifiers, that wallet ID,
+
+572
+00:39:19,980 --> 00:39:22,980
+which is like some kind of binary string, right?
+
+573
+00:39:22,980 --> 00:39:24,980
+And they're unique.
+
+574
+00:39:24,980 --> 00:39:28,980
+And because of that, there is no actual anonymity because you can link all the transactions to
+
+575
+00:39:28,980 --> 00:39:29,980
+that wallet.
+
+576
+00:39:29,980 --> 00:39:31,980
+You know exactly what that wallet is doing.
+
+577
+00:39:31,980 --> 00:39:34,980
+Sending so much money, receiving so much money.
+
+578
+00:39:34,980 --> 00:39:41,980
+You know, one of the problems, we haven't talked about ransomware, but when an organization
+
+579
+00:39:41,980 --> 00:39:47,980
+gets hit by ransomware and they pay the ransom, it's very clear to whom they're paying.
+
+580
+00:39:47,980 --> 00:39:49,980
+A specific wallet, right?
+
+581
+00:39:49,980 --> 00:39:55,980
+Because ransomware loves, the attackers, ransomware attackers, they love Bitcoin and other types
+
+582
+00:39:55,980 --> 00:39:56,980
+of cryptocurrencies.
+
+583
+00:39:56,980 --> 00:39:59,980
+And they give you an ID, usually.
+
+584
+00:39:59,980 --> 00:40:05,980
+If you've seen like a ransom message that follows, usually follows the ransomware attack,
+
+585
+00:40:05,980 --> 00:40:08,980
+it says, transfer money here.
+
+586
+00:40:08,980 --> 00:40:12,980
+And they give you the explicit ID.
+
+587
+00:40:12,980 --> 00:40:14,980
+But you don't know who that is.
+
+588
+00:40:14,980 --> 00:40:16,980
+It's very hard to find out who.
+
+589
+00:40:16,980 --> 00:40:19,980
+But it's still not anonymity.
+
+590
+00:40:19,980 --> 00:40:28,980
+Anyway, so online payment, sometimes you want to browse anonymously, right?
+
+591
+00:40:28,980 --> 00:40:33,980
+You know, in graduate school people do research.
+
+592
+00:40:33,980 --> 00:40:39,980
+Sometimes research requires looking at sites that are not pleasant.
+
+593
+00:40:39,980 --> 00:40:40,980
+Okay?
+
+594
+00:40:40,980 --> 00:40:45,980
+For example, in my group some years ago, we had to go to some particular porn site.
+
+595
+00:40:45,980 --> 00:40:46,980
+Okay.
+
+596
+00:40:46,980 --> 00:40:47,980
+Why?
+
+597
+00:40:47,980 --> 00:40:50,980
+Because we were studying CAPTCHAs.
+
+598
+00:40:50,980 --> 00:40:55,980
+And that porn site, the way it worked, it was free.
+
+599
+00:40:55,980 --> 00:40:58,980
+But to get access to it, you had to solve a CAPTCHA.
+
+600
+00:40:58,980 --> 00:41:05,980
+But really cleverly, what it was doing, it was specifically making the users of that porn
+
+601
+00:41:05,980 --> 00:41:10,980
+site function as human CAPTCHA solvers for a bot.
+
+602
+00:41:10,980 --> 00:41:13,980
+Maybe that doesn't make sense here.
+
+603
+00:41:13,980 --> 00:41:20,980
+So, there was a bot operator, okay, that was creating Facebook and Gmail accounts, okay?
+
+604
+00:41:20,980 --> 00:41:23,980
+And Instagram accounts.
+
+605
+00:41:23,980 --> 00:41:26,980
+Now, normally these bots, what they do is they automate, right?
+
+606
+00:41:26,980 --> 00:41:31,980
+Create an account, provide a password, select a user ID, fill in the password, etc.
+
+607
+00:41:31,980 --> 00:41:38,980
+But then, all these Instagram, Facebook, Google, they have CAPTCHAs, right?
+
+608
+00:41:38,980 --> 00:41:41,980
+They say, prove you're a human before we create an account.
+
+609
+00:41:41,980 --> 00:41:44,980
+You see what I'm saying?
+
+610
+00:41:44,980 --> 00:41:47,980
+But the bot that operated is not human.
+
+611
+00:41:47,980 --> 00:41:53,980
+So, what they were doing is that they made a partnership with a porn site, where every
+
+612
+00:41:53,980 --> 00:41:59,980
+time, when they wanted to create an account, and a CAPTCHA popped out, they sent this CAPTCHA
+
+613
+00:41:59,980 --> 00:42:01,980
+to the porn site, okay?
+
+614
+00:42:01,980 --> 00:42:04,980
+That presented that CAPTCHA to the next user.
+
+615
+00:42:04,980 --> 00:42:08,980
+And so, with a high enough volume of traffic, there was always somebody trying to get access
+
+616
+00:42:08,980 --> 00:42:09,980
+to the porn site.
+
+617
+00:42:09,980 --> 00:42:14,980
+They would pop up with a CAPTCHA, the user would solve it quickly, the solution would
+
+618
+00:42:14,980 --> 00:42:20,980
+come back to the bot, and it would feed it into Gmail, Instagram, Facebook, okay?
+
+619
+00:42:20,980 --> 00:42:23,980
+So, long story short, let's come back.
+
+620
+00:42:23,980 --> 00:42:28,980
+Yes, so we had to look at that particular porn site a couple of times, you know, so, you
+
+621
+00:42:28,980 --> 00:42:33,980
+don't want to do it from university computers, right?
+
+622
+00:42:33,980 --> 00:42:38,980
+So, you do use anonymous browsing, okay?
+
+623
+00:42:38,980 --> 00:42:43,980
+That essentially hides your browsing patterns.
+
+624
+00:42:43,980 --> 00:42:50,980
+So, if you're using standard browsers, what you're browsing is not private, generally.
+
+625
+00:42:50,980 --> 00:42:53,980
+I mean, some of them are more private than others.
+
+626
+00:42:53,980 --> 00:42:58,980
+I mean, yes, Safari is better than Firefox, and nothing is worse than even the Explorer,
+
+627
+00:42:58,980 --> 00:43:03,980
+but then there is DuckDuckGo, and Brave, and they all pretend to be very private, et cetera,
+
+628
+00:43:03,980 --> 00:43:05,980
+but they're actually not very private.
+
+629
+00:43:05,980 --> 00:43:08,980
+If you want private, you use the Tor browser, okay?
+
+630
+00:43:08,980 --> 00:43:10,980
+I will talk about Tor in a second.
+
+631
+00:43:10,980 --> 00:43:19,980
+Okay, so web browsing, you want to look up a site, even something innocuous, like you
+
+632
+00:43:19,980 --> 00:43:22,980
+totally, like you want to price out a certain item, right?
+
+633
+00:43:22,980 --> 00:43:26,980
+You're looking for, I don't know, a refrigerator, or a pair of shoes.
+
+634
+00:43:26,980 --> 00:43:28,980
+You don't want to get ads, okay?
+
+635
+00:43:28,980 --> 00:43:34,980
+You don't want to pollute yourself with all this information that will incessantly pop
+
+636
+00:43:34,980 --> 00:43:37,980
+out ads about shoes or refrigerators.
+
+637
+00:43:37,980 --> 00:43:40,980
+So, anonymous browsing is good for that.
+
+638
+00:43:40,980 --> 00:43:42,980
+You want to use a search engine, too.
+
+639
+00:43:42,980 --> 00:43:49,980
+You don't want a search engine, like Gmail, or Google, or Bing, or whatever, to know your
+
+640
+00:43:49,980 --> 00:43:50,980
+search patterns.
+
+641
+00:43:50,980 --> 00:43:56,980
+Sometimes you want to send an untraceable message, an untraceable email, because maybe
+
+642
+00:43:56,980 --> 00:44:01,980
+you are a whistleblower, corporate or government whistleblower, and you would like to report
+
+643
+00:44:01,980 --> 00:44:05,980
+something criminal or some abuse anonymously.
+
+644
+00:44:05,980 --> 00:44:11,980
+Well, hell, even here at UCI, we have a way to do so, by the way.
+
+645
+00:44:11,980 --> 00:44:17,980
+We also, I mean, we have it in the physical world, there's an Office of the Ombudsman to
+
+646
+00:44:17,980 --> 00:44:19,980
+which you can report things anonymously.
+
+647
+00:44:19,980 --> 00:44:24,980
+But we also, last time I checked, a couple years ago, there was a way to anonymously send
+
+648
+00:44:24,980 --> 00:44:26,980
+email, except it's not truly anonymous.
+
+649
+00:44:26,980 --> 00:44:33,980
+I mean, there's a way to basically use a web form, okay, to send an anonymously.
+
+650
+00:44:33,980 --> 00:44:43,980
+If you're a dissident, a political dissident in an oppressive society, maybe this is socially
+
+651
+00:44:43,980 --> 00:44:46,980
+sensitive communication about, let's say, addiction.
+
+652
+00:44:46,980 --> 00:44:51,980
+You know, groups like Alcoholics Anonymous or people with sexually transmitted diseases
+
+653
+00:44:51,980 --> 00:44:56,980
+who form mutual support groups, and you certainly don't want your friends and family or your
+
+654
+00:44:56,980 --> 00:44:59,980
+co-workers to know about your participation in such groups.
+
+655
+00:44:59,980 --> 00:45:02,980
+So, that's why privacy is super important.
+
+656
+00:45:02,980 --> 00:45:08,980
+Also, on the business side, if you have confidential business negotiations, for example, the previous
+
+657
+00:45:08,980 --> 00:45:13,980
+thing I said about, you know, two companies have, you know, a startup and a big pharmaceutical
+
+658
+00:45:13,980 --> 00:45:16,980
+engaging in intensive communications.
+
+659
+00:45:16,980 --> 00:45:18,980
+That's, again, where you need privacy.
+
+660
+00:45:18,980 --> 00:45:23,980
+And, last but not least, even law enforcement, which you would think normally is against privacy,
+
+661
+00:45:23,980 --> 00:45:27,980
+because, you know, it's fundamentally, like, about uncovering things.
+
+662
+00:45:27,980 --> 00:45:31,980
+Even they benefit from privacy.
+
+663
+00:45:31,980 --> 00:45:39,980
+When they mount sting operations and set up honeypots for all kinds of miscreants out there.
+
+664
+00:45:39,980 --> 00:45:42,980
+When they do secretly communicating in the public network.
+
+665
+00:45:42,980 --> 00:45:48,980
+Like, for example, you know, with informers, secret informers or secret agents.
+
+666
+00:45:48,980 --> 00:45:54,980
+As I said, okay, I already said digital cash.
+
+667
+00:45:54,980 --> 00:45:56,980
+Also, anonymous electronic voting.
+
+668
+00:45:56,980 --> 00:46:01,980
+One day, I hope, in not too distant future, we will have internet voting.
+
+669
+00:46:01,980 --> 00:46:05,980
+Might not happen for a while, but I hope it will.
+
+670
+00:46:05,980 --> 00:46:10,980
+Because it will definitely raise, lower the barriers for voting participation.
+
+671
+00:46:10,980 --> 00:46:15,980
+And, just like we vote today, sort of anonymously, right?
+
+672
+00:46:15,980 --> 00:46:20,980
+It would be nice to vote better anonymously on the internet.
+
+673
+00:46:20,980 --> 00:46:21,980
+But, secure.
+
+674
+00:46:21,980 --> 00:46:24,980
+So, the idea is not to give up on security.
+
+675
+00:46:24,980 --> 00:46:30,980
+The idea is to still have secure voting, but in a way that's anonymous.
+
+676
+00:46:30,980 --> 00:46:31,980
+Okay?
+
+677
+00:46:31,980 --> 00:46:37,980
+Today, is the voting anonymous?
+
+678
+00:46:37,980 --> 00:46:39,980
+No.
+
+679
+00:46:39,980 --> 00:46:42,980
+Why do you say that?
+
+680
+00:46:42,980 --> 00:46:45,980
+No, I'm just curious about your intuition.
+
+681
+00:46:45,980 --> 00:46:50,980
+Because the ballot, it has your name on it.
+
+682
+00:46:50,980 --> 00:46:51,980
+Does it?
+
+683
+00:46:51,980 --> 00:46:52,980
+Yeah.
+
+684
+00:46:54,980 --> 00:46:55,980
+When is it?
+
+685
+00:46:55,980 --> 00:46:56,980
+Did somebody vote recently?
+
+686
+00:46:56,980 --> 00:46:58,980
+Yeah, I voted in November.
+
+687
+00:46:58,980 --> 00:46:59,980
+In November.
+
+688
+00:46:59,980 --> 00:47:00,980
+And your ballot had a name.
+
+689
+00:47:00,980 --> 00:47:02,980
+Did you vote by mail?
+
+690
+00:47:02,980 --> 00:47:03,980
+No.
+
+691
+00:47:03,980 --> 00:47:04,980
+In person?
+
+692
+00:47:04,980 --> 00:47:05,980
+Yeah.
+
+693
+00:47:05,980 --> 00:47:06,980
+Okay.
+
+694
+00:47:06,980 --> 00:47:07,980
+I vote by mail, generally.
+
+695
+00:47:07,980 --> 00:47:09,980
+So, my ballot had no name.
+
+696
+00:47:09,980 --> 00:47:13,980
+The envelope is the problem.
+
+697
+00:47:13,980 --> 00:47:16,980
+Also, I have no proof, actually, that the ballot had no name.
+
+698
+00:47:16,980 --> 00:47:18,980
+It could have had a watermark that I didn't see.
+
+699
+00:47:18,980 --> 00:47:22,980
+You see, the problem in the physical world, we put a lot of faith in, like, yeah, it's
+
+700
+00:47:22,980 --> 00:47:23,980
+supposed to be anonymous.
+
+701
+00:47:23,980 --> 00:47:28,980
+But, when you go into a precinct, so you went to a precinct, and then, did they check
+
+702
+00:47:28,980 --> 00:47:29,980
+your ID?
+
+703
+00:47:29,980 --> 00:47:30,980
+No.
+
+704
+00:47:30,980 --> 00:47:33,980
+Right, because it's not, that law is not here yet.
+
+705
+00:47:33,980 --> 00:47:37,980
+The government is trying to make it, make it come to life.
+
+706
+00:47:37,980 --> 00:47:40,980
+But, did they check your name on the roster?
+
+707
+00:47:40,980 --> 00:47:41,980
+Yeah.
+
+708
+00:47:41,980 --> 00:47:44,980
+So, somebody knows if you're voted, right?
+
+709
+00:47:44,980 --> 00:47:45,980
+Yeah.
+
+710
+00:47:45,980 --> 00:47:50,980
+So, the thing is, even if the ballot isn't anonymous, sorry, is anonymous, if the ballot
+
+711
+00:47:50,980 --> 00:47:58,980
+is anonymous, somebody, the precinct worker, crossed your name, and said, uh-huh, he or
+
+712
+00:47:58,980 --> 00:48:00,980
+she voted, right?
+
+713
+00:48:00,980 --> 00:48:03,980
+So, that's already, like, you're sacrificing privacy, right?
+
+714
+00:48:03,980 --> 00:48:06,980
+You cannot say, I'm not saying I voted, I didn't vote.
+
+715
+00:48:06,980 --> 00:48:07,980
+No.
+
+716
+00:48:07,980 --> 00:48:08,980
+You voted.
+
+717
+00:48:08,980 --> 00:48:09,980
+You voted.
+
+718
+00:48:09,980 --> 00:48:11,980
+If someone voted, it's actually public, right?
+
+719
+00:48:11,980 --> 00:48:13,980
+It is, but should it be?
+
+720
+00:48:13,980 --> 00:48:14,980
+I understand.
+
+721
+00:48:14,980 --> 00:48:15,980
+Should it be?
+
+722
+00:48:15,980 --> 00:48:25,980
+Also, what if he walked in, got his name checked, went inside the ballot's, uh, what
+
+723
+00:48:25,980 --> 00:48:26,980
+is it called?
+
+724
+00:48:26,980 --> 00:48:27,980
+A tent, right?
+
+725
+00:48:27,980 --> 00:48:31,980
+It's like a, it's like a changing room, right?
+
+726
+00:48:31,980 --> 00:48:34,980
+And never voted, and walked out.
+
+727
+00:48:34,980 --> 00:48:36,980
+Good, right?
+
+728
+00:48:36,980 --> 00:48:41,980
+I've heard of people doing that.
+
+729
+00:48:41,980 --> 00:48:44,980
+Anyway, voting is interesting, and also it's censorship-resistant publishing.
+
+730
+00:48:44,980 --> 00:48:48,980
+That is, publishing, there's something, or putting something on, let's say, on the web,
+
+731
+00:48:48,980 --> 00:48:52,980
+they cannot be taken down, because nobody knows where it is.
+
+732
+00:48:52,980 --> 00:48:53,980
+Imagine that.
+
+733
+00:48:53,980 --> 00:48:58,980
+You have something to say, maybe it's good, maybe it's bad, okay?
+
+734
+00:48:58,980 --> 00:49:01,980
+Censorship does not distinguish between good and bad things.
+
+735
+00:49:01,980 --> 00:49:06,980
+You have something to say, somebody, or, let's say, the government hates it, and wants
+
+736
+00:49:06,980 --> 00:49:09,980
+it taken down, but they can't, because they don't know where it is.
+
+737
+00:49:09,980 --> 00:49:14,980
+That's called censorship-resistant publishing.
+
+738
+00:49:14,980 --> 00:49:19,980
+Oh, of course, where there's good, there's bad, and this is the problem right away that
+
+739
+00:49:19,980 --> 00:49:24,980
+should be, it should be obvious to you, that anonymity has two sides, okay?
+
+740
+00:49:24,980 --> 00:49:27,980
+Very much depends on which side you look from.
+
+741
+00:49:27,980 --> 00:49:29,980
+The usual thing, right?
+
+742
+00:49:29,980 --> 00:49:32,980
+If you have anonymity, it will be abused.
+
+743
+00:49:32,980 --> 00:49:38,980
+There's no way to separate anonymity for the good from anonymity for the bad.
+
+744
+00:49:38,980 --> 00:49:45,980
+All kinds of things, misinformation, propaganda, illegal substances, right?
+
+745
+00:49:45,980 --> 00:49:50,980
+All kinds of illegal, murder for hire, sure.
+
+746
+00:49:50,980 --> 00:49:53,980
+Chemical weapons, sure.
+
+747
+00:49:53,980 --> 00:49:56,980
+Poisons, yeah.
+
+748
+00:49:56,980 --> 00:50:02,980
+Drugs, probably most of you are too young to remember the Silk Road.
+
+749
+00:50:02,980 --> 00:50:07,980
+If you look up Silk Road, that was a marketplace.
+
+750
+00:50:07,980 --> 00:50:11,980
+There was a whole marketplace for illegal substances and illegal activities.
+
+751
+00:50:11,980 --> 00:50:17,980
+The guy who ran it, there was even a movie about it, I think Ross Obrecht was his name.
+
+752
+00:50:17,980 --> 00:50:20,980
+I think the president pardoned him recently.
+
+753
+00:50:20,980 --> 00:50:26,980
+He was serving a very lengthy jail sentence in a federal prison.
+
+754
+00:50:26,980 --> 00:50:28,980
+But anyway, that was taken down.
+
+755
+00:50:28,980 --> 00:50:34,980
+But there are other marketplaces out there for illegal substances and illegal acts.
+
+756
+00:50:34,980 --> 00:50:39,980
+And they cannot be taken down because the way they operate is beyond the reach of the law.
+
+757
+00:50:39,980 --> 00:50:41,980
+Because of anonymity.
+
+758
+00:50:41,980 --> 00:50:44,980
+Tax avoidance, yes.
+
+759
+00:50:44,980 --> 00:50:52,980
+There are some cryptocurrency tricks that try to circumvent the anonymity I mentioned earlier.
+
+760
+00:50:52,980 --> 00:50:55,980
+And also just general incitement to criminal activity.
+
+761
+00:50:55,980 --> 00:51:03,980
+Let's say you want to use censorship resistant publishing that I mentioned earlier on the previous slide for the purposes of inciting terrorism.
+
+762
+00:51:03,980 --> 00:51:08,980
+Well, your opinion is terrorism is legit.
+
+763
+00:51:08,980 --> 00:51:12,980
+And the government is trying to censor you by attempting to take it down.
+
+764
+00:51:12,980 --> 00:51:16,980
+Well, one person in terrorism is another person in freedom of fire.
+
+765
+00:51:16,980 --> 00:51:17,980
+Or you want to incite murder.
+
+766
+00:51:17,980 --> 00:51:19,980
+Or you want to incite genocide.
+
+767
+00:51:19,980 --> 00:51:20,980
+Sure.
+
+768
+00:51:20,980 --> 00:51:22,980
+That's freedom of speech for some.
+
+769
+00:51:22,980 --> 00:51:26,980
+And prohibited pain speech for others.
+
+770
+00:51:26,980 --> 00:51:29,980
+So, anonymity has two sides.
+
+771
+00:51:29,980 --> 00:51:30,980
+But what is it really?
+
+772
+00:51:30,980 --> 00:51:32,980
+Let's try to begin.
+
+773
+00:51:32,980 --> 00:51:39,980
+I'm going to try to say that it's like inability to identify someone.
+
+774
+00:51:39,980 --> 00:51:45,980
+An inability to identify someone with something within a set of subjects.
+
+775
+00:51:45,980 --> 00:51:49,980
+Now, the size of the set can vary.
+
+776
+00:51:49,980 --> 00:51:56,980
+And the fewer subjects in a set, the worse anonymity is, right?
+
+777
+00:51:56,980 --> 00:52:06,980
+So, if I turn my back to the board and somebody throws a spitball at my back, surely some of you have done this in high school,
+
+778
+00:52:06,980 --> 00:52:09,980
+I will know that somebody threw a spitball at me.
+
+779
+00:52:09,980 --> 00:52:11,980
+I will feel it.
+
+780
+00:52:11,980 --> 00:52:14,980
+I'm sensitive.
+
+781
+00:52:14,980 --> 00:52:19,980
+But there are 14 people here.
+
+782
+00:52:19,980 --> 00:52:21,980
+Which one?
+
+783
+00:52:21,980 --> 00:52:23,980
+Is it the guy who is smiling?
+
+784
+00:52:23,980 --> 00:52:25,980
+Or is it somebody with a poker face?
+
+785
+00:52:25,980 --> 00:52:28,980
+Is it the person pretending to type on their phone?
+
+786
+00:52:28,980 --> 00:52:30,980
+Or actually typing on their phone?
+
+787
+00:52:30,980 --> 00:52:33,980
+Pretending to be very occupied or looking up in the sky?
+
+788
+00:52:33,980 --> 00:52:34,980
+I have no idea.
+
+789
+00:52:34,980 --> 00:52:35,980
+That's anonymity.
+
+790
+00:52:35,980 --> 00:52:38,980
+You throw a spitball at me when my back is turned.
+
+791
+00:52:38,980 --> 00:52:39,980
+I don't have eyes in the back of my head.
+
+792
+00:52:39,980 --> 00:52:42,980
+You are anonymous in a group of 14.
+
+793
+00:52:42,980 --> 00:52:44,980
+Okay?
+
+794
+00:52:44,980 --> 00:52:49,980
+Now, if there are two of you here, wow, my job is easier.
+
+795
+00:52:49,980 --> 00:52:54,980
+I might look at your fingers and, you know, or something.
+
+796
+00:52:54,980 --> 00:52:57,980
+But, yeah, 14 is good enough for that.
+
+797
+00:52:57,980 --> 00:53:02,980
+So, different from privacy, right?
+
+798
+00:53:02,980 --> 00:53:09,980
+In other words, one cannot be anonymous alone, right?
+
+799
+00:53:09,980 --> 00:53:15,980
+So, if there is one only person here and I feel the spitball hitting my back, I don't know this.
+
+800
+00:53:15,980 --> 00:53:17,980
+That's definitely the culprit.
+
+801
+00:53:17,980 --> 00:53:20,980
+That's it.
+
+802
+00:53:20,980 --> 00:53:22,980
+There is other shades of anonymity.
+
+803
+00:53:22,980 --> 00:53:27,980
+One is called unlinkability and the other we call unobservability.
+
+804
+00:53:27,980 --> 00:53:28,980
+Okay?
+
+805
+00:53:28,980 --> 00:53:34,980
+Unlinkability is an inability to connect multiple actions or action and identity.
+
+806
+00:53:34,980 --> 00:53:42,980
+Like, in the spitball example, I also get more than anonymity, I get unlinkability.
+
+807
+00:53:42,980 --> 00:53:44,980
+The action was spitball.
+
+808
+00:53:44,980 --> 00:53:49,980
+But I cannot link an identity to that action.
+
+809
+00:53:49,980 --> 00:53:52,980
+I know it's someone, but I cannot link an identity.
+
+810
+00:53:52,980 --> 00:53:53,980
+Do you see this?
+
+811
+00:53:53,980 --> 00:53:54,980
+Do you see this?
+
+812
+00:53:54,980 --> 00:53:55,980
+The action occurred.
+
+813
+00:53:55,980 --> 00:53:57,980
+I know the action occurred.
+
+814
+00:53:57,980 --> 00:53:59,980
+Spitball hit me.
+
+815
+00:53:59,980 --> 00:54:00,980
+Somebody launched it.
+
+816
+00:54:00,980 --> 00:54:01,980
+But who?
+
+817
+00:54:01,980 --> 00:54:02,980
+I don't know.
+
+818
+00:54:02,980 --> 00:54:03,980
+So, I can't link.
+
+819
+00:54:03,980 --> 00:54:04,980
+Or, suppose this.
+
+820
+00:54:04,980 --> 00:54:05,980
+Twice this happened.
+
+821
+00:54:05,980 --> 00:54:06,980
+Twice.
+
+822
+00:54:06,980 --> 00:54:07,980
+My back is turned.
+
+823
+00:54:07,980 --> 00:54:08,980
+Bam!
+
+824
+00:54:08,980 --> 00:54:09,980
+Spitball.
+
+825
+00:54:09,980 --> 00:54:10,980
+Some minutes later, my back is turned again.
+
+826
+00:54:10,980 --> 00:54:11,980
+Bam!
+
+827
+00:54:11,980 --> 00:54:12,980
+Another spitball.
+
+828
+00:54:12,980 --> 00:54:13,980
+Okay.
+
+829
+00:54:13,980 --> 00:54:14,980
+I know.
+
+830
+00:54:14,980 --> 00:54:15,980
+Two spitballs.
+
+831
+00:54:15,980 --> 00:54:16,980
+But let's say this guy, I want to hit me.
+
+832
+00:54:16,980 --> 00:54:17,980
+Hit me.
+
+833
+00:54:17,980 --> 00:54:18,980
+Hit me.
+
+834
+00:54:18,980 --> 00:54:19,980
+Somebody launched it.
+
+835
+00:54:19,980 --> 00:54:20,980
+But who?
+
+836
+00:54:20,980 --> 00:54:21,980
+I don't know.
+
+837
+00:54:21,980 --> 00:54:22,980
+So, I can't link.
+
+838
+00:54:22,980 --> 00:54:23,980
+Or, suppose this.
+
+839
+00:54:23,980 --> 00:54:24,980
+Twice this happened.
+
+840
+00:54:24,980 --> 00:54:25,980
+Twice.
+
+841
+00:54:25,980 --> 00:54:26,980
+Twice.
+
+842
+00:54:26,980 --> 00:54:27,980
+My back is turned.
+
+843
+00:54:27,980 --> 00:54:28,980
+Bam!
+
+844
+00:54:28,980 --> 00:54:30,980
+Let's say this guy over here.
+
+845
+00:54:30,980 --> 00:54:32,980
+Let's meet him a little seeker.
+
+846
+00:54:32,980 --> 00:54:37,980
+He says, you know, it's the same person.
+
+847
+00:54:37,980 --> 00:54:39,980
+Snitch.
+
+848
+00:54:39,980 --> 00:54:41,980
+That means I have linkability.
+
+849
+00:54:41,980 --> 00:54:42,980
+I just linked.
+
+850
+00:54:42,980 --> 00:54:45,980
+I don't know who it is, but I know it's the same person.
+
+851
+00:54:45,980 --> 00:54:46,980
+You see?
+
+852
+00:54:46,980 --> 00:54:51,980
+But if he doesn't tell me, I know that two actions occurred, but I can't link them.
+
+853
+00:54:51,980 --> 00:54:53,980
+I mean, they asked spitballs.
+
+854
+00:54:53,980 --> 00:54:54,980
+Both.
+
+855
+00:54:54,980 --> 00:54:57,980
+But it could have been done by two different people.
+
+856
+00:54:57,980 --> 00:55:00,980
+So, inability to link is unlinkability.
+
+857
+00:55:00,980 --> 00:55:03,980
+If he rats on somebody, it's just partially rats on somebody.
+
+858
+00:55:03,980 --> 00:55:05,980
+You know, it's the same person.
+
+859
+00:55:05,980 --> 00:55:06,980
+All I can tell you is the same person.
+
+860
+00:55:06,980 --> 00:55:08,980
+Oh, now I have more information.
+
+861
+00:55:08,980 --> 00:55:09,980
+There's one person.
+
+862
+00:55:09,980 --> 00:55:10,980
+It was not a random act.
+
+863
+00:55:10,980 --> 00:55:12,980
+That one person did it twice.
+
+864
+00:55:12,980 --> 00:55:13,980
+Okay?
+
+865
+00:55:13,980 --> 00:55:21,980
+So, a more appropriate example, perhaps, is connecting Alice to a sent email.
+
+866
+00:55:21,980 --> 00:55:24,980
+Now, I know that email was sent, right?
+
+867
+00:55:24,980 --> 00:55:27,980
+And if I can't link it to the sender, that's unlinkability.
+
+868
+00:55:27,980 --> 00:55:32,980
+But if I can link it to Alice, then I know Alice sent email.
+
+869
+00:55:32,980 --> 00:55:35,980
+I might not know what it is.
+
+870
+00:55:35,980 --> 00:55:40,980
+It might be well encrypted, but I know she sent email.
+
+871
+00:55:40,980 --> 00:55:45,980
+Or, I see two emails, both encrypted.
+
+872
+00:55:45,980 --> 00:55:49,980
+I don't know who sent them, but I know it's the same sender.
+
+873
+00:55:49,980 --> 00:55:50,980
+Okay?
+
+874
+00:55:50,980 --> 00:55:51,980
+That's linkability.
+
+875
+00:55:51,980 --> 00:55:56,980
+Inability to do that is unlinkable.
+
+876
+00:55:56,980 --> 00:56:02,980
+And then, last, sort of, the impacts of anonymity is called unobservability.
+
+877
+00:56:02,980 --> 00:56:04,980
+And that's very hard to achieve.
+
+878
+00:56:04,980 --> 00:56:13,980
+Here, if you observe, you don't know when a second action took place.
+
+879
+00:56:13,980 --> 00:56:14,980
+Okay?
+
+880
+00:56:14,980 --> 00:56:20,980
+So, let's say the room is completely dark.
+
+881
+00:56:20,980 --> 00:56:21,980
+Okay?
+
+882
+00:56:21,980 --> 00:56:23,980
+The room is completely dark.
+
+883
+00:56:23,980 --> 00:56:24,980
+You cannot see me.
+
+884
+00:56:24,980 --> 00:56:26,980
+I cannot see you, but I know you're here.
+
+885
+00:56:26,980 --> 00:56:28,980
+So, imagine right now all the lights go dark.
+
+886
+00:56:28,980 --> 00:56:30,980
+It's completely dark.
+
+887
+00:56:30,980 --> 00:56:35,980
+And then, 30 seconds later, the lights go on.
+
+888
+00:56:35,980 --> 00:56:40,980
+My question is, did somebody throw a spitball anywhere?
+
+889
+00:56:44,980 --> 00:56:48,980
+I didn't feel it, but did somebody do throw a spitball anywhere in the room?
+
+890
+00:56:48,980 --> 00:56:49,980
+I don't know.
+
+891
+00:56:49,980 --> 00:56:50,980
+Maybe.
+
+892
+00:56:50,980 --> 00:56:51,980
+Maybe not.
+
+893
+00:56:51,980 --> 00:56:53,980
+Do you see the difference?
+
+894
+00:56:53,980 --> 00:56:58,980
+An action may have occurred, or may not have occurred, I don't know.
+
+895
+00:56:58,980 --> 00:57:04,980
+So, that inability to tell what happened, just that the action happened, is, by itself,
+
+896
+00:57:04,980 --> 00:57:05,980
+unobservability.
+
+897
+00:57:05,980 --> 00:57:06,980
+That's really hard.
+
+898
+00:57:06,980 --> 00:57:18,980
+So, how do you undermine anonymity, well, by now it should be kind of obvious, right?
+
+899
+00:57:18,980 --> 00:57:19,980
+Passive traffic analysis.
+
+900
+00:57:19,980 --> 00:57:23,980
+Looking at IP traffic.
+
+901
+00:57:23,980 --> 00:57:25,980
+Looking at Ethernet traffic.
+
+902
+00:57:25,980 --> 00:57:26,980
+Why Ethernet?
+
+903
+00:57:26,980 --> 00:57:27,980
+Why Ethernet?
+
+904
+00:57:27,980 --> 00:57:34,980
+Well, at the MAC layer, you still see, remember, MAC addresses, right?
+
+905
+00:57:34,980 --> 00:57:38,980
+Even if, because, let's say, in a wireless menu, we use encryption, right?
+
+906
+00:57:38,980 --> 00:57:39,980
+There's wireless encryption, right?
+
+907
+00:57:39,980 --> 00:57:41,980
+There's wireless encryption protocols.
+
+908
+00:57:41,980 --> 00:57:44,980
+So, they hide even the IP header.
+
+909
+00:57:44,980 --> 00:57:47,980
+If you're confused, why am I saying this?
+
+910
+00:57:47,980 --> 00:57:53,980
+Because, remember, IP packets, once they go on the internet, once they usually pass the
+
+911
+00:57:53,980 --> 00:57:55,980
+first wireless hop, right?
+
+912
+00:57:55,980 --> 00:57:58,980
+They are IP packets.
+
+913
+00:57:58,980 --> 00:58:01,980
+Meaning, that you can see the heads, right?
+
+914
+00:58:01,980 --> 00:58:04,980
+You can see IP, you know, IP heads.
+
+915
+00:58:04,980 --> 00:58:07,980
+But, on our first wireless hop, right?
+
+916
+00:58:07,980 --> 00:58:14,980
+Like this, from here, from here to the access point, there's usually a wireless security protocol
+
+917
+00:58:14,980 --> 00:58:24,980
+that encrypts the IP packet between my device and the access point.
+
+918
+00:58:24,980 --> 00:58:31,980
+So, if you were observing traffic, what you would be able to see, then, is Ethernet headers.
+
+919
+00:58:31,980 --> 00:58:34,980
+Meaning, MAC addresses, right?
+
+920
+00:58:34,980 --> 00:58:36,980
+Source, destination.
+
+921
+00:58:36,980 --> 00:58:38,980
+But, that's also information, right?
+
+922
+00:58:38,980 --> 00:58:43,980
+Because, you can tell that it's, if you know the source, you'll know it's my phone
+
+923
+00:58:43,980 --> 00:58:45,980
+that's using that MAC address.
+
+924
+00:58:45,980 --> 00:58:47,980
+The destination will be access point.
+
+925
+00:58:47,980 --> 00:58:49,980
+But, if we're using, what is it called?
+
+926
+00:58:49,980 --> 00:58:50,980
+Direct Wi-Fi?
+
+927
+00:58:50,980 --> 00:58:52,980
+But, no direct Wi-Fi.
+
+928
+00:58:52,980 --> 00:58:53,980
+Appear Wi-Fi.
+
+929
+00:58:53,980 --> 00:58:56,980
+That's what you don't have access point.
+
+930
+00:58:56,980 --> 00:59:00,980
+But, let's say, talk directly, like me talking directly to his laptop.
+
+931
+00:59:00,980 --> 00:59:02,980
+We can do that.
+
+932
+00:59:02,980 --> 00:59:03,980
+Not easy to set up.
+
+933
+00:59:03,980 --> 00:59:05,980
+Not a lot of people use it, but you can, right?
+
+934
+00:59:05,980 --> 00:59:11,980
+So, in that case, if you snoop on traffic, you will be able to observe that my Ethernet MAC address
+
+935
+00:59:11,980 --> 00:59:14,980
+is talking to his Ethernet MAC address.
+
+936
+00:59:14,980 --> 00:59:18,980
+So, that's passive traffic analysis, right?
+
+937
+00:59:18,980 --> 00:59:26,980
+So, the idea is, if you want to hide patterns in traffic, you have to not only communicate
+
+938
+00:59:26,980 --> 00:59:29,980
+sparingly, but you also have to carry other people's traffic.
+
+939
+00:59:29,980 --> 00:59:33,980
+Like, relay other people's traffic to obscure patterns.
+
+940
+00:59:33,980 --> 00:59:36,980
+And, we'll see how that's done later.
+
+941
+00:59:36,980 --> 00:59:37,980
+There's more.
+
+942
+00:59:37,980 --> 00:59:42,980
+There's also active traffic analysis, which means injecting traffic and seeing if I can
+
+943
+00:59:42,980 --> 00:59:46,980
+recognize it as it traverses some route.
+
+944
+00:59:46,980 --> 00:59:49,980
+Put it on timing signatures.
+
+945
+00:59:49,980 --> 00:59:50,980
+That's later.
+
+946
+00:59:50,980 --> 00:59:57,980
+You can also, if you compromise routers, well, then you don't need to worry about snooping on traffic, right?
+
+947
+00:59:57,980 --> 01:00:01,980
+Routers, by definition, receive traffic and forward it.
+
+948
+01:00:01,980 --> 01:00:06,980
+So, they don't need to tap any wires or any kind of medium, right?
+
+949
+01:00:06,980 --> 01:00:10,980
+They naturally receive traffic and send it on its way.
+
+950
+01:00:10,980 --> 01:00:15,980
+And, you will never know if a router is compromised, right?
+
+951
+01:00:15,980 --> 01:00:23,980
+Because it's running malicious software that actually logs or examines communication patterns.
+
+952
+01:00:23,980 --> 01:00:29,980
+That's done silently.
+
+953
+01:00:29,980 --> 01:00:32,980
+So, from history.
+
+954
+01:00:32,980 --> 01:00:40,980
+Back in 1981, ancient history, 44 years ago, a guy named David Chow, a brilliantly paranoid
+
+955
+01:00:40,980 --> 01:00:46,980
+and crazy person who might have sort of dubious pleasure of meeting a few times.
+
+956
+01:00:46,980 --> 01:00:49,980
+Because brilliant scientists are always very nice people.
+
+957
+01:00:49,980 --> 01:00:51,980
+And, this guy's an example.
+
+958
+01:00:51,980 --> 01:00:56,980
+But, he's brilliant and should get a Turing Award.
+
+959
+01:00:56,980 --> 01:00:58,980
+He's old, but he's alive.
+
+960
+01:00:58,980 --> 01:01:01,980
+And, actually, should get a Turing Award one of his years.
+
+961
+01:01:01,980 --> 01:01:02,980
+He published several papers.
+
+962
+01:01:02,980 --> 01:01:07,980
+One of them was a communication with ACM called untraceable electronic mail return addresses
+
+963
+01:01:07,980 --> 01:01:09,980
+and digital series.
+
+964
+01:01:09,980 --> 01:01:17,980
+Mind you, 1981 was, should, I was in middle school, high school.
+
+965
+01:01:17,980 --> 01:01:18,980
+I mean, internet.
+
+966
+01:01:18,980 --> 01:01:20,980
+I had never heard of the internet.
+
+967
+01:01:20,980 --> 01:01:27,980
+So, that was only like maybe 81 and maybe a few thousand people around the world that knew of internet.
+
+968
+01:01:27,980 --> 01:01:34,980
+And, this guy was already thinking ahead about the world we live today.
+
+969
+01:01:34,980 --> 01:01:37,980
+Because, back then nobody cared about that anonymity.
+
+970
+01:01:37,980 --> 01:01:38,980
+So, you say, security?
+
+971
+01:01:38,980 --> 01:01:39,980
+Why?
+
+972
+01:01:39,980 --> 01:01:40,980
+Anonymity?
+
+973
+01:01:40,980 --> 01:01:41,980
+Who needs it?
+
+974
+01:01:41,980 --> 01:01:48,980
+But, that paper was laid the foundation for what today's, what today's anonymity and privacy tools are.
+
+975
+01:01:48,980 --> 01:01:56,980
+And, basically, the idea he laid out is that, he first made an argument why we need privacy and anonymity.
+
+976
+01:01:56,980 --> 01:02:02,980
+And, then he sort of used this new concept called public encryption because public encryption was run from like late 70s.
+
+977
+01:02:02,980 --> 01:02:09,980
+So, he used this very new cryptographic concept of public encryption with the concept of a trusted remailer.
+
+978
+01:02:09,980 --> 01:02:12,980
+called the mix.
+
+979
+01:02:12,980 --> 01:02:13,980
+Okay?
+
+980
+01:02:13,980 --> 01:02:18,980
+And, just, mix works like this.
+
+981
+01:02:18,980 --> 01:02:20,980
+And, it's the foundation actually.
+
+982
+01:02:20,980 --> 01:02:24,980
+It is the foundation of many, of today's anonymity systems.
+
+983
+01:02:24,980 --> 01:02:25,980
+So, the idea is this.
+
+984
+01:02:25,980 --> 01:02:27,980
+You have a bunch of users.
+
+985
+01:02:27,980 --> 01:02:31,980
+And, the users want to send email to each other.
+
+986
+01:02:31,980 --> 01:02:37,980
+So, now we're talking strictly about email because, back in the 1980s, there was no social networking.
+
+987
+01:02:37,980 --> 01:02:39,980
+There was no instant messaging.
+
+988
+01:02:39,980 --> 01:02:40,980
+There was no SMS.
+
+989
+01:02:40,980 --> 01:02:42,980
+There was no cell phones, really.
+
+990
+01:02:42,980 --> 01:02:44,980
+So, people communicated.
+
+991
+01:02:44,980 --> 01:02:47,980
+If they wanted to communicate electronically, they communicated via email.
+
+992
+01:02:47,980 --> 01:02:50,980
+And, the email looked pretty much like a dozen.
+
+993
+01:02:50,980 --> 01:03:00,980
+So, the idea is to obscure or hide who is sending email to whom.
+
+994
+01:03:00,980 --> 01:03:01,980
+Okay?
+
+995
+01:03:01,980 --> 01:03:08,980
+So, we have A, C, D of Alice, Charlie, David, and then we have Bob and Eve.
+
+996
+01:03:08,980 --> 01:03:10,980
+And, these are all users.
+
+997
+01:03:10,980 --> 01:03:14,980
+And, some of them want to send email to others.
+
+998
+01:03:14,980 --> 01:03:21,980
+But, they don't want anybody observing that, anybody observing where that email goes.
+
+999
+01:03:21,980 --> 01:03:29,980
+So, you have here Alice, who wants to send an email to Bob.
+
+1000
+01:03:29,980 --> 01:03:35,980
+But, she does not send it directly to Bob because, if she did, that would be observable.
+
+1001
+01:03:35,980 --> 01:03:42,980
+So, what she does is, she takes the message that she wants to send to Bob, called M.
+
+1002
+01:03:42,980 --> 01:03:50,980
+Combines it with a NOS, a random value that she picks, R0.
+
+1003
+01:03:50,980 --> 01:03:57,980
+And, she encrypts it under the public key of Bob, the receiver.
+
+1004
+01:03:57,980 --> 01:04:00,980
+And, she takes the result, the encryption.
+
+1005
+01:04:00,980 --> 01:04:03,980
+Combines it with another NOS, called R1.
+
+1006
+01:04:03,980 --> 01:04:04,980
+Okay?
+
+1007
+01:04:04,980 --> 01:04:17,980
+Appends the name of the recipient, B, and encrypts it under the well-known public key of the mix.
+
+1008
+01:04:17,980 --> 01:04:21,980
+Now, the mix is not like the picture.
+
+1009
+01:04:21,980 --> 01:04:23,980
+It's a computer.
+
+1010
+01:04:23,980 --> 01:04:27,980
+And, its job is to mix email.
+
+1011
+01:04:27,980 --> 01:04:29,980
+But, it doesn't just mix.
+
+1012
+01:04:29,980 --> 01:04:31,980
+It also decrypts and decrypts, et cetera.
+
+1013
+01:04:31,980 --> 01:04:33,980
+But, in this example, you'll see.
+
+1014
+01:04:33,980 --> 01:04:39,980
+So, now, A, instead of sending to, directly to Bob, Alice sends it to the mix.
+
+1015
+01:04:39,980 --> 01:04:50,980
+Now, the idea is that when the mix gets that email, it knows that all the emails coming to the mix are encrypted under the mix of public key.
+
+1016
+01:04:50,980 --> 01:04:51,980
+Right?
+
+1017
+01:04:51,980 --> 01:04:52,980
+So, it tries to decrypt it.
+
+1018
+01:04:52,980 --> 01:04:53,980
+It doesn't succeed.
+
+1019
+01:04:53,980 --> 01:04:54,980
+It throws it away.
+
+1020
+01:04:54,980 --> 01:05:01,980
+But, when it decrypts, what it finds inside is R0 and M encrypted, which you cannot read what it is.
+
+1021
+01:05:01,980 --> 01:05:03,980
+It doesn't see what M is.
+
+1022
+01:05:03,980 --> 01:05:04,980
+It doesn't know what R0 is.
+
+1023
+01:05:04,980 --> 01:05:08,980
+But, he sees the name of B, Bob, right?
+
+1024
+01:05:08,980 --> 01:05:10,980
+So, he says, that's what I'm going to send.
+
+1025
+01:05:10,980 --> 01:05:13,980
+Whatever I find inside, I'm going to send to Bob.
+
+1026
+01:05:13,980 --> 01:05:15,980
+You see that?
+
+1027
+01:05:15,980 --> 01:05:16,980
+Easy.
+
+1028
+01:05:16,980 --> 01:05:19,980
+And, he does that.
+
+1029
+01:05:19,980 --> 01:05:22,980
+Now, imagine you are the observer.
+
+1030
+01:05:22,980 --> 01:05:26,980
+And, you have seen that message from Alice to the mix.
+
+1031
+01:05:26,980 --> 01:05:31,980
+And, you have also seen the message from mix to Bob.
+
+1032
+01:05:31,980 --> 01:05:36,980
+Can you say for sure that these are the same messages?
+
+1033
+01:05:36,980 --> 01:05:39,980
+What can you tell me?
+
+1034
+01:05:39,980 --> 01:05:40,980
+What can you tell me?
+
+1035
+01:05:40,980 --> 01:05:43,980
+If there's no other messages, there's no message.
+
+1036
+01:05:43,980 --> 01:05:44,980
+Right.
+
+1037
+01:05:44,980 --> 01:05:50,980
+But, if somebody showed up and said, here's one message, here's the second message.
+
+1038
+01:05:50,980 --> 01:05:52,980
+Are they the same?
+
+1039
+01:05:52,980 --> 01:05:54,980
+Can you tell them?
+
+1040
+01:05:54,980 --> 01:05:55,980
+Huh?
+
+1041
+01:05:55,980 --> 01:05:56,980
+No.
+
+1042
+01:05:56,980 --> 01:05:57,980
+You cannot.
+
+1043
+01:05:57,980 --> 01:05:58,980
+Right?
+
+1044
+01:05:58,980 --> 01:05:59,980
+You cannot.
+
+1045
+01:05:59,980 --> 01:06:00,980
+Because, how do you know?
+
+1046
+01:06:00,980 --> 01:06:01,980
+If this message is encrypted under the big public key of the mix, and the other message
+
+1047
+01:06:01,980 --> 01:06:03,980
+is encrypted under the public key of Bob.
+
+1048
+01:06:03,980 --> 01:06:04,980
+You cannot.
+
+1049
+01:06:04,980 --> 01:06:05,980
+You cannot.
+
+1050
+01:06:05,980 --> 01:06:06,980
+Right?
+
+1051
+01:06:06,980 --> 01:06:07,980
+You cannot.
+
+1052
+01:06:07,980 --> 01:06:08,980
+Because, how do you know?
+
+1053
+01:06:08,980 --> 01:06:14,980
+If this message is encrypted under the big public key of the mix, and the other message
+
+1054
+01:06:14,980 --> 01:06:20,980
+is encrypted under the public key of Bob.
+
+1055
+01:06:20,980 --> 01:06:21,980
+You cannot correlate.
+
+1056
+01:06:21,980 --> 01:06:22,980
+You cannot correlate.
+
+1057
+01:06:22,980 --> 01:06:27,980
+But, you are correct if you also know that this message was the only message coming into
+
+1058
+01:06:27,980 --> 01:06:28,980
+the mix.
+
+1059
+01:06:28,980 --> 01:06:34,980
+And, very soon afterwards, that message was encrypted, and very likely they had the same
+
+1060
+01:06:34,980 --> 01:06:35,980
+message.
+
+1061
+01:06:35,980 --> 01:06:41,980
+Because the mix sent only one message, and before that he received this one message, it
+
+1062
+01:06:41,980 --> 01:06:43,980
+must be a chain reaction, right?
+
+1063
+01:06:43,980 --> 01:06:46,980
+Well, that's not how we use a mix, right?
+
+1064
+01:06:46,980 --> 01:06:47,980
+You can imagine.
+
+1065
+01:06:47,980 --> 01:06:51,980
+The idea of a mix is to mix things.
+
+1066
+01:06:51,980 --> 01:06:58,980
+So, a mix is to receive many emails like this.
+
+1067
+01:06:58,980 --> 01:06:59,980
+Okay?
+
+1068
+01:06:59,980 --> 01:07:02,980
+Now, this is a toy example, mind you.
+
+1069
+01:07:02,980 --> 01:07:07,980
+In the real world, this would be hundreds and maybe thousands of messages received in
+
+1070
+01:07:07,980 --> 01:07:09,980
+very close succession, right?
+
+1071
+01:07:09,980 --> 01:07:13,980
+One after another, or nearly simultaneously.
+
+1072
+01:07:13,980 --> 01:07:15,980
+So, look at what happens.
+
+1073
+01:07:15,980 --> 01:07:18,980
+In this example, there are only three incoming messages.
+
+1074
+01:07:18,980 --> 01:07:21,980
+Charlie wants to send a message to Eve.
+
+1075
+01:07:21,980 --> 01:07:24,980
+He encrypts it similarly, you see?
+
+1076
+01:07:24,980 --> 01:07:27,980
+David wants to send a message to Bob.
+
+1077
+01:07:27,980 --> 01:07:28,980
+He encrypts it similarly, right?
+
+1078
+01:07:28,980 --> 01:07:33,980
+Everything is the same format, right?
+
+1079
+01:07:33,980 --> 01:07:44,980
+And what the mix actually does is output the three messages in a blast at the same time.
+
+1080
+01:07:44,980 --> 01:07:47,980
+Or you can imagine either at the same time or in some random order.
+
+1081
+01:07:47,980 --> 01:07:52,980
+But the order in which it outputs, it has nothing to do with the order in which it received.
+
+1082
+01:07:52,980 --> 01:08:01,980
+Now, you're again the observer who sees what's coming into the mix and what is leaving the mix.
+
+1083
+01:08:01,980 --> 01:08:04,980
+Can you map incoming to outgoing messages?
+
+1084
+01:08:07,980 --> 01:08:08,980
+Probabilistically?
+
+1085
+01:08:08,980 --> 01:08:10,980
+Only probabilistically, yeah.
+
+1086
+01:08:10,980 --> 01:08:13,980
+This is a silly example, right?
+
+1087
+01:08:13,980 --> 01:08:16,980
+Can you say, who sent a message to Eve?
+
+1088
+01:08:16,980 --> 01:08:20,980
+Well, it could be one-third, right?
+
+1089
+01:08:20,980 --> 01:08:21,980
+Probability.
+
+1090
+01:08:21,980 --> 01:08:23,980
+It's either Alice, Charlie, or David.
+
+1091
+01:08:23,980 --> 01:08:25,980
+Who sends a message to Bob?
+
+1092
+01:08:29,980 --> 01:08:34,980
+Well, it's either Alice and Charlie, Alice and David, or Charlie and David, right?
+
+1093
+01:08:37,980 --> 01:08:39,980
+You know everybody sent a message.
+
+1094
+01:08:39,980 --> 01:08:41,980
+What you don't know is to whom.
+
+1095
+01:08:41,980 --> 01:08:46,980
+But now, think about generalizing this to hundreds of messages and thousands of messages.
+
+1096
+01:08:46,980 --> 01:08:48,980
+And many thousands of recipients.
+
+1097
+01:08:49,980 --> 01:08:50,980
+Right?
+
+1098
+01:08:50,980 --> 01:08:52,980
+Both senders and receivers.
+
+1099
+01:08:54,980 --> 01:08:56,980
+Then it becomes very difficult to associate.
+
+1100
+01:08:57,980 --> 01:09:01,980
+So the main thing is that, of course, the mix does not need three messages to start sending.
+
+1101
+01:09:01,980 --> 01:09:03,980
+It needs to receive a patch that is big enough.
+
+1102
+01:09:04,980 --> 01:09:05,980
+Right?
+
+1103
+01:09:05,980 --> 01:09:08,980
+And that's configurable and you can set it to like 10,000.
+
+1104
+01:09:08,980 --> 01:09:12,980
+So, a mix receives 10,000 messages, then it outputs them in random form.
+
+1105
+01:09:12,980 --> 01:09:13,980
+Yeah?
+
+1106
+01:09:13,980 --> 01:09:18,980
+Can you just see that Alice is always in a batch that sends a message to Bob, but whenever
+
+1107
+01:09:18,980 --> 01:09:21,980
+there's a batch to Alice, it doesn't make me never send a message to Bob.
+
+1108
+01:09:22,980 --> 01:09:23,980
+Yes.
+
+1109
+01:09:24,980 --> 01:09:25,980
+Yes.
+
+1110
+01:09:25,980 --> 01:09:26,980
+You can.
+
+1111
+01:09:26,980 --> 01:09:31,980
+And then, maybe you can think, you can deduce that Alice did not send a message to Bob,
+
+1112
+01:09:31,980 --> 01:09:33,980
+or she did send a message to Bob at some point.
+
+1113
+01:09:33,980 --> 01:09:34,980
+Yes.
+
+1114
+01:09:34,980 --> 01:09:39,980
+But, again, with a large enough scaling factor, this should be really, really difficult.
+
+1115
+01:09:40,980 --> 01:09:44,980
+I imagine there's some endpoints that never get message sent in the ticker.
+
+1116
+01:09:44,980 --> 01:09:45,980
+Aha!
+
+1117
+01:09:45,980 --> 01:09:46,980
+Yes.
+
+1118
+01:09:46,980 --> 01:09:47,980
+And there are defenses against that as well.
+
+1119
+01:09:48,980 --> 01:09:49,980
+Okay?
+
+1120
+01:09:49,980 --> 01:09:57,980
+In the general system, what happens is, I mean, this is like if you want to maximize or minimize
+
+1121
+01:09:57,980 --> 01:09:58,980
+kind of the performance levels.
+
+1122
+01:09:58,980 --> 01:09:59,980
+You do this.
+
+1123
+01:09:59,980 --> 01:10:04,980
+You output as many messages as a mix, output as many messages as you see.
+
+1124
+01:10:04,980 --> 01:10:13,980
+There are also very naive or nothing, very intuitive strategies to obscure and prevent attacks
+
+1125
+01:10:13,980 --> 01:10:14,980
+like you just have.
+
+1126
+01:10:14,980 --> 01:10:19,980
+And they involve chaffing or generating spurious traffic.
+
+1127
+01:10:19,980 --> 01:10:28,980
+So the idea is that every user of the mix will randomly send traffic that goes nowhere.
+
+1128
+01:10:28,980 --> 01:10:31,980
+You see what I'm saying?
+
+1129
+01:10:31,980 --> 01:10:32,980
+Yes.
+
+1130
+01:10:32,980 --> 01:10:33,980
+Right?
+
+1131
+01:10:33,980 --> 01:10:37,980
+It will just send traffic to a special destination called X.
+
+1132
+01:10:37,980 --> 01:10:39,980
+And there's no X.
+
+1133
+01:10:39,980 --> 01:10:46,980
+So when the mix receives a packet and receives a message, decrypts it, and she sees destination
+
+1134
+01:10:46,980 --> 01:10:48,980
+X, it says, oh, this is chaff.
+
+1135
+01:10:48,980 --> 01:10:49,980
+Throw it.
+
+1136
+01:10:49,980 --> 01:10:50,980
+Okay?
+
+1137
+01:10:50,980 --> 01:10:57,980
+So that says that Alice, that obscures the true number of packets or mail messages that
+
+1138
+01:10:57,980 --> 01:10:59,980
+Alice sends or every user sends.
+
+1139
+01:10:59,980 --> 01:11:06,980
+In addition to that, a mix can generate spurious messages to random destinations as well.
+
+1140
+01:11:06,980 --> 01:11:08,980
+A chaff, right?
+
+1141
+01:11:08,980 --> 01:11:11,980
+You will pick, like, there are no messages for Bob in this batch.
+
+1142
+01:11:11,980 --> 01:11:15,980
+Oh, let's send a message to Bob and Charlie and Edward and this.
+
+1143
+01:11:15,980 --> 01:11:16,980
+Okay?
+
+1144
+01:11:16,980 --> 01:11:18,980
+Well, let's send more messages than there really are.
+
+1145
+01:11:18,980 --> 01:11:23,980
+And they will be marked specifically so that when the destination, the actual destination
+
+1146
+01:11:23,980 --> 01:11:26,980
+receives them, they'll just throw them away.
+
+1147
+01:11:26,980 --> 01:11:29,980
+So that's one way to obscure.
+
+1148
+01:11:29,980 --> 01:11:34,980
+Does anybody know why R0 is necessary?
+
+1149
+01:11:34,980 --> 01:11:41,980
+If Alice sends the same message to Bob multiple times, if you don't have R0 and there's a
+
+1150
+01:11:41,980 --> 01:11:42,980
+little bit of a caveat, if the public key encryption is deterministic, then this message R0, that's
+
+1151
+01:11:42,980 --> 01:11:43,980
+the same.
+
+1152
+01:11:43,980 --> 01:11:44,980
+This message from mixed to Bob would be the same.
+
+1153
+01:11:44,980 --> 01:11:45,980
+No?
+
+1154
+01:11:45,980 --> 01:11:46,980
+No?
+
+1155
+01:11:46,980 --> 01:11:47,980
+No?
+
+1156
+01:11:47,980 --> 01:11:48,980
+No?
+
+1157
+01:11:48,980 --> 01:11:49,980
+No?
+
+1158
+01:11:49,980 --> 01:11:50,980
+No?
+
+1159
+01:11:50,980 --> 01:11:51,980
+No.
+
+1160
+01:11:51,980 --> 01:11:52,980
+No.
+
+1161
+01:11:52,980 --> 01:11:53,980
+No.
+
+1162
+01:11:53,980 --> 01:11:54,980
+No.
+
+1163
+01:11:54,980 --> 01:11:55,980
+No.
+
+1164
+01:11:55,980 --> 01:11:56,980
+No.
+
+1165
+01:11:56,980 --> 01:11:57,980
+No.
+
+1166
+01:11:57,980 --> 01:11:58,980
+No.
+
+1167
+01:11:58,980 --> 01:11:59,980
+No.
+
+1168
+01:11:59,980 --> 01:12:00,980
+No.
+
+1169
+01:12:00,980 --> 01:12:01,980
+No.
+
+1170
+01:12:01,980 --> 01:12:02,980
+No.
+
+1171
+01:12:02,980 --> 01:12:03,980
+No.
+
+1172
+01:12:03,980 --> 01:12:04,980
+No.
+
+1173
+01:12:04,980 --> 01:12:05,980
+No.
+
+1174
+01:12:05,980 --> 01:12:06,980
+No.
+
+1175
+01:12:06,980 --> 01:12:07,980
+No.
+
+1176
+01:12:07,980 --> 01:12:08,980
+No.
+
+1177
+01:12:08,980 --> 01:12:09,980
+No.
+
+1178
+01:12:09,980 --> 01:12:10,980
+No.
+
+1179
+01:12:10,980 --> 01:12:11,980
+No.
+
+1180
+01:12:12,980 --> 01:12:13,980
+No.
+
+1181
+01:12:13,980 --> 01:12:14,980
+No.
+
+1182
+01:12:14,980 --> 01:12:15,980
+No.
+
+1183
+01:12:15,980 --> 01:12:16,980
+No.
+
+1184
+01:12:16,980 --> 01:12:17,980
+No.
+
+1185
+01:12:17,980 --> 01:12:18,980
+No.
+
+1186
+01:12:18,980 --> 01:12:19,980
+No.
+
+1187
+01:12:19,980 --> 01:12:20,980
+No.
+
+1188
+01:12:20,980 --> 01:12:21,980
+No.
+
+1189
+01:12:21,980 --> 01:12:24,980
+No.
+
+1190
+01:12:24,980 --> 01:12:26,980
+No.
+
+1191
+01:12:26,980 --> 01:12:27,980
+No.
+
+1192
+01:12:27,980 --> 01:12:28,980
+No.
+
+1193
+01:12:28,980 --> 01:12:29,980
+No.
+
+1194
+01:12:29,980 --> 01:12:30,980
+No, no.
+
+1195
+01:12:30,980 --> 01:12:31,980
+No.
+
+1196
+01:12:31,980 --> 01:12:32,980
+No, no, no.
+
+1197
+01:12:32,980 --> 01:12:35,380
+Like why do I have these?
+
+1198
+01:12:35,380 --> 01:12:37,180
+That's more of it.
+
+1199
+01:12:37,180 --> 01:12:39,000
+Not really necessary.
+
+1200
+01:12:39,000 --> 01:12:40,420
+Like extra randomization.
+
+1201
+01:12:41,280 --> 01:12:43,140
+But does everybody see how a mix works?
+
+1202
+01:12:44,340 --> 01:12:45,820
+Okay.
+
+1203
+01:12:45,820 --> 01:12:47,500
+All right, let's end here.
+
+1204
+01:12:47,500 --> 01:12:48,820
+See you on Thursday.
+

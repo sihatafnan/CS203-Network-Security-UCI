@@ -1,0 +1,5076 @@
+1
+00:00:00,000 --> 00:00:05,000
+I don't want to share your screen before you have the flag.
+
+2
+00:00:05,000 --> 00:00:07,000
+Oh, I don't know what this is.
+
+3
+00:00:30,000 --> 00:00:40,000
+Okay, so we went through face recognition, I think, right, on fingerprints, fingerprints of issues.
+
+4
+00:00:40,000 --> 00:00:43,000
+We'll talk about a couple of examples where fingerprints fail.
+
+5
+00:00:43,000 --> 00:00:48,000
+If you know anybody who works in the medical profession, especially surgeons,
+
+6
+00:00:48,000 --> 00:00:55,000
+there were only attempts to install fingerprint recognition in hospitals that failed miserably
+
+7
+00:00:55,000 --> 00:01:01,000
+because surgeons, if you know any, wash their hands extremely frequently for good reasons,
+
+8
+00:01:01,000 --> 00:01:06,000
+and their fingers tend to be, you know, like when you keep your fingers in water for an hour,
+
+9
+00:01:06,000 --> 00:01:08,000
+they wrinkle, the fingertips wrinkle.
+
+10
+00:01:08,000 --> 00:01:12,000
+So, totally not good for fingerprint recognition.
+
+11
+00:01:12,000 --> 00:01:14,000
+Not to mention all the other stuff.
+
+12
+00:01:14,000 --> 00:01:23,000
+Iris scans. Iris scans are a relatively accurate way of biometric authentication.
+
+13
+00:01:23,000 --> 00:01:26,000
+No two irises are the same.
+
+14
+00:01:26,000 --> 00:01:28,000
+It's random.
+
+15
+00:01:28,000 --> 00:01:37,000
+Knowing anything about a person, even knowing a person's DNA, you cannot recreate the irises.
+
+16
+00:01:37,000 --> 00:01:39,000
+Stable.
+
+17
+00:01:39,000 --> 00:01:44,000
+As you grow, as you get old, they remain the same.
+
+18
+00:01:44,000 --> 00:01:47,000
+Even with cataracts or some other issues.
+
+19
+00:01:47,000 --> 00:01:50,000
+Now, if you gouge out an eye, there's no more iris.
+
+20
+00:01:50,000 --> 00:01:54,000
+You have an injury, obviously, but that's rare, right?
+
+21
+00:01:54,000 --> 00:01:56,000
+Works in with the blind people.
+
+22
+00:01:56,000 --> 00:01:59,000
+That's because they're still in irises.
+
+23
+00:01:59,000 --> 00:02:00,000
+They're different.
+
+24
+00:02:00,000 --> 00:02:02,000
+If you wonder, they're different for both of your eyes.
+
+25
+00:02:02,000 --> 00:02:04,000
+There's like a set of concentric rings.
+
+26
+00:02:04,000 --> 00:02:07,000
+So, it's actually not too different from the fingerprints.
+
+27
+00:02:07,000 --> 00:02:10,000
+There's, except the fingerprints are not exactly rings, right?
+
+28
+00:02:10,000 --> 00:02:13,000
+They're more like parabolas or something like that.
+
+29
+00:02:13,000 --> 00:02:19,000
+So, error rates are pretty low.
+
+30
+00:02:19,000 --> 00:02:26,000
+It's not the best, but I think it's one of the best biometric applications you think is currently known.
+
+31
+00:02:26,000 --> 00:02:28,000
+It is expensive, right?
+
+32
+00:02:28,000 --> 00:02:34,000
+To get accurate iris scans, you have to be very close to the device that's going to scan the iris.
+
+33
+00:02:34,000 --> 00:02:37,000
+There has to be stable lighting.
+
+34
+00:02:37,000 --> 00:02:39,000
+It's not instantaneous.
+
+35
+00:02:39,000 --> 00:02:42,000
+It takes a couple of seconds.
+
+36
+00:02:42,000 --> 00:02:50,000
+Not quite light because people generally do not like sticking their eyes and their faces into things.
+
+37
+00:02:50,000 --> 00:02:55,000
+The early ones had like a kind of a mask almost like the device where you have to stick your eyes.
+
+38
+00:02:55,000 --> 00:03:06,000
+Or something a little more evil looking where you're like goggles where you stick your eyes and go bzzzzz and scan your irises.
+
+39
+00:03:06,000 --> 00:03:07,000
+It can be done on a smartphone.
+
+40
+00:03:07,000 --> 00:03:12,000
+I believe there are apps that will do it for you.
+
+41
+00:03:12,000 --> 00:03:13,000
+I checked a year ago.
+
+42
+00:03:13,000 --> 00:03:14,000
+There were a couple of apps.
+
+43
+00:03:14,000 --> 00:03:15,000
+At least on Android.
+
+44
+00:03:15,000 --> 00:03:16,000
+I'm not sure about iPhone.
+
+45
+00:03:16,000 --> 00:03:24,000
+There are apps you can download that will essentially use your camera to do an iris scan.
+
+46
+00:03:24,000 --> 00:03:25,000
+Not as precise.
+
+47
+00:03:25,000 --> 00:03:26,000
+Not as precise.
+
+48
+00:03:26,000 --> 00:03:27,000
+Not as precise.
+
+49
+00:03:27,000 --> 00:03:28,000
+Slower.
+
+50
+00:03:28,000 --> 00:03:29,000
+Other methods.
+
+51
+00:03:29,000 --> 00:03:30,000
+Hand geometry.
+
+52
+00:03:30,000 --> 00:03:33,000
+So hand geometry is in this.
+
+53
+00:03:33,000 --> 00:03:36,000
+Your hand print.
+
+54
+00:03:36,000 --> 00:03:39,000
+All these things that fortune tellers like to use.
+
+55
+00:03:39,000 --> 00:03:40,000
+Right?
+
+56
+00:03:40,000 --> 00:03:43,000
+Life line, love line, death line, whatever.
+
+57
+00:03:43,000 --> 00:03:44,000
+Sickness line.
+
+58
+00:03:44,000 --> 00:03:45,000
+All these lines.
+
+59
+00:03:45,000 --> 00:03:47,000
+The geometry of your hand.
+
+60
+00:03:47,000 --> 00:03:52,000
+Not just the relative things but also the size of your fingers.
+
+61
+00:03:52,000 --> 00:03:57,000
+What we call phalanges are.
+
+62
+00:03:57,000 --> 00:04:00,000
+Now calluses won't matter because they're generally okay.
+
+63
+00:04:00,000 --> 00:04:04,000
+If you have severe cuts or injuries clearly it wouldn't work very well.
+
+64
+00:04:04,000 --> 00:04:06,000
+But hand geometry.
+
+65
+00:04:06,000 --> 00:04:08,000
+Relatively stable.
+
+66
+00:04:08,000 --> 00:04:12,000
+Of course as you grow, as a child grows, the hand gets larger.
+
+67
+00:04:12,000 --> 00:04:15,000
+But the actual lines remain.
+
+68
+00:04:15,000 --> 00:04:18,000
+But the size of course changes.
+
+69
+00:04:18,000 --> 00:04:25,000
+Let's see if you have some hand conditions like eczema also doesn't work well.
+
+70
+00:04:25,000 --> 00:04:30,000
+It has been used in nuclear premise control like for entering say national labs, nuclear
+
+71
+00:04:30,000 --> 00:04:33,000
+reactors, that kind of thing, nuclear plants.
+
+72
+00:04:33,000 --> 00:04:37,000
+You would just place your hand on a tablet.
+
+73
+00:04:37,000 --> 00:04:40,000
+And it would be like a surface that will do a scan.
+
+74
+00:04:40,000 --> 00:04:44,000
+Kind of like you do a document scan.
+
+75
+00:04:44,000 --> 00:04:46,000
+This continued because it was expensive.
+
+76
+00:04:46,000 --> 00:04:53,000
+And at the time did not really check for liveness.
+
+77
+00:04:53,000 --> 00:04:56,000
+Now this may sound a little morbid.
+
+78
+00:04:56,000 --> 00:05:01,000
+But liveness is important.
+
+79
+00:05:01,000 --> 00:05:02,000
+Okay.
+
+80
+00:05:02,000 --> 00:05:03,000
+Ear shape.
+
+81
+00:05:03,000 --> 00:05:04,000
+Also.
+
+82
+00:05:04,000 --> 00:05:05,000
+Ear scan.
+
+83
+00:05:05,000 --> 00:05:07,000
+Can you imagine?
+
+84
+00:05:07,000 --> 00:05:09,000
+It has some of the same issues as iris can.
+
+85
+00:05:09,000 --> 00:05:12,000
+Ears are not something you'd like to stick in places.
+
+86
+00:05:12,000 --> 00:05:13,000
+Right?
+
+87
+00:05:13,000 --> 00:05:17,000
+There in our head, next to our brain.
+
+88
+00:05:17,000 --> 00:05:20,000
+But it has been used.
+
+89
+00:05:20,000 --> 00:05:27,000
+At the bottom of the ICS2 building, the red building next to Brent Hall, across the ring,
+
+90
+00:05:27,000 --> 00:05:31,000
+there was a lab which is called K-some-day lab downstairs.
+
+91
+00:05:31,000 --> 00:05:33,000
+I think it's still there.
+
+92
+00:05:33,000 --> 00:05:34,000
+I don't know what it has.
+
+93
+00:05:34,000 --> 00:05:35,000
+It's useful.
+
+94
+00:05:35,000 --> 00:05:41,000
+But for many years, not anymore, it had a biometric scanner at the door.
+
+95
+00:05:41,000 --> 00:05:43,000
+And it was vein patterns.
+
+96
+00:05:43,000 --> 00:05:46,000
+So you would just place your wrist on the scanner.
+
+97
+00:05:46,000 --> 00:05:47,000
+Not your hand.
+
+98
+00:05:47,000 --> 00:05:48,000
+Your wrist.
+
+99
+00:05:48,000 --> 00:05:50,000
+You would scan the veins.
+
+100
+00:05:50,000 --> 00:05:52,000
+That's another method.
+
+101
+00:05:52,000 --> 00:05:55,000
+A little better than irises.
+
+102
+00:05:55,000 --> 00:06:00,000
+Generally better than hand because you don't get calluses here.
+
+103
+00:06:00,000 --> 00:06:01,000
+You don't get eczema here.
+
+104
+00:06:01,000 --> 00:06:03,000
+It's usually a little more stable.
+
+105
+00:06:03,000 --> 00:06:04,000
+One other thing.
+
+106
+00:06:04,000 --> 00:06:05,000
+Voice prints.
+
+107
+00:06:05,000 --> 00:06:07,000
+How many of you have ever seen voice prints?
+
+108
+00:06:07,000 --> 00:06:13,000
+My sibling company, I think one of my banks uses voice prints.
+
+109
+00:06:13,000 --> 00:06:17,000
+When I call them, they're like, would you answer these questions for us?
+
+110
+00:06:17,000 --> 00:06:18,000
+But they're not really looking for the answers.
+
+111
+00:06:18,000 --> 00:06:20,000
+They're looking for my voice.
+
+112
+00:06:20,000 --> 00:06:23,000
+And the questions actually aren't the same every time.
+
+113
+00:06:23,000 --> 00:06:28,000
+So it's kind of a challenge response, if you will, kind of voice prints.
+
+114
+00:06:28,000 --> 00:06:35,000
+Now to enroll, at some point, they have to ask me to stay on the phone and enroll.
+
+115
+00:06:35,000 --> 00:06:36,000
+Okay.
+
+116
+00:06:36,000 --> 00:06:37,000
+Yes?
+
+117
+00:06:37,000 --> 00:06:42,000
+Would the phone be using matter a lot for the voice prints?
+
+118
+00:06:42,000 --> 00:06:50,000
+Speech processing has seen very important advances in the last ten years.
+
+119
+00:06:50,000 --> 00:06:53,000
+So they can pretty much filter the noise.
+
+120
+00:06:53,000 --> 00:06:54,000
+Ambient noise.
+
+121
+00:06:54,000 --> 00:06:56,000
+They can filter ambient noise.
+
+122
+00:06:56,000 --> 00:07:01,000
+I mean, if somebody's screaming down your ear at the same time, they can filter out the road noise,
+
+123
+00:07:01,000 --> 00:07:03,000
+classroom noise, that kind of thing.
+
+124
+00:07:03,000 --> 00:07:07,000
+The artifacts of a metallic voice on the phone, sort of that.
+
+125
+00:07:07,000 --> 00:07:09,000
+I think there may be some issues.
+
+126
+00:07:09,000 --> 00:07:10,000
+It's not super robust.
+
+127
+00:07:10,000 --> 00:07:12,000
+I would not use it myself.
+
+128
+00:07:12,000 --> 00:07:18,000
+Because voice-based authentication is, well, fundamentally very fragile.
+
+129
+00:07:18,000 --> 00:07:19,000
+Okay?
+
+130
+00:07:19,000 --> 00:07:24,000
+And easily, it turns out, there have been studies that show that it's fakeable.
+
+131
+00:07:24,000 --> 00:07:25,000
+Okay.
+
+132
+00:07:25,000 --> 00:07:26,000
+DNA.
+
+133
+00:07:26,000 --> 00:07:27,000
+Yes, DNA.
+
+134
+00:07:27,000 --> 00:07:29,000
+So I used to have this slide.
+
+135
+00:07:29,000 --> 00:07:31,000
+I don't know why I removed it.
+
+136
+00:07:31,000 --> 00:07:36,000
+But it was sort of, you can imagine, it showed iPhone 55.
+
+137
+00:07:36,000 --> 00:07:43,000
+In 2039, Apple comes out with iPhone 55.
+
+138
+00:07:43,000 --> 00:07:48,000
+And it has this feature called Lipton Lock.
+
+139
+00:07:48,000 --> 00:07:55,000
+Immediately sequence your saliva and DNA and says, ah, it's you, I'm unlocking myself.
+
+140
+00:07:55,000 --> 00:07:57,000
+I've used it in a few talks.
+
+141
+00:07:57,000 --> 00:07:59,000
+And people actually, some people come up to me and just say, really?
+
+142
+00:07:59,000 --> 00:08:00,000
+Really?
+
+143
+00:08:00,000 --> 00:08:01,000
+I couldn't do that.
+
+144
+00:08:01,000 --> 00:08:02,000
+No, I didn't mean.
+
+145
+00:08:02,000 --> 00:08:07,000
+Now, I don't think that's coming to the store here, you, anytime soon.
+
+146
+00:08:07,000 --> 00:08:13,000
+But, in principle, DNA can be used for identification because, for identification, excuse me.
+
+147
+00:08:13,000 --> 00:08:16,000
+Because it is unique to you.
+
+148
+00:08:16,000 --> 00:08:18,000
+There's no probability of match.
+
+149
+00:08:18,000 --> 00:08:22,000
+They say, you know, if there is, it's so astronomical, it's not even worth mentioning.
+
+150
+00:08:22,000 --> 00:08:24,000
+Now, the problem is, DNA is like fingerprints.
+
+151
+00:08:24,000 --> 00:08:29,000
+If you leave them at the scene of a crime, right, that's one thing.
+
+152
+00:08:29,000 --> 00:08:31,000
+But how do you test the liveness, right?
+
+153
+00:08:31,000 --> 00:08:37,000
+So, in order to test the liveness, you have to make sure it comes from a live person right now.
+
+154
+00:08:37,000 --> 00:08:39,000
+And that's a problem.
+
+155
+00:08:39,000 --> 00:08:42,000
+Also, if you're wondering, well, can you sequence DNA?
+
+156
+00:08:42,000 --> 00:08:45,000
+Well, today, it takes minutes.
+
+157
+00:08:45,000 --> 00:08:47,000
+Even in a faster hardware.
+
+158
+00:08:47,000 --> 00:08:49,000
+So, your smartphone can do a sequencing.
+
+159
+00:08:49,000 --> 00:08:51,000
+There are attachments to the smartphone.
+
+160
+00:08:51,000 --> 00:08:53,000
+You can buy today a peripheral.
+
+161
+00:08:53,000 --> 00:08:56,000
+That will cost you probably more than the phone.
+
+162
+00:08:56,000 --> 00:08:58,000
+But it plugs into your phone.
+
+163
+00:08:58,000 --> 00:09:06,000
+And, I forget, it's not actually licking it, but you can insert like a sample of saliva or something like that.
+
+164
+00:09:06,000 --> 00:09:12,000
+It will sequence and digitize your genome on your phone, right?
+
+165
+00:09:12,000 --> 00:09:17,000
+It can be done, but it's okay.
+
+166
+00:09:17,000 --> 00:09:20,000
+And, okay, keystroke dynamics.
+
+167
+00:09:20,000 --> 00:09:26,000
+So, keystroke dynamics are, remember we talked about how attacking keyboards, right, listening to these?
+
+168
+00:09:26,000 --> 00:09:29,000
+Well, remember about keystrokes, right?
+
+169
+00:09:29,000 --> 00:09:32,000
+The way you type is fairly unique.
+
+170
+00:09:32,000 --> 00:09:39,000
+Unless you are particularly like, I don't know, tired or injured or somehow sick.
+
+171
+00:09:39,000 --> 00:09:41,000
+You know, you generally type in the same way.
+
+172
+00:09:41,000 --> 00:09:46,000
+So, imagine the system and it has, it is being deployed.
+
+173
+00:09:46,000 --> 00:09:51,000
+It is deployed in many industrial and government organizations, usually larger organizations,
+
+174
+00:09:51,000 --> 00:09:59,000
+where you enroll by essentially typing stuff, maybe for training the model for a few days.
+
+175
+00:09:59,000 --> 00:10:03,000
+Then sort of a profile is created, right?
+
+176
+00:10:03,000 --> 00:10:04,000
+Features are extracted.
+
+177
+00:10:04,000 --> 00:10:08,000
+Machine learning, obviously, is used to extract the features from your typing model.
+
+178
+00:10:08,000 --> 00:10:12,000
+And that becomes your biometric keystroke profile.
+
+179
+00:10:12,000 --> 00:10:13,000
+What is the idea?
+
+180
+00:10:13,000 --> 00:10:20,000
+The idea is that you don't come to the building and start typing for a few minutes on a keyboard in order for the door to open.
+
+181
+00:10:20,000 --> 00:10:23,000
+That's not what this biometric is for.
+
+182
+00:10:23,000 --> 00:10:29,000
+It's really for monitoring dynamically whether you are the same person who authenticated to begin with.
+
+183
+00:10:29,000 --> 00:10:39,000
+So, the idea is you came to work, okay, typical scenario, you came to work, you logged into your terminal, desktop, whatever, okay?
+
+184
+00:10:39,000 --> 00:10:42,000
+And then you walked away.
+
+185
+00:10:42,000 --> 00:10:44,000
+Never happens to you?
+
+186
+00:10:44,000 --> 00:10:48,000
+Please tell me it does, because I know it happens.
+
+187
+00:10:48,000 --> 00:10:49,000
+Right?
+
+188
+00:10:49,000 --> 00:10:51,000
+You log in and you walk away.
+
+189
+00:10:51,000 --> 00:10:54,000
+Now, at home, maybe your cat will walk on the keyboard.
+
+190
+00:10:54,000 --> 00:11:00,000
+Or your roommate will, you know, type an obscene message, because they prank you or something like that.
+
+191
+00:11:00,000 --> 00:11:08,000
+But, at work, there could be an insider colleague who may not be so humorous, may actually want to cause harm.
+
+192
+00:11:08,000 --> 00:11:09,000
+Right?
+
+193
+00:11:09,000 --> 00:11:13,000
+So, they will come and start typing, but they cannot replicate your typing pattern.
+
+194
+00:11:13,000 --> 00:11:18,000
+So, the idea is that the system will recognize, oh, that's not the same person who was here before.
+
+195
+00:11:18,000 --> 00:11:22,000
+So, that's the form of biometric.
+
+196
+00:11:22,000 --> 00:11:27,000
+The best biometric, hands down, that I've ever seen in my life, was done by IBM.
+
+197
+00:11:27,000 --> 00:11:31,000
+And it was done actually as early as, like, late 80s or early 90s.
+
+198
+00:11:31,000 --> 00:11:33,000
+And I believe it still exists.
+
+199
+00:11:33,000 --> 00:11:35,000
+Like, just two years ago, it still existed.
+
+200
+00:11:35,000 --> 00:11:37,000
+It was extremely expensive.
+
+201
+00:11:37,000 --> 00:11:40,000
+But it was based on writing.
+
+202
+00:11:40,000 --> 00:11:43,000
+Not typing, writing.
+
+203
+00:11:43,000 --> 00:11:44,000
+The idea was very simple.
+
+204
+00:11:44,000 --> 00:11:47,000
+You have a pad, right?
+
+205
+00:11:47,000 --> 00:11:48,000
+Dedicated like a hardware device.
+
+206
+00:11:48,000 --> 00:11:49,000
+It's like a pad.
+
+207
+00:11:49,000 --> 00:11:50,000
+You write on.
+
+208
+00:11:50,000 --> 00:11:55,000
+Kind of like the one, you know, when you sign your signature in a grocery store, when you
+
+209
+00:11:55,000 --> 00:11:57,000
+buy something, you know, and ask it to sign here.
+
+210
+00:11:57,000 --> 00:11:59,000
+But nobody cares what you actually sign.
+
+211
+00:11:59,000 --> 00:12:02,000
+You can just, like, put a dot there and nobody verifies.
+
+212
+00:12:02,000 --> 00:12:08,000
+Well, but imagine something much more sophisticated, which is the size of a laptop screen.
+
+213
+00:12:08,000 --> 00:12:09,000
+But it's, like, horizontal.
+
+214
+00:12:09,000 --> 00:12:10,000
+You come to it, it has a stylus, right?
+
+215
+00:12:10,000 --> 00:12:11,000
+Everybody knows what a stylus is.
+
+216
+00:12:11,000 --> 00:12:12,000
+And it says, write something.
+
+217
+00:12:12,000 --> 00:12:13,000
+Right?
+
+218
+00:12:13,000 --> 00:12:14,000
+It challenges you to write, like, a sentence.
+
+219
+00:12:14,000 --> 00:12:15,000
+Right?
+
+220
+00:12:15,000 --> 00:12:16,000
+Today I went to work.
+
+221
+00:12:16,000 --> 00:12:17,000
+So you write the sentence using your handwriting.
+
+222
+00:12:17,000 --> 00:12:18,000
+Remember handwriting?
+
+223
+00:12:18,000 --> 00:12:19,000
+It's still a thing.
+
+224
+00:12:19,000 --> 00:12:20,000
+Right?
+
+225
+00:12:20,000 --> 00:12:23,000
+And what it does, it's not just measuring the shape of the legs.
+
+226
+00:12:23,000 --> 00:12:24,000
+Because if you just do that, that's easily spoolable.
+
+227
+00:12:24,000 --> 00:12:25,000
+Right?
+
+228
+00:12:25,000 --> 00:12:34,000
+It's just the shape of the letters because I can probably, I'm pretty decent in calligraphy.
+
+229
+00:12:34,000 --> 00:12:36,000
+I can probably imitate your writing style.
+
+230
+00:12:36,000 --> 00:12:41,000
+If I see how you write, I will write a sentence, but it's not a sentence.
+
+231
+00:12:41,000 --> 00:12:45,000
+But what I'm really going to do is, you know, I will write a sentence.
+
+232
+00:12:45,000 --> 00:12:46,000
+Today I went to work.
+
+233
+00:12:46,000 --> 00:12:48,000
+So you write the sentence using your handwriting, remember handwriting, still a thing.
+
+234
+00:12:48,000 --> 00:12:49,000
+Right?
+
+235
+00:12:49,000 --> 00:12:52,000
+And what it does, is not just measuring the shape of the legs.
+
+236
+00:12:52,000 --> 00:12:58,000
+And so many people are able to do this, algorithms are even better at this, right?
+
+237
+00:12:58,000 --> 00:13:03,000
+In fact, algorithms are better than people today, so if you can train an algorithm on somebody's writing style,
+
+238
+00:13:03,000 --> 00:13:09,000
+give them a few scanned, you know, letters, handwritten letters, et cetera, notes,
+
+239
+00:13:09,000 --> 00:13:13,000
+it will generate excellent quality fakes.
+
+240
+00:13:13,000 --> 00:13:19,000
+So shape is important, but it's not negligible, but it's not what's being used.
+
+241
+00:13:19,000 --> 00:13:23,000
+What is being used to other things? Pressure, you put on the stylus,
+
+242
+00:13:23,000 --> 00:13:27,000
+because when you write with a pen or pencil or anything that is a writing implement,
+
+243
+00:13:27,000 --> 00:13:29,000
+you're putting a certain amount of pressure.
+
+244
+00:13:29,000 --> 00:13:33,000
+And that pressure varies depending on what it is you're writing.
+
+245
+00:13:33,000 --> 00:13:40,000
+As you're circling the letter O, you're putting a different pressure than when you're completing the letter R.
+
+246
+00:13:40,000 --> 00:13:43,000
+Okay, that turns out to be unique for you.
+
+247
+00:13:43,000 --> 00:13:47,000
+The other thing that is unique to you is acceleration.
+
+248
+00:13:47,000 --> 00:13:54,000
+The acceleration of the stylus as you write those letters is very important and it is unique.
+
+249
+00:13:54,000 --> 00:14:04,000
+The combination of shape, acceleration, and pressure are a winning combination that makes this an amazing biometric technology,
+
+250
+00:14:04,000 --> 00:14:07,000
+but it is incredibly expensive.
+
+251
+00:14:07,000 --> 00:14:12,000
+So how would you attack it?
+
+252
+00:14:12,000 --> 00:14:14,000
+Well, shapes can be attacked, as I just told you, right?
+
+253
+00:14:14,000 --> 00:14:19,000
+You can train an algorithm to generate shapes the same as anybody is.
+
+254
+00:14:19,000 --> 00:14:30,000
+Acceleration might be, might be attackable if you carefully and very precisely film somebody, right?
+
+255
+00:14:30,000 --> 00:14:33,000
+Film somebody, write it.
+
+256
+00:14:33,000 --> 00:14:35,000
+Because you can measure the speed, right?
+
+257
+00:14:35,000 --> 00:14:39,000
+If you have a camera, like a hidden camera place somewhere,
+
+258
+00:14:39,000 --> 00:14:43,000
+and it's recording how somebody is writing, you will know the acceleration.
+
+259
+00:14:43,000 --> 00:14:46,000
+And you might be able to design, not a human,
+
+260
+00:14:46,000 --> 00:14:50,000
+you might be able to train a robot to do this.
+
+261
+00:14:50,000 --> 00:14:57,000
+But what you cannot replicate is at least the pressure because that's not something you can film.
+
+262
+00:14:57,000 --> 00:15:05,000
+So the only way to attack a system like that is to actually get the user to use a fake entry device.
+
+263
+00:15:05,000 --> 00:15:11,000
+To present the user with a tablet that is fake and record both pressure and acceleration over time,
+
+264
+00:15:11,000 --> 00:15:12,000
+then maybe.
+
+265
+00:15:12,000 --> 00:15:15,000
+But the barrier to this attack is high.
+
+266
+00:15:15,000 --> 00:15:16,000
+Now.
+
+267
+00:15:16,000 --> 00:15:20,000
+My question would be, is handwriting considered stable enough though?
+
+268
+00:15:20,000 --> 00:15:25,000
+Because a lot of people, like, even on a day-to-day basis, if you're angry, you write more aggressive.
+
+269
+00:15:25,000 --> 00:15:26,000
+Exactly, exactly.
+
+270
+00:15:26,000 --> 00:15:27,000
+Yes.
+
+271
+00:15:27,000 --> 00:15:29,000
+Handwriting, generally there is some stability.
+
+272
+00:15:29,000 --> 00:15:31,000
+The way you're shaped.
+
+273
+00:15:31,000 --> 00:15:37,000
+You might shape your A's differently, but there's a finite shape of A that you use when you're angry,
+
+274
+00:15:37,000 --> 00:15:39,000
+when you're relaxed, etc.
+
+275
+00:15:39,000 --> 00:15:40,000
+Okay?
+
+276
+00:15:40,000 --> 00:15:44,000
+So your jerkiness, right, might be different, right?
+
+277
+00:15:44,000 --> 00:15:49,000
+Sometimes you write smoothly, slowly, and sometimes you write quickly because you're under pressure.
+
+278
+00:15:49,000 --> 00:15:53,000
+But generally the shapes stay more or less the same.
+
+279
+00:15:53,000 --> 00:15:55,000
+But again, shape is just one.
+
+280
+00:15:55,000 --> 00:15:59,000
+The pressure and the acceleration.
+
+281
+00:15:59,000 --> 00:16:02,000
+You might fail.
+
+282
+00:16:02,000 --> 00:16:08,000
+I mean, I don't know actually, to be fair, what is the insult rate of this.
+
+283
+00:16:08,000 --> 00:16:13,000
+But I know it has been used specifically in insurance companies and banks.
+
+284
+00:16:13,000 --> 00:16:17,000
+So when they came up with it, they had this huge number of customers, all these big banks.
+
+285
+00:16:17,000 --> 00:16:25,000
+And they wanted to make sure that all the, you know, high level officers of the banks and insurance companies were authenticated using that.
+
+286
+00:16:25,000 --> 00:16:27,000
+Because they dealt with, obviously, a lot of money.
+
+287
+00:16:27,000 --> 00:16:29,000
+Would it be stable over time though?
+
+288
+00:16:29,000 --> 00:16:30,000
+They claim it was.
+
+289
+00:16:30,000 --> 00:16:32,000
+I've used it myself.
+
+290
+00:16:32,000 --> 00:16:34,000
+It seemed very natural.
+
+291
+00:16:34,000 --> 00:16:35,000
+Not very burdensome.
+
+292
+00:16:35,000 --> 00:16:40,000
+I mean, again, not something you want to use instead of badges, right?
+
+293
+00:16:40,000 --> 00:16:44,000
+But it's something you want to use if somebody wants to access a highly secure facility.
+
+294
+00:16:44,000 --> 00:16:45,000
+Or there's a terminal, right?
+
+295
+00:16:45,000 --> 00:16:48,000
+You want to log in instead of typing username and password.
+
+296
+00:16:48,000 --> 00:16:49,000
+Just do this.
+
+297
+00:16:49,000 --> 00:16:50,000
+That's reasonable.
+
+298
+00:16:50,000 --> 00:16:55,000
+If you're interested, there's an article about that.
+
+299
+00:16:55,000 --> 00:17:02,000
+Okay, so there are a couple of biometrics that we've played around here at UCI in my research group.
+
+300
+00:17:02,000 --> 00:17:06,000
+And one of them, well, one of them is not on the slides because it's just too hilarious.
+
+301
+00:17:06,000 --> 00:17:12,000
+It's called, so I won't bother you with showing you anything because you could probably imagine the picture.
+
+302
+00:17:12,000 --> 00:17:14,000
+It's called ascentication.
+
+303
+00:17:14,000 --> 00:17:21,000
+Basically, the idea is to instrument a chair, an office chair, with pressure sensors.
+
+304
+00:17:21,000 --> 00:17:23,000
+And if you think it's a joke, it's not.
+
+305
+00:17:23,000 --> 00:17:25,000
+There was actually a paper published about it.
+
+306
+00:17:25,000 --> 00:17:28,000
+And it was part of a student's PhD thesis.
+
+307
+00:17:28,000 --> 00:17:29,000
+So imagine an office chair.
+
+308
+00:17:29,000 --> 00:17:30,000
+Not this crap you're sitting on.
+
+309
+00:17:30,000 --> 00:17:34,000
+This looks like kindergarten or old folks home or something.
+
+310
+00:17:34,000 --> 00:17:35,000
+I don't know if it came up with this stuff.
+
+311
+00:17:35,000 --> 00:17:39,000
+But like a regular nice comfy office chair with a cushion, right, or something.
+
+312
+00:17:39,000 --> 00:17:42,000
+So underneath, in the cushion, there are pressure sensors.
+
+313
+00:17:42,000 --> 00:17:47,000
+Now geometrically, you kind of like arrange around where a person would sit.
+
+314
+00:17:47,000 --> 00:17:50,000
+And if you're wanting to know, it is not measuring your ass size.
+
+315
+00:17:50,000 --> 00:17:53,000
+And it's actually not even measuring your weight.
+
+316
+00:17:53,000 --> 00:17:56,000
+Well, it just measures pressure distribution.
+
+317
+00:17:56,000 --> 00:17:59,000
+Because most people tend to sit the same way.
+
+318
+00:17:59,000 --> 00:18:02,000
+So the idea was the same as keystrokes.
+
+319
+00:18:02,000 --> 00:18:09,000
+So when a person sits down and logs in, the system takes measurements of their pressure points, right?
+
+320
+00:18:09,000 --> 00:18:13,000
+Or they sit in the chair and creates a profile.
+
+321
+00:18:13,000 --> 00:18:19,000
+And so when a person walks away to get a coffee or use the bathroom or go to a meeting and forgets to log out,
+
+322
+00:18:19,000 --> 00:18:24,000
+and somebody else sits in the chair, well, their thought is going to be different.
+
+323
+00:18:24,000 --> 00:18:26,000
+It's just different, right?
+
+324
+00:18:26,000 --> 00:18:27,000
+Trust me.
+
+325
+00:18:27,000 --> 00:18:28,000
+Trust me.
+
+326
+00:18:28,000 --> 00:18:29,000
+We've done experiments.
+
+327
+00:18:29,000 --> 00:18:32,000
+And people enjoyed those.
+
+328
+00:18:32,000 --> 00:18:33,000
+Generally.
+
+329
+00:18:33,000 --> 00:18:48,000
+And so the only way to subvert that biometric was essentially to create a very careful fake butt with just the right distribution of pressure.
+
+330
+00:18:48,000 --> 00:18:50,000
+Quite a high barrier of pressure.
+
+331
+00:18:50,000 --> 00:18:52,000
+The other method we experimented here is this.
+
+332
+00:18:52,000 --> 00:18:56,000
+And that also is a little strange, but it was pretty effective.
+
+333
+00:18:56,000 --> 00:19:03,000
+It is electricity and human body impedance or resistance, right?
+
+334
+00:19:03,000 --> 00:19:06,000
+So as you're familiar with static electricity, right?
+
+335
+00:19:06,000 --> 00:19:11,000
+You're familiar with maybe lamps that you have to touch in order to turn them on.
+
+336
+00:19:11,000 --> 00:19:13,000
+So you've seen those?
+
+337
+00:19:13,000 --> 00:19:14,000
+Yeah?
+
+338
+00:19:14,000 --> 00:19:15,000
+Well, they work kind of the same.
+
+339
+00:19:15,000 --> 00:19:17,000
+So essentially you're closing a circuit, right?
+
+340
+00:19:17,000 --> 00:19:21,000
+When you're touching a lamp like that.
+
+341
+00:19:21,000 --> 00:19:27,000
+So the idea here is to essentially measure human body's conductivity, right?
+
+342
+00:19:27,000 --> 00:19:34,000
+By sending an electric pulse from one hand and measuring that same electric pulse in the other hand.
+
+343
+00:19:34,000 --> 00:19:38,000
+Now clearly not, you know, we don't want to electrocute anybody.
+
+344
+00:19:38,000 --> 00:19:41,000
+That would be one and only way to measure, right?
+
+345
+00:19:41,000 --> 00:19:43,000
+And that's it.
+
+346
+00:19:43,000 --> 00:19:44,000
+No.
+
+347
+00:19:44,000 --> 00:19:46,000
+Sending a very weak electric signal, one volt.
+
+348
+00:19:46,000 --> 00:19:47,000
+That's the idea.
+
+349
+00:19:47,000 --> 00:19:48,000
+Okay?
+
+350
+00:19:48,000 --> 00:20:02,000
+And so one volt signal, maximum current, 0.1 milliampere, exposure about 100 nanoseconds.
+
+351
+00:20:02,000 --> 00:20:05,000
+Now this is opposed to, say, a regular battery.
+
+352
+00:20:05,000 --> 00:20:06,000
+You know if you lick a battery?
+
+353
+00:20:06,000 --> 00:20:09,000
+You know if you lick the battery as a kid?
+
+354
+00:20:09,000 --> 00:20:10,000
+I know a lot of kids did.
+
+355
+00:20:10,000 --> 00:20:11,000
+I did.
+
+356
+00:20:11,000 --> 00:20:13,000
+You know the ones with two terminals?
+
+357
+00:20:13,000 --> 00:20:15,000
+You get the sour taste?
+
+358
+00:20:15,000 --> 00:20:17,000
+Well, you know, you actually get electricity to pass through.
+
+359
+00:20:17,000 --> 00:20:20,000
+But it's much higher than what we would do.
+
+360
+00:20:20,000 --> 00:20:25,000
+So humans don't feel this amount of electricity.
+
+361
+00:20:25,000 --> 00:20:32,000
+And we had to, of course, obtain authorizations because the university would not allow us to do something that's dangerous.
+
+362
+00:20:32,000 --> 00:20:34,000
+So we had an authorization for this.
+
+363
+00:20:34,000 --> 00:20:36,000
+And the idea was, what was the use case?
+
+364
+00:20:36,000 --> 00:20:39,000
+The use case, suppose you have an ATM machine, right?
+
+365
+00:20:39,000 --> 00:20:40,000
+And you want to have your own money.
+
+366
+00:20:40,000 --> 00:20:44,000
+So you enter, today you have a metallic pin pad, right?
+
+367
+00:20:44,000 --> 00:20:46,000
+On the ATM machines.
+
+368
+00:20:46,000 --> 00:20:50,000
+And then imagine, in addition to that, you had a little metallic surface, right?
+
+369
+00:20:50,000 --> 00:20:51,000
+Like some kind of circle.
+
+370
+00:20:51,000 --> 00:20:54,000
+When you put one hand here and you type with the other hand, your pin.
+
+371
+00:20:54,000 --> 00:20:56,000
+You don't need two hands to type a pin, right?
+
+372
+00:20:56,000 --> 00:20:58,000
+Most people do not use two hands.
+
+373
+00:20:58,000 --> 00:20:59,000
+Pin is one hand.
+
+374
+00:20:59,000 --> 00:21:05,000
+So while you're typing the pin, it's sending this signal and measures your body connectivity.
+
+375
+00:21:05,000 --> 00:21:06,000
+That's one scenario.
+
+376
+00:21:06,000 --> 00:21:09,000
+The other scenario is just a metallic keyboard, right?
+
+377
+00:21:09,000 --> 00:21:14,000
+So today, most consumer keyboards, cheap ones, right?
+
+378
+00:21:14,000 --> 00:21:15,000
+Are plastic.
+
+379
+00:21:15,000 --> 00:21:16,000
+They have the other issue.
+
+380
+00:21:16,000 --> 00:21:18,000
+We might talk about something at some point.
+
+381
+00:21:18,000 --> 00:21:24,000
+But there are some more expensive, more fancy keyboards that are metallic.
+
+382
+00:21:24,000 --> 00:21:25,000
+Okay?
+
+383
+00:21:25,000 --> 00:21:29,000
+And if you're typing on a metallic keyboard, while you're typing, you can send this.
+
+384
+00:21:29,000 --> 00:21:32,000
+Especially if you're not a, like, you're a hundred-pack type.
+
+385
+00:21:32,000 --> 00:21:34,000
+So this is more.
+
+386
+00:21:34,000 --> 00:21:35,000
+Right?
+
+387
+00:21:35,000 --> 00:21:37,000
+So that's the idea, continuous authentication.
+
+388
+00:21:37,000 --> 00:21:42,000
+Yeah, so we actually had a setup with a scope, a oscilloscope, waveform generator.
+
+389
+00:21:42,000 --> 00:21:45,000
+And you see these brass handles.
+
+390
+00:21:45,000 --> 00:21:46,000
+Big brass handles.
+
+391
+00:21:46,000 --> 00:21:48,000
+So the idea was that the human would sit.
+
+392
+00:21:48,000 --> 00:21:53,000
+The participant in our study would sit there and we would vary a little bit like the timing
+
+393
+00:21:53,000 --> 00:21:58,000
+and send this very weak signal and measure the response in the other hand.
+
+394
+00:21:58,000 --> 00:22:05,000
+And it actually turned out, we didn't have a lot of people, but we had 30 subjects for snapshot measurements
+
+395
+00:22:05,000 --> 00:22:08,000
+and 16 for long-term measurements, just stability.
+
+396
+00:22:08,000 --> 00:22:14,000
+As you can imagine, unfortunately, the male to female ratio is difficult in computer science
+
+397
+00:22:14,000 --> 00:22:16,000
+or in this part of campus.
+
+398
+00:22:16,000 --> 00:22:18,000
+So they weren't, it wasn't always very well split.
+
+399
+00:22:18,000 --> 00:22:23,000
+But there was no difference between male and female subjects.
+
+400
+00:22:23,000 --> 00:22:28,000
+The snapshot data sample basically misidentification was very low.
+
+401
+00:22:28,000 --> 00:22:33,000
+So most of the, most of the measurements were quite encouraging.
+
+402
+00:22:33,000 --> 00:22:36,000
+Well, it didn't work as well as over time.
+
+403
+00:22:36,000 --> 00:22:39,000
+It was measured over days or weeks.
+
+404
+00:22:39,000 --> 00:22:41,000
+The accuracy went down.
+
+405
+00:22:41,000 --> 00:22:47,000
+And one of the reasons it does is that if you are dehydrated, right, as opposed to well hydrated,
+
+406
+00:22:47,000 --> 00:22:49,000
+the connectivity changes a little bit.
+
+407
+00:22:49,000 --> 00:22:54,000
+If you drink alcohol, which by the way also dehydrates you, but if you're just buying things alcohol,
+
+408
+00:22:54,000 --> 00:22:55,000
+that also changes.
+
+409
+00:22:55,000 --> 00:23:02,000
+Not that we didn't measure people after going to alcohol or anything like that, but we noticed that alcohol does change it.
+
+410
+00:23:02,000 --> 00:23:09,000
+And, but otherwise, it doesn't matter what mood you're in, how much sleep you got, their connectivity stays the same.
+
+411
+00:23:09,000 --> 00:23:14,000
+Yeah, so the only way to subvert it, yes, there is a way to subvert it, but it's not easy.
+
+412
+00:23:14,000 --> 00:23:19,000
+What you have to do is measure the victim's false response yourself, right, get the measurement from them,
+
+413
+00:23:19,000 --> 00:23:28,000
+and then strap essentially a contraption like this that provides exactly the same impedance or resistance,
+
+414
+00:23:28,000 --> 00:23:32,000
+and then use kind of like insulated gloves.
+
+415
+00:23:32,000 --> 00:23:36,000
+So then you might be able to pull this by metric.
+
+416
+00:23:36,000 --> 00:23:38,000
+Alright, so what are risks?
+
+417
+00:23:38,000 --> 00:23:41,000
+Of course, there are a lot of risks of using biometrics.
+
+418
+00:23:41,000 --> 00:23:48,000
+If you're using fingerprints in a wrong way, like for example, this was a trick that was quite common before,
+
+419
+00:23:48,000 --> 00:23:51,000
+it has nothing to do with digitization.
+
+420
+00:23:51,000 --> 00:23:58,000
+It was in the analog gaze that if a criminal managed to distract a law enforcement officer
+
+421
+00:23:58,000 --> 00:24:03,000
+and give the fingerprints in the wrong order, that they essentially will not be identified.
+
+422
+00:24:03,000 --> 00:24:04,000
+Okay?
+
+423
+00:24:04,000 --> 00:24:14,000
+Today, it's impossible to do that because every finger is identifiable as where it is, its location on your hand.
+
+424
+00:24:14,000 --> 00:24:16,000
+So it's not possible to do that.
+
+425
+00:24:16,000 --> 00:24:23,000
+Voice prints are easy to attack with recordings and also with advanced machine learning techniques
+
+426
+00:24:23,000 --> 00:24:28,000
+and bots that can generate based on training data.
+
+427
+00:24:28,000 --> 00:24:32,000
+If I record enough of your voice, you talk enough in class, I record enough of your voice,
+
+428
+00:24:32,000 --> 00:24:39,000
+I will be able to generate pretty accurate on-demand utterances by you.
+
+429
+00:24:39,000 --> 00:24:49,000
+So, if you wind up in the real world working with biometrics or choosing what kind of biometrics to use for your company,
+
+430
+00:24:49,000 --> 00:24:51,000
+stay the hell away from voice, okay?
+
+431
+00:24:51,000 --> 00:24:53,000
+Or anything audio.
+
+432
+00:24:53,000 --> 00:24:54,000
+Terrible.
+
+433
+00:24:54,000 --> 00:24:59,000
+Then there is the grainings fingers in a jar.
+
+434
+00:24:59,000 --> 00:25:04,000
+This was actually a case, at least not in this country, in the UK, where the pensioners, right?
+
+435
+00:25:04,000 --> 00:25:08,000
+They retired people were paid social security based on physical prints.
+
+436
+00:25:08,000 --> 00:25:11,000
+They had to authenticate using a fingerprint.
+
+437
+00:25:11,000 --> 00:25:21,000
+And so, you know, there was this case, I'm sure you can still find it, like 2003, where the grandma was dead for like five years,
+
+438
+00:25:21,000 --> 00:25:33,000
+but the family used the finger in the jar of Vaseline they preserved, you know, to essentially obtain payments every month.
+
+439
+00:25:33,000 --> 00:25:34,000
+Let's see.
+
+440
+00:25:34,000 --> 00:25:46,000
+Now, there is also the false negatives that accept rates of one in a million, and this was back like 20 years ago,
+
+441
+00:25:46,000 --> 00:25:51,000
+that there would be one in a million error, which means that if you know anything about the,
+
+442
+00:25:51,000 --> 00:25:53,000
+everybody here knows the birthday paradox.
+
+443
+00:25:53,000 --> 00:25:54,000
+Yes?
+
+444
+00:25:54,000 --> 00:25:55,000
+Okay.
+
+445
+00:25:55,000 --> 00:25:58,000
+The birthday paradox goes like this.
+
+446
+00:25:58,000 --> 00:26:12,000
+How many people does it take, at random, for them to have at least two, well, how many people should we select off the street, at random,
+
+447
+00:26:12,000 --> 00:26:21,000
+in order to have at least 50% probability of at least two of them having the same birth?
+
+448
+00:26:21,000 --> 00:26:24,000
+And the answer is, what do you think?
+
+449
+00:26:24,000 --> 00:26:27,000
+For like 6-0 million.
+
+450
+00:26:27,000 --> 00:26:30,000
+Well, no, that's for a million.
+
+451
+00:26:30,000 --> 00:26:32,000
+No, no, no.
+
+452
+00:26:32,000 --> 00:26:33,000
+No, no.
+
+453
+00:26:33,000 --> 00:26:34,000
+Hang on.
+
+454
+00:26:34,000 --> 00:26:35,000
+Just listen to my words.
+
+455
+00:26:35,000 --> 00:26:37,000
+People and birthdays.
+
+456
+00:26:37,000 --> 00:26:39,000
+Maybe birthdays?
+
+457
+00:26:39,000 --> 00:26:40,000
+You're close.
+
+458
+00:26:40,000 --> 00:26:44,000
+So most people will say, well, you know, if you want to make sure you have to have, like,
+
+459
+00:26:44,000 --> 00:26:48,000
+the easiest answer is, oh, I've got 365 people, right?
+
+460
+00:26:48,000 --> 00:26:50,000
+And then you'll have a duplicate, right?
+
+461
+00:26:50,000 --> 00:26:52,000
+That's, of course, guaranteed.
+
+462
+00:26:52,000 --> 00:26:55,000
+But what if you pick, I don't know, 180 people?
+
+463
+00:26:55,000 --> 00:26:57,000
+Will there be, what will be the chance?
+
+464
+00:26:57,000 --> 00:27:00,000
+It turns out it takes 23 people.
+
+465
+00:27:00,000 --> 00:27:05,000
+23, or square root, roughly square root of 365.
+
+466
+00:27:05,000 --> 00:27:22,000
+So if you have a million acceptance rate of one in a million, that means with only a square root of a million, like a 1609 or so, you get a 50% probability of a mismatch in a fingerprint.
+
+467
+00:27:22,000 --> 00:27:25,000
+Then there's Play-Doh fingers, right?
+
+468
+00:27:25,000 --> 00:27:30,000
+Where people, because you see the fingerprints are liftable, right?
+
+469
+00:27:30,000 --> 00:27:32,000
+You leave a fingerprint, right?
+
+470
+00:27:32,000 --> 00:27:38,000
+And once I get your fingerprint, or I lift your fingerprint, I'd say, right?
+
+471
+00:27:38,000 --> 00:27:40,000
+Exactly how the police does it, right?
+
+472
+00:27:40,000 --> 00:27:45,000
+I can build a 3D object with that fingerprint on it.
+
+473
+00:27:45,000 --> 00:27:48,000
+And so think about Play-Doh.
+
+474
+00:27:48,000 --> 00:27:52,000
+Play-Doh has this nice characteristic, right?
+
+475
+00:27:52,000 --> 00:27:57,000
+That it's malleable, and it's soft, right?
+
+476
+00:27:57,000 --> 00:28:07,000
+That if you imagine you impress the fingerprint that you lifted onto a Play-Doh, it will look just like a fingertip.
+
+477
+00:28:07,000 --> 00:28:11,000
+Also, it's easy to warm up Play-Doh, right?
+
+478
+00:28:11,000 --> 00:28:20,000
+So if the fingerprint reader takes temperature, just to make sure it's a live, warm finger, not a cold, dead finger, it's also easy to do with Play-Doh.
+
+479
+00:28:20,000 --> 00:28:22,000
+And there were stories about this.
+
+480
+00:28:22,000 --> 00:28:29,000
+And so there was a study in the 90s, I think, at this Clarkson University of New York event, how you can make it.
+
+481
+00:28:29,000 --> 00:28:34,000
+And they actually succeeded in pulling some, at the time, fingerprint authentication systems.
+
+482
+00:28:34,000 --> 00:28:41,000
+And what they suggested is they should do like a perspiration test, because even if you think your fingertips are dry, actually they're not completely dry.
+
+483
+00:28:41,000 --> 00:28:44,000
+There's like some kind of moisture there.
+
+484
+00:28:44,000 --> 00:28:46,000
+But it's also easy.
+
+485
+00:28:46,000 --> 00:28:50,000
+So fingerprints are yesterday's news, right?
+
+486
+00:28:50,000 --> 00:29:01,000
+Then there was this case also like 20-something years ago when Mercedes, high-end Mercedes, started using the fingerprints to unlock cars, right?
+
+487
+00:29:01,000 --> 00:29:04,000
+There are still some cars out there that use them, by the way.
+
+488
+00:29:04,000 --> 00:29:06,000
+Maybe you've seen them.
+
+489
+00:29:06,000 --> 00:29:14,000
+So, yeah, some business consumer was cut off just to steal his Mercedes.
+
+490
+00:29:14,000 --> 00:29:15,000
+Handwriting.
+
+491
+00:29:15,000 --> 00:29:27,000
+Again, I mentioned this earlier, but you can use, you can trade, this was already 20 years ago, you could trade a machine learning model to generate very believable looking,
+
+492
+00:29:27,000 --> 00:29:33,000
+or very, very authentic looking duplicates or fakes of somebody's handwriting.
+
+493
+00:29:33,000 --> 00:29:48,000
+And stare at it as all you want is very difficult to recognize without me showing you this, which one is, you know, without labels, which one is fake.
+
+494
+00:29:48,000 --> 00:30:02,000
+So, in summary, biometrics are, can be helpful, they are nice because they put no load on you generally, on us humans.
+
+495
+00:30:02,000 --> 00:30:06,000
+You sit in a chair, you sit anyway.
+
+496
+00:30:06,000 --> 00:30:08,000
+You put a fingerprint and what's the load, right?
+
+497
+00:30:08,000 --> 00:30:13,000
+Even with iris scans, typing on a keyboard to type anyway, right?
+
+498
+00:30:13,000 --> 00:30:19,000
+So, if you're being authenticated as you type, that's no longer new.
+
+499
+00:30:19,000 --> 00:30:23,000
+But, they're tricky to use on a large scale.
+
+500
+00:30:23,000 --> 00:30:28,000
+They require in-person enrollment.
+
+501
+00:30:28,000 --> 00:30:37,000
+In order to have secure enrollment, and you will see this if you haven't yet, when you work in the real world and you have a biometric system that is in place,
+
+502
+00:30:37,000 --> 00:30:42,000
+you will be required to have an in-person enrollment, even if you are a remote worker.
+
+503
+00:30:42,000 --> 00:30:46,000
+So, they are hard to re-block.
+
+504
+00:30:46,000 --> 00:30:49,000
+And they require this pervasive infrastructure, right?
+
+505
+00:30:49,000 --> 00:30:53,000
+So, if you're using iris scans, they have to be iris cameras everywhere you want to protect.
+
+506
+00:30:53,000 --> 00:31:02,000
+Every computer, every secure office, everything has to be protected with that equipment.
+
+507
+00:31:02,000 --> 00:31:04,000
+So, let's see.
+
+508
+00:31:04,000 --> 00:31:11,000
+So, biometrics are about what you are, inherently what you are, but now, remember, the other factor is what you have, right?
+
+509
+00:31:11,000 --> 00:31:12,000
+What you have.
+
+510
+00:31:12,000 --> 00:31:17,000
+So, what you know, what you are, and now what you have.
+
+511
+00:31:17,000 --> 00:31:23,000
+So, imagine you have something like a dongle of some sort, right?
+
+512
+00:31:23,000 --> 00:31:29,000
+You know, something like a little tag, a phone, some object, right?
+
+513
+00:31:29,000 --> 00:31:34,000
+So, it's not part of your body anymore, and it's not inside your brain.
+
+514
+00:31:34,000 --> 00:31:37,000
+It's rather an object that you have in your possession.
+
+515
+00:31:37,000 --> 00:31:42,000
+So, now, imagine that you, user, and the system share a secret.
+
+516
+00:31:42,000 --> 00:31:47,000
+Now, not password, not password, okay?
+
+517
+00:31:47,000 --> 00:31:53,000
+Long, strong secret, okay?
+
+518
+00:31:53,000 --> 00:31:57,000
+So, very simple.
+
+519
+00:31:57,000 --> 00:32:01,000
+You want to log in, the system says, here's a challenge.
+
+520
+00:32:01,000 --> 00:32:10,000
+It generates a random, unpredictable challenge, and tells it, prove to me that based on this challenge, you know the secret.
+
+521
+00:32:10,000 --> 00:32:13,000
+That you and I share.
+
+522
+00:32:13,000 --> 00:32:24,000
+And you reply, with some function, cryptographic, obviously, of the key that you have, and the challenge that was just sent to you.
+
+523
+00:32:24,000 --> 00:32:26,000
+The system verifies, right?
+
+524
+00:32:26,000 --> 00:32:28,000
+Because it can recompute the same function.
+
+525
+00:32:28,000 --> 00:32:36,000
+It knows the challenge, it sent it, it knows the key, it shares it with you, compares the two values, success or failure.
+
+526
+00:32:36,000 --> 00:32:42,000
+This is strictly better, right?
+
+527
+00:32:42,000 --> 00:32:48,000
+If someone eavesdrops on this communication, what can they do?
+
+528
+00:32:48,000 --> 00:32:51,000
+Good force, right?
+
+529
+00:32:51,000 --> 00:32:56,000
+Same as put password, except with password, the adversary was in luck.
+
+530
+00:32:56,000 --> 00:33:01,000
+The passwords came from a very small, pathetic space.
+
+531
+00:33:01,000 --> 00:33:05,000
+But here, the key comes from a truly random space, right?
+
+532
+00:33:05,000 --> 00:33:11,000
+So, if the key is 160 bits long or 256 bits long, good luck to the adversary doing brute force.
+
+533
+00:33:11,000 --> 00:33:15,000
+Not possible, not viable, right?
+
+534
+00:33:15,000 --> 00:33:20,000
+Now, that's a big question.
+
+535
+00:33:20,000 --> 00:33:31,000
+If we could get the user to compute the f, that would be nice, but the users aren't good at computing functions, right?
+
+536
+00:33:31,000 --> 00:33:34,000
+So, it has to be done by something else.
+
+537
+00:33:34,000 --> 00:33:35,000
+Okay?
+
+538
+00:33:35,000 --> 00:33:38,000
+By some other object.
+
+539
+00:33:38,000 --> 00:33:47,000
+So, this is what's called challenge and response certification.
+
+540
+00:33:47,000 --> 00:33:51,000
+And here, like I said, user and system share a key, right?
+
+541
+00:33:51,000 --> 00:33:53,000
+Challenge, response.
+
+542
+00:33:53,000 --> 00:33:59,000
+The idea is, the key stays secret because it's random, strong, and nobody leaks it, right?
+
+543
+00:33:59,000 --> 00:34:04,000
+And the adversary only sees that function of the key and the random challenge.
+
+544
+00:34:04,000 --> 00:34:07,000
+And it's fresh.
+
+545
+00:34:07,000 --> 00:34:18,000
+Fresh means, if a challenge is short, let's say we were stupid, or we didn't take a security course,
+
+546
+00:34:18,000 --> 00:34:23,000
+and we said, let's make challenge 16 bits.
+
+547
+00:34:23,000 --> 00:34:28,000
+What happened?
+
+548
+00:34:30,000 --> 00:34:35,000
+Remember, challenge is random.
+
+549
+00:34:35,000 --> 00:34:39,000
+What will happen over time?
+
+550
+00:34:39,000 --> 00:34:43,000
+In fact, we will see every challenge and we will answer everything.
+
+551
+00:34:43,000 --> 00:34:44,000
+Uh-huh.
+
+552
+00:34:44,000 --> 00:34:45,000
+But it's worse than that.
+
+553
+00:34:45,000 --> 00:34:47,000
+The birthday.
+
+554
+00:34:47,000 --> 00:34:50,000
+It's worse than that.
+
+555
+00:34:50,000 --> 00:34:51,000
+Right?
+
+556
+00:34:51,000 --> 00:34:57,000
+The adversary will see, will record all the challenges and responses, and will just wait
+
+557
+00:34:57,000 --> 00:34:58,000
+for a repeat.
+
+558
+00:34:58,000 --> 00:35:06,000
+And when the repeat comes, or the adversary will record enough challenge responses that
+
+559
+00:35:06,000 --> 00:35:11,000
+when it wants to impersonate the user, user isn't there, but the adversary wants to log
+
+560
+00:35:11,000 --> 00:35:12,000
+in as the user.
+
+561
+00:35:12,000 --> 00:35:18,000
+The adversary will say, log in, and the system will say, there's a challenge.
+
+562
+00:35:18,000 --> 00:35:22,000
+The adversary quickly looks at a database of challenges that recorded, says, do I have it?
+
+563
+00:35:22,000 --> 00:35:23,000
+No.
+
+564
+00:35:23,000 --> 00:35:24,000
+Okay.
+
+565
+00:35:24,000 --> 00:35:25,000
+Abandoned login.
+
+566
+00:35:25,000 --> 00:35:28,000
+A little time later, not right away, because that will arise.
+
+567
+00:35:28,000 --> 00:35:29,000
+There's no suspicion.
+
+568
+00:35:29,000 --> 00:35:30,000
+The adversary will wait.
+
+569
+00:35:30,000 --> 00:35:31,000
+They're patient.
+
+570
+00:35:31,000 --> 00:35:33,000
+Another login.
+
+571
+00:35:33,000 --> 00:35:36,000
+The system generates another challenge.
+
+572
+00:35:36,000 --> 00:35:41,000
+The adversary looks in this table of reported challenges and responses.
+
+573
+00:35:41,000 --> 00:35:42,000
+Oh.
+
+574
+00:35:42,000 --> 00:35:43,000
+Got it.
+
+575
+00:35:43,000 --> 00:35:44,000
+He can respond.
+
+576
+00:35:44,000 --> 00:35:46,000
+Does that make sense?
+
+577
+00:35:46,000 --> 00:35:56,000
+With a sufficiently long challenge, like 160 bits, 256 bits, the probability of challenge
+
+578
+00:35:56,000 --> 00:36:00,000
+repeating, astronomically small.
+
+579
+00:36:00,000 --> 00:36:01,000
+Okay?
+
+580
+00:36:01,000 --> 00:36:04,000
+So the challenges need to be long enough.
+
+581
+00:36:04,000 --> 00:36:10,000
+Indeed, the birthday paradox tells us, right, that they should be, today, you want to have
+
+582
+00:36:10,000 --> 00:36:15,000
+at least 160 bits of challenge for decent security.
+
+583
+00:36:15,000 --> 00:36:23,000
+So, which means that the system needs to be assured that when the response comes back,
+
+584
+00:36:23,000 --> 00:36:26,000
+it is fresh.
+
+585
+00:36:26,000 --> 00:36:27,000
+Right?
+
+586
+00:36:27,000 --> 00:36:34,000
+Because the user here isn't going to remember if they have seen the challenge before or not.
+
+587
+00:36:34,000 --> 00:36:36,000
+This is just the user.
+
+588
+00:36:36,000 --> 00:36:40,000
+Maybe with some dumb device or token of some sort.
+
+589
+00:36:40,000 --> 00:36:45,000
+It's not going to remember or cache all the previous challenges and say, ooh, I've seen
+
+590
+00:36:45,000 --> 00:36:46,000
+this one before.
+
+591
+00:36:46,000 --> 00:36:47,000
+I'm not answering it.
+
+592
+00:36:47,000 --> 00:36:48,000
+No.
+
+593
+00:36:48,000 --> 00:36:52,000
+It is the system's responsibility to make sure the challenges don't repeat.
+
+594
+00:36:52,000 --> 00:36:57,000
+Because it, when it receives back the reply, it wants to make sure, the guarantee that
+
+595
+00:36:57,000 --> 00:37:00,000
+this reply is here and now.
+
+596
+00:37:00,000 --> 00:37:03,000
+Not from yesterday or a year ago.
+
+597
+00:37:05,000 --> 00:37:06,000
+Okay.
+
+598
+00:37:06,000 --> 00:37:08,000
+So this works.
+
+599
+00:37:08,000 --> 00:37:12,000
+And you probably use this kind of system without even knowing it.
+
+600
+00:37:12,000 --> 00:37:15,000
+It's used in badge-based identification.
+
+601
+00:37:15,000 --> 00:37:18,000
+So, you know, people use badges ever?
+
+602
+00:37:18,000 --> 00:37:19,000
+Here?
+
+603
+00:37:19,000 --> 00:37:21,000
+Anybody work in the real world?
+
+604
+00:37:21,000 --> 00:37:22,000
+Yay.
+
+605
+00:37:22,000 --> 00:37:23,000
+Okay.
+
+606
+00:37:23,000 --> 00:37:24,000
+Badges?
+
+607
+00:37:24,000 --> 00:37:25,000
+NFC?
+
+608
+00:37:25,000 --> 00:37:26,000
+Yeah?
+
+609
+00:37:26,000 --> 00:37:28,000
+Or insert badges?
+
+610
+00:37:28,000 --> 00:37:29,000
+TAC.
+
+611
+00:37:29,000 --> 00:37:30,000
+NFC.
+
+612
+00:37:30,000 --> 00:37:31,000
+Okay.
+
+613
+00:37:31,000 --> 00:37:35,000
+A lot of those systems use this kind of challenge response.
+
+614
+00:37:35,000 --> 00:37:36,000
+Cars.
+
+615
+00:37:36,000 --> 00:37:37,000
+Key fob.
+
+616
+00:37:37,000 --> 00:37:38,000
+Car.
+
+617
+00:37:38,000 --> 00:37:39,000
+Key fob.
+
+618
+00:37:39,000 --> 00:37:40,000
+Car.
+
+619
+00:37:40,000 --> 00:37:41,000
+Key fob.
+
+620
+00:37:41,000 --> 00:37:42,000
+Car.
+
+621
+00:37:42,000 --> 00:37:43,000
+Challenge.
+
+622
+00:37:43,000 --> 00:37:44,000
+Key fob is the user.
+
+623
+00:37:44,000 --> 00:37:46,000
+You are the user with the key fob.
+
+624
+00:37:46,000 --> 00:37:48,000
+Key fob has the key.
+
+625
+00:37:48,000 --> 00:37:49,000
+Car.
+
+626
+00:37:49,000 --> 00:37:50,000
+You want to unlock the car.
+
+627
+00:37:50,000 --> 00:37:51,000
+You press.
+
+628
+00:37:51,000 --> 00:37:53,000
+The car goes, challenge.
+
+629
+00:37:53,000 --> 00:37:55,000
+The fob goes, response.
+
+630
+00:37:55,000 --> 00:38:06,000
+The car says, oh, correct response, unlock.
+
+631
+00:38:06,000 --> 00:38:10,000
+Here's an example where these things don't work well.
+
+632
+00:38:10,000 --> 00:38:13,000
+So far everything seemed good.
+
+633
+00:38:13,000 --> 00:38:16,000
+This example dates back to a long time ago.
+
+634
+00:38:16,000 --> 00:38:23,000
+Back in the 1980s, before you were all born, there was a war.
+
+635
+00:38:23,000 --> 00:38:26,000
+There were many wars, but this war took a long time.
+
+636
+00:38:26,000 --> 00:38:33,000
+It was kind of a slow war in Africa between a country called Namibia, which still exists,
+
+637
+00:38:33,000 --> 00:38:38,000
+and a country called Angola, which still exists.
+
+638
+00:38:38,000 --> 00:38:48,000
+And so Angola was allied with the Soviets, with all these countries behind the Iron Curtain,
+
+639
+00:38:48,000 --> 00:38:49,000
+and Cuba.
+
+640
+00:38:49,000 --> 00:38:54,000
+So, essentially, Angola was aided by the Soviet Union, Cuba, and all the Eastern Bloc countries.
+
+641
+00:38:54,000 --> 00:39:00,000
+And not surprisingly, Namibia was aided, well, not directly by the United States, but by South Africa,
+
+642
+00:39:00,000 --> 00:39:04,000
+which at the time was a very different South Africa issue today.
+
+643
+00:39:04,000 --> 00:39:10,000
+It was an apartheid regime, very right-wing, very conservative, blah, blah, blah.
+
+644
+00:39:10,000 --> 00:39:14,000
+So I'm not here to teach you politics, but just to illustrate a problem.
+
+645
+00:39:14,000 --> 00:39:20,000
+So they've used, already then, challenge response-based authentication.
+
+646
+00:39:20,000 --> 00:39:23,000
+And this system is called Friend or Foe.
+
+647
+00:39:23,000 --> 00:39:26,000
+F-O-F, Friend or Foe.
+
+648
+00:39:26,000 --> 00:39:30,000
+This is how, like, planes identify each other in the air.
+
+649
+00:39:30,000 --> 00:39:35,000
+This is how ground stations know that it's their planes and not enemy planes flying overhead.
+
+650
+00:39:35,000 --> 00:39:36,000
+Okay?
+
+651
+00:39:36,000 --> 00:39:39,000
+So the idea here, these people were at war.
+
+652
+00:39:39,000 --> 00:39:40,000
+Okay?
+
+653
+00:39:40,000 --> 00:39:42,000
+They used aircraft.
+
+654
+00:39:42,000 --> 00:39:43,000
+Right?
+
+655
+00:39:43,000 --> 00:39:44,000
+Aircraft.
+
+656
+00:39:44,000 --> 00:39:47,000
+Bombers, et cetera.
+
+657
+00:39:47,000 --> 00:39:49,000
+Cause damage.
+
+658
+00:39:49,000 --> 00:39:52,000
+So, you have a following situation.
+
+659
+00:39:52,000 --> 00:39:55,000
+South Africa, remember, was supporting Namibia, right?
+
+660
+00:39:55,000 --> 00:39:56,000
+In this war.
+
+661
+00:39:56,000 --> 00:40:02,000
+So South Africans would launch a bomber, this is a ground station, to bomb Angola.
+
+662
+00:40:06,000 --> 00:40:09,000
+The ground station is the system.
+
+663
+00:40:09,000 --> 00:40:12,000
+The bomber is the user, right?
+
+664
+00:40:12,000 --> 00:40:14,000
+In this picture, the analogy, right?
+
+665
+00:40:14,000 --> 00:40:18,000
+They share a long-term secret key K, unique to that bomber.
+
+666
+00:40:18,000 --> 00:40:19,000
+Right?
+
+667
+00:40:19,000 --> 00:40:24,000
+So for every such bomber, you know, the ground station knows a separate key.
+
+668
+00:40:28,000 --> 00:40:32,000
+Meanwhile, Angola launches a Cuban MiG.
+
+669
+00:40:32,000 --> 00:40:35,000
+MiG is back then a Soviet airplane.
+
+670
+00:40:35,000 --> 00:40:36,000
+A Soviet bomber.
+
+671
+00:40:40,000 --> 00:40:41,000
+Okay.
+
+672
+00:40:41,000 --> 00:40:44,000
+It's flying over Namibian.
+
+673
+00:40:47,000 --> 00:40:50,000
+Namibians detect a plane, a radar.
+
+674
+00:40:52,000 --> 00:40:53,000
+Right?
+
+675
+00:40:53,000 --> 00:40:54,000
+Radar.
+
+676
+00:40:54,000 --> 00:40:55,000
+Anybody knows?
+
+677
+00:40:55,000 --> 00:40:56,000
+See a blip.
+
+678
+00:40:56,000 --> 00:40:57,000
+You don't know what it is.
+
+679
+00:40:57,000 --> 00:40:59,000
+That's why you need this kind of identification.
+
+680
+00:40:59,000 --> 00:41:02,000
+Are you one of us, or are you one of them?
+
+681
+00:41:02,000 --> 00:41:03,000
+Friend or foe?
+
+682
+00:41:06,000 --> 00:41:08,000
+So he says, here's a challenge.
+
+683
+00:41:08,000 --> 00:41:14,000
+Whoever you are, you better answer, or I'll shoot.
+
+684
+00:41:15,000 --> 00:41:16,000
+Right?
+
+685
+00:41:16,000 --> 00:41:17,000
+Air defense.
+
+686
+00:41:17,000 --> 00:41:20,000
+This has to be done super fast, right?
+
+687
+00:41:21,000 --> 00:41:22,000
+What?
+
+688
+00:41:23,000 --> 00:41:28,000
+Normally, Cuban MiG would be like, uh, I got nothing.
+
+689
+00:41:28,000 --> 00:41:32,000
+So it would hope that it won't get shot down.
+
+690
+00:41:34,000 --> 00:41:43,000
+But now, Cuban MiG would take that challenge and quickly retransmit it to the ground station in Mangola.
+
+691
+00:41:43,000 --> 00:41:46,000
+You've been following me so far.
+
+692
+00:41:48,000 --> 00:41:53,000
+Which will then transmit it up to whatever plane is flying there.
+
+693
+00:41:54,000 --> 00:41:56,000
+Turns out, oh, South African bomber.
+
+694
+00:41:56,000 --> 00:42:03,000
+Well, when South African bomber receives a challenge, it is programmed to reply with a function of a challenge and a secret key.
+
+695
+00:42:03,000 --> 00:42:06,000
+Everybody here awake?
+
+696
+00:42:06,000 --> 00:42:07,000
+Following?
+
+697
+00:42:07,000 --> 00:42:08,000
+Nope.
+
+698
+00:42:08,000 --> 00:42:09,000
+No rocket science here.
+
+699
+00:42:12,000 --> 00:42:13,000
+Pun intended.
+
+700
+00:42:13,000 --> 00:42:14,000
+Response.
+
+701
+00:42:15,000 --> 00:42:16,000
+Some function of the key, right?
+
+702
+00:42:16,000 --> 00:42:20,000
+I use a different notation here, but some function of the key and the random number, right?
+
+703
+00:42:21,000 --> 00:42:26,000
+Which the ground station in Mangola quickly retransmits back to the MiG, which is, you can see where this is going, right?
+
+704
+00:42:26,000 --> 00:42:33,000
+The MiG transmits it back to the ground station, and the ground station says, yay, one of us.
+
+705
+00:42:34,000 --> 00:42:35,000
+One of us.
+
+706
+00:42:40,000 --> 00:42:41,000
+Perfect.
+
+707
+00:42:42,000 --> 00:42:43,000
+And drops the bomb.
+
+708
+00:42:46,000 --> 00:42:51,000
+Now, you don't have to feel sorry for Namibians or South Africans or whatever, but do you see the problem?
+
+709
+00:42:51,000 --> 00:42:52,000
+Right?
+
+710
+00:42:52,000 --> 00:42:58,000
+If you design this system, you'll be court-martialed, probably, right?
+
+711
+00:42:59,000 --> 00:43:01,000
+So how do we fix this?
+
+712
+00:43:05,000 --> 00:43:06,000
+Do you see the problem?
+
+713
+00:43:06,000 --> 00:43:07,000
+Right?
+
+714
+00:43:07,000 --> 00:43:10,000
+And the problem should be obvious, that there is a problem.
+
+715
+00:43:12,000 --> 00:43:13,000
+Well, how do we fix it?
+
+716
+00:43:13,000 --> 00:43:23,000
+Well, back then, well, actually, I'm not 100% sure.
+
+717
+00:43:24,000 --> 00:43:27,000
+I'm pretty sure they didn't have GPS.
+
+718
+00:43:28,000 --> 00:43:30,000
+Or the military equivalent of GPS.
+
+719
+00:43:34,000 --> 00:43:35,000
+Right?
+
+720
+00:43:36,000 --> 00:43:38,000
+If they had GPS, would it help?
+
+721
+00:43:38,000 --> 00:43:39,000
+Come on, exercise your noodles.
+
+722
+00:43:48,000 --> 00:43:51,000
+Maybe limit the response time, because it takes time to...
+
+723
+00:43:52,000 --> 00:43:53,000
+Right.
+
+724
+00:43:53,000 --> 00:43:54,000
+Okay.
+
+725
+00:43:54,000 --> 00:43:55,000
+Good.
+
+726
+00:43:55,000 --> 00:43:56,000
+That's one.
+
+727
+00:43:56,000 --> 00:43:57,000
+That's one.
+
+728
+00:43:57,000 --> 00:44:03,000
+You could say, look, if there is a plane over here, right, it can be only, I don't know,
+
+729
+00:44:03,000 --> 00:44:05,000
+10 miles away or something like that.
+
+730
+00:44:05,000 --> 00:44:06,000
+Whatever.
+
+731
+00:44:06,000 --> 00:44:13,000
+However the height, whatever the height of the flying altitude of the airplane is, right?
+
+732
+00:44:13,000 --> 00:44:14,000
+Some miles.
+
+733
+00:44:14,000 --> 00:44:15,000
+10 miles.
+
+734
+00:44:16,000 --> 00:44:17,000
+Whatever.
+
+735
+00:44:17,000 --> 00:44:20,000
+You know what the round trip is for a 10-mile radius.
+
+736
+00:44:21,000 --> 00:44:23,000
+This is obviously more, right?
+
+737
+00:44:23,000 --> 00:44:24,000
+You see how many packages are?
+
+738
+00:44:24,000 --> 00:44:27,000
+Well, normally it should be challenge, response.
+
+739
+00:44:27,000 --> 00:44:32,000
+Now it's challenge, relay, challenge, response, relay.
+
+740
+00:44:33,000 --> 00:44:37,000
+So we have four extra transmissions.
+
+741
+00:44:38,000 --> 00:44:41,000
+One of them, or two of them potentially longer distance.
+
+742
+00:44:42,000 --> 00:44:46,000
+So timing is of value, isn't it?
+
+743
+00:44:48,000 --> 00:44:50,000
+But GPS makes it even easier.
+
+744
+00:44:50,000 --> 00:45:00,000
+All you need to do is to make sure that this American bomber includes in that function of the challenge, right,
+
+745
+00:45:00,000 --> 00:45:02,000
+that it replies with, its coordinates.
+
+746
+00:45:03,000 --> 00:45:07,000
+And then the station says, ah, ah, it's not here.
+
+747
+00:45:08,000 --> 00:45:13,000
+Whatever this replies comes from, it's not from a plane flying overhead.
+
+748
+00:45:13,000 --> 00:45:16,000
+It's a plane somewhere, or he knows exactly where he's flying.
+
+749
+00:45:17,000 --> 00:45:18,000
+Does that make sense?
+
+750
+00:45:20,000 --> 00:45:22,000
+Now, in reality, you probably want to use both.
+
+751
+00:45:22,000 --> 00:45:25,000
+You want to use the time and the geographic coordinates.
+
+752
+00:45:28,000 --> 00:45:31,000
+So, just by itself, this is a problem, right?
+
+753
+00:45:31,000 --> 00:45:32,000
+It's called a relay attack.
+
+754
+00:45:37,000 --> 00:45:46,000
+Right, so, let's forget the war and then look at it again as a general problem.
+
+755
+00:45:46,000 --> 00:45:54,000
+We have Alice and Bob, or user and system, they share a secret, and they want to authenticate each other and identify each other over a network.
+
+756
+00:45:54,000 --> 00:45:57,000
+They do not see each other physically, so they are far away.
+
+757
+00:45:58,000 --> 00:46:01,000
+How do they authenticate and identify each other, right?
+
+758
+00:46:01,000 --> 00:46:03,000
+So, that's the main problem.
+
+759
+00:46:04,000 --> 00:46:06,000
+The adversary here is not just eavesdropping.
+
+760
+00:46:06,000 --> 00:46:10,000
+I may refer to the adversary as eave, but that's not just the limits of the adversary.
+
+761
+00:46:10,000 --> 00:46:17,000
+The adversary can eavesdrop, delete messages, modify messages, retard messages, right?
+
+762
+00:46:17,000 --> 00:46:18,000
+Maybe slow them down.
+
+763
+00:46:18,000 --> 00:46:22,000
+It can, yeah, insert messages, right?
+
+764
+00:46:22,000 --> 00:46:27,000
+So, the adversary is pretty capable.
+
+765
+00:46:31,000 --> 00:46:36,000
+And, what you have seen, essentially, is an example of this attack.
+
+766
+00:46:37,000 --> 00:46:38,000
+Right?
+
+767
+00:46:38,000 --> 00:46:40,000
+Which is called, sometimes it's called man in the middle.
+
+768
+00:46:40,000 --> 00:46:44,000
+They'll probably come around to changing it to some general neutral form one day.
+
+769
+00:46:44,000 --> 00:46:50,000
+But, the way it's still in the books is MIT and we're man in the middle of that.
+
+770
+00:46:50,000 --> 00:46:52,000
+Here's the adversary is in the middle, right?
+
+771
+00:46:52,000 --> 00:46:55,000
+So, the idea is, again, Alice and Bob know the secret.
+
+772
+00:46:56,000 --> 00:47:01,000
+When Bob challenges Alice and says, hey, here's a random number.
+
+773
+00:47:01,000 --> 00:47:05,000
+Prove to me that you know the secret based on this random number.
+
+774
+00:47:05,000 --> 00:47:06,000
+Right?
+
+775
+00:47:06,000 --> 00:47:08,000
+And Alice replies with a function.
+
+776
+00:47:08,000 --> 00:47:09,000
+Now, here we use a hash, right?
+
+777
+00:47:09,000 --> 00:47:10,000
+Like a crypto hash.
+
+778
+00:47:10,000 --> 00:47:13,000
+That's an example of a function you would want to use.
+
+779
+00:47:13,000 --> 00:47:15,000
+Because it's non-invertible, right?
+
+780
+00:47:15,000 --> 00:47:16,000
+No collisions.
+
+781
+00:47:16,000 --> 00:47:18,000
+Remember these properties we talked about?
+
+782
+00:47:18,000 --> 00:47:19,000
+Right?
+
+783
+00:47:19,000 --> 00:47:23,000
+You want to have all the good, both types of collision resistance, right?
+
+784
+00:47:23,000 --> 00:47:26,000
+So, Alice replies and that's a correct reply.
+
+785
+00:47:26,000 --> 00:47:27,000
+There's nothing wrong with the reply.
+
+786
+00:47:27,000 --> 00:47:32,000
+Except the adversary can be in the middle and he can essentially impersonate Alice.
+
+787
+00:47:32,000 --> 00:47:33,000
+Okay?
+
+788
+00:47:33,000 --> 00:47:37,000
+Now, there's a subtlety here.
+
+789
+00:47:37,000 --> 00:47:39,000
+The subtlety is this.
+
+790
+00:47:39,000 --> 00:47:44,000
+The adversary does not actually learn the secret in this attack, right?
+
+791
+00:47:44,000 --> 00:47:49,000
+The adversary is just a relay, right?
+
+792
+00:47:49,000 --> 00:47:57,000
+He's sitting in the middle and he's basically handing messages from Bob to Alice and handing messages from Alice to Bob.
+
+793
+00:47:57,000 --> 00:48:00,000
+So, he could be like a hostile router, right?
+
+794
+00:48:00,000 --> 00:48:05,000
+Or like an access point, a malicious access point.
+
+795
+00:48:05,000 --> 00:48:07,000
+So, what does it gain?
+
+796
+00:48:07,000 --> 00:48:19,000
+Well, it gains only the fact that if the system is configured so that when authentication succeeds, Alice gets access to something immediately.
+
+797
+00:48:19,000 --> 00:48:20,000
+Right?
+
+798
+00:48:20,000 --> 00:48:21,000
+That becomes an attack.
+
+799
+00:48:21,000 --> 00:48:22,000
+That becomes an attack.
+
+800
+00:48:22,000 --> 00:48:32,000
+However, if this is followed by encrypted communication using the key K, the adversary gains that.
+
+801
+00:48:32,000 --> 00:48:34,000
+Do you see that?
+
+802
+00:48:34,000 --> 00:48:38,000
+Because the adversary does not know the secret.
+
+803
+00:48:38,000 --> 00:48:43,000
+So, it's attack on authentication.
+
+804
+00:48:43,000 --> 00:48:45,000
+It's not an attack on secrecy.
+
+805
+00:48:45,000 --> 00:48:51,000
+Now, if the key itself, remember, I assume the key is a strong key, right?
+
+806
+00:48:51,000 --> 00:49:07,000
+A binary, sorry, bitwise is long enough, at least 160 bits or so, and not a dictionary, not a big from a dictionary like a password.
+
+807
+00:49:07,000 --> 00:49:09,000
+There is another way to do this.
+
+808
+00:49:09,000 --> 00:49:18,000
+And the other way to do this, and this is actually also used in practice for something called one-time password, OTP.
+
+809
+00:49:18,000 --> 00:49:23,000
+It's based on a data structure called the Lamport's hash.
+
+810
+00:49:23,000 --> 00:49:26,000
+Has anybody ever seen this before?
+
+811
+00:49:26,000 --> 00:49:27,000
+No?
+
+812
+00:49:27,000 --> 00:49:29,000
+Lamport's hash.
+
+813
+00:49:29,000 --> 00:49:37,000
+Basically, Lamport's hash is the following.
+
+814
+00:49:37,000 --> 00:49:47,000
+So, you start with the random value, generate the random number, and then you repeatedly hash that random number, like over and over and over and over and over and over.
+
+815
+00:49:47,000 --> 00:49:49,000
+Remember how we did encryption?
+
+816
+00:49:49,000 --> 00:49:52,000
+So, imagine you just hash it.
+
+817
+00:49:52,000 --> 00:49:57,000
+Take X, hash of X, hash of X, hash of X, et cetera, hash, hash, hash, hash, hash, hash.
+
+818
+00:49:57,000 --> 00:49:58,000
+How many times?
+
+819
+00:49:58,000 --> 00:49:59,000
+As long as you want.
+
+820
+00:49:59,000 --> 00:50:01,000
+That's a parameter.
+
+821
+00:50:01,000 --> 00:50:02,000
+Okay?
+
+822
+00:50:02,000 --> 00:50:17,000
+So, the idea is you do this and Bob, who will be modeled here as a system, knows what's called the root of the chain.
+
+823
+00:50:17,000 --> 00:50:19,000
+That is the last hash value.
+
+824
+00:50:19,000 --> 00:50:21,000
+Okay?
+
+825
+00:50:21,000 --> 00:50:26,000
+Alice is the one that computed the chain to begin with.
+
+826
+00:50:26,000 --> 00:50:27,000
+Started with some secret.
+
+827
+00:50:27,000 --> 00:50:29,000
+You see that secret in quotes?
+
+828
+00:50:29,000 --> 00:50:30,000
+Okay?
+
+829
+00:50:30,000 --> 00:50:39,000
+So, she started with some secret value, and she computed a repeated hash over that secret value, n times.
+
+830
+00:50:39,000 --> 00:50:40,000
+Okay?
+
+831
+00:50:40,000 --> 00:50:41,000
+Then, she gave the result.
+
+832
+00:50:41,000 --> 00:50:46,000
+You see that Y over there in the green cloud?
+
+833
+00:50:46,000 --> 00:50:55,000
+She gave the result to Bob, and she also gave him the index n, which is, at that time, the length of the hash chain.
+
+834
+00:50:55,000 --> 00:50:56,000
+Why do we call it the chain?
+
+835
+00:50:56,000 --> 00:50:58,000
+Because they are linked, right?
+
+836
+00:50:58,000 --> 00:51:00,000
+Hash, hash, hash, hash, hash, hash, hash.
+
+837
+00:51:00,000 --> 00:51:01,000
+Okay?
+
+838
+00:51:01,000 --> 00:51:12,000
+So, in the beginning, Bob knows that Y is the root of Alice's chain, and n is the length of the chain.
+
+839
+00:51:12,000 --> 00:51:15,000
+In other words, the chain has n links in it.
+
+840
+00:51:15,000 --> 00:51:26,000
+So, the first time Alice wants to authenticate to Bob, okay, she says, hi, I'm Alice.
+
+841
+00:51:26,000 --> 00:51:30,000
+Don't show that message, because it's a clear text message, nothing in it.
+
+842
+00:51:30,000 --> 00:51:39,000
+And Bob challenges her with the current index, int, which, at the beginning, is n.
+
+843
+00:51:39,000 --> 00:51:40,000
+Okay?
+
+844
+00:51:40,000 --> 00:51:51,000
+And Alice replies with something that hashes into n.
+
+845
+00:51:51,000 --> 00:52:04,000
+So, you start with a secret, hash once.
+
+846
+00:52:04,000 --> 00:52:10,000
+Then you arrive at hash of secret, then you hash again.
+
+847
+00:52:10,000 --> 00:52:12,000
+Then you hash again, et cetera, et cetera.
+
+848
+00:52:12,000 --> 00:52:23,000
+And eventually, you wind up with this Y, which is hash n of secret.
+
+849
+00:52:23,000 --> 00:52:24,000
+Okay?
+
+850
+00:52:24,000 --> 00:52:25,000
+And this is why it's called the chain.
+
+851
+00:52:25,000 --> 00:52:40,000
+So, in the end, here, at the very end, there's this hash n minus 1 of secret.
+
+852
+00:52:40,000 --> 00:52:41,000
+Right?
+
+853
+00:52:41,000 --> 00:52:45,000
+We computed n minus 1 hashes, all of the same, repeatedly.
+
+854
+00:52:45,000 --> 00:52:48,000
+And so, the last link is a hash.
+
+855
+00:52:48,000 --> 00:52:49,000
+Right?
+
+856
+00:52:49,000 --> 00:52:52,000
+And it becomes this.
+
+857
+00:52:52,000 --> 00:52:58,000
+Well, consider this value, this value here.
+
+858
+00:52:58,000 --> 00:53:03,000
+This is what Alice will give Bob.
+
+859
+00:53:03,000 --> 00:53:06,000
+And the idea is, if Bob hashes this, he should get that.
+
+860
+00:53:06,000 --> 00:53:09,000
+But he knows this already.
+
+861
+00:53:09,000 --> 00:53:16,000
+So, Bob is thinking, okay, who could have given me this value?
+
+862
+00:53:16,000 --> 00:53:21,000
+Only Alice, because only Alice knows the input to the hash function.
+
+863
+00:53:21,000 --> 00:53:24,000
+Because only Alice computed the entire chain.
+
+864
+00:53:24,000 --> 00:53:25,000
+Right?
+
+865
+00:53:25,000 --> 00:53:29,000
+And because of the cryptographic properties of the hash function, it's not invertible.
+
+866
+00:53:29,000 --> 00:53:31,000
+So, nobody could have inverted the hash function.
+
+867
+00:53:31,000 --> 00:53:40,000
+Or found a collision, because that's supposed to be, right, computationally hard.
+
+868
+00:53:40,000 --> 00:53:41,000
+Ask questions.
+
+869
+00:53:41,000 --> 00:53:46,000
+Don't hesitate if you haven't seen this before, which I think none of you have.
+
+870
+00:53:46,000 --> 00:53:48,000
+Do you see how this works?
+
+871
+00:53:48,000 --> 00:53:52,000
+And then, what Bob does, this is called one-time authentication.
+
+872
+00:53:52,000 --> 00:53:56,000
+Because this same value, h n minus 1, cannot be reused.
+
+873
+00:53:56,000 --> 00:54:01,000
+So, once Alice released it here, in this message in the reply,
+
+874
+00:54:01,000 --> 00:54:06,000
+Bob has to adjust it in his index to n minus 1.
+
+875
+00:54:06,000 --> 00:54:21,000
+So, the next time to authenticate Alice, he expects, Bob will expect this.
+
+876
+00:54:21,000 --> 00:54:32,000
+Because when he hashes this, once hash, you should get that, right?
+
+877
+00:54:32,000 --> 00:54:35,000
+Some of you look very puzzled.
+
+878
+00:54:39,000 --> 00:54:41,000
+It's okay to ask questions.
+
+879
+00:54:41,000 --> 00:54:42,000
+Yeah?
+
+880
+00:54:42,000 --> 00:54:45,000
+I'm kind of wondering what happens when they get all the way back.
+
+881
+00:54:45,000 --> 00:54:47,000
+Ah, good question.
+
+882
+00:54:47,000 --> 00:54:50,000
+What happens when you deplete the change?
+
+883
+00:54:50,000 --> 00:54:51,000
+When you are...
+
+884
+00:54:55,000 --> 00:55:00,000
+Now, the truth is, you have to either budget on never depleting it completely,
+
+885
+00:55:00,000 --> 00:55:03,000
+and then manually resetting with a new change.
+
+886
+00:55:03,000 --> 00:55:06,000
+Manually mean offline, offline resetting.
+
+887
+00:55:06,000 --> 00:55:09,000
+Generating, Alice generates a brand new change.
+
+888
+00:55:09,000 --> 00:55:14,000
+Or, there are some clumsy techniques to use digital signatures to...
+
+889
+00:55:14,000 --> 00:55:16,000
+I won't bore you with it.
+
+890
+00:55:16,000 --> 00:55:17,000
+But there are...
+
+891
+00:55:17,000 --> 00:55:19,000
+That's the problem with this space here.
+
+892
+00:55:19,000 --> 00:55:20,000
+Now, so this...
+
+893
+00:55:20,000 --> 00:55:23,000
+The change has to be long enough that it lasts for like a lifetime.
+
+894
+00:55:23,000 --> 00:55:25,000
+So, let me give you an example.
+
+895
+00:55:25,000 --> 00:55:26,000
+You have a...
+
+896
+00:55:26,000 --> 00:55:28,000
+It's like a small IoT device you bought.
+
+897
+00:55:28,000 --> 00:55:29,000
+Like some kind of a...
+
+898
+00:55:29,000 --> 00:55:31,000
+I don't know, smart clock or something like that.
+
+899
+00:55:31,000 --> 00:55:32,000
+And it typically...
+
+900
+00:55:32,000 --> 00:55:33,000
+The lifetime is like, I don't know...
+
+901
+00:55:33,000 --> 00:55:34,000
+A year.
+
+902
+00:55:34,000 --> 00:55:39,000
+So, you can provision it with a hash chain that is good enough for...
+
+903
+00:55:39,000 --> 00:55:40,000
+I don't know...
+
+904
+00:55:40,000 --> 00:55:44,000
+One authentication every hour for a year.
+
+905
+00:55:44,000 --> 00:55:47,000
+So, that's 365 times 24.
+
+906
+00:55:47,000 --> 00:55:49,000
+That will be the length of your change.
+
+907
+00:55:49,000 --> 00:55:50,000
+Right?
+
+908
+00:55:50,000 --> 00:55:52,000
+And then you know you're not unlikely to be depleted.
+
+909
+00:55:52,000 --> 00:55:54,000
+Because you're not going to authenticate the device every hour.
+
+910
+00:55:54,000 --> 00:55:55,000
+Right?
+
+911
+00:55:55,000 --> 00:55:58,000
+So, it is a useful technique.
+
+912
+00:55:58,000 --> 00:56:00,000
+But it's...
+
+913
+00:56:00,000 --> 00:56:03,000
+And it has been used in...
+
+914
+00:56:03,000 --> 00:56:04,000
+In...
+
+915
+00:56:04,000 --> 00:56:06,000
+What's something called one-time passwords.
+
+916
+00:56:06,000 --> 00:56:07,000
+Right?
+
+917
+00:56:07,000 --> 00:56:08,000
+It is a useful technique.
+
+918
+00:56:08,000 --> 00:56:09,000
+But it has this limitation.
+
+919
+00:56:09,000 --> 00:56:11,000
+And eventually you will run out.
+
+920
+00:56:11,000 --> 00:56:16,000
+And in a way, it's a kind of a public key scheme.
+
+921
+00:56:16,000 --> 00:56:17,000
+And it is...
+
+922
+00:56:17,000 --> 00:56:18,000
+Why is it...
+
+923
+00:56:18,000 --> 00:56:19,000
+Why do I say that?
+
+924
+00:56:19,000 --> 00:56:20,000
+Because...
+
+925
+00:56:20,000 --> 00:56:21,000
+That root...
+
+926
+00:56:21,000 --> 00:56:22,000
+That y...
+
+927
+00:56:22,000 --> 00:56:23,000
+That Bob keeps...
+
+928
+00:56:23,000 --> 00:56:24,000
+Is like a public key.
+
+929
+00:56:24,000 --> 00:56:25,000
+For Alice.
+
+930
+00:56:25,000 --> 00:56:29,000
+And every link is like a one-time authentication.
+
+931
+00:56:29,000 --> 00:56:30,000
+Using...
+
+932
+00:56:30,000 --> 00:56:32,000
+Only Alice can come up with the next authentication.
+
+933
+00:56:32,000 --> 00:56:34,000
+Bob cannot impersonate Alice here.
+
+934
+00:56:34,000 --> 00:56:35,000
+Okay?
+
+935
+00:56:35,000 --> 00:56:38,000
+Well, this is an attack.
+
+936
+00:56:38,000 --> 00:56:39,000
+But you know what?
+
+937
+00:56:39,000 --> 00:56:40,000
+I'm not going to...
+
+938
+00:56:40,000 --> 00:56:41,000
+Oof.
+
+939
+00:56:41,000 --> 00:56:42,000
+We're out of time.
+
+940
+00:56:42,000 --> 00:56:45,000
+I'm not going to bother you with this attack.
+
+941
+00:56:45,000 --> 00:56:46,000
+There is...
+
+942
+00:56:46,000 --> 00:56:47,000
+So, there is...
+
+943
+00:56:47,000 --> 00:56:51,000
+Finally, in this lecture, there is one thing that you will see out in the real world.
+
+944
+00:56:51,000 --> 00:56:52,000
+And you may have seen it already.
+
+945
+00:56:52,000 --> 00:56:53,000
+In some...
+
+946
+00:56:53,000 --> 00:56:57,000
+In some ways, the dual that we use is kind of an example of this.
+
+947
+00:56:57,000 --> 00:56:58,000
+A weird example of this.
+
+948
+00:56:58,000 --> 00:56:59,000
+But...
+
+949
+00:56:59,000 --> 00:57:00,000
+Anybody ever seen this?
+
+950
+00:57:00,000 --> 00:57:01,000
+Use your security ID?
+
+951
+00:57:01,000 --> 00:57:02,000
+Yeah?
+
+952
+00:57:02,000 --> 00:57:04,000
+They've been very popular.
+
+953
+00:57:04,000 --> 00:57:05,000
+And they're still around.
+
+954
+00:57:05,000 --> 00:57:07,000
+They may not look like that.
+
+955
+00:57:07,000 --> 00:57:09,000
+That was maybe like five to ten years ago.
+
+956
+00:57:09,000 --> 00:57:10,000
+It's still...
+
+957
+00:57:10,000 --> 00:57:11,000
+Essentially like a...
+
+958
+00:57:11,000 --> 00:57:12,000
+Like a fog.
+
+959
+00:57:12,000 --> 00:57:13,000
+Right?
+
+960
+00:57:13,000 --> 00:57:14,000
+Think of it as a fog.
+
+961
+00:57:14,000 --> 00:57:15,000
+But...
+
+962
+00:57:15,000 --> 00:57:16,000
+It doesn't have NFC.
+
+963
+00:57:16,000 --> 00:57:18,000
+Or any communication at all.
+
+964
+00:57:18,000 --> 00:57:20,000
+There's no radio anything.
+
+965
+00:57:20,000 --> 00:57:24,000
+What it is, is just a little display.
+
+966
+00:57:24,000 --> 00:57:25,000
+And...
+
+967
+00:57:25,000 --> 00:57:27,000
+The idea is that every user...
+
+968
+00:57:27,000 --> 00:57:29,000
+Let's say you work for an organization.
+
+969
+00:57:29,000 --> 00:57:32,000
+Every Alice gets her own fog.
+
+970
+00:57:32,000 --> 00:57:33,000
+Okay?
+
+971
+00:57:33,000 --> 00:57:34,000
+And...
+
+972
+00:57:34,000 --> 00:57:36,000
+Inside the fog is a master key.
+
+973
+00:57:36,000 --> 00:57:37,000
+Well...
+
+974
+00:57:37,000 --> 00:57:38,000
+For that fog.
+
+975
+00:57:38,000 --> 00:57:40,000
+That it shares with the system.
+
+976
+00:57:40,000 --> 00:57:41,000
+With the central system.
+
+977
+00:57:41,000 --> 00:57:43,000
+Bob here.
+
+978
+00:57:43,000 --> 00:57:44,000
+And...
+
+979
+00:57:44,000 --> 00:57:45,000
+So...
+
+980
+00:57:45,000 --> 00:57:46,000
+At setup time.
+
+981
+00:57:46,000 --> 00:57:47,000
+In...
+
+982
+00:57:47,000 --> 00:57:48,000
+In the factory.
+
+983
+00:57:48,000 --> 00:57:49,000
+Or whatever.
+
+984
+00:57:49,000 --> 00:57:50,000
+This thing is produced.
+
+985
+00:57:50,000 --> 00:57:51,000
+It's seated with a key.
+
+986
+00:57:51,000 --> 00:57:52,000
+And Alice and Bob share a key.
+
+987
+00:57:52,000 --> 00:57:53,000
+Okay?
+
+988
+00:57:53,000 --> 00:57:54,000
+So Bob is like...
+
+989
+00:57:54,000 --> 00:57:55,000
+You know...
+
+990
+00:57:55,000 --> 00:57:56,000
+A security administrator.
+
+991
+00:57:56,000 --> 00:57:57,000
+There's a database of all these devices.
+
+992
+00:57:57,000 --> 00:57:58,000
+All these bobs.
+
+993
+00:57:58,000 --> 00:57:59,000
+For every user.
+
+994
+00:57:59,000 --> 00:58:00,000
+Etc.
+
+995
+00:58:00,000 --> 00:58:01,000
+So...
+
+996
+00:58:01,000 --> 00:58:03,000
+In the beginning...
+
+997
+00:58:03,000 --> 00:58:05,000
+They go by counters.
+
+998
+00:58:05,000 --> 00:58:06,000
+So...
+
+999
+00:58:06,000 --> 00:58:07,000
+There's a counter.
+
+1000
+00:58:07,000 --> 00:58:08,000
+Usually based on time.
+
+1001
+00:58:08,000 --> 00:58:09,000
+So...
+
+1002
+00:58:09,000 --> 00:58:12,000
+The way that Alice authenticates to Bob.
+
+1003
+00:58:12,000 --> 00:58:13,000
+Is not using challenges.
+
+1004
+00:58:13,000 --> 00:58:16,000
+There's no actual challenge coming in.
+
+1005
+00:58:16,000 --> 00:58:17,000
+Rather...
+
+1006
+00:58:17,000 --> 00:58:19,000
+Alice just reads the current value.
+
+1007
+00:58:19,000 --> 00:58:22,000
+That she sees displayed.
+
+1008
+00:58:22,000 --> 00:58:24,000
+And enters it.
+
+1009
+00:58:24,000 --> 00:58:26,000
+Kind of like we do with the dual.
+
+1010
+00:58:26,000 --> 00:58:27,000
+When it challenges us with the code.
+
+1011
+00:58:27,000 --> 00:58:28,000
+Right?
+
+1012
+00:58:28,000 --> 00:58:29,000
+You may always use dual.
+
+1013
+00:58:29,000 --> 00:58:30,000
+Right?
+
+1014
+00:58:30,000 --> 00:58:31,000
+With the code.
+
+1015
+00:58:31,000 --> 00:58:32,000
+I know.
+
+1016
+00:58:32,000 --> 00:58:33,000
+Most of the time it's approved this.
+
+1017
+00:58:33,000 --> 00:58:34,000
+And...
+
+1018
+00:58:34,000 --> 00:58:35,000
+Soon it's gonna change.
+
+1019
+00:58:35,000 --> 00:58:36,000
+You know.
+
+1020
+00:58:36,000 --> 00:58:37,000
+It's gonna be code based.
+
+1021
+00:58:37,000 --> 00:58:38,000
+There.
+
+1022
+00:58:38,000 --> 00:58:39,000
+The OID.
+
+1023
+00:58:39,000 --> 00:58:44,000
+As your best interest in mind.
+
+1024
+00:58:44,000 --> 00:58:45,000
+So...
+
+1025
+00:58:45,000 --> 00:58:48,000
+Soon you'll say goodbye to just approve.
+
+1026
+00:58:48,000 --> 00:58:50,000
+Well that looks the best part.
+
+1027
+00:58:50,000 --> 00:58:51,000
+I know.
+
+1028
+00:58:51,000 --> 00:58:52,000
+I know.
+
+1029
+00:58:52,000 --> 00:58:53,000
+But that's all.
+
+1030
+00:58:53,000 --> 00:58:56,000
+The idea here is very similar to the code based dual.
+
+1031
+00:58:56,000 --> 00:58:57,000
+So...
+
+1032
+00:58:57,000 --> 00:58:59,000
+You just enter a code.
+
+1033
+00:58:59,000 --> 00:59:00,000
+And that code...
+
+1034
+00:59:00,000 --> 00:59:04,000
+You see the little bar next to the number one there?
+
+1035
+00:59:04,000 --> 00:59:05,000
+Like...
+
+1036
+00:59:05,000 --> 00:59:06,000
+It has a little...
+
+1037
+00:59:06,000 --> 00:59:07,000
+Like a stack of bars.
+
+1038
+00:59:07,000 --> 00:59:09,000
+And it tells you how close...
+
+1039
+00:59:09,000 --> 00:59:11,000
+As the bars go down.
+
+1040
+00:59:11,000 --> 00:59:12,000
+They disappear.
+
+1041
+00:59:12,000 --> 00:59:13,000
+Like...
+
+1042
+00:59:13,000 --> 00:59:14,000
+It has...
+
+1043
+00:59:14,000 --> 00:59:15,000
+How close is the code to be changing.
+
+1044
+00:59:15,000 --> 00:59:16,000
+So...
+
+1045
+00:59:16,000 --> 00:59:17,000
+When these bars...
+
+1046
+00:59:17,000 --> 00:59:18,000
+Right now...
+
+1047
+00:59:18,000 --> 00:59:19,000
+It's like...
+
+1048
+00:59:19,000 --> 00:59:20,000
+It shows what?
+
+1049
+00:59:20,000 --> 00:59:21,000
+Five?
+
+1050
+00:59:21,000 --> 00:59:22,000
+Five bars?
+
+1051
+00:59:22,000 --> 00:59:23,000
+I think it starts with six.
+
+1052
+00:59:23,000 --> 00:59:24,000
+And then it goes down, down, down.
+
+1053
+00:59:24,000 --> 00:59:25,000
+Because there's a clock inside.
+
+1054
+00:59:25,000 --> 00:59:28,000
+And eventually it will show you a new code.
+
+1055
+00:59:28,000 --> 00:59:29,000
+Based on time.
+
+1056
+00:59:29,000 --> 00:59:32,000
+Here I just use the counter for simplicity.
+
+1057
+00:59:32,000 --> 00:59:34,000
+But in fact it's based on time.
+
+1058
+00:59:34,000 --> 00:59:36,000
+So what are you proving, right?
+
+1059
+00:59:36,000 --> 00:59:38,000
+When you enter this code?
+
+1060
+00:59:38,000 --> 00:59:39,000
+Okay?
+
+1061
+00:59:39,000 --> 00:59:40,000
+What is the code?
+
+1062
+00:59:40,000 --> 00:59:43,000
+So the code is generated from the key.
+
+1063
+00:59:43,000 --> 00:59:46,000
+From the master key that the device shares with the system.
+
+1064
+00:59:46,000 --> 00:59:47,000
+And the current time.
+
+1065
+00:59:47,000 --> 00:59:48,000
+Never mind.
+
+1066
+00:59:48,000 --> 00:59:49,000
+I use the counter here.
+
+1067
+00:59:49,000 --> 00:59:52,000
+But that counter is not really appropriate.
+
+1068
+00:59:52,000 --> 00:59:57,000
+It's more like a clock.
+
+1069
+00:59:57,000 --> 01:00:05,000
+And because the clocks are reasonably synchronized between this fob and the central system.
+
+1070
+01:00:05,000 --> 01:00:10,000
+The central system will know what to expect from Alice at this time.
+
+1071
+01:00:10,000 --> 01:00:11,000
+Right?
+
+1072
+01:00:11,000 --> 01:00:15,000
+Because she knows exactly what the serial number of the fob registered through Alice.
+
+1073
+01:00:15,000 --> 01:00:17,000
+And she knows what to expect.
+
+1074
+01:00:17,000 --> 01:00:18,000
+Or...
+
+1075
+01:00:18,000 --> 01:00:21,000
+Bob knows what to expect.
+
+1076
+01:00:21,000 --> 01:00:27,000
+Now, the original RSA ID was a bit...
+
+1077
+01:00:27,000 --> 01:00:30,000
+Well, it's aged, right?
+
+1078
+01:00:30,000 --> 01:00:31,000
+It wouldn't be used today.
+
+1079
+01:00:31,000 --> 01:00:34,000
+But, you know, it had only 64-bit key, 44-bit counter.
+
+1080
+01:00:34,000 --> 01:00:38,000
+But the idea was that the six-digit value, like for us we do...
+
+1081
+01:00:38,000 --> 01:00:41,000
+I mean, it's more burdensome than just clicking approve.
+
+1082
+01:00:41,000 --> 01:00:43,000
+But it's not too bad, right?
+
+1083
+01:00:43,000 --> 01:00:47,000
+Just copying six-digit numbers is not a huge amount of burden.
+
+1084
+01:00:47,000 --> 01:00:50,000
+So, that was the idea.
+
+1085
+01:00:50,000 --> 01:00:52,000
+It was kind of user-friendly.
+
+1086
+01:00:52,000 --> 01:00:53,000
+Right?
+
+1087
+01:00:53,000 --> 01:00:55,000
+And then, it's verified on this end.
+
+1088
+01:00:55,000 --> 01:00:56,000
+Counter increases, right?
+
+1089
+01:00:56,000 --> 01:00:58,000
+But basically, time it takes, right?
+
+1090
+01:00:58,000 --> 01:00:59,000
+Which is not really counting.
+
+1091
+01:00:59,000 --> 01:01:00,000
+It's time.
+
+1092
+01:01:00,000 --> 01:01:02,000
+Et cetera, et cetera.
+
+1093
+01:01:02,000 --> 01:01:03,000
+Right?
+
+1094
+01:01:03,000 --> 01:01:08,000
+So, the counter is usually based on this sort of 60 seconds.
+
+1095
+01:01:08,000 --> 01:01:09,000
+That's customizable.
+
+1096
+01:01:09,000 --> 01:01:12,000
+You can make it from 15 seconds to several minutes.
+
+1097
+01:01:12,000 --> 01:01:16,000
+Also, it deals with clock skews because clocks are not perfectly synchronized.
+
+1098
+01:01:16,000 --> 01:01:21,000
+So, the system here will allow you to enter a code that it does not expect as long as it's
+
+1099
+01:01:21,000 --> 01:01:27,000
+a code from like the previous epoch or maybe the future epoch because sometimes clocks run
+
+1100
+01:01:27,000 --> 01:01:30,000
+too fast, too slow, so it has some tolerance.
+
+1101
+01:01:30,000 --> 01:01:32,000
+Anyway, that's it.
+
+1102
+01:01:32,000 --> 01:01:33,000
+Let's quickly...
+
+1103
+01:01:33,000 --> 01:01:38,000
+I was hoping to cover more, but let's try at least another...
+
+1104
+01:01:38,000 --> 01:01:39,000
+Oops.
+
+1105
+01:01:39,000 --> 01:01:42,000
+Let's see.
+
+1106
+01:01:42,000 --> 01:01:47,000
+Here we go.
+
+1107
+01:01:47,000 --> 01:01:48,000
+Alright.
+
+1108
+01:01:48,000 --> 01:02:10,000
+So, this type of thing is the last batch of slides that have to do with passwords,
+
+1109
+01:02:10,000 --> 01:02:12,000
+and then we want a much bigger and better thing.
+
+1110
+01:02:12,000 --> 01:02:13,000
+So, remember passwords.
+
+1111
+01:02:13,000 --> 01:02:17,000
+Now, forget all these fobs, forget the biometrics, remember passwords.
+
+1112
+01:02:17,000 --> 01:02:23,000
+This is kind of a research direction, an idea that has taken hold also partially in industry.
+
+1113
+01:02:23,000 --> 01:02:25,000
+That's why I'm covering it here.
+
+1114
+01:02:25,000 --> 01:02:28,000
+And it's about something called honey passwords.
+
+1115
+01:02:28,000 --> 01:02:32,000
+Now, the only of you know the term decoy.
+
+1116
+01:02:32,000 --> 01:02:33,000
+Right?
+
+1117
+01:02:33,000 --> 01:02:38,000
+Decoy is a fake object that pretend to look normal like a real thing.
+
+1118
+01:02:38,000 --> 01:02:39,000
+Right?
+
+1119
+01:02:39,000 --> 01:02:45,000
+Actually, the word decoy comes from Dutch language, from Dutch language, where decoy means a cage.
+
+1120
+01:02:45,000 --> 01:02:51,000
+This is what the duck hunters would use to put a cage over their head and go into the bogs
+
+1121
+01:02:51,000 --> 01:02:56,000
+and swamps and try to hunt ducks without being noticed as humans.
+
+1122
+01:02:56,000 --> 01:02:58,000
+So, that's where we didn't get that word.
+
+1123
+01:02:58,000 --> 01:03:01,000
+And I see fake objects that make you look real.
+
+1124
+01:03:01,000 --> 01:03:09,000
+It's also a long-term tool in security and intelligence and counter-intelligence.
+
+1125
+01:03:09,000 --> 01:03:13,000
+In computer security, decoys are used quite a lot.
+
+1126
+01:03:13,000 --> 01:03:19,000
+If you know anything about intrusion detection, in the real world, something called honeypots
+
+1127
+01:03:19,000 --> 01:03:20,000
+are often used.
+
+1128
+01:03:20,000 --> 01:03:28,000
+Honeypots are fake resources, like fake web servers, et cetera, fake databases, fake portals,
+
+1129
+01:03:28,000 --> 01:03:32,000
+that are used to entrap adversaries.
+
+1130
+01:03:32,000 --> 01:03:33,000
+Okay?
+
+1131
+01:03:33,000 --> 01:03:35,000
+The military is not very good at doing this.
+
+1132
+01:03:35,000 --> 01:03:37,000
+Banks often do it.
+
+1133
+01:03:37,000 --> 01:03:39,000
+Some larger companies do it, too.
+
+1134
+01:03:39,000 --> 01:03:45,000
+They set up these fake sites, fake resources to attract adversaries and to entrap them.
+
+1135
+01:03:45,000 --> 01:03:50,000
+Sometimes we feed them false information, make them believe that they broke into a system
+
+1136
+01:03:50,000 --> 01:03:57,000
+where they actually have it, to observe the adversaries in the wild, to record their behavior.
+
+1137
+01:03:57,000 --> 01:03:58,000
+Okay?
+
+1138
+01:03:58,000 --> 01:04:01,000
+So, honey tokens, honey accounts.
+
+1139
+01:04:01,000 --> 01:04:06,000
+Honey accounts are basically fake accounts for users that don't exist.
+
+1140
+01:04:06,000 --> 01:04:07,000
+Right?
+
+1141
+01:04:07,000 --> 01:04:11,000
+And let's say that user never logs in, doesn't exist, but there's an account.
+
+1142
+01:04:11,000 --> 01:04:16,000
+And so when somebody logs into that account, you know, it's like a tripwire, right?
+
+1143
+01:04:16,000 --> 01:04:18,000
+You know that something bad happened, right?
+
+1144
+01:04:18,000 --> 01:04:22,000
+Because if that account does not correspond to a real user, when a login to that account
+
+1145
+01:04:22,000 --> 01:04:24,000
+occurs, you know you had a problem.
+
+1146
+01:04:24,000 --> 01:04:25,000
+Right?
+
+1147
+01:04:25,000 --> 01:04:32,000
+You had also decoy documents, or honey documents, that is like, you set up a web server and you
+
+1148
+01:04:32,000 --> 01:04:37,000
+put some like a, or a Google Drive, or you put some sensitive company documents that are
+
+1149
+01:04:37,000 --> 01:04:38,000
+completely fake.
+
+1150
+01:04:38,000 --> 01:04:44,000
+And then you wait for any news of these documents leaking to the real world.
+
+1151
+01:04:44,000 --> 01:04:45,000
+Right?
+
+1152
+01:04:45,000 --> 01:04:50,000
+So that tells you somebody broke in, but what they are releasing to the real world is complete
+
+1153
+01:04:50,000 --> 01:04:51,000
+chock.
+
+1154
+01:04:51,000 --> 01:04:52,000
+Right.
+
+1155
+01:04:52,000 --> 01:04:58,000
+So these kind of undervalued things, I mean, they're not used as much as they should be,
+
+1156
+01:04:58,000 --> 01:05:05,000
+so the key question we're going to try to answer, what kind of decoys do we use for security
+
+1157
+01:05:05,000 --> 01:05:06,000
+problems?
+
+1158
+01:05:06,000 --> 01:05:10,000
+Like password breaches, compromise of device data, etc.
+
+1159
+01:05:10,000 --> 01:05:14,000
+And how to use them in a sort of a principled way?
+
+1160
+01:05:14,000 --> 01:05:19,000
+And more, a bigger question is really how to deal with powerful adversaries that will sooner
+
+1161
+01:05:19,000 --> 01:05:22,000
+or later compromise our systems.
+
+1162
+01:05:22,000 --> 01:05:23,000
+Right?
+
+1163
+01:05:23,000 --> 01:05:27,000
+So, the particular topic here is passwords.
+
+1164
+01:05:27,000 --> 01:05:33,000
+And this work is not my work, it's a work by, by a fairly well-known researchers.
+
+1165
+01:05:33,000 --> 01:05:34,000
+One of them is Rivest.
+
+1166
+01:05:34,000 --> 01:05:39,000
+The guy, Rivest is the R in RSA.
+
+1167
+01:05:39,000 --> 01:05:45,000
+The other guy, Ari Jules, is a cryptocurrency, actually no, sorry, he's a professor Cornell
+
+1168
+01:05:45,000 --> 01:05:46,000
+these days.
+
+1169
+01:05:46,000 --> 01:05:49,000
+So, here's the good news and bad news.
+
+1170
+01:05:49,000 --> 01:05:54,000
+The good news is when you give talks about passwords, there's always news.
+
+1171
+01:05:54,000 --> 01:05:55,000
+Right?
+
+1172
+01:05:55,000 --> 01:06:00,000
+So, for example, this type of news.
+
+1173
+01:06:00,000 --> 01:06:06,000
+And I know this is dated, but I'm just too lazy to update it because there's always treasure
+
+1174
+01:06:06,000 --> 01:06:08,000
+trove of stuff in the news.
+
+1175
+01:06:08,000 --> 01:06:13,000
+In the last six months I've seen at least three or four, you know, giant password breaches.
+
+1176
+01:06:13,000 --> 01:06:14,000
+Okay?
+
+1177
+01:06:14,000 --> 01:06:17,000
+So this was a while ago, but nothing changed.
+
+1178
+01:06:17,000 --> 01:06:22,000
+Password breaches occur all the time in enormous quantities.
+
+1179
+01:06:22,000 --> 01:06:25,000
+The bad news is that it's all bad news, of course.
+
+1180
+01:06:25,000 --> 01:06:29,000
+Now, remember we talked about how passwords are protected?
+
+1181
+01:06:29,000 --> 01:06:30,000
+Hashing, right?
+
+1182
+01:06:30,000 --> 01:06:33,000
+Hashing, shadow files, salt, yeah?
+
+1183
+01:06:33,000 --> 01:06:36,000
+That is still how things are done today.
+
+1184
+01:06:36,000 --> 01:06:45,000
+Now we have Alice, has a password, she logs in, it gets hashed, the system compares the
+
+1185
+01:06:45,000 --> 01:06:50,000
+hash, salt and hash, and lets Alice in if she typed in the right password, and if she
+
+1186
+01:06:50,000 --> 01:06:51,000
+doesn't.
+
+1187
+01:06:51,000 --> 01:06:52,000
+Right?
+
+1188
+01:06:52,000 --> 01:06:53,000
+So, that's how we do things.
+
+1189
+01:06:53,000 --> 01:06:54,000
+Just recall.
+
+1190
+01:06:54,000 --> 01:06:55,000
+Right?
+
+1191
+01:06:55,000 --> 01:06:59,000
+So, the password is hashed, but we're not compared.
+
+1192
+01:06:59,000 --> 01:07:00,000
+Okay.
+
+1193
+01:07:00,000 --> 01:07:05,000
+Hashing and salting is good because the adversary, remember, cannot mount a completely offline attack.
+
+1194
+01:07:05,000 --> 01:07:14,000
+It forces the adversary to first compromise a password file, which contains salted caches,
+
+1195
+01:07:14,000 --> 01:07:16,000
+and then break it.
+
+1196
+01:07:16,000 --> 01:07:25,000
+But, salts are not that long, and that means the adversary will eventually win.
+
+1197
+01:07:25,000 --> 01:07:26,000
+It doesn't change anything.
+
+1198
+01:07:26,000 --> 01:07:27,000
+Right?
+
+1199
+01:07:27,000 --> 01:07:30,000
+You can harden this by slowing down encryption and using very expensive encryption functions,
+
+1200
+01:07:30,000 --> 01:07:33,000
+but in the end, real passwords are weak.
+
+1201
+01:07:33,000 --> 01:07:34,000
+Right?
+
+1202
+01:07:34,000 --> 01:07:35,000
+That doesn't change anything.
+
+1203
+01:07:35,000 --> 01:07:38,000
+Real passwords are weak.
+
+1204
+01:07:38,000 --> 01:07:45,000
+So, the problem is, remember, the salts, you can have to make the salts sufficiently long,
+
+1205
+01:07:45,000 --> 01:07:52,000
+but once the adversary breaks in, right, and learns the password file, the salts for every
+
+1206
+01:07:52,000 --> 01:07:55,000
+user, they're in clear text.
+
+1207
+01:07:55,000 --> 01:07:57,000
+So, they are no longer secret.
+
+1208
+01:07:57,000 --> 01:07:59,000
+Before the adversary breaks in, they're secret, right?
+
+1209
+01:07:59,000 --> 01:08:01,000
+That's why the adversary can't mount an offline attack.
+
+1210
+01:08:01,000 --> 01:08:08,000
+But, once the adversary breaks in and copies the password file, he doesn't know the passwords,
+
+1211
+01:08:08,000 --> 01:08:10,000
+but he learns all the salts.
+
+1212
+01:08:10,000 --> 01:08:11,000
+Okay?
+
+1213
+01:08:11,000 --> 01:08:16,000
+So, the problem, then, for the adversary is just dictionary attacking passwords.
+
+1214
+01:08:16,000 --> 01:08:17,000
+Okay.
+
+1215
+01:08:17,000 --> 01:08:20,000
+So, forget this.
+
+1216
+01:08:20,000 --> 01:08:24,000
+Anyway, there are plenty of good password hacking tools.
+
+1217
+01:08:24,000 --> 01:08:30,000
+There's all this stuff, even from the RockU database that I use today to create dictionaries
+
+1218
+01:08:30,000 --> 01:08:31,000
+of plausible passwords.
+
+1219
+01:08:31,000 --> 01:08:32,000
+Not important.
+
+1220
+01:08:32,000 --> 01:08:33,000
+Right?
+
+1221
+01:08:33,000 --> 01:08:38,000
+The problem is, no matter what you do, no matter what you do, no matter how big your
+
+1222
+01:08:38,000 --> 01:08:43,000
+salt is, no matter what rules you enforce, like, you know, must be 8 characters, 12 characters,
+
+1223
+01:08:43,000 --> 01:08:48,000
+at least one special character, one capital letter, one number, blah, blah, blah.
+
+1224
+01:08:48,000 --> 01:08:50,000
+Those passwords are still weak.
+
+1225
+01:08:50,000 --> 01:08:51,000
+Okay?
+
+1226
+01:08:51,000 --> 01:08:54,000
+And you might as well assume that you can be cracked.
+
+1227
+01:08:54,000 --> 01:08:55,000
+Okay?
+
+1228
+01:08:55,000 --> 01:09:02,000
+So, the point of the matter is, preventing adversary from learning passwords is a losing
+
+1229
+01:09:02,000 --> 01:09:03,000
+battle.
+
+1230
+01:09:03,000 --> 01:09:05,000
+Let's accept this as an axiom.
+
+1231
+01:09:05,000 --> 01:09:07,000
+It's a losing battle.
+
+1232
+01:09:07,000 --> 01:09:08,000
+We can't win.
+
+1233
+01:09:08,000 --> 01:09:09,000
+Right?
+
+1234
+01:09:09,000 --> 01:09:14,000
+And, basically, the adversary will get that copy of a password file.
+
+1235
+01:09:14,000 --> 01:09:15,000
+Somehow.
+
+1236
+01:09:15,000 --> 01:09:16,000
+Okay?
+
+1237
+01:09:16,000 --> 01:09:21,000
+And, once he gets the copy of a password file, he might as well assume the passwords
+
+1238
+01:09:21,000 --> 01:09:22,000
+are in the clear.
+
+1239
+01:09:22,000 --> 01:09:25,000
+Because it's only the barrier is this high.
+
+1240
+01:09:25,000 --> 01:09:27,000
+So, that's bad.
+
+1241
+01:09:27,000 --> 01:09:30,000
+But, not all is lost.
+
+1242
+01:09:30,000 --> 01:09:36,000
+What can we do if we cannot protect our passwords?
+
+1243
+01:09:36,000 --> 01:09:39,000
+I say, at the very least, we can detect.
+
+1244
+01:09:39,000 --> 01:09:40,000
+Right?
+
+1245
+01:09:40,000 --> 01:09:45,000
+If you cannot prevent an attack, at least detect.
+
+1246
+01:09:45,000 --> 01:09:49,000
+Because the biggest problem is not detecting an attack.
+
+1247
+01:09:49,000 --> 01:09:54,000
+If you cannot detect an attack, the adversary will stealthily get in.
+
+1248
+01:09:54,000 --> 01:10:01,000
+The adversary will slow, smart adversary, will not do anything grandiose or, like, anything
+
+1249
+01:10:01,000 --> 01:10:06,000
+large, anything big, like, start exfiltrating terabytes of data.
+
+1250
+01:10:06,000 --> 01:10:07,000
+Right?
+
+1251
+01:10:07,000 --> 01:10:12,000
+Because most organizations, they have, like, routers and all kinds of other logging things.
+
+1252
+01:10:12,000 --> 01:10:13,000
+Right?
+
+1253
+01:10:13,000 --> 01:10:18,000
+Logging facilities where doing something at scale will, like, raise a flag.
+
+1254
+01:10:18,000 --> 01:10:22,000
+Like, for example, if you have a router that says, all of a sudden, gee, there was a spike.
+
+1255
+01:10:22,000 --> 01:10:28,000
+Suddenly, you know, the rate was, I don't know, 200 megabytes per hour in the middle of the night,
+
+1256
+01:10:28,000 --> 01:10:32,000
+and then suddenly I see a gigabyte of data in packets passing through.
+
+1257
+01:10:32,000 --> 01:10:33,000
+What's wrong?
+
+1258
+01:10:33,000 --> 01:10:35,000
+Why is there a gigabyte of data?
+
+1259
+01:10:35,000 --> 01:10:36,000
+Right?
+
+1260
+01:10:36,000 --> 01:10:37,000
+That will raise an alarm.
+
+1261
+01:10:37,000 --> 01:10:39,000
+Smart adversaries will not let that happen.
+
+1262
+01:10:39,000 --> 01:10:44,000
+They will try to shake their traffic not to exceed the normal traffic.
+
+1263
+01:10:44,000 --> 01:10:46,000
+Think smart, right?
+
+1264
+01:10:46,000 --> 01:10:50,000
+At least, assume this, obviously, is at least as smart as you are.
+
+1265
+01:10:50,000 --> 01:10:52,000
+So you will get this.
+
+1266
+01:10:52,000 --> 01:10:54,000
+And now you can impersonate users.
+
+1267
+01:10:54,000 --> 01:10:57,000
+Now, eh, given the time to stop, I'll try to improve.
+
+1268
+01:10:57,000 --> 01:11:03,000
+I really wanted to finish this today, but we'll do it in the first 20 minutes, half an hour, all the next time.
+
+1269
+01:11:03,000 --> 01:11:04,000
+See you Tuesday.
+

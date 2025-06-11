@@ -1,0 +1,968 @@
+that means we want to have both timeliness and freshness of our IP packets.
+Of course, we're also equally interested in protecting integrity of data.
+And make sure that the data in the payload, the data in the packet has not been modified in transit.
+We want to sometimes protect confidentiality of the data, not always.
+Just like in SSL, there's always, like remember there's an option not to use encryption,
+you use null encryption, while in IPsec there are options also not to use encryption.
+But authenticity, authenticity of origin and data integrity are mandatory.
+Meaning you don't want to use IPsec without authenticity of origin and data integrity.
+That's the minimum thing IPsec does.
+In addition to that, you can protect what's called packet metadata.
+That is to protect against eavesdropping.
+So the typical example is that you have, let's say, two branches of the same company.
+Let's say you have an East Coast branch and West Coast branch.
+And inside each branch there's a private network, interconnected lands, all kinds of stuff.
+All kinds of like departments have their own arrangement on the West Coast.
+There's something like that, and on the East Coast, right?
+And how do they communicate?
+Well, normally, you know, IP posts on one on the East Coast, also IP posts on the West Coast.
+And notice that if you eavesdrop on these packets in the middle of the Internet or outside these organizations,
+you will know who is talking to whom, right?
+So that's information that can be valuable, right?
+Because you're also learning the internal structure of the private network, okay?
+It exposes addresses within the private network, both source and destination.
+So what IPsec allows you to do in a certain mode of operation is to encapsulate such packets
+and hide the internal source of this connection so that anyone listening and eavesdropping on IP packets
+anywhere in the middle of the Internet wilderness will only see that these packets go from
+right?
+Company A East Coast branch and Company B West Coast branch, but will not know anything beyond that, okay?
+This is very important.
+This protects against what's called traffic analysis.
+So the general model is like this, right?
+The IPsec assumes that hosts and gateways, right, or border routers, are secure themselves.
+It doesn't make any assumptions about software security, operating system security, etc.
+But it assumes that hosts can be secured and gateways, but the communication lines themselves are insecure.
+Right?
+Whether they're wired, wireless, whatever medium you use, they are insecure.
+Insecure means eavesdropping, insecure means active attacks, like deletion, insertion, manipulation,
+delaying, reordering, etc.
+Okay?
+Now, we will not cover the entirety of the security model.
+And the reason is because it's very complex and it's very abstruse.
+And yes, if one deals with IPsec, one should know everything.
+But I'm going to give you again just kind of an appetizer for IPsec.
+And I'm going to talk mainly about IPsec formats and options.
+But there is something called Ike, called Internet PHTH, which is a basically, think of that as a control, remember the control channel in SSLTLS?
+The one that establishes security, you know, the handshakes and everything?
+That's what Ike does.
+Okay?
+But unlike SSLTLS, where everything is put together in one protocol, right?
+I cannot tell you about SSLTLS packets or record formats without describing the handshake, right?
+Whereas an IPsec, I can't, and Ike is a separate component.
+Okay?
+So, what it does is that it is a protocol, or a set of protocols actually, that establish key material, cryptographic shared keys, between pairs of communicating IP addresses.
+Okay?
+So, we will not talk much about this.
+Ike, in turn, works together with something called security policy, which is an organizationalist, something that every organization that uses IPsec should ideally maintain.
+It's not mandatory, but it needs to be maintained, generally.
+And security policy is basically telling you what IPsec to use, what type of IPsec to use, where.
+So, think about, like, you're trying to communicate within your organization.
+You work for ABC Incorporated, and you are in your branch office, you're working in a particular office, you have your private network,
+and you're trying to establish a connection, let's say, to a nearby post, right, inside.
+And it might look at your packets and say, oh, this is inside, no IPsec required.
+But as you are trying to maybe communicate, let's say, to a social network outside, it might say, for example, no.
+Which means, not allowed, period.
+IPsec, IPsec, not allowed.
+Okay?
+See, Facebook, there's no way.
+Or it might see something like Gmail, right?
+You're going to Gmail, right?
+You're going to Gmail.
+It might say, oh, if you're talking to Google, then you have to use IPsec in this mode, this
+specific mode.
+And I'll show you examples of what that means.
+So, the policy governs the security flavor that is applied to a specific host to host connection.
+So, there are two formats in IPsec, and it can be confusing, so I'm going to try to step
+through it.
+One is called S, or encapsulating security payload, and it's more complex.
+And the simple one is sort of IPsec-like, it's called authentication header.
+Okay?
+So, you use one or the other, between the two hosts, you don't generally use more than one.
+You pick one or the other.
+And to make, well, more later, so you can use it in a following way.
+You can use it in a host-to-host communication, just like an example I described.
+You have host A in the West Coast branch, talks to host B in the East Coast branch.
+Right?
+So, these are host-to-host, ant-to-ant use of IPsec.
+You can also use it host-to-gateway.
+An example of that is, let's say you are an employee of that ABC incorporated.
+You take your laptop with you on travel to Turkestan, and you are in a hotel room, or
+in an internet cafe, or something like Starbucks, and you want to dial back home.
+You want to call home, check your mail, whatever, work on some internal documents.
+So, in that sense, you are communicating your laptop, your host communicates to the gateway
+of your home office, of the private network in your home office.
+So, the IPsec connection would be then between your interface on your laptop, and the IP interface,
+incoming IP interface on your gateway.
+Okay?
+Alternatively, it would be gateway to gateway.
+That would be, for example, if the same as my first example, host A in West Coast branch office
+talks to host B in the East Coast branch office, but the connection is not IPsec.
+End-to-end, it's between their respective gateways.
+Does that make sense?
+So, the gateways provide like a secure tunnel or secure pipe.
+And then, within each branch office, there is no IPsec.
+Meaning, between me, let's say I am host A, between me and my exit gateway, there is no
+IPsec, and the IPsec starts there, goes to the gateway of the other branch office, over
+the wilderness of the internet, there it terminates, and from there on to the destination host B,
+there is no IPsec.
+Okay?
+That's, that's gateway to gateway.
+Okay?
+And, to make things even more interesting, all these things can be combined.
+Okay?
+It is, there was a marker here at some point, but I think it's gone.
+What's going on now?
+Is there?
+Oh, wow.
+Okay, so, you could have host A. This is the branch office, this is the branch office.
+This here is bad, right?
+Internet.
+And, this host could actually have an IPsec connection here, to this gateway.
+Then, there could be another IPsec connection between gateway B and a gateway A, and a third
+IPsec connection between gateway B and host B. That is if you, like, don't trust the internal
+networks, right, in either organization.
+So, you could have that, that's totally fine.
+What is also fine, one second, is you could have, everybody saw this, right?
+You could have a connection that goes like this, okay?
+Between A and B, that's called IPsec E to B, and this is IPsec G to G.
+So, there is an encapsulation here.
+Does that make sense?
+So, you have an end-to-end connection from A to B, but from gateway to gateway, from gateway
+to gateway to gateway to B, you have another one on top of it, like a thicker pipe.
+And so, the idea is that there may be many other hosts here, many other hosts there, but
+they will utilize the same pipe.
+Question?
+Yes.
+Okay.
+And, you can imagine other variations as well, right?
+For example, my first example with three of them doesn't have to be like that.
+It could be like A to gateway, there is no IPsec, then gateway to gateway, there is IPsec,
+and then again, gateway B to B is IPsec.
+Totally fine.
+Any combination is okay.
+So, as I said, AH, authentication and ASP, and to make things, this is very important,
+to make things even more confusing and complicated, there are two modes of operation for each.
+So, both authentication and encapsulating security payload can operate in two modes,
+transport and tunnel.
+Okay?
+So, what's the main difference?
+You'll see the pictures, the pictures are on board worth a thousand words, but the main difference
+between tunnel and transport mode is in tunnel mode, you take an IP data here, IP packet,
+and you treat it as a block.
+You slap a new header in front of it.
+Does that make sense?
+That's a tunnel.
+It means you're hiding the entire IP packet, or protecting the entire IP packet as is.
+That's tunneling.
+Transport is, you don't do that, you just use the original IP header, and then in the middle,
+between IP header and the payload, right, the transport, etc., you stick an IPsec header.
+So, it saves bandwidth, right?
+And some process.
+But, it's a trade-off.
+Why?
+Because, anybody can already see from my description where is the trade-off?
+There's one trade-off.
+Tunneling is more secure because non-tutneling, transport mode, exposes the end-to-end IP addresses.
+Whereas, if you tunnel, right, for example, in this case, if we had here,
+if this connection is transport mode, right, everything is cool except the A and B addresses will be exposed.
+If the A, this gateway to gateway to gateway to B is in tunnel mode, then the A and B addresses are hidden.
+Well, unless you use just authentication, which is stupid, but you don't want to do that.
+But, they're hidden.
+Which means, on the internet here in the wilderness, the only thing you would see as source destination IP would be gateway A, gateway B.
+Okay?
+So, now you sort of know the difference.
+Right.
+This is just a point if you're not familiar with gateway, but I'm using it in a sense of a border router.
+Right?
+So, if you know, you should know, that the internet is composed of what's called ASs or ADs sometimes.
+AS or AD stands for Autonomous System or Autonomous Domain, and all of these terminology refers to inorganizational networks.
+That is, could be a ginormous thing like AT&T that provides long range services as one AD or one AS, or it could be something smaller like UCI, which is also NAS.
+Okay?
+But, there's a difference in the internet between something called transit ASs and stub ASs.
+And, just as the name suggests, transit is the one that is in the middle of the internet to provide services to endpoints, and stub is like the end.
+UCI, for example, does not provide transit services to UCLA.
+Right?
+Or the city of Irvine.
+We are a stub.
+Okay?
+Your home network is kind of a stub.
+It's not really an AS, but let's say you are here, I don't know what you guys use.
+You guys use UCI campus networking if you live on campus, but if you live off campus, maybe using Cox, right?
+So, one of my experiences was like for many years I had Cox, right?
+So, Cox is the internet, kind of default internet provider around here.
+And they are an ISP and a stub domain.
+Right?
+Because they have what's called an AS, or domain number assigned to them, you know?
+Anyway, so, typically, IPsec involves gateways, right?
+And they sit on the border of a domain or autonomous system.
+Okay?
+So, this is just going to be a slightly better picture that shows you, right?
+So, this would be the tunnel mode right here, the typical example, right?
+It's not a mandatory example.
+It's not the way to use it.
+It's a way to use it.
+But it's the one that makes sense, is that you would provide tunnel mode between routers.
+This is like my example of branch office, east, west coast, east coast, right?
+There would be tunnel mode between the routers, and then the transport mode between the hosts.
+They do not interfere with each other.
+They totally coexist and they don't care about each other.
+Okay?
+You might view some of this, of course, is a little bit redundant, right?
+But, consider that hosts, why would hosts use transport mode?
+Because maybe this, this is insecure, right?
+Like, why use IPsec between here, you know, end to end?
+Because they don't trust this network.
+I mean, they don't trust this network.
+They may also not trust the routers necessarily, right?
+Different levels of security.
+So, here may be everything, routers may say, okay, this is all secret, or level secret,
+but for the host communication, they say, oh, no, no, we, this session is top secret.
+Which means higher security, so they may want to have a separate session.
+Right?
+And this is yet another pictorial representation for those who are visual learners.
+Right?
+So, you see there, tunnel mode, right?
+This is independent of whether you use AH or ESP.
+The way that, at the top, you have a sort of original IP packet with a header and data,
+and in a tunnel mode, the header and data are protected.
+It says encrypted, it's strictly speaking, not always encrypted, but it's at the very least protected.
+Okay?
+Then it slaps an IPsec header in front, and before that prepends a new IP header.
+Now, if you use this mode between two hosts, like in my previous example, previous picture,
+if you use this kind of a tunnel mode, right, between two hosts, what happens is the same
+source destination addresses are in the inner header, the protected header, as would be in
+an outer header.
+Do you see that?
+Following me?
+Because, right, it's the same two hosts, right?
+Endpoints.
+So, if you use the tunnel mode, the header that is protected, that is within, has the same
+source destination as the header that is outside.
+So, it might seem kind of weird, right?
+In that case, we are not protecting traffic from traffic analysis.
+What we might be protecting is, for example, what protocol is it?
+So, the new IP header here will have the same source destination, right, if it's host to
+host, right?
+But it will not have, remember there's a protocol field in IP header that says, ah, I'm using
+TCP, socket, there's like a support number, or UDP, or ICMP, or God knows what, right?
+There's more than just TCP on top of IP in general, right?
+So, that is potentially sensitive information.
+So, two hosts may want to use tunnel mode to hide what kind of transport layer protocol
+they're using and what port numbers they're using.
+Okay?
+So, you still get something out of it.
+And, um, transport mode, of course, is, as I said before, you take the original IP header,
+and you, you still use it, but you insert the IPsec header.
+Okay?
+The other thing that this, this actually, obviously I hijacked this figure from, from somewhere,
+going to like a textbook, but, um, what it doesn't show you is that, well, never mind,
+I don't actually, never mind, I said, all good.
+Um, that's another representation maybe easier to have.
+You see, original datagram, this example has TCP, but it doesn't, remember it doesn't have to be TCP,
+it could be UDP or some other protocol.
+Transport mode, tunnel mode.
+Okay?
+So, this is the same information as you showed before.
+Slightly different.
+Any questions?
+So, as I said before, it's, as I said, is precisely the set of format, packet formats.
+Okay?
+Not a protocol.
+All right?
+And the first two RFCs, remember I told you what RFCs are, they're kind of like internet standards written in a very special way.
+Not as bad as patents or legal documents, but, but not exactly like technical papers.
+And they're very detailed, they specify, they usually have state diagrams and all kinds of other transitions.
+They encapsulate everything.
+And the reason is, so you should be able to take an RFC, implement it in whatever gut-forsaken language you want,
+on whatever gut-forsaken platform, hardware platform you want, whatever operating system you want,
+and it will still interoperate with anything else that runs the program.
+That's the whole idea.
+Right?
+Whether you use an 8-bit processor or a 64-bit processor, a supercomputer or an IoT device,
+they will interoperate.
+If you faithfully implement the program.
+So, the first two are IPsec.
+And this is the item, you know, you can look at it, it's really complex.
+And the reason it is so complex is because it was designed to be super open and flexible,
+meaning that the Internet Engineering Task Force, the organization that oversees Internet standards,
+not just security, but all Internet standards, is international.
+And it doesn't, it tries not to be, like, very centric about protocols or algorithms,
+like encryption algorithms or authentication algorithms, so it tries to accommodate everything.
+And so it tries to be super flexible and leave room for new, new, new techniques.
+Right?
+So that's why what AH and ESP tell you, only the formats.
+Only the formats.
+Okay, let's zoom into authentication here.
+That's the lightest IPsec version.
+It basically provides two things, origin authentication and data integrity.
+It does not, even though you will see the word encrypt, it does not encrypt.
+Okay?
+It does not provide confidentiality.
+It provides data integrity and origin authentication.
+Okay?
+Also protects against, like, replayed, or allows you to detect replayed and out-of-order messages, packets,
+by using this sort of monotonically increasing sequence number.
+Not the same thing as a sequence number inside that IP had.
+Its own sequence number.
+Okay?
+So remember, no data confidentiality, no metadata confidentiality, in this version.
+Okay?
+So as I said, 32-bit sequence number, and then uses cryptographic hash algorithms, which are
+basically all kinds of versions of HMAC.
+Remember HMAC?
+Kind of quickly defined it, showed you how it works.
+HMAC is a construct that can be used with any good hash function.
+Where good means cryptographically strong hash function.
+Only symmetric crypto.
+Only symmetric.
+Okay?
+Here's the format of the beast.
+First thing you see is next header, which is basically a pointer to what to do next.
+Right?
+Remember the packets are concentric, right?
+Outer header, inner header, inner inner header, and then finally data, right?
+So you should be able to, you know, your code, right, that runs and parses packets needs to
+go from processing one header to the next header to the next.
+So it tells you the next header, where the next header is.
+Then it says payload length, right?
+Right?
+That's the, that's the size.
+Then it's reserved, God knows why.
+60 bits, not used.
+Then there's five, the security parameters index.
+Don't ask me what, why they picked this terminology.
+Well, actually what it is, is like a session ID.
+Okay?
+So this identifies, SPI identifies the session, this particular session between these two
+communicating IP posts or IP interfaces.
+It is one way, just like SSL-TLS, remember?
+It's one way.
+Meaning that SPI used for host A to B is going to be different than the one used from B, or
+back at set, from B to A.
+Just like SSL-TLS.
+Which means like the keys associated, right?
+With A to B direction will be different than those keys used in B to A direction.
+Xenos number that I already told you about.
+And then authentication data, which it has variable size depending on which cryptographic, like
+HMAC flavor you're using.
+Because remember, HMAC outputs a value of a hash function, right?
+Remember there's two concentric applications, right?
+With a key, etc.
+But the output varies.
+If you're using SHA1, it might be 128, as little as 128 bits.
+Using SHA2 will be at least 256 bits.
+SHA3, there are a few other hash functions that have it.
+So the size of the authentication token, this is the authentication data that authenticates
+the packet, will vary depending on the hash function used in the HMAC.
+And how do you know which function is used?
+Well, the SPI, right, is the identifier of the session that will point to a record somewhere,
+right?
+They'll say, oh, this connection uses this hash function for HMAC.
+Okay?
+So there's no confusion, right?
+You see, there's no confusion about how long this should be.
+But it is a variable field.
+Now, for a given host A to host B H session, you cannot change the hash function.
+There's no change cipher spec like an SSLT has.
+You are fixed for a given connection.
+More pictures?
+Okay, so this is, again, we're talking about authentication here, but remember, every version
+AH and ESP can be used in tunnel mode or transport mode.
+So, up top is the IP diagram, right?
+I think the colors make it kind of clear what we're talking about, right?
+So, the top is untouched original IP packet.
+It has an IPv4 header, and the protocol field says 6.
+6 is reserved for TCP, right?
+So, that's how it's parsed, right?
+When you receive, and this is not really looked at so much or processed by the routers along the internet,
+but the receiving host gets an IP packet.
+It parses as the IP header, looks at the, oh, it's 6, so I pass it to TCP.
+It's something else, I pass it to UDP or ICMP, whatever.
+These numbers are reserved.
+Okay?
+They are part of the standard, IP standard.
+Then you have TCP header, you see, right?
+And then you have data.
+And all of that TCP header plus the dark, dark green,
+make IP data, right?
+So, as far as IP, that's always IP data.
+Okay, so what do we do in the transport mode?
+In the transport mode, the IP has stays, right?
+As I said, it stays almost the same, but the protocol field changes to 51.
+51 is reserved for IP set.
+So, what they're receiving those processes.
+The header, it says, oh, not going to TCP, not going to GDP, not going to ICMP,
+going to IP set, invoke IP set receipt.
+Okay?
+And then what follows this is the H header, authentication header that you saw earlier.
+And inside it, there's all these fields you saw, but you see the next header, 6.
+That means the next header is TCP, right?
+Because that's how they are laid out.
+IP, IPsec, TCP.
+I mean, no mystery header, right?
+Tunnel mode, by now, should be kind of obvious, right?
+There was your original header that goes here.
+Intact.
+Notice nothing changes.
+This whole thing, this whole block is exactly what you see at the top, right?
+It's like verbatim, wholesale, taken and encapsulated.
+Identification header, stuck here.
+Okay?
+New IP header in front.
+So the packet begins with a new outer IP header.
+The protocol is 51.
+It means IPsec is next.
+So as this header is parsed, IPsec is involved.
+Right?
+IPsec received.
+IPsec looks at this and says, oh, let me authenticate.
+First of all, it makes sure that it finds an entry.
+It's like a table somewhere that says, I have a key for this connection, right?
+It uses SPI to do that.
+It looks up.
+Now this is the key.
+I authenticate.
+If authentication fails, done.
+Packet is discarded.
+Okay?
+But if the packet is okay, everything checks out, where do we go?
+Next header.
+Why four?
+Four is the reserve for IP.
+So it actually goes IP, IPsec, back to IP.
+Because it now processes this as an IP packet.
+And IP here says on the X protocol 6, TCP.
+So it sounds a little weird, but it holds very robust.
+It goes IP, IPsec, IP, TCP.
+All within your kernel, right?
+Or maybe outside the kernel, depending on which .
+Questions?
+Pretty straightforward, right?
+Okay.
+Now it gets a little more tricky, but just a little bit.
+ESP.
+Redundant, redundant, redundant.
+Don't ask me why.
+They designed it that way.
+My guess is because, well, I kind of was around during that time.
+I sort of remembered that the idea was to give people a choice between something very lightweight, like AH.
+Which means that you could use upper layer encryption, like you could use something like SSLTLS, whatever, at a higher layer.
+But at IP, you should just have basic protection, like integrity and origin authentication.
+But everything else, leave it to the higher layer.
+So that's one philosophy.
+Right?
+Another philosophy is protect everything.
+And that's more like what ESP does.
+So they do overlap.
+Meaning that they actually, you could use one to, you know, you can configure one to be almost like the other.
+But they do offer also different services.
+So it provides everything that AH already offers, but also gives you data confidentiality, which means like actual encryption of data.
+The details uses a counter also to detect, replace, and delay, and replace reward packets.
+Uses similar integrity check coverage because it also needs integrity.
+You cannot, you should not be just using encryption without integrity.
+Okay?
+But distinctive features, confidentiality, and metadata protection.
+Right?
+So metadata confidentiality as well, meaning that you can hide the actual endpoints from being used.
+And here we go.
+Here's the header.
+The first thing you see in a header is SPI.
+Now let's walk back to the application header.
+What do we see?
+You see SPI and a sequence number.
+Here?
+You see SPI, sequence number, but it's preceded by a few things.
+So it's not exactly the same.
+Yeah?
+So you're making it sound like AH doesn't have the ability to protect the earth at the endpoints?
+It cannot.
+So what's the point of tunnel mode?
+What is the point of tunnel mode?
+Good question.
+Good question.
+Yeah?
+If you use the tunnel mode, you get double protection maybe?
+I mean, you could imagine that...
+Let me see.
+You could, you could imagine that, like to say you're using some higher layer, like session layer encryption,
+and the tunnel mode maybe gives you some, a little extra because you could use maybe a tunnel mode between two gateways
+and rely on, on application level security for hand to hand.
+But I'm not sure if that, that actually holds water.
+So that's one of the things that they, for compatibility, decided to provide both tunnel and transport for AH and ESP.
+You had a comment?
+Come on.
+I just think that tunnel mode may be used for like, things like VPN.
+Yes.
+Tunnel mode is used by, for VPN.
+But what his question is, since tunnel mode does not protect the source and destination addresses, the original source and destination, what is the point?
+For AH.
+For AH.
+For AH, right?
+So in AH, what does it actually give?
+And I think there is something, there is something maybe that have to do with, ah, you remember, hey, so you have these mutable fields, right?
+Remember mutable fields, the fields that change an IV header?
+Well, if you tunnel, then you protect the fields of the inner header, everything.
+Does that make sense?
+Because, but, and it doesn't actually change, right?
+Until the end of the tunnel.
+But still there is something, there is, I didn't remember there was something.
+So that's that.
+That you get to protect these fields that normally change an IP.
+So, let's just go back for a second.
+Right, right.
+So, let's look at the transport mode.
+In the transport mode, the original IP header, right, is still there.
+And it has these fields that change, remember?
+Time to live, check some, fragmentation, right?
+IHL, they can change.
+In transit.
+So you cannot really protect them.
+It protects other fields, like source, destination, but not those.
+Not the ones I have in red, remember?
+But with the transport mode, sorry, with the tunnel mode, the former IP header is now here.
+And it's protected fully.
+Because these fields don't change in here, right?
+As the packet moves through the internet.
+They change in here.
+Right?
+Is it worth it?
+Eh.
+Eh.
+It's a little bit of like a tiny delta you get out of it.
+If you ask me, I wouldn't use it.
+I think like, for example, in the second example, we can maybe defend the tray in the contact mode.
+What?
+Like the tray of that.
+So that the receiver can know where actually this package comes from rather than in the transport mode.
+Well, no, no.
+In the transport mode, you do.
+You do.
+Because the authentication header, I mean, I'm assuming here that the tunnel is end-to-end, not gate-to-end.
+Okay?
+So let's think of tunnel as end-to-end.
+You do know where it comes from.
+Because the authentication header in either mode, in either mode, protects the IP header, this IP header, or this IP header, but only the fields that don't change.
+And source destination does not change.
+Right?
+But if you're using it in a gateway-to-gateway, right?
+Gateway-to-gateway, like there, what would happen is, so there's no IPsec here, I suppose, no IPsec here, but there's IPsec here.
+A will send a packet with IP header that has A, the source, B destination.
+When it gets in a transport mode, it still has to be A source, B destination.
+But when in tunnel mode, the outer header will say, gateway A source, gateway B destination.
+See the difference?
+Because it's tunnel, right?
+So the outer IP header will have the end points of the IPsec connection, which is in this case, between these two.
+And this type can still reach the packet.
+Yeah, yeah, yeah, yeah, yeah, yeah, yeah, sure.
+Sure.
+As I said, AH provides zero confidentiality, only integrity and data and origin of integration.
+So in that case, that I just described, gateway B will be able to verify that this packet really came from gateway A.
+And that the data has not been modified.
+But that's it.
+Right.
+Okay, so ESP.
+So you see the area is a bit different.
+The security parameter index followed by sequence number.
+I mean, those are the same as in the previous, but the AH and other stuff before.
+Then there's payload data.
+This is different.
+It's encapsulating.
+Encapsulating means you can encapsulate, right?
+Which means you don't just stick something in the beginning, you stick something in the end.
+That's what encapsulation actually means in English, right?
+Like you're surrounded.
+Therefore, this is the actual payload that you're protecting.
+See?
+This is the variable length.
+Okay?
+Then there's padding because you need to align it on a 32-bit boundary.
+If it already aligns, no padding.
+It's optional, right?
+Next header.
+Next header.
+Next header.
+Next header.
+Next header.
+Same as before.
+Followed by authentication data.
+This is the variable length.
+See?
+This is the variable length.
+Okay?
+Then there's padding because you need to align it on a 32-bit boundary.
+There's no padding.
+There's no padding.
+There's no padding.
+It's optional, right?
+Next header.
+Next header.
+Same as before.
+Followed by authentication data.
+And that's it.
+So this is the end of the packet.
+Right?
+The word is trailer.
+Header.
+Trailer.
+And in between is the packet.
+Whereas AH was about header on the trailer.
+Right?
+That's it.
+That's the main difference.
+That encapsulation has both headers.
+And the packet is stuck in the middle.
+And AH just has a header.
+So why do we put next header?
+Header.
+Header.
+Trailer.
+And in between is the packet.
+Where as AH was about header on the trailer.
+Right?
+That's it.
+That's the main difference.
+That encapsulation has both header and trailer and the packet is stuck in the middle.
+And AH just has a header.
+So, why do we put next header here? Because, well, it tells you as you parse the packet, right? As you parse the packet, it tells you, oh, and check this authentication, right? It comes at the end of the packet.
+So, it allows you essentially to, as you're receiving the packet, right, kind of keep computing in real time the authentication of that packet.
+And then when you start, when you finally receive this, you compare it. So, it doesn't match? Good. Right?
+And then it allows you also to right away jump to the next header after that.
+But the next header isn't actually here, right? It's not below, right? This is the end.
+The next header is actually there. Do you see how this is different?
+So, before, the next header was like following, right? But there's nothing after this. This is the end.
+The authentication data is the trailers. So, there's nothing after it. The next header is here.
+Okay? So, this is the same picture. So, before, except this one is for PSP.
+Same original data, original packet at the top.
+So, then you have transport mode. Transport mode, the IPv4 header copy. Now, the protocol is 50. Now, 51, 50 is reserved for ESP.
+Okay? Then it's ESP header that you saw previously. Inside the whole TCP, the payload that you saw where they are. You see the, what's it, lilac followed by darker green.
+And then, at the end is the ESP trailer, which says, next header, pointer. Okay?
+Make sense? The meaning of next header is the same. It's which protocol to invoke next.
+And then, the very last thing is the data, the authentication data.
+Tunnel mode? Okay. Already, by now, it should be clear. Protocol, 50. New IP header. Brand new IP header.
+ESP header. The original IP datagram, untouched, encapsulated, and encrypted. Okay?
+And then, you have the ESP trailer, and then D. So, minor difference, right?
+But, you protect the entire, you protect the meaning of next header.
+Everything here, in this rectangle, is fully encrypted.
+And should be, essentially, a black box.
+Naturally, why have both, right?
+So, I think you already kind of see one answer, right?
+One is lightweight.
+One of them says, you know what?
+I don't deal with encryption.
+I just give you the bare bones,
+authenticity of origin, and data integrity.
+That's it.
+And the other one says,
+I'm going to give you the whole enchilada.
+I'm just going to give you everything you want.
+Encrypt everything.
+Why is it not using public key?
+Well, public key is expensive.
+You never want to use public key for bulk data, right?
+That's, like, super obvious.
+Right?
+You always want to use symmetric key cryptography.
+And just like SSL, you know, once you establish a connection,
+only symmetric cryptography is used, say, here.
+So, the way to think about IPsec is really more like
+the record layer in SSL-TLS.
+Remember that?
+It had this record layer, and it had these protocols on top
+that are doing the management, right?
+Establish reconnection, alert, blah, blah, blah.
+Well, IPsec is, like, the data, the record layer in SSL-TLS.
+Algorithms, that's not for IPsec to decide, right?
+IPsec just provides formats,
+and it leaves the choice of algorithms both for computing and integrity check
+and for encryption, it leaves those two specific endpoints policy, right?
+Decisions.
+So, I want you to remember, of course, this is more like, it's more than obvious, right?
+That what you get is, at the very least, what I'm saying is authentication, right?
+The data integrity, but who does it authenticate, or what does it actually authenticate?
+It does not authenticate a human.
+It does not authenticate a chair.
+It does not authenticate a window on your screen, or a web browser, or a user who is logged in
+on a particular account.
+What it actually authenticates is, like, this specific interface here.
+And a given host, like this, as I said before, can have many interfaces, right?
+You could have IP over Bluetooth.
+You could have IP over wired Ethernet.
+You could have IP over Wi-Fi.
+You could have IP over ZigBee.
+You could have IP over Pigeons, for all I can.
+You could have IP over any medium, a data link Mac layer.
+And so, it only authenticates the interface.
+Okay?
+Another important thing, denial of service.
+I said nothing about denial of service.
+Because IPsec sucks when it comes to denial of service.
+And I don't blame it, because if you want security, denial of service is a security in and of itself
+is denial of service.
+Why?
+Because think about this.
+You have a router, I'm sorry, a gateway, like one of those guys, or a host.
+And they have an IP, one or more IP interfaces.
+And let's say you're using IPsec, right?
+And some adversary says, oh, you're using IPsec.
+How nice.
+I'm going to send you a barrage of IP packets that look like IPsec, right?
+But the authentication data, right?
+It's just frivolous.
+It's just garbage.
+Now, you cannot just send a random packet with random source to a given IP address.
+You have to send it or an IP address for which the source already has a connection, right?
+That association.
+So what you do, you eavesdrop on the communication.
+You say, oh, these two hosts, I don't care what they are, our gateways are, all right?
+We'll just close.
+Yeah, using IPsec.
+You can tell this from the headers, right?
+Remember, header says 50, 51, IPsec.
+You can tell.
+Nice.
+Well, what you do, you say, okay, I see a packet that uses IPsec, and it has source A destination B.
+I'm going to manufacture a giant quantity of packets in real time with source A, not my source,
+but I'm going to fake it and put source A destination B, IPsec, and the authentication of this garbage.
+Right?
+You with me?
+And send high speed to the victim.
+What is the poor receiver going to do?
+Well, the receiver, it says, right?
+Yes, sir.
+IPsec packet received.
+I have a connection with B, right?
+Verify authentication token.
+First thing.
+Well, that's not easy.
+That requires computing a HMAC.
+You might think, okay, HMAC is not a RSA decryption like in TLS SSL, right?
+But it's still inexpensive and frivolous operation because it prevents you from actually getting data
+by actual service.
+That's why it's called denial of service.
+Essentially, it's like, denial of service is like saying, you know, remember, I think I already mentioned this analogy.
+You're trying to exit your house front door and somebody points a fire hose at you.
+That's denial of service.
+You can't exit your door because there's a fire hose with, like, high-pressure water.
+Now, that's one type of denial of service.
+If the adversary has a fire hose, what would be an equivalent?
+A very high-speed interface that is able to generate a huge amount of traffic directed at the victim.
+A version of that is a distributed denial of service.
+Much, much craftier, much easier to mount that kind of an attack, which is the other system.
+Then I don't have enough bandwidth or my interface is not fast enough to just, like, I have a trickle.
+I can point, like, a guarded hose at your door.
+But if I get a bunch of zombies or a botnet or out the internet to start sending you low bandwidth IPsec packets,
+you follow what I'm saying?
+It's like I get everybody in the room to take a guarded hose and point at the door.
+20 guarding hoses equals fire hose.
+You get the idea.
+So, IPsec is actually a pain in the neck for denial of service because it forces the receiver to verify the authentication token.
+That means it has to receive the entire packet.
+It cannot say halfway.
+It's like receiving the header, saying, ah, this doesn't look good.
+No, no, no.
+It has to receive the entire packet, right, because the A and B already have an IPsec connection.
+It receives the entire packet, verifies the header, saying, ah, garbage.
+By that time, CPU resources have been consumed.
+Bandwidth resources have been consumed, right?
+That's denial of service.
+An IPsec makes it worse.
+Oh, it makes DOS easier.
+The other thing to remember, the order of operations.
+First, you encrypt, then you authenticate.
+So, if encryption is used, and this does not apply to authentication, this applies to ESP, right?
+The first thing you do, whether you use transport mode or autonomous mode, it doesn't matter, is that you first encrypt this, right?
+Or whether you're doing this or this, the first encrypt, and then you compute the authentication.
+Why?
+Good example.
+Why don't do it the other way around?
+Why not authenticate the data, put the authentication token inside here, and then encrypt the whole thing?
+Sounds the same.
+Yeah, I mean, you see that says the pink box, and at the end it says ESP authentication data.
+Why not sleep that pink box inside here, right?
+Like, compute the authentication first, and then encrypt also the authentication data.
+Any bright ideas, or not so bright ideas, any ideas?
+Yeah, it's not, so, kind of, yeah, yay.
+And also, yeah.
+There is a, today, encryption, in the past, encryption was always more expensive.
+Like, remember, I talked about DES, right?
+That's, like, a traditional encryption technique, more expensive, like, the order of magnitude.
+Because they were, like, in the olden days, they were designed to work very fast on hardware, but work poorly in software.
+But, today, modern encryption algorithms are pretty damn fast.
+So, they are, like, pretty much the same, you can think of the same speed.
+No, the answer is simple.
+So, if you do it in the other way, which is, you authenticated and encrypt, you would have to perform decryption first, and then compute the authentication token.
+That's double the work before you detect it.
+It's cracked.
+Right?
+Whereas, if you authenticated the packet first, you see what I mean?
+If you authenticated it first, and then decrypted, you don't need to worry about whether the decryption would succeed.
+Because, you know, because it's authentic, right?
+So, unless there was some broken implementation at the sender's end, you know that the decryption is going to work.
+You don't have to wonder whether you will or not.
+Okay?
+So, that's a performance consideration.
+Right?
+Alright.
+We're not going to talk about Ike.
+I'm just going to tell you a few things.
+So, Ike is, like, this giant standard for Internet Key Exchange.
+And it allows, so it's what happens before you start IPsec, right?
+Before you can send IPsec packets.
+Right?
+The keys need to be set out.
+However, IPsec also works with pre-installed keys.
+So, it can, in fact, like, if you have manually installed cryptographic keys,
+have A and B, they don't really need Ike.
+They can just, like, start using IPsec.
+Okay?
+And this is done sometimes with, these days, with Ike.
+Well, it used to be done a lot, but people didn't know how to use Ike.
+There was no Ike yet.
+But it's done also today with, like, IoT devices sometimes.
+Well, the manufacturer will pre-install a key or a set of keys,
+and then an IoT device doesn't really talk to many hosts, right?
+An IoT device might talk like that.
+Your Echo, what does it talk to?
+If you have an Echo voice assistant.
+Who does it talk to?
+Amazon.
+It's mothership, right?
+It doesn't talk to random other devices, really, right?
+At least not the flow-end Echo.
+So, for those types, they say, I'll just pre-install a key, you know?
+So, that might be...
+I'm not saying I don't know if Echo's use IPSec, but that's one way.
+All right.
+So, IPSec, what IPSec gives you is this something called security association.
+And security association is where you get the SPI.
+Remember the SPI, SPI, security parameters, and the session ID.
+You get it based on a security association between post-Aid or IP address,
+IP address, and it's always one way.
+Remember, right?
+One way.
+A to B is different from B to A.
+And then every host that uses IPSec is supposed to have a database,
+really just a table of, oh, sad, security association database.
+Okay, where it keeps a record for every security association where it will say,
+I know who I am, I'm host A, but, like, there will be an entry.
+Host B, what protocol to use, like AH, tunnel mode, what is the key, blah, blah, blah, etc.
+Like, lifetime, something like that.
+So, SPI, I already told you, right?
+So, this is an entry that the SAP database, the security association database,
+points you to the SPI.
+So, when you receive a packet, right, you are on the receiving side of the IPSec packet,
+you, remember, every header has a SPI, right?
+Whether it's AH or ASP has a SPI field.
+You take the SPI field and you look up that database immediately.
+Okay, if you don't find it, toss the packet.
+If you find it, that tells you, oh, this is the header I'm using.
+So, how do you know which IPSec header, which mode?
+Well, the database tells you.
+Okay?
+So, that's very important.
+You know, it's mandatory.
+Every IPSec application must maintain the database.
+And then it has something called security policy database, which actually governs,
+it's more like a, similar to what you will see firewalls do,
+it governs, like, which connections require which parameters.
+Policies, right?
+It says, oh, if you're talking to an internal host, you don't need to use IPSec.
+If you're talking to, I don't know, our branch office on the East Coast,
+you must use authentication header, transport mode.
+Okay?
+Or if you're using, if you're talking to, I don't know, a host in a foreign country,
+then you must use the host to gateway ESP transport mode, something like that.
+It's a policy.
+Something your security, every organization's security administrator configures.
+All right, so it kind of fits together like this.
+Then, of course, the blob is the internet.
+And so that each host will have its own database of security associations
+that will be governed by the security policy database.
+Well, I think I'll just end on this, because I don't really want to go for it, Ike.
+The idea is, the main thing you need to know about Ike is that it establishes a secure channel,
+like, outside, on the side, like a control channel,
+and it establishes a set of keys.
+Okay?
+And then, after that, we do like to say.
+So Ike has its own message format.
+It does not, this is where it differs from SSLTLS.
+In SSLTLS, all the messages go for the record player, if I remember.
+Well, in Ike, they don't.
+Ike has its own message format.
+And so that, this is like the example.
+It might be helpful.
+So in this case, we have host A, kind of like what I drew on the board earlier.
+Host A, and then two gateways, right?
+The blue arrow is the internet, right?
+And then you have host B.
+And so, in this case, A and B use a transport mode of either H or ESP, like end-to-end.
+And in addition to that, the gateways between themselves use a tunnel mode to hide,
+among other things, the IP addresses of the internal host.
+So if we look at, like, inside the host A, its security policy database might say something like,
+oh, if I have, if I'm talking to host B on any protocol, using any protocol, and using any port,
+remember, any transport, when protocol means any transport, or about IP protocol,
+and any port, I should use authentication header, IPsec, with HMAC MD5,
+that is MD5, so HMAC instantiated with MD5 hash function to protect, to compute the authentication data.
+Okay, that's a policy database, it contains no keys, it does not refer to any active connection,
+it is a general policy.
+But the SAD, the security association database, will say, ah, currently, there is a connection
+between A and B, and the protocol we use is AH, as policy dictates, right?
+And the SPI is 12, so that's our session ID, and our, we're using HMAC MD5,
+and probably what I don't show here is that the actual key will be stored there, too.
+Okay?
+Now, the gateways database, right, this is gateway C, will say something like,
+oh, anybody from subnet, this refers not to A, but subnetwork, right?
+That's what subnet is, right?
+So anybody on A's subnet, talking to B's subnet, on using any protocol on any port,
+must use ESP with triple tensing, or encryption.
+And tunnel destination is D, that's our friend D over here, right?
+That's the endpoint of the IPC tunnel.
+So that, again, is policy, does not refer to any existing connection,
+doesn't matter if any exists or not, this is the rule.
+The actual, currently, existing connection is,
+there is an A sub to B sub, anybody from A to B,
+there is an existing connection using ESP,
+SPI is 14, there's a number that I picked,
+triple tensing, the key is there.
+Okay, what does that mean?
+If there was another host, A prime,
+talking to another host, B prime,
+they would use the same tunnel.
+Nice, right?
+They all fit in the same tunnel.
+No reason that C and D should have multiple tunnels.
+Everything is within the same tunnel.
+So, an adversary who listens on that blue arrow on the internet,
+it cannot distinguish between,
+he does not know how many hosts are talking to,
+how many other hosts at all.
+The only thing they will see is the volume of traffic.
+The only other thing they will see,
+in addition to the volume of traffic,
+is the timing of that traffic.
+But what,
+this is not part of IPC,
+but what smart people do,
+if they're really concerned about traffic analysis,
+and hiding,
+like, for example,
+in the morning, the volume goes up,
+in the afternoon, maybe at lunch, it goes down, right?
+You might not think this is important,
+but this is very important sometimes,
+especially, like, in critical application,
+defense, you know, et cetera.
+What they do is they pat the traffic.
+Meaning that C and D might send trash to each other,
+just garbage,
+to make it seem like real hosts are communicating.
+Make sense?
+No?
+To obscure the patterns.
+On that note,
+we're done.
+For today.
+So remember,
+I strongly urge you to show up on Tuesday
+for the guest lecture.
+Decision is always true.

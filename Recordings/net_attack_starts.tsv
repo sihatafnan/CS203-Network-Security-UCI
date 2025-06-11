@@ -1,0 +1,548 @@
+start	end	text
+0	8240	perverse a number of what's called autonomous systems. Some autonomous systems are called
+8240	14240	stomp, because you need stomp, meaning that they're like ISPs, that they provide services
+14240	22400	to individual customers. And then there are these transit or backbone ISPs that essentially
+22400	28480	do not deal with individual customers, but rather provide, well, just transit services.
+30000	40240	And so an autonomous system, as I think I have mentioned at least a couple of times,
+40240	45040	is a collection of resources under the control of a single administration.
+45920	52880	It is typically contiguous. So you can have autonomous systems, or you can have an organization
+52880	59200	that is so large that it has multiple sites, multiple locations on the internet, and then
+59200	64800	most likely you have different autonomous system numbers. Each autonomous system is assigned an
+64800	70320	official number. You cannot just pop up on the internet and become an autonomous system. You
+70320	74160	have to register and apply for a number. You can be assigned a unique number.
+74160	87840	Okay. Various days. OSI, standard vertical stack that you probably would have seen in the network's
+87840	95440	power source. Seven layers. It does not correspond to reality. At least not in the upper layer. The lower
+95440	101840	core layers kind of do, because here we have the actual physical transmission, right? Some kind of
+101840	109920	wireless or wired, not basically that, even pigeons, right? Whatever. And then on top of that,
+109920	117440	you have a data layer, something that's called MAC layer, media access control, right? MAC layer. And above that,
+117440	129280	you have a network layer, where in our case, IP lives. And then in a transport layer, you have things like
+129280	137760	TCP, UDP, ICMP, and what else? Some kind of niche protocols. And then on top of that, you have things
+137760	146720	like SSL and CLS, and HTTP, etc. And this has RPC, while this is a bit outdated, but remote procedure
+146720	153120	calls that used to be implemented. This still is implemented on top of the transport layer. And then
+153120	159760	the rest is like session and presentation layer. There's like a bit less clarity, how to map that.
+159760	173200	So we call the data format. So your application will be passing the data forward to the transport layer.
+175200	183680	The data that an application passes to the transport layer can be just a blob, okay? Some kind of blob,
+183680	190080	we don't care how long it is, as long as it fits in the address space of a computer, right? Available
+190080	195760	program memory, some kind of buffer. So we don't say how long this is. Let's just assume it can be
+195760	204320	arbitrarily long. And the transport layer, typically today, what happens is, if it goes to a DCP, right?
+204320	211920	So a DCP is by far the prevalent protocol for transport layer, not the only one. But a DCP layer,
+211920	219680	what happens is DCP will look at the application data and say, okay, I am aware, I, DCP, I'm aware
+220720	230080	of the maximum transmission unit of the lower layers. I know exactly what is the maximum packet size.
+231200	238560	So because it is aware, it will chop that application data into chunks or segments,
+238560	246960	and then slap a TCP header in front of each one of them. A unique DCP header that will be unique,
+246960	251520	because remember, DCP header has all kinds of things. But one of the things you should remember,
+251520	260400	we talked about it, is data offset. Remember offset field? So for a given DCP connection, right, there will be
+260400	268560	different offsets when the application data is split out. But the source, destination, port numbers
+268560	276960	in those PCP headers in multiple segments will be the same. So the offset field is very important,
+277600	282160	and it's interesting because it serves as both the actual offset into the data,
+282160	292320	but it also serves as kind of a sequencing. Except it's not incremented by one, it's incremented by the size of each segment.
+293520	303040	So at any time, a DCP connection, the offset represents the number of bytes, of data bytes,
+303040	317040	in that direction. It's unidirectional, which means that Alice is talking to Bob. This is going to reflect
+317600	328480	the number of bytes that Alice sent to Bob thus far on this DCP connection. Okay? Bob Mason, more or
+328480	338240	less, it has its own offset in Bob to Alice direction. Okay? At the network player, each DCP segment,
+339040	349440	each DCP segment, will likely not get fractured. Okay? Because the DCP is aware that an IP header will be
+349440	357120	slapsed in front of you. So it accommodates that. It takes it into account. Okay? So now we have an IP
+357120	362400	IP header, a DCP header, followed by data. That is faster than the data lake layer. In this case,
+362400	373200	it's Ethernet. Now Ethernet works over wires, twisted there, over fiber, it works over Ether.
+375440	381680	Right? But it stands in, so that's physical layer, right? That's physical layer. What physical
+381680	390080	media uses? But the MAC layer, okay, data lake layer, there's a standard, Ethernet standard,
+390080	396240	that says exactly how packets are formatted. So the network layer, IP packet comes in,
+397040	404400	and Ethernet header is added, and then Ethernet tree lays again. So the packet essentially encapsulates
+404400	411920	this. Okay? If you are using any secure, or if your Wi-Fi, you know, usually wired does not,
+411920	419120	but if your Wi-Fi is using some security measures, like WAP, WAP, or whatever the heck they're using,
+419120	428080	WFPA, that will be taken to our pair, at that layer. Okay? So there will be additional shields,
+428080	432720	additional subtenants here. But what I'm showing you here is just without any security, right?
+432720	439440	If time permits, at some point I will talk to you about wireless security, right? That usually happens
+439440	454640	at this layer, not above. Now, if you listen to prior lectures carefully, you remember me spending time
+454640	463040	on fragmentation, right? And you may ask, why did I spend all this time talking about fragmentation,
+463040	468000	and I just informed you that fragmentation actually does not have an IP layer, right? Yeah.
+469600	480160	Contradiction? Yes. Except that TCP is not the only transport layer protocol. Other transport layer
+480160	489760	protocols are allowed not to be as complicated and to pass to IP anyway. In fact, TCP is just very
+489760	496240	considerate and nice this way. One of the reasons it is, is because it doesn't want to deal with IP
+496240	503680	fragmentation. It has its own fragmentation to use. Do you see? So it wants things to go fast.
+503680	510800	It optimizes through. It optimizes through. Other protocols do not have to do. How many of you are
+510800	520000	familiar with the Linux kernel or any Linux kernel? A few of you. Did you know that there's something
+520000	530960	called raw sockets? Anybody knew that? Good. You can actually have an application, write an application
+530960	539600	that uses IP directly. You do not have to go through some session layer and then transport layer. You can
+539600	547760	actually write an application. They just directly accesses IP. In which case your application is its own
+547760	557680	is your own transport layer. Okay? Stunted, crazy, silly, maybe, yes, but it's allowed. Just FYI,
+559040	567200	many open unisex versions allow you to also write raw ethernet. That is, if your application
+568400	573040	if your kernel configuration lets you do it, you can actually open a raw ethernet socket and send
+573040	579360	directly infinite packets. In which case your own network layer. But these packets will not go
+580000	588240	past the first router. You see what I'm saying? Okay? Unless you re-implement IP and DCP and whatever
+588240	597120	else, right? So that's why this is not a contradiction, right? For example, UDP, which is another transport
+597120	606480	protocol, can hand over to IP a packet that is very big, and then IP is N24, will fragment. IPv6 will
+606480	617840	barge. Okay, let's give you an error. Right, so TCP requires the segment to break data into segments,
+617840	623280	and the receiver must reassemble segments. And because TCP is a connection-oriented
+623280	629920	protocol, right? With explicit establishment and tear down a connection, there's an acknowledgement for
+629920	640640	every packet. Well, there's an acknowledgement, okay? And lost packets, when the lost packets are
+642720	647760	detected or there's no acknowledgement coming through the center for a particular system, it has to
+647760	654800	re-transpense. And one of the more important things in TCP is the maintenance of what's called
+654800	662720	receiver window. Does everybody know what that is? So, normally, when you send segments one,
+662720	668160	segment two, segment three, segment four, you expect, normally, to receive them in the same sequence.
+668160	678640	But what if segment two gets lost? What if some router modifies a bit in segment two, and when it is
+678640	685680	received, it is incorrect. So, it's from away. So, it's essentially not being received. Or maybe it gets
+685680	695040	sent by a different route and gets stuck somewhere. So, that allows, so TCP handles this and allows the
+695040	703760	receiver to receive packets or segments that are not in order. And so, instead of expecting a window
+703760	709680	of size zero, meaning I receive packets one, two, three, the next one is four, right? It says, oh,
+709680	717520	I receive packets one, two, five, but I'm okay with receiving three, four, or six, okay? So, that's called
+717520	723120	the size of the window. The size of the window is dynamic based on the characteristics of the network
+723120	727840	of traffic, right? It has to do with, like, congestion on the internet, okay? And many other
+727840	739440	factors that influence the size of the TCP window. Now, IP is much simpler. Recall, it says vertical,
+739440	745680	but it's actually not a vertical. It is a packet format. It is an extreverse. Every packet is on its own.
+745680	757680	So, it uses either prefixes off or exact destination addresses for routing. Okay? What am I saying?
+758960	768160	When the packet arrives at a router, IP back, the router's main job is to take the destination of
+768160	777120	that packet and look that up in its routing table, FIB, forwarding information dates. That's a weird term.
+777120	784400	It's really a routing table. And it can be huge, huge, huge, especially for a backbone router.
+786000	794400	So, how does it look it up? Well, it's not the exact match. It's possible that the destination
+794400	799440	IP address is exactly present in the routing table. It says to this, for this destination address,
+799440	808000	go there. But most likely it's not like that. What it says is the prefix for that destination address
+808000	815120	is over there. So, you see this example destination here. So, it could be that the routing table can
+815120	821120	trace an entry for exactly this, or it could be that it contains an entry for 171, 64, 66.
+821120	829920	That's called a prefix. That's called a prefix. It's one example. 171 is also a prefix. That's the
+829920	837360	shorter prefix. So, what I think I'm going to do is it looks for the longest prefix, right? The most
+837360	845520	exact match possible. And that is the entry when it finds the entry with the longest prefix. It says,
+845520	853520	okay, what is the next entry? In that entry, you have all kinds of stuff, including which interface
+853520	861040	to forward it on next. What is the next stop for this package? It doesn't know the actual route,
+861040	867520	right? IP routers do not know the actual route this package will take to the destination. It's just
+867520	881920	the destination and the next stop. Okay. If no match is found, what's supposed to happen but doesn't
+881920	890400	always happen is an ICMP destination and reachable packet is generated back to the source.
+890400	898960	source. Okay? So, whatever you see in your browser post-unreachable, right? You're trying to load
+898960	909280	something unreachable, that's essentially what happens. Okay. So, long as we can match,
+909280	915120	of course, there are usually several hops, often more than several. If you actually do a trace route,
+915120	927280	you will see if you do a trace route and then give an IP address or trace out host names,
+927280	936560	you will actually see in excruciating detail the hops, the IP addresses of the hops, your packet takes
+936560	953120	from here to there. Okay. Now, the hops and ASs are different things, right? A hop is a physical
+953120	960080	hop from IP router to IP router or from IP host to the router or from IP router to the destination host,
+961040	969040	right? All these are physical hops. Now, there are AS hops, which means how many ASs you go through
+969040	975680	on the way to the destination. Well, every AS typically has at least a hop within it, right?
+976400	981200	So, you enter an AS through what's called an entry router and you exit through an exit router.
+981200	986240	They may be connected directly or there may be intermediate hops within the AS.
+986240	995120	So, trace route should tell you that, but some ASs do not expose their internal structure
+995920	999520	and they will not reply to this, will not respect the trace route.
+1001280	1005520	So, it's not guaranteed. Typically, what you see in trace route is correct, but it's not complete.
+1005520	1021440	All right. Any questions so far? ICMP is the protocol I mentioned, right? Instead of for plumbing on the
+1021440	1029200	internet, it's a very compact transport layer protocol that is used for exchanging maintenance
+1029200	1033920	messages. This is actually a protocol, not a packet format. I mean, it has packet formats,
+1033920	1040080	but it is a protocol meaning messages here are generated upon some events and they have mean.
+1041840	1052000	So, error reporting, congestion control, reachability, timing, etc. Okay? So, destination
+1052000	1057760	unreachable I already mentioned. Time exceeded. Oh, that's when TTL gets decremented to zero. Remember
+1057760	1063760	TTL and IP packet header? And this packet has been, yeah, usually set to 255. So, if something,
+1064640	1070720	if it reached zero, this packet has been looping around. Something is very wrong. Parameter problem,
+1070720	1076400	I'm not sure what the heck that is. Redirect to a better gateway means that, tells the previous gateway,
+1076400	1081680	your routing is messed up. You're sending it to be a packet, but there's a better place, better next
+1081680	1088560	hop of that packet than me. Reachability test, that's the one, echo reply, that's the one that trace
+1088560	1099040	round uses. And timestamp reply, this is also for when you put a timestamp option in an IP option field.
+1099040	1111120	TMI. Security issues. Many security issues because neither TCP nor IP were natively designed for
+1111120	1118080	security. Remember, it was all designed in a very, uh, prehistoric, friendly world, where nobody wanted
+1118080	1125440	to hurt each other, steal each other's information. So, uh, packets go by untrusted hosts, our routers,
+1125440	1133120	uh, sniff, and maybe log packets. And sometimes, for good reason, organizations, uh, companies will
+1133120	1141280	often log all IP traffic that comes from inside out and also inside in for all kinds of, uh, auditing
+1141280	1146960	purposes. Like if shit hits the fan and things go wrong, they need to investigate and figure out, ah,
+1146960	1153200	how exactly sort of forensically figure out what happened, right? Where did the malware come in? Where
+1153200	1158240	did the phishing come in? Where did the routing update, you know, fake routing that they can be
+1158240	1164480	so they need to do this. And so this logging can, or sniff, sniffing can happen for benign reasons,
+1164480	1170880	or it can happen for non, for malicious reasons. IP addresses, as, as, as we talked about, are public.
+1170880	1176880	They're not hidden, um, unless you're using IPsec, but even with IPsec, right, the outermost IP
+1176880	1186560	here is visible. And it often provides some information. Uh, TCP connection. So IP is difficult
+1186560	1196160	to abuse by itself because it's not a protocol, but TCP is a protocol. And you saw the state diagram
+1196160	1201760	that I hope impressed the heck out of you, right? There are actually courses out there. When I was in
+1201760	1207760	grad school, we had to memorize the freaking TCP diagram and answer, you know, final questions
+1207760	1214880	that you should feel, you should feel lucky. I mean, pretty much everybody failed that. But,
+1215680	1224080	but it was, it was rough. Um, TCP requires state, right? Because the connection is this connection
+1224080	1228240	oriented protocol and every connection oriented protocol on the face of this earth requires state
+1228240	1233440	here and there at the source and the destination or whatever the connection endpoints, right?
+1234160	1242000	And that state isn't free. Depending on how your, uh, network protocol stack is implemented within
+1242000	1250400	the kernel, outside the kernel, it is consuming memory and resources. There is a whole course discussion
+1250400	1254000	of whether you should put, you know, an operating system should keep the network
+1254000	1260240	stack inside the kernel or outside the kernel. Outside the kernel makes the kernel nicer, smaller,
+1261200	1269840	easier to find bugs, et cetera, et cetera, faster maybe, but putting it inside makes networking faster.
+1271200	1276720	Because if the, if the networking stack runs outside kernel space, you have to switch into the kernel
+1276720	1283760	often, right? Because there's some still controls that need to take place. Anyway, um, state is important. And
+1283760	1289680	there are attacks and so attacks on that state. And we will see one very impressive example called
+1289680	1299040	SynthFlight. Also, TCP state, the state that is maintained at both ends of a connection is not secret by
+1299040	1307040	nature. And because it's not secret, it can be sometimes easily guessed. And if you guess that state
+1307040	1313520	correctly, you can manipulate the connection by injecting traffic into it. Even from my outside,
+1313520	1320400	from far away, from far away, you can inject traffic into it. And you can even close a connection,
+1321840	1333440	which is kind of a nifty denial of service attack. Okay, so sniffing is not so impressive, right? So
+1333440	1343920	what they have to do just sniff. But years ago, back in the 90s, early 2000s, there was still a lot of
+1343920	1353280	alignment, there were most implementations of these commands like ftp, telnet, rcp, you may have run into
+1353280	1359360	these commands. And they still exist in many Unix versions, right? FTP file transfer, telnet, remote
+1359360	1367680	login, rcp, remote copy, RSH, remote shell. Okay, these commands required passwords, right? But they
+1367680	1375280	sent them in the clear. Because remember, the world was friendly. Yes, you have to have a password that if you
+1375280	1379760	sniffed on those packets that were sent back and forth, and you sniffed on them in the beginning of a
+1379760	1383840	connection, you would actually get a clear text password. Now, why am I telling you this? This is
+1383840	1388560	prehistory, right? Well, the truth is, prehistory is not actually that much of a prehistory. Because
+1389280	1395360	out there in the real world today, there are still Windows 3.0 implementations running.
+1397040	1403200	Yes, legacy, like from the 90s, there are many places, especially in industrial control,
+1403200	1411680	where really obsolete operating systems are used. Why? Because some software is written
+1411680	1415520	to take advantage of those operating system features, and nobody knows because the people
+1415520	1422240	who wrote it probably are dead now, okay? Or in a retirement home and demented, or doing something
+1422240	1428640	else, and nobody learned how to program on Windows 3.0 because it's so old. You get the point? Just like
+1428640	1436640	NASA and the federal government in general has gazillions of lines of code in various software
+1436640	1446080	installations that run COBOL. Maybe your grandparents know what COBOL is, if they were in the tech industry.
+1446080	1453200	But COBOL is a language from the 60s. Tons of code was written in COBOL, and a lot of it still remains.
+1453200	1462800	Because nobody knows COBOL programmers today earn big bucks. If they're alive. Anyway, so these,
+1462800	1469840	these things still out there. The other thing is that if you, the Ethernet itself, right?
+1471600	1478720	So I'm stepping down into the data link layer. Ethernet by itself has some very interesting features.
+1478720	1484080	Most Ethernet interfaces have a way of being put in what's called promiscuous mode.
+1485040	1492000	And this is how ethereal works and TCP dump, if you've used those pretty popular programs.
+1492880	1499520	They put the card in the, in the promiscuous, your card, the NIC, the network interface control module,
+1499520	1505120	into this promiscuous mode. And you basically receive all the packets sent on the second. So
+1505120	1511360	it means that if one of you does this with ethereal and TCP dump, you should be able to see everything
+1511360	1516320	that goes on here, maybe even outside, as long as the same access point is being used.
+1517440	1522560	Right? It's called an Ethernet segment, right? So you will hear all the packets on the Ethernet segment.
+1524880	1527520	So that's not very nice, but that's how it works.
+1528400	1534240	Now, if there's wireless security, like web, web, WPA, or something like that, plus there is IPsec,
+1534240	1539760	plus there is SSL, you won't get anything. But at the very least, you'll see who is communicating.
+1541760	1543840	You will also see how much they're communicating.
+1545520	1549760	Right? You will see, oh, a particular Ethernet MAC address is talking to the access point,
+1549760	1554960	and it's sending large chunks of stuff. Oh, maybe somebody is recording this lecture here.
+1556400	1562640	God forbid. Or they're not sending large chunks of stuff. Small chunks, they're receiving large
+1562640	1568080	chunks in regular fashion, like regularly. Ah, somebody here is using streaming video. Right?
+1569920	1576240	Or it will be sending small chunks of small Ethernet packets upwards and receiving kind of irregular
+1576240	1582960	size things back. Well, they're probably just browsing the web, right? So information is power.
+1587200	1589840	So one example of an
+1590400	1597600	Ethernet, sorry, of an attack that works on the Ethernet, but is actually not an Ethernet attack,
+1597600	1604480	is the SMRF. Don't try this. You may actually find a few places where this would work. It shouldn't
+1604480	1612480	work today because of some remedial measures, but the SMRF attack basically works like this. You have,
+1612480	1618320	you see, these hosts, these computers are on the same Ethernet segment. It doesn't matter if this is
+1618320	1623680	wired about wires, okay? Okay, so they're on the same segment, and they're controlled by that router.
+1625280	1629360	So if they talk to each other, they talk directly, but if they talk to anybody outside,
+1629360	1636960	they go through the router, okay? Kind of like we do go through the access point here. Okay, so
+1636960	1644240	suppose the adversary has a victim, some computer, right? Some phone, a computer or tablet or something
+1644240	1651920	with an IP address, okay? That victim is somewhere else. Could be close nearby, could be far away.
+1651920	1660480	Okay, so what the adversary does is it generates an ICMP packet, okay? ECHO request with ECHO request
+1660480	1668240	back. And according to the protocol specs, when a host receives an ICMP ECHO request,
+1668240	1675680	it's supposed to reply with ICMP ECHO reply. Nothing, nothing bad about that,
+1675680	1684240	but if you generate this packet from outside, right? That Ethernet segment, it goes for the router,
+1684240	1690560	and then, as long as you put the destination broadcast address, and by the way, there is such
+1690560	1697520	a thing, right? 255, 255, 255, 255 means everybody's supposed to receive this.
+1697520	1706080	Everybody will receive it and dutifully generate an ECHO reply. Now, my silly picture has three
+1707360	1715440	hosts on that set. But what if there is a 10,000 host on that set? Two things will happen.
+1716800	1724160	One is the router will get a bit clogged. Maybe not so much. But that victim is going to get overwhelmed,
+1724160	1730960	because especially if the adversary generates at nearly the same time a bunch of those ECHO requests
+1730960	1738000	to different Ethernet segments out there, and everyone will reply to the poor victim.
+1740480	1747440	Yes. The adversary also, you see, and the source, as the source does not put his IP address,
+1747440	1754560	puts the victim's IP address in red. I think that IP address is unauthenticated.
+1756160	1761840	So the router will pass it, all the hosts on that segment will receive it, and dutifully reply.
+1764240	1769680	Once you know the problem, it's easy to fix, right? But the problem existed for a while.
+1769680	1779200	You see this problem? Don't turn off broadcast. Maybe that is a bit heavy-handed,
+1779840	1784400	because there may be legitimate reasons to use broadcast within here, within this segment.
+1784400	1790240	But what you do instead, you say, fill the router. You should not allow external packets
+1790240	1800240	address to the broadcast address. Right? Simple. You cannot authenticate the source that victims address.
+1800240	1805440	You don't know if it's true or not. But what you can do is say, broadcast can only be on the inside.
+1806400	1812160	The router does not pass any any broadcast address pattern. Just drop it. That's it.
+1812160	1820960	Ring of death. Even that might still exist. This is very old, but that might still exist somewhere.
+1820960	1828080	Because if you have an old, like, I think 3.0 or 3.1 Windows machine, there was a bug in the kernel.
+1828720	1836560	And what if, because, of course, IP was inside the kernel, so an ICMP packet with a payload over 64k was received,
+1836560	1845440	bam, crashed. It's not supposed to send IP packets over 64k, but if somebody does, there was no check.
+1846960	1853360	So memory was overwritten. Some important stuff was overwritten as a result. Right? Because what does
+1853360	1858880	it mean received? You receive a packet and you have to copy it into some buffer, right? Yeah, you all
+1858880	1864880	programmed at one point in your life, right? You have to copy it into some freaking buffer. But if the buffer is
+1864880	1870800	set hard-coded 64k, and you receive a packet of 128k, what's going to happen if this bug is present,
+1870800	1876480	if you don't check the boundaries? You're going to keep writing. And the extra 64k are going to
+1876480	1885360	overwrite something damn important. Boom. Okay, it's easy to fix once you know.
+1885360	1895680	Right. Then there's teardrop. They all have cutesy names, right? Teardrop.
+1898800	1906880	Remember we talked about overlapping fragments, right? So that's one. Except this is for TCP, not for IP.
+1906880	1913200	Right? So you can have this overlapping in IP. You have fragmentation offset, remember? That's for the
+1913200	1920400	same packet. While the same thing, similar thing happens in TCP, except remember TCP sends segments.
+1921920	1926560	And every segment has an offset field. It's not a fragmentation. It's just offset into the
+1926560	1935280	conversation, right? And if you send overlapping offsets, then bad things would happen. Right? So the
+1935280	1940400	attacker says offset filter overlapping values. And then when you reassemble, remember what happens
+1940400	1945840	when you reassemble things with overlapping values, you wind up also overwriting stuff. So it would crash.
+1947360	1949440	Again, easy to fix once you know.
+1953600	1959760	I love this one. I don't know why it's called land. But there was also an older version of Windows,
+1959760	1966960	again, I think 3.0. Where if you send an IP packet with a source address and a destination address the
+1966960	1973440	same, meaning itself. So it's like saying, oh, the packet comes from the outside, but the source
+1973440	1978960	address is this host. And the destination address is this host. And the port numbers are the same.
+1979680	1984400	It will just, like, lock the CPU. Go into, like, obviously an endless loop.
+1984400	1993440	So easy to fix. You shouldn't be receiving packets with your address as the source. Hey, right?
+1998960	2008640	Uh, okay. Reminded by TCP handshake. We're not down to TCP. Yeah. Three-way handshake. Three packets.
+2009280	2015120	So not, like, one and a half round check, really. Now remember, client starts the connection, right?
+2016080	2020160	Client starts the connection because client has something to say to the server. Now here,
+2020160	2024160	the server doesn't have to be a web server, right? We're talking about just a connection.
+2027200	2034640	So just think more broadly than just a web. So the client starts with the sin packet, the sinc.
+2034640	2046000	The server, when it receives the packet, says, oh, ah, new connection request. Wonderful. Let me allocate
+2046000	2053840	some state. Let me reserve a little space in my table. I have a stable of open connections. Let me
+2053840	2060000	create a new entry. Let me put the source address of this packet, meaning the client's source,
+2060000	2064480	IP address there. Let me put the fact that the connection is ongoing. It's not established,
+2065280	2074880	okay? And sometimes, many times, spawn a thread. That is, threading is such a cool paradigm, right?
+2075840	2083520	Everybody loves threading, right? So spawn a new thread for that connection and go on to another thing,
+2083520	2090480	okay? You don't want to sit there, right? And be dumb, you know, to just like receive a packet
+2091520	2098320	and then send a packet and then wait, right? And lock up and nothing happens. Now, you spawn a thread,
+2098320	2104080	that thread corresponds to this connection that is not yet established. And then you go on to do other
+2104080	2112080	things, right? Like receiving more connection requests, okay? Makes sense. As soon as you spawn a
+2112080	2117920	thread reply, the server replies with its, as the protocol dictates with sin s, which is the server
+2117920	2124960	sin, and the act saying, hey, here's client, here's your act. I acknowledge having received your connection
+2124960	2133200	request. The client is then supposed to reply with act to the server act s. And at this point,
+2134320	2141040	the connection is established, okay? Remember with the firewall lecture, we had this like one example
+2141040	2147440	where there was a table and it's a connection like established. So it wasn't in the being
+2147440	2152560	established, it's already established, right? So at this point, connection is established on both hands.
+2153600	2157040	That's the normal way of doing things. That's how it's supposed to happen.
+2157040	2168160	Now here's a sin-flying attack. The adversary doesn't have to play by the rules, right? That's why it's the
+2168160	2178320	adversary. The adversary generates in quick succession, or almost simultaneous, a large number of sin packets.
+2178320	2184880	This is the opening salvo, right? The first packet in the TCP connection is a sin from the client.
+2184880	2191520	The second packet. Bam, bam, bam, bam, bam, bam. For every stupid sin, the server says,
+2192160	2198640	how nice, let me open a, let me spawn a thread, dedicate some buffer space or table space.
+2199840	2205840	Do you see what's happening? This grows faster than a mushroom under the brain, right?
+2206560	2212720	It expands immediately, like the consumption. Many threads get created, right, at almost the same time.
+2213440	2222400	The server chokes. Runs out of space. No more space. No more TCP connection. Including no more legitimate
+2222400	2228720	TCP connection. Do you see the point? It's not that necessarily, maybe the, maybe the adversary's
+2228720	2233680	goal is to just bring down the server. Or maybe the adversary's goal is to prevent legitimate TCP
+2233680	2242480	connection. Same effect. Top problem.
+2246560	2252960	So, it costs nothing for the attacker to do this. Also, my silly example on the previous slide showed
+2252960	2259040	one little red devil. One attacker, right? I'll let it fool you. It could be one attacker that controls
+2259040	2266400	multiple zombies around the internet. Right? A botnet. Every member of that botnet could generate
+2266960	2278240	that kind of a sin storm. Get the idea? The combination. One zombie, eh. A million zombies? The server is dead.
+2278240	2285920	It's dead. Plus, traffic gets congested, right? So, especially nice thing about controlling a zombie botnet
+2285920	2292960	is that zombies, ideally, are distributed well. Zombies everywhere in the world, they control them.
+2292960	2299040	On command from the command and control center, they start generating these sins to the victim.
+2300400	2306640	What happens is a funnel effect. Because the zombies are distributed at the source near them, nothing bad
+2306640	2313920	happens. But as they get closer to the victim, right, the funnel takes place. The traffic gets more
+2314480	2321120	concentrated. Higher volume, yes? You see that? Like, think about the victim's ISP. All of a sudden,
+2321120	2325280	the victim's ISP is going to get more concentrated. So, not only the victim is going to get screwed, but
+2326880	2333120	nodes next to you, IS. The ISP IS is going to get congested. So, it's going to affect more than just the victim.
+2335120	2344720	Okay. So, you can read this, right? The point of this attack is a classical example of a symmetry.
+2344720	2348000	Why a symmetry?
+2348960	2356800	Very clear, no? It costs nothing to generate a sin. It costs nothing to generate a thousand sins.
+2357840	2365040	For a client. But for a server, there's an investment. It's asymmetric. It has to create
+2365760	2371120	state, right? Allocate memory. Spawn a thread. Even you say, oh, why didn't you spawn a thread?
+2371120	2375440	There are other paradigms you could use. Yeah, yeah, yeah, yeah. Sure. Spawning a thread is not
+2375440	2380080	required. But even if we weren't spawning a thread and using a different paradigm,
+2380960	2387040	we'd still have to allocate space. We'd still have to have a new connection. Something to remember about
+2387040	2395440	this, you know, not yet established connection, yeah? That's the asymmetry. Have you seen examples of
+2395440	2403120	this before? Anybody? Asymmetry. In attacks.
+2407520	2414800	Hell, most of you were born just probably after 9-11. 9-11, that horrific attack at the World
+2414800	2422800	Trade Center was an example of asymmetry. Over 3,000 people died, two skyscrapers were destroyed,
+2422800	2429280	a plane full of hijackers and innocent passengers flew into the building. That's an asymmetric attack.
+2431440	2437760	A guerrilla, terrorist, freedom fighter, call it whatever, with an RPG taking down a helicopter
+2439040	2447520	is an asymmetric attack. 9-11, it costs very little. You can probably buy an RPG, you know,
+2447520	2455200	across the border for a thousand dollars. Cheaper if you buy in bulk. A helicopter costs a gazillion
+2455200	2462960	dollars. 100, 140 million dollars. You bring down a helicopter with an RPG, that's a symmetric attack.
+2463920	2471840	Okay? Sorry to make this automatic. You get the idea. Asymmetry. It's unfortunate, but that's how it is.
+2471840	2478560	Now, what can we do about it? With a helicopter? Plants flying into buildings. I'm sorry, but there's not much we can do.
+2481200	2482480	But here we could do something.
+2488080	2493120	First, we examine the problem. What creates it? This sort of state allocation, asymmetric.
+2493120	2499040	Guys, the client is not dedicating anything, right? The client, a benign client in TCP, is supposed to allocate
+2499040	2506480	state before sending the SIM. He says, hey, I'm going to open a connection, right? So it creates a
+2506480	2510480	state space, and it's, you know, a table. It doesn't necessarily spawn a thread. It could.
+2512560	2517360	So it creates space, allocates memory, whatever, and then sends the sensee.
+2518880	2522960	But an adversary doesn't have to play with the rules. It doesn't need to allocate anything.
+2522960	2531280	It just can generate sensees at infinity. So he's not losing anything. Just sending packets.
+2532800	2539040	Now, one solution is cookies. And you think, oh, it's going to use web. No, no, it's not web,
+2539040	2545600	but it's similar to the web cookies. Okay? And the idea is, if instead of
+2545600	2553760	state allocation on the server side, will it receive that SIM from the client, if the server could
+2553760	2563840	somehow avoid creating state, then maybe it would solve this problem. And that's what this solution does.
+2563840	2578480	So here's a cute little solution. This is from about 15 years ago. It is, in fact, deployed. It is
+2578480	2585440	compatible with TCP. So you wouldn't know if it's deployed on a particular server, right? Unless you
+2585440	2595760	actually snoop on traffic. Okay? So the client starts with a sensee, right? Just like it does. We don't
+2595760	2604080	know if this client is good, bad, or ugly. Just a client. The server receives that sin. And remember,
+2604080	2609760	TCP server is over listening, right? That's why it's called the server. It's listening. So it gets the sensee,
+2609760	2617120	but that does not spawn a thread, does not create any state. That's the cool part. What it does,
+2617120	2621920	it replies with a sin as an axi, which is that second packet, the way it's supposed to,
+2621920	2633200	but it abuses or repurposes one of the field, which is a sequence number. Now the sequence number there
+2633200	2642400	in the reply, okay, is like, you get 16 bits, right? I think it's 16 bits. So what it does is,
+2642400	2648640	no, 32 bits, excuse me. And instead of leaving it be, to be whatever, zero, zero, right? Because
+2648640	2656160	at that point, no data has been, you know, sent back and forth. No real data, right? No application.
+2656160	2663360	It puts a certain value, and that value is a function. You see the function f of source address,
+2664160	2670160	destination, sorry, source port, destination address, destination port, course time,
+2670960	2677440	that's server's own time, right? Maybe rounded, not exactly like nanosecond precision, but let's say
+2677440	2683920	rounded to the nearest, I don't know, 10 milliseconds or something like that. That's server's own clock.
+2683920	2693360	And most importantly, server's secret, the key. A key that only server knows, so it's not shared with anyone.
+2695280	2703600	Okay, so it computes this 32-bit quantity and stuffs it into the sequence number field.
+2703600	2714960	The client receives the SNS-ACC packet and actually doesn't do anything. It's supposed to echo the sequence
+2714960	2721200	number back. That's according to the rules. It's supposed to echo that sequence. That's TCP rules. So the
+2721200	2729440	client does not know what's going on. He is not aware of any of this defense. So he just beautifully
+2729440	2736320	generates S for, you know, and includes the cookie, which he copies from the, is supposed to, as supposed
+2736320	2746320	to from the sequence number. Aha! So now the server says, okay, I am going to recompute the cookie.
+2747040	2753520	Why? Because you see, where does this source address, source port, destination, position report come from?
+2753520	2762400	They come from the IP packet. That is that first one, right? The SIN-C. Make sense?
+2764320	2771360	So that magenta field, right? It captures the source address, destination address of the original packet
+2771920	2779520	that opened the connection, the ones to open the connection. Now this S is also an IP packet, right?
+2779520	2786880	To the TCP, et cetera, et cetera. But the IP header, if it's an honest client, will contain the same IP
+2786880	2791760	source and the same IP destination and port numbers as it did in the original packet, yes?
+2793600	2794880	If the client is honest.
+2797840	2805520	So what the server does is says, ah, extracts the cookie and says, well, let me get the IP source,
+2805520	2811200	IP destination, the port numbers from this packet. I know my own secret.
+2812960	2818640	I know the course time, right? Because the time, not much time has passed, right?
+2820960	2825200	So it just recomputes the cookie and compares it to the one received in this packet.
+2826000	2831200	If the cookie values match, then it says connection is open, it creates a state.
+2831200	2840000	One second. If they don't match, throws it away. That's it. No big loss, right?
+2840880	2842160	As if it has never happened.
+2847440	2850400	Ah, good question, right? Okay, I was waiting for that.
+2850400	2857760	Why doesn't the attacker just play along? Tell me, why?
+2862800	2864880	Excellent exam question, but now it's gone.
+2870880	2876160	Why doesn't the attacker do the same thing? He knows what the, he knows the cookies look off.
+2876160	2880640	He can guess that the server is playing along, or he's playing this game. He can just do it.
+2882080	2883520	Pretend that, otherwise, sure.
+2886480	2888320	Any ideas? Any ideas at all?
+2890400	2891680	Why does this help at all?
+2891680	2906240	It helps because, remember the original attack, machine gun, bam, bam, bam, bam, right?
+2906800	2909200	One sin after another, bam, bam, bam, bam, bam.
+2910800	2913280	You can put different distance, source addresses in there, right?
+2913280	2924320	Yes? But now things have changed. The adversary before, let's for a second consider the adversary
+2924320	2930960	with a single host coming from a single computer, single IP group. The adversary would generate
+2930960	2938800	a large number of SIN requests, right? The initial packet, essentially machine gun the server,
+2938800	2948000	starting, you know, strangling itself to death. But now, in order for the server to delegate any
+2948000	2960160	resources, the client has to be there to receive the SIN ACK, right? Otherwise, server hasn't done anything.
+2960160	2968880	You get it? You get it? So, if the client did not receive the SIN ACK, he cannot generate ACK S,
+2969760	2976640	because he doesn't know the cookie. He doesn't know the cookie.
+2978400	2981680	One variation of this is to say, oh,
+2981680	2992160	the server, forget the cookies, let's not use cookies, but let's change TCP on the server so
+2992160	2996560	that server only allocates space after he receives an ACK S for the client.
+2998720	3006960	That's not a keyword. That's equally stupid as the original. You see why that is? Because if the server
+3006960	3013680	only allocates state after he receives ACK S without the cookie, generating ACK S is easy for any client,
+3015840	3022160	because it contains nothing secret. But the trick in this specific solution is that the cookie is
+3022160	3028880	computed with a secret known to the server, and no one can create valid cookies but the server.
+3028880	3041840	Now, somebody can snoop on a cookie. You can copy a cookie. But a cookie is only valid for a little bit of time.
+3043040	3053200	Okay? And if the source address doesn't match, cookie will be thrown away. So the whole idea is that it does not
+3053200	3062640	prevent the attack complicate. It makes it much harder for the adversary, because the adversary has to
+3062640	3069360	essentially complete that three-way handshake with the server for every fake connection it tries to establish.
+3070480	3076160	So yes, the server will still create the state and maybe spawn a threat, but it will only do it here,
+3076160	3084400	when this succeeds. Not there when it first receives the path, the original path. Questions?
+3093200	3101120	So, in reality, what is F? Because, okay, 32 bits is not really an encryption technique. So it's really
+3101120	3107440	more like a hash function. Okay? Because you kind of like stuff encryption in there. It's a hash function.
+3107440	3115120	Like the one with cryptographic hash. Typically, it's an AES, like AES-based hash or truncated SHA.
+3115840	3124960	Truncated means the server computes, recomputes the hash, which is like 128 bits, but only uses 32 of those.
+3124960	3133840	So the unfortunate thing about this approach is that it is restricted to 32 bits, which means that
+3133840	3141760	if somebody guesses a cookie, they can attack this technique. But guessing a cookie is probably
+3141760	3145360	the 1 over 2 to the 3 too. So it's not that easy to guess a cookie.
+3145360	3156560	Right. All right, this is just a verbal description. There's that, just take a second to read through
+3156560	3158720	this, but basically it's a word I already said.
+3166080	3171920	Right, so this will be, one thing to know is, of course, the IP address of the source may still be
+3171920	3178160	both. But that's not really a service for money. The server doesn't really care about it.
+3183920	3191600	Okay, a completely different approach, which uses no secrets, and is just a little bit kind of over
+3191600	3198080	the top, but works surprisingly well, it's called random deletion. And that is, it works like this.
+3198080	3203600	It works like this. When a server gets these connection requests, the initial connection
+3203600	3210640	requests to send C from the client, what it does, it creates an entry in this table. Right?
+3210640	3215360	Kind of like this, I have a half open means the connection is in progress. It's not, it's not
+3215360	3222320	established yet. So that C results in a new entry in the table. I don't show the entire table,
+3222320	3228080	I'm just showing that. This says, oh, I have a connection that is in the process of being open
+3228080	3235920	with all of these four hosts, right? It's not established yet. And so this table has limitations,
+3235920	3241040	right? It's like maximum size of some sort, right? About 10,000, a million, right? Depends on
+3241040	3250480	a lot. It's a web server, it could be many millions. But when it reaches its limit, right? What you do is
+3251040	3260560	you just delete random entries. Just pick the brand number and delete one. Okay? Next time it's full,
+3260560	3265920	delete one. Now when connections close, right? The entries get flushed anyway, right? Connections get,
+3265920	3271760	in TCP, I don't remember if I said that. There's an explicit connection teardown, right? Using RSD reset
+3271760	3278960	plan that terminates the connection. There's like a handshake there too. Or connection can be terminated
+3278960	3284640	due to timeouts. And whenever connection terminates, of course, the server will remove the entry, right?
+3284640	3290560	Free the entry. So some entries will be terminated one way or another and some will be just randomly
+3290560	3294800	deleted. Now what does that do? That's bad for an honest connection. That is like
+3295440	3298000	an honest host that is trying to establish a connection.
+3300240	3305680	But it's also bad for the fake connections, right? Because if you put it random, right,
+3306720	3311920	the entry to delete, you're penalizing everybody equal. So legitimate connections have a chance to
+3311920	3318320	complete and fake will be eventually deleted, right? Because they will timeout. Now the other thing I
+3318320	3325200	should have mentioned earlier is, of course, the server when it dedicates space, right, or creates a
+3325200	3330400	state that is for a connection that is not established, right, during the three-way handshake,
+3331440	3338160	if the three-way handshake does not complete, that connection will timeout. It will be deleted.
+3338160	3344800	Okay, so it's not like it spawns a thread, dedicates space, and it stays there forever. No, it gets flushed out,
+3344800	3352640	but not soon enough. That's why that original attack worked, because the industry generated
+3352640	3356880	many, many, many, many connection requests at the same time, or almost the same time.
+3361840	3368880	Right. Spoofing. So the other thing is, remember I said sequence number, port numbers, right? Sequence
+3368880	3374480	are like offset, right? When I say sequence number and offset, they're the same thing. And port number,
+3374480	3383360	right? Every connection is associated with the port number. So there is nothing inherently secret in a TCP
+3383360	3393760	connection state. Port numbers, especially for server ports, are easy to guess, right? You don't need to guess them, right?
+3393760	3401360	Okay. They're well, they are signed, right? HTTP, FTP, ICMP, whatever. They're telling that they all have
+3403360	3412400	well-known port numbers. Sequence numbers are not like fixed, right? They change. Sequence numbers means
+3412400	3419440	you start with zero, then you send 1500 bytes, then it becomes 1500, right? You send another 500 bytes,
+3419440	3423920	then it becomes 2000, right? So these are the sequence numbers. Number of bytes exchanged so far,
+3423920	3432720	in one direction. Well, an adversary who is sitting along the path between a sender and a receiver,
+3432720	3439280	right? As the adversary is here, between, might actually see the sequence numbers.
+3441200	3444080	So that adversary can generate like a reset,
+3444080	3449920	and then close the connection, or inject packets into the connection, you see?
+3452320	3457600	Pretending that, you know, that they're part of this connection. But the more interesting thing,
+3457600	3461360	but that's, you could say, well, you know, you could protect against that, maybe this is
+3461360	3468160	inside an organization or behind some kind of a firewall or whatever. But it doesn't have to be inside a
+3468160	3473840	firewall organization. It's just that the adversary might be like here, far away, not on the path,
+3473840	3480080	between the source and destination, right? Most cases, in the realistic cases, in the internet,
+3480080	3486400	right? The adversary isn't actively snooping up, or is actively interfering. He's not on the path
+3486400	3491440	between source and destination. The adversary is somewhere else in the basement of his grandma's home
+3491440	3499360	in Slavonia, okay? So how is that adversary attack? Well, that's the interesting part. The adversary
+3499360	3504320	can actually guess, he knows the initial sequence number is always zero, right? I mean, it's a
+3504320	3511760	typical connection, because it starts with zero bytes. And then he can guess, okay? You just guess.
+3512960	3517680	Well, you say, you know, guessing is hard, because remember I said the sequence number is 32 bits,
+3517680	3529280	right? So guessing 232, not that easy. But remember window size? So if the DCP window size is zero,
+3529280	3536080	which means DCP is super strict, it wants to receive things exactly in order, this attack will not work.
+3536080	3543040	But in the real world, over the internet, right? We communicate DCP session over the internet. There's loss,
+3543040	3550720	packet loss, there's congestion, there's all the other factors that dictate for DCP to have a
+3550720	3557680	flexible window size, the window size of the packets, or offsets it willing to receive, on the
+3557680	3564640	recipient right there. Which means the adversary has a larger space to play with. As long as the
+3564640	3570240	adversary generates packets with the offset within the window size, they will be accepted.
+3570240	3582000	It makes sense. So, that's what we have. And this is especially the case when you are like
+3582000	3589280	communicating with, I say, with your portable devices, with like smartphones. And I see you're driving,
+3589280	3593920	walking around, you're somewhere where the connectivity is not very good, and you have a DCP
+3593920	3597680	connection. And you're watching streaming video, you could be browsing the web, whatever.
+3598880	3604480	But, what happens in these environments, is that there can be sudden, like massive packet loss.
+3605600	3610720	You know, you have a poor connection. It happens. Like, I drive for Crystal Cove,
+3611840	3616800	a bunch of times, every week. You drive on PCH for Crystal Cove, you're going to have that happen.
+3617520	3622080	Because the cellular connection is terrible. And of course, IP runs over cells. So,
+3622080	3626880	there's always a massive packet loss. So, clearly, the window size, on the receiving end,
+3626880	3629920	not to lose the connection, has to accommodate that. And the window size has to be large.
+3631440	3634800	Right? So, what the adversary can do, is instead of sending one packet,
+3635520	3640560	fake packet, injecting into DCP connection, the adversary can just generate the flood of packets,
+3640560	3645920	all with different offsets, right? Or sequence numbers. Hoping that at least one of them will
+3645920	3652320	fit in the window. And if one of them does, well, great. It will be accepted.
+3658240	3663040	Including reset. So, you can also, like, if reset is, like, terminate the connection. It's a,
+3663040	3667840	there's a flag, like, send flag, add flag. In the DCP header, there's, remember, there's a flag
+3667840	3673680	still. And one of the flags is RST, or reset. And that signals to the receiving party that the
+3673680	3678560	connection is being terminated. What's the nature? Well, I mean, it's kind of denial of service,
+3678560	3682400	right? Your connection is suddenly reset. You may have seen, you may see this sometimes,
+3683760	3687440	what in, in some browsers will display, like, connection reset. Have you seen that message?
+3688960	3693440	Black screen, connection reset. Yeah, that means something, the server terminated the connection,
+3693440	3698160	or time had it occurred. Usually, the explicit connection was terminated for some reason. So,
+3698160	3707360	so that's what happens. Not a huge problem in many cases, unless the TPCP connection is critical.
+3708400	3711520	Like, for example, some routing protocols, remember routing,
+3713840	3720480	maintain long-lived TCP connections between adjacent routers. Especially, let's say this is one domain,
+3720480	3725840	and this is another domain, and here we have two border routers. And they maintain this connection.
+3726480	3732400	Long-lived TCP connection. Not for forwarding packets, but for exchanging routing information.
+3733760	3739520	Okay? Like DGP. We'll talk about it later. And if you reset this connection,
+3741680	3746160	that requires them to reset the connection and restart. And routers don't like to do that,
+3746160	3750320	because that's not their critical path. That's not what they do. In fact, they need to do things
+3750320	3757440	fast. Restarting a new routing, sorry, TCP connection takes time. So, that's real denial of service.
+3760640	3768880	Also, UDP. UDP is not as popular as TCP, but it is used. Okay? It's unreliable. Use stands for
+3768880	3776400	unreliable. Tells you everything. Unreliable datagram protocol, which is a very, very lightweight
+3776400	3785680	transport layout that runs on top of IP. It has port numbers, just like TCP, but
+3788160	3794480	doesn't have a connection established with DGP. It was super popular years ago for these P2P
+3794480	3801600	applications. Anybody remember P2P peer streaming? Yeah. So, it was really popular because
+3801600	3809760	the idea was that it was too hard to run TCP servers, right? On like small devices. So, instead,
+3809760	3814720	if you run UDP, you didn't have to run a server. You could just like have light. There's no
+3814720	3820000	establishment connection, no teardown. You just like wanted to grab an illegally copied movie from
+3820000	3825040	somebody near, you know, on a laptop. It just did it quickly without having to establish a connection.
+3825040	3833200	But UDP provides no closeness, no flow control, no windows, nothing. So, UDP flooding is easy.
+3834480	3839840	They just generate a bunch of UDP packets. Now, some, some operating systems, some hosts do not
+3839840	3845280	accept UDP traffic. Some screen it more. But natively, UDP traffic is not screened.
+3845280	3853760	So, well, what can we do about all of this, all of these data? Well, you know, at the Bob
+3853760	3859280	transport layer, we can use things like a purpose, sure, right? Remember that.
+3862240	3868160	A Bob network layer, we can use this as a cell TLS or as a stage. I think Cap is a stage,
+3868160	3877040	a different alternative. And the network layer. Also, okay, but that's, that's a purpose.
+3877040	3880800	Remember, it provides user authentication, client authentication, server authentication,
+3881760	3887920	but does not protect you against, like, network attacks. So, any kind of connection hijacking,
+3887920	3894320	connection spoofing, you know. SSL TLS will protect you at this, kind of this session layer,
+3894320	3899320	but does not
+3899320	3903320	against denial of service. For example, SYN flooding. You cannot
+3903320	3907320	prevent with SSL TLS. Or UDP flooding.
+3907320	3911320	As a network player, you can use IPsec.
+3911320	3915320	IPsec is great. It will protect you against
+3915320	3919320	connection, hijacking, injection, all of the attacks. Pretty much all the attacks I just
+3919320	3923320	described can be fixed with using IPsec.
+3923320	3927320	But IPsec is a heavy
+3927320	3931320	machinery. It demands what we didn't cover is like
+3931320	3935320	establishment of keys and then the actual connection
+3935320	3939320	in maintenance there. It's not free. You will see a performance degradation
+3939320	3943320	for your network.
+3943320	3947320	So it's
+3947320	3951320	pretty much the best solution there is for preventing these kinds of attacks.
+3951320	3955320	mitigating these types of attacks. But like I said, there's
+3955320	3957320	performance penalty and also the key management
+3957320	3959320	is just very, very complicated.
+3959320	3961320	Okay? So if you work for
+3961320	3965320	organization where they set up IPsec, that's great.
+3965320	3967320	But for yourself, it's not easy.
+3967320	3971320	And below network layer, none of these
+3971320	3975320	attacks can be solved except for the one that
+3975320	3977320	the SMART.
+3977320	3981320	Okay, I think we'll end here because the rest of it has to do with routing
+3981320	3987320	and you'll probably forget if I just start.
+3987320	3991320	All right, see you Thursday.
+3991320	4008320	We'll see you from

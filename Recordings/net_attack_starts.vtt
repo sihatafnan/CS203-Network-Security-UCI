@@ -1,0 +1,1643 @@
+WEBVTT
+
+00:00.000 --> 00:08.240
+perverse a number of what's called autonomous systems. Some autonomous systems are called
+
+00:08.240 --> 00:14.240
+stomp, because you need stomp, meaning that they're like ISPs, that they provide services
+
+00:14.240 --> 00:22.400
+to individual customers. And then there are these transit or backbone ISPs that essentially
+
+00:22.400 --> 00:28.480
+do not deal with individual customers, but rather provide, well, just transit services.
+
+00:30.000 --> 00:40.240
+And so an autonomous system, as I think I have mentioned at least a couple of times,
+
+00:40.240 --> 00:45.040
+is a collection of resources under the control of a single administration.
+
+00:45.920 --> 00:52.880
+It is typically contiguous. So you can have autonomous systems, or you can have an organization
+
+00:52.880 --> 00:59.200
+that is so large that it has multiple sites, multiple locations on the internet, and then
+
+00:59.200 --> 01:04.800
+most likely you have different autonomous system numbers. Each autonomous system is assigned an
+
+01:04.800 --> 01:10.320
+official number. You cannot just pop up on the internet and become an autonomous system. You
+
+01:10.320 --> 01:14.160
+have to register and apply for a number. You can be assigned a unique number.
+
+01:14.160 --> 01:27.840
+Okay. Various days. OSI, standard vertical stack that you probably would have seen in the network's
+
+01:27.840 --> 01:35.440
+power source. Seven layers. It does not correspond to reality. At least not in the upper layer. The lower
+
+01:35.440 --> 01:41.840
+core layers kind of do, because here we have the actual physical transmission, right? Some kind of
+
+01:41.840 --> 01:49.920
+wireless or wired, not basically that, even pigeons, right? Whatever. And then on top of that,
+
+01:49.920 --> 01:57.440
+you have a data layer, something that's called MAC layer, media access control, right? MAC layer. And above that,
+
+01:57.440 --> 02:09.280
+you have a network layer, where in our case, IP lives. And then in a transport layer, you have things like
+
+02:09.280 --> 02:17.760
+TCP, UDP, ICMP, and what else? Some kind of niche protocols. And then on top of that, you have things
+
+02:17.760 --> 02:26.720
+like SSL and CLS, and HTTP, etc. And this has RPC, while this is a bit outdated, but remote procedure
+
+02:26.720 --> 02:33.120
+calls that used to be implemented. This still is implemented on top of the transport layer. And then
+
+02:33.120 --> 02:39.760
+the rest is like session and presentation layer. There's like a bit less clarity, how to map that.
+
+02:39.760 --> 02:53.200
+So we call the data format. So your application will be passing the data forward to the transport layer.
+
+02:55.200 --> 03:03.680
+The data that an application passes to the transport layer can be just a blob, okay? Some kind of blob,
+
+03:03.680 --> 03:10.080
+we don't care how long it is, as long as it fits in the address space of a computer, right? Available
+
+03:10.080 --> 03:15.760
+program memory, some kind of buffer. So we don't say how long this is. Let's just assume it can be
+
+03:15.760 --> 03:24.320
+arbitrarily long. And the transport layer, typically today, what happens is, if it goes to a DCP, right?
+
+03:24.320 --> 03:31.920
+So a DCP is by far the prevalent protocol for transport layer, not the only one. But a DCP layer,
+
+03:31.920 --> 03:39.680
+what happens is DCP will look at the application data and say, okay, I am aware, I, DCP, I'm aware
+
+03:40.720 --> 03:50.080
+of the maximum transmission unit of the lower layers. I know exactly what is the maximum packet size.
+
+03:51.200 --> 03:58.560
+So because it is aware, it will chop that application data into chunks or segments,
+
+03:58.560 --> 04:06.960
+and then slap a TCP header in front of each one of them. A unique DCP header that will be unique,
+
+04:06.960 --> 04:11.520
+because remember, DCP header has all kinds of things. But one of the things you should remember,
+
+04:11.520 --> 04:20.400
+we talked about it, is data offset. Remember offset field? So for a given DCP connection, right, there will be
+
+04:20.400 --> 04:28.560
+different offsets when the application data is split out. But the source, destination, port numbers
+
+04:28.560 --> 04:36.960
+in those PCP headers in multiple segments will be the same. So the offset field is very important,
+
+04:37.600 --> 04:42.160
+and it's interesting because it serves as both the actual offset into the data,
+
+04:42.160 --> 04:52.320
+but it also serves as kind of a sequencing. Except it's not incremented by one, it's incremented by the size of each segment.
+
+04:53.520 --> 05:03.040
+So at any time, a DCP connection, the offset represents the number of bytes, of data bytes,
+
+05:03.040 --> 05:17.040
+in that direction. It's unidirectional, which means that Alice is talking to Bob. This is going to reflect
+
+05:17.600 --> 05:28.480
+the number of bytes that Alice sent to Bob thus far on this DCP connection. Okay? Bob Mason, more or
+
+05:28.480 --> 05:38.240
+less, it has its own offset in Bob to Alice direction. Okay? At the network player, each DCP segment,
+
+05:39.040 --> 05:49.440
+each DCP segment, will likely not get fractured. Okay? Because the DCP is aware that an IP header will be
+
+05:49.440 --> 05:57.120
+slapsed in front of you. So it accommodates that. It takes it into account. Okay? So now we have an IP
+
+05:57.120 --> 06:02.400
+IP header, a DCP header, followed by data. That is faster than the data lake layer. In this case,
+
+06:02.400 --> 06:13.200
+it's Ethernet. Now Ethernet works over wires, twisted there, over fiber, it works over Ether.
+
+06:15.440 --> 06:21.680
+Right? But it stands in, so that's physical layer, right? That's physical layer. What physical
+
+06:21.680 --> 06:30.080
+media uses? But the MAC layer, okay, data lake layer, there's a standard, Ethernet standard,
+
+06:30.080 --> 06:36.240
+that says exactly how packets are formatted. So the network layer, IP packet comes in,
+
+06:37.040 --> 06:44.400
+and Ethernet header is added, and then Ethernet tree lays again. So the packet essentially encapsulates
+
+06:44.400 --> 06:51.920
+this. Okay? If you are using any secure, or if your Wi-Fi, you know, usually wired does not,
+
+06:51.920 --> 06:59.120
+but if your Wi-Fi is using some security measures, like WAP, WAP, or whatever the heck they're using,
+
+06:59.120 --> 07:08.080
+WFPA, that will be taken to our pair, at that layer. Okay? So there will be additional shields,
+
+07:08.080 --> 07:12.720
+additional subtenants here. But what I'm showing you here is just without any security, right?
+
+07:12.720 --> 07:19.440
+If time permits, at some point I will talk to you about wireless security, right? That usually happens
+
+07:19.440 --> 07:34.640
+at this layer, not above. Now, if you listen to prior lectures carefully, you remember me spending time
+
+07:34.640 --> 07:43.040
+on fragmentation, right? And you may ask, why did I spend all this time talking about fragmentation,
+
+07:43.040 --> 07:48.000
+and I just informed you that fragmentation actually does not have an IP layer, right? Yeah.
+
+07:49.600 --> 08:00.160
+Contradiction? Yes. Except that TCP is not the only transport layer protocol. Other transport layer
+
+08:00.160 --> 08:09.760
+protocols are allowed not to be as complicated and to pass to IP anyway. In fact, TCP is just very
+
+08:09.760 --> 08:16.240
+considerate and nice this way. One of the reasons it is, is because it doesn't want to deal with IP
+
+08:16.240 --> 08:23.680
+fragmentation. It has its own fragmentation to use. Do you see? So it wants things to go fast.
+
+08:23.680 --> 08:30.800
+It optimizes through. It optimizes through. Other protocols do not have to do. How many of you are
+
+08:30.800 --> 08:40.000
+familiar with the Linux kernel or any Linux kernel? A few of you. Did you know that there's something
+
+08:40.000 --> 08:50.960
+called raw sockets? Anybody knew that? Good. You can actually have an application, write an application
+
+08:50.960 --> 08:59.600
+that uses IP directly. You do not have to go through some session layer and then transport layer. You can
+
+08:59.600 --> 09:07.760
+actually write an application. They just directly accesses IP. In which case your application is its own
+
+09:07.760 --> 09:17.680
+is your own transport layer. Okay? Stunted, crazy, silly, maybe, yes, but it's allowed. Just FYI,
+
+09:19.040 --> 09:27.200
+many open unisex versions allow you to also write raw ethernet. That is, if your application
+
+09:28.400 --> 09:33.040
+if your kernel configuration lets you do it, you can actually open a raw ethernet socket and send
+
+09:33.040 --> 09:39.360
+directly infinite packets. In which case your own network layer. But these packets will not go
+
+09:40.000 --> 09:48.240
+past the first router. You see what I'm saying? Okay? Unless you re-implement IP and DCP and whatever
+
+09:48.240 --> 09:57.120
+else, right? So that's why this is not a contradiction, right? For example, UDP, which is another transport
+
+09:57.120 --> 10:06.480
+protocol, can hand over to IP a packet that is very big, and then IP is N24, will fragment. IPv6 will
+
+10:06.480 --> 10:17.840
+barge. Okay, let's give you an error. Right, so TCP requires the segment to break data into segments,
+
+10:17.840 --> 10:23.280
+and the receiver must reassemble segments. And because TCP is a connection-oriented
+
+10:23.280 --> 10:29.920
+protocol, right? With explicit establishment and tear down a connection, there's an acknowledgement for
+
+10:29.920 --> 10:40.640
+every packet. Well, there's an acknowledgement, okay? And lost packets, when the lost packets are
+
+10:42.720 --> 10:47.760
+detected or there's no acknowledgement coming through the center for a particular system, it has to
+
+10:47.760 --> 10:54.800
+re-transpense. And one of the more important things in TCP is the maintenance of what's called
+
+10:54.800 --> 11:02.720
+receiver window. Does everybody know what that is? So, normally, when you send segments one,
+
+11:02.720 --> 11:08.160
+segment two, segment three, segment four, you expect, normally, to receive them in the same sequence.
+
+11:08.160 --> 11:18.640
+But what if segment two gets lost? What if some router modifies a bit in segment two, and when it is
+
+11:18.640 --> 11:25.680
+received, it is incorrect. So, it's from away. So, it's essentially not being received. Or maybe it gets
+
+11:25.680 --> 11:35.040
+sent by a different route and gets stuck somewhere. So, that allows, so TCP handles this and allows the
+
+11:35.040 --> 11:43.760
+receiver to receive packets or segments that are not in order. And so, instead of expecting a window
+
+11:43.760 --> 11:49.680
+of size zero, meaning I receive packets one, two, three, the next one is four, right? It says, oh,
+
+11:49.680 --> 11:57.520
+I receive packets one, two, five, but I'm okay with receiving three, four, or six, okay? So, that's called
+
+11:57.520 --> 12:03.120
+the size of the window. The size of the window is dynamic based on the characteristics of the network
+
+12:03.120 --> 12:07.840
+of traffic, right? It has to do with, like, congestion on the internet, okay? And many other
+
+12:07.840 --> 12:19.440
+factors that influence the size of the TCP window. Now, IP is much simpler. Recall, it says vertical,
+
+12:19.440 --> 12:25.680
+but it's actually not a vertical. It is a packet format. It is an extreverse. Every packet is on its own.
+
+12:25.680 --> 12:37.680
+So, it uses either prefixes off or exact destination addresses for routing. Okay? What am I saying?
+
+12:38.960 --> 12:48.160
+When the packet arrives at a router, IP back, the router's main job is to take the destination of
+
+12:48.160 --> 12:57.120
+that packet and look that up in its routing table, FIB, forwarding information dates. That's a weird term.
+
+12:57.120 --> 13:04.400
+It's really a routing table. And it can be huge, huge, huge, especially for a backbone router.
+
+13:06.000 --> 13:14.400
+So, how does it look it up? Well, it's not the exact match. It's possible that the destination
+
+13:14.400 --> 13:19.440
+IP address is exactly present in the routing table. It says to this, for this destination address,
+
+13:19.440 --> 13:28.000
+go there. But most likely it's not like that. What it says is the prefix for that destination address
+
+13:28.000 --> 13:35.120
+is over there. So, you see this example destination here. So, it could be that the routing table can
+
+13:35.120 --> 13:41.120
+trace an entry for exactly this, or it could be that it contains an entry for 171, 64, 66.
+
+13:41.120 --> 13:49.920
+That's called a prefix. That's called a prefix. It's one example. 171 is also a prefix. That's the
+
+13:49.920 --> 13:57.360
+shorter prefix. So, what I think I'm going to do is it looks for the longest prefix, right? The most
+
+13:57.360 --> 14:05.520
+exact match possible. And that is the entry when it finds the entry with the longest prefix. It says,
+
+14:05.520 --> 14:13.520
+okay, what is the next entry? In that entry, you have all kinds of stuff, including which interface
+
+14:13.520 --> 14:21.040
+to forward it on next. What is the next stop for this package? It doesn't know the actual route,
+
+14:21.040 --> 14:27.520
+right? IP routers do not know the actual route this package will take to the destination. It's just
+
+14:27.520 --> 14:41.920
+the destination and the next stop. Okay. If no match is found, what's supposed to happen but doesn't
+
+14:41.920 --> 14:50.400
+always happen is an ICMP destination and reachable packet is generated back to the source.
+
+14:50.400 --> 14:58.960
+source. Okay? So, whatever you see in your browser post-unreachable, right? You're trying to load
+
+14:58.960 --> 15:09.280
+something unreachable, that's essentially what happens. Okay. So, long as we can match,
+
+15:09.280 --> 15:15.120
+of course, there are usually several hops, often more than several. If you actually do a trace route,
+
+15:15.120 --> 15:27.280
+you will see if you do a trace route and then give an IP address or trace out host names,
+
+15:27.280 --> 15:36.560
+you will actually see in excruciating detail the hops, the IP addresses of the hops, your packet takes
+
+15:36.560 --> 15:53.120
+from here to there. Okay. Now, the hops and ASs are different things, right? A hop is a physical
+
+15:53.120 --> 16:00.080
+hop from IP router to IP router or from IP host to the router or from IP router to the destination host,
+
+16:01.040 --> 16:09.040
+right? All these are physical hops. Now, there are AS hops, which means how many ASs you go through
+
+16:09.040 --> 16:15.680
+on the way to the destination. Well, every AS typically has at least a hop within it, right?
+
+16:16.400 --> 16:21.200
+So, you enter an AS through what's called an entry router and you exit through an exit router.
+
+16:21.200 --> 16:26.240
+They may be connected directly or there may be intermediate hops within the AS.
+
+16:26.240 --> 16:35.120
+So, trace route should tell you that, but some ASs do not expose their internal structure
+
+16:35.920 --> 16:39.520
+and they will not reply to this, will not respect the trace route.
+
+16:41.280 --> 16:45.520
+So, it's not guaranteed. Typically, what you see in trace route is correct, but it's not complete.
+
+16:45.520 --> 17:01.440
+All right. Any questions so far? ICMP is the protocol I mentioned, right? Instead of for plumbing on the
+
+17:01.440 --> 17:09.200
+internet, it's a very compact transport layer protocol that is used for exchanging maintenance
+
+17:09.200 --> 17:13.920
+messages. This is actually a protocol, not a packet format. I mean, it has packet formats,
+
+17:13.920 --> 17:20.080
+but it is a protocol meaning messages here are generated upon some events and they have mean.
+
+17:21.840 --> 17:32.000
+So, error reporting, congestion control, reachability, timing, etc. Okay? So, destination
+
+17:32.000 --> 17:37.760
+unreachable I already mentioned. Time exceeded. Oh, that's when TTL gets decremented to zero. Remember
+
+17:37.760 --> 17:43.760
+TTL and IP packet header? And this packet has been, yeah, usually set to 255. So, if something,
+
+17:44.640 --> 17:50.720
+if it reached zero, this packet has been looping around. Something is very wrong. Parameter problem,
+
+17:50.720 --> 17:56.400
+I'm not sure what the heck that is. Redirect to a better gateway means that, tells the previous gateway,
+
+17:56.400 --> 18:01.680
+your routing is messed up. You're sending it to be a packet, but there's a better place, better next
+
+18:01.680 --> 18:08.560
+hop of that packet than me. Reachability test, that's the one, echo reply, that's the one that trace
+
+18:08.560 --> 18:19.040
+round uses. And timestamp reply, this is also for when you put a timestamp option in an IP option field.
+
+18:19.040 --> 18:31.120
+TMI. Security issues. Many security issues because neither TCP nor IP were natively designed for
+
+18:31.120 --> 18:38.080
+security. Remember, it was all designed in a very, uh, prehistoric, friendly world, where nobody wanted
+
+18:38.080 --> 18:45.440
+to hurt each other, steal each other's information. So, uh, packets go by untrusted hosts, our routers,
+
+18:45.440 --> 18:53.120
+uh, sniff, and maybe log packets. And sometimes, for good reason, organizations, uh, companies will
+
+18:53.120 --> 19:01.280
+often log all IP traffic that comes from inside out and also inside in for all kinds of, uh, auditing
+
+19:01.280 --> 19:06.960
+purposes. Like if shit hits the fan and things go wrong, they need to investigate and figure out, ah,
+
+19:06.960 --> 19:13.200
+how exactly sort of forensically figure out what happened, right? Where did the malware come in? Where
+
+19:13.200 --> 19:18.240
+did the phishing come in? Where did the routing update, you know, fake routing that they can be
+
+19:18.240 --> 19:24.480
+so they need to do this. And so this logging can, or sniff, sniffing can happen for benign reasons,
+
+19:24.480 --> 19:30.880
+or it can happen for non, for malicious reasons. IP addresses, as, as, as we talked about, are public.
+
+19:30.880 --> 19:36.880
+They're not hidden, um, unless you're using IPsec, but even with IPsec, right, the outermost IP
+
+19:36.880 --> 19:46.560
+here is visible. And it often provides some information. Uh, TCP connection. So IP is difficult
+
+19:46.560 --> 19:56.160
+to abuse by itself because it's not a protocol, but TCP is a protocol. And you saw the state diagram
+
+19:56.160 --> 20:01.760
+that I hope impressed the heck out of you, right? There are actually courses out there. When I was in
+
+20:01.760 --> 20:07.760
+grad school, we had to memorize the freaking TCP diagram and answer, you know, final questions
+
+20:07.760 --> 20:14.880
+that you should feel, you should feel lucky. I mean, pretty much everybody failed that. But,
+
+20:15.680 --> 20:24.080
+but it was, it was rough. Um, TCP requires state, right? Because the connection is this connection
+
+20:24.080 --> 20:28.240
+oriented protocol and every connection oriented protocol on the face of this earth requires state
+
+20:28.240 --> 20:33.440
+here and there at the source and the destination or whatever the connection endpoints, right?
+
+20:34.160 --> 20:42.000
+And that state isn't free. Depending on how your, uh, network protocol stack is implemented within
+
+20:42.000 --> 20:50.400
+the kernel, outside the kernel, it is consuming memory and resources. There is a whole course discussion
+
+20:50.400 --> 20:54.000
+of whether you should put, you know, an operating system should keep the network
+
+20:54.000 --> 21:00.240
+stack inside the kernel or outside the kernel. Outside the kernel makes the kernel nicer, smaller,
+
+21:01.200 --> 21:09.840
+easier to find bugs, et cetera, et cetera, faster maybe, but putting it inside makes networking faster.
+
+21:11.200 --> 21:16.720
+Because if the, if the networking stack runs outside kernel space, you have to switch into the kernel
+
+21:16.720 --> 21:23.760
+often, right? Because there's some still controls that need to take place. Anyway, um, state is important. And
+
+21:23.760 --> 21:29.680
+there are attacks and so attacks on that state. And we will see one very impressive example called
+
+21:29.680 --> 21:39.040
+SynthFlight. Also, TCP state, the state that is maintained at both ends of a connection is not secret by
+
+21:39.040 --> 21:47.040
+nature. And because it's not secret, it can be sometimes easily guessed. And if you guess that state
+
+21:47.040 --> 21:53.520
+correctly, you can manipulate the connection by injecting traffic into it. Even from my outside,
+
+21:53.520 --> 22:00.400
+from far away, from far away, you can inject traffic into it. And you can even close a connection,
+
+22:01.840 --> 22:13.440
+which is kind of a nifty denial of service attack. Okay, so sniffing is not so impressive, right? So
+
+22:13.440 --> 22:23.920
+what they have to do just sniff. But years ago, back in the 90s, early 2000s, there was still a lot of
+
+22:23.920 --> 22:33.280
+alignment, there were most implementations of these commands like ftp, telnet, rcp, you may have run into
+
+22:33.280 --> 22:39.360
+these commands. And they still exist in many Unix versions, right? FTP file transfer, telnet, remote
+
+22:39.360 --> 22:47.680
+login, rcp, remote copy, RSH, remote shell. Okay, these commands required passwords, right? But they
+
+22:47.680 --> 22:55.280
+sent them in the clear. Because remember, the world was friendly. Yes, you have to have a password that if you
+
+22:55.280 --> 22:59.760
+sniffed on those packets that were sent back and forth, and you sniffed on them in the beginning of a
+
+22:59.760 --> 23:03.840
+connection, you would actually get a clear text password. Now, why am I telling you this? This is
+
+23:03.840 --> 23:08.560
+prehistory, right? Well, the truth is, prehistory is not actually that much of a prehistory. Because
+
+23:09.280 --> 23:15.360
+out there in the real world today, there are still Windows 3.0 implementations running.
+
+23:17.040 --> 23:23.200
+Yes, legacy, like from the 90s, there are many places, especially in industrial control,
+
+23:23.200 --> 23:31.680
+where really obsolete operating systems are used. Why? Because some software is written
+
+23:31.680 --> 23:35.520
+to take advantage of those operating system features, and nobody knows because the people
+
+23:35.520 --> 23:42.240
+who wrote it probably are dead now, okay? Or in a retirement home and demented, or doing something
+
+23:42.240 --> 23:48.640
+else, and nobody learned how to program on Windows 3.0 because it's so old. You get the point? Just like
+
+23:48.640 --> 23:56.640
+NASA and the federal government in general has gazillions of lines of code in various software
+
+23:56.640 --> 24:06.080
+installations that run COBOL. Maybe your grandparents know what COBOL is, if they were in the tech industry.
+
+24:06.080 --> 24:13.200
+But COBOL is a language from the 60s. Tons of code was written in COBOL, and a lot of it still remains.
+
+24:13.200 --> 24:22.800
+Because nobody knows COBOL programmers today earn big bucks. If they're alive. Anyway, so these,
+
+24:22.800 --> 24:29.840
+these things still out there. The other thing is that if you, the Ethernet itself, right?
+
+24:31.600 --> 24:38.720
+So I'm stepping down into the data link layer. Ethernet by itself has some very interesting features.
+
+24:38.720 --> 24:44.080
+Most Ethernet interfaces have a way of being put in what's called promiscuous mode.
+
+24:45.040 --> 24:52.000
+And this is how ethereal works and TCP dump, if you've used those pretty popular programs.
+
+24:52.880 --> 24:59.520
+They put the card in the, in the promiscuous, your card, the NIC, the network interface control module,
+
+24:59.520 --> 25:05.120
+into this promiscuous mode. And you basically receive all the packets sent on the second. So
+
+25:05.120 --> 25:11.360
+it means that if one of you does this with ethereal and TCP dump, you should be able to see everything
+
+25:11.360 --> 25:16.320
+that goes on here, maybe even outside, as long as the same access point is being used.
+
+25:17.440 --> 25:22.560
+Right? It's called an Ethernet segment, right? So you will hear all the packets on the Ethernet segment.
+
+25:24.880 --> 25:27.520
+So that's not very nice, but that's how it works.
+
+25:28.400 --> 25:34.240
+Now, if there's wireless security, like web, web, WPA, or something like that, plus there is IPsec,
+
+25:34.240 --> 25:39.760
+plus there is SSL, you won't get anything. But at the very least, you'll see who is communicating.
+
+25:41.760 --> 25:43.840
+You will also see how much they're communicating.
+
+25:45.520 --> 25:49.760
+Right? You will see, oh, a particular Ethernet MAC address is talking to the access point,
+
+25:49.760 --> 25:54.960
+and it's sending large chunks of stuff. Oh, maybe somebody is recording this lecture here.
+
+25:56.400 --> 26:02.640
+God forbid. Or they're not sending large chunks of stuff. Small chunks, they're receiving large
+
+26:02.640 --> 26:08.080
+chunks in regular fashion, like regularly. Ah, somebody here is using streaming video. Right?
+
+26:09.920 --> 26:16.240
+Or it will be sending small chunks of small Ethernet packets upwards and receiving kind of irregular
+
+26:16.240 --> 26:22.960
+size things back. Well, they're probably just browsing the web, right? So information is power.
+
+26:27.200 --> 26:29.840
+So one example of an
+
+26:30.400 --> 26:37.600
+Ethernet, sorry, of an attack that works on the Ethernet, but is actually not an Ethernet attack,
+
+26:37.600 --> 26:44.480
+is the SMRF. Don't try this. You may actually find a few places where this would work. It shouldn't
+
+26:44.480 --> 26:52.480
+work today because of some remedial measures, but the SMRF attack basically works like this. You have,
+
+26:52.480 --> 26:58.320
+you see, these hosts, these computers are on the same Ethernet segment. It doesn't matter if this is
+
+26:58.320 --> 27:03.680
+wired about wires, okay? Okay, so they're on the same segment, and they're controlled by that router.
+
+27:05.280 --> 27:09.360
+So if they talk to each other, they talk directly, but if they talk to anybody outside,
+
+27:09.360 --> 27:16.960
+they go through the router, okay? Kind of like we do go through the access point here. Okay, so
+
+27:16.960 --> 27:24.240
+suppose the adversary has a victim, some computer, right? Some phone, a computer or tablet or something
+
+27:24.240 --> 27:31.920
+with an IP address, okay? That victim is somewhere else. Could be close nearby, could be far away.
+
+27:31.920 --> 27:40.480
+Okay, so what the adversary does is it generates an ICMP packet, okay? ECHO request with ECHO request
+
+27:40.480 --> 27:48.240
+back. And according to the protocol specs, when a host receives an ICMP ECHO request,
+
+27:48.240 --> 27:55.680
+it's supposed to reply with ICMP ECHO reply. Nothing, nothing bad about that,
+
+27:55.680 --> 28:04.240
+but if you generate this packet from outside, right? That Ethernet segment, it goes for the router,
+
+28:04.240 --> 28:10.560
+and then, as long as you put the destination broadcast address, and by the way, there is such
+
+28:10.560 --> 28:17.520
+a thing, right? 255, 255, 255, 255 means everybody's supposed to receive this.
+
+28:17.520 --> 28:26.080
+Everybody will receive it and dutifully generate an ECHO reply. Now, my silly picture has three
+
+28:27.360 --> 28:35.440
+hosts on that set. But what if there is a 10,000 host on that set? Two things will happen.
+
+28:36.800 --> 28:44.160
+One is the router will get a bit clogged. Maybe not so much. But that victim is going to get overwhelmed,
+
+28:44.160 --> 28:50.960
+because especially if the adversary generates at nearly the same time a bunch of those ECHO requests
+
+28:50.960 --> 28:58.000
+to different Ethernet segments out there, and everyone will reply to the poor victim.
+
+29:00.480 --> 29:07.440
+Yes. The adversary also, you see, and the source, as the source does not put his IP address,
+
+29:07.440 --> 29:14.560
+puts the victim's IP address in red. I think that IP address is unauthenticated.
+
+29:16.160 --> 29:21.840
+So the router will pass it, all the hosts on that segment will receive it, and dutifully reply.
+
+29:24.240 --> 29:29.680
+Once you know the problem, it's easy to fix, right? But the problem existed for a while.
+
+29:29.680 --> 29:39.200
+You see this problem? Don't turn off broadcast. Maybe that is a bit heavy-handed,
+
+29:39.840 --> 29:44.400
+because there may be legitimate reasons to use broadcast within here, within this segment.
+
+29:44.400 --> 29:50.240
+But what you do instead, you say, fill the router. You should not allow external packets
+
+29:50.240 --> 30:00.240
+address to the broadcast address. Right? Simple. You cannot authenticate the source that victims address.
+
+30:00.240 --> 30:05.440
+You don't know if it's true or not. But what you can do is say, broadcast can only be on the inside.
+
+30:06.400 --> 30:12.160
+The router does not pass any any broadcast address pattern. Just drop it. That's it.
+
+30:12.160 --> 30:20.960
+Ring of death. Even that might still exist. This is very old, but that might still exist somewhere.
+
+30:20.960 --> 30:28.080
+Because if you have an old, like, I think 3.0 or 3.1 Windows machine, there was a bug in the kernel.
+
+30:28.720 --> 30:36.560
+And what if, because, of course, IP was inside the kernel, so an ICMP packet with a payload over 64k was received,
+
+30:36.560 --> 30:45.440
+bam, crashed. It's not supposed to send IP packets over 64k, but if somebody does, there was no check.
+
+30:46.960 --> 30:53.360
+So memory was overwritten. Some important stuff was overwritten as a result. Right? Because what does
+
+30:53.360 --> 30:58.880
+it mean received? You receive a packet and you have to copy it into some buffer, right? Yeah, you all
+
+30:58.880 --> 31:04.880
+programmed at one point in your life, right? You have to copy it into some freaking buffer. But if the buffer is
+
+31:04.880 --> 31:10.800
+set hard-coded 64k, and you receive a packet of 128k, what's going to happen if this bug is present,
+
+31:10.800 --> 31:16.480
+if you don't check the boundaries? You're going to keep writing. And the extra 64k are going to
+
+31:16.480 --> 31:25.360
+overwrite something damn important. Boom. Okay, it's easy to fix once you know.
+
+31:25.360 --> 31:35.680
+Right. Then there's teardrop. They all have cutesy names, right? Teardrop.
+
+31:38.800 --> 31:46.880
+Remember we talked about overlapping fragments, right? So that's one. Except this is for TCP, not for IP.
+
+31:46.880 --> 31:53.200
+Right? So you can have this overlapping in IP. You have fragmentation offset, remember? That's for the
+
+31:53.200 --> 32:00.400
+same packet. While the same thing, similar thing happens in TCP, except remember TCP sends segments.
+
+32:01.920 --> 32:06.560
+And every segment has an offset field. It's not a fragmentation. It's just offset into the
+
+32:06.560 --> 32:15.280
+conversation, right? And if you send overlapping offsets, then bad things would happen. Right? So the
+
+32:15.280 --> 32:20.400
+attacker says offset filter overlapping values. And then when you reassemble, remember what happens
+
+32:20.400 --> 32:25.840
+when you reassemble things with overlapping values, you wind up also overwriting stuff. So it would crash.
+
+32:27.360 --> 32:29.440
+Again, easy to fix once you know.
+
+32:33.600 --> 32:39.760
+I love this one. I don't know why it's called land. But there was also an older version of Windows,
+
+32:39.760 --> 32:46.960
+again, I think 3.0. Where if you send an IP packet with a source address and a destination address the
+
+32:46.960 --> 32:53.440
+same, meaning itself. So it's like saying, oh, the packet comes from the outside, but the source
+
+32:53.440 --> 32:58.960
+address is this host. And the destination address is this host. And the port numbers are the same.
+
+32:59.680 --> 33:04.400
+It will just, like, lock the CPU. Go into, like, obviously an endless loop.
+
+33:04.400 --> 33:13.440
+So easy to fix. You shouldn't be receiving packets with your address as the source. Hey, right?
+
+33:18.960 --> 33:28.640
+Uh, okay. Reminded by TCP handshake. We're not down to TCP. Yeah. Three-way handshake. Three packets.
+
+33:29.280 --> 33:35.120
+So not, like, one and a half round check, really. Now remember, client starts the connection, right?
+
+33:36.080 --> 33:40.160
+Client starts the connection because client has something to say to the server. Now here,
+
+33:40.160 --> 33:44.160
+the server doesn't have to be a web server, right? We're talking about just a connection.
+
+33:47.200 --> 33:54.640
+So just think more broadly than just a web. So the client starts with the sin packet, the sinc.
+
+33:54.640 --> 34:06.000
+The server, when it receives the packet, says, oh, ah, new connection request. Wonderful. Let me allocate
+
+34:06.000 --> 34:13.840
+some state. Let me reserve a little space in my table. I have a stable of open connections. Let me
+
+34:13.840 --> 34:20.000
+create a new entry. Let me put the source address of this packet, meaning the client's source,
+
+34:20.000 --> 34:24.480
+IP address there. Let me put the fact that the connection is ongoing. It's not established,
+
+34:25.280 --> 34:34.880
+okay? And sometimes, many times, spawn a thread. That is, threading is such a cool paradigm, right?
+
+34:35.840 --> 34:43.520
+Everybody loves threading, right? So spawn a new thread for that connection and go on to another thing,
+
+34:43.520 --> 34:50.480
+okay? You don't want to sit there, right? And be dumb, you know, to just like receive a packet
+
+34:51.520 --> 34:58.320
+and then send a packet and then wait, right? And lock up and nothing happens. Now, you spawn a thread,
+
+34:58.320 --> 35:04.080
+that thread corresponds to this connection that is not yet established. And then you go on to do other
+
+35:04.080 --> 35:12.080
+things, right? Like receiving more connection requests, okay? Makes sense. As soon as you spawn a
+
+35:12.080 --> 35:17.920
+thread reply, the server replies with its, as the protocol dictates with sin s, which is the server
+
+35:17.920 --> 35:24.960
+sin, and the act saying, hey, here's client, here's your act. I acknowledge having received your connection
+
+35:24.960 --> 35:33.200
+request. The client is then supposed to reply with act to the server act s. And at this point,
+
+35:34.320 --> 35:41.040
+the connection is established, okay? Remember with the firewall lecture, we had this like one example
+
+35:41.040 --> 35:47.440
+where there was a table and it's a connection like established. So it wasn't in the being
+
+35:47.440 --> 35:52.560
+established, it's already established, right? So at this point, connection is established on both hands.
+
+35:53.600 --> 35:57.040
+That's the normal way of doing things. That's how it's supposed to happen.
+
+35:57.040 --> 36:08.160
+Now here's a sin-flying attack. The adversary doesn't have to play by the rules, right? That's why it's the
+
+36:08.160 --> 36:18.320
+adversary. The adversary generates in quick succession, or almost simultaneous, a large number of sin packets.
+
+36:18.320 --> 36:24.880
+This is the opening salvo, right? The first packet in the TCP connection is a sin from the client.
+
+36:24.880 --> 36:31.520
+The second packet. Bam, bam, bam, bam, bam, bam. For every stupid sin, the server says,
+
+36:32.160 --> 36:38.640
+how nice, let me open a, let me spawn a thread, dedicate some buffer space or table space.
+
+36:39.840 --> 36:45.840
+Do you see what's happening? This grows faster than a mushroom under the brain, right?
+
+36:46.560 --> 36:52.720
+It expands immediately, like the consumption. Many threads get created, right, at almost the same time.
+
+36:53.440 --> 37:02.400
+The server chokes. Runs out of space. No more space. No more TCP connection. Including no more legitimate
+
+37:02.400 --> 37:08.720
+TCP connection. Do you see the point? It's not that necessarily, maybe the, maybe the adversary's
+
+37:08.720 --> 37:13.680
+goal is to just bring down the server. Or maybe the adversary's goal is to prevent legitimate TCP
+
+37:13.680 --> 37:22.480
+connection. Same effect. Top problem.
+
+37:26.560 --> 37:32.960
+So, it costs nothing for the attacker to do this. Also, my silly example on the previous slide showed
+
+37:32.960 --> 37:39.040
+one little red devil. One attacker, right? I'll let it fool you. It could be one attacker that controls
+
+37:39.040 --> 37:46.400
+multiple zombies around the internet. Right? A botnet. Every member of that botnet could generate
+
+37:46.960 --> 37:58.240
+that kind of a sin storm. Get the idea? The combination. One zombie, eh. A million zombies? The server is dead.
+
+37:58.240 --> 38:05.920
+It's dead. Plus, traffic gets congested, right? So, especially nice thing about controlling a zombie botnet
+
+38:05.920 --> 38:12.960
+is that zombies, ideally, are distributed well. Zombies everywhere in the world, they control them.
+
+38:12.960 --> 38:19.040
+On command from the command and control center, they start generating these sins to the victim.
+
+38:20.400 --> 38:26.640
+What happens is a funnel effect. Because the zombies are distributed at the source near them, nothing bad
+
+38:26.640 --> 38:33.920
+happens. But as they get closer to the victim, right, the funnel takes place. The traffic gets more
+
+38:34.480 --> 38:41.120
+concentrated. Higher volume, yes? You see that? Like, think about the victim's ISP. All of a sudden,
+
+38:41.120 --> 38:45.280
+the victim's ISP is going to get more concentrated. So, not only the victim is going to get screwed, but
+
+38:46.880 --> 38:53.120
+nodes next to you, IS. The ISP IS is going to get congested. So, it's going to affect more than just the victim.
+
+38:55.120 --> 39:04.720
+Okay. So, you can read this, right? The point of this attack is a classical example of a symmetry.
+
+39:04.720 --> 39:08.000
+Why a symmetry?
+
+39:08.960 --> 39:16.800
+Very clear, no? It costs nothing to generate a sin. It costs nothing to generate a thousand sins.
+
+39:17.840 --> 39:25.040
+For a client. But for a server, there's an investment. It's asymmetric. It has to create
+
+39:25.760 --> 39:31.120
+state, right? Allocate memory. Spawn a thread. Even you say, oh, why didn't you spawn a thread?
+
+39:31.120 --> 39:35.440
+There are other paradigms you could use. Yeah, yeah, yeah, yeah. Sure. Spawning a thread is not
+
+39:35.440 --> 39:40.080
+required. But even if we weren't spawning a thread and using a different paradigm,
+
+39:40.960 --> 39:47.040
+we'd still have to allocate space. We'd still have to have a new connection. Something to remember about
+
+39:47.040 --> 39:55.440
+this, you know, not yet established connection, yeah? That's the asymmetry. Have you seen examples of
+
+39:55.440 --> 40:03.120
+this before? Anybody? Asymmetry. In attacks.
+
+40:07.520 --> 40:14.800
+Hell, most of you were born just probably after 9-11. 9-11, that horrific attack at the World
+
+40:14.800 --> 40:22.800
+Trade Center was an example of asymmetry. Over 3,000 people died, two skyscrapers were destroyed,
+
+40:22.800 --> 40:29.280
+a plane full of hijackers and innocent passengers flew into the building. That's an asymmetric attack.
+
+40:31.440 --> 40:37.760
+A guerrilla, terrorist, freedom fighter, call it whatever, with an RPG taking down a helicopter
+
+40:39.040 --> 40:47.520
+is an asymmetric attack. 9-11, it costs very little. You can probably buy an RPG, you know,
+
+40:47.520 --> 40:55.200
+across the border for a thousand dollars. Cheaper if you buy in bulk. A helicopter costs a gazillion
+
+40:55.200 --> 41:02.960
+dollars. 100, 140 million dollars. You bring down a helicopter with an RPG, that's a symmetric attack.
+
+41:03.920 --> 41:11.840
+Okay? Sorry to make this automatic. You get the idea. Asymmetry. It's unfortunate, but that's how it is.
+
+41:11.840 --> 41:18.560
+Now, what can we do about it? With a helicopter? Plants flying into buildings. I'm sorry, but there's not much we can do.
+
+41:21.200 --> 41:22.480
+But here we could do something.
+
+41:28.080 --> 41:33.120
+First, we examine the problem. What creates it? This sort of state allocation, asymmetric.
+
+41:33.120 --> 41:39.040
+Guys, the client is not dedicating anything, right? The client, a benign client in TCP, is supposed to allocate
+
+41:39.040 --> 41:46.480
+state before sending the SIM. He says, hey, I'm going to open a connection, right? So it creates a
+
+41:46.480 --> 41:50.480
+state space, and it's, you know, a table. It doesn't necessarily spawn a thread. It could.
+
+41:52.560 --> 41:57.360
+So it creates space, allocates memory, whatever, and then sends the sensee.
+
+41:58.880 --> 42:02.960
+But an adversary doesn't have to play with the rules. It doesn't need to allocate anything.
+
+42:02.960 --> 42:11.280
+It just can generate sensees at infinity. So he's not losing anything. Just sending packets.
+
+42:12.800 --> 42:19.040
+Now, one solution is cookies. And you think, oh, it's going to use web. No, no, it's not web,
+
+42:19.040 --> 42:25.600
+but it's similar to the web cookies. Okay? And the idea is, if instead of
+
+42:25.600 --> 42:33.760
+state allocation on the server side, will it receive that SIM from the client, if the server could
+
+42:33.760 --> 42:43.840
+somehow avoid creating state, then maybe it would solve this problem. And that's what this solution does.
+
+42:43.840 --> 42:58.480
+So here's a cute little solution. This is from about 15 years ago. It is, in fact, deployed. It is
+
+42:58.480 --> 43:05.440
+compatible with TCP. So you wouldn't know if it's deployed on a particular server, right? Unless you
+
+43:05.440 --> 43:15.760
+actually snoop on traffic. Okay? So the client starts with a sensee, right? Just like it does. We don't
+
+43:15.760 --> 43:24.080
+know if this client is good, bad, or ugly. Just a client. The server receives that sin. And remember,
+
+43:24.080 --> 43:29.760
+TCP server is over listening, right? That's why it's called the server. It's listening. So it gets the sensee,
+
+43:29.760 --> 43:37.120
+but that does not spawn a thread, does not create any state. That's the cool part. What it does,
+
+43:37.120 --> 43:41.920
+it replies with a sin as an axi, which is that second packet, the way it's supposed to,
+
+43:41.920 --> 43:53.200
+but it abuses or repurposes one of the field, which is a sequence number. Now the sequence number there
+
+43:53.200 --> 44:02.400
+in the reply, okay, is like, you get 16 bits, right? I think it's 16 bits. So what it does is,
+
+44:02.400 --> 44:08.640
+no, 32 bits, excuse me. And instead of leaving it be, to be whatever, zero, zero, right? Because
+
+44:08.640 --> 44:16.160
+at that point, no data has been, you know, sent back and forth. No real data, right? No application.
+
+44:16.160 --> 44:23.360
+It puts a certain value, and that value is a function. You see the function f of source address,
+
+44:24.160 --> 44:30.160
+destination, sorry, source port, destination address, destination port, course time,
+
+44:30.960 --> 44:37.440
+that's server's own time, right? Maybe rounded, not exactly like nanosecond precision, but let's say
+
+44:37.440 --> 44:43.920
+rounded to the nearest, I don't know, 10 milliseconds or something like that. That's server's own clock.
+
+44:43.920 --> 44:53.360
+And most importantly, server's secret, the key. A key that only server knows, so it's not shared with anyone.
+
+44:55.280 --> 45:03.600
+Okay, so it computes this 32-bit quantity and stuffs it into the sequence number field.
+
+45:03.600 --> 45:14.960
+The client receives the SNS-ACC packet and actually doesn't do anything. It's supposed to echo the sequence
+
+45:14.960 --> 45:21.200
+number back. That's according to the rules. It's supposed to echo that sequence. That's TCP rules. So the
+
+45:21.200 --> 45:29.440
+client does not know what's going on. He is not aware of any of this defense. So he just beautifully
+
+45:29.440 --> 45:36.320
+generates S for, you know, and includes the cookie, which he copies from the, is supposed to, as supposed
+
+45:36.320 --> 45:46.320
+to from the sequence number. Aha! So now the server says, okay, I am going to recompute the cookie.
+
+45:47.040 --> 45:53.520
+Why? Because you see, where does this source address, source port, destination, position report come from?
+
+45:53.520 --> 46:02.400
+They come from the IP packet. That is that first one, right? The SIN-C. Make sense?
+
+46:04.320 --> 46:11.360
+So that magenta field, right? It captures the source address, destination address of the original packet
+
+46:11.920 --> 46:19.520
+that opened the connection, the ones to open the connection. Now this S is also an IP packet, right?
+
+46:19.520 --> 46:26.880
+To the TCP, et cetera, et cetera. But the IP header, if it's an honest client, will contain the same IP
+
+46:26.880 --> 46:31.760
+source and the same IP destination and port numbers as it did in the original packet, yes?
+
+46:33.600 --> 46:34.880
+If the client is honest.
+
+46:37.840 --> 46:45.520
+So what the server does is says, ah, extracts the cookie and says, well, let me get the IP source,
+
+46:45.520 --> 46:51.200
+IP destination, the port numbers from this packet. I know my own secret.
+
+46:52.960 --> 46:58.640
+I know the course time, right? Because the time, not much time has passed, right?
+
+47:00.960 --> 47:05.200
+So it just recomputes the cookie and compares it to the one received in this packet.
+
+47:06.000 --> 47:11.200
+If the cookie values match, then it says connection is open, it creates a state.
+
+47:11.200 --> 47:20.000
+One second. If they don't match, throws it away. That's it. No big loss, right?
+
+47:20.880 --> 47:22.160
+As if it has never happened.
+
+47:27.440 --> 47:30.400
+Ah, good question, right? Okay, I was waiting for that.
+
+47:30.400 --> 47:37.760
+Why doesn't the attacker just play along? Tell me, why?
+
+47:42.800 --> 47:44.880
+Excellent exam question, but now it's gone.
+
+47:50.880 --> 47:56.160
+Why doesn't the attacker do the same thing? He knows what the, he knows the cookies look off.
+
+47:56.160 --> 48:00.640
+He can guess that the server is playing along, or he's playing this game. He can just do it.
+
+48:02.080 --> 48:03.520
+Pretend that, otherwise, sure.
+
+48:06.480 --> 48:08.320
+Any ideas? Any ideas at all?
+
+48:10.400 --> 48:11.680
+Why does this help at all?
+
+48:11.680 --> 48:26.240
+It helps because, remember the original attack, machine gun, bam, bam, bam, bam, right?
+
+48:26.800 --> 48:29.200
+One sin after another, bam, bam, bam, bam, bam.
+
+48:30.800 --> 48:33.280
+You can put different distance, source addresses in there, right?
+
+48:33.280 --> 48:44.320
+Yes? But now things have changed. The adversary before, let's for a second consider the adversary
+
+48:44.320 --> 48:50.960
+with a single host coming from a single computer, single IP group. The adversary would generate
+
+48:50.960 --> 48:58.800
+a large number of SIN requests, right? The initial packet, essentially machine gun the server,
+
+48:58.800 --> 49:08.000
+starting, you know, strangling itself to death. But now, in order for the server to delegate any
+
+49:08.000 --> 49:20.160
+resources, the client has to be there to receive the SIN ACK, right? Otherwise, server hasn't done anything.
+
+49:20.160 --> 49:28.880
+You get it? You get it? So, if the client did not receive the SIN ACK, he cannot generate ACK S,
+
+49:29.760 --> 49:36.640
+because he doesn't know the cookie. He doesn't know the cookie.
+
+49:38.400 --> 49:41.680
+One variation of this is to say, oh,
+
+49:41.680 --> 49:52.160
+the server, forget the cookies, let's not use cookies, but let's change TCP on the server so
+
+49:52.160 --> 49:56.560
+that server only allocates space after he receives an ACK S for the client.
+
+49:58.720 --> 50:06.960
+That's not a keyword. That's equally stupid as the original. You see why that is? Because if the server
+
+50:06.960 --> 50:13.680
+only allocates state after he receives ACK S without the cookie, generating ACK S is easy for any client,
+
+50:15.840 --> 50:22.160
+because it contains nothing secret. But the trick in this specific solution is that the cookie is
+
+50:22.160 --> 50:28.880
+computed with a secret known to the server, and no one can create valid cookies but the server.
+
+50:28.880 --> 50:41.840
+Now, somebody can snoop on a cookie. You can copy a cookie. But a cookie is only valid for a little bit of time.
+
+50:43.040 --> 50:53.200
+Okay? And if the source address doesn't match, cookie will be thrown away. So the whole idea is that it does not
+
+50:53.200 --> 51:02.640
+prevent the attack complicate. It makes it much harder for the adversary, because the adversary has to
+
+51:02.640 --> 51:09.360
+essentially complete that three-way handshake with the server for every fake connection it tries to establish.
+
+51:10.480 --> 51:16.160
+So yes, the server will still create the state and maybe spawn a threat, but it will only do it here,
+
+51:16.160 --> 51:24.400
+when this succeeds. Not there when it first receives the path, the original path. Questions?
+
+51:33.200 --> 51:41.120
+So, in reality, what is F? Because, okay, 32 bits is not really an encryption technique. So it's really
+
+51:41.120 --> 51:47.440
+more like a hash function. Okay? Because you kind of like stuff encryption in there. It's a hash function.
+
+51:47.440 --> 51:55.120
+Like the one with cryptographic hash. Typically, it's an AES, like AES-based hash or truncated SHA.
+
+51:55.840 --> 52:04.960
+Truncated means the server computes, recomputes the hash, which is like 128 bits, but only uses 32 of those.
+
+52:04.960 --> 52:13.840
+So the unfortunate thing about this approach is that it is restricted to 32 bits, which means that
+
+52:13.840 --> 52:21.760
+if somebody guesses a cookie, they can attack this technique. But guessing a cookie is probably
+
+52:21.760 --> 52:25.360
+the 1 over 2 to the 3 too. So it's not that easy to guess a cookie.
+
+52:25.360 --> 52:36.560
+Right. All right, this is just a verbal description. There's that, just take a second to read through
+
+52:36.560 --> 52:38.720
+this, but basically it's a word I already said.
+
+52:46.080 --> 52:51.920
+Right, so this will be, one thing to know is, of course, the IP address of the source may still be
+
+52:51.920 --> 52:58.160
+both. But that's not really a service for money. The server doesn't really care about it.
+
+53:03.920 --> 53:11.600
+Okay, a completely different approach, which uses no secrets, and is just a little bit kind of over
+
+53:11.600 --> 53:18.080
+the top, but works surprisingly well, it's called random deletion. And that is, it works like this.
+
+53:18.080 --> 53:23.600
+It works like this. When a server gets these connection requests, the initial connection
+
+53:23.600 --> 53:30.640
+requests to send C from the client, what it does, it creates an entry in this table. Right?
+
+53:30.640 --> 53:35.360
+Kind of like this, I have a half open means the connection is in progress. It's not, it's not
+
+53:35.360 --> 53:42.320
+established yet. So that C results in a new entry in the table. I don't show the entire table,
+
+53:42.320 --> 53:48.080
+I'm just showing that. This says, oh, I have a connection that is in the process of being open
+
+53:48.080 --> 53:55.920
+with all of these four hosts, right? It's not established yet. And so this table has limitations,
+
+53:55.920 --> 54:01.040
+right? It's like maximum size of some sort, right? About 10,000, a million, right? Depends on
+
+54:01.040 --> 54:10.480
+a lot. It's a web server, it could be many millions. But when it reaches its limit, right? What you do is
+
+54:11.040 --> 54:20.560
+you just delete random entries. Just pick the brand number and delete one. Okay? Next time it's full,
+
+54:20.560 --> 54:25.920
+delete one. Now when connections close, right? The entries get flushed anyway, right? Connections get,
+
+54:25.920 --> 54:31.760
+in TCP, I don't remember if I said that. There's an explicit connection teardown, right? Using RSD reset
+
+54:31.760 --> 54:38.960
+plan that terminates the connection. There's like a handshake there too. Or connection can be terminated
+
+54:38.960 --> 54:44.640
+due to timeouts. And whenever connection terminates, of course, the server will remove the entry, right?
+
+54:44.640 --> 54:50.560
+Free the entry. So some entries will be terminated one way or another and some will be just randomly
+
+54:50.560 --> 54:54.800
+deleted. Now what does that do? That's bad for an honest connection. That is like
+
+54:55.440 --> 54:58.000
+an honest host that is trying to establish a connection.
+
+55:00.240 --> 55:05.680
+But it's also bad for the fake connections, right? Because if you put it random, right,
+
+55:06.720 --> 55:11.920
+the entry to delete, you're penalizing everybody equal. So legitimate connections have a chance to
+
+55:11.920 --> 55:18.320
+complete and fake will be eventually deleted, right? Because they will timeout. Now the other thing I
+
+55:18.320 --> 55:25.200
+should have mentioned earlier is, of course, the server when it dedicates space, right, or creates a
+
+55:25.200 --> 55:30.400
+state that is for a connection that is not established, right, during the three-way handshake,
+
+55:31.440 --> 55:38.160
+if the three-way handshake does not complete, that connection will timeout. It will be deleted.
+
+55:38.160 --> 55:44.800
+Okay, so it's not like it spawns a thread, dedicates space, and it stays there forever. No, it gets flushed out,
+
+55:44.800 --> 55:52.640
+but not soon enough. That's why that original attack worked, because the industry generated
+
+55:52.640 --> 55:56.880
+many, many, many, many connection requests at the same time, or almost the same time.
+
+56:01.840 --> 56:08.880
+Right. Spoofing. So the other thing is, remember I said sequence number, port numbers, right? Sequence
+
+56:08.880 --> 56:14.480
+are like offset, right? When I say sequence number and offset, they're the same thing. And port number,
+
+56:14.480 --> 56:23.360
+right? Every connection is associated with the port number. So there is nothing inherently secret in a TCP
+
+56:23.360 --> 56:33.760
+connection state. Port numbers, especially for server ports, are easy to guess, right? You don't need to guess them, right?
+
+56:33.760 --> 56:41.360
+Okay. They're well, they are signed, right? HTTP, FTP, ICMP, whatever. They're telling that they all have
+
+56:43.360 --> 56:52.400
+well-known port numbers. Sequence numbers are not like fixed, right? They change. Sequence numbers means
+
+56:52.400 --> 56:59.440
+you start with zero, then you send 1500 bytes, then it becomes 1500, right? You send another 500 bytes,
+
+56:59.440 --> 57:03.920
+then it becomes 2000, right? So these are the sequence numbers. Number of bytes exchanged so far,
+
+57:03.920 --> 57:12.720
+in one direction. Well, an adversary who is sitting along the path between a sender and a receiver,
+
+57:12.720 --> 57:19.280
+right? As the adversary is here, between, might actually see the sequence numbers.
+
+57:21.200 --> 57:24.080
+So that adversary can generate like a reset,
+
+57:24.080 --> 57:29.920
+and then close the connection, or inject packets into the connection, you see?
+
+57:32.320 --> 57:37.600
+Pretending that, you know, that they're part of this connection. But the more interesting thing,
+
+57:37.600 --> 57:41.360
+but that's, you could say, well, you know, you could protect against that, maybe this is
+
+57:41.360 --> 57:48.160
+inside an organization or behind some kind of a firewall or whatever. But it doesn't have to be inside a
+
+57:48.160 --> 57:53.840
+firewall organization. It's just that the adversary might be like here, far away, not on the path,
+
+57:53.840 --> 58:00.080
+between the source and destination, right? Most cases, in the realistic cases, in the internet,
+
+58:00.080 --> 58:06.400
+right? The adversary isn't actively snooping up, or is actively interfering. He's not on the path
+
+58:06.400 --> 58:11.440
+between source and destination. The adversary is somewhere else in the basement of his grandma's home
+
+58:11.440 --> 58:19.360
+in Slavonia, okay? So how is that adversary attack? Well, that's the interesting part. The adversary
+
+58:19.360 --> 58:24.320
+can actually guess, he knows the initial sequence number is always zero, right? I mean, it's a
+
+58:24.320 --> 58:31.760
+typical connection, because it starts with zero bytes. And then he can guess, okay? You just guess.
+
+58:32.960 --> 58:37.680
+Well, you say, you know, guessing is hard, because remember I said the sequence number is 32 bits,
+
+58:37.680 --> 58:49.280
+right? So guessing 232, not that easy. But remember window size? So if the DCP window size is zero,
+
+58:49.280 --> 58:56.080
+which means DCP is super strict, it wants to receive things exactly in order, this attack will not work.
+
+58:56.080 --> 59:03.040
+But in the real world, over the internet, right? We communicate DCP session over the internet. There's loss,
+
+59:03.040 --> 59:10.720
+packet loss, there's congestion, there's all the other factors that dictate for DCP to have a
+
+59:10.720 --> 59:17.680
+flexible window size, the window size of the packets, or offsets it willing to receive, on the
+
+59:17.680 --> 59:24.640
+recipient right there. Which means the adversary has a larger space to play with. As long as the
+
+59:24.640 --> 59:30.240
+adversary generates packets with the offset within the window size, they will be accepted.
+
+59:30.240 --> 59:42.000
+It makes sense. So, that's what we have. And this is especially the case when you are like
+
+59:42.000 --> 59:49.280
+communicating with, I say, with your portable devices, with like smartphones. And I see you're driving,
+
+59:49.280 --> 59:53.920
+walking around, you're somewhere where the connectivity is not very good, and you have a DCP
+
+59:53.920 --> 59:57.680
+connection. And you're watching streaming video, you could be browsing the web, whatever.
+
+59:58.880 --> 01:00:04.480
+But, what happens in these environments, is that there can be sudden, like massive packet loss.
+
+01:00:05.600 --> 01:00:10.720
+You know, you have a poor connection. It happens. Like, I drive for Crystal Cove,
+
+01:00:11.840 --> 01:00:16.800
+a bunch of times, every week. You drive on PCH for Crystal Cove, you're going to have that happen.
+
+01:00:17.520 --> 01:00:22.080
+Because the cellular connection is terrible. And of course, IP runs over cells. So,
+
+01:00:22.080 --> 01:00:26.880
+there's always a massive packet loss. So, clearly, the window size, on the receiving end,
+
+01:00:26.880 --> 01:00:29.920
+not to lose the connection, has to accommodate that. And the window size has to be large.
+
+01:00:31.440 --> 01:00:34.800
+Right? So, what the adversary can do, is instead of sending one packet,
+
+01:00:35.520 --> 01:00:40.560
+fake packet, injecting into DCP connection, the adversary can just generate the flood of packets,
+
+01:00:40.560 --> 01:00:45.920
+all with different offsets, right? Or sequence numbers. Hoping that at least one of them will
+
+01:00:45.920 --> 01:00:52.320
+fit in the window. And if one of them does, well, great. It will be accepted.
+
+01:00:58.240 --> 01:01:03.040
+Including reset. So, you can also, like, if reset is, like, terminate the connection. It's a,
+
+01:01:03.040 --> 01:01:07.840
+there's a flag, like, send flag, add flag. In the DCP header, there's, remember, there's a flag
+
+01:01:07.840 --> 01:01:13.680
+still. And one of the flags is RST, or reset. And that signals to the receiving party that the
+
+01:01:13.680 --> 01:01:18.560
+connection is being terminated. What's the nature? Well, I mean, it's kind of denial of service,
+
+01:01:18.560 --> 01:01:22.400
+right? Your connection is suddenly reset. You may have seen, you may see this sometimes,
+
+01:01:23.760 --> 01:01:27.440
+what in, in some browsers will display, like, connection reset. Have you seen that message?
+
+01:01:28.960 --> 01:01:33.440
+Black screen, connection reset. Yeah, that means something, the server terminated the connection,
+
+01:01:33.440 --> 01:01:38.160
+or time had it occurred. Usually, the explicit connection was terminated for some reason. So,
+
+01:01:38.160 --> 01:01:47.360
+so that's what happens. Not a huge problem in many cases, unless the TPCP connection is critical.
+
+01:01:48.400 --> 01:01:51.520
+Like, for example, some routing protocols, remember routing,
+
+01:01:53.840 --> 01:02:00.480
+maintain long-lived TCP connections between adjacent routers. Especially, let's say this is one domain,
+
+01:02:00.480 --> 01:02:05.840
+and this is another domain, and here we have two border routers. And they maintain this connection.
+
+01:02:06.480 --> 01:02:12.400
+Long-lived TCP connection. Not for forwarding packets, but for exchanging routing information.
+
+01:02:13.760 --> 01:02:19.520
+Okay? Like DGP. We'll talk about it later. And if you reset this connection,
+
+01:02:21.680 --> 01:02:26.160
+that requires them to reset the connection and restart. And routers don't like to do that,
+
+01:02:26.160 --> 01:02:30.320
+because that's not their critical path. That's not what they do. In fact, they need to do things
+
+01:02:30.320 --> 01:02:37.440
+fast. Restarting a new routing, sorry, TCP connection takes time. So, that's real denial of service.
+
+01:02:40.640 --> 01:02:48.880
+Also, UDP. UDP is not as popular as TCP, but it is used. Okay? It's unreliable. Use stands for
+
+01:02:48.880 --> 01:02:56.400
+unreliable. Tells you everything. Unreliable datagram protocol, which is a very, very lightweight
+
+01:02:56.400 --> 01:03:05.680
+transport layout that runs on top of IP. It has port numbers, just like TCP, but
+
+01:03:08.160 --> 01:03:14.480
+doesn't have a connection established with DGP. It was super popular years ago for these P2P
+
+01:03:14.480 --> 01:03:21.600
+applications. Anybody remember P2P peer streaming? Yeah. So, it was really popular because
+
+01:03:21.600 --> 01:03:29.760
+the idea was that it was too hard to run TCP servers, right? On like small devices. So, instead,
+
+01:03:29.760 --> 01:03:34.720
+if you run UDP, you didn't have to run a server. You could just like have light. There's no
+
+01:03:34.720 --> 01:03:40.000
+establishment connection, no teardown. You just like wanted to grab an illegally copied movie from
+
+01:03:40.000 --> 01:03:45.040
+somebody near, you know, on a laptop. It just did it quickly without having to establish a connection.
+
+01:03:45.040 --> 01:03:53.200
+But UDP provides no closeness, no flow control, no windows, nothing. So, UDP flooding is easy.
+
+01:03:54.480 --> 01:03:59.840
+They just generate a bunch of UDP packets. Now, some, some operating systems, some hosts do not
+
+01:03:59.840 --> 01:04:05.280
+accept UDP traffic. Some screen it more. But natively, UDP traffic is not screened.
+
+01:04:05.280 --> 01:04:13.760
+So, well, what can we do about all of this, all of these data? Well, you know, at the Bob
+
+01:04:13.760 --> 01:04:19.280
+transport layer, we can use things like a purpose, sure, right? Remember that.
+
+01:04:22.240 --> 01:04:28.160
+A Bob network layer, we can use this as a cell TLS or as a stage. I think Cap is a stage,
+
+01:04:28.160 --> 01:04:37.040
+a different alternative. And the network layer. Also, okay, but that's, that's a purpose.
+
+01:04:37.040 --> 01:04:40.800
+Remember, it provides user authentication, client authentication, server authentication,
+
+01:04:41.760 --> 01:04:47.920
+but does not protect you against, like, network attacks. So, any kind of connection hijacking,
+
+01:04:47.920 --> 01:04:54.320
+connection spoofing, you know. SSL TLS will protect you at this, kind of this session layer,
+
+01:04:54.320 --> 01:04:59.320
+but does not
+
+01:04:59.320 --> 01:05:03.320
+against denial of service. For example, SYN flooding. You cannot
+
+01:05:03.320 --> 01:05:07.320
+prevent with SSL TLS. Or UDP flooding.
+
+01:05:07.320 --> 01:05:11.320
+As a network player, you can use IPsec.
+
+01:05:11.320 --> 01:05:15.320
+IPsec is great. It will protect you against
+
+01:05:15.320 --> 01:05:19.320
+connection, hijacking, injection, all of the attacks. Pretty much all the attacks I just
+
+01:05:19.320 --> 01:05:23.320
+described can be fixed with using IPsec.
+
+01:05:23.320 --> 01:05:27.320
+But IPsec is a heavy
+
+01:05:27.320 --> 01:05:31.320
+machinery. It demands what we didn't cover is like
+
+01:05:31.320 --> 01:05:35.320
+establishment of keys and then the actual connection
+
+01:05:35.320 --> 01:05:39.320
+in maintenance there. It's not free. You will see a performance degradation
+
+01:05:39.320 --> 01:05:43.320
+for your network.
+
+01:05:43.320 --> 01:05:47.320
+So it's
+
+01:05:47.320 --> 01:05:51.320
+pretty much the best solution there is for preventing these kinds of attacks.
+
+01:05:51.320 --> 01:05:55.320
+mitigating these types of attacks. But like I said, there's
+
+01:05:55.320 --> 01:05:57.320
+performance penalty and also the key management
+
+01:05:57.320 --> 01:05:59.320
+is just very, very complicated.
+
+01:05:59.320 --> 01:06:01.320
+Okay? So if you work for
+
+01:06:01.320 --> 01:06:05.320
+organization where they set up IPsec, that's great.
+
+01:06:05.320 --> 01:06:07.320
+But for yourself, it's not easy.
+
+01:06:07.320 --> 01:06:11.320
+And below network layer, none of these
+
+01:06:11.320 --> 01:06:15.320
+attacks can be solved except for the one that
+
+01:06:15.320 --> 01:06:17.320
+the SMART.
+
+01:06:17.320 --> 01:06:21.320
+Okay, I think we'll end here because the rest of it has to do with routing
+
+01:06:21.320 --> 01:06:27.320
+and you'll probably forget if I just start.
+
+01:06:27.320 --> 01:06:31.320
+All right, see you Thursday.
+
+01:06:31.320 --> 01:06:48.320
+We'll see you from
+

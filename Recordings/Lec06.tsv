@@ -1,0 +1,1270 @@
+start	end	text
+0	5000	I don't want to share your screen before you have the flag.
+5000	7000	Oh, I don't know what this is.
+30000	40000	Okay, so we went through face recognition, I think, right, on fingerprints, fingerprints of issues.
+40000	43000	We'll talk about a couple of examples where fingerprints fail.
+43000	48000	If you know anybody who works in the medical profession, especially surgeons,
+48000	55000	there were only attempts to install fingerprint recognition in hospitals that failed miserably
+55000	61000	because surgeons, if you know any, wash their hands extremely frequently for good reasons,
+61000	66000	and their fingers tend to be, you know, like when you keep your fingers in water for an hour,
+66000	68000	they wrinkle, the fingertips wrinkle.
+68000	72000	So, totally not good for fingerprint recognition.
+72000	74000	Not to mention all the other stuff.
+74000	83000	Iris scans. Iris scans are a relatively accurate way of biometric authentication.
+83000	86000	No two irises are the same.
+86000	88000	It's random.
+88000	97000	Knowing anything about a person, even knowing a person's DNA, you cannot recreate the irises.
+97000	99000	Stable.
+99000	104000	As you grow, as you get old, they remain the same.
+104000	107000	Even with cataracts or some other issues.
+107000	110000	Now, if you gouge out an eye, there's no more iris.
+110000	114000	You have an injury, obviously, but that's rare, right?
+114000	116000	Works in with the blind people.
+116000	119000	That's because they're still in irises.
+119000	120000	They're different.
+120000	122000	If you wonder, they're different for both of your eyes.
+122000	124000	There's like a set of concentric rings.
+124000	127000	So, it's actually not too different from the fingerprints.
+127000	130000	There's, except the fingerprints are not exactly rings, right?
+130000	133000	They're more like parabolas or something like that.
+133000	139000	So, error rates are pretty low.
+139000	146000	It's not the best, but I think it's one of the best biometric applications you think is currently known.
+146000	148000	It is expensive, right?
+148000	154000	To get accurate iris scans, you have to be very close to the device that's going to scan the iris.
+154000	157000	There has to be stable lighting.
+157000	159000	It's not instantaneous.
+159000	162000	It takes a couple of seconds.
+162000	170000	Not quite light because people generally do not like sticking their eyes and their faces into things.
+170000	175000	The early ones had like a kind of a mask almost like the device where you have to stick your eyes.
+175000	186000	Or something a little more evil looking where you're like goggles where you stick your eyes and go bzzzzz and scan your irises.
+186000	187000	It can be done on a smartphone.
+187000	192000	I believe there are apps that will do it for you.
+192000	193000	I checked a year ago.
+193000	194000	There were a couple of apps.
+194000	195000	At least on Android.
+195000	196000	I'm not sure about iPhone.
+196000	204000	There are apps you can download that will essentially use your camera to do an iris scan.
+204000	205000	Not as precise.
+205000	206000	Not as precise.
+206000	207000	Not as precise.
+207000	208000	Slower.
+208000	209000	Other methods.
+209000	210000	Hand geometry.
+210000	213000	So hand geometry is in this.
+213000	216000	Your hand print.
+216000	219000	All these things that fortune tellers like to use.
+219000	220000	Right?
+220000	223000	Life line, love line, death line, whatever.
+223000	224000	Sickness line.
+224000	225000	All these lines.
+225000	227000	The geometry of your hand.
+227000	232000	Not just the relative things but also the size of your fingers.
+232000	237000	What we call phalanges are.
+237000	240000	Now calluses won't matter because they're generally okay.
+240000	244000	If you have severe cuts or injuries clearly it wouldn't work very well.
+244000	246000	But hand geometry.
+246000	248000	Relatively stable.
+248000	252000	Of course as you grow, as a child grows, the hand gets larger.
+252000	255000	But the actual lines remain.
+255000	258000	But the size of course changes.
+258000	265000	Let's see if you have some hand conditions like eczema also doesn't work well.
+265000	270000	It has been used in nuclear premise control like for entering say national labs, nuclear
+270000	273000	reactors, that kind of thing, nuclear plants.
+273000	277000	You would just place your hand on a tablet.
+277000	280000	And it would be like a surface that will do a scan.
+280000	284000	Kind of like you do a document scan.
+284000	286000	This continued because it was expensive.
+286000	293000	And at the time did not really check for liveness.
+293000	296000	Now this may sound a little morbid.
+296000	301000	But liveness is important.
+301000	302000	Okay.
+302000	303000	Ear shape.
+303000	304000	Also.
+304000	305000	Ear scan.
+305000	307000	Can you imagine?
+307000	309000	It has some of the same issues as iris can.
+309000	312000	Ears are not something you'd like to stick in places.
+312000	313000	Right?
+313000	317000	There in our head, next to our brain.
+317000	320000	But it has been used.
+320000	327000	At the bottom of the ICS2 building, the red building next to Brent Hall, across the ring,
+327000	331000	there was a lab which is called K-some-day lab downstairs.
+331000	333000	I think it's still there.
+333000	334000	I don't know what it has.
+334000	335000	It's useful.
+335000	341000	But for many years, not anymore, it had a biometric scanner at the door.
+341000	343000	And it was vein patterns.
+343000	346000	So you would just place your wrist on the scanner.
+346000	347000	Not your hand.
+347000	348000	Your wrist.
+348000	350000	You would scan the veins.
+350000	352000	That's another method.
+352000	355000	A little better than irises.
+355000	360000	Generally better than hand because you don't get calluses here.
+360000	361000	You don't get eczema here.
+361000	363000	It's usually a little more stable.
+363000	364000	One other thing.
+364000	365000	Voice prints.
+365000	367000	How many of you have ever seen voice prints?
+367000	373000	My sibling company, I think one of my banks uses voice prints.
+373000	377000	When I call them, they're like, would you answer these questions for us?
+377000	378000	But they're not really looking for the answers.
+378000	380000	They're looking for my voice.
+380000	383000	And the questions actually aren't the same every time.
+383000	388000	So it's kind of a challenge response, if you will, kind of voice prints.
+388000	395000	Now to enroll, at some point, they have to ask me to stay on the phone and enroll.
+395000	396000	Okay.
+396000	397000	Yes?
+397000	402000	Would the phone be using matter a lot for the voice prints?
+402000	410000	Speech processing has seen very important advances in the last ten years.
+410000	413000	So they can pretty much filter the noise.
+413000	414000	Ambient noise.
+414000	416000	They can filter ambient noise.
+416000	421000	I mean, if somebody's screaming down your ear at the same time, they can filter out the road noise,
+421000	423000	classroom noise, that kind of thing.
+423000	427000	The artifacts of a metallic voice on the phone, sort of that.
+427000	429000	I think there may be some issues.
+429000	430000	It's not super robust.
+430000	432000	I would not use it myself.
+432000	438000	Because voice-based authentication is, well, fundamentally very fragile.
+438000	439000	Okay?
+439000	444000	And easily, it turns out, there have been studies that show that it's fakeable.
+444000	445000	Okay.
+445000	446000	DNA.
+446000	447000	Yes, DNA.
+447000	449000	So I used to have this slide.
+449000	451000	I don't know why I removed it.
+451000	456000	But it was sort of, you can imagine, it showed iPhone 55.
+456000	463000	In 2039, Apple comes out with iPhone 55.
+463000	468000	And it has this feature called Lipton Lock.
+468000	475000	Immediately sequence your saliva and DNA and says, ah, it's you, I'm unlocking myself.
+475000	477000	I've used it in a few talks.
+477000	479000	And people actually, some people come up to me and just say, really?
+479000	480000	Really?
+480000	481000	I couldn't do that.
+481000	482000	No, I didn't mean.
+482000	487000	Now, I don't think that's coming to the store here, you, anytime soon.
+487000	493000	But, in principle, DNA can be used for identification because, for identification, excuse me.
+493000	496000	Because it is unique to you.
+496000	498000	There's no probability of match.
+498000	502000	They say, you know, if there is, it's so astronomical, it's not even worth mentioning.
+502000	504000	Now, the problem is, DNA is like fingerprints.
+504000	509000	If you leave them at the scene of a crime, right, that's one thing.
+509000	511000	But how do you test the liveness, right?
+511000	517000	So, in order to test the liveness, you have to make sure it comes from a live person right now.
+517000	519000	And that's a problem.
+519000	522000	Also, if you're wondering, well, can you sequence DNA?
+522000	525000	Well, today, it takes minutes.
+525000	527000	Even in a faster hardware.
+527000	529000	So, your smartphone can do a sequencing.
+529000	531000	There are attachments to the smartphone.
+531000	533000	You can buy today a peripheral.
+533000	536000	That will cost you probably more than the phone.
+536000	538000	But it plugs into your phone.
+538000	546000	And, I forget, it's not actually licking it, but you can insert like a sample of saliva or something like that.
+546000	552000	It will sequence and digitize your genome on your phone, right?
+552000	557000	It can be done, but it's okay.
+557000	560000	And, okay, keystroke dynamics.
+560000	566000	So, keystroke dynamics are, remember we talked about how attacking keyboards, right, listening to these?
+566000	569000	Well, remember about keystrokes, right?
+569000	572000	The way you type is fairly unique.
+572000	579000	Unless you are particularly like, I don't know, tired or injured or somehow sick.
+579000	581000	You know, you generally type in the same way.
+581000	586000	So, imagine the system and it has, it is being deployed.
+586000	591000	It is deployed in many industrial and government organizations, usually larger organizations,
+591000	599000	where you enroll by essentially typing stuff, maybe for training the model for a few days.
+599000	603000	Then sort of a profile is created, right?
+603000	604000	Features are extracted.
+604000	608000	Machine learning, obviously, is used to extract the features from your typing model.
+608000	612000	And that becomes your biometric keystroke profile.
+612000	613000	What is the idea?
+613000	620000	The idea is that you don't come to the building and start typing for a few minutes on a keyboard in order for the door to open.
+620000	623000	That's not what this biometric is for.
+623000	629000	It's really for monitoring dynamically whether you are the same person who authenticated to begin with.
+629000	639000	So, the idea is you came to work, okay, typical scenario, you came to work, you logged into your terminal, desktop, whatever, okay?
+639000	642000	And then you walked away.
+642000	644000	Never happens to you?
+644000	648000	Please tell me it does, because I know it happens.
+648000	649000	Right?
+649000	651000	You log in and you walk away.
+651000	654000	Now, at home, maybe your cat will walk on the keyboard.
+654000	660000	Or your roommate will, you know, type an obscene message, because they prank you or something like that.
+660000	668000	But, at work, there could be an insider colleague who may not be so humorous, may actually want to cause harm.
+668000	669000	Right?
+669000	673000	So, they will come and start typing, but they cannot replicate your typing pattern.
+673000	678000	So, the idea is that the system will recognize, oh, that's not the same person who was here before.
+678000	682000	So, that's the form of biometric.
+682000	687000	The best biometric, hands down, that I've ever seen in my life, was done by IBM.
+687000	691000	And it was done actually as early as, like, late 80s or early 90s.
+691000	693000	And I believe it still exists.
+693000	695000	Like, just two years ago, it still existed.
+695000	697000	It was extremely expensive.
+697000	700000	But it was based on writing.
+700000	703000	Not typing, writing.
+703000	704000	The idea was very simple.
+704000	707000	You have a pad, right?
+707000	708000	Dedicated like a hardware device.
+708000	709000	It's like a pad.
+709000	710000	You write on.
+710000	715000	Kind of like the one, you know, when you sign your signature in a grocery store, when you
+715000	717000	buy something, you know, and ask it to sign here.
+717000	719000	But nobody cares what you actually sign.
+719000	722000	You can just, like, put a dot there and nobody verifies.
+722000	728000	Well, but imagine something much more sophisticated, which is the size of a laptop screen.
+728000	729000	But it's, like, horizontal.
+729000	730000	You come to it, it has a stylus, right?
+730000	731000	Everybody knows what a stylus is.
+731000	732000	And it says, write something.
+732000	733000	Right?
+733000	734000	It challenges you to write, like, a sentence.
+734000	735000	Right?
+735000	736000	Today I went to work.
+736000	737000	So you write the sentence using your handwriting.
+737000	738000	Remember handwriting?
+738000	739000	It's still a thing.
+739000	740000	Right?
+740000	743000	And what it does, it's not just measuring the shape of the legs.
+743000	744000	Because if you just do that, that's easily spoolable.
+744000	745000	Right?
+745000	754000	It's just the shape of the letters because I can probably, I'm pretty decent in calligraphy.
+754000	756000	I can probably imitate your writing style.
+756000	761000	If I see how you write, I will write a sentence, but it's not a sentence.
+761000	765000	But what I'm really going to do is, you know, I will write a sentence.
+765000	766000	Today I went to work.
+766000	768000	So you write the sentence using your handwriting, remember handwriting, still a thing.
+768000	769000	Right?
+769000	772000	And what it does, is not just measuring the shape of the legs.
+772000	778000	And so many people are able to do this, algorithms are even better at this, right?
+778000	783000	In fact, algorithms are better than people today, so if you can train an algorithm on somebody's writing style,
+783000	789000	give them a few scanned, you know, letters, handwritten letters, et cetera, notes,
+789000	793000	it will generate excellent quality fakes.
+793000	799000	So shape is important, but it's not negligible, but it's not what's being used.
+799000	803000	What is being used to other things? Pressure, you put on the stylus,
+803000	807000	because when you write with a pen or pencil or anything that is a writing implement,
+807000	809000	you're putting a certain amount of pressure.
+809000	813000	And that pressure varies depending on what it is you're writing.
+813000	820000	As you're circling the letter O, you're putting a different pressure than when you're completing the letter R.
+820000	823000	Okay, that turns out to be unique for you.
+823000	827000	The other thing that is unique to you is acceleration.
+827000	834000	The acceleration of the stylus as you write those letters is very important and it is unique.
+834000	844000	The combination of shape, acceleration, and pressure are a winning combination that makes this an amazing biometric technology,
+844000	847000	but it is incredibly expensive.
+847000	852000	So how would you attack it?
+852000	854000	Well, shapes can be attacked, as I just told you, right?
+854000	859000	You can train an algorithm to generate shapes the same as anybody is.
+859000	870000	Acceleration might be, might be attackable if you carefully and very precisely film somebody, right?
+870000	873000	Film somebody, write it.
+873000	875000	Because you can measure the speed, right?
+875000	879000	If you have a camera, like a hidden camera place somewhere,
+879000	883000	and it's recording how somebody is writing, you will know the acceleration.
+883000	886000	And you might be able to design, not a human,
+886000	890000	you might be able to train a robot to do this.
+890000	897000	But what you cannot replicate is at least the pressure because that's not something you can film.
+897000	905000	So the only way to attack a system like that is to actually get the user to use a fake entry device.
+905000	911000	To present the user with a tablet that is fake and record both pressure and acceleration over time,
+911000	912000	then maybe.
+912000	915000	But the barrier to this attack is high.
+915000	916000	Now.
+916000	920000	My question would be, is handwriting considered stable enough though?
+920000	925000	Because a lot of people, like, even on a day-to-day basis, if you're angry, you write more aggressive.
+925000	926000	Exactly, exactly.
+926000	927000	Yes.
+927000	929000	Handwriting, generally there is some stability.
+929000	931000	The way you're shaped.
+931000	937000	You might shape your A's differently, but there's a finite shape of A that you use when you're angry,
+937000	939000	when you're relaxed, etc.
+939000	940000	Okay?
+940000	944000	So your jerkiness, right, might be different, right?
+944000	949000	Sometimes you write smoothly, slowly, and sometimes you write quickly because you're under pressure.
+949000	953000	But generally the shapes stay more or less the same.
+953000	955000	But again, shape is just one.
+955000	959000	The pressure and the acceleration.
+959000	962000	You might fail.
+962000	968000	I mean, I don't know actually, to be fair, what is the insult rate of this.
+968000	973000	But I know it has been used specifically in insurance companies and banks.
+973000	977000	So when they came up with it, they had this huge number of customers, all these big banks.
+977000	985000	And they wanted to make sure that all the, you know, high level officers of the banks and insurance companies were authenticated using that.
+985000	987000	Because they dealt with, obviously, a lot of money.
+987000	989000	Would it be stable over time though?
+989000	990000	They claim it was.
+990000	992000	I've used it myself.
+992000	994000	It seemed very natural.
+994000	995000	Not very burdensome.
+995000	1000000	I mean, again, not something you want to use instead of badges, right?
+1000000	1004000	But it's something you want to use if somebody wants to access a highly secure facility.
+1004000	1005000	Or there's a terminal, right?
+1005000	1008000	You want to log in instead of typing username and password.
+1008000	1009000	Just do this.
+1009000	1010000	That's reasonable.
+1010000	1015000	If you're interested, there's an article about that.
+1015000	1022000	Okay, so there are a couple of biometrics that we've played around here at UCI in my research group.
+1022000	1026000	And one of them, well, one of them is not on the slides because it's just too hilarious.
+1026000	1032000	It's called, so I won't bother you with showing you anything because you could probably imagine the picture.
+1032000	1034000	It's called ascentication.
+1034000	1041000	Basically, the idea is to instrument a chair, an office chair, with pressure sensors.
+1041000	1043000	And if you think it's a joke, it's not.
+1043000	1045000	There was actually a paper published about it.
+1045000	1048000	And it was part of a student's PhD thesis.
+1048000	1049000	So imagine an office chair.
+1049000	1050000	Not this crap you're sitting on.
+1050000	1054000	This looks like kindergarten or old folks home or something.
+1054000	1055000	I don't know if it came up with this stuff.
+1055000	1059000	But like a regular nice comfy office chair with a cushion, right, or something.
+1059000	1062000	So underneath, in the cushion, there are pressure sensors.
+1062000	1067000	Now geometrically, you kind of like arrange around where a person would sit.
+1067000	1070000	And if you're wanting to know, it is not measuring your ass size.
+1070000	1073000	And it's actually not even measuring your weight.
+1073000	1076000	Well, it just measures pressure distribution.
+1076000	1079000	Because most people tend to sit the same way.
+1079000	1082000	So the idea was the same as keystrokes.
+1082000	1089000	So when a person sits down and logs in, the system takes measurements of their pressure points, right?
+1089000	1093000	Or they sit in the chair and creates a profile.
+1093000	1099000	And so when a person walks away to get a coffee or use the bathroom or go to a meeting and forgets to log out,
+1099000	1104000	and somebody else sits in the chair, well, their thought is going to be different.
+1104000	1106000	It's just different, right?
+1106000	1107000	Trust me.
+1107000	1108000	Trust me.
+1108000	1109000	We've done experiments.
+1109000	1112000	And people enjoyed those.
+1112000	1113000	Generally.
+1113000	1128000	And so the only way to subvert that biometric was essentially to create a very careful fake butt with just the right distribution of pressure.
+1128000	1130000	Quite a high barrier of pressure.
+1130000	1132000	The other method we experimented here is this.
+1132000	1136000	And that also is a little strange, but it was pretty effective.
+1136000	1143000	It is electricity and human body impedance or resistance, right?
+1143000	1146000	So as you're familiar with static electricity, right?
+1146000	1151000	You're familiar with maybe lamps that you have to touch in order to turn them on.
+1151000	1153000	So you've seen those?
+1153000	1154000	Yeah?
+1154000	1155000	Well, they work kind of the same.
+1155000	1157000	So essentially you're closing a circuit, right?
+1157000	1161000	When you're touching a lamp like that.
+1161000	1167000	So the idea here is to essentially measure human body's conductivity, right?
+1167000	1174000	By sending an electric pulse from one hand and measuring that same electric pulse in the other hand.
+1174000	1178000	Now clearly not, you know, we don't want to electrocute anybody.
+1178000	1181000	That would be one and only way to measure, right?
+1181000	1183000	And that's it.
+1183000	1184000	No.
+1184000	1186000	Sending a very weak electric signal, one volt.
+1186000	1187000	That's the idea.
+1187000	1188000	Okay?
+1188000	1202000	And so one volt signal, maximum current, 0.1 milliampere, exposure about 100 nanoseconds.
+1202000	1205000	Now this is opposed to, say, a regular battery.
+1205000	1206000	You know if you lick a battery?
+1206000	1209000	You know if you lick the battery as a kid?
+1209000	1210000	I know a lot of kids did.
+1210000	1211000	I did.
+1211000	1213000	You know the ones with two terminals?
+1213000	1215000	You get the sour taste?
+1215000	1217000	Well, you know, you actually get electricity to pass through.
+1217000	1220000	But it's much higher than what we would do.
+1220000	1225000	So humans don't feel this amount of electricity.
+1225000	1232000	And we had to, of course, obtain authorizations because the university would not allow us to do something that's dangerous.
+1232000	1234000	So we had an authorization for this.
+1234000	1236000	And the idea was, what was the use case?
+1236000	1239000	The use case, suppose you have an ATM machine, right?
+1239000	1240000	And you want to have your own money.
+1240000	1244000	So you enter, today you have a metallic pin pad, right?
+1244000	1246000	On the ATM machines.
+1246000	1250000	And then imagine, in addition to that, you had a little metallic surface, right?
+1250000	1251000	Like some kind of circle.
+1251000	1254000	When you put one hand here and you type with the other hand, your pin.
+1254000	1256000	You don't need two hands to type a pin, right?
+1256000	1258000	Most people do not use two hands.
+1258000	1259000	Pin is one hand.
+1259000	1265000	So while you're typing the pin, it's sending this signal and measures your body connectivity.
+1265000	1266000	That's one scenario.
+1266000	1269000	The other scenario is just a metallic keyboard, right?
+1269000	1274000	So today, most consumer keyboards, cheap ones, right?
+1274000	1275000	Are plastic.
+1275000	1276000	They have the other issue.
+1276000	1278000	We might talk about something at some point.
+1278000	1284000	But there are some more expensive, more fancy keyboards that are metallic.
+1284000	1285000	Okay?
+1285000	1289000	And if you're typing on a metallic keyboard, while you're typing, you can send this.
+1289000	1292000	Especially if you're not a, like, you're a hundred-pack type.
+1292000	1294000	So this is more.
+1294000	1295000	Right?
+1295000	1297000	So that's the idea, continuous authentication.
+1297000	1302000	Yeah, so we actually had a setup with a scope, a oscilloscope, waveform generator.
+1302000	1305000	And you see these brass handles.
+1305000	1306000	Big brass handles.
+1306000	1308000	So the idea was that the human would sit.
+1308000	1313000	The participant in our study would sit there and we would vary a little bit like the timing
+1313000	1318000	and send this very weak signal and measure the response in the other hand.
+1318000	1325000	And it actually turned out, we didn't have a lot of people, but we had 30 subjects for snapshot measurements
+1325000	1328000	and 16 for long-term measurements, just stability.
+1328000	1334000	As you can imagine, unfortunately, the male to female ratio is difficult in computer science
+1334000	1336000	or in this part of campus.
+1336000	1338000	So they weren't, it wasn't always very well split.
+1338000	1343000	But there was no difference between male and female subjects.
+1343000	1348000	The snapshot data sample basically misidentification was very low.
+1348000	1353000	So most of the, most of the measurements were quite encouraging.
+1353000	1356000	Well, it didn't work as well as over time.
+1356000	1359000	It was measured over days or weeks.
+1359000	1361000	The accuracy went down.
+1361000	1367000	And one of the reasons it does is that if you are dehydrated, right, as opposed to well hydrated,
+1367000	1369000	the connectivity changes a little bit.
+1369000	1374000	If you drink alcohol, which by the way also dehydrates you, but if you're just buying things alcohol,
+1374000	1375000	that also changes.
+1375000	1382000	Not that we didn't measure people after going to alcohol or anything like that, but we noticed that alcohol does change it.
+1382000	1389000	And, but otherwise, it doesn't matter what mood you're in, how much sleep you got, their connectivity stays the same.
+1389000	1394000	Yeah, so the only way to subvert it, yes, there is a way to subvert it, but it's not easy.
+1394000	1399000	What you have to do is measure the victim's false response yourself, right, get the measurement from them,
+1399000	1408000	and then strap essentially a contraption like this that provides exactly the same impedance or resistance,
+1408000	1412000	and then use kind of like insulated gloves.
+1412000	1416000	So then you might be able to pull this by metric.
+1416000	1418000	Alright, so what are risks?
+1418000	1421000	Of course, there are a lot of risks of using biometrics.
+1421000	1428000	If you're using fingerprints in a wrong way, like for example, this was a trick that was quite common before,
+1428000	1431000	it has nothing to do with digitization.
+1431000	1438000	It was in the analog gaze that if a criminal managed to distract a law enforcement officer
+1438000	1443000	and give the fingerprints in the wrong order, that they essentially will not be identified.
+1443000	1444000	Okay?
+1444000	1454000	Today, it's impossible to do that because every finger is identifiable as where it is, its location on your hand.
+1454000	1456000	So it's not possible to do that.
+1456000	1463000	Voice prints are easy to attack with recordings and also with advanced machine learning techniques
+1463000	1468000	and bots that can generate based on training data.
+1468000	1472000	If I record enough of your voice, you talk enough in class, I record enough of your voice,
+1472000	1479000	I will be able to generate pretty accurate on-demand utterances by you.
+1479000	1489000	So, if you wind up in the real world working with biometrics or choosing what kind of biometrics to use for your company,
+1489000	1491000	stay the hell away from voice, okay?
+1491000	1493000	Or anything audio.
+1493000	1494000	Terrible.
+1494000	1499000	Then there is the grainings fingers in a jar.
+1499000	1504000	This was actually a case, at least not in this country, in the UK, where the pensioners, right?
+1504000	1508000	They retired people were paid social security based on physical prints.
+1508000	1511000	They had to authenticate using a fingerprint.
+1511000	1521000	And so, you know, there was this case, I'm sure you can still find it, like 2003, where the grandma was dead for like five years,
+1521000	1533000	but the family used the finger in the jar of Vaseline they preserved, you know, to essentially obtain payments every month.
+1533000	1534000	Let's see.
+1534000	1546000	Now, there is also the false negatives that accept rates of one in a million, and this was back like 20 years ago,
+1546000	1551000	that there would be one in a million error, which means that if you know anything about the,
+1551000	1553000	everybody here knows the birthday paradox.
+1553000	1554000	Yes?
+1554000	1555000	Okay.
+1555000	1558000	The birthday paradox goes like this.
+1558000	1572000	How many people does it take, at random, for them to have at least two, well, how many people should we select off the street, at random,
+1572000	1581000	in order to have at least 50% probability of at least two of them having the same birth?
+1581000	1584000	And the answer is, what do you think?
+1584000	1587000	For like 6-0 million.
+1587000	1590000	Well, no, that's for a million.
+1590000	1592000	No, no, no.
+1592000	1593000	No, no.
+1593000	1594000	Hang on.
+1594000	1595000	Just listen to my words.
+1595000	1597000	People and birthdays.
+1597000	1599000	Maybe birthdays?
+1599000	1600000	You're close.
+1600000	1604000	So most people will say, well, you know, if you want to make sure you have to have, like,
+1604000	1608000	the easiest answer is, oh, I've got 365 people, right?
+1608000	1610000	And then you'll have a duplicate, right?
+1610000	1612000	That's, of course, guaranteed.
+1612000	1615000	But what if you pick, I don't know, 180 people?
+1615000	1617000	Will there be, what will be the chance?
+1617000	1620000	It turns out it takes 23 people.
+1620000	1625000	23, or square root, roughly square root of 365.
+1625000	1642000	So if you have a million acceptance rate of one in a million, that means with only a square root of a million, like a 1609 or so, you get a 50% probability of a mismatch in a fingerprint.
+1642000	1645000	Then there's Play-Doh fingers, right?
+1645000	1650000	Where people, because you see the fingerprints are liftable, right?
+1650000	1652000	You leave a fingerprint, right?
+1652000	1658000	And once I get your fingerprint, or I lift your fingerprint, I'd say, right?
+1658000	1660000	Exactly how the police does it, right?
+1660000	1665000	I can build a 3D object with that fingerprint on it.
+1665000	1668000	And so think about Play-Doh.
+1668000	1672000	Play-Doh has this nice characteristic, right?
+1672000	1677000	That it's malleable, and it's soft, right?
+1677000	1687000	That if you imagine you impress the fingerprint that you lifted onto a Play-Doh, it will look just like a fingertip.
+1687000	1691000	Also, it's easy to warm up Play-Doh, right?
+1691000	1700000	So if the fingerprint reader takes temperature, just to make sure it's a live, warm finger, not a cold, dead finger, it's also easy to do with Play-Doh.
+1700000	1702000	And there were stories about this.
+1702000	1709000	And so there was a study in the 90s, I think, at this Clarkson University of New York event, how you can make it.
+1709000	1714000	And they actually succeeded in pulling some, at the time, fingerprint authentication systems.
+1714000	1721000	And what they suggested is they should do like a perspiration test, because even if you think your fingertips are dry, actually they're not completely dry.
+1721000	1724000	There's like some kind of moisture there.
+1724000	1726000	But it's also easy.
+1726000	1730000	So fingerprints are yesterday's news, right?
+1730000	1741000	Then there was this case also like 20-something years ago when Mercedes, high-end Mercedes, started using the fingerprints to unlock cars, right?
+1741000	1744000	There are still some cars out there that use them, by the way.
+1744000	1746000	Maybe you've seen them.
+1746000	1754000	So, yeah, some business consumer was cut off just to steal his Mercedes.
+1754000	1755000	Handwriting.
+1755000	1767000	Again, I mentioned this earlier, but you can use, you can trade, this was already 20 years ago, you could trade a machine learning model to generate very believable looking,
+1767000	1773000	or very, very authentic looking duplicates or fakes of somebody's handwriting.
+1773000	1788000	And stare at it as all you want is very difficult to recognize without me showing you this, which one is, you know, without labels, which one is fake.
+1788000	1802000	So, in summary, biometrics are, can be helpful, they are nice because they put no load on you generally, on us humans.
+1802000	1806000	You sit in a chair, you sit anyway.
+1806000	1808000	You put a fingerprint and what's the load, right?
+1808000	1813000	Even with iris scans, typing on a keyboard to type anyway, right?
+1813000	1819000	So, if you're being authenticated as you type, that's no longer new.
+1819000	1823000	But, they're tricky to use on a large scale.
+1823000	1828000	They require in-person enrollment.
+1828000	1837000	In order to have secure enrollment, and you will see this if you haven't yet, when you work in the real world and you have a biometric system that is in place,
+1837000	1842000	you will be required to have an in-person enrollment, even if you are a remote worker.
+1842000	1846000	So, they are hard to re-block.
+1846000	1849000	And they require this pervasive infrastructure, right?
+1849000	1853000	So, if you're using iris scans, they have to be iris cameras everywhere you want to protect.
+1853000	1862000	Every computer, every secure office, everything has to be protected with that equipment.
+1862000	1864000	So, let's see.
+1864000	1871000	So, biometrics are about what you are, inherently what you are, but now, remember, the other factor is what you have, right?
+1871000	1872000	What you have.
+1872000	1877000	So, what you know, what you are, and now what you have.
+1877000	1883000	So, imagine you have something like a dongle of some sort, right?
+1883000	1889000	You know, something like a little tag, a phone, some object, right?
+1889000	1894000	So, it's not part of your body anymore, and it's not inside your brain.
+1894000	1897000	It's rather an object that you have in your possession.
+1897000	1902000	So, now, imagine that you, user, and the system share a secret.
+1902000	1907000	Now, not password, not password, okay?
+1907000	1913000	Long, strong secret, okay?
+1913000	1917000	So, very simple.
+1917000	1921000	You want to log in, the system says, here's a challenge.
+1921000	1930000	It generates a random, unpredictable challenge, and tells it, prove to me that based on this challenge, you know the secret.
+1930000	1933000	That you and I share.
+1933000	1944000	And you reply, with some function, cryptographic, obviously, of the key that you have, and the challenge that was just sent to you.
+1944000	1946000	The system verifies, right?
+1946000	1948000	Because it can recompute the same function.
+1948000	1956000	It knows the challenge, it sent it, it knows the key, it shares it with you, compares the two values, success or failure.
+1956000	1962000	This is strictly better, right?
+1962000	1968000	If someone eavesdrops on this communication, what can they do?
+1968000	1971000	Good force, right?
+1971000	1976000	Same as put password, except with password, the adversary was in luck.
+1976000	1981000	The passwords came from a very small, pathetic space.
+1981000	1985000	But here, the key comes from a truly random space, right?
+1985000	1991000	So, if the key is 160 bits long or 256 bits long, good luck to the adversary doing brute force.
+1991000	1995000	Not possible, not viable, right?
+1995000	2000000	Now, that's a big question.
+2000000	2011000	If we could get the user to compute the f, that would be nice, but the users aren't good at computing functions, right?
+2011000	2014000	So, it has to be done by something else.
+2014000	2015000	Okay?
+2015000	2018000	By some other object.
+2018000	2027000	So, this is what's called challenge and response certification.
+2027000	2031000	And here, like I said, user and system share a key, right?
+2031000	2033000	Challenge, response.
+2033000	2039000	The idea is, the key stays secret because it's random, strong, and nobody leaks it, right?
+2039000	2044000	And the adversary only sees that function of the key and the random challenge.
+2044000	2047000	And it's fresh.
+2047000	2058000	Fresh means, if a challenge is short, let's say we were stupid, or we didn't take a security course,
+2058000	2063000	and we said, let's make challenge 16 bits.
+2063000	2068000	What happened?
+2070000	2075000	Remember, challenge is random.
+2075000	2079000	What will happen over time?
+2079000	2083000	In fact, we will see every challenge and we will answer everything.
+2083000	2084000	Uh-huh.
+2084000	2085000	But it's worse than that.
+2085000	2087000	The birthday.
+2087000	2090000	It's worse than that.
+2090000	2091000	Right?
+2091000	2097000	The adversary will see, will record all the challenges and responses, and will just wait
+2097000	2098000	for a repeat.
+2098000	2106000	And when the repeat comes, or the adversary will record enough challenge responses that
+2106000	2111000	when it wants to impersonate the user, user isn't there, but the adversary wants to log
+2111000	2112000	in as the user.
+2112000	2118000	The adversary will say, log in, and the system will say, there's a challenge.
+2118000	2122000	The adversary quickly looks at a database of challenges that recorded, says, do I have it?
+2122000	2123000	No.
+2123000	2124000	Okay.
+2124000	2125000	Abandoned login.
+2125000	2128000	A little time later, not right away, because that will arise.
+2128000	2129000	There's no suspicion.
+2129000	2130000	The adversary will wait.
+2130000	2131000	They're patient.
+2131000	2133000	Another login.
+2133000	2136000	The system generates another challenge.
+2136000	2141000	The adversary looks in this table of reported challenges and responses.
+2141000	2142000	Oh.
+2142000	2143000	Got it.
+2143000	2144000	He can respond.
+2144000	2146000	Does that make sense?
+2146000	2156000	With a sufficiently long challenge, like 160 bits, 256 bits, the probability of challenge
+2156000	2160000	repeating, astronomically small.
+2160000	2161000	Okay?
+2161000	2164000	So the challenges need to be long enough.
+2164000	2170000	Indeed, the birthday paradox tells us, right, that they should be, today, you want to have
+2170000	2175000	at least 160 bits of challenge for decent security.
+2175000	2183000	So, which means that the system needs to be assured that when the response comes back,
+2183000	2186000	it is fresh.
+2186000	2187000	Right?
+2187000	2194000	Because the user here isn't going to remember if they have seen the challenge before or not.
+2194000	2196000	This is just the user.
+2196000	2200000	Maybe with some dumb device or token of some sort.
+2200000	2205000	It's not going to remember or cache all the previous challenges and say, ooh, I've seen
+2205000	2206000	this one before.
+2206000	2207000	I'm not answering it.
+2207000	2208000	No.
+2208000	2212000	It is the system's responsibility to make sure the challenges don't repeat.
+2212000	2217000	Because it, when it receives back the reply, it wants to make sure, the guarantee that
+2217000	2220000	this reply is here and now.
+2220000	2223000	Not from yesterday or a year ago.
+2225000	2226000	Okay.
+2226000	2228000	So this works.
+2228000	2232000	And you probably use this kind of system without even knowing it.
+2232000	2235000	It's used in badge-based identification.
+2235000	2238000	So, you know, people use badges ever?
+2238000	2239000	Here?
+2239000	2241000	Anybody work in the real world?
+2241000	2242000	Yay.
+2242000	2243000	Okay.
+2243000	2244000	Badges?
+2244000	2245000	NFC?
+2245000	2246000	Yeah?
+2246000	2248000	Or insert badges?
+2248000	2249000	TAC.
+2249000	2250000	NFC.
+2250000	2251000	Okay.
+2251000	2255000	A lot of those systems use this kind of challenge response.
+2255000	2256000	Cars.
+2256000	2257000	Key fob.
+2257000	2258000	Car.
+2258000	2259000	Key fob.
+2259000	2260000	Car.
+2260000	2261000	Key fob.
+2261000	2262000	Car.
+2262000	2263000	Challenge.
+2263000	2264000	Key fob is the user.
+2264000	2266000	You are the user with the key fob.
+2266000	2268000	Key fob has the key.
+2268000	2269000	Car.
+2269000	2270000	You want to unlock the car.
+2270000	2271000	You press.
+2271000	2273000	The car goes, challenge.
+2273000	2275000	The fob goes, response.
+2275000	2286000	The car says, oh, correct response, unlock.
+2286000	2290000	Here's an example where these things don't work well.
+2290000	2293000	So far everything seemed good.
+2293000	2296000	This example dates back to a long time ago.
+2296000	2303000	Back in the 1980s, before you were all born, there was a war.
+2303000	2306000	There were many wars, but this war took a long time.
+2306000	2313000	It was kind of a slow war in Africa between a country called Namibia, which still exists,
+2313000	2318000	and a country called Angola, which still exists.
+2318000	2328000	And so Angola was allied with the Soviets, with all these countries behind the Iron Curtain,
+2328000	2329000	and Cuba.
+2329000	2334000	So, essentially, Angola was aided by the Soviet Union, Cuba, and all the Eastern Bloc countries.
+2334000	2340000	And not surprisingly, Namibia was aided, well, not directly by the United States, but by South Africa,
+2340000	2344000	which at the time was a very different South Africa issue today.
+2344000	2350000	It was an apartheid regime, very right-wing, very conservative, blah, blah, blah.
+2350000	2354000	So I'm not here to teach you politics, but just to illustrate a problem.
+2354000	2360000	So they've used, already then, challenge response-based authentication.
+2360000	2363000	And this system is called Friend or Foe.
+2363000	2366000	F-O-F, Friend or Foe.
+2366000	2370000	This is how, like, planes identify each other in the air.
+2370000	2375000	This is how ground stations know that it's their planes and not enemy planes flying overhead.
+2375000	2376000	Okay?
+2376000	2379000	So the idea here, these people were at war.
+2379000	2380000	Okay?
+2380000	2382000	They used aircraft.
+2382000	2383000	Right?
+2383000	2384000	Aircraft.
+2384000	2387000	Bombers, et cetera.
+2387000	2389000	Cause damage.
+2389000	2392000	So, you have a following situation.
+2392000	2395000	South Africa, remember, was supporting Namibia, right?
+2395000	2396000	In this war.
+2396000	2402000	So South Africans would launch a bomber, this is a ground station, to bomb Angola.
+2406000	2409000	The ground station is the system.
+2409000	2412000	The bomber is the user, right?
+2412000	2414000	In this picture, the analogy, right?
+2414000	2418000	They share a long-term secret key K, unique to that bomber.
+2418000	2419000	Right?
+2419000	2424000	So for every such bomber, you know, the ground station knows a separate key.
+2428000	2432000	Meanwhile, Angola launches a Cuban MiG.
+2432000	2435000	MiG is back then a Soviet airplane.
+2435000	2436000	A Soviet bomber.
+2440000	2441000	Okay.
+2441000	2444000	It's flying over Namibian.
+2447000	2450000	Namibians detect a plane, a radar.
+2452000	2453000	Right?
+2453000	2454000	Radar.
+2454000	2455000	Anybody knows?
+2455000	2456000	See a blip.
+2456000	2457000	You don't know what it is.
+2457000	2459000	That's why you need this kind of identification.
+2459000	2462000	Are you one of us, or are you one of them?
+2462000	2463000	Friend or foe?
+2466000	2468000	So he says, here's a challenge.
+2468000	2474000	Whoever you are, you better answer, or I'll shoot.
+2475000	2476000	Right?
+2476000	2477000	Air defense.
+2477000	2480000	This has to be done super fast, right?
+2481000	2482000	What?
+2483000	2488000	Normally, Cuban MiG would be like, uh, I got nothing.
+2488000	2492000	So it would hope that it won't get shot down.
+2494000	2503000	But now, Cuban MiG would take that challenge and quickly retransmit it to the ground station in Mangola.
+2503000	2506000	You've been following me so far.
+2508000	2513000	Which will then transmit it up to whatever plane is flying there.
+2514000	2516000	Turns out, oh, South African bomber.
+2516000	2523000	Well, when South African bomber receives a challenge, it is programmed to reply with a function of a challenge and a secret key.
+2523000	2526000	Everybody here awake?
+2526000	2527000	Following?
+2527000	2528000	Nope.
+2528000	2529000	No rocket science here.
+2532000	2533000	Pun intended.
+2533000	2534000	Response.
+2535000	2536000	Some function of the key, right?
+2536000	2540000	I use a different notation here, but some function of the key and the random number, right?
+2541000	2546000	Which the ground station in Mangola quickly retransmits back to the MiG, which is, you can see where this is going, right?
+2546000	2553000	The MiG transmits it back to the ground station, and the ground station says, yay, one of us.
+2554000	2555000	One of us.
+2560000	2561000	Perfect.
+2562000	2563000	And drops the bomb.
+2566000	2571000	Now, you don't have to feel sorry for Namibians or South Africans or whatever, but do you see the problem?
+2571000	2572000	Right?
+2572000	2578000	If you design this system, you'll be court-martialed, probably, right?
+2579000	2581000	So how do we fix this?
+2585000	2586000	Do you see the problem?
+2586000	2587000	Right?
+2587000	2590000	And the problem should be obvious, that there is a problem.
+2592000	2593000	Well, how do we fix it?
+2593000	2603000	Well, back then, well, actually, I'm not 100% sure.
+2604000	2607000	I'm pretty sure they didn't have GPS.
+2608000	2610000	Or the military equivalent of GPS.
+2614000	2615000	Right?
+2616000	2618000	If they had GPS, would it help?
+2618000	2619000	Come on, exercise your noodles.
+2628000	2631000	Maybe limit the response time, because it takes time to...
+2632000	2633000	Right.
+2633000	2634000	Okay.
+2634000	2635000	Good.
+2635000	2636000	That's one.
+2636000	2637000	That's one.
+2637000	2643000	You could say, look, if there is a plane over here, right, it can be only, I don't know,
+2643000	2645000	10 miles away or something like that.
+2645000	2646000	Whatever.
+2646000	2653000	However the height, whatever the height of the flying altitude of the airplane is, right?
+2653000	2654000	Some miles.
+2654000	2655000	10 miles.
+2656000	2657000	Whatever.
+2657000	2660000	You know what the round trip is for a 10-mile radius.
+2661000	2663000	This is obviously more, right?
+2663000	2664000	You see how many packages are?
+2664000	2667000	Well, normally it should be challenge, response.
+2667000	2672000	Now it's challenge, relay, challenge, response, relay.
+2673000	2677000	So we have four extra transmissions.
+2678000	2681000	One of them, or two of them potentially longer distance.
+2682000	2686000	So timing is of value, isn't it?
+2688000	2690000	But GPS makes it even easier.
+2690000	2700000	All you need to do is to make sure that this American bomber includes in that function of the challenge, right,
+2700000	2702000	that it replies with, its coordinates.
+2703000	2707000	And then the station says, ah, ah, it's not here.
+2708000	2713000	Whatever this replies comes from, it's not from a plane flying overhead.
+2713000	2716000	It's a plane somewhere, or he knows exactly where he's flying.
+2717000	2718000	Does that make sense?
+2720000	2722000	Now, in reality, you probably want to use both.
+2722000	2725000	You want to use the time and the geographic coordinates.
+2728000	2731000	So, just by itself, this is a problem, right?
+2731000	2732000	It's called a relay attack.
+2737000	2746000	Right, so, let's forget the war and then look at it again as a general problem.
+2746000	2754000	We have Alice and Bob, or user and system, they share a secret, and they want to authenticate each other and identify each other over a network.
+2754000	2757000	They do not see each other physically, so they are far away.
+2758000	2761000	How do they authenticate and identify each other, right?
+2761000	2763000	So, that's the main problem.
+2764000	2766000	The adversary here is not just eavesdropping.
+2766000	2770000	I may refer to the adversary as eave, but that's not just the limits of the adversary.
+2770000	2777000	The adversary can eavesdrop, delete messages, modify messages, retard messages, right?
+2777000	2778000	Maybe slow them down.
+2778000	2782000	It can, yeah, insert messages, right?
+2782000	2787000	So, the adversary is pretty capable.
+2791000	2796000	And, what you have seen, essentially, is an example of this attack.
+2797000	2798000	Right?
+2798000	2800000	Which is called, sometimes it's called man in the middle.
+2800000	2804000	They'll probably come around to changing it to some general neutral form one day.
+2804000	2810000	But, the way it's still in the books is MIT and we're man in the middle of that.
+2810000	2812000	Here's the adversary is in the middle, right?
+2812000	2815000	So, the idea is, again, Alice and Bob know the secret.
+2816000	2821000	When Bob challenges Alice and says, hey, here's a random number.
+2821000	2825000	Prove to me that you know the secret based on this random number.
+2825000	2826000	Right?
+2826000	2828000	And Alice replies with a function.
+2828000	2829000	Now, here we use a hash, right?
+2829000	2830000	Like a crypto hash.
+2830000	2833000	That's an example of a function you would want to use.
+2833000	2835000	Because it's non-invertible, right?
+2835000	2836000	No collisions.
+2836000	2838000	Remember these properties we talked about?
+2838000	2839000	Right?
+2839000	2843000	You want to have all the good, both types of collision resistance, right?
+2843000	2846000	So, Alice replies and that's a correct reply.
+2846000	2847000	There's nothing wrong with the reply.
+2847000	2852000	Except the adversary can be in the middle and he can essentially impersonate Alice.
+2852000	2853000	Okay?
+2853000	2857000	Now, there's a subtlety here.
+2857000	2859000	The subtlety is this.
+2859000	2864000	The adversary does not actually learn the secret in this attack, right?
+2864000	2869000	The adversary is just a relay, right?
+2869000	2877000	He's sitting in the middle and he's basically handing messages from Bob to Alice and handing messages from Alice to Bob.
+2877000	2880000	So, he could be like a hostile router, right?
+2880000	2885000	Or like an access point, a malicious access point.
+2885000	2887000	So, what does it gain?
+2887000	2899000	Well, it gains only the fact that if the system is configured so that when authentication succeeds, Alice gets access to something immediately.
+2899000	2900000	Right?
+2900000	2901000	That becomes an attack.
+2901000	2902000	That becomes an attack.
+2902000	2912000	However, if this is followed by encrypted communication using the key K, the adversary gains that.
+2912000	2914000	Do you see that?
+2914000	2918000	Because the adversary does not know the secret.
+2918000	2923000	So, it's attack on authentication.
+2923000	2925000	It's not an attack on secrecy.
+2925000	2931000	Now, if the key itself, remember, I assume the key is a strong key, right?
+2931000	2947000	A binary, sorry, bitwise is long enough, at least 160 bits or so, and not a dictionary, not a big from a dictionary like a password.
+2947000	2949000	There is another way to do this.
+2949000	2958000	And the other way to do this, and this is actually also used in practice for something called one-time password, OTP.
+2958000	2963000	It's based on a data structure called the Lamport's hash.
+2963000	2966000	Has anybody ever seen this before?
+2966000	2967000	No?
+2967000	2969000	Lamport's hash.
+2969000	2977000	Basically, Lamport's hash is the following.
+2977000	2987000	So, you start with the random value, generate the random number, and then you repeatedly hash that random number, like over and over and over and over and over and over.
+2987000	2989000	Remember how we did encryption?
+2989000	2992000	So, imagine you just hash it.
+2992000	2997000	Take X, hash of X, hash of X, hash of X, et cetera, hash, hash, hash, hash, hash, hash.
+2997000	2998000	How many times?
+2998000	2999000	As long as you want.
+2999000	3001000	That's a parameter.
+3001000	3002000	Okay?
+3002000	3017000	So, the idea is you do this and Bob, who will be modeled here as a system, knows what's called the root of the chain.
+3017000	3019000	That is the last hash value.
+3019000	3021000	Okay?
+3021000	3026000	Alice is the one that computed the chain to begin with.
+3026000	3027000	Started with some secret.
+3027000	3029000	You see that secret in quotes?
+3029000	3030000	Okay?
+3030000	3039000	So, she started with some secret value, and she computed a repeated hash over that secret value, n times.
+3039000	3040000	Okay?
+3040000	3041000	Then, she gave the result.
+3041000	3046000	You see that Y over there in the green cloud?
+3046000	3055000	She gave the result to Bob, and she also gave him the index n, which is, at that time, the length of the hash chain.
+3055000	3056000	Why do we call it the chain?
+3056000	3058000	Because they are linked, right?
+3058000	3060000	Hash, hash, hash, hash, hash, hash, hash.
+3060000	3061000	Okay?
+3061000	3072000	So, in the beginning, Bob knows that Y is the root of Alice's chain, and n is the length of the chain.
+3072000	3075000	In other words, the chain has n links in it.
+3075000	3086000	So, the first time Alice wants to authenticate to Bob, okay, she says, hi, I'm Alice.
+3086000	3090000	Don't show that message, because it's a clear text message, nothing in it.
+3090000	3099000	And Bob challenges her with the current index, int, which, at the beginning, is n.
+3099000	3100000	Okay?
+3100000	3111000	And Alice replies with something that hashes into n.
+3111000	3124000	So, you start with a secret, hash once.
+3124000	3130000	Then you arrive at hash of secret, then you hash again.
+3130000	3132000	Then you hash again, et cetera, et cetera.
+3132000	3143000	And eventually, you wind up with this Y, which is hash n of secret.
+3143000	3144000	Okay?
+3144000	3145000	And this is why it's called the chain.
+3145000	3160000	So, in the end, here, at the very end, there's this hash n minus 1 of secret.
+3160000	3161000	Right?
+3161000	3165000	We computed n minus 1 hashes, all of the same, repeatedly.
+3165000	3168000	And so, the last link is a hash.
+3168000	3169000	Right?
+3169000	3172000	And it becomes this.
+3172000	3178000	Well, consider this value, this value here.
+3178000	3183000	This is what Alice will give Bob.
+3183000	3186000	And the idea is, if Bob hashes this, he should get that.
+3186000	3189000	But he knows this already.
+3189000	3196000	So, Bob is thinking, okay, who could have given me this value?
+3196000	3201000	Only Alice, because only Alice knows the input to the hash function.
+3201000	3204000	Because only Alice computed the entire chain.
+3204000	3205000	Right?
+3205000	3209000	And because of the cryptographic properties of the hash function, it's not invertible.
+3209000	3211000	So, nobody could have inverted the hash function.
+3211000	3220000	Or found a collision, because that's supposed to be, right, computationally hard.
+3220000	3221000	Ask questions.
+3221000	3226000	Don't hesitate if you haven't seen this before, which I think none of you have.
+3226000	3228000	Do you see how this works?
+3228000	3232000	And then, what Bob does, this is called one-time authentication.
+3232000	3236000	Because this same value, h n minus 1, cannot be reused.
+3236000	3241000	So, once Alice released it here, in this message in the reply,
+3241000	3246000	Bob has to adjust it in his index to n minus 1.
+3246000	3261000	So, the next time to authenticate Alice, he expects, Bob will expect this.
+3261000	3272000	Because when he hashes this, once hash, you should get that, right?
+3272000	3275000	Some of you look very puzzled.
+3279000	3281000	It's okay to ask questions.
+3281000	3282000	Yeah?
+3282000	3285000	I'm kind of wondering what happens when they get all the way back.
+3285000	3287000	Ah, good question.
+3287000	3290000	What happens when you deplete the change?
+3290000	3291000	When you are...
+3295000	3300000	Now, the truth is, you have to either budget on never depleting it completely,
+3300000	3303000	and then manually resetting with a new change.
+3303000	3306000	Manually mean offline, offline resetting.
+3306000	3309000	Generating, Alice generates a brand new change.
+3309000	3314000	Or, there are some clumsy techniques to use digital signatures to...
+3314000	3316000	I won't bore you with it.
+3316000	3317000	But there are...
+3317000	3319000	That's the problem with this space here.
+3319000	3320000	Now, so this...
+3320000	3323000	The change has to be long enough that it lasts for like a lifetime.
+3323000	3325000	So, let me give you an example.
+3325000	3326000	You have a...
+3326000	3328000	It's like a small IoT device you bought.
+3328000	3329000	Like some kind of a...
+3329000	3331000	I don't know, smart clock or something like that.
+3331000	3332000	And it typically...
+3332000	3333000	The lifetime is like, I don't know...
+3333000	3334000	A year.
+3334000	3339000	So, you can provision it with a hash chain that is good enough for...
+3339000	3340000	I don't know...
+3340000	3344000	One authentication every hour for a year.
+3344000	3347000	So, that's 365 times 24.
+3347000	3349000	That will be the length of your change.
+3349000	3350000	Right?
+3350000	3352000	And then you know you're not unlikely to be depleted.
+3352000	3354000	Because you're not going to authenticate the device every hour.
+3354000	3355000	Right?
+3355000	3358000	So, it is a useful technique.
+3358000	3360000	But it's...
+3360000	3363000	And it has been used in...
+3363000	3364000	In...
+3364000	3366000	What's something called one-time passwords.
+3366000	3367000	Right?
+3367000	3368000	It is a useful technique.
+3368000	3369000	But it has this limitation.
+3369000	3371000	And eventually you will run out.
+3371000	3376000	And in a way, it's a kind of a public key scheme.
+3376000	3377000	And it is...
+3377000	3378000	Why is it...
+3378000	3379000	Why do I say that?
+3379000	3380000	Because...
+3380000	3381000	That root...
+3381000	3382000	That y...
+3382000	3383000	That Bob keeps...
+3383000	3384000	Is like a public key.
+3384000	3385000	For Alice.
+3385000	3389000	And every link is like a one-time authentication.
+3389000	3390000	Using...
+3390000	3392000	Only Alice can come up with the next authentication.
+3392000	3394000	Bob cannot impersonate Alice here.
+3394000	3395000	Okay?
+3395000	3398000	Well, this is an attack.
+3398000	3399000	But you know what?
+3399000	3400000	I'm not going to...
+3400000	3401000	Oof.
+3401000	3402000	We're out of time.
+3402000	3405000	I'm not going to bother you with this attack.
+3405000	3406000	There is...
+3406000	3407000	So, there is...
+3407000	3411000	Finally, in this lecture, there is one thing that you will see out in the real world.
+3411000	3412000	And you may have seen it already.
+3412000	3413000	In some...
+3413000	3417000	In some ways, the dual that we use is kind of an example of this.
+3417000	3418000	A weird example of this.
+3418000	3419000	But...
+3419000	3420000	Anybody ever seen this?
+3420000	3421000	Use your security ID?
+3421000	3422000	Yeah?
+3422000	3424000	They've been very popular.
+3424000	3425000	And they're still around.
+3425000	3427000	They may not look like that.
+3427000	3429000	That was maybe like five to ten years ago.
+3429000	3430000	It's still...
+3430000	3431000	Essentially like a...
+3431000	3432000	Like a fog.
+3432000	3433000	Right?
+3433000	3434000	Think of it as a fog.
+3434000	3435000	But...
+3435000	3436000	It doesn't have NFC.
+3436000	3438000	Or any communication at all.
+3438000	3440000	There's no radio anything.
+3440000	3444000	What it is, is just a little display.
+3444000	3445000	And...
+3445000	3447000	The idea is that every user...
+3447000	3449000	Let's say you work for an organization.
+3449000	3452000	Every Alice gets her own fog.
+3452000	3453000	Okay?
+3453000	3454000	And...
+3454000	3456000	Inside the fog is a master key.
+3456000	3457000	Well...
+3457000	3458000	For that fog.
+3458000	3460000	That it shares with the system.
+3460000	3461000	With the central system.
+3461000	3463000	Bob here.
+3463000	3464000	And...
+3464000	3465000	So...
+3465000	3466000	At setup time.
+3466000	3467000	In...
+3467000	3468000	In the factory.
+3468000	3469000	Or whatever.
+3469000	3470000	This thing is produced.
+3470000	3471000	It's seated with a key.
+3471000	3472000	And Alice and Bob share a key.
+3472000	3473000	Okay?
+3473000	3474000	So Bob is like...
+3474000	3475000	You know...
+3475000	3476000	A security administrator.
+3476000	3477000	There's a database of all these devices.
+3477000	3478000	All these bobs.
+3478000	3479000	For every user.
+3479000	3480000	Etc.
+3480000	3481000	So...
+3481000	3483000	In the beginning...
+3483000	3485000	They go by counters.
+3485000	3486000	So...
+3486000	3487000	There's a counter.
+3487000	3488000	Usually based on time.
+3488000	3489000	So...
+3489000	3492000	The way that Alice authenticates to Bob.
+3492000	3493000	Is not using challenges.
+3493000	3496000	There's no actual challenge coming in.
+3496000	3497000	Rather...
+3497000	3499000	Alice just reads the current value.
+3499000	3502000	That she sees displayed.
+3502000	3504000	And enters it.
+3504000	3506000	Kind of like we do with the dual.
+3506000	3507000	When it challenges us with the code.
+3507000	3508000	Right?
+3508000	3509000	You may always use dual.
+3509000	3510000	Right?
+3510000	3511000	With the code.
+3511000	3512000	I know.
+3512000	3513000	Most of the time it's approved this.
+3513000	3514000	And...
+3514000	3515000	Soon it's gonna change.
+3515000	3516000	You know.
+3516000	3517000	It's gonna be code based.
+3517000	3518000	There.
+3518000	3519000	The OID.
+3519000	3524000	As your best interest in mind.
+3524000	3525000	So...
+3525000	3528000	Soon you'll say goodbye to just approve.
+3528000	3530000	Well that looks the best part.
+3530000	3531000	I know.
+3531000	3532000	I know.
+3532000	3533000	But that's all.
+3533000	3536000	The idea here is very similar to the code based dual.
+3536000	3537000	So...
+3537000	3539000	You just enter a code.
+3539000	3540000	And that code...
+3540000	3544000	You see the little bar next to the number one there?
+3544000	3545000	Like...
+3545000	3546000	It has a little...
+3546000	3547000	Like a stack of bars.
+3547000	3549000	And it tells you how close...
+3549000	3551000	As the bars go down.
+3551000	3552000	They disappear.
+3552000	3553000	Like...
+3553000	3554000	It has...
+3554000	3555000	How close is the code to be changing.
+3555000	3556000	So...
+3556000	3557000	When these bars...
+3557000	3558000	Right now...
+3558000	3559000	It's like...
+3559000	3560000	It shows what?
+3560000	3561000	Five?
+3561000	3562000	Five bars?
+3562000	3563000	I think it starts with six.
+3563000	3564000	And then it goes down, down, down.
+3564000	3565000	Because there's a clock inside.
+3565000	3568000	And eventually it will show you a new code.
+3568000	3569000	Based on time.
+3569000	3572000	Here I just use the counter for simplicity.
+3572000	3574000	But in fact it's based on time.
+3574000	3576000	So what are you proving, right?
+3576000	3578000	When you enter this code?
+3578000	3579000	Okay?
+3579000	3580000	What is the code?
+3580000	3583000	So the code is generated from the key.
+3583000	3586000	From the master key that the device shares with the system.
+3586000	3587000	And the current time.
+3587000	3588000	Never mind.
+3588000	3589000	I use the counter here.
+3589000	3592000	But that counter is not really appropriate.
+3592000	3597000	It's more like a clock.
+3597000	3605000	And because the clocks are reasonably synchronized between this fob and the central system.
+3605000	3610000	The central system will know what to expect from Alice at this time.
+3610000	3611000	Right?
+3611000	3615000	Because she knows exactly what the serial number of the fob registered through Alice.
+3615000	3617000	And she knows what to expect.
+3617000	3618000	Or...
+3618000	3621000	Bob knows what to expect.
+3621000	3627000	Now, the original RSA ID was a bit...
+3627000	3630000	Well, it's aged, right?
+3630000	3631000	It wouldn't be used today.
+3631000	3634000	But, you know, it had only 64-bit key, 44-bit counter.
+3634000	3638000	But the idea was that the six-digit value, like for us we do...
+3638000	3641000	I mean, it's more burdensome than just clicking approve.
+3641000	3643000	But it's not too bad, right?
+3643000	3647000	Just copying six-digit numbers is not a huge amount of burden.
+3647000	3650000	So, that was the idea.
+3650000	3652000	It was kind of user-friendly.
+3652000	3653000	Right?
+3653000	3655000	And then, it's verified on this end.
+3655000	3656000	Counter increases, right?
+3656000	3658000	But basically, time it takes, right?
+3658000	3659000	Which is not really counting.
+3659000	3660000	It's time.
+3660000	3662000	Et cetera, et cetera.
+3662000	3663000	Right?
+3663000	3668000	So, the counter is usually based on this sort of 60 seconds.
+3668000	3669000	That's customizable.
+3669000	3672000	You can make it from 15 seconds to several minutes.
+3672000	3676000	Also, it deals with clock skews because clocks are not perfectly synchronized.
+3676000	3681000	So, the system here will allow you to enter a code that it does not expect as long as it's
+3681000	3687000	a code from like the previous epoch or maybe the future epoch because sometimes clocks run
+3687000	3690000	too fast, too slow, so it has some tolerance.
+3690000	3692000	Anyway, that's it.
+3692000	3693000	Let's quickly...
+3693000	3698000	I was hoping to cover more, but let's try at least another...
+3698000	3699000	Oops.
+3699000	3702000	Let's see.
+3702000	3707000	Here we go.
+3707000	3708000	Alright.
+3708000	3730000	So, this type of thing is the last batch of slides that have to do with passwords,
+3730000	3732000	and then we want a much bigger and better thing.
+3732000	3733000	So, remember passwords.
+3733000	3737000	Now, forget all these fobs, forget the biometrics, remember passwords.
+3737000	3743000	This is kind of a research direction, an idea that has taken hold also partially in industry.
+3743000	3745000	That's why I'm covering it here.
+3745000	3748000	And it's about something called honey passwords.
+3748000	3752000	Now, the only of you know the term decoy.
+3752000	3753000	Right?
+3753000	3758000	Decoy is a fake object that pretend to look normal like a real thing.
+3758000	3759000	Right?
+3759000	3765000	Actually, the word decoy comes from Dutch language, from Dutch language, where decoy means a cage.
+3765000	3771000	This is what the duck hunters would use to put a cage over their head and go into the bogs
+3771000	3776000	and swamps and try to hunt ducks without being noticed as humans.
+3776000	3778000	So, that's where we didn't get that word.
+3778000	3781000	And I see fake objects that make you look real.
+3781000	3789000	It's also a long-term tool in security and intelligence and counter-intelligence.
+3789000	3793000	In computer security, decoys are used quite a lot.
+3793000	3799000	If you know anything about intrusion detection, in the real world, something called honeypots
+3799000	3800000	are often used.
+3800000	3808000	Honeypots are fake resources, like fake web servers, et cetera, fake databases, fake portals,
+3808000	3812000	that are used to entrap adversaries.
+3812000	3813000	Okay?
+3813000	3815000	The military is not very good at doing this.
+3815000	3817000	Banks often do it.
+3817000	3819000	Some larger companies do it, too.
+3819000	3825000	They set up these fake sites, fake resources to attract adversaries and to entrap them.
+3825000	3830000	Sometimes we feed them false information, make them believe that they broke into a system
+3830000	3837000	where they actually have it, to observe the adversaries in the wild, to record their behavior.
+3837000	3838000	Okay?
+3838000	3841000	So, honey tokens, honey accounts.
+3841000	3846000	Honey accounts are basically fake accounts for users that don't exist.
+3846000	3847000	Right?
+3847000	3851000	And let's say that user never logs in, doesn't exist, but there's an account.
+3851000	3856000	And so when somebody logs into that account, you know, it's like a tripwire, right?
+3856000	3858000	You know that something bad happened, right?
+3858000	3862000	Because if that account does not correspond to a real user, when a login to that account
+3862000	3864000	occurs, you know you had a problem.
+3864000	3865000	Right?
+3865000	3872000	You had also decoy documents, or honey documents, that is like, you set up a web server and you
+3872000	3877000	put some like a, or a Google Drive, or you put some sensitive company documents that are
+3877000	3878000	completely fake.
+3878000	3884000	And then you wait for any news of these documents leaking to the real world.
+3884000	3885000	Right?
+3885000	3890000	So that tells you somebody broke in, but what they are releasing to the real world is complete
+3890000	3891000	chock.
+3891000	3892000	Right.
+3892000	3898000	So these kind of undervalued things, I mean, they're not used as much as they should be,
+3898000	3905000	so the key question we're going to try to answer, what kind of decoys do we use for security
+3905000	3906000	problems?
+3906000	3910000	Like password breaches, compromise of device data, etc.
+3910000	3914000	And how to use them in a sort of a principled way?
+3914000	3919000	And more, a bigger question is really how to deal with powerful adversaries that will sooner
+3919000	3922000	or later compromise our systems.
+3922000	3923000	Right?
+3923000	3927000	So, the particular topic here is passwords.
+3927000	3933000	And this work is not my work, it's a work by, by a fairly well-known researchers.
+3933000	3934000	One of them is Rivest.
+3934000	3939000	The guy, Rivest is the R in RSA.
+3939000	3945000	The other guy, Ari Jules, is a cryptocurrency, actually no, sorry, he's a professor Cornell
+3945000	3946000	these days.
+3946000	3949000	So, here's the good news and bad news.
+3949000	3954000	The good news is when you give talks about passwords, there's always news.
+3954000	3955000	Right?
+3955000	3960000	So, for example, this type of news.
+3960000	3966000	And I know this is dated, but I'm just too lazy to update it because there's always treasure
+3966000	3968000	trove of stuff in the news.
+3968000	3973000	In the last six months I've seen at least three or four, you know, giant password breaches.
+3973000	3974000	Okay?
+3974000	3977000	So this was a while ago, but nothing changed.
+3977000	3982000	Password breaches occur all the time in enormous quantities.
+3982000	3985000	The bad news is that it's all bad news, of course.
+3985000	3989000	Now, remember we talked about how passwords are protected?
+3989000	3990000	Hashing, right?
+3990000	3993000	Hashing, shadow files, salt, yeah?
+3993000	3996000	That is still how things are done today.
+3996000	4005000	Now we have Alice, has a password, she logs in, it gets hashed, the system compares the
+4005000	4010000	hash, salt and hash, and lets Alice in if she typed in the right password, and if she
+4010000	4011000	doesn't.
+4011000	4012000	Right?
+4012000	4013000	So, that's how we do things.
+4013000	4014000	Just recall.
+4014000	4015000	Right?
+4015000	4019000	So, the password is hashed, but we're not compared.
+4019000	4020000	Okay.
+4020000	4025000	Hashing and salting is good because the adversary, remember, cannot mount a completely offline attack.
+4025000	4034000	It forces the adversary to first compromise a password file, which contains salted caches,
+4034000	4036000	and then break it.
+4036000	4045000	But, salts are not that long, and that means the adversary will eventually win.
+4045000	4046000	It doesn't change anything.
+4046000	4047000	Right?
+4047000	4050000	You can harden this by slowing down encryption and using very expensive encryption functions,
+4050000	4053000	but in the end, real passwords are weak.
+4053000	4054000	Right?
+4054000	4055000	That doesn't change anything.
+4055000	4058000	Real passwords are weak.
+4058000	4065000	So, the problem is, remember, the salts, you can have to make the salts sufficiently long,
+4065000	4072000	but once the adversary breaks in, right, and learns the password file, the salts for every
+4072000	4075000	user, they're in clear text.
+4075000	4077000	So, they are no longer secret.
+4077000	4079000	Before the adversary breaks in, they're secret, right?
+4079000	4081000	That's why the adversary can't mount an offline attack.
+4081000	4088000	But, once the adversary breaks in and copies the password file, he doesn't know the passwords,
+4088000	4090000	but he learns all the salts.
+4090000	4091000	Okay?
+4091000	4096000	So, the problem, then, for the adversary is just dictionary attacking passwords.
+4096000	4097000	Okay.
+4097000	4100000	So, forget this.
+4100000	4104000	Anyway, there are plenty of good password hacking tools.
+4104000	4110000	There's all this stuff, even from the RockU database that I use today to create dictionaries
+4110000	4111000	of plausible passwords.
+4111000	4112000	Not important.
+4112000	4113000	Right?
+4113000	4118000	The problem is, no matter what you do, no matter what you do, no matter how big your
+4118000	4123000	salt is, no matter what rules you enforce, like, you know, must be 8 characters, 12 characters,
+4123000	4128000	at least one special character, one capital letter, one number, blah, blah, blah.
+4128000	4130000	Those passwords are still weak.
+4130000	4131000	Okay?
+4131000	4134000	And you might as well assume that you can be cracked.
+4134000	4135000	Okay?
+4135000	4142000	So, the point of the matter is, preventing adversary from learning passwords is a losing
+4142000	4143000	battle.
+4143000	4145000	Let's accept this as an axiom.
+4145000	4147000	It's a losing battle.
+4147000	4148000	We can't win.
+4148000	4149000	Right?
+4149000	4154000	And, basically, the adversary will get that copy of a password file.
+4154000	4155000	Somehow.
+4155000	4156000	Okay?
+4156000	4161000	And, once he gets the copy of a password file, he might as well assume the passwords
+4161000	4162000	are in the clear.
+4162000	4165000	Because it's only the barrier is this high.
+4165000	4167000	So, that's bad.
+4167000	4170000	But, not all is lost.
+4170000	4176000	What can we do if we cannot protect our passwords?
+4176000	4179000	I say, at the very least, we can detect.
+4179000	4180000	Right?
+4180000	4185000	If you cannot prevent an attack, at least detect.
+4185000	4189000	Because the biggest problem is not detecting an attack.
+4189000	4194000	If you cannot detect an attack, the adversary will stealthily get in.
+4194000	4201000	The adversary will slow, smart adversary, will not do anything grandiose or, like, anything
+4201000	4206000	large, anything big, like, start exfiltrating terabytes of data.
+4206000	4207000	Right?
+4207000	4212000	Because most organizations, they have, like, routers and all kinds of other logging things.
+4212000	4213000	Right?
+4213000	4218000	Logging facilities where doing something at scale will, like, raise a flag.
+4218000	4222000	Like, for example, if you have a router that says, all of a sudden, gee, there was a spike.
+4222000	4228000	Suddenly, you know, the rate was, I don't know, 200 megabytes per hour in the middle of the night,
+4228000	4232000	and then suddenly I see a gigabyte of data in packets passing through.
+4232000	4233000	What's wrong?
+4233000	4235000	Why is there a gigabyte of data?
+4235000	4236000	Right?
+4236000	4237000	That will raise an alarm.
+4237000	4239000	Smart adversaries will not let that happen.
+4239000	4244000	They will try to shake their traffic not to exceed the normal traffic.
+4244000	4246000	Think smart, right?
+4246000	4250000	At least, assume this, obviously, is at least as smart as you are.
+4250000	4252000	So you will get this.
+4252000	4254000	And now you can impersonate users.
+4254000	4257000	Now, eh, given the time to stop, I'll try to improve.
+4257000	4263000	I really wanted to finish this today, but we'll do it in the first 20 minutes, half an hour, all the next time.
+4263000	4264000	See you Tuesday.

@@ -1,0 +1,969 @@
+start	end	text
+0	5000	that means we want to have both timeliness and freshness of our IP packets.
+5000	10000	Of course, we're also equally interested in protecting integrity of data.
+10000	17000	And make sure that the data in the payload, the data in the packet has not been modified in transit.
+17000	23000	We want to sometimes protect confidentiality of the data, not always.
+23000	28000	Just like in SSL, there's always, like remember there's an option not to use encryption,
+28000	33000	you use null encryption, while in IPsec there are options also not to use encryption.
+33000	41000	But authenticity, authenticity of origin and data integrity are mandatory.
+41000	50000	Meaning you don't want to use IPsec without authenticity of origin and data integrity.
+50000	54000	That's the minimum thing IPsec does.
+54000	58000	In addition to that, you can protect what's called packet metadata.
+58000	60000	That is to protect against eavesdropping.
+60000	65000	So the typical example is that you have, let's say, two branches of the same company.
+65000	69000	Let's say you have an East Coast branch and West Coast branch.
+69000	75000	And inside each branch there's a private network, interconnected lands, all kinds of stuff.
+75000	79000	All kinds of like departments have their own arrangement on the West Coast.
+79000	82000	There's something like that, and on the East Coast, right?
+82000	83000	And how do they communicate?
+83000	91000	Well, normally, you know, IP posts on one on the East Coast, also IP posts on the West Coast.
+91000	97000	And notice that if you eavesdrop on these packets in the middle of the Internet or outside these organizations,
+97000	101000	you will know who is talking to whom, right?
+101000	106000	So that's information that can be valuable, right?
+106000	114000	Because you're also learning the internal structure of the private network, okay?
+114000	119000	It exposes addresses within the private network, both source and destination.
+119000	126000	So what IPsec allows you to do in a certain mode of operation is to encapsulate such packets
+126000	134000	and hide the internal source of this connection so that anyone listening and eavesdropping on IP packets
+134000	141000	anywhere in the middle of the Internet wilderness will only see that these packets go from
+141000	142000	right?
+142000	151000	Company A East Coast branch and Company B West Coast branch, but will not know anything beyond that, okay?
+151000	152000	This is very important.
+152000	160000	This protects against what's called traffic analysis.
+160000	165000	So the general model is like this, right?
+165000	177000	The IPsec assumes that hosts and gateways, right, or border routers, are secure themselves.
+177000	181000	It doesn't make any assumptions about software security, operating system security, etc.
+181000	189000	But it assumes that hosts can be secured and gateways, but the communication lines themselves are insecure.
+189000	190000	Right?
+190000	195000	Whether they're wired, wireless, whatever medium you use, they are insecure.
+195000	203000	Insecure means eavesdropping, insecure means active attacks, like deletion, insertion, manipulation,
+203000	206000	delaying, reordering, etc.
+206000	208000	Okay?
+208000	217000	Now, we will not cover the entirety of the security model.
+217000	222000	And the reason is because it's very complex and it's very abstruse.
+222000	227000	And yes, if one deals with IPsec, one should know everything.
+227000	231000	But I'm going to give you again just kind of an appetizer for IPsec.
+231000	234000	And I'm going to talk mainly about IPsec formats and options.
+234000	247000	But there is something called Ike, called Internet PHTH, which is a basically, think of that as a control, remember the control channel in SSLTLS?
+247000	252000	The one that establishes security, you know, the handshakes and everything?
+252000	255000	That's what Ike does.
+255000	256000	Okay?
+256000	262000	But unlike SSLTLS, where everything is put together in one protocol, right?
+262000	269000	I cannot tell you about SSLTLS packets or record formats without describing the handshake, right?
+269000	274000	Whereas an IPsec, I can't, and Ike is a separate component.
+274000	275000	Okay?
+275000	291000	So, what it does is that it is a protocol, or a set of protocols actually, that establish key material, cryptographic shared keys, between pairs of communicating IP addresses.
+291000	292000	Okay?
+292000	295000	So, we will not talk much about this.
+295000	308000	Ike, in turn, works together with something called security policy, which is an organizationalist, something that every organization that uses IPsec should ideally maintain.
+308000	311000	It's not mandatory, but it needs to be maintained, generally.
+311000	320000	And security policy is basically telling you what IPsec to use, what type of IPsec to use, where.
+320000	325000	So, think about, like, you're trying to communicate within your organization.
+325000	332000	You work for ABC Incorporated, and you are in your branch office, you're working in a particular office, you have your private network,
+332000	338000	and you're trying to establish a connection, let's say, to a nearby post, right, inside.
+338000	343000	And it might look at your packets and say, oh, this is inside, no IPsec required.
+343000	352000	But as you are trying to maybe communicate, let's say, to a social network outside, it might say, for example, no.
+352000	355000	Which means, not allowed, period.
+355000	357000	IPsec, IPsec, not allowed.
+357000	358000	Okay?
+358000	360000	See, Facebook, there's no way.
+360000	365000	Or it might see something like Gmail, right?
+365000	366000	You're going to Gmail, right?
+366000	367000	You're going to Gmail.
+367000	372000	It might say, oh, if you're talking to Google, then you have to use IPsec in this mode, this
+372000	373000	specific mode.
+373000	376000	And I'll show you examples of what that means.
+376000	390000	So, the policy governs the security flavor that is applied to a specific host to host connection.
+390000	399000	So, there are two formats in IPsec, and it can be confusing, so I'm going to try to step
+399000	400000	through it.
+400000	405000	One is called S, or encapsulating security payload, and it's more complex.
+405000	411000	And the simple one is sort of IPsec-like, it's called authentication header.
+411000	412000	Okay?
+412000	424000	So, you use one or the other, between the two hosts, you don't generally use more than one.
+424000	427000	You pick one or the other.
+427000	433000	And to make, well, more later, so you can use it in a following way.
+433000	439000	You can use it in a host-to-host communication, just like an example I described.
+439000	444000	You have host A in the West Coast branch, talks to host B in the East Coast branch.
+444000	445000	Right?
+445000	451000	So, these are host-to-host, ant-to-ant use of IPsec.
+451000	454000	You can also use it host-to-gateway.
+454000	461000	An example of that is, let's say you are an employee of that ABC incorporated.
+461000	470000	You take your laptop with you on travel to Turkestan, and you are in a hotel room, or
+470000	474000	in an internet cafe, or something like Starbucks, and you want to dial back home.
+474000	481000	You want to call home, check your mail, whatever, work on some internal documents.
+481000	488000	So, in that sense, you are communicating your laptop, your host communicates to the gateway
+488000	493000	of your home office, of the private network in your home office.
+493000	499000	So, the IPsec connection would be then between your interface on your laptop, and the IP interface,
+499000	504000	incoming IP interface on your gateway.
+504000	505000	Okay?
+505000	509000	Alternatively, it would be gateway to gateway.
+509000	516000	That would be, for example, if the same as my first example, host A in West Coast branch office
+516000	523000	talks to host B in the East Coast branch office, but the connection is not IPsec.
+523000	526000	End-to-end, it's between their respective gateways.
+526000	528000	Does that make sense?
+528000	533000	So, the gateways provide like a secure tunnel or secure pipe.
+533000	537000	And then, within each branch office, there is no IPsec.
+537000	543000	Meaning, between me, let's say I am host A, between me and my exit gateway, there is no
+543000	547000	IPsec, and the IPsec starts there, goes to the gateway of the other branch office, over
+547000	553000	the wilderness of the internet, there it terminates, and from there on to the destination host B,
+553000	555000	there is no IPsec.
+555000	556000	Okay?
+556000	557000	That's, that's gateway to gateway.
+557000	558000	Okay?
+558000	563000	And, to make things even more interesting, all these things can be combined.
+563000	564000	Okay?
+564000	572000	It is, there was a marker here at some point, but I think it's gone.
+572000	573000	What's going on now?
+573000	574000	Is there?
+574000	575000	Oh, wow.
+575000	594000	Okay, so, you could have host A. This is the branch office, this is the branch office.
+594000	595000	This here is bad, right?
+595000	596000	Internet.
+596000	609000	And, this host could actually have an IPsec connection here, to this gateway.
+609000	619000	Then, there could be another IPsec connection between gateway B and a gateway A, and a third
+619000	629000	IPsec connection between gateway B and host B. That is if you, like, don't trust the internal
+629000	632000	networks, right, in either organization.
+632000	635000	So, you could have that, that's totally fine.
+635000	642000	What is also fine, one second, is you could have, everybody saw this, right?
+642000	651000	You could have a connection that goes like this, okay?
+651000	667000	Between A and B, that's called IPsec E to B, and this is IPsec G to G.
+667000	671000	So, there is an encapsulation here.
+671000	673000	Does that make sense?
+673000	681000	So, you have an end-to-end connection from A to B, but from gateway to gateway, from gateway
+681000	686000	to gateway to gateway to B, you have another one on top of it, like a thicker pipe.
+686000	692000	And so, the idea is that there may be many other hosts here, many other hosts there, but
+692000	695000	they will utilize the same pipe.
+695000	696000	Question?
+696000	697000	Yes.
+697000	698000	Okay.
+698000	701000	And, you can imagine other variations as well, right?
+701000	706000	For example, my first example with three of them doesn't have to be like that.
+706000	711000	It could be like A to gateway, there is no IPsec, then gateway to gateway, there is IPsec,
+711000	714000	and then again, gateway B to B is IPsec.
+714000	716000	Totally fine.
+716000	719000	Any combination is okay.
+719000	729000	So, as I said, AH, authentication and ASP, and to make things, this is very important,
+729000	737000	to make things even more confusing and complicated, there are two modes of operation for each.
+737000	745000	So, both authentication and encapsulating security payload can operate in two modes,
+745000	748000	transport and tunnel.
+748000	749000	Okay?
+749000	751000	So, what's the main difference?
+751000	757000	You'll see the pictures, the pictures are on board worth a thousand words, but the main difference
+757000	765000	between tunnel and transport mode is in tunnel mode, you take an IP data here, IP packet,
+765000	769000	and you treat it as a block.
+769000	773000	You slap a new header in front of it.
+773000	775000	Does that make sense?
+775000	776000	That's a tunnel.
+776000	782000	It means you're hiding the entire IP packet, or protecting the entire IP packet as is.
+782000	784000	That's tunneling.
+784000	792000	Transport is, you don't do that, you just use the original IP header, and then in the middle,
+792000	800000	between IP header and the payload, right, the transport, etc., you stick an IPsec header.
+800000	803000	So, it saves bandwidth, right?
+803000	805000	And some process.
+805000	807000	But, it's a trade-off.
+807000	808000	Why?
+808000	813000	Because, anybody can already see from my description where is the trade-off?
+813000	814000	There's one trade-off.
+814000	826000	Tunneling is more secure because non-tutneling, transport mode, exposes the end-to-end IP addresses.
+826000	840000	Whereas, if you tunnel, right, for example, in this case, if we had here,
+840000	866000	if this connection is transport mode, right, everything is cool except the A and B addresses will be exposed.
+866000	875000	If the A, this gateway to gateway to gateway to B is in tunnel mode, then the A and B addresses are hidden.
+875000	880000	Well, unless you use just authentication, which is stupid, but you don't want to do that.
+880000	881000	But, they're hidden.
+881000	891000	Which means, on the internet here in the wilderness, the only thing you would see as source destination IP would be gateway A, gateway B.
+891000	892000	Okay?
+892000	896000	So, now you sort of know the difference.
+896000	897000	Right.
+897000	902000	This is just a point if you're not familiar with gateway, but I'm using it in a sense of a border router.
+902000	903000	Right?
+903000	910000	So, if you know, you should know, that the internet is composed of what's called ASs or ADs sometimes.
+910000	919000	AS or AD stands for Autonomous System or Autonomous Domain, and all of these terminology refers to inorganizational networks.
+919000	931000	That is, could be a ginormous thing like AT&T that provides long range services as one AD or one AS, or it could be something smaller like UCI, which is also NAS.
+931000	932000	Okay?
+932000	939000	But, there's a difference in the internet between something called transit ASs and stub ASs.
+939000	949000	And, just as the name suggests, transit is the one that is in the middle of the internet to provide services to endpoints, and stub is like the end.
+949000	953000	UCI, for example, does not provide transit services to UCLA.
+953000	954000	Right?
+954000	957000	Or the city of Irvine.
+957000	959000	We are a stub.
+959000	960000	Okay?
+960000	963000	Your home network is kind of a stub.
+963000	968000	It's not really an AS, but let's say you are here, I don't know what you guys use.
+968000	974000	You guys use UCI campus networking if you live on campus, but if you live off campus, maybe using Cox, right?
+974000	979000	So, one of my experiences was like for many years I had Cox, right?
+979000	984000	So, Cox is the internet, kind of default internet provider around here.
+984000	988000	And they are an ISP and a stub domain.
+988000	989000	Right?
+989000	994000	Because they have what's called an AS, or domain number assigned to them, you know?
+994000	1000000	Anyway, so, typically, IPsec involves gateways, right?
+1000000	1007000	And they sit on the border of a domain or autonomous system.
+1007000	1008000	Okay?
+1008000	1013000	So, this is just going to be a slightly better picture that shows you, right?
+1013000	1019000	So, this would be the tunnel mode right here, the typical example, right?
+1019000	1020000	It's not a mandatory example.
+1020000	1021000	It's not the way to use it.
+1021000	1022000	It's a way to use it.
+1022000	1027000	But it's the one that makes sense, is that you would provide tunnel mode between routers.
+1027000	1032000	This is like my example of branch office, east, west coast, east coast, right?
+1032000	1040000	There would be tunnel mode between the routers, and then the transport mode between the hosts.
+1040000	1042000	They do not interfere with each other.
+1042000	1046000	They totally coexist and they don't care about each other.
+1046000	1047000	Okay?
+1047000	1054000	You might view some of this, of course, is a little bit redundant, right?
+1054000	1060000	But, consider that hosts, why would hosts use transport mode?
+1060000	1062000	Because maybe this, this is insecure, right?
+1062000	1066000	Like, why use IPsec between here, you know, end to end?
+1066000	1067000	Because they don't trust this network.
+1067000	1069000	I mean, they don't trust this network.
+1069000	1073000	They may also not trust the routers necessarily, right?
+1073000	1076000	Different levels of security.
+1076000	1082000	So, here may be everything, routers may say, okay, this is all secret, or level secret,
+1082000	1087000	but for the host communication, they say, oh, no, no, we, this session is top secret.
+1087000	1091000	Which means higher security, so they may want to have a separate session.
+1091000	1096000	Right?
+1096000	1103000	And this is yet another pictorial representation for those who are visual learners.
+1103000	1104000	Right?
+1104000	1107000	So, you see there, tunnel mode, right?
+1107000	1110000	This is independent of whether you use AH or ESP.
+1110000	1117000	The way that, at the top, you have a sort of original IP packet with a header and data,
+1117000	1122000	and in a tunnel mode, the header and data are protected.
+1122000	1129000	It says encrypted, it's strictly speaking, not always encrypted, but it's at the very least protected.
+1129000	1130000	Okay?
+1130000	1138000	Then it slaps an IPsec header in front, and before that prepends a new IP header.
+1138000	1151000	Now, if you use this mode between two hosts, like in my previous example, previous picture,
+1151000	1160000	if you use this kind of a tunnel mode, right, between two hosts, what happens is the same
+1160000	1166000	source destination addresses are in the inner header, the protected header, as would be in
+1166000	1169000	an outer header.
+1169000	1172000	Do you see that?
+1172000	1173000	Following me?
+1173000	1176000	Because, right, it's the same two hosts, right?
+1176000	1177000	Endpoints.
+1177000	1182000	So, if you use the tunnel mode, the header that is protected, that is within, has the same
+1182000	1186000	source destination as the header that is outside.
+1186000	1188000	So, it might seem kind of weird, right?
+1188000	1192000	In that case, we are not protecting traffic from traffic analysis.
+1192000	1199000	What we might be protecting is, for example, what protocol is it?
+1199000	1205000	So, the new IP header here will have the same source destination, right, if it's host to
+1205000	1206000	host, right?
+1206000	1212000	But it will not have, remember there's a protocol field in IP header that says, ah, I'm using
+1212000	1218000	TCP, socket, there's like a support number, or UDP, or ICMP, or God knows what, right?
+1218000	1221000	There's more than just TCP on top of IP in general, right?
+1221000	1225000	So, that is potentially sensitive information.
+1225000	1232000	So, two hosts may want to use tunnel mode to hide what kind of transport layer protocol
+1232000	1235000	they're using and what port numbers they're using.
+1235000	1236000	Okay?
+1236000	1239000	So, you still get something out of it.
+1239000	1246000	And, um, transport mode, of course, is, as I said before, you take the original IP header,
+1246000	1250000	and you, you still use it, but you insert the IPsec header.
+1250000	1251000	Okay?
+1251000	1259000	The other thing that this, this actually, obviously I hijacked this figure from, from somewhere,
+1259000	1266000	going to like a textbook, but, um, what it doesn't show you is that, well, never mind,
+1266000	1271000	I don't actually, never mind, I said, all good.
+1271000	1275000	Um, that's another representation maybe easier to have.
+1275000	1281000	You see, original datagram, this example has TCP, but it doesn't, remember it doesn't have to be TCP,
+1281000	1284000	it could be UDP or some other protocol.
+1284000	1287000	Transport mode, tunnel mode.
+1287000	1288000	Okay?
+1288000	1290000	So, this is the same information as you showed before.
+1290000	1291000	Slightly different.
+1291000	1293000	Any questions?
+1293000	1303000	So, as I said before, it's, as I said, is precisely the set of format, packet formats.
+1303000	1304000	Okay?
+1304000	1305000	Not a protocol.
+1305000	1306000	All right?
+1306000	1314000	And the first two RFCs, remember I told you what RFCs are, they're kind of like internet standards written in a very special way.
+1314000	1320000	Not as bad as patents or legal documents, but, but not exactly like technical papers.
+1320000	1326000	And they're very detailed, they specify, they usually have state diagrams and all kinds of other transitions.
+1326000	1327000	They encapsulate everything.
+1327000	1332000	And the reason is, so you should be able to take an RFC, implement it in whatever gut-forsaken language you want,
+1332000	1337000	on whatever gut-forsaken platform, hardware platform you want, whatever operating system you want,
+1337000	1341000	and it will still interoperate with anything else that runs the program.
+1341000	1343000	That's the whole idea.
+1343000	1344000	Right?
+1344000	1349000	Whether you use an 8-bit processor or a 64-bit processor, a supercomputer or an IoT device,
+1349000	1351000	they will interoperate.
+1351000	1354000	If you faithfully implement the program.
+1354000	1359000	So, the first two are IPsec.
+1359000	1366000	And this is the item, you know, you can look at it, it's really complex.
+1366000	1374000	And the reason it is so complex is because it was designed to be super open and flexible,
+1374000	1380000	meaning that the Internet Engineering Task Force, the organization that oversees Internet standards,
+1380000	1385000	not just security, but all Internet standards, is international.
+1385000	1392000	And it doesn't, it tries not to be, like, very centric about protocols or algorithms,
+1392000	1396000	like encryption algorithms or authentication algorithms, so it tries to accommodate everything.
+1396000	1401000	And so it tries to be super flexible and leave room for new, new, new techniques.
+1401000	1402000	Right?
+1402000	1408000	So that's why what AH and ESP tell you, only the formats.
+1408000	1411000	Only the formats.
+1411000	1414000	Okay, let's zoom into authentication here.
+1414000	1418000	That's the lightest IPsec version.
+1418000	1423000	It basically provides two things, origin authentication and data integrity.
+1423000	1429000	It does not, even though you will see the word encrypt, it does not encrypt.
+1429000	1430000	Okay?
+1430000	1434000	It does not provide confidentiality.
+1434000	1439000	It provides data integrity and origin authentication.
+1439000	1440000	Okay?
+1440000	1450000	Also protects against, like, replayed, or allows you to detect replayed and out-of-order messages, packets,
+1450000	1455000	by using this sort of monotonically increasing sequence number.
+1455000	1459000	Not the same thing as a sequence number inside that IP had.
+1459000	1461000	Its own sequence number.
+1461000	1462000	Okay?
+1462000	1469000	So remember, no data confidentiality, no metadata confidentiality, in this version.
+1469000	1470000	Okay?
+1470000	1479000	So as I said, 32-bit sequence number, and then uses cryptographic hash algorithms, which are
+1479000	1482000	basically all kinds of versions of HMAC.
+1482000	1483000	Remember HMAC?
+1483000	1486000	Kind of quickly defined it, showed you how it works.
+1486000	1492000	HMAC is a construct that can be used with any good hash function.
+1492000	1497000	Where good means cryptographically strong hash function.
+1497000	1499000	Only symmetric crypto.
+1499000	1500000	Only symmetric.
+1500000	1501000	Okay?
+1501000	1509000	Here's the format of the beast.
+1509000	1515000	First thing you see is next header, which is basically a pointer to what to do next.
+1515000	1516000	Right?
+1516000	1518000	Remember the packets are concentric, right?
+1518000	1522000	Outer header, inner header, inner inner header, and then finally data, right?
+1522000	1527000	So you should be able to, you know, your code, right, that runs and parses packets needs to
+1527000	1530000	go from processing one header to the next header to the next.
+1530000	1534000	So it tells you the next header, where the next header is.
+1534000	1537000	Then it says payload length, right?
+1537000	1538000	Right?
+1538000	1541000	That's the, that's the size.
+1541000	1544000	Then it's reserved, God knows why.
+1544000	1546000	60 bits, not used.
+1546000	1549000	Then there's five, the security parameters index.
+1549000	1553000	Don't ask me what, why they picked this terminology.
+1553000	1556000	Well, actually what it is, is like a session ID.
+1556000	1557000	Okay?
+1557000	1564000	So this identifies, SPI identifies the session, this particular session between these two
+1564000	1569000	communicating IP posts or IP interfaces.
+1569000	1573000	It is one way, just like SSL-TLS, remember?
+1573000	1574000	It's one way.
+1574000	1582000	Meaning that SPI used for host A to B is going to be different than the one used from B, or
+1582000	1584000	back at set, from B to A.
+1584000	1586000	Just like SSL-TLS.
+1586000	1589000	Which means like the keys associated, right?
+1589000	1595000	With A to B direction will be different than those keys used in B to A direction.
+1595000	1599000	Xenos number that I already told you about.
+1599000	1607000	And then authentication data, which it has variable size depending on which cryptographic, like
+1607000	1609000	HMAC flavor you're using.
+1609000	1612000	Because remember, HMAC outputs a value of a hash function, right?
+1612000	1614000	Remember there's two concentric applications, right?
+1614000	1616000	With a key, etc.
+1616000	1619000	But the output varies.
+1619000	1625000	If you're using SHA1, it might be 128, as little as 128 bits.
+1625000	1629000	Using SHA2 will be at least 256 bits.
+1629000	1632000	SHA3, there are a few other hash functions that have it.
+1632000	1637000	So the size of the authentication token, this is the authentication data that authenticates
+1637000	1644000	the packet, will vary depending on the hash function used in the HMAC.
+1644000	1646000	And how do you know which function is used?
+1646000	1652000	Well, the SPI, right, is the identifier of the session that will point to a record somewhere,
+1652000	1653000	right?
+1653000	1657000	They'll say, oh, this connection uses this hash function for HMAC.
+1657000	1658000	Okay?
+1658000	1661000	So there's no confusion, right?
+1661000	1666000	You see, there's no confusion about how long this should be.
+1666000	1668000	But it is a variable field.
+1668000	1675000	Now, for a given host A to host B H session, you cannot change the hash function.
+1675000	1678000	There's no change cipher spec like an SSLT has.
+1678000	1684000	You are fixed for a given connection.
+1684000	1687000	More pictures?
+1687000	1694000	Okay, so this is, again, we're talking about authentication here, but remember, every version
+1694000	1700000	AH and ESP can be used in tunnel mode or transport mode.
+1700000	1706000	So, up top is the IP diagram, right?
+1706000	1709000	I think the colors make it kind of clear what we're talking about, right?
+1709000	1714000	So, the top is untouched original IP packet.
+1714000	1719000	It has an IPv4 header, and the protocol field says 6.
+1719000	1723000	6 is reserved for TCP, right?
+1723000	1726000	So, that's how it's parsed, right?
+1726000	1732000	When you receive, and this is not really looked at so much or processed by the routers along the internet,
+1732000	1735000	but the receiving host gets an IP packet.
+1735000	1740000	It parses as the IP header, looks at the, oh, it's 6, so I pass it to TCP.
+1740000	1743000	It's something else, I pass it to UDP or ICMP, whatever.
+1743000	1746000	These numbers are reserved.
+1746000	1747000	Okay?
+1747000	1749000	They are part of the standard, IP standard.
+1749000	1753000	Then you have TCP header, you see, right?
+1753000	1756000	And then you have data.
+1756000	1761000	And all of that TCP header plus the dark, dark green,
+1761000	1762000	make IP data, right?
+1762000	1765000	So, as far as IP, that's always IP data.
+1765000	1769000	Okay, so what do we do in the transport mode?
+1769000	1772000	In the transport mode, the IP has stays, right?
+1772000	1778000	As I said, it stays almost the same, but the protocol field changes to 51.
+1778000	1781000	51 is reserved for IP set.
+1781000	1784000	So, what they're receiving those processes.
+1784000	1790000	The header, it says, oh, not going to TCP, not going to GDP, not going to ICMP,
+1790000	1794000	going to IP set, invoke IP set receipt.
+1794000	1795000	Okay?
+1795000	1803000	And then what follows this is the H header, authentication header that you saw earlier.
+1803000	1810000	And inside it, there's all these fields you saw, but you see the next header, 6.
+1810000	1813000	That means the next header is TCP, right?
+1813000	1816000	Because that's how they are laid out.
+1816000	1819000	IP, IPsec, TCP.
+1819000	1823000	I mean, no mystery header, right?
+1823000	1829000	Tunnel mode, by now, should be kind of obvious, right?
+1829000	1834000	There was your original header that goes here.
+1834000	1835000	Intact.
+1835000	1836000	Notice nothing changes.
+1836000	1841000	This whole thing, this whole block is exactly what you see at the top, right?
+1841000	1846000	It's like verbatim, wholesale, taken and encapsulated.
+1846000	1852000	Identification header, stuck here.
+1852000	1853000	Okay?
+1853000	1858000	New IP header in front.
+1858000	1865000	So the packet begins with a new outer IP header.
+1865000	1867000	The protocol is 51.
+1867000	1870000	It means IPsec is next.
+1870000	1873000	So as this header is parsed, IPsec is involved.
+1873000	1874000	Right?
+1874000	1875000	IPsec received.
+1875000	1879000	IPsec looks at this and says, oh, let me authenticate.
+1879000	1882000	First of all, it makes sure that it finds an entry.
+1882000	1889000	It's like a table somewhere that says, I have a key for this connection, right?
+1889000	1891000	It uses SPI to do that.
+1891000	1892000	It looks up.
+1892000	1893000	Now this is the key.
+1893000	1894000	I authenticate.
+1894000	1896000	If authentication fails, done.
+1896000	1897000	Packet is discarded.
+1897000	1898000	Okay?
+1898000	1903000	But if the packet is okay, everything checks out, where do we go?
+1903000	1904000	Next header.
+1904000	1905000	Why four?
+1905000	1907000	Four is the reserve for IP.
+1907000	1915000	So it actually goes IP, IPsec, back to IP.
+1915000	1919000	Because it now processes this as an IP packet.
+1919000	1923000	And IP here says on the X protocol 6, TCP.
+1923000	1926000	So it sounds a little weird, but it holds very robust.
+1926000	1931000	It goes IP, IPsec, IP, TCP.
+1931000	1935000	All within your kernel, right?
+1935000	1940000	Or maybe outside the kernel, depending on which .
+1940000	1942000	Questions?
+1942000	1945000	Pretty straightforward, right?
+1945000	1946000	Okay.
+1946000	1953000	Now it gets a little more tricky, but just a little bit.
+1953000	1954000	ESP.
+1954000	1959000	Redundant, redundant, redundant.
+1959000	1962000	Don't ask me why.
+1962000	1965000	They designed it that way.
+1965000	1968000	My guess is because, well, I kind of was around during that time.
+1968000	1976000	I sort of remembered that the idea was to give people a choice between something very lightweight, like AH.
+1976000	1985000	Which means that you could use upper layer encryption, like you could use something like SSLTLS, whatever, at a higher layer.
+1985000	1993000	But at IP, you should just have basic protection, like integrity and origin authentication.
+1993000	1995000	But everything else, leave it to the higher layer.
+1995000	1996000	So that's one philosophy.
+1996000	1997000	Right?
+1997000	2001000	Another philosophy is protect everything.
+2001000	2005000	And that's more like what ESP does.
+2005000	2006000	So they do overlap.
+2006000	2012000	Meaning that they actually, you could use one to, you know, you can configure one to be almost like the other.
+2012000	2016000	But they do offer also different services.
+2016000	2031000	So it provides everything that AH already offers, but also gives you data confidentiality, which means like actual encryption of data.
+2031000	2041000	The details uses a counter also to detect, replace, and delay, and replace reward packets.
+2041000	2045000	Uses similar integrity check coverage because it also needs integrity.
+2045000	2049000	You cannot, you should not be just using encryption without integrity.
+2049000	2050000	Okay?
+2050000	2057000	But distinctive features, confidentiality, and metadata protection.
+2057000	2058000	Right?
+2058000	2066000	So metadata confidentiality as well, meaning that you can hide the actual endpoints from being used.
+2066000	2069000	And here we go.
+2069000	2071000	Here's the header.
+2071000	2076000	The first thing you see in a header is SPI.
+2076000	2079000	Now let's walk back to the application header.
+2079000	2080000	What do we see?
+2080000	2083000	You see SPI and a sequence number.
+2083000	2084000	Here?
+2084000	2088000	You see SPI, sequence number, but it's preceded by a few things.
+2088000	2089000	So it's not exactly the same.
+2089000	2090000	Yeah?
+2090000	2098000	So you're making it sound like AH doesn't have the ability to protect the earth at the endpoints?
+2098000	2099000	It cannot.
+2099000	2102000	So what's the point of tunnel mode?
+2102000	2106000	What is the point of tunnel mode?
+2106000	2107000	Good question.
+2107000	2108000	Good question.
+2108000	2109000	Yeah?
+2109000	2115000	If you use the tunnel mode, you get double protection maybe?
+2115000	2118000	I mean, you could imagine that...
+2118000	2119000	Let me see.
+2119000	2130000	You could, you could imagine that, like to say you're using some higher layer, like session layer encryption,
+2130000	2139000	and the tunnel mode maybe gives you some, a little extra because you could use maybe a tunnel mode between two gateways
+2139000	2144000	and rely on, on application level security for hand to hand.
+2144000	2148000	But I'm not sure if that, that actually holds water.
+2148000	2157000	So that's one of the things that they, for compatibility, decided to provide both tunnel and transport for AH and ESP.
+2157000	2158000	You had a comment?
+2158000	2159000	Come on.
+2159000	2165000	I just think that tunnel mode may be used for like, things like VPN.
+2165000	2166000	Yes.
+2166000	2169000	Tunnel mode is used by, for VPN.
+2169000	2182000	But what his question is, since tunnel mode does not protect the source and destination addresses, the original source and destination, what is the point?
+2182000	2184000	For AH.
+2184000	2185000	For AH.
+2185000	2186000	For AH, right?
+2186000	2188000	So in AH, what does it actually give?
+2188000	2202000	And I think there is something, there is something maybe that have to do with, ah, you remember, hey, so you have these mutable fields, right?
+2202000	2205000	Remember mutable fields, the fields that change an IV header?
+2205000	2211000	Well, if you tunnel, then you protect the fields of the inner header, everything.
+2211000	2213000	Does that make sense?
+2213000	2216000	Because, but, and it doesn't actually change, right?
+2216000	2218000	Until the end of the tunnel.
+2218000	2222000	But still there is something, there is, I didn't remember there was something.
+2222000	2223000	So that's that.
+2223000	2228000	That you get to protect these fields that normally change an IP.
+2228000	2235000	So, let's just go back for a second.
+2235000	2237000	Right, right.
+2237000	2240000	So, let's look at the transport mode.
+2240000	2243000	In the transport mode, the original IP header, right, is still there.
+2243000	2246000	And it has these fields that change, remember?
+2246000	2251000	Time to live, check some, fragmentation, right?
+2251000	2254000	IHL, they can change.
+2254000	2255000	In transit.
+2255000	2256000	So you cannot really protect them.
+2256000	2260000	It protects other fields, like source, destination, but not those.
+2260000	2262000	Not the ones I have in red, remember?
+2262000	2270000	But with the transport mode, sorry, with the tunnel mode, the former IP header is now here.
+2270000	2272000	And it's protected fully.
+2272000	2275000	Because these fields don't change in here, right?
+2275000	2277000	As the packet moves through the internet.
+2277000	2279000	They change in here.
+2279000	2280000	Right?
+2280000	2282000	Is it worth it?
+2282000	2283000	Eh.
+2283000	2284000	Eh.
+2284000	2287000	It's a little bit of like a tiny delta you get out of it.
+2287000	2290000	If you ask me, I wouldn't use it.
+2290000	2299000	I think like, for example, in the second example, we can maybe defend the tray in the contact mode.
+2299000	2300000	What?
+2300000	2301000	Like the tray of that.
+2301000	2309000	So that the receiver can know where actually this package comes from rather than in the transport mode.
+2309000	2310000	Well, no, no.
+2310000	2312000	In the transport mode, you do.
+2312000	2313000	You do.
+2313000	2320000	Because the authentication header, I mean, I'm assuming here that the tunnel is end-to-end, not gate-to-end.
+2320000	2321000	Okay?
+2321000	2323000	So let's think of tunnel as end-to-end.
+2323000	2326000	You do know where it comes from.
+2326000	2342000	Because the authentication header in either mode, in either mode, protects the IP header, this IP header, or this IP header, but only the fields that don't change.
+2342000	2344000	And source destination does not change.
+2344000	2345000	Right?
+2345000	2349000	But if you're using it in a gateway-to-gateway, right?
+2349000	2361000	Gateway-to-gateway, like there, what would happen is, so there's no IPsec here, I suppose, no IPsec here, but there's IPsec here.
+2361000	2368000	A will send a packet with IP header that has A, the source, B destination.
+2368000	2379000	When it gets in a transport mode, it still has to be A source, B destination.
+2379000	2386000	But when in tunnel mode, the outer header will say, gateway A source, gateway B destination.
+2386000	2388000	See the difference?
+2388000	2390000	Because it's tunnel, right?
+2390000	2401000	So the outer IP header will have the end points of the IPsec connection, which is in this case, between these two.
+2401000	2402000	And this type can still reach the packet.
+2402000	2405000	Yeah, yeah, yeah, yeah, yeah, yeah, yeah, sure.
+2405000	2406000	Sure.
+2406000	2416000	As I said, AH provides zero confidentiality, only integrity and data and origin of integration.
+2416000	2428000	So in that case, that I just described, gateway B will be able to verify that this packet really came from gateway A.
+2428000	2430000	And that the data has not been modified.
+2430000	2431000	But that's it.
+2437000	2438000	Right.
+2438000	2440000	Okay, so ESP.
+2440000	2443000	So you see the area is a bit different.
+2443000	2447000	The security parameter index followed by sequence number.
+2447000	2453000	I mean, those are the same as in the previous, but the AH and other stuff before.
+2453000	2454000	Then there's payload data.
+2454000	2455000	This is different.
+2455000	2458000	It's encapsulating.
+2458000	2464000	Encapsulating means you can encapsulate, right?
+2464000	2469000	Which means you don't just stick something in the beginning, you stick something in the end.
+2469000	2472000	That's what encapsulation actually means in English, right?
+2472000	2473000	Like you're surrounded.
+2473000	2474000	Therefore, this is the actual payload that you're protecting.
+2474000	2475000	See?
+2475000	2476000	This is the variable length.
+2476000	2477000	Okay?
+2477000	2479000	Then there's padding because you need to align it on a 32-bit boundary.
+2479000	2480000	If it already aligns, no padding.
+2480000	2481000	It's optional, right?
+2481000	2482000	Next header.
+2482000	2483000	Next header.
+2483000	2484000	Next header.
+2484000	2485000	Next header.
+2485000	2486000	Next header.
+2486000	2487000	Same as before.
+2487000	2488000	Followed by authentication data.
+2488000	2489000	This is the variable length.
+2489000	2490000	See?
+2490000	2491000	This is the variable length.
+2491000	2492000	Okay?
+2492000	2497000	Then there's padding because you need to align it on a 32-bit boundary.
+2497000	2498000	There's no padding.
+2498000	2499000	There's no padding.
+2499000	2500000	There's no padding.
+2500000	2501000	It's optional, right?
+2501000	2502000	Next header.
+2502000	2503000	Next header.
+2503000	2504000	Same as before.
+2504000	2505000	Followed by authentication data.
+2505000	2506000	And that's it.
+2506000	2508000	So this is the end of the packet.
+2508000	2509000	Right?
+2509000	2510000	The word is trailer.
+2510000	2511000	Header.
+2511000	2512000	Trailer.
+2512000	2514000	And in between is the packet.
+2514000	2516000	Whereas AH was about header on the trailer.
+2516000	2517000	Right?
+2517000	2518000	That's it.
+2518000	2519000	That's the main difference.
+2519000	2521000	That encapsulation has both headers.
+2521000	2522000	And the packet is stuck in the middle.
+2522000	2523000	And AH just has a header.
+2523000	2524000	So why do we put next header?
+2524000	2525000	Header.
+2525000	2526000	Header.
+2526000	2527000	Trailer.
+2527000	2528000	And in between is the packet.
+2528000	2533000	Where as AH was about header on the trailer.
+2533000	2534000	Right?
+2534000	2535000	That's it.
+2535000	2537000	That's the main difference.
+2537000	2541000	That encapsulation has both header and trailer and the packet is stuck in the middle.
+2541000	2546000	And AH just has a header.
+2546000	2564540	So, why do we put next header here? Because, well, it tells you as you parse the packet, right? As you parse the packet, it tells you, oh, and check this authentication, right? It comes at the end of the packet.
+2564540	2574420	So, it allows you essentially to, as you're receiving the packet, right, kind of keep computing in real time the authentication of that packet.
+2574780	2580920	And then when you start, when you finally receive this, you compare it. So, it doesn't match? Good. Right?
+2580920	2585140	And then it allows you also to right away jump to the next header after that.
+2585780	2591160	But the next header isn't actually here, right? It's not below, right? This is the end.
+2591160	2598680	The next header is actually there. Do you see how this is different?
+2600840	2607740	So, before, the next header was like following, right? But there's nothing after this. This is the end.
+2609100	2616900	The authentication data is the trailers. So, there's nothing after it. The next header is here.
+2621160	2631340	Okay? So, this is the same picture. So, before, except this one is for PSP.
+2633580	2636720	Same original data, original packet at the top.
+2636720	2651200	So, then you have transport mode. Transport mode, the IPv4 header copy. Now, the protocol is 50. Now, 51, 50 is reserved for ESP.
+2651200	2668520	Okay? Then it's ESP header that you saw previously. Inside the whole TCP, the payload that you saw where they are. You see the, what's it, lilac followed by darker green.
+2668520	2676320	And then, at the end is the ESP trailer, which says, next header, pointer. Okay?
+2678960	2683640	Make sense? The meaning of next header is the same. It's which protocol to invoke next.
+2683640	2689640	And then, the very last thing is the data, the authentication data.
+2693240	2702380	Tunnel mode? Okay. Already, by now, it should be clear. Protocol, 50. New IP header. Brand new IP header.
+2703160	2709580	ESP header. The original IP datagram, untouched, encapsulated, and encrypted. Okay?
+2709580	2715480	And then, you have the ESP trailer, and then D. So, minor difference, right?
+2718340	2723160	But, you protect the entire, you protect the meaning of next header.
+2723560	2729000	Everything here, in this rectangle, is fully encrypted.
+2732300	2735540	And should be, essentially, a black box.
+2739580	2742080	Naturally, why have both, right?
+2742400	2745500	So, I think you already kind of see one answer, right?
+2746000	2746940	One is lightweight.
+2748100	2749400	One of them says, you know what?
+2749400	2750380	I don't deal with encryption.
+2751120	2752780	I just give you the bare bones,
+2753540	2755620	authenticity of origin, and data integrity.
+2757480	2758040	That's it.
+2759080	2760380	And the other one says,
+2761000	2762340	I'm going to give you the whole enchilada.
+2763540	2765340	I'm just going to give you everything you want.
+2765340	2766600	Encrypt everything.
+2769580	2772960	Why is it not using public key?
+2773120	2775280	Well, public key is expensive.
+2775440	2777540	You never want to use public key for bulk data, right?
+2777600	2779220	That's, like, super obvious.
+2780420	2780620	Right?
+2780640	2782460	You always want to use symmetric key cryptography.
+2782580	2785640	And just like SSL, you know, once you establish a connection,
+2785860	2788460	only symmetric cryptography is used, say, here.
+2789440	2793220	So, the way to think about IPsec is really more like
+2793220	2795700	the record layer in SSL-TLS.
+2795820	2796280	Remember that?
+2796280	2799360	It had this record layer, and it had these protocols on top
+2799360	2800920	that are doing the management, right?
+2801340	2803500	Establish reconnection, alert, blah, blah, blah.
+2804020	2809300	Well, IPsec is, like, the data, the record layer in SSL-TLS.
+2811400	2815480	Algorithms, that's not for IPsec to decide, right?
+2815540	2816900	IPsec just provides formats,
+2816900	2824800	and it leaves the choice of algorithms both for computing and integrity check
+2824800	2831200	and for encryption, it leaves those two specific endpoints policy, right?
+2832060	2832520	Decisions.
+2832520	2843700	So, I want you to remember, of course, this is more like, it's more than obvious, right?
+2843780	2849500	That what you get is, at the very least, what I'm saying is authentication, right?
+2849580	2853060	The data integrity, but who does it authenticate, or what does it actually authenticate?
+2853060	2856900	It does not authenticate a human.
+2857840	2860320	It does not authenticate a chair.
+2860780	2866780	It does not authenticate a window on your screen, or a web browser, or a user who is logged in
+2866780	2868700	on a particular account.
+2868940	2872460	What it actually authenticates is, like, this specific interface here.
+2872460	2879500	And a given host, like this, as I said before, can have many interfaces, right?
+2879560	2881640	You could have IP over Bluetooth.
+2882340	2885360	You could have IP over wired Ethernet.
+2885440	2887280	You could have IP over Wi-Fi.
+2887400	2889080	You could have IP over ZigBee.
+2889540	2892560	You could have IP over Pigeons, for all I can.
+2892880	2896620	You could have IP over any medium, a data link Mac layer.
+2897260	2901060	And so, it only authenticates the interface.
+2901060	2903240	Okay?
+2908840	2911740	Another important thing, denial of service.
+2913220	2915500	I said nothing about denial of service.
+2916660	2920340	Because IPsec sucks when it comes to denial of service.
+2921080	2927440	And I don't blame it, because if you want security, denial of service is a security in and of itself
+2927440	2928180	is denial of service.
+2930440	2930920	Why?
+2931060	2932440	Because think about this.
+2932620	2940080	You have a router, I'm sorry, a gateway, like one of those guys, or a host.
+2941160	2943700	And they have an IP, one or more IP interfaces.
+2944380	2946320	And let's say you're using IPsec, right?
+2947620	2950920	And some adversary says, oh, you're using IPsec.
+2950920	2951600	How nice.
+2952280	2960000	I'm going to send you a barrage of IP packets that look like IPsec, right?
+2960000	2964320	But the authentication data, right?
+2964320	2966900	It's just frivolous.
+2966900	2967740	It's just garbage.
+2967740	2976760	Now, you cannot just send a random packet with random source to a given IP address.
+2976760	2983160	You have to send it or an IP address for which the source already has a connection, right?
+2983160	2983680	That association.
+2983680	2987840	So what you do, you eavesdrop on the communication.
+2988060	2993020	You say, oh, these two hosts, I don't care what they are, our gateways are, all right?
+2993160	2993780	We'll just close.
+2994540	2995520	Yeah, using IPsec.
+2995600	2997500	You can tell this from the headers, right?
+2998160	3000680	Remember, header says 50, 51, IPsec.
+3000740	3001180	You can tell.
+3002640	3003080	Nice.
+3004160	3011140	Well, what you do, you say, okay, I see a packet that uses IPsec, and it has source A destination B.
+3012880	3021260	I'm going to manufacture a giant quantity of packets in real time with source A, not my source,
+3021260	3027980	but I'm going to fake it and put source A destination B, IPsec, and the authentication of this garbage.
+3029420	3029620	Right?
+3030620	3031380	You with me?
+3033460	3037560	And send high speed to the victim.
+3038220	3040140	What is the poor receiver going to do?
+3043320	3045780	Well, the receiver, it says, right?
+3046000	3047140	Yes, sir.
+3047500	3048820	IPsec packet received.
+3048820	3051380	I have a connection with B, right?
+3052180	3053560	Verify authentication token.
+3055040	3055560	First thing.
+3056360	3058360	Well, that's not easy.
+3058840	3060880	That requires computing a HMAC.
+3062560	3067300	You might think, okay, HMAC is not a RSA decryption like in TLS SSL, right?
+3068200	3073620	But it's still inexpensive and frivolous operation because it prevents you from actually getting data
+3073620	3076160	by actual service.
+3077760	3080280	That's why it's called denial of service.
+3080940	3086760	Essentially, it's like, denial of service is like saying, you know, remember, I think I already mentioned this analogy.
+3086980	3091200	You're trying to exit your house front door and somebody points a fire hose at you.
+3091200	3093160	That's denial of service.
+3095640	3099960	You can't exit your door because there's a fire hose with, like, high-pressure water.
+3102040	3103960	Now, that's one type of denial of service.
+3104060	3107820	If the adversary has a fire hose, what would be an equivalent?
+3107820	3113760	A very high-speed interface that is able to generate a huge amount of traffic directed at the victim.
+3116000	3119600	A version of that is a distributed denial of service.
+3120960	3127500	Much, much craftier, much easier to mount that kind of an attack, which is the other system.
+3127620	3133780	Then I don't have enough bandwidth or my interface is not fast enough to just, like, I have a trickle.
+3133780	3135600	I can point, like, a guarded hose at your door.
+3136320	3147200	But if I get a bunch of zombies or a botnet or out the internet to start sending you low bandwidth IPsec packets,
+3149120	3149900	you follow what I'm saying?
+3149900	3154480	It's like I get everybody in the room to take a guarded hose and point at the door.
+3154980	3157100	20 guarding hoses equals fire hose.
+3159360	3160360	You get the idea.
+3160360	3171760	So, IPsec is actually a pain in the neck for denial of service because it forces the receiver to verify the authentication token.
+3174060	3176100	That means it has to receive the entire packet.
+3176380	3177340	It cannot say halfway.
+3177740	3180200	It's like receiving the header, saying, ah, this doesn't look good.
+3180280	3180680	No, no, no.
+3181020	3186500	It has to receive the entire packet, right, because the A and B already have an IPsec connection.
+3186500	3189320	It receives the entire packet, verifies the header, saying, ah, garbage.
+3189320	3194340	By that time, CPU resources have been consumed.
+3194880	3196920	Bandwidth resources have been consumed, right?
+3197960	3199020	That's denial of service.
+3200060	3201520	An IPsec makes it worse.
+3204880	3206520	Oh, it makes DOS easier.
+3206520	3209940	The other thing to remember, the order of operations.
+3209940	3211760	First, you encrypt, then you authenticate.
+3211760	3219040	So, if encryption is used, and this does not apply to authentication, this applies to ESP, right?
+3219040	3229800	The first thing you do, whether you use transport mode or autonomous mode, it doesn't matter, is that you first encrypt this, right?
+3229800	3234820	Or whether you're doing this or this, the first encrypt, and then you compute the authentication.
+3239720	3240160	Why?
+3247500	3248260	Good example.
+3248260	3251820	Why don't do it the other way around?
+3256820	3263900	Why not authenticate the data, put the authentication token inside here, and then encrypt the whole thing?
+3266600	3267500	Sounds the same.
+3267500	3274780	Yeah, I mean, you see that says the pink box, and at the end it says ESP authentication data.
+3275660	3281020	Why not sleep that pink box inside here, right?
+3283300	3288280	Like, compute the authentication first, and then encrypt also the authentication data.
+3288280	3295640	Any bright ideas, or not so bright ideas, any ideas?
+3301640	3306360	Yeah, it's not, so, kind of, yeah, yay.
+3307280	3308700	And also, yeah.
+3309560	3314480	There is a, today, encryption, in the past, encryption was always more expensive.
+3314480	3319020	Like, remember, I talked about DES, right?
+3320200	3324040	That's, like, a traditional encryption technique, more expensive, like, the order of magnitude.
+3324480	3331100	Because they were, like, in the olden days, they were designed to work very fast on hardware, but work poorly in software.
+3332840	3336420	But, today, modern encryption algorithms are pretty damn fast.
+3337080	3340020	So, they are, like, pretty much the same, you can think of the same speed.
+3341120	3342200	No, the answer is simple.
+3342200	3353900	So, if you do it in the other way, which is, you authenticated and encrypt, you would have to perform decryption first, and then compute the authentication token.
+3354140	3356020	That's double the work before you detect it.
+3356080	3356460	It's cracked.
+3358160	3358600	Right?
+3359420	3364340	Whereas, if you authenticated the packet first, you see what I mean?
+3364440	3369820	If you authenticated it first, and then decrypted, you don't need to worry about whether the decryption would succeed.
+3369820	3373400	Because, you know, because it's authentic, right?
+3374020	3380700	So, unless there was some broken implementation at the sender's end, you know that the decryption is going to work.
+3382080	3384580	You don't have to wonder whether you will or not.
+3385340	3385520	Okay?
+3385520	3389060	So, that's a performance consideration.
+3391600	3392000	Right?
+3393440	3393840	Alright.
+3393960	3395140	We're not going to talk about Ike.
+3395700	3397480	I'm just going to tell you a few things.
+3397680	3403300	So, Ike is, like, this giant standard for Internet Key Exchange.
+3403300	3409220	And it allows, so it's what happens before you start IPsec, right?
+3409260	3412380	Before you can send IPsec packets.
+3413320	3413500	Right?
+3413540	3414660	The keys need to be set out.
+3414740	3418520	However, IPsec also works with pre-installed keys.
+3419020	3425460	So, it can, in fact, like, if you have manually installed cryptographic keys,
+3425460	3429420	have A and B, they don't really need Ike.
+3429880	3432020	They can just, like, start using IPsec.
+3433600	3433920	Okay?
+3434640	3438980	And this is done sometimes with, these days, with Ike.
+3439040	3442000	Well, it used to be done a lot, but people didn't know how to use Ike.
+3442060	3442960	There was no Ike yet.
+3443500	3446140	But it's done also today with, like, IoT devices sometimes.
+3446140	3450340	Well, the manufacturer will pre-install a key or a set of keys,
+3450760	3456040	and then an IoT device doesn't really talk to many hosts, right?
+3456560	3458040	An IoT device might talk like that.
+3458180	3460760	Your Echo, what does it talk to?
+3461200	3463780	If you have an Echo voice assistant.
+3464880	3465960	Who does it talk to?
+3466680	3467200	Amazon.
+3467660	3468880	It's mothership, right?
+3469660	3472620	It doesn't talk to random other devices, really, right?
+3473040	3474400	At least not the flow-end Echo.
+3474400	3477280	So, for those types, they say, I'll just pre-install a key, you know?
+3478500	3479340	So, that might be...
+3479340	3483000	I'm not saying I don't know if Echo's use IPSec, but that's one way.
+3484380	3484740	All right.
+3487260	3493220	So, IPSec, what IPSec gives you is this something called security association.
+3493840	3496440	And security association is where you get the SPI.
+3496520	3499200	Remember the SPI, SPI, security parameters, and the session ID.
+3499440	3504300	You get it based on a security association between post-Aid or IP address,
+3504400	3506960	IP address, and it's always one way.
+3507120	3507760	Remember, right?
+3507980	3508300	One way.
+3508520	3510220	A to B is different from B to A.
+3511360	3514760	And then every host that uses IPSec is supposed to have a database,
+3514940	3520960	really just a table of, oh, sad, security association database.
+3520960	3528980	Okay, where it keeps a record for every security association where it will say,
+3529100	3532580	I know who I am, I'm host A, but, like, there will be an entry.
+3532780	3540380	Host B, what protocol to use, like AH, tunnel mode, what is the key, blah, blah, blah, etc.
+3540560	3541960	Like, lifetime, something like that.
+3541960	3548600	So, SPI, I already told you, right?
+3548600	3553400	So, this is an entry that the SAP database, the security association database,
+3553900	3554920	points you to the SPI.
+3555580	3561180	So, when you receive a packet, right, you are on the receiving side of the IPSec packet,
+3562160	3564400	you, remember, every header has a SPI, right?
+3564460	3566940	Whether it's AH or ASP has a SPI field.
+3566940	3570000	You take the SPI field and you look up that database immediately.
+3572060	3574740	Okay, if you don't find it, toss the packet.
+3576160	3579320	If you find it, that tells you, oh, this is the header I'm using.
+3579440	3582320	So, how do you know which IPSec header, which mode?
+3582800	3583820	Well, the database tells you.
+3584800	3585000	Okay?
+3586280	3588360	So, that's very important.
+3588640	3589880	You know, it's mandatory.
+3590100	3592700	Every IPSec application must maintain the database.
+3592700	3598980	And then it has something called security policy database, which actually governs,
+3599020	3602380	it's more like a, similar to what you will see firewalls do,
+3602600	3607680	it governs, like, which connections require which parameters.
+3608900	3609600	Policies, right?
+3609640	3613260	It says, oh, if you're talking to an internal host, you don't need to use IPSec.
+3613260	3617840	If you're talking to, I don't know, our branch office on the East Coast,
+3617940	3621880	you must use authentication header, transport mode.
+3622480	3622560	Okay?
+3623140	3627560	Or if you're using, if you're talking to, I don't know, a host in a foreign country,
+3627940	3634620	then you must use the host to gateway ESP transport mode, something like that.
+3634700	3635740	It's a policy.
+3635880	3640680	Something your security, every organization's security administrator configures.
+3643260	3646440	All right, so it kind of fits together like this.
+3647340	3649200	Then, of course, the blob is the internet.
+3650820	3660360	And so that each host will have its own database of security associations
+3660360	3663780	that will be governed by the security policy database.
+3663780	3674820	Well, I think I'll just end on this, because I don't really want to go for it, Ike.
+3675720	3681780	The idea is, the main thing you need to know about Ike is that it establishes a secure channel,
+3682300	3685700	like, outside, on the side, like a control channel,
+3685700	3687840	and it establishes a set of keys.
+3688460	3688580	Okay?
+3689700	3692140	And then, after that, we do like to say.
+3692260	3694560	So Ike has its own message format.
+3694860	3697580	It does not, this is where it differs from SSLTLS.
+3697740	3701440	In SSLTLS, all the messages go for the record player, if I remember.
+3702220	3704020	Well, in Ike, they don't.
+3704160	3706380	Ike has its own message format.
+3706380	3709260	And so that, this is like the example.
+3709840	3710740	It might be helpful.
+3711240	3715720	So in this case, we have host A, kind of like what I drew on the board earlier.
+3716360	3719400	Host A, and then two gateways, right?
+3719500	3721400	The blue arrow is the internet, right?
+3722660	3723700	And then you have host B.
+3724240	3732560	And so, in this case, A and B use a transport mode of either H or ESP, like end-to-end.
+3732560	3740060	And in addition to that, the gateways between themselves use a tunnel mode to hide,
+3741260	3744000	among other things, the IP addresses of the internal host.
+3744580	3752260	So if we look at, like, inside the host A, its security policy database might say something like,
+3752620	3760560	oh, if I have, if I'm talking to host B on any protocol, using any protocol, and using any port,
+3760560	3764600	remember, any transport, when protocol means any transport, or about IP protocol,
+3765060	3772140	and any port, I should use authentication header, IPsec, with HMAC MD5,
+3772820	3780860	that is MD5, so HMAC instantiated with MD5 hash function to protect, to compute the authentication data.
+3780860	3788640	Okay, that's a policy database, it contains no keys, it does not refer to any active connection,
+3789120	3790500	it is a general policy.
+3791080	3797080	But the SAD, the security association database, will say, ah, currently, there is a connection
+3797080	3802220	between A and B, and the protocol we use is AH, as policy dictates, right?
+3802220	3808640	And the SPI is 12, so that's our session ID, and our, we're using HMAC MD5,
+3808720	3812600	and probably what I don't show here is that the actual key will be stored there, too.
+3813420	3813660	Okay?
+3816080	3822780	Now, the gateways database, right, this is gateway C, will say something like,
+3822880	3827220	oh, anybody from subnet, this refers not to A, but subnetwork, right?
+3827220	3828520	That's what subnet is, right?
+3828520	3835940	So anybody on A's subnet, talking to B's subnet, on using any protocol on any port,
+3836120	3840860	must use ESP with triple tensing, or encryption.
+3843600	3848380	And tunnel destination is D, that's our friend D over here, right?
+3848720	3850500	That's the endpoint of the IPC tunnel.
+3850920	3855120	So that, again, is policy, does not refer to any existing connection,
+3855120	3858120	doesn't matter if any exists or not, this is the rule.
+3858940	3862340	The actual, currently, existing connection is,
+3862980	3867040	there is an A sub to B sub, anybody from A to B,
+3867900	3870500	there is an existing connection using ESP,
+3871780	3874800	SPI is 14, there's a number that I picked,
+3875240	3876940	triple tensing, the key is there.
+3876940	3879020	Okay, what does that mean?
+3879420	3882040	If there was another host, A prime,
+3883300	3885260	talking to another host, B prime,
+3886080	3889540	they would use the same tunnel.
+3891560	3892300	Nice, right?
+3892920	3893920	They all fit in the same tunnel.
+3894000	3897340	No reason that C and D should have multiple tunnels.
+3897980	3899740	Everything is within the same tunnel.
+3899740	3904160	So, an adversary who listens on that blue arrow on the internet,
+3904620	3906220	it cannot distinguish between,
+3907600	3909240	he does not know how many hosts are talking to,
+3909300	3910720	how many other hosts at all.
+3910980	3913460	The only thing they will see is the volume of traffic.
+3914600	3915960	The only other thing they will see,
+3916020	3917520	in addition to the volume of traffic,
+3918180	3919940	is the timing of that traffic.
+3921600	3922120	But what,
+3923100	3924420	this is not part of IPC,
+3924720	3926180	but what smart people do,
+3926280	3928620	if they're really concerned about traffic analysis,
+3928620	3929560	and hiding,
+3930460	3931080	like, for example,
+3931200	3932720	in the morning, the volume goes up,
+3932760	3934880	in the afternoon, maybe at lunch, it goes down, right?
+3935040	3936340	You might not think this is important,
+3936440	3937860	but this is very important sometimes,
+3937860	3940220	especially, like, in critical application,
+3940420	3942520	defense, you know, et cetera.
+3943040	3944900	What they do is they pat the traffic.
+3945860	3951460	Meaning that C and D might send trash to each other,
+3952120	3953300	just garbage,
+3954260	3957560	to make it seem like real hosts are communicating.
+3957560	3959320	Make sense?
+3960740	3960960	No?
+3961540	3963280	To obscure the patterns.
+3964440	3965340	On that note,
+3965540	3965900	we're done.
+3966720	3967240	For today.
+3967860	3968400	So remember,
+3969040	3972440	I strongly urge you to show up on Tuesday
+3972440	3974460	for the guest lecture.
+3976800	3977860	Decision is always true.

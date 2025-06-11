@@ -1,0 +1,2060 @@
+WEBVTT
+
+00:00.000 --> 00:12.000
+Alice's password black, it's determined. Well, that means the adversary commits to a certain J, right?
+
+00:12.000 --> 00:21.000
+Where J is a P, J, right? Obviously, the adversary knows all the passwords already, right? All N of them, he already knows in the clear.
+
+00:21.000 --> 00:31.000
+But which one is really Alice's password? The probability of guessing is 1 over N, correct, guessing correctly.
+
+00:31.000 --> 00:44.000
+So, there she goes, there he goes, he says, I'm Alice, here's a password P, J, indeed P, J exists, right?
+
+00:44.000 --> 00:52.000
+And P, J will be authenticated correctly by the server, right? So, these are all passwords.
+
+00:52.000 --> 01:02.000
+One of them is Alice's, and one of them the adversary will enter. Maybe the same as Alice's, but yeah, with probability 1 over N.
+
+01:02.000 --> 01:09.000
+Which one is Alice's password? Can you tell me by looking at this, what could be her password?
+
+01:09.000 --> 01:18.000
+This is not a trick question. There's no, there's nothing hiding in there. It's just a set of random cram.
+
+01:18.000 --> 01:29.000
+So, but we're not done, right? So, the adversary will likely make a mistake, right? By guessing an incorrect password.
+
+01:29.000 --> 01:41.000
+But what now? So, in other words, how do you verify that it's real Alice or an intruder, an attacker?
+
+01:41.000 --> 01:47.000
+Well, this is where the cute little thing comes in, and I'll show you in a minute. That's one question, right?
+
+01:47.000 --> 02:00.000
+So, how does the system, right? The system verify that this J is from the adversary, this password J is from the adversary, but password I is from Alice?
+
+02:00.000 --> 02:10.000
+And the second, how do we generate these hiding words? So, they all look like what you saw earlier, kind of like indistinguishable or equally likely to be a password.
+
+02:10.000 --> 02:30.000
+And you can see that if you generate random passwords that sound like, that look like no human could remember them, and one of the passwords for Alice is something predictable like my friend Bob, then clearly that is the password.
+
+02:30.000 --> 02:41.000
+So, that's a tricky question, right? How do we make the bogus passwords, the decoys look real? And then there's, okay, how do you respond?
+
+02:41.000 --> 02:53.000
+So, the idea is very simple. You have the system that has, I mean, I'm just showing this as a, the system that has the password, the fc password file.
+
+02:53.000 --> 03:04.000
+And it has basically all this, it has means of verifying all these passwords. But in addition to the system that exists today, okay, this is what we already have today.
+
+03:04.000 --> 03:14.000
+But instead, I mean, in addition to that, we also introduced a new component, physically separate component, called the honey checker.
+
+03:14.000 --> 03:24.000
+And a honey checker's only task is to remember, for every user, the index. The honey checker knows no passwords.
+
+03:24.000 --> 03:34.000
+So, think of it as like a really, like, brain damage component, like really stupid component. It just does one thing.
+
+03:34.000 --> 03:55.000
+It gets a user name and an index. And it says, yes or no. Yeah? That's it. That's pretty much 99% of it.
+
+03:55.000 --> 04:06.000
+So, when Alice logs in, right, and supplies password i, the system will check the password i as it already does today.
+
+04:06.000 --> 04:17.000
+Nothing changes so far. But in addition, once they check fast, right, once the password i has been authenticated as Alice's password,
+
+04:17.000 --> 04:27.000
+the index i is sent over to the honey checker. And the honey checker does a quick lookup in its little database and says,
+
+04:27.000 --> 04:42.000
+Alice has index 5. Is i 5? Yes. All good. Nothing happens. But if i is anything other than 5, well.
+
+04:42.000 --> 04:53.000
+So, Alice applies the password. The password is matched to pi, right?
+
+04:53.000 --> 05:02.000
+You're so far with me, right? It's not exactly that easy because actually the honey checker needs to compute,
+
+05:02.000 --> 05:09.000
+remember, this assaulted hash? But he doesn't know what the i is, right?
+
+05:09.000 --> 05:16.000
+So, remember, over here, over here, the password, I show them as being here, but they're not stored like this, right?
+
+05:16.000 --> 05:21.000
+Do you remember how they are stored? They are stored in the hash, salted hash form.
+
+05:21.000 --> 05:30.000
+So, when Alice supplies the p, the system needs to look up all the Alice's, all the m-t-gerts-part into Alice's,
+
+05:30.000 --> 05:41.000
+on each one, compute the salted hash, right? Because the salts are different. So, she computes the salted hash,
+
+05:41.000 --> 05:53.000
+then she says, oh, there is a match to pi. And then it sends i over to the honey checker.
+
+05:53.000 --> 06:02.000
+And the honey checker just says, yes, does nothing. Or, if the adversary or somebody supplies,
+
+06:02.000 --> 06:11.000
+well, it has to be the adversary, actually, if they combine it, be j. And the j, and at this point, the system does not know.
+
+06:11.000 --> 06:18.000
+Notice, this big box here, this system has no idea what the index for Alice is, what the index for Bob is.
+
+06:18.000 --> 06:25.000
+It does not know any indices. It just knows it has m entries for every user.
+
+06:25.000 --> 06:34.000
+So, all it does, it authenticates the user using the supplied password. If authentication succeeds, it says, oh, this corresponds to j,
+
+06:34.000 --> 06:51.000
+j, and it sends j to the honey checker. Bam. Wrong. Aligned. So, now you see the whole thing.
+
+06:51.000 --> 06:58.000
+Most of the time, the honey checker does absolutely nothing other than just do a lookup. If a lookup succeeds, all good.
+
+06:58.000 --> 07:09.000
+That means that j matches i. But if a j is not i, alarm. What does it actually mean?
+
+07:09.000 --> 07:19.000
+Notice, if somebody is trying to guess Alice's password, if the adversary does not have the password file,
+
+07:19.000 --> 07:27.000
+but it's trying to guess Alice's password. With high probability, with all-knowing probability,
+
+07:27.000 --> 07:35.000
+the password that the adversary guesses will not hash into any of Alice's honey passwords, right?
+
+07:35.000 --> 07:47.000
+There's only an N of them. So, that's life as usual. The system will say, wrong password, as it does today, right?
+
+07:47.000 --> 07:58.000
+And you'll say, just wrong password. Invalid, invalid username, password combination. Yeah? Okay.
+
+07:58.000 --> 08:02.000
+So, that experience doesn't change. Alice mistypes her own password.
+
+08:02.000 --> 08:10.000
+Forget to shift, cap, whatever. No problem. Wrong username, password combination. Try again.
+
+08:10.000 --> 08:26.000
+Same as you do today. But the only way, the only way, again, with high probability, the only way that somebody will guess, or have in their possession,
+
+08:26.000 --> 08:39.000
+Alice's password, which is not hers, right? Which is one of the, not i's, right? Anything but i, is going to be somebody who cracked the password file.
+
+08:39.000 --> 08:45.000
+Does that make sense? That's the cause for alarm.
+
+08:45.000 --> 08:52.000
+So, you wouldn't want any of these alternate passwords to be a very commonly known password?
+
+08:52.000 --> 09:04.000
+Right. Right. You don't want them because then you'll be confused, right? Is it, because it has, it cannot be something that somebody would guess about Alice, like trivially, right?
+
+09:04.000 --> 09:13.000
+So, that's the, that goes back to how do you generate these details, right? The other question. How do you generate? We are not there yet.
+
+09:13.000 --> 09:21.000
+So far, so good? So, yeah, this is already what I mentioned. If the true password is submitted, the user is authenticated.
+
+09:21.000 --> 09:30.000
+If a password that is not in the set of Alice's password is submitted, that's a normal authentication error. Okay?
+
+09:30.000 --> 09:39.000
+If, if a non Alice's, if a password is submitted, that is one of Alice's, but is indexed, not i, then an alarm is raised.
+
+09:39.000 --> 09:46.000
+Only a breach, right? Can cause this. Now you should be convinced. And as you said, they have to be non-treated.
+
+09:46.000 --> 09:59.000
+So, if you choose the honey words, judiciously, they will not be like a, a coincidence, right? That you, that somebody, without breaking the password file,
+
+09:59.000 --> 10:09.000
+typed in one of the honey passwords. But interestingly enough, as far as Alice, Bob, Charlie, any user is concerned,
+
+10:09.000 --> 10:14.000
+there is no change in their experience, right? They don't need to remember two passwords. They still remember one.
+
+10:14.000 --> 10:20.000
+They still enter user name, password, hit return. Nothing changes. That's another nice thing.
+
+10:20.000 --> 10:29.000
+You don't want to change the user experience, right? Because user experience requires change, requires training. Adaption. Right?
+
+10:29.000 --> 10:35.000
+Different users adapt differently. But if you tell them, oh, it's the same as before, just there is something in the back.
+
+10:35.000 --> 10:41.000
+Maybe you don't even tell them. They don't need to know.
+
+10:41.000 --> 10:55.000
+So, the nice feature here is that the system that today hosts the password file that authenticates you, just needs to transmit the index.
+
+10:55.000 --> 11:02.000
+Like minimal information, right? Just name of the person, of the user, and the index.
+
+11:02.000 --> 11:13.000
+And so, very little modification, right? You just introduce kind of a call, right? An additional call after you have authenticated the password, right?
+
+11:13.000 --> 11:20.000
+Here. After the password has authenticated, you take the index, and the user name, and send it to the honey checker.
+
+11:20.000 --> 11:31.000
+And you wait for reply, right? And if the honey checker says yes, cool, honey checker says no, alarm, lock up everything, yeah.
+
+11:31.000 --> 11:40.000
+And this is kind of a very trivial way of implementing distributed security, right?
+
+11:40.000 --> 11:44.000
+So, the honey checker, of course, is not a full-blown computer system with accounts, right?
+
+11:44.000 --> 11:52.000
+You want the honey checker to be a device or a computer that is at most as one account, I mean, basically, like, administering,
+
+11:52.000 --> 12:00.000
+user, right? Or a root account that is touched and logged in almost never, right?
+
+12:00.000 --> 12:06.000
+Only when the password file and indices are updated.
+
+12:06.000 --> 12:17.000
+In fact, you can keep indices the same even if you change the passwords, because they are only known to the honey checker.
+
+12:17.000 --> 12:26.000
+No single point of compromise. So, for example, if the computer system is compromised, well, we said, right,
+
+12:26.000 --> 12:34.000
+the password file is a hack, you learn about it, right? Because the first user, the first time the adversary
+
+12:34.000 --> 12:40.000
+threshold again for any user, for any Alice, Bob, and Charlie, alarm will be erased, and that's it.
+
+12:40.000 --> 12:47.000
+The adversary gets one chance. And so, whatever user he picks, Bob, Charlie, Alice, assuming, let's say,
+
+12:47.000 --> 12:54.000
+n is some reasonable number, like 20, his chances of getting in a one out of 20.
+
+12:54.000 --> 13:01.000
+He might get like, but he's got only one chance, and it's one out of 20.
+
+13:01.000 --> 13:06.000
+How long would you update the password without knowing you being fixed?
+
+13:06.000 --> 13:15.000
+Well, that has to be done offline. That's not the pretty part. Because if you want to update, if you, well, let's think about it.
+
+13:15.000 --> 13:17.000
+You can do it if they gave you their old password.
+
+13:17.000 --> 13:23.000
+Yeah, yeah, yeah. I mean, password change, password change programs are separate. Actually, that's a whole, like, separate lecture.
+
+13:23.000 --> 13:38.000
+Doing password changes is an underappreciated problem, and a difficult one. Especially considering what happens if you have disconnects in the process.
+
+13:38.000 --> 13:47.000
+Meaning that, at some point, the protocol for changing password breaks, like because of the system malfunction or network disconnect,
+
+13:47.000 --> 13:53.000
+and you have essentially a user who thinks the password changed, the system does not, or the other way around.
+
+13:53.000 --> 13:57.000
+So, that's a careful thing. That's a problem with all password changes, right?
+
+13:57.000 --> 14:03.000
+So, the only way to assure your password changes is to actually manually log in into the system and password change,
+
+14:03.000 --> 14:09.000
+instead of remotely, physically close. All right? But, that's not scalable, right? We don't want to do that.
+
+14:09.000 --> 14:16.000
+So, that's a whole different headache that is not really different, so much different from the, the case when you use Honey,
+
+14:16.000 --> 14:29.000
+Honey passwords. But, let's see. If the Honey checker fails, right? It just, the system still will function, right?
+
+14:29.000 --> 14:36.000
+Like, if Honey checker goes down, it uses a hardware failure, or some sort, or it gets disconnected,
+
+14:36.000 --> 14:43.000
+the system will function. It will just default to what we have today. It will get no worse than what we have today.
+
+14:43.000 --> 14:50.000
+So, if the computer system fails, well, you can't log in, but that's the same experience we have today, right?
+
+14:50.000 --> 14:58.000
+So, nothing changes so much, if either component, right, is compromised, you don't, it's not failed.
+
+14:58.000 --> 15:08.000
+If you, well, sorry, if it fails, if it fails, it's not failed. Now, if either is compromised, like I said, if the computer system is compromised,
+
+15:08.000 --> 15:15.000
+well, that's the case we already assumed, right? That the adversary compromised it, and learned the password.
+
+15:15.000 --> 15:22.000
+Now, if somebody compromised the Honey checker, without compromising the system, right? So, okay, this is secure,
+
+15:22.000 --> 15:30.000
+the adversary does not know the et cetera password file. It just breaks in here, oh, the adversary learns usernames and indices,
+
+15:30.000 --> 15:40.000
+but that's it. That doesn't help the adversary to log in. Now, what happens if the adversary compromises both, which is, of course, should be unlikely.
+
+15:40.000 --> 15:45.000
+If the adversary compromises both, it gets no worse than we already have.
+
+15:45.000 --> 15:50.000
+If you think it through, the situation is strictly no worse than we have today.
+
+15:50.000 --> 15:55.000
+Because when the adversary learned the indices, and the adversary learned the password file,
+
+15:55.000 --> 16:01.000
+well, he just still has to brute force all the passwords, right, as he would today, so nothing changes.
+
+16:01.000 --> 16:14.000
+And Honey checker can be a very, very, like a simple operation.
+
+16:14.000 --> 16:24.000
+This may not be, so, if you have, for example, a wire between them, right, like an ethernet wire or some other fiber optic wire
+
+16:24.000 --> 16:35.000
+between the computer system and the Honey checker, basically you don't even need any output from the Honey checker.
+
+16:35.000 --> 16:44.000
+And the reason is that you know that it received, right? When you send something over a wire, you know it will be received.
+
+16:44.000 --> 16:49.000
+Then you have a dedicated wire between the two devices.
+
+16:49.000 --> 16:54.000
+So, what if nothing, what if, what if this is a legitimate login?
+
+16:54.000 --> 16:58.000
+Well, silence, everything okay?
+
+16:58.000 --> 17:03.000
+What if it's illegitimate, meaning that this is an adversary supplying some BJ?
+
+17:03.000 --> 17:06.000
+Well, in that case, a physical alarm will go on, right?
+
+17:06.000 --> 17:09.000
+The doors will lock, the administrator will be alerted, right?
+
+17:09.000 --> 17:14.000
+So, some physical consequences will happen, right?
+
+17:14.000 --> 17:23.000
+So, what this is, essentially, it's an input-only system, that you just give it name, index, name, index.
+
+17:23.000 --> 17:27.000
+And in case of a problem, it will raise a real alarm.
+
+17:27.000 --> 17:33.000
+In practice, you may still want to know as soon as possible, but still.
+
+17:33.000 --> 17:35.000
+Make sense?
+
+17:35.000 --> 17:42.000
+So, it can be, like, downstream somewhere in an operations center.
+
+17:42.000 --> 17:53.000
+So, clearly, you want the Honey checker to be more secure, because this is obviously accessed by, this system will have multiple user accounts, right?
+
+17:53.000 --> 17:55.000
+Because they are all logging into it.
+
+17:55.000 --> 17:57.000
+They will have the system administrator.
+
+17:57.000 --> 18:00.000
+The Honey checker can be, basically, not untouched, for the most part.
+
+18:00.000 --> 18:12.000
+So, sitting there, in a box somewhere, does it need a screen, does it need anything, just sit in a box, in a closet, in a, you know, behind an armored door or something, and that's it.
+
+18:12.000 --> 18:13.000
+Right?
+
+18:13.000 --> 18:15.000
+It just gives this sort of rapid alert.
+
+18:15.000 --> 18:16.000
+Right?
+
+18:16.000 --> 18:17.000
+So, I reset that.
+
+18:17.000 --> 18:18.000
+Okay.
+
+18:18.000 --> 18:22.000
+Now, we come back to this issue of Honey word generation.
+
+18:22.000 --> 18:23.000
+How do you do it?
+
+18:23.000 --> 18:25.000
+Now, look at this.
+
+18:25.000 --> 18:27.000
+Which one is the password?
+
+18:27.000 --> 18:36.000
+Obviously, the next to last, because it's the only one that looks like human language.
+
+18:36.000 --> 18:39.000
+The rest look pretty random.
+
+18:39.000 --> 18:48.000
+So, it's very likely, I'm not guaranteed, maybe Alice is a genius, can remember, like one of those savants, can remember a string of two characters, but don't like it.
+
+18:48.000 --> 18:49.000
+Right?
+
+18:49.000 --> 18:50.000
+So, boom.
+
+18:50.000 --> 18:51.000
+Done.
+
+18:51.000 --> 18:52.000
+This one.
+
+18:52.000 --> 18:56.000
+So, well, what could we do?
+
+18:56.000 --> 19:08.000
+Remember, we have Password Crackers, the software, right, that, that, you know, breaks passwords, and it, you know, generates human readable passwords.
+
+19:08.000 --> 19:21.000
+So, we can kind of take passwords, right, potentially decoy passwords, from prior breaches of, like, of password databases, and repurpose them.
+
+19:21.000 --> 19:30.000
+By adding a letter, a number here, an exclamation, or a question mark, or a comma, or a period, right?
+
+19:30.000 --> 19:34.000
+Because they are already human passwords, right?
+
+19:34.000 --> 19:36.000
+The ones from, like, a raw human database.
+
+19:36.000 --> 19:49.000
+Just grab some, not too popular, but, like, grab some mildly popular password, and tweak it a little bit, and make it a decoy.
+
+19:49.000 --> 19:50.000
+Right?
+
+19:50.000 --> 19:55.000
+So, let's say it's something like this.
+
+19:55.000 --> 20:00.000
+Well, now, now it's difficult, right?
+
+20:00.000 --> 20:06.000
+If you're that attacker, you're, you're kind of out of luck, looking at these, these passwords.
+
+20:06.000 --> 20:13.000
+They could all be Alice's password.
+
+20:13.000 --> 20:18.000
+Happens to be that, but could have been any other?
+
+20:18.000 --> 20:21.000
+Okay, there are problem cases.
+
+20:21.000 --> 20:34.000
+Now, if you look at this, which would be more likely to be the password here?
+
+20:34.000 --> 20:36.000
+My guess is, not wild guess, right?
+
+20:36.000 --> 20:38.000
+It's probably the second, right?
+
+20:38.000 --> 20:41.000
+It just kind of sticks out at you.
+
+20:41.000 --> 20:42.000
+Right?
+
+20:42.000 --> 20:45.000
+It's mostly more timely, also.
+
+20:45.000 --> 20:46.000
+All right.
+
+20:46.000 --> 20:49.000
+So, not good, right?
+
+20:49.000 --> 20:51.000
+This is not a good selection.
+
+20:51.000 --> 21:03.000
+Now, if every one of them said, I don't know, down with Joe Biden, down with Donald Trump, down with Gavin Newsom, down with, I don't know, Maduro, et cetera.
+
+21:03.000 --> 21:04.000
+Yes.
+
+21:04.000 --> 21:05.000
+Okay.
+
+21:05.000 --> 21:08.000
+That would be hot.
+
+21:08.000 --> 21:10.000
+Because they all look very similar.
+
+21:10.000 --> 21:13.000
+But, but this, hmm.
+
+21:13.000 --> 21:24.000
+So, one way to generate similar believable passwords is by what's called tweaking.
+
+21:24.000 --> 21:25.000
+Oh, yeah.
+
+21:25.000 --> 21:33.000
+So, essentially, you know, I'll put you to the paper, but of course nobody's going to look at it, but the idea is very similar.
+
+21:33.000 --> 21:35.000
+Tweak the actual password.
+
+21:35.000 --> 21:48.000
+Take, take the user's actual password that he or she picked and tweak them a little bit to generate, like, minor variations.
+
+21:48.000 --> 21:58.000
+That has problems, but, something like this.
+
+21:58.000 --> 22:05.000
+So, both lines are passwords, like gamma half, pacificer six, and this is contamination, right?
+
+22:05.000 --> 22:08.000
+So, all four of these are passwords.
+
+22:08.000 --> 22:16.000
+I mean, nobody, I'm saying, well, he thinks that your password is very long, but, but you get the idea, right?
+
+22:16.000 --> 22:18.000
+They all have similar structure.
+
+22:18.000 --> 22:24.000
+They all start with, like, the same sort of human readable part, and then there are these numbers, right?
+
+22:24.000 --> 22:30.000
+Three, two, one, four, five, six, seven, and then there are the sequential numbers, but they all look very similar.
+
+22:30.000 --> 22:34.000
+Now, looking at this, it's very hard to say, right?
+
+22:34.000 --> 22:42.000
+So, one of them is, is obviously the password, and the rest are tweaked, but which are tweaked?
+
+22:42.000 --> 22:43.000
+Why?
+
+22:43.000 --> 22:49.000
+Because all the other ones, it has the one that has the most common numbers and letters.
+
+22:49.000 --> 22:56.000
+Maybe, maybe, maybe, but it happens to be this one.
+
+22:56.000 --> 23:01.000
+No, I mean that, of course, it's a synthetic example, but it happens to be this one.
+
+23:01.000 --> 23:08.000
+But you get the idea, chaffing is a, does everybody know what the word chaff means?
+
+23:08.000 --> 23:17.000
+Chaffing, like, when you have weak chaff, you know, stuff that is like fluff, noise.
+
+23:17.000 --> 23:22.000
+So, the rest of them are noise, right?
+
+23:22.000 --> 23:26.000
+So, here's another problem.
+
+23:26.000 --> 23:33.000
+Here you have a bunch of very similar passwords, right?
+
+23:33.000 --> 23:38.000
+Which one is the real password?
+
+23:38.000 --> 23:40.000
+Any guesses?
+
+23:40.000 --> 23:45.000
+I know you, you have a guess, but does anybody want to guess?
+
+23:45.000 --> 23:46.000
+Okay.
+
+23:46.000 --> 23:47.000
+It's the fourth one.
+
+23:47.000 --> 23:48.000
+It's the fourth one.
+
+23:48.000 --> 23:49.000
+Why?
+
+23:49.000 --> 23:50.000
+The band.
+
+23:50.000 --> 23:51.000
+The band.
+
+23:51.000 --> 23:55.000
+Now, of course, now you know this, except for him, I don't know why he knows, but it's
+
+23:55.000 --> 24:00.000
+a band from, you know, some, a couple of generations before you.
+
+24:00.000 --> 24:01.000
+It's a rock band, right?
+
+24:01.000 --> 24:06.000
+So, it has meaning.
+
+24:06.000 --> 24:09.000
+The rest of them are kind of random, right?
+
+24:09.000 --> 24:11.000
+But this one has a real meaning.
+
+24:11.000 --> 24:17.000
+Looks random, but it is not.
+
+24:17.000 --> 24:25.000
+So, the semantics of these particular passwords are significant, whereas the rest of them don't
+
+24:25.000 --> 24:27.000
+have any real semantics.
+
+24:27.000 --> 24:32.000
+So, if you just tweak by generation, like if the real password is Blink 182, and you start
+
+24:32.000 --> 24:38.000
+generating Blink 123, Blink 183, well, none of them are rock band.
+
+24:38.000 --> 24:42.000
+So, somebody who knows this will look at it and say, uh-huh, I know exactly what the password
+
+24:42.000 --> 24:43.000
+is.
+
+24:43.000 --> 24:45.000
+That's difficult.
+
+24:45.000 --> 24:50.000
+I think today you can get GBT to generate some meaningful passwords.
+
+24:50.000 --> 24:55.000
+Maybe, now this stuff wasn't proposed in an LLM era, right?
+
+24:55.000 --> 24:56.000
+It was before.
+
+24:56.000 --> 24:57.000
+Yeah.
+
+24:57.000 --> 24:58.000
+You probably can.
+
+24:58.000 --> 24:59.000
+But there's a better idea.
+
+24:59.000 --> 25:05.000
+You can just repurpose other people's passwords.
+
+25:05.000 --> 25:11.000
+You know, even conceivably on the same system takes Bob's and Charlie's passwords and throw
+
+25:11.000 --> 25:14.000
+them in his chaff and Alice's mix.
+
+25:14.000 --> 25:18.000
+They're as believable as Alice's passwords, you see?
+
+25:18.000 --> 25:21.000
+You can do that.
+
+25:21.000 --> 25:24.000
+Well, basically, what is this?
+
+25:24.000 --> 25:25.000
+What is the idea?
+
+25:25.000 --> 25:27.000
+What is the honey password scheme?
+
+25:27.000 --> 25:34.000
+It's an example of distributed security, kind of inexpensive distributed security that
+
+25:34.000 --> 25:38.000
+strictly strengthens the resilience of the system.
+
+25:38.000 --> 25:40.000
+Now, it's not going to prevent password breaches.
+
+25:40.000 --> 25:43.000
+It has absolutely nothing to do with prevention.
+
+25:43.000 --> 25:48.000
+It has everything to do with timely detection.
+
+25:48.000 --> 25:49.000
+Okay?
+
+25:49.000 --> 25:57.000
+So, it will, it's purpose only one, to detect ASAP when something happens, like a password
+
+25:57.000 --> 26:00.000
+file is compromised and the adversary tries to gain access.
+
+26:00.000 --> 26:01.000
+Yeah?
+
+26:01.000 --> 26:06.000
+Can the adversary use these correct passwords and maybe attempt them on a different website?
+
+26:06.000 --> 26:07.000
+Of course!
+
+26:07.000 --> 26:09.000
+And they're forgetting that they're using the password.
+
+26:09.000 --> 26:10.000
+Of course.
+
+26:10.000 --> 26:11.000
+Of course.
+
+26:11.000 --> 26:12.000
+This is not a panacea.
+
+26:12.000 --> 26:14.000
+This is not magic, right?
+
+26:14.000 --> 26:17.000
+The adversary stole the password file.
+
+26:17.000 --> 26:20.000
+And Greg told his password.
+
+26:20.000 --> 26:25.000
+He can try them on a different system because many of us, we use passwords.
+
+26:25.000 --> 26:28.000
+We do, unfortunately.
+
+26:28.000 --> 26:36.000
+Now, some, some password guideline checkers, you know how when you select your password,
+
+26:36.000 --> 26:42.000
+you are asked to enter, I mean, must have at least one lowercase, one uppercase, one special character,
+
+26:42.000 --> 26:43.000
+and one number, right?
+
+26:43.000 --> 26:45.000
+I think usually that's what you see I say.
+
+26:45.000 --> 26:46.000
+And the length, right?
+
+26:46.000 --> 26:49.000
+Eight characters at least, I think, for us.
+
+26:49.000 --> 26:53.000
+What was the last time anybody changed the password?
+
+26:53.000 --> 26:56.000
+I think I have.
+
+26:56.000 --> 26:57.000
+Okay.
+
+26:57.000 --> 26:59.000
+You haven't changed the password either.
+
+26:59.000 --> 27:00.000
+I have.
+
+27:00.000 --> 27:01.000
+I have.
+
+27:01.000 --> 27:02.000
+But I just don't remember the number.
+
+27:02.000 --> 27:07.000
+There are these other rules, but I remember, I think it, I think it's eight.
+
+27:07.000 --> 27:15.000
+Anyway, so some of the systems will have an additional guideline where you must insert
+
+27:15.000 --> 27:20.000
+the name of the system you are logging in into your password.
+
+27:20.000 --> 27:23.000
+Meaning that this is like uci.edu.
+
+27:23.000 --> 27:27.000
+So your password should have uci.edu in it.
+
+27:27.000 --> 27:28.000
+That is a pain.
+
+27:28.000 --> 27:33.000
+Not because if you have uci.edu, that part isn't useful.
+
+27:33.000 --> 27:38.000
+So you have to essentially add this to your password at the end or in the beginning.
+
+27:38.000 --> 27:40.000
+You're not going to sprinkle it throughout.
+
+27:40.000 --> 27:46.000
+And if the limit is eight, well you should not count these seven characters as part of
+
+27:46.000 --> 27:47.000
+the password.
+
+27:47.000 --> 27:49.000
+And for strength purposes, right?
+
+27:49.000 --> 27:54.000
+So essentially, by mandating that you all use uci.edu in your password, I'm saying that
+
+27:54.000 --> 28:00.000
+your password has to be at least 15 characters long, right?
+
+28:00.000 --> 28:03.000
+You see what I'm saying?
+
+28:03.000 --> 28:06.000
+Now, but that would solve a problem, right?
+
+28:06.000 --> 28:12.000
+In that you could not then reuse, well, it would be awkward for you to reuse that same
+
+28:12.000 --> 28:21.000
+password because it contains uci.edu on, I don't know, wellsfarga.com.
+
+28:21.000 --> 28:26.000
+But that's a balance between password usability and password strength.
+
+28:26.000 --> 28:28.000
+Now, back to your question.
+
+28:28.000 --> 28:29.000
+There's one other problem.
+
+28:29.000 --> 28:32.000
+Yes, the adversary could try.
+
+28:32.000 --> 28:37.000
+But remember, the adversary still doesn't know the right index.
+
+28:37.000 --> 28:42.000
+So it's very likely it's going to be frustrating for the adversary if the other system also
+
+28:42.000 --> 28:44.000
+implements a honey checker.
+
+28:44.000 --> 28:46.000
+Well, they would have different honey.
+
+28:46.000 --> 28:47.000
+That's right.
+
+28:47.000 --> 28:50.000
+But then they usually have different passwords.
+
+28:50.000 --> 28:55.000
+Right, but they just have to try like 20 times and then one of them works.
+
+28:55.000 --> 28:56.000
+No, no, no.
+
+28:56.000 --> 29:02.000
+Yes, if the other system, so let's say you broke into, you got uci.edu password for you.
+
+29:02.000 --> 29:07.000
+And then you went to Wells Fargo and they tried to log in as u using those passwords.
+
+29:07.000 --> 29:12.000
+But if Wells Fargo also implements a honey checker, that ain't going to work, right?
+
+29:12.000 --> 29:15.000
+I mean, it ain't going to work.
+
+29:15.000 --> 29:17.000
+Actually, no, let me take it back.
+
+29:17.000 --> 29:24.000
+It will work because one of them is probably, yeah, not probably, one of them is going to overlap.
+
+29:24.000 --> 29:27.000
+So actually, yeah, it might actually work.
+
+29:27.000 --> 29:28.000
+You need to compare it.
+
+29:28.000 --> 29:29.000
+That's right.
+
+29:29.000 --> 29:31.000
+Well, no, no, you don't have to break in to compare.
+
+29:31.000 --> 29:33.000
+If you break into Wells Fargo, then you can compare.
+
+29:33.000 --> 29:34.000
+But that's a high bar.
+
+29:34.000 --> 29:36.000
+I think actually you're right.
+
+29:36.000 --> 29:39.000
+You could take them to another website and try 20 times.
+
+29:39.000 --> 29:42.000
+Now, after three or four times, you'll get locked out.
+
+29:42.000 --> 29:45.000
+So you would have to do this under radar.
+
+29:45.000 --> 29:55.000
+Remember I mentioned that a good hacker or adversary does not rush to victory.
+
+29:55.000 --> 30:04.000
+If I know 10 passwords for you and only one is real, I'm not going to try one after another.
+
+30:04.000 --> 30:08.000
+I'm going to try one and cross it off by myself.
+
+30:08.000 --> 30:10.000
+And I'm going to get an education payment.
+
+30:10.000 --> 30:20.000
+Then knowing that you log into Wells Fargo once a day, suppose, I will wait a day.
+
+30:20.000 --> 30:24.000
+And during that time, you would have logged in successfully.
+
+30:24.000 --> 30:25.000
+Okay?
+
+30:25.000 --> 30:26.000
+Reset the counter.
+
+30:26.000 --> 30:29.000
+I will try the second answer.
+
+30:29.000 --> 30:30.000
+Doesn't work?
+
+30:30.000 --> 30:31.000
+Cross that off.
+
+30:31.000 --> 30:32.000
+Wait another day.
+
+30:32.000 --> 30:34.000
+You get what I'm going?
+
+30:34.000 --> 30:36.000
+Smart adversary will do that.
+
+30:36.000 --> 30:47.000
+Notice that most systems do not warn you when you log in successfully whether they have been in successful attempts before.
+
+30:47.000 --> 30:51.000
+Whether they should or not is an interesting question in and of itself.
+
+30:51.000 --> 30:57.000
+Because if they start telling you it will be meaningful only if you have good memory, if you log in regularly, you know what I mean?
+
+30:57.000 --> 31:04.000
+Like if you are one of those ill retentive people that logs it every day at 8 a.m. to your Wells Fargo account, yes, you will know.
+
+31:04.000 --> 31:06.000
+You say, what the hell?
+
+31:06.000 --> 31:09.000
+At 4 p.m. last night somebody entered the wrong password.
+
+31:09.000 --> 31:10.000
+Ah!
+
+31:10.000 --> 31:15.000
+But if you are like most people, you don't remember, you don't have that capacity.
+
+31:15.000 --> 31:18.000
+Most of us don't do this already.
+
+31:18.000 --> 31:19.000
+Everybody following this conversation?
+
+31:19.000 --> 31:20.000
+Yeah?
+
+31:20.000 --> 31:21.000
+Okay.
+
+31:21.000 --> 31:25.000
+So, anyway, back to this world.
+
+31:25.000 --> 31:29.000
+This is a nice balance between deployment and security, right?
+
+31:29.000 --> 31:32.000
+Because it's relatively easy to deploy.
+
+31:32.000 --> 31:36.000
+Minimally simple, blah, blah, blah.
+
+31:36.000 --> 31:40.000
+Now, two follow-up questions and we are done.
+
+31:40.000 --> 31:41.000
+That was two interesting things.
+
+31:41.000 --> 31:43.000
+Actually, what you raised is also interesting.
+
+31:43.000 --> 31:45.000
+I hadn't thought about that.
+
+31:45.000 --> 31:51.000
+Can we repurpose this theme to add a separate password?
+
+31:51.000 --> 31:55.000
+The Alice would have to remember two, two passwords.
+
+31:55.000 --> 32:02.000
+Well, one of them is real password and the other one is I'm being threatened, I'm under duress.
+
+32:02.000 --> 32:12.000
+Notice that banks use this system, you know, for PIN codes and combinations for like saves and stuff.
+
+32:12.000 --> 32:14.000
+There's two combinations.
+
+32:14.000 --> 32:16.000
+One is emergency, one is real.
+
+32:16.000 --> 32:20.000
+When you enter an emergency combination, the safe will open.
+
+32:20.000 --> 32:24.000
+But they will immediately notify the police or security.
+
+32:24.000 --> 32:26.000
+So the idea is the same here.
+
+32:26.000 --> 32:31.000
+If you have a list of, if you are Alice and you have a list of N passwords,
+
+32:31.000 --> 32:37.000
+it would be nice if you remembered two and only entered that other second one in case of emergency.
+
+32:37.000 --> 32:41.000
+Somebody puts a gun to your head and says, you know, log into your bank account and transfer money.
+
+32:41.000 --> 32:46.000
+Well, you enter, but the bank now knows that somebody is threatening you.
+
+32:46.000 --> 32:48.000
+Yeah, it'd be cool.
+
+32:48.000 --> 32:52.000
+And it can be done with the honey checker, right?
+
+32:52.000 --> 32:59.000
+The honey checker would raise an alarm when you enter that password that is signified in the emergency.
+
+32:59.000 --> 33:02.000
+And now, finally, there is a problem with the honey checker.
+
+33:02.000 --> 33:06.000
+Nothing is just beneficial.
+
+33:06.000 --> 33:11.000
+One of the things that the industry may aim to just recap it.
+
+33:11.000 --> 33:13.000
+Maybe the industry doesn't care to get into the computer system.
+
+33:13.000 --> 33:16.000
+He wants to inconvenience you as much as possible.
+
+33:16.000 --> 33:23.000
+So you imagine you are a large-ish organization where the system has numerous accounts, maybe thousands, right?
+
+33:23.000 --> 33:29.000
+This et cetera password file has like thousands or hundreds of accounts, employees, right?
+
+33:29.000 --> 33:34.000
+The adversary breaks one password.
+
+33:34.000 --> 33:36.000
+Just one.
+
+33:36.000 --> 33:37.000
+Okay?
+
+33:37.000 --> 33:40.000
+He wants to take his chances.
+
+33:40.000 --> 33:42.000
+He doesn't have to crack all of them, right?
+
+33:42.000 --> 33:43.000
+So the answer is easy.
+
+33:43.000 --> 33:44.000
+And enters that.
+
+33:44.000 --> 33:45.000
+Says, Alice, here's password.
+
+33:45.000 --> 33:46.000
+User name Alice, here's password.
+
+33:46.000 --> 33:48.000
+Immediately the alarm goes on.
+
+33:48.000 --> 33:51.000
+What happens at that point?
+
+33:51.000 --> 33:56.000
+At that point, everyone is locked out and everybody must change their password.
+
+33:56.000 --> 33:59.000
+That's a giant nightmare.
+
+33:59.000 --> 34:04.000
+So the adversary could be very happy just achieving that.
+
+34:04.000 --> 34:09.000
+If the adversary's goal is denial of service.
+
+34:09.000 --> 34:11.000
+Questions?
+
+34:11.000 --> 34:16.000
+No questions.
+
+34:16.000 --> 34:17.000
+All right.
+
+34:17.000 --> 34:18.000
+All right.
+
+34:18.000 --> 34:21.000
+Now it's time to switch to something different.
+
+34:21.000 --> 34:26.000
+Let me share the screen.
+
+34:26.000 --> 34:27.000
+All right.
+
+34:27.000 --> 34:37.000
+Now we're going to switch over to something called single synon or something called Kerberus.
+
+34:37.000 --> 34:39.000
+Anybody ever heard of Kerberus?
+
+34:39.000 --> 34:42.000
+Not from Greek mythology, but actual Kerberus.
+
+34:42.000 --> 34:43.000
+Yeah.
+
+34:43.000 --> 34:44.000
+Okay.
+
+34:44.000 --> 34:46.000
+Everybody ever heard of single synon?
+
+34:46.000 --> 34:47.000
+Okay.
+
+34:47.000 --> 34:53.000
+Well, some of you, many of you probably already used Kerberus without knowing it.
+
+34:53.000 --> 34:56.000
+Windows authentication, right?
+
+34:56.000 --> 34:57.000
+Distributed authentication on Windows.
+
+34:57.000 --> 35:03.000
+If you ever use ICS facilities for using, you know, Windows network, you've used Kerberus.
+
+35:03.000 --> 35:05.000
+It's underneath.
+
+35:05.000 --> 35:08.000
+And then we'll go on to web security.
+
+35:08.000 --> 35:09.000
+All right.
+
+35:09.000 --> 35:12.000
+So what is Kerberus or what is single synon?
+
+35:12.000 --> 35:14.000
+The idea of a single synon is very common.
+
+35:14.000 --> 35:17.000
+You have used it on the web, although not using Kerberus.
+
+35:17.000 --> 35:21.000
+Anybody know what OAuth is?
+
+35:21.000 --> 35:22.000
+Two people.
+
+35:22.000 --> 35:23.000
+Anybody else?
+
+35:23.000 --> 35:24.000
+Three.
+
+35:24.000 --> 35:25.000
+Okay.
+
+35:25.000 --> 35:27.000
+Anybody want to tell me what OAuth is?
+
+35:27.000 --> 35:30.000
+Based on, no wrong answers.
+
+35:30.000 --> 35:32.000
+What is OAuth?
+
+35:32.000 --> 35:33.000
+No?
+
+35:33.000 --> 35:34.000
+What does it do for you?
+
+35:34.000 --> 35:35.000
+Okay.
+
+35:35.000 --> 35:36.000
+Let me ask you.
+
+35:36.000 --> 35:37.000
+What does it do for you?
+
+35:37.000 --> 35:38.000
+You can access a different application.
+
+35:38.000 --> 35:39.000
+It's like an authentication.
+
+35:39.000 --> 35:40.000
+Right.
+
+35:40.000 --> 35:41.000
+So you log into Facebook.
+
+35:41.000 --> 35:44.000
+And you want to access, I don't know, TikTok or Instagram or something like that.
+
+35:44.000 --> 35:45.000
+Snapchat.
+
+35:45.000 --> 35:46.000
+And you do it without having to provide your username.
+
+35:46.000 --> 35:47.000
+How is that possible?
+
+35:47.000 --> 35:48.000
+Facebook instead?
+
+35:48.000 --> 35:50.000
+Well, it's not because everybody loves Facebook and respects Facebook.
+
+35:50.000 --> 35:51.000
+No.
+
+35:51.000 --> 35:52.000
+It's just Facebook authenticated you as somebody.
+
+35:52.000 --> 36:01.000
+And Facebook basically passes your credentials over to Instagram and says, this user has been
+
+36:01.000 --> 36:02.000
+authenticated.
+
+36:02.000 --> 36:03.000
+Google does the same thing, right?
+
+36:03.000 --> 36:04.000
+With Gmail.
+
+36:04.000 --> 36:05.000
+You're authenticated with using via Gmail and then you can use Google Drive.
+
+36:05.000 --> 36:06.000
+They had different applications.
+
+36:06.000 --> 36:07.000
+But you only signed on once.
+
+36:07.000 --> 36:09.000
+So the whole idea is to make it easy for users like you and you.
+
+36:09.000 --> 36:12.000
+You can make it easy for users like Google Drive to get your credentials.
+
+36:12.000 --> 36:13.000
+It's not because everybody loves Facebook and respects Facebook.
+
+36:13.000 --> 36:14.000
+No.
+
+36:14.000 --> 36:15.000
+It's just Facebook authenticated you as somebody and Facebook basically passes your credentials
+
+36:15.000 --> 36:17.000
+over to Instagram and says, this user has been authenticated.
+
+36:17.000 --> 36:18.000
+Google does the same thing, right?
+
+36:18.000 --> 36:19.000
+With Gmail.
+
+36:19.000 --> 36:20.000
+You authenticated with using via Gmail and then you can use Google Drive.
+
+36:20.000 --> 36:22.000
+They have different applications but you only signed on once.
+
+36:22.000 --> 36:33.000
+So the whole idea is to make it easy for users like you and Google Drive to use Chrome.
+
+36:33.000 --> 36:40.760
+users like you and me, first to remember fewer passwords, and second having to authenticate
+
+36:40.760 --> 36:47.080
+many many times. You know what it means to authenticate many times. Not just because
+
+36:47.080 --> 36:51.080
+let's say IMT requires us to re-authenticate, but I'm talking about authenticate many times
+
+36:51.080 --> 37:00.040
+to different applications. So that's the whole idea behind single sign-on, is that you sign
+
+37:00.040 --> 37:08.040
+on, you log in. Sign on is just another word for login. You log in once, and you don't do it for every application.
+
+37:09.400 --> 37:15.720
+So the basic problem that Kerberos in general, single sign-on tries to solve is this. You have
+
+37:16.360 --> 37:25.640
+many users and you have many what's called servers. If it helps you think of servers as being even like
+
+37:25.640 --> 37:35.640
+apps or applications that run on different places. Originally and even today, the Kerberos is mostly
+
+37:35.640 --> 37:43.240
+used within organizations. So suppose you're working in an organization like UCI or a commercials entity
+
+37:43.240 --> 37:51.480
+of some sort of company. Not a tiny starter, but a company of certain size. And so you have a bunch of
+
+37:51.480 --> 37:59.080
+users with different job titles and different privileges. Some users can access some resources,
+
+37:59.080 --> 38:05.880
+some and not others, and no different users depending on their job, may have unique access
+
+38:05.880 --> 38:11.560
+policies governing their access to resources. There are compute servers, there are GPUs, there are storage
+
+38:11.560 --> 38:18.440
+devices, there are printers, there are 3D printers. There are all kinds of equipment and there are all kinds of
+
+38:18.440 --> 38:25.160
+services that those that equipment gives you, right? So we call those things servers in this lecture.
+
+38:26.680 --> 38:34.440
+So the main problem is how a user proves their identity, right? Through a multitude of servers,
+
+38:34.440 --> 38:41.160
+right? Because a given user will come in the morning to work, will log in, and then during the day,
+
+38:41.160 --> 38:46.360
+in the course of a typical day, will want to access some service. I want to print a document,
+
+38:46.360 --> 38:56.760
+access company calendar, I don't know, run a job on an expensive GPU rack somewhere, okay? These kind of services.
+
+38:58.360 --> 39:06.920
+So, clearly a naive solution is to say, well, every service or every server that offers a service
+
+39:06.920 --> 39:11.960
+should have its own account database, should have its own account database, and every user that is
+
+39:11.960 --> 39:20.760
+allowed to access that server should have an account, okay? That could make sense. So if you want to,
+
+39:20.760 --> 39:27.160
+if you're allowed to use the GPU farm, well, have an account there. If you're allowed to use that printer,
+
+39:27.160 --> 39:33.160
+well, there's going to be a printer server that will maintain that account database. Same for storage devices and anything else.
+
+39:33.160 --> 39:47.000
+That would work, but it wouldn't scale. Because that means that we have, coming back to the problem
+
+39:47.000 --> 39:52.040
+with the password issue we discussed in the last couple of lectures, you would have to, as a user,
+
+39:52.040 --> 40:01.160
+as an employee, you would have to remember as many passwords, as many user names, but at least as many
+
+40:01.160 --> 40:07.240
+passwords, maybe the username is the same, as many passwords as there are servers, and you will
+
+40:07.240 --> 40:14.920
+physically have as many accounts as there are servers. And of course, if you have all these servers,
+
+40:14.920 --> 40:22.040
+each running its own account database or accounting system, well, an adversary who breaks into any of
+
+40:22.040 --> 40:27.160
+them already gets something. Potentially, if you reuse passwords, you will get your passwords on other
+
+40:27.160 --> 40:33.720
+servers. And we know the people who use passwords, right? So it's not a scalable world if you have
+
+40:34.520 --> 40:40.520
+every server maintaining its own database of users and doing its own access control.
+
+40:44.440 --> 40:45.000
+All right, so
+
+40:47.720 --> 40:55.880
+even if you do, in fact, have the same password for every server, right, separately, if you want to change it,
+
+40:55.880 --> 41:00.600
+you would have to contact each one individually, which is tremendous damage.
+
+41:03.400 --> 41:09.000
+So, clearly, we want to do something better. We want to have better security,
+
+41:09.000 --> 41:14.920
+means be secure against eavesdroppers and actively malicious adversaries. Remember,
+
+41:14.920 --> 41:20.760
+eavesdroppers just listen, malicious adversaries, actively active adversaries interfere, right?
+
+41:20.760 --> 41:26.120
+They introduce their own traffic, they delete traffic, they retard traffic, they change traffic,
+
+41:26.120 --> 41:33.000
+right? When I say traffic, I mean packets, communication. Also, adversaries can keep that in
+
+41:33.000 --> 41:38.120
+mind, and always in this course. Adversaries could very well be legitimate users who are inside.
+
+41:39.480 --> 41:47.320
+A lot of spectacular breaches in this world occur, not because of the evil hackers in a third world
+
+41:47.320 --> 41:54.760
+country or some other faraway place, they occur because there's a rotten insider in their organization.
+
+41:55.880 --> 42:01.480
+Of course, there must be reliability, so that whatever service you do, it must be always available.
+
+42:01.480 --> 42:08.280
+Users should not have to enter passwords and authenticate multiple times. The whole point is
+
+42:08.280 --> 42:13.000
+log in once and get access to as many servers and services as you can.
+
+42:13.000 --> 42:21.880
+So, if a user is asked to enter a password, doing so like once a day is considered okay. Maybe twice a day,
+
+42:21.880 --> 42:27.560
+but not every time you want to do something. That's super annoying. We all know this, right?
+
+42:29.080 --> 42:36.280
+It's annoying what we have here at UCI. And of course, it must be scalable, right? Because we want it
+
+42:36.280 --> 42:41.000
+to scale to large number of users and maybe smaller, but still a large number of servers.
+
+42:44.120 --> 42:50.920
+We want to deal with impersonation or when Alice is a legitimate user and Bob decides to log in as Alice,
+
+42:50.920 --> 42:57.160
+or some outside adversary just tries to log in. We cannot trust the location. For example,
+
+42:57.160 --> 43:01.160
+if you work in a company where computing, and many companies do this, right? They don't allow you to
+
+43:01.160 --> 43:10.280
+bring personal devices like laptops, right? You come to work, you either take your work-issued laptop
+
+43:10.280 --> 43:16.360
+and plug it in to the docking station, or you don't do even that. You just come to work and you log into
+
+43:16.360 --> 43:24.520
+the workstation on your desktop, whatever that is assigned to you. So, trivial idea would be to just say,
+
+43:24.520 --> 43:30.600
+well, you know, a person gained access to this desktop and this desktop is inside the secure premises,
+
+43:30.600 --> 43:36.680
+therefore, it's enough to just use an IP-based authentication, IP address-based authentication.
+
+43:36.680 --> 43:42.200
+That's not good. That's not good enough because IP addresses and even MAC addresses can be changed.
+
+43:43.080 --> 43:44.920
+Okay, so they're a poor form of authentication.
+
+43:44.920 --> 43:57.000
+Let's see. You have to be resilient to eavesdropping. You have to be resilient to replay, right?
+
+43:57.000 --> 44:03.480
+Replay is just basically replaying previously sent information, right? If you trap somebody's password
+
+44:03.480 --> 44:08.680
+in a clear text or somebody's packet that is actually, forget clear. If you trap a packet that has
+
+44:08.680 --> 44:14.840
+Alice's password in an encrypted form and you know that that packet carries Alice's password
+
+44:14.840 --> 44:20.920
+in an encrypted form, you can replay it at a later time and gain access to Alice's account,
+
+44:21.640 --> 44:27.480
+unless the password carries it in some other information like, for example, timestamp or something
+
+44:27.480 --> 44:37.160
+else. Okay, so you get the idea, I think, of what we want to do. So in Kerberos, the main component is
+
+44:37.160 --> 44:44.520
+something called the trusted third party. Trusted third party, or TTP, is the general concept.
+
+44:45.160 --> 44:50.040
+Okay, and by the way, Kerberos is called Kerberos because it's a three-headed dog from Greek mythology.
+
+44:50.760 --> 44:56.440
+There's some story behind it that I don't quite remember. Anyway, the idea is this. That
+
+44:57.320 --> 45:06.840
+pink box with the three dogs, that's the Kerberos trusted third party. Think of it as like the system.
+
+45:07.720 --> 45:18.200
+It is trusted. It maintains a relationship with every user and with every server. Okay,
+
+45:18.200 --> 45:25.880
+it's like the security brains of their, of the organization. So it knows all passwords. Oh,
+
+45:25.880 --> 45:34.840
+knows, I mean, knows as much as like a UX, that's the password. Actually, no, it knows all
+
+45:34.840 --> 45:40.520
+passwords for all users and it also performs what's called access control. So when a user comes in and
+
+45:40.520 --> 45:47.480
+comes in and authenticates and later the user says, oh, my name is Alice. I have authenticated.
+
+45:47.480 --> 45:54.600
+I want to access the GPU farm to run this job. The server, this trusted third party will say,
+
+45:55.400 --> 46:01.800
+are you allowed to do so? And that's called access control, right? This is separate from everything
+
+46:01.800 --> 46:06.680
+we discussed so far, right? Access control means do you have the right to access the GPU farm?
+
+46:07.720 --> 46:14.360
+Maybe Alice is not because Alice worked in the janitorial department. But Bob, who works in a,
+
+46:14.360 --> 46:25.640
+I don't know, coding department is allowed to ask. But maybe Alice is allowed to, you know, access some
+
+46:25.640 --> 46:32.600
+financial system and Bob is not. Okay? So you get the idea. Access control is very important and they,
+
+46:32.600 --> 46:37.000
+one of the roles of the trusted third party is to perform access control.
+
+46:37.000 --> 46:46.280
+It is a convenient entity because there's only one. You authenticate only to it directly as a user.
+
+46:47.560 --> 46:53.080
+And you do not authenticate directly to anybody else but the trusted third party.
+
+46:55.960 --> 47:00.360
+It is also, I admit from the start, anytime you have a system like this,
+
+47:00.360 --> 47:06.760
+it's going to be a single point of failure. So that is true about all systems that use trusted third party.
+
+47:07.000 --> 47:14.360
+Unless there's a hot backup somewhere. Okay? If the system fails, nobody can log in. Nobody can access it.
+
+47:16.360 --> 47:21.560
+Okay? That's from, that's, that's a problem. That's part and parcel of the curbers.
+
+47:22.200 --> 47:27.560
+And clearly that requires physical security, kind of like I mentioned earlier with the certification
+
+47:27.560 --> 47:33.240
+authorities, right? Require special security accommodations while so does the curbers trusted third party.
+
+47:33.240 --> 47:46.680
+So here's a, a bird's eye view. A user, let's say, comes in the morning and enters username, password.
+
+47:46.680 --> 47:55.880
+So that's the user experience. What's it? Well, assume, right? So basically proves identity and says,
+
+47:55.880 --> 48:01.720
+okay, now I want to access some server, like a print server. Okay.
+
+48:01.720 --> 48:10.520
+Okay. User then, if he's authorized, only if authorized, will receive a, what's called a ticket.
+
+48:11.640 --> 48:16.840
+And a ticket, like a ticket in the middleware, allows him to go to the print server and say,
+
+48:16.840 --> 48:30.200
+see, see, I got a ticket, I can print on you. Right? So that's essentially a high level,
+
+48:30.200 --> 48:36.920
+the interaction in curbers. And that's pretty much how most single sign-on services work in the real world.
+
+48:36.920 --> 48:43.480
+So you authenticate as a user once, and from that point on, everything else takes place under the curbers,
+
+48:43.480 --> 48:45.400
+being transparent to you, the human.
+
+48:49.080 --> 48:56.840
+So what is that mysterious ticket? Well, a ticket should be, as you can already guess,
+
+48:56.840 --> 49:03.800
+something secure, something cryptographically protected. Right? Because if it's not cryptographically
+
+49:03.800 --> 49:09.320
+protected, it can be hijacked, it can be modified, reused, abused, et cetera. So there's going to be
+
+49:09.320 --> 49:15.080
+some cryptographic protection for sure. It cannot include a server's password, obviously. Remember,
+
+49:15.080 --> 49:21.800
+the server, I did forget to mention this. So in curbers, every user shares a password,
+
+49:21.800 --> 49:28.920
+or a long-term key with a trusted third party. But also each server shares a long-term key with a trusted
+
+49:28.920 --> 49:35.960
+third party. Okay? So as far as the trusted third party is concerned, it has a database of all the
+
+49:35.960 --> 49:42.440
+users and all the servers. And for each user and for each server, it has a long-term key. Okay?
+
+49:42.440 --> 49:48.120
+Except for servers are not humans, so that key does not need to be a password. It can be a random,
+
+49:48.120 --> 50:02.040
+strong, long key. And it shouldn't change very often. So the ticket must have some information
+
+50:03.800 --> 50:10.920
+that only the server can read and understand that tells the server that this user is authorized to use
+
+50:10.920 --> 50:19.800
+this service right now. And for how long? So remember, it's important to tell the server, like the print
+
+50:19.800 --> 50:27.720
+server, that this ticket is for you. This is for the print server. And it refers to the already
+
+50:27.720 --> 50:35.880
+authenticated user, Alice. So this is for Alice to print on you now. Because if you don't say when,
+
+50:36.840 --> 50:42.600
+then the ticket can be used by others, right? Or it can be used by Alice in perpetuity.
+
+50:45.160 --> 50:51.640
+But remember, in the real world, Alice may be a good employee today and a fired employee tomorrow.
+
+50:52.920 --> 50:58.600
+Yes? So that's why tickets are only issued for a certain period of time.
+
+50:58.600 --> 51:07.880
+8 hours, 10 hours, 24 hours. Kind of like our authenticators here would do, right? When you
+
+51:07.880 --> 51:13.160
+use, when you log into UCI services, right? Eventually, your ticket will expire. And you'll get
+
+51:13.160 --> 51:23.080
+a new window to re-authenticate. The same idea. Okay, so the ticket is something, in this case,
+
+51:23.080 --> 51:29.000
+encrypted for the server with a key known only to the server and the DTP. But the user has no idea
+
+51:29.000 --> 51:33.640
+about that key. Server can then decrypt the ticket and verify the information and says,
+
+51:33.640 --> 51:39.000
+oh yeah, this is for me, because I can decrypt it, so it must be for me. And it refers to Alice. Well,
+
+51:39.000 --> 51:46.040
+Alice is that user. And of course, lack of print. And do whatever.
+
+51:46.040 --> 51:52.520
+All right. All right. So that's essentially how it goes.
+
+51:59.480 --> 52:06.680
+Inside the ticket, you would want to find the username, meaning this is the server to whom it's
+
+52:06.680 --> 52:13.720
+issued. The name of the server is who am I, the server, brain server, right? Who is the user?
+
+52:13.720 --> 52:19.720
+Alice. Address of the user workstation. That's important so that the ticket is not movable from
+
+52:19.720 --> 52:25.160
+one place to another. The ticket is valid for this device. You know how, with a single sign-on,
+
+52:25.960 --> 52:31.560
+with an OID, if you change devices, you'll have to re-authenticate. You move from one laptop to
+
+52:31.560 --> 52:36.280
+another, or desktop to laptop, or smartphone, whatever, you re-authenticate. Same here. There's
+
+52:36.280 --> 52:43.880
+an IP address. Even though IP or address is not a reliable form of authentication, the ticket is
+
+52:43.880 --> 52:54.600
+tied to the IP address. Yeah? Important. Lifetime. Valid from, valid to, or until. Why is that? Because
+
+52:54.600 --> 52:59.240
+we want to know when the ticket is valid. Sometimes it's not valid yet. Sometimes tickets are issued into
+
+52:59.240 --> 53:05.000
+the future. And this ticket will be valid at 8am. Because now 7am, you can still get a ticket, but
+
+53:05.000 --> 53:11.880
+you can't print till 8am. And until, right? And a few other things. At least, it needs to include
+
+53:11.880 --> 53:19.080
+something else called a session key. A session key is a short-term key generated by the trusted third party
+
+53:19.080 --> 53:25.960
+server. For Alice and the server, for user and the server to communicate with. To protect their
+
+53:25.960 --> 53:32.040
+communication. Does that make sense? Stop me if you lost me already.
+
+53:37.480 --> 53:48.600
+So, now let's zoom in. How is an actual session with Kerberos going? Alice comes in the morning.
+
+53:49.240 --> 53:57.240
+Alice wants to log in. She says, my name is Alice, user ID Alice, password, so and so on. The real
+
+53:57.240 --> 54:05.480
+password is not really sentiment clear, okay? But the idea is that somehow it's something that allows
+
+54:06.520 --> 54:13.080
+the trusted third party. Here it's called authentication server, and you'll see why. And when it
+
+54:13.080 --> 54:18.040
+authenticates Alice, it will send back an encrypted ticket.
+
+54:22.920 --> 54:28.040
+The problem with this approach is that the password would be in a clear text, or even a function of the
+
+54:28.040 --> 54:33.720
+password would be in the clear text. And so an eavesdropper could essentially impersonate the user.
+
+54:33.720 --> 54:39.800
+So you cannot send just encrypted password or clear text password, because that would be one.
+
+54:42.520 --> 54:47.640
+And it would require you to do this for every service, right? So for every server which is not good.
+
+54:48.680 --> 54:55.720
+So Kerberos adopts the following system. So here you see this dotted pink
+
+54:55.720 --> 55:04.440
+contour around two entities. And then the reason that it's there is to say that there are two,
+
+55:04.440 --> 55:10.200
+like you can think about two programs and two functions, but they're inside the same platform.
+
+55:10.200 --> 55:16.360
+That means there's one device that runs both of them. One is called the key distribution center,
+
+55:16.360 --> 55:19.000
+and one is called ticket granting service, but they're one in the same.
+
+55:19.000 --> 55:24.360
+They're like two processes running in the same machine. And they are the TTP.
+
+55:26.680 --> 55:27.720
+So the user
+
+55:33.320 --> 55:41.880
+will come after having authenticated initially, right, and pooling his identity once, will go back and say,
+
+55:41.880 --> 55:48.760
+hey, I want to access the PGS service. Okay, my name is Joe, in this case.
+
+55:51.480 --> 55:57.560
+And the system will say, okay, you say your name is Joe. Notice no password. Notice no password there.
+
+55:57.560 --> 56:03.400
+First message is no password. Just says, my name is Joe. I want to access the service called PGS,
+
+56:03.400 --> 56:04.600
+Ticket Granting Service.
+
+56:04.600 --> 56:13.160
+The trusted third party replies with an encrypted ticket granting service ticket,
+
+56:15.720 --> 56:21.800
+where the ticket itself is encrypted under a key, you see it's green, derived from the user's password.
+
+56:24.280 --> 56:31.080
+So that trusted third party knows the user's password and knows how to derive a key,
+
+56:31.080 --> 56:36.360
+because we don't use password, because encryption is directly, right, when we hash them and derive them.
+
+56:37.320 --> 56:45.240
+So that green contour means that the DGS ticket is encrypted with a key derived from the user's password.
+
+56:47.400 --> 56:53.240
+Okay, now the user, if he knows the password, assuming that user knows the password, can decrypt the ticket.
+
+56:54.040 --> 56:58.840
+And then come to the ticket granting service and say, hey, here is my ticket
+
+56:58.840 --> 57:09.080
+that I was issued previously. Can you gain, can you give me access to a server, like printer, file,
+
+57:09.080 --> 57:14.920
+server, storage device, whatever, view farm, and specify. And then get back and return,
+
+57:14.920 --> 57:18.920
+if he's allowed to access that server, get back an encrypted service ticket.
+
+57:18.920 --> 57:27.400
+Now, these two first lines, they happen, right, one after another. This and this happen one after another.
+
+57:28.200 --> 57:32.200
+These two are not necessarily close, meaning this can happen an hour after.
+
+57:33.400 --> 57:40.120
+Meaning that the user logs in, but the user doesn't use any service for a while, like doesn't need to print, right, doesn't need to do anything.
+
+57:40.120 --> 57:48.760
+Maybe the user walks away or starts reading a book in the box station, right. But when the user actually wants to do something, then this happens.
+
+57:54.520 --> 57:54.920
+And so,
+
+57:58.280 --> 58:03.080
+stay away from me for a second. He gets the encrypted service ticket which he can decrypt.
+
+58:03.080 --> 58:11.000
+Well, actually part of it, you'll see. This part he cannot because he doesn't know the yellow key.
+
+58:11.560 --> 58:18.120
+The yellow key is the key of that service. And so he forwards it to the service and says, hey,
+
+58:19.080 --> 58:21.720
+my name is Joe, I have a ticket to use you.
+
+58:25.720 --> 58:29.000
+And that guy decrypts it, verifies it, and allows it.
+
+58:33.080 --> 58:36.600
+The problem with this is that it's still not good enough because the ticket can be hijacked.
+
+58:36.600 --> 58:38.040
+Because you see the ticket is sent,
+
+58:39.560 --> 58:46.600
+kind of encrypted, right, and essentially anybody can intercept the ticket and hijack.
+
+58:52.040 --> 58:53.960
+And the server,
+
+58:56.760 --> 59:02.600
+so the printer, whatever, the file server, it needs to make sure that the user presenting the ticket
+
+59:02.600 --> 59:06.280
+is the same to whom the ticket was originally issued by the DTP.
+
+59:09.000 --> 59:09.320
+Okay.
+
+59:11.080 --> 59:16.920
+Conversely, the server needs to authenticate to the user. So if the user thinks he got access to a printer
+
+59:16.920 --> 59:22.600
+in the next room, okay, the user wants to make sure that he's talking to the printer in the next room
+
+59:22.600 --> 59:28.440
+and not a printer across campus. Okay. So that's what's called mutual authentication.
+
+59:29.000 --> 59:32.760
+The server needs to authenticate the user. The user needs to authenticate the server.
+
+59:35.240 --> 59:39.880
+So now we are ready to look at the actual Kerberos. So in Kerberos here is the notation.
+
+59:41.880 --> 59:48.600
+KC is the long-term key of a client C. The Kerberos uses the terminology client. The client is user.
+
+59:48.600 --> 59:55.160
+Okay. It's derived from the user's password, known to the KDC, and the client.
+
+59:55.160 --> 01:00:01.160
+TGS is the long-term key of the TGS. TGS, remember, is that part of the trusted enterprise, right,
+
+01:00:01.160 --> 01:00:09.000
+and sits there all for that. Only it knows it, nobody else knows it. So this is not a shared key.
+
+01:00:09.000 --> 01:00:14.680
+It's not a private key as in public private key, but it's a key only the TGS knows. So that's a
+
+01:00:14.680 --> 01:00:24.280
+little weird. Key V is the long-term key of a server V, okay, like a printer server. V and TGS know it,
+
+01:00:24.280 --> 01:00:32.520
+but nobody else does. Then this notation refers to a key that is short-term shared between the client,
+
+01:00:32.520 --> 01:00:42.280
+Alice, Joe, and TGS. And KCV is the shorter term. This is called the session key, okay? That is,
+
+01:00:42.280 --> 01:00:49.080
+will be shared between the user, client, and the server. You might get a little bleary at it at this
+
+01:00:49.080 --> 01:00:56.200
+point. It won't become clear. So here's the actual single sign on the Kerberos.
+
+01:00:56.200 --> 01:01:07.720
+So let's just finish on this slide. So the user has it on their device, whatever, a smartphone,
+
+01:01:07.720 --> 01:01:13.640
+workstation, desktop, et cetera. He enters the password and there's a program that is client
+
+01:01:13.640 --> 01:01:20.520
+programming. A purposeful key in it. You have to install it. And what it does is that program
+
+01:01:20.520 --> 01:01:28.680
+actually communicates the KDC. So it converts the password into this long-term key, right,
+
+01:01:28.680 --> 01:01:38.680
+that presumably is shared with the KDC. It then sends a clear text packet to the KDC or DTP. It
+
+01:01:38.680 --> 01:01:45.160
+says the ID of the client, that's username, the ID of the TGS, that's reserved, that's kind of fixed,
+
+01:01:45.160 --> 01:01:52.840
+the name of the TGS, and the current time, okay? Notice this packet is not protected. There's no
+
+01:01:52.840 --> 01:02:02.760
+authentication. There's no encryption. If the user exists, right, right, because if they specify
+
+01:02:02.760 --> 01:02:08.280
+ID that does not exist, they get no answer. But if the user exists and is in good standing,
+
+01:02:08.280 --> 01:02:15.160
+meaning not revoked, not expunged, the KDC will reply to this green stuff, which is the encryption
+
+01:02:15.160 --> 01:02:23.160
+under the client, under the user's long-term key of a short-term PTC, the blue key, that is to be used
+
+01:02:23.160 --> 01:02:29.240
+from now on to talk to the DGS. The ID of the DGS should match the one in the blue, the issue should
+
+01:02:29.240 --> 01:02:36.760
+match. The time, the KDC means that the time, the current time on that side of the KDC. Lifetime,
+
+01:02:37.480 --> 01:02:43.560
+how long the ticket is valid, right? It's two from two. And a red thing, which by the way,
+
+01:02:43.560 --> 01:02:47.960
+looks very small, but it's very important. It's a ticket for the DGS. So actually that red thing is
+
+01:02:47.960 --> 01:02:56.280
+actually big, okay? It is an encrypted ticket that only DGS can read. So this green block comes to the
+
+01:02:56.280 --> 01:03:02.360
+user, the user because assuming, assuming the user knows the right KDC, and this is not an impersonator,
+
+01:03:02.360 --> 01:03:09.160
+right?
+
+01:03:09.160 --> 01:03:16.360
+The crypt, the green part, learns KC DGS and ticket DGS, the orange one.
+
+01:03:16.360 --> 01:03:23.800
+Okay? He also verifies that the time, for example, the time C and the time KDC have to be near. If
+
+01:03:23.800 --> 01:03:29.080
+something is wrong there, you know, that's a, there's a problem with time synchronization,
+
+01:03:29.080 --> 01:03:35.880
+right? If the ID DGS does not match, for example, right? You see, the user wants to go to one DGS,
+
+01:03:35.880 --> 01:03:41.800
+the different DGS, again, it's a problem. It's an error. Otherwise, he obtains the
+
+01:03:41.800 --> 01:03:52.280
+orange ticket DGS and that key, KC DGS. Okay? So that's the initial single sign-on. That is the
+
+01:03:52.280 --> 01:04:02.600
+only time the user enters a password. That's it. Now, here's where I obtain a service ticket.
+
+01:04:03.000 --> 01:04:08.440
+But since it's 1217, I think, let's just stop here.
+
+01:04:12.120 --> 01:04:16.200
+Yeah, you all look a little confused by your own, by your own notation.
+
+01:04:17.560 --> 01:04:23.400
+Trust me, if you stare at the slides for a little bit, it will all become clear.
+
+01:04:23.400 --> 01:04:36.840
+You are right here.
+
+01:04:36.840 --> 01:04:37.800
+Okay.
+
+01:04:41.800 --> 01:04:42.280
+Okay.
+
+01:04:42.280 --> 01:04:53.720
+Yeah.
+

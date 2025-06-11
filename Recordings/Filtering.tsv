@@ -1,0 +1,558 @@
+start	end	text
+0	6640	mean, what is it that you want to protect? Things on the inside. To be strictly strict
+6640	13320	about it, I mean, this is sort of an old-fashioned intranet, but really it's like the private
+13320	18900	network. And it has all this trust, the posts and other stuff and other networks and equipment
+18900	26740	and printers and, I don't know, IoT devices and whatever you have. I think there's a big
+26740	33740	bad world outside. If the world wasn't bad, we wouldn't need firewall. So the world is
+33740	40680	big and the world is bad. And the typical thing here is that you have a router that connects
+40680	47120	you to the, like ISP, right? Or if you are, if the organization itself is already its own
+47120	52160	ISP, connects you to the long haul. Remember autonomous systems? Yeah, I'm talking about
+52160	57380	autonomous domain, autonomous systems that provide like long distance services. So anyway,
+57380	62300	this connects you to the rest of the world. And then here you have this firewall. And the
+62300	68600	firewall is your sort of first line of defense, right? Router is not a firewall. Sometimes
+68600	73160	they can live in the same platform, but logically a router and a firewall are two very different
+73160	80160	things. Router's job, main job, is to route packets and to maintain a routing table and
+80160	86160	to exchange information with other routers about reachability and congestion and all things
+86160	95160	like that. It does not generally perform security tasks. Its main job is not security. Firewall's
+95160	102160	main job, the only job is security. There's no other job that a firewall has, just security.
+102160	112160	Now here, this is again a bit old fashioned terminology, but often referred to as DMZ or demilitarized
+112160	120160	zones. Okay? So this is where you put your publicly accessible servers, like your web server,
+120160	129160	right? Or your VPN server, or some other server, or customer support, whatever. So things that
+129160	135160	you want to be accessible from the outside with less scrutiny, anybody should be able to access
+135160	142160	at least the company web server, right? Every company that, you know, unless they're super secretive,
+142160	151160	right? 99% and more probably of the entities, right? Commercial entities have web presence. What
+151160	155160	that means is they have a web server. Now some of them do it like this. Some of them host a
+155160	165160	web server out on a third party provider. Okay? But many do this. They just put it in a DMZ. And
+165160	174160	the firewall will make sure that traffic can go to the DMZ with no scrutiny. But the DMZ itself
+174160	180160	is separate, physically disconnected from the rest. So there's no line. If there is a line
+180160	187160	here, that's a recipe for a disaster. Okay? So if there's anything you remember, or one of
+187160	192160	the few things you should remember about this lecture, that if you have a DMZ, its only connection
+192160	206160	should be to the firewall. Okay? And there should be zero connection here. Okay? So I already
+206160	212160	mentioned the moat. But, important thing, before you start thinking and have your mindset
+212160	219160	that O is a big bad world and we ought to protect our precious resources from the big bad world.
+219160	226160	It is true, but it's not the entire truth. In addition to that, you want to protect yourself from
+226160	239160	things coming out. Why do you care about things coming out? Not just going in. Anybody?
+239160	246160	We are a military or some company with some security technology. Okay? Let's develop this. Let's go
+246160	253160	further. What is the general thing we are looking for here? To prevent?
+253160	261160	Yeah, yeah, yeah. But what kind of attacks?
+261160	266160	Perfect shovel. Okay? Perfect shovel.
+266160	276160	Okay? But there's a term for this. We used that term before. Insider attacks. Insider attack.
+276160	283160	Rogue employees, right? They happen, right? Rogue employees. Somebody knows they are going
+283160	289160	to be axed on a day tomorrow. They can cause damage. They can put a bomb, a logic bomb somewhere.
+289160	296160	They can exfiltrate the information. What about malware? Joe Schmo comes to work.
+296160	304160	Total doofus. Not a malicious person. Sticks a USB that he brought from home to watch some movies
+304160	311160	during lunch break into his work computer. And damn! Malware jumps from USB over to the laptop
+311160	318160	or desktop and starts exfiltrating sensitive information. You have an unwitting insider.
+318160	324160	But essentially what you have is malware. Okay? That sits on the inside and exfiltrates information.
+324160	329160	That is why it is very important to control who goes in and who goes out. Just like in a castle
+329160	334160	with a moat. It's not there just to control who comes in. It's also to see what comes out.
+334160	347160	So make sure you remember that. The firewall is two-way. So location of course as you saw
+347160	353160	in the picture is typically between the external and internal network, right? It could also be
+353160	362160	inside your private network separating various parts, various departments. That makes sense.
+362160	369160	It makes sense. It makes sense in certain government agencies like three-letter agencies. It makes sense
+369160	376160	in military settings, right? Where you have strict compartmentalization of information. That there
+376160	381160	would be a firewall even within the internal network, right? But that means that the internal network
+381160	391160	is sort of naturally subdivided into smaller networks. Okay? You could also have it on your own machine.
+391160	398160	On your own machine. So if you are running Windows, you might be running a personal firewall, right?
+398160	404160	Microsoft personal firewall. I think on Linux, there is also like at least several packages
+404160	410160	that will install a local firewall for you. Anybody configured their own firewall?
+410160	421160	You and I? Nobody else? Nobody uses Windows? Nobody uses Linux? Okay. It's so fine. Most people
+421160	429160	don't come across this. Okay, so important thing. That firewall is a nice concept, but it essentially
+429160	436160	leaves a lot of room for deciding where to put it. Which layer? Remember the session, sorry, remember the
+436160	443160	sort of rough seven layer hierarchy, right? Network particles, right? Network particles stack. Why?
+443160	453160	You don't put it in the physical layer. Okay? That's like silly. You don't put it in the MAC layer because
+453160	459160	the MAC or data layer because that's one hump, right? And it's like, what's the point of a firewall?
+459160	470160	It's at the MAC layer. So the lowest layer where you can place the firewall is the network layer.
+470160	479160	Because remember the network layer is hopping around the internet. It's the common layer of the entire internet.
+479160	486160	So you cannot put it lower than the network layer. How high can you put it? Well, you can put it all the way
+486160	497160	up to the application layer. And that leaves a lot of choice. Okay? So the simplest one is the packet
+497160	504160	possession filtering router that is placed at roughly the network layer. Roughly, I say kind of, let's say
+504160	512160	you're doing the network energy. Another approach is called proxy gateway. But proxy gateway means
+512160	520160	that actually traffic terminates. So instead of just examining packets one by one, this proxy gateway
+520160	527160	will actually like terminate the connection. And we start a new one. So it will be like stitching out
+527160	537160	two connections. Does that make sense? Right? And this can be done at circuit level, which is application
+537160	550160	independent, using sockets, right? Socket layer. And then it can also be done at application level layer. And that
+550160	560160	requires designing kind of a custom application gateway. Right? And maybe, I suspect some of you have
+560160	566160	already seen this in the real world. If you weren't like in the real world, you may have seen this. Okay?
+566160	572160	These types of things. And then of course the personal firewall, you set up your own rules and this could
+572160	578160	work at almost any layer, but generally it's a network layer. So we're not going to talk much about this. We're going to
+578160	593160	focus on the first two, the packet and proxy gateway. Questions so far? Okay. So just a pictorial representation of
+593160	602160	what I just mentioned. Internet and then you have this security perimeter, right? Which is a network security perimeter
+602160	612160	where your private network is located. And this packet filtering router, which is the firewall, located there. And
+612160	619160	all it does, it does it fast. Because it looks at a packet at a time, and it doesn't keep state about anything.
+619160	629160	It just looks at one packet and says, source, destination, protocol, maybe what's the next protocol, maybe
+629160	636160	port number, and like length and things like that. It says, what is this? What is this? Do I let it go or do I not?
+636160	645160	So it just makes a decision. Let it go or drop. Very quickly. Okay? It does not consult much except maybe some
+645160	656160	kind of a table. Okay? You'll see an example. Then you have a circuit level gateway, which basically splices connections.
+656160	665160	So here you have an outside connection, let's say, that terminates here. And if you took a networking course, you've seen
+665160	673160	the concept of virtual circuits, right? So essentially, this is a virtual circuit. Right? So there's one that goes
+673160	684160	in here, in, and then it's translated into this. So this allows, you know, circuit level filtering. Right? Because it's all
+684160	693160	socket based. Okay? But port based, if you will. And here you have application level gateway, where what happens
+693160	699160	is you want to, let's say, telnet, right? Remote telnet, like a remote login, right? You want a remote login
+699160	708160	from the outside to the inside. But what you first do is you actually log in to this application level gateway.
+708160	716160	That's like a first line. And then from there you go to the actual place inside you want to go. So it's
+716160	723160	really like translating to telnet session, to telnet session. One to here and one to here. And the same
+723160	737160	would go for file transfer, SMTP, HTTP, etc. It's a real like proxy. Okay? And so this has the most information
+737160	744160	about traffic, right? Because this looks at the actual application. So if an application
+744160	751160	is not allowed, there's no proxy, the traffic is discarded by this gateway. So for example,
+751160	756160	if you try to use, I don't know, some strange protocol that is not supported, right? Some kind
+756160	761160	of a, some kind of a new app or something that's not supported. It says, oh, I only support telnet
+761160	768160	TPS and TPS to be by. Okay? Whereas a certain level admin might not, might not notice that,
+768160	778160	right? Because it doesn't see the application context. Yeah. So starting with, let's start
+778160	786160	with packet filtering. So as I said, the decision is done per packet, without any other context
+786160	792160	of whether this packet is part of a connection or not. Just look at individual packets. Okay?
+792160	799160	What does it look for? Mainly IP source destination address and port numbers.
+799160	806160	Protocol identifier, remember the IP header has protocol identifier. And when I say port
+806160	812160	numbers, of course port numbers are not inside the IP header. That's inside TCP header or UDP header.
+812160	821160	So look at both network layer and transport layer. There are some super simple firewalls,
+821160	827160	also packet level filters that only look at the IP header. It's faster that way. Okay?
+827160	837160	And I'll tell you why it's faster. Because remember IP has fragmentation. Remember I talked about
+837160	851160	how IPv4 has fragmentation. So when the TCP segment is given to IP on the sending side, it could be large. Yeah?
+851160	860160	And so the IP then will, if it's too large to be fit in one IP packet, it will chop it in fragments.
+860160	871160	Well, only the first fragment will have the TCP header. Right? The other fragments could be like in the middle, right?
+871160	879160	Or somewhere. So they won't have a TCP header. So you can't check the port numbers. Not good. Right?
+879160	884160	If you want to filter by port numbers, you can't. Although the IP header won't tell you is the next
+884160	888160	protocol is TCP. But it won't tell you what the port numbers are because the header isn't present in the
+888160	895160	fragment. So that presents a problem. Also, you will, so one way to do so is to disallow fragments.
+895160	900160	So some of these packet filters, right? These packet filtering gateway, they will discard
+900160	905160	fragmented packets. They simply like return an ICMP. What's called an ICMP? They say no
+905160	913160	fragmentation. Don't fragment. But I want to ask, like, when fragmentation is
+913160	918160	usually because the router cannot send a large package. So...
+918160	925160	Well, a router can only send a packet as large as what's called MTU of the next link. MTU is
+925160	931160	the maximum transmission unit. So that's hard-coded in a given link. So for a given
+931160	935160	router, you know, it has this interface. It's more than, at least two, right? That's why
+935160	943160	it's a router. So for each interface, it has an MTU. So when it receives a packet, obviously
+943160	949160	it's big enough to fit, right? But when it sends a packet, it has to look, is that packet
+949160	957160	it's going to fit in the MTU on the next link. Okay? That's how IP works. Does that make sense?
+957160	963160	But all I mean is that, like, between the routers in a network, you cannot, like, control the
+963160	969160	router MTU between the routers. You cannot. You cannot. But there's something called MTU discovery.
+969160	975160	I mean, generally today, so there's, like, the protocol, the way to describe the spec IP, the
+975160	979160	way it's described, and the way it's implemented. So the way it's implemented today is more routers
+979160	985160	do not fragment packets. And I tell you what. So theoretically, it should, it can be supported,
+985160	990160	it should be supported, but it's not done because internet routers, and this has nothing to do with
+990160	1000160	security. Internet routers are supposed to process packets fast. Fast. Okay? And there's something
+1000160	1007160	called a fast path. Fast path is take a packet, look at the destination, points to the next
+1007160	1016160	hop, send it. If anything deviates from that, today's most routers will drop the packet. Okay?
+1016160	1022160	Because technically they are supposed to, oh, well, the next MTU is too small, I have to split
+1022160	1030160	this packet into two parts. That's a lot of work for a router. It deviates very much from this fast path.
+1030160	1038160	So that's why many of them don't do it. Okay? But, so that's assumed for the, for the rest of this
+1038160	1042160	discussion, right? You understood what I, I hope that what I mentioned before, the problem with
+1042160	1050160	fragmentation. But assume there's no fragmentation. Assume that the source of the IP packet sends in a small
+1050160	1057160	enough packet that it will not be fragmented. Okay? Which means that every IP packet has a
+1057160	1062160	TCP header. Let's just assume. It may not always be the case. Then what you can do is, of course,
+1062160	1068160	you can look in a TCP header and say, oh, there's a port number, and look at TCP flags. Remember,
+1068160	1073160	TCP flags indicate what kind of packet this is, right? Is it the beginning of the handshake cover
+1073160	1079160	connection? Is it the end of the connection? Etc. And if it's not TCP, for example, above IP,
+1079160	1084160	there could also be UDP, which presents a bit of a problem, or ICMP, which is control,
+1084160	1090160	internet control message protocol, which I mentioned earlier. It's like a maintenance protocol.
+1090160	1095160	Anyway, so filtering rules are based on pattern matching, and you'll see some examples.
+1095160	1101160	Different gateways or different firewalls that are different vendors for different languages.
+1101160	1108160	It's not like a unified language for describing rules. So if you work for a company that implements
+1108160	1113160	a certain, or buys a certain product, a firewall product, you need to learn the language,
+1113160	1116160	their policy language, if you're going to configure a firewall. You better learn it well,
+1116160	1129160	because misconfigurations can cost nera. Now, at this point, remember SSL TLS. Right? Remember?
+1129160	1139160	SSL TLS, you might think, presents a problem. Doesn't it? Well, not for this kind of firewall.
+1139160	1148160	Because if you recall, SSL TLS starts encrypting things above TCP. Right? And not even that.
+1148160	1152160	Some things are not even encrypted, right? Depending on which version it is, but it leaves some
+1152160	1162160	of the things. But TCP here is available, because it's below SSL TLS. So that's not a problem here.
+1162160	1172160	Okay? What about IPsec? Ooh, IPsec is a problem. IPsec could be a problem for firewalls that want
+1172160	1181160	to look at the TCP header, because they can't. Right? They can't. But what a firewall could do
+1181160	1188160	is say, you know what? You want to come for me? Build the first IPsec tunnel to me. Are you
+1188160	1199160	following what I'm saying? So, there's my favorite marker. What's going on today? Well, okay.
+1199160	1205160	I think you all remember IPsec, right? So the firewall would say, hey, you want to come from
+1205160	1211160	the outside, and you want to use IPsec. No, no. First build an IPsec through me.
+1211160	1216160	Right? And then it means the firewall will actually be the endpoint of IPsec tunnel. You will see
+1216160	1227160	the actual IP packet when it decapsulates it, right? So here's one example. Yeah?
+1227160	1233160	I mean, I'm assuming you want an IPsec tunnel elsewhere outside of the router, but using that,
+1233160	1238160	they wouldn't guarantee the router would actually re-IPsec it to the next .
+1238160	1245160	It may not need to. Remember that, David? We're talking generally IPsec tunnel from the outside
+1245160	1251160	to the firewall. That's what I meant. From the outside to the firewall. Then the firewall
+1251160	1256160	decapsulates, and then it may re-IPsec it again, right? Or not. That depends.
+1256160	1262160	Let's look at the fact of filtering examples. This looks at the TCP, right? It includes the
+1262160	1271160	TCP header. These are blocks of rules, right? And this is just kind of one very simple language.
+1271160	1277160	And what it says is basically a table. It says action, our host, port, their host, port,
+1277160	1282160	coming. A coming is usually not present, but it's just for an explanation. So the block A
+1282160	1291160	over there says that, okay, the action is to block. So anything that has source destination,
+1291160	1300160	our host, their host, but their host is named spigot, okay? Like the name of the host is spigot.
+1300160	1312160	We don't allow it, okay? That's it. Don't allow it. The next rule says allow from our gateway,
+1312160	1321160	right? Connection on port 25. Well that means port 25, TCP port 25 is SMTP email, right?
+1321160	1328160	Fail. So we allow connections to, from any port, you see that says port any on the second port.
+1328160	1337160	It says any, it says asterisk. Their host is asterisk means any. So any foreign host can connect
+1337160	1347160	to our gateway on port 25, right? Connections to our SMTP port are okay.
+1347160	1357160	Block B says do not allow anything. That's a default rule. So if something falls through all these
+1357160	1364160	and it's not, does not trigger any of those rules, block B is an effect, right? Everything
+1364160	1372160	that's not explicitly allowed is denied or blocked. That's all it says. That's a default rule.
+1372160	1382160	Block C says allow us, right, us to connect to them on port 25. That is an internal host can
+1382160	1388160	go outside and connect to port 25 anywhere. Just for email purposes, right? Because email
+1388160	1398160	is considered safe. Block B says explicitly a set of our host. This is just like a short
+1398160	1403160	handle. You actually like list all the explicit hosts, you know? Like it's different from an
+1403160	1410160	asterisk, right? Asterisk means anything. Our host means a fixed set of our hosts.
+1410160	1420160	It says that our packets to their SMTP port are okay. Again, port 25. And it also says that
+1420160	1428160	anything coming back to our port 25 with an ACK set, flags, that's DCP flags. When it says
+1428160	1436160	flags, you see that flag? That's DCP. It means that it's an acknowledgement, right? What it means
+1436160	1446160	is an acknowledgement of something we said. So we allow ACKs to come back. And finally,
+1446160	1455160	block E says allow our hosts to go out. Anything going out from our host is okay. Initiating from
+1455160	1462160	our host is okay. Anything with an ACK flag is okay. Meaning anything coming back with an ACK flag
+1462160	1470160	an ACK flag is fine. And finally, traffic to non-servers is okay. That is, if you're going outside to
+1470160	1478160	any client, right? To anything that port greater than 1024, that is reserved for non-servers. So
+1478160	1490160	TCP ports 1024 and below are reserved. There are like specific things. Like 25 is email. 80 is HTTP,
+1490160	1496160	right? 443, I think it's SSL, TLS, right? Things like that. But they're all less than 1024.
+1496160	1508160	So here's kind of a deeper dive. So let's look at FTP. Everybody knows FTP, right? File transfer
+1508160	1516160	port. Did you all know that it actually works with your browser? They don't try it like if you use FTP
+1516160	1526160	instead of HTTP in your URL. It still works, right? Your browser understands it.
+1526160	1534160	So what you have here is a client and a server, right? So a client that wants to transfer a file,
+1534160	1544160	one or more files. So the client starts by opening a connection on port. And its own port is 5151, right?
+1544160	1554160	Says my port is 5151, but actually what the HTTP has is it reserves two special ports, right? It has
+1554160	1560160	24 data. This is where, remember how SSL, TLS works? It has like a record layer and it has other. So
+1560160	1568160	this is like a record layer. It's for bulk data. And this one is for commands. So it's like a control channel
+1568160	1576160	and a data channel and a data channel. And they have different port numbers. Okay? So like FTP, if you remember
+1576160	1586160	FTP syntax, get file, file name, is a command. It's transmitted on the command port. The actual file transfer
+1586160	1596160	will happen on that port will happen on that port. Does that make sense? Commands as opposed to bulk data.
+1596160	1602160	So the first thing is a connection request comes in on a random, with a random port number, right?
+1602160	1610160	5151. You don't know what it is. And it's some client. And then it's okay, right? So that connection opens.
+1610160	1617160	Then the next thing is the data channel. The server, the FTP server opens the data channel. And these are two,
+1617160	1624160	these, these and this are two different TCP connections. Different port numbers, different TCP connections.
+1624160	1633160	Alright? And so at the end, you have the final TCP connection acknowledgement. At the end of the
+1633160	1641160	handshake, a TCP act from the client, and then the connection is over. This is just a refresher.
+1641160	1647160	So what would the packet filter rule say? This is a different syntax from the one. The one I showed you
+1647160	1653160	before was kind of very verbal, right? Very, very easy to parse. This one is a bit obscure.
+1653160	1663160	But once you get used to it, it makes sense. So what does this actually say? It says access list 100.
+1663160	1676160	That's which set of rules? It refers to a set of rules. 100. Permit TCP, okay? Allow TCP traffic
+1676160	1683160	So what does that mean? Outsiders, outsiders coming in on any port on any port greater than 1,023. I misspoke before I said 1,024.
+1683160	1691160	Well, actually it's 1,023. Greater than 1,023. So which needs client, okay?
+1691160	1693160	For host. 178.168.178.14.37x.18x behavioshiven, oke?
+1693160	1700540	For host. 178.168.10x.18x.18x.18x equals 21. noticeable
+1700540	1709160	So what does that mean? Outsiders, outsiders coming in on any port greater than 1,0244.15. It's not a server. It's a client.
+1710040	1717160	connecting to our host explicitly named for the IP address see that IP address that's our FTP
+1717160	1727560	server internally on port 21 is okay that's permit second line says permit blah blah blah
+1727560	1737320	same thing with a port 20 just says it's okay to have traffic to our FTP server our file server
+1739160	1750200	from any client the second list or the second set of rules 101 says permit TCP host this is our host
+1750200	1758680	right again it's that same FTP server to talk to on port 21 to any port that is greater than 1000.3
+1758680	1765080	that is responding to the client okay and the same thing for 20 right so that's the second line here
+1765080	1772120	just a lot so it's a it's a bi-directional right making it uni-directional wouldn't make any sense
+1772120	1780120	right has to be bi-directional and then finally it says here this is interface ethernet zero that's
+1780120	1785080	every every firewall will have to have at least two interfaces right one to the outside one to the
+1785080	1791160	inside can have more than two but generally at least two so which interface does this apply well
+1791160	1801880	this interface is within zero access list 100 is for inbound traffic access list 101 to outbound traffic
+1805240	1810360	i know since everything's obscure but i mean that's not it's not a canonical language just an example of a
+1810360	1818360	specific firewall language for a given file file provider but they all essentially communicate the same
+1818360	1821720	information what is allowed what is not allowed
+1825240	1833720	but despite the fact that they are fast right they have problems right the packet filter or the packet
+1833720	1839400	filtering firewall is the fastest firewall you can have because it keeps no state or almost no state
+1840040	1845480	it just basically looks at this the static rules that are encoded like a previous slide it says
+1845480	1849800	do i let it in do i let it out do i drop it let it in drop let it in drop it that's it packet at the
+1849800	1858200	time that's it now the problems uh if the attacks are application specific right somebody's trying to
+1858200	1866040	exploit uh something it's a vulnerability in an application the packet filtering firewall will not catch
+1867480	1873480	okay like buffer overflow uh it doesn't do user authentication obviously
+1874040	1880040	right because of the network layer or even a transport layer you cannot authenticate the user that
+1880040	1886760	might be at the other hand externally because the user does not sit at the network or transport
+1886760	1893400	layer so you cannot authenticate authentication based on ip addresses is useless because anybody can spoof
+1893400	1901240	like okay and so this type of firewalls they don't have upper or higher or higher layer functionality
+1901240	1909160	because they're supposed to be fast so there are other things that uh they are susceptible to for
+1909160	1917160	for example fermentation attacks uh that i'll talk about next then there's this configuration there's this whole
+1917160	1925160	area of research of how to take a set of rules and decide whether they make sense because if you
+1925960	1930920	understood my example both with the simple one with the table and the more complicated one
+1931720	1939800	one the previous slide configuring those rules is not all that easy and it's also but it is easy to
+1939800	1945960	to make mistakes so there's like a whole area of research and security on how to automatically
+1947320	1953400	detect uh contradictions or nonsensical rules or redundant rules
+1953400	1959320	i mean right and so these days a lot of of course ml is being used by that
+1965960	1972520	so i'll tell you i'll give you an example of kind of a clever pupelet fragmentation attack
+1973640	1976200	that typical packet filters will not catch
+1976200	1983160	so this is a reminder to you of what ip header looks like right we saw this slide before
+1984120	1993880	right just remember that options are well optional so typical ip packet ends here at the destination
+1997640	2003160	right so typically it's like this right after source destination address there's a tcp header
+2003160	2014680	i mean assuming we're using dc okay so what is a fragmentation attack well generally a fragmentation
+2014680	2024120	attack uh it requires an adversary to craft fragments on ip back there they overlap
+2026520	2032840	does that make sense overlapping yeah so normally again because i don't have a marker i can't draw
+2032840	2036680	anything for you but normally you expect them to do oh all right
+2040280	2047320	yeah normally you want to you have a packet that was long packet that was fragmented
+2048840	2055960	like one two three four and you want to make sure when it's reassembled it's really like one and then
+2055960	2067480	two three and then four and how do you know remember the fragment offset in the previous slide showed
+2067480	2076360	you right fragment offset told you how far for example this packet starts at i don't know uh 513
+2076360	2082920	which means that this is 512 bytes and the fragment offset for this packet will be 513
+2083800	2091800	and if this packet is 100 bytes then the fragment offset here will be 613 okay and this this packet
+2091800	2097960	is 100 bytes that will be 713 here so they all fit neatly one after the other right
+2097960	2112280	but what if you screw around with a fragment offset and instead of 613 put 313 well the reassembling ip
+2113240	2123880	destination will say oh well 313 i am going to stick to this packet here
+2123880	2133640	right because it says that now if you know of such attacks you would of course look you would change
+2133640	2141800	your ip right smart programmers who know how to code will say oh i should always check that
+2142840	2149560	a new fragment does not overlap with the already assembled fragments right because this is incremental
+2149560	2155800	you're receiving fragments you're potentially out of board ah but you know checking for boundaries and
+2155800	2165160	overlap that's extra code ip was designed where the world was denied so that is if you receive a fragment
+2165160	2171560	with the fragment offset it must make sense it must never overlap so a lot of ip implementations maybe
+2171560	2178840	not today today people are cognizant of this but they would just blindly reassemble and what that means
+2180360	2186520	is that if you just overlap real data it's it's a it's a problem already because god knows what
+2186520	2192680	happens in the application layer but a bigger problem is this if
+2192680	2203000	if you have just two fragments
+2207080	2218120	this is ib this is tcb and this is whatever okay and then you have now normally
+2218920	2228440	this there should be another fragment here right that should go in here right it should come after
+2229000	2241480	right it has its own ip header but if the adversary change the offset or crafted the offset to start
+2241480	2255480	here you see what i'm saying so here the offset in this packet fragment offset
+2255480	2268280	zero it's always like this first fragment fragment offset zero because it's it's a first but in the second what if it says fragment offset here
+2268280	2279080	i don't know 12
+2279080	2279160	i don't know 12
+2279160	2289960	well they will think that okay this thing this thing starts 12 bytes after
+2289960	2304760	so what can happen is that the adversary can override the ip header and control which flags are for
+2304760	2313720	example set in the dcp sorry in this dcp header and so remember the rules that said oh you can
+2313720	2321560	always let in act packets packets with an act flag well if you have two overlapping fragments
+2321560	2326520	and this reassembly reassembly results in the act flag being set the packet will be left
+2329080	2330840	so that's a gist of the attack
+2335720	2342680	so as you i don't know if you can see in red so if the act bit is set in both fragments an act bit is okay
+2342680	2348600	right both fragments have an act bit set but the fragment offset is messed up
+2350760	2360200	when you reassemble you can have a sin bit set remember sin not the original sin s y n
+2361880	2367560	s y n the s y n flag should be set in the very first packet in a connection
+2367560	2376600	so what does it mean it that if you only allow acts which means only connections from the inside out
+2376600	2384120	were allowed right you would only allow act packets coming back in but connections must always emanate
+2384120	2389560	from the out from the inside this allows essentially the connection to come from the outside
+2389560	2400120	that by this clever reassembly and we will see the different in another lecture uh probably next week
+2400760	2408120	we will see uh what is the what is the danger not only in principle like allowing connections
+2408120	2413160	disallow connections from the inside in but actually mounting was called sin floods or denial of service
+2413160	2421000	attacks on the inside of the servers and by the way if you ever wanted to know what dcp state diagram
+2421000	2425080	is well if you haven't been exposed to this in the networking course you should have been
+2425880	2433800	because that would make a grown person cry instead of staring at it for a bit don't worry you won't be
+2433800	2440680	on the exam this is networking not security but dcp is a is a complicated beast
+2440680	2448760	okay it's not at all like ip or even ibsec it's a complicated beast and this diagram by the way
+2448760	2456760	this state diagram captures both client and server behavior dcp so the dashed lines are for the client
+2456760	2463720	and the solid lines are for the server so if you recall the state guide the state well the actual dcp
+2463720	2469080	connection is established after a handshake right you first have to have this three-way handshake
+2469080	2473560	connection then the connection is established but the connection when it's alive it's it's not like
+2474760	2479320	constant because there's something called window size that changes right in the dcp connection and
+2479320	2485320	then there's an actual end right meaning when a normal dcp connection is over there is actually a
+2485320	2493000	tear down okay and then it's like that's why you have these things so i'll just give you an idea don't
+2493000	2503400	worry about remember everything here uh so this is a sort of a better illustration of the fragmentation
+2503400	2514280	of that you're sending two packets okay from the client sorry with uh from the client they're here
+2514280	2526520	one and two both packets like in my example here have acbit set we allow packets with acbit set come back
+2526520	2531960	because they're acknowledging something right remember this is a packet filter in gateway it doesn't know
+2531960	2537720	the state of a dcp connection it just looks it just looks it doesn't know if the connection has been
+2537720	2545560	open torn down never existed it just looks we allow active set the dcp here if the active is not set we
+2545560	2556040	don't allow right make sense so when they tell that client this is a evil evil client right since these
+2556040	2562360	two fragments one after the other kind of like like i illustrated here they each have the active set
+2563320	2571960	but when we reassembled they result in a synbit set and when passed through tcp they say open a new
+2571960	2584360	connection which is not allowed but it just happened okay so this results in a synpack here on this stupid telnet server
+2584360	2597880	so what it says is that essentially packet filters they have they have a place under the sun but by
+2597880	2604600	themselves they are not very good and you cannot they do offer one thing which is speed they offer you
+2604600	2611880	very fast processing but or even meaningful security at a high level and they are not useful so recall
+2612680	2621560	less than 1024 are permanently assigned they are reserved uh port numbers above 1024 above is all clients so
+2621560	2628440	when client on your browser or whatever your telnet client command uh connects to a server it can use an
+2628440	2640840	arbitrary number above 1023 well up to 65 number uh so if a firewall sees an outgoing request
+2642280	2651480	to a client 5151 it doesn't know right what to do with it i mean it sees that 5151 and that is not a well-known
+2651480	2657800	port it's not assigned to any specific service it's like some client that came up with it so you must allow it
+2657800	2662680	because internal service could be just responding to a previously established connection right
+2663880	2673000	or this could be an attack so the main problem is again that a packet a packet filtering firewall does
+2673000	2674440	not know the state of the connection
+2678360	2683960	well this is just already talked about so yeah what's what's what's the alternative the alternative
+2683960	2689320	is to do a bit more intelligence right to slow down the firewall a little bit
+2689960	2697800	and to have it looped and maintain some state okay maintaining information about open connections
+2697800	2706760	okay or state of ongoing connections not always open so you still make a decision for every packet but
+2706760	2712360	you make sure that the packet is somehow associated with the connection if a spurious packet arrives and
+2712360	2716520	there is no record for it right then you throw away
+2716520	2727240	you only the important thing here if this is a new connection right whether it's from the outside in or
+2727240	2734280	from the inside out you check your policy right before do we allow this if it's a current connection
+2734280	2741720	then you look it up in the table and update the table because you need to take understanding is this
+2741720	2749000	connection being established for example is the handshaking process or is it already established
+2750280	2755800	is it ending right because there's also a tear down phase right and reset
+2756760	2760840	at the very end of the dcp connection so you need to know or is it gone there's no such connection
+2762040	2769720	so that requires maintaining a dynamic table this is so keep in mind this is very different from rules
+2769720	2774520	rules are more or less permanent or semi-permanent right for what we allow in what we allow
+2775960	2779640	that's configured by the fire by security administrator firewall administrator
+2780680	2785240	but the table of connections is fully dynamic it's what happening right now in real time
+2787960	2794680	so that that's better certainly better okay because you now know that a given packet whether it
+2794680	2799960	comes in or out or trying to come in or out or trying to come in or out is a part of some connection
+2801000	2808280	it's not some spurious packet but it is a problem for non-tcp traffic for example
+2808840	2817160	stateless protocols like utp right the unreliable data data protocol and icmp internet control message
+2817160	2822760	protocol that i said before used for maintenance they're stateless they don't have a notion of a connection
+2822760	2832440	so that's harder so if you filter out if you don't disallow icmp then you lose certain network
+2832440	2840840	functionality so that's a trade-off also you can try to use ip tunneling right so that's the ipsec tunneling
+2840840	2847880	and then remember what i said about the firewall has to then be a terminal uh terminus of an ipsec tunnel
+2848680	2857240	so whoever is coming in or out must first establish a tunnel to the firewall so this is a typical or
+2857240	2864600	this is an example of a connection table a session filtering uh firewall will maintain right it says
+2864600	2871640	source address port number destination address port number and then connection state in all of those
+2871640	2881160	cases that is established i mean the other possible state could be starting or ending and that would
+2881160	2884520	starting would indicate that it's in the middle of doing the three-way handshake
+2885720	2892440	and ending will be in the middle of like tearing it down thin that's not for call thin wave reset okay but
+2892440	2898360	in this case all of them are established what are these well the port 80s you see source ports are all clients
+2898360	2902520	right right they're all over 1023 their clients
+2905640	2914680	the destination ports are web servers except for one within 25 25 is male and 79 is finger
+2916120	2924040	it's a bit obsolete finger is a it's a also a program that's used for fingering users right just you
+2924040	2931080	you can do finger and username and host and it basically will tell you it's like a 1980s style
+2931080	2936360	thing it'll tell you information about who this user is you have to actually configure your little finger
+2936360	2944040	profile it predates the web uh a lot of a lot of the installations have it turned off because it has
+2944040	2950760	its own problem right so if you run a linux machine for example and you see a finger d running god forbid kill
+2950760	2954920	kill kill immediately finger demon okay
+2959400	2962440	so next thing circuit level gateway
+2963400	2971080	so here i mentioned it earlier this is a splicing and re uh and realigning of tcp connections
+2971080	2975080	so one tcp connection ends at the gateway and another begins
+2975080	2983480	and there is like a a line between them and what it allows the circuit leveling gateway to do is examine
+2984040	2990440	these packets but in the context of a connection like what is actually going on in this connection
+2990440	2993560	we do what's called deeper packet inspection
+2995640	3002120	that is strictly more secure strictly more secure but as immediate is obvious from this picture
+3002920	3011240	strictly less efficient because establishing a separate tcp connection from the outside host to the out
+3011240	3016920	to the circuit level gateway and another tcp connection between the circuit level gateway and inside host
+3016920	3024200	costs double yes right so
+3024200	3038680	let me say no not necessarily because ssl tls could actually be might actually be unaware of this
+3039560	3049320	because this is tcp so all you care at the end is that you get the let's say the inside host is some kind
+3049320	3056840	of web server right um i don't think you should cause a problem
+3059240	3066440	i don't think you should cause a problem as long as the certificate for that host includes the name
+3066440	3072280	of this you know both the inside of the circuit level gateway because the certificate could have more
+3072280	3077480	than one name they could share they could be hosts within the same domain right so their actual name
+3077480	3087800	could be like firewall firewall firewall.abc.com and then www.abc.com and as long as the certificate is
+3087800	3090840	issued for abc.com that should be okay
+3090840	3102200	okay so again uh is faster uh than the application level gate that we'll talk about next but strictly
+3102200	3108200	slower than the packet level gate um in order to use it you generally need to adapt the application so
+3108920	3115880	in in the previous example packet level uh firewalls the applications were uh unchanged right you don't
+3115880	3123880	need to do anything you just do your business as usual the firewall is transparent in this case it's not
+3123880	3135160	transparent okay oh i'm sorry so in in both examples earlier in session filtering or packet filtering it
+3135160	3136680	was application transparent
+3136680	3147000	here it's not transparent you need to use something like socks which is a a library for socket secure
+3147000	3159560	socket layer and that's a rfc that's a kind of standard how to do it um but it's a kind of a compromise
+3159560	3164600	between something that is fast but not very secure and something that is much slower which is the next
+3164600	3171000	thing we'll talk about an application level gateway as i already mentioned requires you to adapt to
+3171000	3178520	write a proxy for each application so you explicitly have to terminate the outside connection at the
+3178520	3183320	application level gateway that examines the actual context like it looks in case of telling it would
+3183320	3190440	look at the actual characters you type right in the case of uh http will actually inspect the urls
+3191160	3197480	all the inputs and gets and all you know all the other http commands so you'll actually see the clear text
+3198040	3206200	on those connect so if you're using ssl uh tls there that makes it a little harder because yeah you have
+3206200	3208280	to you have to modify all your applications
+3212520	3218760	other filtering rules are simpler because there's a lot more intelligence in these in these proxies there's a
+3218760	3224840	separate proxy for each application and you can make them quite intelligent but and to understand
+3224840	3230440	the context of what is being sent and what is being received you can look for malicious commands like
+3230440	3236760	you know actual command line unix commands you can look for particular patterns like jpeg files etc
+3236760	3243240	so there's a much richer functionality but this is slow right so this is not for example the way you want
+3243240	3254840	to do streaming videos so to compare these approaches this is again should be by now fairly obvious if
+3254840	3260920	you're awake as far as performance package filter being in the network layer dealing with one packet at
+3260920	3266680	a time gives us the best performance and the worst performance of the application everything the best
+3266680	3272840	the best to the worst as far as modifying client or client applications or actually server applications
+3272840	3279240	the first two do not require modification the second requires basically slight modifications you have
+3279240	3287240	to essentially recompile everything with socks with this socket secure there for application level gateway
+3287240	3295560	you need to modify client applications to work with these proxies okay now things like fermentation attacks
+3295560	3301320	well only the last two really protect against fermentation attacks because if those attacks are attempted
+3301320	3308760	they will be detected at the firewall okay and they will not propagate to the actual
+3309640	3314520	host on the inside so the danger can be contained on the firewall
+3319080	3329080	now remember i told you earlier about filtering outbound connections this is a real example from um early 2000 like 2007 2008
+3329080	3342920	uh this was uh uh white house right actually the white house website that uh blocked all kinds of connections
+3342920	3351560	right by the firewall but it had the web server right the public uh web server that uh allowed you to look at the
+3351560	3358040	uh directory directory right and a phone book script sorry phone book script which is like a directory
+3358760	3363640	but what it didn't do it didn't sanitize the irs right so you're not sanitization it's right it's looking
+3363640	3370200	at the like a input whatever the program is and sanitizing that input like removing suspicious characters
+3371000	3376360	a lot of times you'll see this in the in web forms you fill out they won't allow you for example when you
+3376360	3380840	fill out a web form to use certain characters right that are on the keyboard some special characters you're
+3380840	3387560	not allowed that's called sanitization uh this is explicit right the explicit is that you cannot use
+3387560	3392680	this oh sometimes they won't let you even type them and sometimes you type them you press return and say no
+3393400	3399720	okay you cannot use this character uh in url that means that you know you parse the url and you look for
+3399720	3403400	these kind of suspicious characters and truncate them and get rid of them completely
+3403400	3410120	okay well there was no sanitization done in the phone book script and so you could actually submit
+3410120	3421080	a command now notice the magento pink color that's a relatively denied url right it's coming in from the
+3421080	3431800	outside right outside to the white house and it's doing invoking this uh cgi directory fphf is a phone book
+3431800	3440600	okay okay okay and there's some gravity i don't know what qa this x is but following it you have a percent
+3440600	3452120	sign followed by oa x sorry uh qlsx and then away right and what it is is that it's ox away is a new line
+3452120	3459560	so when it interprets when the phone book script looks at it it actually says oh
+3460920	3465240	all i say is a new line so it splits it right here
+3467000	3473320	right here it puts a new line and then this starting with this character right here it becomes
+3473320	3483960	a new a separate line right let's look what it means it says bin cat bin cat is a program to title
+3485000	3491800	right okay on the screen right here is cat which is in the bin directory bin cat
+3491800	3506040	percent 20 is space space character that's the password so and then not only executes the cgi script
+3506040	3512200	but after doing that it says cat the password type it and what happens is it appears on the screen on the
+3512200	3523400	client okay but the interesting part is this is coming from the inside out right the command came from the
+3523400	3531000	outside in but what is being displayed on the client on the outside of the screen is coming from the out
+3531000	3537720	from the inside right so this is what you should do inside sanitization or checking what comes out
+3537720	3545960	from the whitehouse.gov right so why filter outcome that's why all right so this will display a password
+3545960	3553160	file that of course we know opens the door for you know the password attacks uh this is even worse
+3554280	3564440	example this one also using the new line executes an x-window server essentially opens a window an x-window
+3564440	3571240	that x is a window system right you've probably heard about it um but it opens an outbound connection
+3571240	3580040	on the outsider's web server so essentially the outsider gets an x-window inside the white house network
+3582760	3590680	so one big problem is that the cgi dynamic right did not sanitize the input but the bigger problem
+3590680	3596360	that so ideally that should have been done right the input should be sanitized but sometimes there
+3596360	3602680	are so many of these cgi's there right you can't possibly like maybe maybe it's you know not viable
+3602680	3608920	to like fix them all but at the very least the last line of defense should have been not allowing things
+3608920	3617720	from the inside to come outside which is executing this x command external x terminal command or
+3617720	3629720	concatenating or typing the password file so that's kind of a silly example uh so in practice a lot of
+3629720	3634040	people use or a lot of companies use what's called the bastion coast which is kind of it's kind of a
+3634040	3642120	glorified firewall but the idea is that it's not just a firewall but it's like a fully blown uh you know
+3642120	3648040	computer not just like a network layer device but a fully blown computer it has a packet level application
+3648040	3657080	level gateway but it sits behind a packet level filter okay and so in that in that bastion host all
+3657080	3664200	services are turned off there's no usb ports are sealed you know can't stick anything in no no uh what's
+3664200	3670440	called air gap jumping uh and he prevents all these application specific proxies like what i said before
+3670440	3678840	and applications gateway um supports direct user authentication so you actually first authenticate
+3678840	3683880	when you when you log in you authenticate to the bastion host and then only you are allowed to proceed
+3684840	3693240	and all traffic flows to that host it it it it does not make things fast but it makes things reasonably
+3693240	3700280	secure typically like that so this is called a single home bastion host you have the back the
+3700280	3706040	big bad internet you have the this is the firewall of the packet the packet level firewall then that's
+3706040	3714760	the fast for packet filtering here you have the dmz like information web server and the bastion host sits
+3714760	3721080	kind of between the that and the rest of the network now it says single home because you see it assumes
+3721080	3730040	that there's like the bastion host only has one network interface right so it's certainly faster that
+3730040	3735960	way but the problem is that if the packet filtering router is compromised right so that that thing is
+3735960	3746680	compromised then bad traffic can flow in so if you want that not to happen you do a dual home bastion
+3746680	3753000	host which actually means it has two separate interfaces that all the traffic even from the packet
+3753000	3759800	filtering router must come into the bastion host be scrutinized and let out so in case a
+3759800	3765560	packet filtering router fails the bastion host still remains in the last line of defense
+3767880	3773160	and there's no physical connection right so the internal and external network no longer have a
+3773160	3775720	physical connection everything goes through the bastion host
+3775720	3783720	that's what's called this is called the screen subnet there's also this approach the screen subnet
+3783720	3791480	where you only have this is really kind of for more for very secure environments where you have
+3791480	3795960	this kind of a firewall in fact a little firewall here another finite level firewall here
+3796520	3802280	this is in case the bastion host fails so you really separate this what's called this is called the
+3802280	3808440	screen subnet where you only have these kind of dmz machines the bastion host maybe a dial-in module
+3808440	3815800	not nobody uses those anymore but then some years ago they did and then the private network is fully separate
+3815800	3830520	so what should firewalls do besides filtering and deciding what's allowed not allowed among the other
+3830520	3836680	thing they should do is should not propagate ip addresses or any kind of network structure of
+3836680	3843800	internal network to the outside that is super important right because knowledge of your internal
+3843800	3854440	network topology right geography of your internal network is sensitive information and only those
+3854440	3859720	services like a web server or some other kind of directory server only those that are absolutely
+3859720	3864200	necessary for outside access should be made available meaning their ip addresses should be known
+3865080	3872200	to the outside but the rest of the inside network does not need to expose its structure or its ip
+3872200	3881720	addresses okay and for that if you've taken a networking course you probably have heard of a network address translator or nat
+3883240	3892760	that will essentially translate uh in the packet the the source path the source ip address of a packet is going out
+3894600	3901560	right to something that does not expose them for example a bastion host will typically push its own
+3901560	3913080	ip address in the source instead of the internal ip address uh and it will similarly translate things coming back
+3913080	3919240	right with it we'll have the destination bastion host it will have the exam says oh this yes this is for me
+3919240	3925640	but really it's for this other open connection that i have okay so this translation uh and there are many
+3925640	3932600	uh options you can map there's one-to-one end-to-one mapping and all kinds of variations another important
+3932600	3937720	thing is routing announcement so uh i don't know how much you all know about routing protocols
+3939080	3946120	usually assume not a lot uh but you definitely don't want a protocol whatever routing protocol you run
+3946120	3951880	inside your network you don't want the routing announcements and routing changes on the inside to propagate
+3951880	3958680	outside right right the only thing that on the outside should know about routing is whether your
+3959240	3965960	network is accessible right meaning it's is it down is it up right they're gonna everything else
+3965960	3969720	should be screened or not announced okay
+3972600	3972760	uh
+3974760	3980680	okay so what are the general problems with files this is all all types of firewalls well they like everything
+3980680	3987480	else in security they eat cycles they slow things down nothing that is secure makes things faster
+3989320	3994520	they don't solve some real world problems bugging software insider attacks with malware they don't
+3994520	4000280	prevent malware from coming in from the inside they may prevent malware from exfiltrating information
+4001080	4005320	through the firewall but they don't prevent things from just like happening on the inside
+4005960	4013320	um they don't prevent bugs i mean protocol design if you have a badly designed firewall software yeah
+4013960	4020600	that's of course a problem uh they don't prevent denial of service attacks if somebody knows the rules
+4021880	4027480	of the firewall meaning that they allow traffic to an smtp server right so internal
+4027480	4036280	external traffic to smtp mail server inside is allowed fine that is a safe rule no problem you can
+4036280	4043160	armor your smtp server and protect but the problem is that if you allow any amount of traffic to smtp server
+4044280	4049400	that allows anybody from the outside to essentially mount the denial of service attack by just sending a
+4049400	4056840	very large volume of traffic to the smtp server by the time the smtp server just just discards their
+4056840	4064360	traffic the internal network resources are consumed so that's something a firewall won't solve for you
+4065720	4072920	and of course don't let's not forget this uh some sometimes some certain types of insider attacks won't
+4072920	4078680	be prevented because an ambassador you can always uh if it's a real insider not a doofus who brought
+4078680	4085480	the uh infected usb stick to work but rather an insider who but even a doofus by the way that
+4085480	4089880	might work but an insider who brought something malicious and copied let's say all the personnel
+4089880	4095960	files to usb stick how is the firewall going to prevent this only i don't know frisking him physically
+4096680	4102840	might detect this uh even uh let's take the doofus example somebody brings that uh usb stick
+4102840	4112200	with movies to watch during lunchtime the malware um jumps to the device to the laptop or desktop
+4112200	4116920	steals information copies it back to the usb stick the doofus at the end of the day removes the stick
+4116920	4123960	goes home plugs the usb sticks in his home computer malware accepts it hello world let me export all this
+4123960	4131960	stuff now there's no firewall in doofus's home are you with me so won't prevent that
+4131960	4139480	there's more complexity firewall configuration is not easy okay not easy and it's not static things
+4139480	4145080	change in the real business world so it's and they're more static than let's say dcp connection but not
+4145080	4153000	static and last but not least this few people know how to do it and even fewer have the expertise knowing
+4153000	4158440	how to do it and actually having expertise do different things so firewall administrative security
+4158440	4163320	in these states they get paid a lot especially in bigger companies like banks
+4165960	4173560	and that's it thank you any questions by the way i hope you were here and uh like the our like a little
+4173560	4178520	detour last lecture into automotive world maybe a bit boring for those already taking that class
+4178520	4188760	reinforcement learning yeah how can we prevent the fragmentation attack if we don't feel all the
+4188760	4195720	maybe the fragmentation flat how can we well one way to do it is so if you're using ipv6 that doesn't
+4195720	4201400	happen because ipv6 does not allow fragmentation if you're using ipv4 one way to prevent it is to
+4201400	4208280	simply throw away fragmented back and just have to say no fragmentation allowed uh icfp the protocol
+4208280	4214600	i mentioned earlier for you that used for maintenance i uh allows you to generate that error message to
+4214600	4220440	the source by says fragmentation not allowed so the source continues fragmented you just discard
+4220440	4232120	not always but but these days it is extremely unusual for routers to fragment typically today fragmentation
+4232120	4239640	happens actually it's even today what happens is mostly like this if it's a tcp packet tcp implementation
+4239640	4246680	on your whatever device i'm going back will be aware of the empty and it will actually not generate
+4246680	4255160	not pass to ip segments greater than the empty so it might not even happen i would be very surprised
+4255160	4260680	that in the modern implementation on a modern operating operating system you will still have fragmentation
+4260680	4274680	even inside the source i mean it might happen but it'd be very important okay see you next tuesday

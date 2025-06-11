@@ -1,0 +1,1243 @@
+start	end	text
+0	7560	system, whereby you log in once per work session, a day, for example, at work, as in a typical
+7560	16420	office, and you don't have to supply your password again. Okay, everything else happens
+16420	25880	under the covers. Okay, transparent to the human user. All right, so Kerberos does this
+25880	32240	by introducing a trusted third party, TDB, which we call Kerberos, collectively a
+32240	36080	kid distribution center. Trusted third party is a generic name, but in Kerberos, the
+36080	40280	terminology is KDC, and inside KDC, there are two components. There is a
+40280	47900	authentication server and a ticket-granting service. Now, what I did not mention last
+47900	53660	time, and maybe I did, but I don't recall, is that the authentication service knows
+53660	59540	all users. Users clients all the humans, right, all the accounts, essentially, right,
+59540	65000	but it does not need to know, it does, but it does not need to know all the servers.
+65000	71000	The Ticket-granting service needs to know all the servers, and is less concerned
+71000	76420	about users, although it has access to the same user digits.
+76420	83260	All right, so this was the overview. User approves identity, requests a ticket, receives
+83260	89440	ticket, goes to access service. But that's a problem, right, because what we know is
+89440	94600	that it's not enough to just get a ticket for a service, right. You may not need the
+94600	98320	service right away. You may have to go to the particular service, like printing
+98320	103240	service, file service, many times a day. So that's why Kerberos separates these two
+103240	108120	tasks of, like, initial authentication that deals only with signal sign-on of the
+108120	114080	user when the user provides a password, etc., etc., and what follows later, which is
+114080	119520	user tries to access various services. Okay, let's go for that. We already did.
+119520	129360	Blah, blah, blah. Okay, I think, do we stop here? No? Roughly? Right, so you see here in
+129360	135240	the cloud. That key distribution center houses both functions. You can think of them in two
+135240	142540	processes running on the same highly secure computer. Okay? User logs in first, gets an
+142540	149240	encrypted TGS ticket. The TGS ticket actually is for the TGS server that it will use later.
+149240	154360	By the time it decrypts it, it has to decrypt it using knowledge of its password or password-derived
+154360	160740	key. You will go to the TGS and ask, I want to access a particular service. If the TGS
+160740	165440	decides to grant it, you will reply to the encrypted service ticket. The service ticket
+165440	171240	will then be decrypted, partially decrypted by the client, the encrypted portion that I'll
+171240	177640	explain later will be sent to the server, and then there's a brief authentication exchange
+177640	186020	between the client and the server. So there's really three phases in the Kerber's sort of
+186020	189020	protocol hierarchy.
+193020	199020	Okay, okay. So here, here I think actually what we almost got to get about that. I want you
+199020	206640	to understand this terminology. The client and the user are almost the same thing but not quite.
+206640	216020	The user is the human. The user knows the password. Okay? The user uses their laptop, smartphone,
+216020	224520	workstation, desktop, whatever, their device, where they log in and supply the password. That
+224520	234760	device, okay, let's call it device, user device, has Kerber's client-side software. Once the user
+234760	240900	provides the password, that client-side software is client from here on. User does not perform
+240900	246140	decryption, encryption in their head, right? Software does it for them. So that's why I use
+246140	256280	the word client to denote that user-side software, which is part of the purpose. Okay, so KC is
+256280	263720	the client's key, right? Client's key, but it's not the same thing as the user password. It's a key
+263720	266660	derived from a password. Okay?
+266660	278040	Known only to the client, to that client, and the key distribution center. Okay? Now, KTGS is a key of the TGS
+278040	283920	for the ticket-granting service. It is known only to the TGS, so you can think of it, it shares it with nobody
+283920	309300	but itself. And if you think, well, why are we using it like that? Because the reason is very simple. The TGS does not need to maintain or does not want to maintain a giant database of all outstanding tickets. Okay? That's a headache. The same way, the same way that on the web today, you have cookies.
+309300	338620	Why do you have cookies? Because the web server does not want to have the headache of maintaining state information about everybody who accesses that web server. So we have cookies. So when you come back to the web server, it can recognize you, spying you, etc. But also it has beneficial side effects. Okay? So it's for the same reason that the TGS is used. Alternative would have been for the
+338620	348620	the TGS for the TGS, sorry, the DGS ticket, the DGS is used. The alternative would be for the KDC to store all tickets locally. But then we have the headache of managing it.
+350940	364460	Okay, so, so therefore, it uses a key that it only shares with itself to essentially encrypt for itself the fact that you have a ticket as a user. And when you come back, you better bring that ticket.
+364460	371460	You don't have a ticket. You don't have a ticket. You don't have a ticket? Your problem. Not server setting. Or not, sorry, not TGS setting.
+371460	391460	KV, the one I think, is a long-term strong key of each server. Printer server, file server, mail server, etc. Okay? Every server has a name V, has a KV, long-term, not converted to anything. It is a key. A real key. Okay?
+391460	412460	Okay? Down to the server and the TGS. Okay. Next, KC TGS. That is a short-term session key that a client, C, okay, will share with the TGS when the ticket is issued.
+412460	421880	When the client first logs in, provides the password, does the authentication exchange. At the end of that exchange, the client will learn this key.
+424460	434300	Okay? It's issued by the AS, but it is for the client to share with the TGS because the client does not talk to the AS anymore after logging.
+434300	446300	Okay? Puzzled? Horrified? Excited? What? Okay? Everything understood.
+446300	465300	All right. Well, there is a shorter-term key. Okay? This is specific to a server. When a client already logged in and has this, wants to access a particular server, it goes to the TGS with its ticket-granting ticket and says,
+465300	479300	I am so-and-so, I want to access that server, please facilitate this. The TGS will reply with a service ticket, and that service ticket will have two parts, but in those two parts, there are some redundancies,
+479300	493300	redundancies, and this KCV is the key that is conveyed directly or indirectly to both the client and the server. So when a client is talking to the printer, or the printer driver,
+493300	505300	the rubberized printer driver on the printer, it will use this key. Okay? That's the hierarchy of key. Almost. There's a little more at the end.
+505300	521300	So, this KNIT program, client, that's the client-side software. It's not the only piece of software in the client, but KNIT is the one that handles this exchange. So there is a user entering a password.
+521300	533300	The password by the client-side software. The password by the client-side software is converted into the KC. But the message, when the user types in, in fact, username,
+533300	545300	Alice. The KNIT does not even have to wait for her to type in the password in order to already send to the key distribution center a message that says,
+545300	558300	hey, I'm Alice, I want to log in. And the reason is because that initial message is not authenticated. Right? It has the idea of the client,
+558300	574300	idea of the DGS, and it seems redundant, but you'll see what it's for, and the time. The current time on the client-side. The time has to be reasonably well synchronized.
+574300	589300	Kerberos, by default, I think, allows five-minute clocks, too. But it can be modified for installation. So the time tells this KDC, right?
+589300	600300	Well, the AS inside the KDC, that this is recent, right? And not a replay, not stale. Okay, so then it issues, then it says, okay, do I,
+600300	609300	the first thing it does, do I know this client? Is this client in my database? If not, no reply or error message. Okay?
+609300	617300	If the client is in a database, the client may be not allowed to log in. In fact, Kerberos has a policy database that I will not show you,
+617300	626300	because it's super boring, but it's necessary. It has a policy database that says, for each existing client, what is the policy for that client to log in?
+626300	636300	A night watchman does not log in in the middle of the day. Okay? A cashier does not log in at 2 AM. These kinds of requirements, policies.
+636300	648300	Who can log in when? A remote employee who works from home Thursday and Friday should not be logging in on Thursday and Friday. For example. Okay?
+648300	659300	Don't quote them, just randomly generated policies. So, then, when it finds the employer, or defines the user, the client, and it finds that the user is allowed to log in,
+659300	671300	it will issue this TGS ticket, or TGT, Ticket Granting Ticket. It's called Ticket Granting Ticket because it's not really a ticket in and of itself, it's a ticket to other tickets.
+671300	691300	All right. So, client obviously cannot forge that ticket. You'll see why. Client can, of course, if the client is a real user and knows the passwords and can compute KC,
+691300	706300	he can forge part of that ticket. But what he cannot do is forge something for the TGT. Sorry, for the TGS. Because he doesn't know the key of the TGS.
+706300	719300	What you see here in green is an encryption. It's essentially a two-layer encryption, but the outer layer is encrypted under the KC, the client's password-derived key.
+719300	732300	And inside, there is a blue KC TGS, right? This is the session key for this entire session, for the, until the client logs out, or the TGT expires, whichever comes first.
+732300	743300	Because you see there is also ID TGS, it better match what the client says. So when the client decrypts this, first of all, if the client cannot decrypt this, like he gets garbage, that means two things.
+743300	755300	Either the client is lying, meaning the user is not the right user, or the user mistyped the password, it happens, or somebody modified this green blob on the way between the KPC and the user.
+755300	764300	Totally possible. Could be innocuous, like a router is buggy, or could be malicious.
+764300	780300	Okay, so failure to decrypt can be any of those things. If the decryption succeeds, the client will make sure that ID TGS he sent in the blue is the same one that comes back in the green.
+780300	787300	It will also make sure that time KPC is reasonably near the time C that he sent earlier.
+787300	803300	And the reason is because time C is in fact acting as a challenge. Yeah? You see that? Time kicks up. So it's kind of acting as a challenge.
+803300	804300	Lifetime.
+804300	813300	Lifetime. Clearly, that's the ticket lifetime for that, for that, for that ticket granting ticket. After that lifetime, you have to re-login.
+813300	825300	And then the last, but definitely in all this, that's a big part, that red part is ticket TGS. That is encrypted using TGS's key.
+825300	836300	Client cannot read it. It just treats it as a block. But if the client decrypts, and everybody, by the way, trusts the KPC.
+836300	844300	KPC is called a trusted third party for a reason. You have no choice but to trust it. It's your big brother.
+844300	854300	If the client succeeds in decrypting the green part, right, the outer encryption, it knows the structure of the red part. It just cannot read it.
+854300	864300	But it knows its structure. It knows what should be inside. And inside, among other things, should be an exact copy of that blue KC TGS.
+864300	874300	And better be the same lifetime, too. Otherwise, the curve of simplification isn't correct.
+874300	878300	Right?
+878300	884300	That key is freshly generated, randomly generated by the AS.
+884300	893300	Right? And so what's inside? Roughly here, this is not an exact format. What is inside is that same blue P, as I said, the ID of the client, for good reason.
+893300	903300	Address of the client. Actually, it could be like a, depending on the version of the purpose, it's either an address, IP address, or a list of IP addresses.
+903300	912300	Okay? Or it could be like blank or like asterisk, which means any IP address. Not advised.
+912300	913300	ID TGS.
+913300	914300	ID TGS.
+914300	915300	ID TGS.
+915300	918300	Well, that's what TGS is going to allow, okay. It's neat.
+918300	919300	Time.
+919300	922300	KDC's time, which is the same as the time in the green.
+922300	926300	And lifetime, which is, again, the same as in the green.
+926300	933300	So there's a lot of duplicate information, and it has to agree, because that's what KDC always does.
+933300	940300	It makes sure that whatever is inside the red part is faithfully replicated inside the green part, okay?
+940300	945300	In fact, there's nothing really secret there. You see, the client can know what's inside.
+945300	961300	But he just cannot decrypt. So, client decrypts with, like I said, green part, the planes keeps TGS, gets the six tracks, the ticket TGS, bam.
+961300	970300	Now, it goes to the TGS, okay, with this TGT on, this ticket from before.
+970300	973300	But it only goes there if it needs to.
+973300	982300	If the client came to work, a user came to work, used the workstation to log in, and wants to, like I said before, take a break, no problem.
+982300	987300	He just wants to run something locally that requires no server access, no problem.
+987300	993300	Kerberis is not involved. The moment the client wants to use some server that is Kerberized, right?
+993300	998300	It's protected by Kerberis, like print something, alright?
+998300	1004300	Or use some CAD package, or access a database, or whatever.
+1004300	1009300	So what it does is it sends the following thing.
+1009300	1018300	It encrypts, under the case TGS, which he just extracted, or earlier, not just, earlier extracted from the previous packet,
+1018300	1028300	to encrypt its identity, right, its address, where it's coming from, and the current time.
+1028300	1031300	And that becomes authentication token.
+1031300	1032300	Okay?
+1032300	1034300	Off C.
+1034300	1037300	In addition to that, it adds the ID of the service.
+1037300	1040300	It wants server, he wants to access ITV.
+1040300	1045300	And that red ticket TGS from before, which he cannot read.
+1045300	1049300	But we remember what's inside there, right?
+1049300	1054300	So he sends it to the TGS, and the TGS does what?
+1054300	1063300	It looks at ID and says, huh, well, actually, I'm missing something.
+1063300	1066300	There's, you'll see it when I give you a full format.
+1066300	1069300	There's, also, identity of the client is sent in that message.
+1069300	1070300	It's kind of implied.
+1070300	1079300	So the, the ticket granting service says, okay, client Alice wants to access server printering.
+1079300	1082300	So it's, is that allowed?
+1082300	1085300	So now there's a policy database, right?
+1085300	1090300	There's, like, a user, remember I said there's, like, a user database that lists users and when they can log in
+1090300	1094300	and all kinds of policy about when can they, can they get onto the system.
+1094300	1099300	And then there's a separate policy database that says, which is essentially an access control,
+1099300	1109300	a representation that says, does this user have the right to access this resource, this server, at this time?
+1109300	1110300	Okay?
+1110300	1113300	That is called access control.
+1113300	1115300	Okay?
+1115300	1119300	So, if that fails, the TGS doesn't bother.
+1119300	1121300	It just returns an error.
+1121300	1123300	Access denied.
+1123300	1126300	Maybe it was, I forget, maybe it was some code.
+1126300	1138300	The next thing it does, it authenticates, well, sorry, the next thing it does, it decrypts that red ticket.
+1138300	1143300	And because the red ticket is encrypted under its own key, it can't decrypt it.
+1143300	1150300	If it cannot, then, again, either the client is supplying something wrong, or somebody in transit modified it.
+1150300	1151300	Right?
+1151300	1154300	You have to always consider the possibility.
+1154300	1163300	But if it manages to decrypt that red or orange part, then inside it, you will find what we already saw.
+1163300	1168300	Inside it, you will find this.
+1168300	1171300	This, this, this, this, this.
+1171300	1172300	Okay?
+1172300	1177300	So, among other things, you see the first, the blue part is the KCTGS.
+1177300	1178300	He will extract it.
+1178300	1179300	Right?
+1179300	1185300	He will extract it, and then he will verify off C.
+1185300	1190300	Off C is computed with KCTGS.
+1190300	1191300	That's the key she would extract.
+1191300	1197300	If the off C does not verify, again, two things are possible.
+1197300	1205300	Either the ticket has been hijacked, and somebody is, or the client did something wrong, or somebody modified it in transit.
+1205300	1215300	For the message to be fully processed, the TGS has to be able to decrypt the ticket TGS and verify successfully off C.
+1215300	1220300	And, of course, the policy part, but can this client access this service?
+1220300	1230300	If all that succeeds, the TGS replies, okay, with, again, double encryption.
+1230300	1235300	That's a standard format inside, inside Kerberos, double encryption.
+1235300	1240300	Today, it doesn't do that, but this is canonical Kerberos.
+1240300	1246300	KCTGS encryption, which the client knows, or should know, right?
+1246300	1251300	KCV is the new key, randomly, freshly generated.
+1251300	1255300	That will be the key for the client to talk to that print server.
+1255300	1258300	Not yet, right, but to be.
+1258300	1261300	IDV, meaning the server ID.
+1261300	1265300	Time on the TGS side, and the ticket V.
+1265300	1271300	The ticket V, in whatever color that is, beige, is not, again, not decryptable by the client.
+1271300	1274300	But the client pretty much knows what's inside.
+1274300	1278300	You see, similar to what we saw on the previous slide.
+1278300	1286300	It's an encryption on the server V's key, long term, strong key.
+1286300	1294300	On the same KCV, ID of the client, address of the client, ID of the server, just for sanity.
+1294300	1297300	Time on the TGS side, and the lifetime of the ticket.
+1297300	1303300	This is how long can this user, Alice, use this particular printer,
+1303300	1308300	without having to go back to the TGS and get another ticket.
+1308300	1313300	This lifetime cannot be longer than the TGS ticket lifetime.
+1313300	1315300	Make sense?
+1315300	1318300	Otherwise, it would be really stupid.
+1318300	1319300	Right?
+1319300	1329300	You don't want to give somebody a right to say print past the time they should be logged back.
+1329300	1334300	Or, for example, access an employee database.
+1334300	1335300	Okay.
+1335300	1339300	So, the client does the same thing to do with TGS before.
+1339300	1350300	It will, because it knows KC TGS, it will decrypt that outer part, obtain KCV, obtain IDV.
+1350300	1353300	It will compare IDV to the one it sent in the first message.
+1353300	1354300	They better match.
+1354300	1357300	If they don't match, there's something wrong.
+1357300	1363300	It will check the time TGS to make sure it's a recent time.
+1363300	1370300	And, you cannot verify TKD, but it just caches it.
+1370300	1371300	Okay?
+1371300	1374300	Caches it because we need it again.
+1374300	1376300	Okay?
+1376300	1379300	Everybody gets it?
+1379300	1383300	And now it's time to go obtain CERNs.
+1383300	1384300	Okay.
+1384300	1386300	So, you want to actually print.
+1386300	1387300	Okay.
+1387300	1389300	So, now you have the client.
+1389300	1392300	Actually, what I said, the user just says, I want to print.
+1392300	1397300	But all of this other stuff, like going on the previous slide and this slide, that happens under coverage.
+1397300	1399300	The user, human, is not involved.
+1399300	1400300	Right?
+1400300	1402300	Unless there is an error, right?
+1402300	1404300	Like access denied or some sort.
+1404300	1407300	User is not bothered with anything.
+1407300	1409300	It all happens quickly.
+1409300	1417300	So, the user, client, excuse me, goes to the server directly now, finally, and says,
+1417300	1420300	Yo, I have a ticket for you.
+1420300	1421300	Okay?
+1421300	1423300	Here is the ticket.
+1423300	1425300	That pink thing.
+1425300	1427300	Came from the previous slide.
+1427300	1428300	Right?
+1428300	1429300	Here is an authenticator.
+1429300	1430300	And here is an authenticator.
+1430300	1435300	To prove that I know the same key that is included in the ticket.
+1435300	1436300	Why?
+1436300	1441300	Well, because if I don't know the key, then it's not my ticket.
+1441300	1443300	Or I'm not me.
+1443300	1447300	So, the server receives that ticket.
+1447300	1453300	The server, first, decrypts that ticket using KD.
+1453300	1454300	Right?
+1454300	1456300	Decrypts the ticket.
+1456300	1460300	And inside finds what we already saw.
+1460300	1462300	That pink thing.
+1462300	1467300	And it finds KCD, IDC.
+1467300	1468300	Right?
+1468300	1473300	It will make sure that the ID of the client is the same one that the message of the next
+1473300	1474300	slide comes from.
+1474300	1475300	The address.
+1475300	1476300	The IP address should be the same.
+1476300	1477300	Although those are fungible.
+1477300	1478300	We all know this.
+1478300	1481300	It will send it to check its own ID.
+1481300	1484300	Does my ID match what is inside the pink thing?
+1484300	1487300	The time TGS has to be recent.
+1487300	1488300	Right?
+1488300	1491300	But the important thing is the lifetime.
+1491300	1493300	Okay.
+1493300	1494300	Okay.
+1494300	1500300	Now, the interesting thing is time TGS has to be, does not have to be synchronized here.
+1500300	1505300	Does anybody see why that is?
+1505300	1510300	All the previous times, when you, all the previous times you saw time, it was like they have to
+1510300	1511300	be reasonably linear.
+1511300	1515300	This time TGS does not have to be reasonably linear.
+1515300	1518300	This has to be within like time.
+1518300	1519300	Exactly.
+1519300	1530300	So, if a printer server receives a ticket, a service ticket from some user, and the inside
+1530300	1536300	when it decrypts the ticket, it's part of the ticket, it says time TGS 8 AM, but it's
+1536300	1539300	now noon, that's okay.
+1539300	1540300	That's okay.
+1540300	1545300	Because the lifetime, right, as long as the lifetime is okay.
+1545300	1555300	Because it just gives it time TGS plus the lifetime, that's when the ticket expires.
+1555300	1556300	Okay.
+1556300	1558300	So now, we're almost done.
+1558300	1559300	All right?
+1559300	1564300	So the server extracts, extracts, decrypts the pink ticket, extracts the information, and
+1564300	1566300	then verifies off C. Why?
+1566300	1573300	Because the same Kcb better be inside there that was computed with, off C was computed
+1573300	1579300	with, checks the idea of decline, again, the rest of the time, fine, that time is better
+1579300	1580300	be timed.
+1580300	1587300	That off, right, that off C better include the time that's, like, near.
+1587300	1588300	Synchronized.
+1588300	1594300	Not perfectly synchronized, but somewhat synchronized.
+1594300	1595300	Okay.
+1595300	1597300	Last message.
+1597300	1600300	Strictly speaking, it's an optional message.
+1600300	1606300	You can configure curbers to just do one way authentication, like this, to client to
+1606300	1607300	the server.
+1607300	1611300	And the reason is you might want to send a print job to, let's say, to the printer, and
+1611300	1613300	you don't care if you hear anything back.
+1613300	1614300	Right?
+1614300	1621300	So the client can just take that, what is that color, lilac, that first message in lilac,
+1621300	1628300	and append a print job to it, like a PDF file, and say, here, let's print this one.
+1628300	1631300	So that last message might not always be necessary.
+1631300	1634300	But typically, I think, by default, it is.
+1634300	1643300	So it's an encryption on the KCV of the time, time C is from client off C, right?
+1643300	1645300	So it's kind of a challenge, right?
+1645300	1647300	Time C functions as a challenge.
+1647300	1652300	It proves to the client that the server received the previous message, right?
+1652300	1655300	And, of course, he knows KCV.
+1655300	1659300	Otherwise, nobody would compute that time C plus 1.
+1659300	1664300	That is actually one of the vulnerabilities of this version of Curveverse.
+1664300	1668300	But that's for another lecture.
+1668300	1671300	Anyway, for now, let's consider this reasonably secure.
+1671300	1672300	Right?
+1672300	1673300	That's the idea.
+1673300	1674300	Right?
+1674300	1680300	So you have essentially, for a given user who starts out fresh, comes into work, or just
+1680300	1684300	logs in for the first time, there are three exchanges.
+1684300	1687300	One is to log in initially.
+1687300	1692300	The next one is, every server you want to access, you have to get a ticket for that server.
+1692300	1696300	And then the third is, you do a handshake exchange with that server.
+1696300	1707300	Now, if the client has multiple jobs to print, let's say, the client gets the tickets for
+1707300	1711300	printer server at 9am, and then it prints something.
+1711300	1714300	And then at 10am, the client has something else to print.
+1714300	1720300	As long as the lifetime of this ticket is valid, the client does not need to go back to the DGS.
+1720300	1721300	Right?
+1721300	1724300	It can reuse the same ticket.
+1724300	1726300	And that's why we have the lifetime.
+1726300	1728300	Okay?
+1728300	1729300	Yes?
+1729300	1731300	Clear?
+1731300	1738300	So, let's just go through the reasoning.
+1738300	1740300	For the last, I forgot to mention this.
+1740300	1741300	Right?
+1741300	1744300	So, the server, let's look at it from the client perspective.
+1744300	1748300	The server can only produce this message if he knows the KCB.
+1748300	1749300	Because only the server.
+1749300	1751300	Client does not generate messages like that.
+1751300	1752300	Like this new message.
+1752300	1753300	Right?
+1753300	1755300	Because the client is not a server.
+1755300	1757300	It is not programmed to generate such messages.
+1757300	1761300	So, the only party that could generate such messages is the right server.
+1761300	1763300	Because it is the only other party.
+1763300	1767300	Well, except for the trusted third party who we trust not to do and interfere.
+1767300	1769300	So, only that server can do.
+1769300	1776300	Server, on his part, the server can only learn the KCB if he could have decrypted the ticket.
+1776300	1780300	There's no way he could learn the KCB without decrypting the pink ticket.
+1780300	1781300	Okay?
+1781300	1784300	And verifying everything.
+1784300	1787300	So, everything was A-OK.
+1787300	1788300	Alright?
+1788300	1792300	And the server can only decrypt that ticket if he knows KB.
+1792300	1793300	Right?
+1793300	1796300	Because that ticket, that pink one, was encrypted with KB.
+1796300	1800300	Well, then, if the server knows KB, then it must be the right server.
+1800300	1802300	So, therefore, it's authenticated.
+1802300	1806300	That's kind of the change of logic here.
+1806300	1811300	Here's the, sometimes the bird's eye view comes again.
+1811300	1812300	Okay?
+1812300	1816300	So, here's the high level of Rubio Athenians for the Stallings book.
+1816300	1820300	So, it's probably a different terminology but it may help you understand that.
+1820300	1826300	So, again, once per user login session, you have the request ticket, granting ticket,
+1826300	1829300	which is essentially login with authentication server.
+1829300	1836300	You see that all this blob is one machine running two processes or two functions.
+1836300	1838300	You get a ticket and a session key.
+1838300	1842300	Then, when you want to use a server, you request service granting ticket, service ticket.
+1842300	1846300	If successful, you get back a ticket and a session key.
+1846300	1851300	And then, when you actually use the service, you request service with that server.
+1851300	1857300	And, if it succeeds in authentication, it will return a mutually authentication.
+1857300	1858300	Okay?
+1858300	1863300	And, in another way, more specific.
+1863300	1865300	These are the messages in Kerberos.
+1865300	1872300	One day, if you work in the security industry or even for security, doing security function
+1872300	1877300	in a non-security company, you might have to deal with this.
+1877300	1881300	Because a lot of industry uses Kerberos in one way.
+1881300	1882300	Sometimes it's called Kerberos.
+1882300	1889300	It's integrated like in Windows Enterprise or some other larger software packages.
+1889300	1892300	But, underneath it is Kerberos.
+1892300	1897300	So, again, client, server, KDC.
+1897300	1899300	First message is called ASRequest.
+1899300	1901300	Authentication, service request.
+1901300	1903300	That's the login allowed by me.
+1903300	1910300	The reply with the TGT is ASReply because it comes from the AS file of the KDC.
+1910300	1913300	Next, when you want to use a service called TGSRequest,
+1913300	1915300	request from the ticket granting service.
+1915300	1918300	The reply, if always good, is TGSReplied.
+1918300	1920300	Then, finally, app.
+1920300	1925300	Application server request and application server reply.
+1925300	1930300	Ad nauseam added to that.
+1930300	1939300	And here's the gory detail of what's inside.
+1939300	1940300	Okay.
+1940300	1944300	Now, the terminology here is a little different because it's formal.
+1944300	1945300	Right?
+1945300	1946300	Formal from the spec.
+1946300	1950300	So, ASRequest, principle C is the name of the user.
+1950300	1954300	You can think of it as the client's name.
+1954300	1961300	The next one is around, and I'll jump ahead and say that Kerberos works for a single administrative entity.
+1961300	1967300	Meaning that you cannot have several organizations living under one Kerberos umbrella.
+1967300	1968300	That doesn't work.
+1968300	1969300	Each has its own.
+1969300	1982300	If you have different companies, different parts of the same company, you may want to have two or different multiple Kerberos installations.
+1982300	1984300	I'll say a few words by the way.
+1984300	1988300	But this is the, each Kerberos installation is called a round.
+1988300	1990300	And you need to specify.
+1990300	1992300	Like, Kerberos is reserved.
+1992300	1997300	It is, it's a, it's a request to Kerberos, for Kerberos ticket granting ticket.
+1997300	2001300	And then the uppercase realm, that's configurable.
+2001300	2002300	Right?
+2002300	2004300	That's whatever the name of your realm is.
+2004300	2014300	IP list is the list for potentially empty of IP addresses for which you are requesting a TGT.
+2014300	2017300	Now, the policy may disallow this.
+2017300	2018300	And only allow one.
+2018300	2021300	But, policy allows it to specify multiple.
+2021300	2026300	Say, for example, I'm going to use an IP address of my MacBook and my desktop and my smartphone.
+2026300	2027300	Okay.
+2027300	2036300	But, if the IP list is empty, that means I want a TGT that's independent of the IP address.
+2036300	2037300	I want it to be portable.
+2037300	2039300	Again, that might not be allowed.
+2039300	2041300	That depends on the installation.
+2041300	2042300	Lifetime.
+2042300	2045300	I want the ticket for this lifetime.
+2045300	2052300	That may not, may or may not agree with the lifetime the, the, the, the, the AS wants to issue a ticket for.
+2052300	2053300	Anyway.
+2053300	2054300	Okay.
+2054300	2055300	That's AS request.
+2055300	2056300	AS reply.
+2056300	2060300	Let's stick to that, let's stick to that second line.
+2060300	2062300	AS reply is the same, the realm.
+2062300	2063300	Right?
+2063300	2064300	Just echo it.
+2064300	2065300	Okay?
+2065300	2066300	Timestamp on AS.
+2066300	2071300	Lifetime, which cannot be longer than what the user asked for.
+2071300	2072300	Can be shorter.
+2072300	2074300	So, the user can ask for 24 hours but only got 8 hours.
+2074300	2075300	That's okay.
+2075300	2076300	Lifetime, and KC, TGS.
+2076300	2077300	Right?
+2077300	2078300	So, that's the key.
+2078300	2079300	Remember, we already talked about it.
+2079300	2081300	And all that curly brackets, curly brackets denote encryption.
+2081300	2082300	All that is encrypted under KC, which is the client's password or IP.
+2082300	2089300	And then, that little seeming little part in yellow is TGT and encrypted for TGS.
+2089300	2090300	Notice what's inside that.
+2090300	2091300	Okay?
+2091300	2092300	It's encrypted, right?
+2092300	2093300	So, I only show you the unencrypted part on second line.
+2093300	2099300	It has the name of the principle, which is the same, the name of the user, the round,
+2099300	2102300	the IP list, the timestamp of the AS, lifetime, and KC, TGS.
+2102300	2107300	So, it actually duplicates a lot of the fields you will see on the left side.
+2107300	2108300	So, it's encrypted.
+2108300	2109300	So, it's encrypted.
+2109300	2110300	So, it's encrypted.
+2110300	2111300	So, it's encrypted.
+2111300	2112300	So, it's encrypted.
+2112300	2113300	So, it's encrypted.
+2113300	2114300	So, it's encrypted.
+2114300	2115300	And the KC, which is encrypted.
+2115300	2116300	And the KC, which is the client's password or IP.
+2116300	2117300	And then, that little seeming little part in yellow is TGT and encrypted for TGS.
+2117300	2118300	Notice what's inside that.
+2118300	2119300	Okay?
+2119300	2120300	It's encrypted, right?
+2120300	2123300	It actually duplicates a lot of the fields you will see online.
+2123300	2124300	Great.
+2124300	2125300	All right.
+2125300	2126300	And TGS request.
+2126300	2132300	This is when this client goes to the TGS and says, I want a ticket for the printer.
+2132300	2135300	That contains principle V.
+2135300	2139300	Principle V is the name, official name of the printer service or whatever service you
+2139300	2140300	want access.
+2140300	2141300	Lifetime.
+2141300	2142300	For how long?
+2142300	2147300	Again, cannot be longer than the lifetime of your TGS ticket.
+2147300	2149300	And an authenticator, right?
+2149300	2152300	You don't come to the door without an authenticator.
+2152300	2159300	So, the authenticator one-off-one is an encryption of the principal C, meaning his own name, timestamp,
+2159300	2164300	current timestamp on C, the client, and checksides.
+2164300	2165300	Okay?
+2165300	2168300	It's an authenticated checksides.
+2168300	2170300	Very simple checksides.
+2170300	2171300	Okay?
+2171300	2172300	So, TGS request arrives.
+2172300	2173300	It is decrypted and verified.
+2173300	2174300	Okay?
+2174300	2175300	And when it's successful, everything goes well.
+2175300	2176300	The TGS replies with this, with the service ticket.
+2176300	2177300	And it contains two parts.
+2177300	2178300	Remember?
+2178300	2179300	The name of the server.
+2179300	2180300	The timestamp.
+2180300	2181300	The timestamp.
+2181300	2182300	The timestamp.
+2182300	2183300	The timestamp.
+2183300	2184300	The timestamp.
+2184300	2185300	The timestamp.
+2185300	2186300	The timestamp.
+2186300	2187300	The timestamp.
+2187300	2188300	The timestamp.
+2188300	2189300	And it contains two parts.
+2189300	2190300	Remember?
+2190300	2191300	The name of the server.
+2191300	2192300	The timestamp.
+2192300	2193320	The timestamp.
+2193320	2194320	The timestamp.
+2194320	2195320	The timestamp.
+2195320	2196320	The timestamp.
+2196320	2197320	The timestamp.
+2197320	2198320	And theuler of the przyst.
+2198320	2200320	As for the client.
+2200320	2207280	So, this part, this part is decrypted by the client.
+2207280	2217280	And then the next part is only decrypted by the server, when the client decides to go to the server.
+2217280	2224280	Okay, then these are where the last two messages when the client goes to the printer server and supplies an authenticator
+2224280	2229280	and then takes this from here, just per meter, copies it here.
+2229280	2237280	Okay? And yeah, this is time sample, 400 plus 1.
+2237280	2245280	Any other questions? Any questions at all?
+2245280	2258280	It's not as difficult as it might seem. The notation might be a little obscure, but stare at it for a while, and then for a while, everything will be clear.
+2258280	2260280	No question. Okay.
+2260280	2267280	Now, as I said before, Kerberos isn't made for large networks or administratively heterogeneous environment.
+2267280	2275280	So, you want to divide even if you have a large company, even if it is one administration, but you have different geographical locations
+2275280	2281280	and just very large installations, like maybe you have one building, but there are really different departments.
+2281280	2290280	If you have a product department and a sales department and marketing, maybe you want to separate and have two different Kerberos realms for those.
+2290280	2303280	It's just easier to do like that. But every realm has to have a KDC. And every realm has to register its own server and its own users, right?
+2303280	2312280	So, now, how do you interoperate? Well, that's done in a kind of very obvious or naive way.
+2312280	2321280	And so, one way to think about it is, like, imagine you are at UCI, and we run our Kerberos realm, which we actually do.
+2321280	2328280	And then we have, let's say, UC Riverside, about 50 miles away. It's another UC campus. They run their own.
+2328280	2337280	So, they'll have ROM at, you know, Kerberos at UCR, and we have Kerberos at UCI. Those are two different realms.
+2337280	2342280	But because we are all good UC citizens, we are allowed to access each other's resources.
+2342280	2349280	Okay? So, how do we do that? Well, you want to do that, you first need to log in locally, where you are known.
+2349280	2360280	Right? So, your UCI, your UCI denizen of sorts, right? You log in here, you get access, and then, you go to the TGT,
+2360280	2373280	to TGS, and you ask for a special TGT. For a special ticket. Not a TGT. So, you follow me, you log in, you get the ticket-granting ticket.
+2373280	2384280	And now you go to the TGS and say, I want a ticket for a server, but it's a special server, it's called KDC at UC Riverside.
+2384280	2392280	So, the way that it's treated is like another server, but it has to be explicitly registered locally.
+2392280	2398280	And it has to be bought. It doesn't have to be bilateral, but it makes sense if it was bilateral.
+2398280	2405280	Does that make sense? But you're not done. The process is more complicated than that.
+2405280	2414280	Because once you get a service ticket for a TGT, for a TGS in Riverside, you then have to, you don't need to log in.
+2414280	2421280	You don't need to log in. But you need to bring that service ticket and contact directly the KDC at Riverside.
+2421280	2431280	And it will say, oh, this is a foreign issue ticket, let me look in the database if I know of UCI KDCs.
+2431280	2441280	Oh, yes I do, in which case, you know, you can get an application ticket on me locally at UC Riverside,
+2441280	2446280	and then you can get, you know, printing access and file access and all that. Okay?
+2446280	2456280	So, it's not, like, trivial, right, in terms of, like, what's, the particles are trivial, given what you already saw.
+2456280	2464280	It's not really very different, but there are more of them required in order to support cross-ground functionality.
+2464280	2472280	And also, every KDC, then, has to share a key with every other KDC.
+2472280	2482280	So, if we have 10 UC campuses, right, and each UC campus runs, you know, its own Kerberos installation,
+2482280	2490280	there have to be 90 keys, right? And, you know, every UC campus has to share a key, right?
+2490280	2496280	A KDC, you know, every two KDCs have to share a key.
+2496280	2505280	And that has to be done manually.
+2505280	2510280	Now, one of the important things to take away from Kerberos is that it's not super scalable,
+2510280	2516280	it's not like using public key, you know, in the world of web browsing, okay,
+2516280	2522280	where things scale to the entire world with questionable security, of course.
+2522280	2525280	But we feel like they scale to the entire world.
+2525280	2527280	And Kerberos things don't scale that far.
+2527280	2531280	But they scale to reasonable size, medium-sized organization.
+2531280	2536280	And that's important, okay?
+2536280	2540280	The other interesting thing is Kerberos is basically a symmetric key.
+2540280	2545280	It does not use, by default, right?
+2545280	2546280	It's in its vanilla form.
+2546280	2550280	It does not use public key cryptography at all.
+2550280	2555280	Which, for example, if you know anything about what's going on in the world of tech today,
+2555280	2561280	of science, makes it kind of attractive for our quantum resistance.
+2561280	2574280	Because quantum technology will, sooner or later, make most public key techniques weak or obsolete.
+2574280	2578280	And that would leave us with either some very exotic public key techniques,
+2578280	2580280	of this security which we're still not sure about,
+2580280	2584280	or it would leave us essentially with symmetric key work.
+2584280	2586280	Like what Kerberos does.
+2586280	2588280	Anyway, so that's the detour.
+2588280	2590280	So that's a nice feature.
+2590280	2593280	The services that use these short-term session keys.
+2593280	2597280	For both, like, client login session.
+2597280	2602280	The session key lasts for as long as the TGT is valid.
+2602280	2607280	And even short-term client application key, right?
+2607280	2609280	Meaning client-server keys that are used per service.
+2609280	2619280	Now, current release, I think there was a version last year,
+2619280	2621280	right middle of last year was released.
+2621280	2622280	This is 1.13.
+2622280	2625280	You can, Kerberos is fully public domain.
+2625280	2630280	If I had a TA and this was a larger class, I may have,
+2630280	2633280	I would have had maybe some actual exercises with Kerberos.
+2633280	2636280	Because you can totally install it and play with it.
+2636280	2638280	It's not that difficult.
+2638280	2642280	It's reasonably well maintained and it has good documentation.
+2642280	2645280	In order to use it, you have to, of course,
+2645280	2647280	install the client-side software.
+2647280	2650280	Not only that, but the application service.
+2650280	2652280	So if you want to Kerberize your printing,
+2652280	2655280	you want to Kerberize a certain database access,
+2655280	2662280	you have to essentially reinforce every service, right?
+2662280	2665280	So it usually requires a bit of work.
+2665280	2667280	Not a huge amount of work,
+2667280	2671280	but you have to link Kerberos server-side libraries.
+2671280	2673280	And so you cannot just take a software,
+2673280	2676280	generally I don't think you can take a software package
+2676280	2678280	as it is and just plunk it into Kerberos shell
+2678280	2679280	and say it's Kerberized.
+2679280	2682280	It has to be Kerberized, Kerberos-friendly.
+2682280	2685280	It may come Kerberized already from the manufacturer,
+2685280	2687280	from the software provider.
+2687280	2688280	That may be.
+2688280	2690280	But if it doesn't, you have to do it yourself.
+2693280	2694280	Right.
+2694280	2696280	So the current version of Kerberized,
+2696280	2698280	like I said, it's released 1.3.
+2698280	2699280	Version is called 5.
+2699280	2701280	You can't see it over there.
+2701280	2704280	It's obscured by the zoom logger.
+2704280	2707280	But the version I described to you is more older
+2707280	2709280	and still in use.
+2709280	2710280	It's called version 4.
+2710280	2715280	This is where version 5 has certain interesting modifications.
+2715280	2720280	For once, it addresses one of the problems in Kerberos,
+2720280	2722280	which is the first message,
+2722280	2724280	the first login attempt message, right,
+2724280	2727280	by the user is in clear text.
+2727280	2729280	You recall that?
+2729280	2734280	The key, the password derived key is not used in the first message,
+2734280	2736280	from the user to the AS.
+2736280	2740280	And what that says is that if you're an adversary
+2740280	2742280	and you know the name of the user,
+2742280	2746280	then all you need to do is send a clear text message,
+2746280	2748280	pretending to be that user.
+2748280	2750280	And what you will get back is a nice present.
+2750280	2755280	And the nice present is, well, it's an AS reply.
+2755280	2757280	Remember, that's that message.
+2757280	2759280	But remember that nice present carries in it,
+2759280	2772280	AS reply carries in it this first part,
+2772280	2774280	which is encrypted in the KC.
+2774280	2775280	Yeah?
+2775280	2778280	That's a password derived key.
+2778280	2781280	So if you can brute force the password,
+2781280	2783280	you can decrypt it.
+2783280	2784280	Yeah?
+2784280	2785280	Oh.
+2785280	2786280	No.
+2786280	2787280	You just brute force.
+2787280	2789280	Basically, you just brute force the password, right?
+2789280	2791280	It gives you something to play with.
+2791280	2793280	It's essentially like you just got an entry
+2793280	2795280	from an Etsy password file.
+2795280	2797280	You can just try to decrypt it
+2797280	2799280	under every possible password derived key
+2799280	2801280	until you find inside the name of the principal, right?
+2801280	2803280	You'll know when you hit pay dirt.
+2803280	2805280	You'll know when you guessed the key correctly.
+2805280	2806280	Right?
+2806280	2808280	So it's subject to dictionary attacks.
+2812280	2815280	The alternative is very, very simple.
+2815280	2817280	You require what's called pre-authentication,
+2817280	2820280	which means you require the client to prove knowledge
+2820280	2822280	of the password or IP in the first message.
+2822280	2829280	And that's something that Kerber's 5 supports.
+2829280	2832280	That's called pre-authentication in the initial
+2832280	2833280	answer request.
+2833280	2835280	That's not without problems itself.
+2835280	2836280	Yes?
+2836280	2838280	The attacker receives that pre-authentication.
+2838280	2839280	Exactly.
+2839280	2840280	Exactly.
+2840280	2842280	Well, let's talk about it for a second.
+2842280	2845280	Does everybody understand what he just said?
+2845280	2846280	Are you following?
+2846280	2847280	No?
+2847280	2848280	No?
+2848280	2849280	Hello?
+2849280	2850280	Sign up with your phone?
+2850280	2851280	Laptop?
+2851280	2852280	Big thoughts?
+2852280	2854280	Worry about the economy?
+2854280	2855280	No?
+2855280	2859280	Does everybody understand what he just said?
+2859280	2860280	Yes.
+2860280	2864280	If you put, if you require the client to authenticate itself
+2864280	2867280	in the first message, then there will be something
+2867280	2870280	obviously computed with a password-derived key
+2870280	2872280	that is present in the first message.
+2872280	2877280	That means, yep, okay, that's an opportunity for a password attack,
+2877280	2878280	right?
+2878280	2880280	A brute force attack on a password or dictionary attack.
+2880280	2881280	But are they the same?
+2881280	2882280	No.
+2882280	2888280	The main difference is you can't just get an arbitrary
+2888280	2890280	You get, see, in the first case, right?
+2890280	2893280	With the current first version I showed you, you get something
+2893280	2894280	for nothing.
+2894280	2895280	Right?
+2895280	2896280	You get something for nothing.
+2896280	2900280	You just generate a clear text, Alice, blah, blah, blah,
+2900280	2903280	timestamp, how difficult to get the correct time, et cetera.
+2903280	2905280	And you get back to present.
+2905280	2909280	With pre-authentication, indeed, you are still subject to dictionary attack,
+2909280	2913280	but you got to be lucky and wait, you know, lie and wait, right?
+2913280	2918280	Lie and wait until the victim user logs in.
+2918280	2920280	You see what I mean?
+2920280	2922280	So it's not like, you know, oh, at your convenient time,
+2922280	2924280	at 3 a.m., we're going to generate a bunch of these
+2924280	2925280	and get back your class.
+2925280	2926280	No, no, no.
+2926280	2928280	You have to be there when Alice comes in, you know,
+2928280	2930280	and let's move that.
+2930280	2933280	But, so there is a difference.
+2933280	2936280	It's not a huge difference, but it is a difference.
+2936280	2937280	Right.
+2937280	2945280	So the other modification in Curves version 5, which is today's version,
+2945280	2947280	is this in client-server application.
+2947280	2954280	What I showed you before, the client and the server, application server,
+2954280	2956280	use the same KCV.
+2956280	2957280	Remember KCV?
+2957280	2962280	Like, you wanted to print, you used KCV, right?
+2962280	2966280	Or, you wanted to print again using the same ticket, you used again KCV.
+2966280	2970280	Well, that's considered poor cryptographic hygiene.
+2970280	2976280	To reuse the same key for different, like, let's say, server, client service sessions.
+2976280	2986280	So instead, Converse 5 derives, uses the KCV as a master key for the ticket,
+2986280	2994280	and then derives individual subkeys for each, like, short client-server session.
+2994280	2995280	Does that make sense?
+2995280	2997280	Shorter, shorter, shorter.
+2997280	2998280	Yeah, that's right.
+2998280	3005280	So you got your ticket to use the printer for the next 5 hours.
+3005280	3008280	During those 5 hours, let's say you printed 5 times.
+3008280	3013280	In Curves version 4, you would have used the same KCV to print.
+3013280	3017280	In Curves version 5, you would use 5 different subkeys.
+3017280	3018280	Okay?
+3018280	3023280	Now, it should be abundantly clear to you, right,
+3023280	3031280	that the way that the servers are treated in Curves version is as being stateless.
+3031280	3034280	Does everybody understand what I'm saying stateless?
+3034280	3040280	The same way that we don't want the TGS to keep track of the issued tickets
+3040280	3047280	for all the currently loading users, because it makes it heavyweight and unpleasant.
+3047280	3052280	Even so, even more so, it makes it unpleasant for the servers to keep track of tickets.
+3052280	3055280	Because imagine what would happen.
+3055280	3059280	All the users come in the morning, log in, and start printing, and accessing databases,
+3059280	3065280	so all the poor servers would have to remember all the tickets that the users brought to them, right?
+3065280	3067280	Cache them.
+3067280	3069280	That's overhead.
+3069280	3071280	You can lose things, isn't it?
+3071280	3074280	But instead, Curves is stateless.
+3074280	3079280	The server in Curves does not know any users.
+3079280	3083280	Does not know you from you from me.
+3083280	3085280	No idea.
+3085280	3090280	A Curves server only knows one thing.
+3090280	3092280	Its master.
+3092280	3095280	And its master is the KDCs.
+3095280	3099280	Or, more specifically, the Ticket Granting Service.
+3099280	3104280	And it shares only one key, long term, with that Ticket Granting Service, right?
+3104280	3107280	So whatever the master says, it obeys.
+3107280	3109280	Right?
+3109280	3112280	And keeps no state.
+3112280	3113280	Keeps no state.
+3113280	3116280	Which is very nice.
+3116280	3122280	Because otherwise imagine, you'll print, like a printer is a good example.
+3122280	3124280	Because printers are usually zanemic devices.
+3124280	3125280	Right?
+3125280	3128280	They're good at printing, they have fast mechanical parts and whatever.
+3128280	3131280	But, in terms of computing power, they're not very powerful.
+3131280	3133280	And they don't have a lot of storage.
+3133280	3135280	Because in some ways, printers are like embedded devices.
+3135280	3140280	So, you don't want to overload them with having to cash tickets.
+3140280	3142280	So, it's good.
+3142280	3148280	Now, the other thing is, what you can do in Carver's D5 is you can do what's called forwarding.
+3148280	3149280	Take that forwarding.
+3149280	3150280	Yeah?
+3150280	3153280	How much compute do the heavy duty printers have?
+3153280	3160280	Well, you know, if you pay $50,000 for a 3D printer, that one will definitely have compute
+3160280	3161280	power.
+3161280	3163280	But even there, it's such a precious resource.
+3163280	3166280	You don't want to overwhelm it with like caching tickets.
+3166280	3167280	Why?
+3167280	3168280	Right?
+3168280	3169280	I don't know.
+3169280	3170280	Well, it's like the ones we have in DBH.
+3170280	3171280	Yeah.
+3171280	3173280	Those are like connected to the internet and everything.
+3173280	3174280	They are.
+3174280	3175280	Right.
+3175280	3178280	That's going to be a lot more power than my printer.
+3178280	3180280	No, for sure it will have more power.
+3180280	3182280	But it's still not a full-blown computer, right?
+3182280	3188280	It will probably have, my guess is that something that we have in DBH will be a power of an iPad
+3188280	3189280	of some sort.
+3189280	3192280	Maybe a little better than an iPad, you know?
+3192280	3198280	Some kind of embedded like, like a, like a airplane entertainment system type, you know,
+3198280	3199280	device.
+3199280	3202280	Or a car, infotainment system in a car.
+3202280	3205280	But not, not a lot stronger than that.
+3205280	3208280	But also, it's not just compute, it's also storage, right?
+3208280	3210280	That's the other thing.
+3210280	3215280	If you have a cache, it better being super fast and expensive memory.
+3215280	3216280	Yeah.
+3216280	3221280	So, but also recall, Kerberos was designed, did I say when it was designed?
+3221280	3222280	1987.
+3222280	3223280	Okay?
+3223280	3228280	Your parents were in kindergarten.
+3228280	3230280	So, the internet already existed.
+3230280	3235280	But, you know, it wasn't like this, like it is today.
+3235280	3242280	But, so, considering that something like Kerberos aged relatively well, I would say, it's still being used.
+3242280	3251280	And it still kind of resembles its original, it's not exactly the same, but it looks very much like what was there in the early 90s at least.
+3251280	3253280	That's a long time ago.
+3253280	3256280	There are very few products you can say this about.
+3256280	3261280	Right, so, authentication forwarding means that you can forward the ticket.
+3261280	3269280	Like for example, if you're, if you're accessing a file server, it needs to access, and it needs to access your box.
+3269280	3273280	If you're accessing a mail server, it needs to access a file server.
+3273280	3278280	So, in the original Kerberos, you would have to get two separate tickets.
+3278280	3279280	And it was clumsy.
+3279280	3285280	And now, the ticket that the file server gets can be forwarded to the mail server.
+3285280	3286280	And it can honor it.
+3286280	3290280	So, there's like some games to give you from that.
+3290280	3297280	There are, the Kerberos 5 supports hierarchies of realms.
+3297280	3303280	So, what I described to you about inter-realm thing and splitting things in Kerberos realms.
+3303280	3309280	Kerberos V5, if I'm not mistaken, I think I'm not, supports hierarchies.
+3309280	3318280	Where you don't have just like multiple realms as peers, but you have some super realms.
+3318280	3320280	Alright, and there's other stuff.
+3320280	3323280	Oh, it also supports multiple description schemes.
+3323280	3328280	The original Kerberos used the DES with some weird mode of operation that was not standard.
+3328280	3330280	And there were some problems because of it.
+3330280	3339280	Now, you can configure Kerberos to use pretty much any decent encryption function in the hash function or MAC function.
+3339280	3343280	But just to give you an idea about pre-authentication, coming back to that feature.
+3343280	3356280	So, as I said, anyone in Kerberos version 4, the way you, the one you sort of described, can use the initial packet as a vehicle for obtaining, you know, gifts.
+3356280	3357280	Right?
+3357280	3359280	Things encrypted with passwords and so on.
+3359280	3361280	So, it makes password guessing easy.
+3361280	3371280	In Kerberos V5, the first message, the AS request message that you saw earlier, requires another field called PA data.
+3371280	3378280	And basically, it's like, you can think of it as a timestamp, client's timestamp, encrypted under the client's key.
+3378280	3388280	It just says, look, this is my timestamp, my current time, encrypted under my key, presumably only I know the key.
+3388280	3391280	Well, the AS.
+3391280	3398280	So, the AS only replies if it can be encrypted.
+3398280	3399280	Okay?
+3399280	3404280	But in reality, it's done more like this.
+3404280	3413280	Typical configuration is, the client will send an AS request, normal one, without any authentication.
+3413280	3419280	And the server will reply, the AS will reply with like a special error code.
+3419280	3420280	It's an error.
+3420280	3422280	Pre-authentication required.
+3422280	3427280	Don't come back to me until you demonstrate the knowledge of the KC.
+3427280	3435280	And so, that's number three is AS request with the PA data that I showed you before.
+3435280	3440280	And now, AS is happy if it issues a tissue.
+3440280	3443280	Everything else is the same.
+3443280	3445280	Come on.
+3445280	3450280	So, re-authentication is one new thing, but there are extensions.
+3450280	3457280	For example, today, Kerberos can be 45 with something called pkinit, which, if I remember correctly,
+3457280	3466280	allows a user to securely fetch his public key.
+3466280	3468280	So, the user can be registered with a public key.
+3468280	3472280	But the user does not need to remember their public key.
+3472280	3476280	So, the idea is that the user tries to walk in.
+3476280	3482280	The user's public key will come back and allow, sorry, private key.
+3482280	3487280	The private key will come back from the AS and will allow the user to use that private key
+3487280	3491280	for all subsequent exchanges, so that Kerberos is fortifying it.
+3491280	3496280	The other extension is for public key based cross domain authentication, not important.
+3496280	3498280	So, what is Kerberos used for?
+3498280	3503280	For many things, like I said, Windows Enterprise Networking uses it.
+3503280	3512280	And if you've used Windows on an enterprise scale, even like here in ICS, you probably
+3512280	3515280	used Kerberos without knowing it.
+3515280	3521280	You may have occasionally seen some errors that will tell you, that will leak information
+3521280	3523280	that you are using Kerberos.
+3523280	3525280	Anybody seen those?
+3525280	3528280	Anything starting with KRB?
+3528280	3529280	All right.
+3529280	3537280	So, it's also used for securing, if you are a Unix person, and you remember these Unix commands,
+3537280	3541280	like remote shell, remote exec, RCP remote copy.
+3541280	3542280	Right?
+3542280	3545280	So, these are insecure commands.
+3545280	3546280	Right?
+3546280	3548280	Natively insecure commands.
+3548280	3550280	FTP, right?
+3550280	3555280	If you secure them, you can do so, if you want to secure them, you can do so with Kerberos.
+3555280	3560280	And then it becomes essentially Kerberized, RCP, Kerberized, RXAC, Kerberized shell, etc.
+3560280	3563280	You can also Kerberize the superuser command.
+3563280	3564280	Yeah, that's, Jesus.
+3564280	3576280	Let's see quickly what we're going to look at next.
+3576280	3577280	Okay.
+3577280	3589280	So, that concludes Kerberos, and next we're going to go and look at web security.
+3589280	3590280	Oh.
+3590280	3591280	Well.
+3591280	3592280	SSL TLS.
+3592280	3596280	Any questions about Kerberos at all?
+3596280	3597280	Okay.
+3597280	3618280	Okay.
+3618280	3620280	So, everybody knows SSL.
+3620280	3622280	Everybody knows SSL.
+3622280	3627280	TLS is kind of the same, sort of, kind of.
+3627280	3630280	Anybody know what they stand for?
+3630280	3631280	Ask them.
+3631280	3632280	Ask them.
+3632280	3633280	Ask them.
+3633280	3634280	Google.
+3634280	3637280	Or your favorite chat to be.
+3637280	3639280	Secure sockets layer.
+3639280	3641280	That's SSL.
+3641280	3642280	Transactional layer security.
+3642280	3644280	That's TLS.
+3644280	3647280	And SSH is secure shell.
+3647280	3650280	Okay.
+3650280	3651280	Okay.
+3651280	3653280	So, we're going to go through the part.
+3653280	3655280	The particle is complicated.
+3655280	3660280	But I figure if you know anything, if you want to know anything about today's security
+3660280	3663280	landscape in the real world, you do need to know about Kerberos.
+3663280	3665280	You do need to know about SSL TLS.
+3665280	3668280	And you probably need to know about something called IPsec.
+3668280	3669280	Does anybody know what that is?
+3669280	3670280	Okay.
+3670280	3671280	Two people.
+3671280	3672280	Okay.
+3672280	3673280	That's IP security.
+3673280	3675280	To be covered later.
+3675280	3682280	So, these are all sort of standards of sorts.
+3682280	3684280	Kerberos is actually a standard.
+3684280	3687280	Does anybody know what internet standard means?
+3687280	3692280	Does anybody know what IETF is?
+3692280	3694280	Very few people.
+3694280	3697280	How do you live in computer science world and not know this?
+3697280	3700280	IETF is Internet Engineering Task Force.
+3700280	3706280	It's an organization run by volunteers that essentially governs how the internet works.
+3706280	3708280	Everything about the internet.
+3708280	3709280	Well, not the web, essentially.
+3709280	3712280	The web is a web consortium.
+3712280	3721280	But the internet, essentially, and just above the transport layer, is governed by ATF.
+3721280	3723280	Internet Engineering Task Force.
+3723280	3725280	It's an international organization.
+3725280	3726280	They have working groups.
+3726280	3732280	And these working groups are concerned with everything from, like, network layer.
+3732280	3734280	I mean, they don't work on Wi-Fi.
+3734280	3736280	So, they don't work with data link layer.
+3736280	3737280	Because that's not interesting.
+3737280	3741280	They don't work on radio jamming or physical layer.
+3741280	3743280	Radars and microwaves.
+3743280	3744280	No.
+3744280	3746280	IP and IP.
+3746280	3747280	Right?
+3747280	3751280	Actually, between IP and, let's say, a session layer.
+3751280	3756280	Everything there is subject to IETF approval.
+3756280	3760280	And they publish official documents that are called RFCs.
+3760280	3764280	Funny enough, it stands for request for comments.
+3764280	3766280	But it's not really request for comments.
+3766280	3768280	It's usually an internet standard.
+3768280	3769280	Okay?
+3769280	3772280	So, Kerberos has an internet standard.
+3772280	3775280	If you go look, RFC, Kerberos, you'll find it.
+3775280	3778280	It tells you exactly how Kerberos works.
+3778280	3783280	If you look at IP, V6, for example, it has V4.
+3783280	3784280	They all have RFCs.
+3784280	3786280	And they tell you exactly how IP works.
+3786280	3793280	Which means that if you follow the standard, you can implement that protocol, that format,
+3793280	3796280	in whatever language you want, in whatever platform you want.
+3796280	3800280	From a smart toaster to a supercomputer.
+3800280	3802280	And they will be able to interoperate.
+3802280	3804280	If you implement correctly.
+3804280	3805280	Okay?
+3805280	3807280	So, Kerberos is a standard.
+3807280	3809280	So is SSL TLS.
+3809280	3812280	And so is that inside.
+3812280	3814280	All right.
+3814280	3815280	So, history.
+3815280	3818280	SSL goes back to the 90s.
+3818280	3821280	I remember version 2.
+3821280	3823280	It was like late 90s.
+3823280	3827280	Version 3 is what we kind of use today.
+3827280	3828280	Right?
+3828280	3830280	Because version 3 is essentially TLS.
+3830280	3834280	Don't ask me why they switched the names from SSL to TLS.
+3834280	3837280	It had something to do with trademark dispute.
+3837280	3838280	Okay?
+3838280	3841280	But there is an RFC 22.6.
+3841280	3851280	So if you just search on RFC 22.46, you will find a very detailed specification of SSL.
+3851280	3852280	Sorry, TLS.
+3852280	3856280	And if you want to look at the open sources limitation, there are many.
+3856280	3858280	The most popular one is this, open SSL.
+3858280	3859280	Okay?
+3859280	3862280	It also implements a lot of crypto stuff.
+3862280	3867280	So if you're ever dealing with crypto stuff, and you want to dig, and you should not be
+3867280	3871280	baking anything on your own, because you will mess up royally.
+3871280	3873280	You should use that.
+3873280	3875280	Because it's been around for a long time.
+3875280	3879280	And although occasionally there are bugs, there are fewer bugs in that library than there
+3879280	3882280	are in most others.
+3882280	3886280	So, SSL TLS, you secure it in the transport layer.
+3886280	3889280	It sits just above TCP.
+3889280	3890280	Okay?
+3890280	3896280	Although these days, there are also to sell versions for UDP, but we will not do something
+3896280	3897280	else.
+3897280	3899280	That's a separate topic.
+3899280	3902280	So, think about TCP.
+3902280	3906280	Everybody knows transaction control protocol, transmission control protocol, depending on
+3906280	3907280	who you ask.
+3907280	3909280	On top of it, it's going to be TLSSL.
+3909280	3910280	It's optional.
+3910280	3912280	It's not always present.
+3912280	3913280	Okay?
+3913280	3915280	But it's secure socket, right?
+3915280	3922280	That's where on top of TCP you have sockets.
+3922280	3923280	Okay?
+3923280	3932280	If you want to TLSSize your applications, like with parameters, you need to change them.
+3932280	3933280	Okay?
+3933280	3938280	Now it says here, because originally it is worth my slides, that it's a thin layer between
+3938280	3939280	TCP and HTTP.
+3939280	3940280	That's not actually true.
+3940280	3942280	It's not just for HTTP.
+3942280	3950280	Yes, most things that use, or the biggest user of TLS is the HTTP protocol.
+3950280	3951280	Okay?
+3951280	3957280	So whenever you have HTTPS, right, and you see HTTPS in your browser window, you are using
+3957280	3958280	SSL.
+3958280	3962280	Or if you use some godforsaken browser, maybe they'll have like some little lock symbol,
+3962280	3965280	like they used two years ago, instead of HTTPS.
+3965280	3967280	So that might not be spelled out.
+3967280	3973280	But if you see a lock symbol or HTTPS explicitly, of course, you are using TLSS.
+3973280	3979280	It comes with support, right?
+3979280	3988280	So most reputable browsers, clients, and of course, HTTP servers come with SSL TLS support.
+3988280	3990280	So it's built in.
+3990280	3994280	There are two layers in the TLS SSL.
+3994280	3997280	The layers should not be confused with particles.
+3997280	3998280	Okay?
+3998280	4002280	There is called the record layer for just transmitting packets.
+4002280	4003280	Okay?
+4003280	4007280	And the upper layer where you do what's called protocols, right?
+4007280	4016280	And basically record layer is just treating one SSL segment or packet at a time.
+4016280	4019280	And at the upper layer, you do all this kind of management.
+4019280	4021280	You will see what I mean in a second.
+4021280	4024280	So it kind of looks like this.
+4024280	4025280	Okay?
+4025280	4029280	So you have this TCP and you have SSL record protocol.
+4029280	4032280	And then on top, you have these other protocols.
+4032280	4033280	Okay?
+4033280	4036280	So it looks weird, I understand.
+4036280	4042280	Because HTTP, you see HTTP is shown as being on top of the record layer.
+4042280	4047280	And SSL itself, as the N-shaped protocol, is shown at the same layer.
+4047280	4051280	Well, it doesn't make sense yet, but it will.
+4051280	4061280	So you just read this.
+4061280	4066280	My throat is getting raspy.
+4066280	4085280	In some ways, you will see some of the same concepts as you saw in Termverse, but SSL TLS is not a symmetric, sorry, it's not using symmetric cryptography throughout.
+4085280	4098280	It uses, like many other products or software, it uses public cryptography initially to establish, to help establish the secure connection between the client browser.
+4098280	4101280	I say that because that's the biggest application.
+4101280	4104280	But keep in mind, SSL TLS is not just for browsing.
+4104280	4105280	Okay?
+4105280	4110280	But I will use browsing as an episode between your client browser and the web server on the other end of the world.
+4110280	4111280	All right?
+4111280	4119280	It's using public cryptography to establish, just in the very beginning, it minimizes, in fact, the use of public cryptography, but it does not avoid it.
+4119280	4120280	Okay?
+4120280	4126280	And once the initial connection is established, public cryptography is no longer used.
+4126280	4127280	All right?
+4127280	4132280	So, but there's no trusted third party.
+4132280	4133280	Okay?
+4133280	4139280	No KVC, no AS, no TGS.
+4139280	4143280	There's just a big, bad world out there.
+4143280	4144280	Okay?
+4144280	4149280	Where innocent little clients talk to potentially dangerous servers.
+4149280	4150280	All right.
+4150280	4163280	Let's look at the actual protocol.
+4163280	4164280	Okay.
+4164280	4167280	So, we're going to use terminology client and server.
+4167280	4172280	So, I know it's a little bit confusing, but it's actually not because if you think in Kerberos, client and server, where?
+4172280	4175280	Well, user and client and server.
+4175280	4176280	So, here are two.
+4176280	4179280	We just don't have KDC, AS, TGS anymore.
+4179280	4182280	Let's see.
+4182280	4191280	In TLS SSL, 99.9% of the time, only the server is authenticated.
+4191280	4192280	Okay?
+4192280	4195280	So, that's the philosophy also that is different from Kerberos.
+4195280	4197280	Only the web server, right?
+4197280	4198280	Think of the web.
+4198280	4201280	Only the web server is authenticated.
+4201280	4206280	Have you ever, has anybody ever seen mutual authentication in CSL TLS?
+4206280	4209280	Assuming you know what I mean.
+4209280	4210280	No?
+4210280	4214280	I've seen it twice, three times in the last one year.
+4214280	4226280	So, TLS does support mutual authentication, but generally does not do it because it actually has little justification.
+4226280	4227280	And the reason is like this.
+4227280	4241280	When you are sitting in front of your browser and you type in or paste a URL, think about what happens, right?
+4241280	4244280	Something gets parsed by your request.
+4244280	4250280	And there's like three parts really to, well, four parts to the URL.
+4250280	4254280	There's the protocol identifier, which is the first part, right?
+4254280	4256280	Doesn't have to be HTTP, by the way.
+4256280	4257280	But usually it is, right?
+4257280	4258280	SSL is HTTP, yes.
+4258280	4259280	Then there's like delimiters.
+4259280	4260280	Then there's something called the domain name.
+4260280	4261280	Right?
+4261280	4275280	It's actually an address, sorry, a host name or a name that can be used to resolve to, you
+4275280	4276280	know, be resolved by DNS, right?
+4276280	4277280	Domain name service to produce an IP address.
+4277280	4282280	So it actually refers to an entity.
+4282280	4284280	And what follows it?
+4284280	4287280	There's a slash what?
+4287280	4294280	What happens after www.uci.edu slash what?
+4294280	4295280	Maybe nothing.
+4295280	4298280	Maybe nothing, right?
+4298280	4300280	Well, wait.
+4300280	4302280	The domain name is where you want to go.
+4302280	4303280	What's after that?
+4303280	4304280	What is it called?
+4304280	4305280	Path.
+4305280	4306280	Path, yes.
+4306280	4307280	It's the path.
+4307280	4308280	It looks like a Unix path, right?
+4308280	4309280	It might even be.
+4309280	4310280	It doesn't have to be.
+4310280	4311280	Could be interpreted differently, but could be a Unix path, right?
+4311280	4327280	Like go to that machine, go to that web server, that physical host, and go slash, et cetera,
+4327280	4329280	slash password, blah, okay?
+4329280	4332280	And then what?
+4332280	4336280	And then there might be another component after that.
+4336280	4337280	Yeah.
+4337280	4338280	Frequently overloaded.
+4338280	4342280	That's why you see these URLs that spread for miles.
+4342280	4350280	Right, so what are we concerned with when we browse the web?
+4350280	4351280	Fishing?
+4351280	4352280	Squatting?
+4352280	4355280	Anybody know about squatting?
+4355280	4356280	Mistyping?
+4356280	4361280	You mistyped one letter or one number in the URL and suddenly you are in a God knows where?
+4361280	4362280	Might pretend?
+4362280	4368280	Yeah, you type wellsbargo.com and you might wind up in a site that looks like Wells Fargo,
+4368280	4370280	but it ain't.
+4370280	4378280	And here you are entering your username and password and your account is toast within minutes.
+4378280	4384280	Without SSL TLS, it would be.
+4384280	4392280	So, what's important for you, the user, for us all, is to go to the right website, right?
+4392280	4396280	When we click on the bookmarks, a lot of times smart people, right?
+4396280	4397280	People care.
+4397280	4403280	If they go to particular websites more often than once or regularly, they'll put them in bookmarks.
+4403280	4404280	So, you click on the website, right?
+4404280	4405280	You don't actually enter it, right?
+4405280	4410280	How often do we actually enter it?
+4410280	4413280	Yeah, basically, enter it.
+4413280	4418280	So, we're concerned with the authenticity of the website.
+4418280	4420280	There's no human there, usually, right?
+4420280	4421280	It's a website.
+4421280	4423280	There's no human on the other side.
+4423280	4424280	There's no Bob.
+4424280	4425280	Right?
+4425280	4426280	It's a website.
+4426280	4430280	So, we want to make sure we're going to the right website, the authentic website.
+4430280	4435280	That's why the website authenticating to us, to our browser, is important.
+4435280	4440280	How important is this to authenticate us to the service?
+4440280	4447280	Well, yeah, this is like a social network or another bank where you have an account, yeah?
+4447280	4448280	Clearly.
+4448280	4449280	Yes?
+4449280	4451280	It's important.
+4451280	4454280	But does your browser know how to authenticate as you?
+4454280	4455280	No.
+4455280	4456280	No.
+4456280	4461280	You authenticate the human using a password, a PIN, an MFA, or something like that.
+4461280	4462280	A YubiKey.
+4462280	4470280	So, client, the real client to web server authentication happens at a higher level, or higher level.
+4470280	4471280	Userless.
+4471280	4474280	For the client, stay outside, please.
+4474280	4480280	For the client, it doesn't make sense to authenticate to the server, the same way the
+4480280	4481280	server authenticate the client.
+4481280	4487280	Moreover, a lot of web servers we use don't have user accounts, or at least don't require.
+4487280	4492280	If I go to WWCIDU, I'm going to require an account.
+4492280	4493280	Does it say you log in?
+4493280	4494280	No.
+4494280	4495280	There's a lot of public information out there.
+4495280	4501280	If I go to WWWhiteHouse.gov, a lot of public info.
+4501280	4509280	But I care that I go to WWWhiteHouse.gov, not WWWhiteHouse.com, because that used to be a porn site.
+4509280	4510280	I don't know what it is now.
+4510280	4514280	So, yeah, I want to make sure I go to the right place.
+4514280	4515280	Right?
+4515280	4523280	And so, UCI.edu, not UCI.org, which is United Cycling International, which exists.
+4523280	4525280	That's the other UCI.
+4525280	4531280	So, what I've said, that justifies the reason why SSL is so leaning on the security of web
+4531280	4534280	servers and much less concerned with the web client.
+4534280	4535280	Okay.
+4535280	4537280	See you Tuesday.
+4564280	4565280	I was wondering.
+4565280	4566280	Yeah.
+4566280	4567280	What did you decide?
+4567280	4568280	It's T8, no?
+4568280	4569280	Oh.
+4569280	4570280	It's T8.
+4570280	4571280	So, he asked the professor.
+4571280	4572280	That's the thing.
+4572280	4573280	Yeah.
+4573280	4574280	Last week.
+4574280	4575280	Yeah.
+4575280	4576280	Yeah.
+4576280	4577280	Oh, yeah.
+4577280	4578280	Right there.
+4578280	4579280	Yeah.
+4579280	4581280	Don't worry about it.
+4581280	4582280	You know.
+4582280	4585280	It's not their responsibility to worry about it.
+4585280	4586280	Okay.
+4586280	4587280	They're responsible.
+4587280	4588280	You know.
+4588280	4589280	Okay.
+4589280	4590280	They're responsible for funding.
+4590280	4593280	Because you have an awful lot of the states that are getting this.
+4593280	4594280	Yeah.
+4594280	4595280	But it is .
+4595280	4596280	Oh.
+4596280	4597280	Sorry.
+4597280	4599280	I didn't manage to pay attention to that.
+4599280	4600280	Oh.
+4600280	4601280	Yes, it is.
+4601280	4602280	You know.
+4602280	4603280	It's fine.
+4603280	4604280	Disprint's fine.
+4604280	4605280	I have WeChat.
+4605280	4606280	Oh, WeChat is easy.
+4606280	4607280	Yeah.
+4607280	4610280	I've used it for your projects before.
+4610280	4611280	Yeah.
+4611280	4612280	Okay.
+4612280	4613280	Let me .
+4613280	4614280	Yeah.
+4614280	4615280	Okay.
+4615280	4616280	Hey.
+4616280	4617280	You.
+4617280	4618280	You.
+4618280	4619280	You.
+4619280	4620280	Yeah.
+4620280	4621280	These are the two suspects that you want to work with?
+4621280	4622280	Yeah.
+4622280	4623280	Yeah.
+4623280	4626280	And figure out how you're going to make your project more substantial.
+4626280	4627280	Right?
+4627280	4629280	Now you have a trio rather than a duo.
+4629280	4630280	Okay?
+4630280	4631280	Right.
+4631280	4632280	Okay.
+4632280	4633280	All right.
+4633280	4634280	But.
+4634280	4635280	No.
+4635280	4636280	What I want is an actual update.
+4636280	4637280	So.
+4637280	4638280	Kind of like extend your proposal.
+4638280	4639280	ASAP.
+4639280	4640280	You know.
+4640280	4641280	Take you into account.
+4641280	4642280	Like.
+4642280	4643280	You know what I'm saying?
+4643280	4644280	No?
+4644280	4645280	Yeah.
+4645280	4646280	They send me a proposal.
+4646280	4647280	You are not part of it.
+4647280	4648280	Yeah.
+4648280	4649280	That's what I'm trying to do.
+4649280	4650280	Yeah.
+4650280	4651280	Now that there's you.
+4651280	4652280	There's more.
+4652280	4653280	It has to be done.
+4653280	4654280	Yeah.
+4654280	4655280	Okay.
+4655280	4656280	Right?
+4656280	4657280	You don't get them.
+4657280	4658280	You don't get a free bath.
+4658280	4659280	Yeah.
+4659280	4660280	Yeah.
+4660280	4661280	Yeah.
+4661280	4662280	So basically that's all I want.
+4662280	4663280	真的很 quick.
+4663280	4665280	So please like to let it go.
+4665280	4666280	Do it at number.
+4666280	4667280	Come on.
+4667280	4668280	Do it at number it Er.
+4668280	4669280	Good.
+4669280	4670280	Ummm.
+4670280	4671280	Yeah.
+4671280	4672280	I'd actually bring it over.
+4672280	4673280	The disc…
+4673280	4674280	Why don't you guys.
+4674280	4675280	Why don't you pop them up?
+4675280	4676280	No I don't.
+4676280	4678280	I don't want them on.
+4678280	4679280	They're doing so…
+4679280	4681280	damn it I don't showing them…
+4681280	4682280	…
+4683280	4684280	…
+4684280	4685280	…
+4685280	4690280	…
+4690280	4720260	Thank you.
+4720280	4750260	Thank you.
+4750280	4780260	Thank you.
